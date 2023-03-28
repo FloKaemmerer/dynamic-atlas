@@ -3,7 +3,7 @@
   </v-container>
   <DetailsDrawer :drawer="false"/>
 </template>
-  
+
 <script setup lang="ts">
 import atlasNodes from '@/assets/atlas/atlasNodes.json'
 import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
@@ -13,11 +13,11 @@ import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
 import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
 import redTierMapList from '@/assets/atlas/maps/tier11-16/index.js'
 import Konva from 'konva';
-import { AtlasNode } from '@/mixins/atlasNode'
+import {AtlasNode} from '@/mixins/atlasNode'
 import DetailsDrawer from '@/components/DetailsDrawer.vue'
-import { onMounted, ref } from 'vue'
-import { useAtlasNodeStore } from '@/store/AtlasNodeStore'
-import { useDetailsDrawerStore } from '@/store/DetailsDrawerStore';
+import {onMounted, ref} from 'vue'
+import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
+import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
 
 const coordinatesScaleFactor = ref<number>(4.1)
 const atlasNodesMap = ref<Map<string, AtlasNode>>(new Map)
@@ -30,17 +30,17 @@ function handleToggleDrawer(e: boolean) {
 
 const mounted = () => {
   atlasNodesMap.value = new Map<string, AtlasNode>()
-  var atlasNodeList = atlasNodes as Array<AtlasNode>
-    atlasNodeStore.SET_ATLAS_NODES(atlasNodeList)
-    console.log(atlasNodeList)
+  let atlasNodeList = atlasNodes as Array<AtlasNode>
+  atlasNodeStore.SET_ATLAS_NODES(atlasNodeList)
+  console.log(atlasNodeList)
   atlasNodes.forEach(atlasNodeElement => {
     let atlasNode = new AtlasNode(atlasNodeElement.ID,
-      atlasNodeElement.Linked,
-      atlasNodeElement.MapTier,
-      atlasNodeElement.LocX,
-      atlasNodeElement.LocY,
-      atlasNodeElement.Name,
-      atlasNodeElement.Unique);
+        atlasNodeElement.Linked,
+        atlasNodeElement.MapTier,
+        atlasNodeElement.LocX,
+        atlasNodeElement.LocY,
+        atlasNodeElement.Name,
+        atlasNodeElement.Unique);
     atlasNodesMap.value.set(atlasNodeElement.ID, atlasNode)
   });
   let stage = new Konva.Stage({
@@ -80,14 +80,14 @@ const mounted = () => {
       addImageToGroup(mapSymbolGroup, uniqueMapList.get(mapNodeName) || "", locX, locY)
     } else {
       addImageToGroup(mapBaseGroup, mapBase, locX, locY);
-      var mapNodeSource = ""
+      let mapNodeSource: string
       if (isRedTier(atlasNode.MapTier)) {
-        var mapNodeSource = redTierMapList.get(mapNodeName) || ""
+        mapNodeSource = redTierMapList.get(mapNodeName) || ""
       } else if (isYellowTier(atlasNode.MapTier)) {
-        var mapNodeSource = yellowTierMapList.get(mapNodeName) || ""
+        mapNodeSource = yellowTierMapList.get(mapNodeName) || ""
       } else {
         // not red or yellow, has to be white
-        var mapNodeSource = whiteTierMapList.get(mapNodeName) || ""
+        mapNodeSource = whiteTierMapList.get(mapNodeName) || ""
       }
       addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY)
     }
@@ -96,7 +96,7 @@ const mounted = () => {
     let mapHighlightArea = getHighlightArea(locX, locY);
     mapHighlightArea.on('click', function () {
       handleToggleDrawer(true)
-      atlasNodeStore.SET_SELECTED_ATALAS_NODE(atlasNode)
+      atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
     })
     showTooltip(mapHighlightArea, highlightRing, tooltipText, tooltipContainer, atlasNode)
 
@@ -128,12 +128,11 @@ function getLocY(atlasNode: AtlasNode) {
 }
 
 function addBackgroundLayer(stage: Konva.Stage) {
-  var atlasBaseLayer = new Konva.Layer();
+  let atlasBaseLayer = new Konva.Layer();
   stage.add(atlasBaseLayer);
-  atlasBaseLayer.moveToBottom
-  var atlasBackgroundImage = new Image();
+  let atlasBackgroundImage = new Image();
   atlasBackgroundImage.src = atlasBackgroundSource;
-  var atlasBackgroundKonvaImage = new Konva.Image({
+  let atlasBackgroundKonvaImage = new Konva.Image({
     image: atlasBackgroundImage,
   });
   atlasBackgroundImage.onload = function () {
@@ -148,7 +147,7 @@ function addBackgroundLayer(stage: Konva.Stage) {
 function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, locY: number) {
   let image = new Image()
   image.src = imageSource
-  var konvaImage = new Konva.Image({
+  let konvaImage = new Konva.Image({
     image: image,
     x: locX,
     y: locY,
@@ -163,7 +162,7 @@ function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, 
 }
 
 function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, locY: number) {
-  var mapNodeNameKonvaText = new Konva.Text({
+  let mapNodeNameKonvaText = new Konva.Text({
     Text: mapName,
     x: locX,
     y: locY + 22,
@@ -176,21 +175,21 @@ function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, lo
 }
 
 function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [string, string][], atlasNodesMap: Map<string, AtlasNode>) {
-  var linkedNodeIds = atlasNode.getLinkedList()
+  let linkedNodeIds = atlasNode.getLinkedList()
   linkedNodeIds.forEach(linkedNodeId => {
-    var linkedNode = atlasNodesMap.get(linkedNodeId)
-    var atlasNodeId = atlasNode.ID
-    if (linkedNode != null) {
-      var lineDrawn = false;
-      var linkedNodeIdNumber = linkedNode.ID
+    let linkedNode = atlasNodesMap.get(linkedNodeId)
+    let atlasNodeId = atlasNode.ID
+    if (linkedNode) {
+      let lineDrawn = false;
+      let linkedNodeIdNumber = linkedNode.ID
       drawnLinks.forEach(drawnLink => {
         if (drawnLink[0] === atlasNodeId && drawnLink[1] === linkedNodeIdNumber
-          || drawnLink[0] === linkedNodeIdNumber && drawnLink[1] === atlasNodeId) {
+            || drawnLink[0] === linkedNodeIdNumber && drawnLink[1] === atlasNodeId) {
           lineDrawn = true
         }
       });
       if (!lineDrawn) {
-        var line = getLinkLine(atlasNode, linkedNode)
+        let line = getLinkLine(atlasNode, linkedNode)
         group.add(line)
         drawnLinks.push([atlasNode.ID, linkedNodeId])
       }
@@ -211,15 +210,15 @@ function getLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
 }
 
 function handleZoom(stage: Konva.Stage) {
-  var scaleBy = 1.2;
+  let scaleBy = 1.2;
   stage.on('wheel', (e) => {
     // stop default scrolling
     e.evt.preventDefault();
 
-    var oldScale = stage.scaleX();
-    var pointer = stage.getPointerPosition();
+    let oldScale = stage.scaleX();
+    let pointer = stage.getPointerPosition();
     if (pointer != null) {
-      var mousePointTo = {
+      let mousePointTo = {
         x: (pointer.x - stage.x()) / oldScale,
         y: (pointer.y - stage.y()) / oldScale,
       };
@@ -233,11 +232,11 @@ function handleZoom(stage: Konva.Stage) {
         direction = -direction;
       }
 
-      var newScale = direction > 0 ? oldScale * scaleBy : oldScale / scaleBy;
+      let newScale = direction > 0 ? oldScale * scaleBy : oldScale / scaleBy;
 
-      stage.scale({ x: newScale, y: newScale });
+      stage.scale({x: newScale, y: newScale});
 
-      var newPos = {
+      let newPos = {
         x: pointer.x - mousePointTo.x * newScale,
         y: pointer.y - mousePointTo.y * newScale,
       };
@@ -255,8 +254,8 @@ function isRedTier(mapTier: string) {
 }
 
 function showTooltip(mapHighlightArea: Konva.Circle, highlightRing: Konva.Ring, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, atlasNode: AtlasNode) {
-  var locX = getLocX(atlasNode)
-  var locY = getLocY(atlasNode)
+  let locX = getLocX(atlasNode)
+  let locY = getLocY(atlasNode)
   mapHighlightArea.on('mousemove', function () {
     highlightRing.position({
       x: locX,

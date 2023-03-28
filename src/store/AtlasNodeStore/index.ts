@@ -10,11 +10,11 @@ interface State {
 export const useAtlasNodeStore = defineStore("atlas-node",{
     state: (): State => ({
         selectedAtlasNode: new AtlasNode("", "", "","", "", "",false ),
-        atlasNodes: new Array(),
+        atlasNodes: [],
     }),
 
     actions: {
-        SET_SELECTED_ATALAS_NODE(selectedAtlasNode: AtlasNode){
+        SET_SELECTED_ATLAS_NODE(selectedAtlasNode: AtlasNode){
             this.selectedAtlasNode = selectedAtlasNode;
         },
 

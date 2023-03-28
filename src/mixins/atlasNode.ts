@@ -18,9 +18,9 @@ export class AtlasNode{
         }
 
     getLinkedList(): Array<string> {
-        let linkedNodes = new Array<string>
-        var ids = this.Linked.replace(/[|/]/g,'')
-        var splittedIds = ids.split(',')
+        const linkedNodes = new Array<string>()
+        const ids = this.Linked.replace(/[|/]/g,'')
+        const splittedIds = ids.split(',')
         splittedIds.forEach(s => linkedNodes.push(s))
         return linkedNodes;
     }
