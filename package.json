@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-atlas",
+  "name": "dynamic-atlas-v2",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -18,8 +18,8 @@
     "konva": "^8.4.2",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
-    "vue-konva": "^3.0.2",
-    "vuetify": "^3.1.10"
+    "vue-router": "^4.1.6",
+    "vuetify": "^3.1.11"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",

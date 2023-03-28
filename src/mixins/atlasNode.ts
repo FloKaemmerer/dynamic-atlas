@@ -17,30 +17,6 @@ export class AtlasNode{
             this.Unique = Unique;
         }
 
-    getIdAsNumber(): number {
-        return Number(this.ID)
-    }
-
-    getMapTierAsNumber(): number{
-        return Number(this.MapTier)
-    }
-
-    getLocXAsNumber(): number{
-        return Number(this.LocX)
-    }
-
-    getLocYAsNumber(): number {
-        return Number(this.LocY)
-    }
-
-    getLinkedAsNumberArray(): Array<number> {
-        let linkedNodes = new Array<number>
-        var ids = this.Linked.replace(/[|/]/g,'')
-        var splittedIds = ids.split(',')
-        splittedIds.forEach(s => linkedNodes.push(Number(s)))
-        return linkedNodes;
-    }
-
     getLinkedList(): Array<string> {
         let linkedNodes = new Array<string>
         var ids = this.Linked.replace(/[|/]/g,'')
