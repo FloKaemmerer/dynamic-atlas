@@ -9,7 +9,7 @@
 import { useAtlasNodeStore } from '@/store/AtlasNodeStore'
 import { useDetailsDrawerStore } from '@/store/DetailsDrawerStore';
 import { computed } from "vue";
-import type { AtlasNode } from '@/mixins/atlasNode'
+import type { AtlasNode } from '@/model/atlasNode'
 
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();

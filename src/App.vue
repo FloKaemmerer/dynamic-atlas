@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { computed, onMounted, ref, watch } from "vue";
 import FilterDrawer from '@/components/FilterDrawer.vue'
+import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 
+const atlasNodeStore = useAtlasNodeStore()
 
+atlasNodeStore.setupAtlasData()
 </script>
 
 <template>

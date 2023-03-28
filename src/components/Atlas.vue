@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import atlasNodes from '@/assets/atlas/atlasNodes.json'
 import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
 import mapBase from '@/assets/atlas/maps/Base16.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
@@ -13,14 +12,13 @@ import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
 import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
 import redTierMapList from '@/assets/atlas/maps/tier11-16/index.js'
 import Konva from 'konva';
-import {AtlasNode} from '@/mixins/atlasNode'
 import DetailsDrawer from '@/components/DetailsDrawer.vue'
 import {onMounted, ref} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
+import {AtlasNode} from "@/model/atlasNode";
 
 const coordinatesScaleFactor = ref<number>(4.1)
-const atlasNodesMap = ref<Map<string, AtlasNode>>(new Map)
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 
@@ -29,20 +27,6 @@ function handleToggleDrawer(e: boolean) {
 }
 
 const mounted = () => {
-  atlasNodesMap.value = new Map<string, AtlasNode>()
-  let atlasNodeList = atlasNodes as Array<AtlasNode>
-  atlasNodeStore.SET_ATLAS_NODES(atlasNodeList)
-  console.log(atlasNodeList)
-  atlasNodes.forEach(atlasNodeElement => {
-    let atlasNode = new AtlasNode(atlasNodeElement.ID,
-        atlasNodeElement.Linked,
-        atlasNodeElement.MapTier,
-        atlasNodeElement.LocX,
-        atlasNodeElement.LocY,
-        atlasNodeElement.Name,
-        atlasNodeElement.Unique);
-    atlasNodesMap.value.set(atlasNodeElement.ID, atlasNode)
-  });
   let stage = new Konva.Stage({
     container: 'atlas',
     width: window.innerWidth,
@@ -68,14 +52,13 @@ const mounted = () => {
   let tooltipContainer = getTooltipContainer();
   let highlightRing = getHighlightRing()
 
-
   let drawnLinks: [string, string][] = [];
-  atlasNodesMap.value.forEach((atlasNode: AtlasNode) => {
+  atlasNodeStore.atlasNodesMap.forEach((atlasNode: AtlasNode) => {
     let locX = getLocX(atlasNode)
     let locY = getLocY(atlasNode)
     let mapNodeName = atlasNode.Name.replace(/'|,|\s/g, '')
 
-    addLinkToGroup(linksGroup, atlasNode, drawnLinks, atlasNodesMap.value)
+    addLinkToGroup(linksGroup, atlasNode, drawnLinks, atlasNodeStore.atlasNodesMap)
     if (atlasNode.Unique) {
       addImageToGroup(mapSymbolGroup, uniqueMapList.get(mapNodeName) || "", locX, locY)
     } else {
@@ -175,16 +158,16 @@ function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, lo
 }
 
 function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [string, string][], atlasNodesMap: Map<string, AtlasNode>) {
-  let linkedNodeIds = atlasNode.getLinkedList()
+  let linkedNodeIds = getLinkedAsList(atlasNode)
   linkedNodeIds.forEach(linkedNodeId => {
     let linkedNode = atlasNodesMap.get(linkedNodeId)
     let atlasNodeId = atlasNode.ID
     if (linkedNode) {
       let lineDrawn = false;
-      let linkedNodeIdNumber = linkedNode.ID
+      let linkedNodeId = linkedNode.ID
       drawnLinks.forEach(drawnLink => {
-        if (drawnLink[0] === atlasNodeId && drawnLink[1] === linkedNodeIdNumber
-            || drawnLink[0] === linkedNodeIdNumber && drawnLink[1] === atlasNodeId) {
+        if (drawnLink[0] === atlasNodeId && drawnLink[1] === linkedNodeId
+            || drawnLink[0] === linkedNodeId && drawnLink[1] === atlasNodeId) {
           lineDrawn = true
         }
       });
@@ -207,6 +190,13 @@ function getLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
     lineCap: 'round',
     tension: 0.5,
   });
+}
+
+function getLinkedAsList(atlasNode: AtlasNode): Array<string> {
+  const linkedNodes = new Array<string>()
+  const splittedIds = atlasNode.Linked.split(',')
+  splittedIds.forEach(s => linkedNodes.push(s))
+  return linkedNodes;
 }
 
 function handleZoom(stage: Konva.Stage) {
