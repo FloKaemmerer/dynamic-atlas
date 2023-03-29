@@ -20,12 +20,13 @@
 <script setup lang="ts">
 
 import {ref, watch} from "vue";
+import {handleTextSearch} from "@/composable/text-search";
 
 let searchText = ref("");
 
 watch( searchText,
     (searchText) => {
-      console.log(searchText)
+      handleTextSearch(searchText)
     });
 
 </script>

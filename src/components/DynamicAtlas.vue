@@ -13,10 +13,11 @@ import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
 import redTierMapList from '@/assets/atlas/maps/tier11-16/index.js'
 import Konva from 'konva';
 import DetailsDrawer from '@/components/DetailsDrawer.vue'
-import {onMounted, ref} from 'vue'
+import {onMounted, onUnmounted, ref} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
 import {AtlasNode} from "@/model/atlasNode";
+import {handleZoom} from "@/composable/stage-zoom";
 
 const coordinatesScaleFactor = ref<number>(4.1)
 const atlasNodeStore = useAtlasNodeStore();
@@ -29,6 +30,7 @@ function handleToggleDrawer(e: boolean) {
 const mounted = () => {
   let stage = new Konva.Stage({
     container: 'atlas',
+    id: 'atlas-stage',
     width: window.innerWidth,
     height: window.innerHeight,
     scaleX: 0.46,
@@ -36,12 +38,13 @@ const mounted = () => {
     draggable: true
   });
 
-  addBackgroundLayer(stage);
-
+  let backgroundLayer = createBackgroundLayer();
   let mapLayer = new Konva.Layer();
   let highlightLayer = new Konva.Layer();
 
+  stage.add(backgroundLayer)
   stage.add(mapLayer);
+  stage.add(highlightLayer)
 
   let linksGroup = new Konva.Group();
   let mapBaseGroup = new Konva.Group();
@@ -97,10 +100,13 @@ const mounted = () => {
   highlightLayer.add(tooltipContainer);
   highlightLayer.add(tooltipText);
 
-  stage.add(highlightLayer)
 
   handleZoom(stage)
 }
+
+atlasNodeStore.$subscribe((mutation, state) => {
+  console.log(state.filteredAtlasNodes)
+})
 
 function getLocX(atlasNode: AtlasNode) {
   return Number(atlasNode.LocX) * coordinatesScaleFactor.value
@@ -110,9 +116,8 @@ function getLocY(atlasNode: AtlasNode) {
   return Number(atlasNode.LocY) * coordinatesScaleFactor.value
 }
 
-function addBackgroundLayer(stage: Konva.Stage) {
+function createBackgroundLayer(): Konva.Layer {
   let atlasBaseLayer = new Konva.Layer();
-  stage.add(atlasBaseLayer);
   let atlasBackgroundImage = new Image();
   atlasBackgroundImage.src = atlasBackgroundSource;
   let atlasBackgroundKonvaImage = new Konva.Image({
@@ -124,7 +129,7 @@ function addBackgroundLayer(stage: Konva.Stage) {
   atlasBackgroundKonvaImage.on('click', function () {
     handleToggleDrawer(false)
   })
-
+  return atlasBaseLayer
 }
 
 function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, locY: number) {
@@ -158,7 +163,7 @@ function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, lo
 }
 
 function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [string, string][], atlasNodesMap: Map<string, AtlasNode>) {
-  let linkedNodeIds = getLinkedAsList(atlasNode)
+  let linkedNodeIds = atlasNode.Linked.split(',');
   linkedNodeIds.forEach(linkedNodeId => {
     let linkedNode = atlasNodesMap.get(linkedNodeId)
     let atlasNodeId = atlasNode.ID
@@ -189,49 +194,6 @@ function getLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
     dash: [20, 10],
     lineCap: 'round',
     tension: 0.5,
-  });
-}
-
-function getLinkedAsList(atlasNode: AtlasNode): Array<string> {
-  const linkedNodes = new Array<string>()
-  const splittedIds = atlasNode.Linked.split(',')
-  splittedIds.forEach(s => linkedNodes.push(s))
-  return linkedNodes;
-}
-
-function handleZoom(stage: Konva.Stage) {
-  let scaleBy = 1.2;
-  stage.on('wheel', (e) => {
-    // stop default scrolling
-    e.evt.preventDefault();
-
-    let oldScale = stage.scaleX();
-    let pointer = stage.getPointerPosition();
-    if (pointer != null) {
-      let mousePointTo = {
-        x: (pointer.x - stage.x()) / oldScale,
-        y: (pointer.y - stage.y()) / oldScale,
-      };
-
-      // how to scale? Zoom in? Or zoom out?
-      let direction = e.evt.deltaY > 0 ? -1 : 1;
-
-      // when we zoom on trackpad, e.evt.ctrlKey is true
-      // in that case lets revert direction
-      if (e.evt.ctrlKey) {
-        direction = -direction;
-      }
-
-      let newScale = direction > 0 ? oldScale * scaleBy : oldScale / scaleBy;
-
-      stage.scale({x: newScale, y: newScale});
-
-      let newPos = {
-        x: pointer.x - mousePointTo.x * newScale,
-        y: pointer.y - mousePointTo.y * newScale,
-      };
-      stage.position(newPos);
-    }
   });
 }
 
@@ -329,6 +291,17 @@ function getHighlightArea(locX: number, locY: number) {
   })
 }
 
+const handleWindowSizeChange = () => {
+  console.log("window resized")
+};
 
-onMounted(mounted)
+onMounted(() => {
+  mounted()
+  window.addEventListener("resize", handleWindowSizeChange);
+  handleWindowSizeChange();
+})
+
+onUnmounted(() => {
+  window.removeEventListener("resize", handleWindowSizeChange);
+});
 </script>

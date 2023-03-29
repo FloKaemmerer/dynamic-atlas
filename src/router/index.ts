@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/components/Atlas.vue')
+      component: () => import('@/components/DynamicAtlas.vue')
     },
   ]
 })

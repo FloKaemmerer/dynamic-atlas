@@ -1,5 +1,5 @@
-import { AtlasNode } from "@/model/atlasNode";
-import { defineStore } from "pinia";
+import {AtlasNode} from "@/model/atlasNode";
+import {defineStore} from "pinia";
 // @ts-ignore
 import atlasNodes from "@/assets/atlas/atlasNodes.json";
 
@@ -9,21 +9,29 @@ interface State {
     atlasNodes: Array<AtlasNode>
 
     atlasNodesMap: Map<string, AtlasNode>
+    filteredAtlasNodes: Array<AtlasNode>
 }
 
-export const useAtlasNodeStore = defineStore("atlas-node",{
-    state: (): State => ({
-        selectedAtlasNode: new AtlasNode("", "", "","", "", "",false ),
-        atlasNodes: [],
-        atlasNodesMap: new Map(),
-    }),
+export const useAtlasNodeStore = defineStore("atlas-node", {
+    state: (): State => {
+        return {
+            selectedAtlasNode: new AtlasNode("", "", "", "", "", "", false),
+            atlasNodes: [],
+            atlasNodesMap: new Map(),
+            filteredAtlasNodes: [],
+        }
+    },
 
     actions: {
-        SET_SELECTED_ATLAS_NODE(selectedAtlasNode: AtlasNode){
+        SET_SELECTED_ATLAS_NODE(selectedAtlasNode: AtlasNode) {
             this.selectedAtlasNode = selectedAtlasNode;
         },
 
-        async setupAtlasData(){
+        SET_FILTERED_ATLAS_NODE_IDS(filteredAtlasNodeIds: Array<AtlasNode>) {
+            this.filteredAtlasNodes = filteredAtlasNodeIds
+        },
+
+        async setupAtlasData() {
             console.log("setting up Atlas Data")
 
             atlasNodes.forEach(atlasNodeElement => {
