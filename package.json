@@ -16,9 +16,10 @@
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
-    "konva": "^8.4.2",
+    "konva": "^8.4.3",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
+    "vue-konva": "^3.0.2",
     "vue-router": "^4.1.6",
     "vuetify": "^3.1.11"
   },
