@@ -24,6 +24,7 @@ const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 
 const filterHighlightLayer = new Konva.Layer()
+const filterHighlightGroup = new Konva.Group();
 
 function handleToggleDrawer(e: boolean) {
   detailsDrawerStore.SET_DRAWER(e)
@@ -53,7 +54,6 @@ const mounted = () => {
   let mapBaseGroup = new Konva.Group();
   let mapNameGroup = new Konva.Group();
   let mapSymbolGroup = new Konva.Group();
-  let filterHighlightGroup = new Konva.Group();
 
   let tooltipText = getTooltipBaseText();
   let tooltipContainer = getTooltipContainer();
@@ -89,21 +89,9 @@ const mounted = () => {
     })
     showTooltip(mapHighlightArea, tooltipText, tooltipContainer, atlasNode)
 
-    hideTooltip(mapHighlightArea,  tooltipText, tooltipContainer)
+    hideTooltip(mapHighlightArea, tooltipText, tooltipContainer)
 
     highlightLayer.add(mapHighlightArea)
-
-    let filterHighlight = new Konva.Circle({
-      id: atlasNode.ID,
-      x: locX,
-      y: locY,
-      stroke: 'black',
-      fill: 'red',
-      strokeWidth: 4,
-      radius: 35,
-      opacity: 0,
-    })
-    filterHighlightGroup.add(filterHighlight)
   });
 
   mapLayer.add(linksGroup)
@@ -122,16 +110,24 @@ const mounted = () => {
 atlasNodeStore.$subscribe((mutation, state) => {
   console.log(state.filteredAtlasNodes)
 
-  // hide all AtlasNodes not found in filter
-  let atlasNodesToHide = atlasNodeStore.atlasNodes.filter((el) => !state.filteredAtlasNodes.includes(el));
-  atlasNodesToHide.forEach(value => {
-    let atlasNodesToHide = filterHighlightLayer.find('#' + value.ID) as Konva.Circle[];
-    atlasNodesToHide[0].setAttr("opacity", 0)
-  })
+  // destroy previous Highlights
+  let allHighlights = filterHighlightGroup.find("Circle") as Konva.Circle[];
+  allHighlights.forEach(value => value.destroy())
+
   //show all filtere AtlasNodes
   state.filteredAtlasNodes.forEach(value => {
-    let atlasNodeToHighlight = filterHighlightLayer.find('#' + value.ID) as Konva.Circle[];
-    atlasNodeToHighlight[0].setAttr("opacity", 1)
+
+    let filterHighlight = new Konva.Circle({
+      id: value.ID,
+      x: getLocX(value),
+      y: getLocY(value),
+      stroke: 'black',
+      fill: 'red',
+      strokeWidth: 4,
+      radius: 35,
+      opacity: 1,
+    })
+    filterHighlightGroup.add(filterHighlight)
   })
 })
 
@@ -253,7 +249,7 @@ function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
   })
 }
 
-function hideTooltip(mapHighlightArea: Konva.Circle,  tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
+function hideTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
   mapHighlightArea.on('mouseout', function () {
     tooltipText.hide()
     tooltipContainer.hide()
