@@ -15,7 +15,7 @@ interface State {
 export const useAtlasNodeStore = defineStore("atlas-node", {
     state: (): State => {
         return {
-            selectedAtlasNode: new AtlasNode("", "", "", "", "", "", false),
+            selectedAtlasNode: new AtlasNode("","","",",","","",false,[],0,[],0,0,[]),
             atlasNodes: [],
             atlasNodesMap: new Map(),
             filteredAtlasNodes: [],
@@ -35,16 +35,18 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
             console.log("setting up Atlas Data")
 
             atlasNodes.forEach(atlasNodeElement => {
-                const atlasNode = new AtlasNode(atlasNodeElement.ID,
-                    atlasNodeElement.Linked,
-                    atlasNodeElement.MapTier,
-                    atlasNodeElement.LocX,
-                    atlasNodeElement.LocY,
-                    atlasNodeElement.Name,
-                    atlasNodeElement.Unique);
+                const atlasNode = atlasNodeElement as AtlasNode
+                atlasNode.FilterTags = [atlasNode.Name.toLowerCase()]
+                if(atlasNode.DivinationCards) {
+                    atlasNode.FilterTags = atlasNode.FilterTags.concat(atlasNode.DivinationCards.map(value => value.toLowerCase()))
+                }
+                atlasNode.FilterTags = atlasNode.FilterTags.concat(getMapTierFilterTags(atlasNode.MapTier))
                 this.atlasNodesMap.set(atlasNodeElement.ID, atlasNode)
                 this.atlasNodes.push(atlasNode)
             });
+            function getMapTierFilterTags(mapTier: string): string[] {
+                return ["tier "+mapTier,"t"+mapTier, mapTier]
+            }
         }
     }
 })

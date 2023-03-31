@@ -13,17 +13,22 @@ import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
 import redTierMapList from '@/assets/atlas/maps/tier11-16/index.js'
 import Konva from 'konva';
 import DetailsDrawer from '@/components/DetailsDrawer.vue'
-import {onMounted, onUnmounted, ref} from 'vue'
+import {onMounted, onUnmounted} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
 import {AtlasNode} from "@/model/atlasNode";
 import {handleZoom} from "@/composable/stage-zoom";
 
-const coordinatesScaleFactor = ref<number>(4.1)
+const coordinatesScaleFactor = 4.1
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 
-const filterHighlightLayer = new Konva.Layer()
+const backgroundGroup = new Konva.Group();
+const linksGroup = new Konva.Group();
+const mapBaseGroup = new Konva.Group();
+const mapNameGroup = new Konva.Group();
+const mapSymbolGroup = new Konva.Group();
+const tooltipGroup = new Konva.Group();
 const filterHighlightGroup = new Konva.Group();
 
 function handleToggleDrawer(e: boolean) {
@@ -41,27 +46,23 @@ const mounted = () => {
     draggable: true
   });
 
-  let backgroundLayer = createBackgroundLayer();
+ createBackgroundImage();
   let mapLayer = new Konva.Layer();
   let highlightLayer = new Konva.Layer();
 
-  stage.add(backgroundLayer)
-  stage.add(filterHighlightLayer)
   stage.add(mapLayer);
   stage.add(highlightLayer)
-
-  let linksGroup = new Konva.Group();
-  let mapBaseGroup = new Konva.Group();
-  let mapNameGroup = new Konva.Group();
-  let mapSymbolGroup = new Konva.Group();
 
   let tooltipText = getTooltipBaseText();
   let tooltipContainer = getTooltipContainer();
 
+  tooltipGroup.add(tooltipContainer);
+  tooltipGroup.add(tooltipText);
+
   let drawnLinks: [string, string][] = [];
   atlasNodeStore.atlasNodesMap.forEach((atlasNode: AtlasNode) => {
-    let locX = getLocX(atlasNode)
-    let locY = getLocY(atlasNode)
+    let locX = getScaledAtlasNodeLocX(atlasNode)
+    let locY = getScaledAtlasNodeLocY(atlasNode)
     let mapNodeName = atlasNode.Name.replace(/'|,|\s/g, '')
 
     addLinkToGroup(linksGroup, atlasNode, drawnLinks, atlasNodeStore.atlasNodesMap)
@@ -94,15 +95,13 @@ const mounted = () => {
     highlightLayer.add(mapHighlightArea)
   });
 
+  mapLayer.add(backgroundGroup)
   mapLayer.add(linksGroup)
+  mapLayer.add(filterHighlightGroup)
   mapLayer.add(mapBaseGroup)
   mapLayer.add(mapNameGroup)
   mapLayer.add(mapSymbolGroup)
-
-  filterHighlightLayer.add(filterHighlightGroup)
-
-  highlightLayer.add(tooltipContainer);
-  highlightLayer.add(tooltipText);
+  mapLayer.add(tooltipGroup)
 
   handleZoom(stage)
 }
@@ -119,8 +118,8 @@ atlasNodeStore.$subscribe((mutation, state) => {
 
     let filterHighlight = new Konva.Circle({
       id: value.ID,
-      x: getLocX(value),
-      y: getLocY(value),
+      x: getScaledAtlasNodeLocX(value),
+      y: getScaledAtlasNodeLocY(value),
       stroke: 'black',
       fill: 'red',
       strokeWidth: 4,
@@ -131,28 +130,26 @@ atlasNodeStore.$subscribe((mutation, state) => {
   })
 })
 
-function getLocX(atlasNode: AtlasNode) {
-  return Number(atlasNode.LocX) * coordinatesScaleFactor.value
+function getScaledAtlasNodeLocX(atlasNode: AtlasNode) {
+  return Number(atlasNode.LocX) * coordinatesScaleFactor
 }
 
-function getLocY(atlasNode: AtlasNode) {
-  return Number(atlasNode.LocY) * coordinatesScaleFactor.value
+function getScaledAtlasNodeLocY(atlasNode: AtlasNode) {
+  return Number(atlasNode.LocY) * coordinatesScaleFactor
 }
 
-function createBackgroundLayer(): Konva.Layer {
-  let atlasBaseLayer = new Konva.Layer();
+function createBackgroundImage(){
   let atlasBackgroundImage = new Image();
   atlasBackgroundImage.src = atlasBackgroundSource;
   let atlasBackgroundKonvaImage = new Konva.Image({
     image: atlasBackgroundImage,
   });
   atlasBackgroundImage.onload = function () {
-    atlasBaseLayer.add(atlasBackgroundKonvaImage);
+    backgroundGroup.add(atlasBackgroundKonvaImage);
   };
   atlasBackgroundKonvaImage.on('click', function () {
     handleToggleDrawer(false)
   })
-  return atlasBaseLayer
 }
 
 function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, locY: number) {
@@ -210,7 +207,7 @@ function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [s
 
 function getLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
   return new Konva.Line({
-    points: [getLocX(sourceNode), getLocY(sourceNode), getLocX(targetNode), getLocY(targetNode)],
+    points: [getScaledAtlasNodeLocX(sourceNode), getScaledAtlasNodeLocY(sourceNode), getScaledAtlasNodeLocX(targetNode), getScaledAtlasNodeLocY(targetNode)],
     stroke: 'black',
     strokeWidth: 2,
     lineJoin: 'round',
@@ -229,8 +226,8 @@ function isRedTier(mapTier: string) {
 }
 
 function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, atlasNode: AtlasNode) {
-  let locX = getLocX(atlasNode)
-  let locY = getLocY(atlasNode)
+  let locX = getScaledAtlasNodeLocX(atlasNode)
+  let locY = getScaledAtlasNodeLocY(atlasNode)
   mapHighlightArea.on('mousemove', function () {
     tooltipText.position({
       x: locX + 50,
