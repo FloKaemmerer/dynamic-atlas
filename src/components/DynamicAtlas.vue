@@ -23,6 +23,8 @@ const coordinatesScaleFactor = ref<number>(4.1)
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 
+const filterHighlightLayer = new Konva.Layer()
+
 function handleToggleDrawer(e: boolean) {
   detailsDrawerStore.SET_DRAWER(e)
 }
@@ -43,6 +45,7 @@ const mounted = () => {
   let highlightLayer = new Konva.Layer();
 
   stage.add(backgroundLayer)
+  stage.add(filterHighlightLayer)
   stage.add(mapLayer);
   stage.add(highlightLayer)
 
@@ -50,10 +53,10 @@ const mounted = () => {
   let mapBaseGroup = new Konva.Group();
   let mapNameGroup = new Konva.Group();
   let mapSymbolGroup = new Konva.Group();
+  let filterHighlightGroup = new Konva.Group();
 
   let tooltipText = getTooltipBaseText();
   let tooltipContainer = getTooltipContainer();
-  let highlightRing = getHighlightRing()
 
   let drawnLinks: [string, string][] = [];
   atlasNodeStore.atlasNodesMap.forEach((atlasNode: AtlasNode) => {
@@ -75,7 +78,7 @@ const mounted = () => {
         // not red or yellow, has to be white
         mapNodeSource = whiteTierMapList.get(mapNodeName) || ""
       }
-      addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY)
+      addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY);
     }
     addMapNameToGroup(mapNameGroup, atlasNode.Name, locX, locY);
 
@@ -84,11 +87,23 @@ const mounted = () => {
       handleToggleDrawer(true)
       atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
     })
-    showTooltip(mapHighlightArea, highlightRing, tooltipText, tooltipContainer, atlasNode)
+    showTooltip(mapHighlightArea, tooltipText, tooltipContainer, atlasNode)
 
-    hideTooltip(mapHighlightArea, highlightRing, tooltipText, tooltipContainer)
+    hideTooltip(mapHighlightArea,  tooltipText, tooltipContainer)
 
     highlightLayer.add(mapHighlightArea)
+
+    let filterHighlight = new Konva.Circle({
+      id: atlasNode.ID,
+      x: locX,
+      y: locY,
+      stroke: 'black',
+      fill: 'red',
+      strokeWidth: 4,
+      radius: 35,
+      opacity: 0,
+    })
+    filterHighlightGroup.add(filterHighlight)
   });
 
   mapLayer.add(linksGroup)
@@ -96,16 +111,28 @@ const mounted = () => {
   mapLayer.add(mapNameGroup)
   mapLayer.add(mapSymbolGroup)
 
-  highlightLayer.add(highlightRing);
+  filterHighlightLayer.add(filterHighlightGroup)
+
   highlightLayer.add(tooltipContainer);
   highlightLayer.add(tooltipText);
-
 
   handleZoom(stage)
 }
 
 atlasNodeStore.$subscribe((mutation, state) => {
   console.log(state.filteredAtlasNodes)
+
+  // hide all AtlasNodes not found in filter
+  let atlasNodesToHide = atlasNodeStore.atlasNodes.filter((el) => !state.filteredAtlasNodes.includes(el));
+  atlasNodesToHide.forEach(value => {
+    let atlasNodesToHide = filterHighlightLayer.find('#' + value.ID) as Konva.Circle[];
+    atlasNodesToHide[0].setAttr("opacity", 0)
+  })
+  //show all filtere AtlasNodes
+  state.filteredAtlasNodes.forEach(value => {
+    let atlasNodeToHighlight = filterHighlightLayer.find('#' + value.ID) as Konva.Circle[];
+    atlasNodeToHighlight[0].setAttr("opacity", 1)
+  })
 })
 
 function getLocX(atlasNode: AtlasNode) {
@@ -205,14 +232,10 @@ function isRedTier(mapTier: string) {
   return Number(mapTier) > 10
 }
 
-function showTooltip(mapHighlightArea: Konva.Circle, highlightRing: Konva.Ring, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, atlasNode: AtlasNode) {
+function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, atlasNode: AtlasNode) {
   let locX = getLocX(atlasNode)
   let locY = getLocY(atlasNode)
   mapHighlightArea.on('mousemove', function () {
-    highlightRing.position({
-      x: locX,
-      y: locY
-    })
     tooltipText.position({
       x: locX + 50,
       y: locY - 70
@@ -225,17 +248,15 @@ function showTooltip(mapHighlightArea: Konva.Circle, highlightRing: Konva.Ring, 
     tooltipContainer.height(tooltipText.height())
 
 
-    highlightRing.show()
     tooltipText.show()
     tooltipContainer.show()
   })
 }
 
-function hideTooltip(mapHighlightArea: Konva.Circle, highlightRing: Konva.Ring, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
+function hideTooltip(mapHighlightArea: Konva.Circle,  tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
   mapHighlightArea.on('mouseout', function () {
     tooltipText.hide()
     tooltipContainer.hide()
-    highlightRing.hide()
   })
 }
 
@@ -265,17 +286,6 @@ function getTooltipContainer() {
     shadowOffsetY: 10,
     shadowOpacity: 0.2,
     cornerRadius: 10,
-    visible: false,
-  })
-}
-
-function getHighlightRing() {
-  return new Konva.Ring({
-    innerRadius: 30,
-    outerRadius: 45,
-    fill: 'yellow',
-    stroke: 'black',
-    strokeWidth: 4,
     visible: false,
   })
 }
