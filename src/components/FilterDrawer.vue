@@ -1,6 +1,6 @@
 <template>
-  <v-navigation-drawer>
-    <v-label>Search:</v-label>
+  <v-navigation-drawer permanent floating :width="350">
+    <v-label class="text-h4">Search:</v-label>
     <v-responsive>
       <v-text-field
           v-model="searchText"
@@ -24,7 +24,7 @@ import {handleTextSearch} from "@/composable/text-search";
 
 let searchText = ref("");
 
-watch( searchText,
+watch(searchText,
     (searchText) => {
       handleTextSearch(searchText)
     });

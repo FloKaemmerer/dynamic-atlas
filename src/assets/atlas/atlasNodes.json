@@ -27,7 +27,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "1",
@@ -56,7 +57,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "2",
@@ -71,7 +73,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "3",
@@ -86,7 +89,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "4",
@@ -101,7 +105,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "5",
@@ -116,7 +121,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "6",
@@ -144,7 +150,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "7",
@@ -159,7 +166,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "8",
@@ -189,7 +197,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "9",
@@ -204,7 +213,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "10",
@@ -232,7 +242,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "11",
@@ -256,7 +267,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "12",
@@ -291,7 +303,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "13",
@@ -310,7 +323,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "14",
@@ -335,7 +349,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "15",
@@ -350,7 +365,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "16",
@@ -383,7 +399,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "17",
@@ -402,7 +419,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "18",
@@ -434,7 +452,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "19",
@@ -455,7 +474,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "20",
@@ -491,7 +511,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "21",
@@ -517,7 +538,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "22",
@@ -549,7 +571,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "23",
@@ -570,7 +593,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "24",
@@ -605,7 +629,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "25",
@@ -620,7 +645,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "26",
@@ -644,7 +670,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "27",
@@ -664,7 +691,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "28",
@@ -694,7 +722,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "29",
@@ -719,7 +748,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "30",
@@ -752,7 +782,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "31",
@@ -785,7 +816,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "32",
@@ -818,7 +850,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "33",
@@ -842,7 +875,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "34",
@@ -868,7 +902,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "35",
@@ -892,7 +927,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "36",
@@ -918,7 +954,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "37",
@@ -942,7 +979,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "38",
@@ -967,7 +1005,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "39",
@@ -998,7 +1037,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "40",
@@ -1022,7 +1062,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "41",
@@ -1051,7 +1092,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "42",
@@ -1085,7 +1127,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "43",
@@ -1110,7 +1153,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "44",
@@ -1134,7 +1178,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "45",
@@ -1169,7 +1214,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "46",
@@ -1198,7 +1244,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "47",
@@ -1226,7 +1273,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "48",
@@ -1255,7 +1303,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "49",
@@ -1284,7 +1333,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "50",
@@ -1316,7 +1366,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "51",
@@ -1344,7 +1395,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "52",
@@ -1372,7 +1424,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "53",
@@ -1403,7 +1456,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "54",
@@ -1431,7 +1485,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "55",
@@ -1463,7 +1518,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "56",
@@ -1492,7 +1548,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "57",
@@ -1519,7 +1576,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "58",
@@ -1550,7 +1608,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "59",
@@ -1575,7 +1634,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "60",
@@ -1602,7 +1662,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "61",
@@ -1638,7 +1699,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "62",
@@ -1668,7 +1730,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "63",
@@ -1698,7 +1761,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "64",
@@ -1726,7 +1790,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "65",
@@ -1756,7 +1821,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "66",
@@ -1782,7 +1848,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "67",
@@ -1824,7 +1891,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "68",
@@ -1852,7 +1920,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "69",
@@ -1887,7 +1956,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "70",
@@ -1913,7 +1983,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "71",
@@ -1947,7 +2018,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "72",
@@ -1980,7 +2052,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "73",
@@ -2012,7 +2085,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "74",
@@ -2040,7 +2114,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "75",
@@ -2068,7 +2143,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "76",
@@ -2098,7 +2174,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "77",
@@ -2132,7 +2209,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "78",
@@ -2158,7 +2236,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "79",
@@ -2189,7 +2268,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "80",
@@ -2220,7 +2300,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "81",
@@ -2251,7 +2332,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "82",
@@ -2276,7 +2358,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "83",
@@ -2303,7 +2386,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "84",
@@ -2333,7 +2417,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "85",
@@ -2365,7 +2450,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "86",
@@ -2391,7 +2477,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "87",
@@ -2417,7 +2504,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "88",
@@ -2445,7 +2533,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "89",
@@ -2468,7 +2557,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "90",
@@ -2500,7 +2590,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "91",
@@ -2527,7 +2618,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "92",
@@ -2553,7 +2645,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "93",
@@ -2583,7 +2676,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "94",
@@ -2617,7 +2711,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "95",
@@ -2649,7 +2744,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "96",
@@ -2675,7 +2771,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "97",
@@ -2703,7 +2800,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "98",
@@ -2730,7 +2828,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "99",
@@ -2762,7 +2861,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "100",
@@ -2787,7 +2887,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "101",
@@ -2814,7 +2915,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "102",
@@ -2840,7 +2942,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "103",
@@ -2867,7 +2970,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "104",
@@ -2896,7 +3000,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "105",
@@ -2923,7 +3028,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "106",
@@ -2947,7 +3053,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "107",
@@ -2970,7 +3077,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "108",
@@ -3000,7 +3108,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "109",
@@ -3028,7 +3137,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "110",
@@ -3060,7 +3170,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "111",
@@ -3083,7 +3194,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "112",
@@ -3113,7 +3225,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "113",
@@ -3141,7 +3254,8 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   },
   {
     "ID": "114",
@@ -3166,6 +3280,7 @@
     "FilterTags": [],
     "Traversability": 0,
     "NumberOfBosses": 1,
-    "AdditionalTags": []
+    "AdditionalTags": [],
+    "Active": true
   }
 ]

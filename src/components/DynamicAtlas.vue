@@ -43,6 +43,8 @@ const mounted = () => {
     height: window.innerHeight,
     scaleX: 0.46,
     scaleY: 0.46,
+    offsetX: 350,
+    offsetY: 150,
     draggable: true
   });
 
