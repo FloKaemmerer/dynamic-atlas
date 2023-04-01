@@ -45,7 +45,7 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
                 this.atlasNodes.push(atlasNode)
             });
             function getMapTierFilterTags(mapTier: string): string[] {
-                return ["tier "+mapTier,"t"+mapTier, mapTier]
+                return ["tier "+mapTier,"t"+mapTier, "tier: "+mapTier,mapTier,"natural tier: "+mapTier,"natural tier "+mapTier]
             }
         }
     }

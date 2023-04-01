@@ -1,6 +1,11 @@
 <template>
   <v-navigation-drawer :model-value="drawer" absolute location="right" :width="350">
     <v-label class="text-h4">{{ atlasNode.Name }}</v-label>
+    <v-spacer></v-spacer>
+    <v-label class="text-h5">Natural Tier: {{atlasNode.MapTier}}</v-label>
+    <v-spacer></v-spacer>
+    <v-label class="text-h5">Number of Bosses: {{atlasNode.NumberOfBosses}}</v-label>
+    <v-spacer></v-spacer>
     <v-row justify="center">
       <v-col>
         <v-sheet

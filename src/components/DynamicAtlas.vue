@@ -239,7 +239,7 @@ function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
       x: locX + 50,
       y: locY - 70
     })
-    tooltipText.text(atlasNode.Name + "\n\n" + "Natural Maptier: " + atlasNode.MapTier + "\nSome useful Information about the Map. Like layout (open or close), some ratings, number of Bosses, noteable Divcards and so on.")
+    tooltipText.text(atlasNode.Name + "\n\n" + "Natural Tier: " + atlasNode.MapTier + "\nSome useful Information about the Map. Like layout (open or close), some ratings, number of Bosses, noteable Divcards and so on.")
     tooltipContainer.height(tooltipText.height())
 
 
