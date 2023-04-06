@@ -36,7 +36,7 @@
                   variant="outlined"
                   density="compact"
                   style="width: 70px"
-                  min="0"
+                  min="1"
               ></v-text-field>
             </v-col>
             <v-col>
@@ -48,7 +48,7 @@
                   variant="outlined"
                   style="width: 70px"
                   density="compact"
-                  min="0"
+                  min="1"
               ></v-text-field>
             </v-col>
           </v-row>
