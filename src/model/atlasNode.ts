@@ -1,32 +1,19 @@
-export class AtlasNode {
+import type {DivinationCard} from "@/model/divinationCard";
+
+export interface AtlasNode {
+    active: boolean
     ID: string
     Linked: string
-    MapTier: string
+    MapTier: number
     LocX: string
     LocY: string
     Name: string
-    Unique: boolean
-    DivinationCards: string[]
+    UniqueMap: boolean
+    DivinationCards: DivinationCard[]
     Layout: number
-    FilterTags: string[]
+    FilterTags: any[]
     Traversability: number
     NumberOfBosses: number
-    AdditionalTags: string[]
+    AdditionalTags: any[]
 
-
-    constructor(ID: string, Linked: string, MapTier: string, LocX: string, LocY: string, Name: string, Unique: boolean, DivinationCards: string[], Layout: number, FilterTags: string[], Traversability: number, NumberOfBosses: number, AdditionalTags: string[]) {
-        this.ID = ID;
-        this.Linked = Linked;
-        this.MapTier = MapTier;
-        this.LocX = LocX;
-        this.LocY = LocY;
-        this.Name = Name;
-        this.Unique = Unique;
-        this.DivinationCards = DivinationCards;
-        this.Layout = Layout;
-        this.FilterTags = FilterTags;
-        this.Traversability = Traversability;
-        this.NumberOfBosses = NumberOfBosses;
-        this.AdditionalTags = AdditionalTags;
-    }
 }

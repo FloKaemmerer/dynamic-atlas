@@ -98,9 +98,73 @@ import citySquare from "./citySquare.png";
 import primordialBlocks from "./primordialBlocks.png";
 import arsenal from "./arsenal.png";
 import mesa from "./mesa.png";
+import tropicalIsland from "./tropicalIsland.png";
+import barrows from "./barrows.png";
+import aridLake from "./aridLake.png";
+import geode from "./geode.png";
+import ramparts from "./ramparts.png";
+import crystalOre from "./crystalOre.png";
+import fungalHollow from "./fungalHollow.png";
+import armoury from "./Armoury.png";
+import dig from "./Dig.png";
+import wharf from "./Wharf.png";
+import malformation from "./Malformation.png";
+import siege from "./Siege.png";
+import chateau from "./Chateau.png";
+import pit from "./Pit.png";
+import belfry from "./Belfry.png";
+import marshes from "./Marshes.png";
+import conservatory from "./Conservatory.png";
+import cells from "./Cells.png";
+import lighthouse from "./Lighthouse.png";
+import stagnation from "./Stagnation.png";
+import relicChambers from "./RelicChambers.png";
+import floodedMine from "./FloodedMine.png";
+import jungleValley from "./JungleValley.png";
+import racecourse from "./Racecourse.png";
+import beach from "./Beach.png";
+import wastePool from "./WastePool.png";
+import tower from "./Tower.png";
+import excavation from "./Excavation.png";
+import desertSpring from "./DesertSpring.png";
+import fields from "./Fields.png";
+import core from "./core.png";
+import scriptorium from "./Scriptorium.png";
 
-
-let normalMapList = new Map<string, string>([
+const normalMapList = new Map<string, string>([
+    ['Scriptorium', scriptorium],
+    ['FloodedMine', floodedMine],
+    ['Stagnation', stagnation],
+    ['Dig', dig],
+    ['Wharf', wharf],
+    ['Malformation', malformation],
+    ['Siege', siege],
+    ['Chateau', chateau],
+    ['Pit', pit],
+    ['Belfry', belfry],
+    ['Marshes', marshes],
+    ['Conservatory', conservatory],
+    ['Cells', cells],
+    ['Lighthouse', lighthouse],
+    ['Ramparts', ramparts],
+    ['RelicChambers', relicChambers],
+    ['JungleValley', jungleValley],
+    ['Racecourse', racecourse],
+    ['Beach', beach],
+    ['WastePool', wastePool],
+    ['Tower', tower],
+    ['Excavation', excavation],
+    ['DesertSpring', desertSpring],
+    ['Fields', fields],
+    ['FungalHollow', fungalHollow],
+    ['Armoury', armoury],
+    ['TropicalIsland', tropicalIsland],
+    ['Barrows', barrows],
+    ['AridLake', aridLake],
+    ['Geode', geode],
+    ['Ramparts', ramparts],
+    ['CrystalOre', crystalOre],
+    ['Core', core],
     ['Atoll', atoll],
     ['BoneCrypt', boneCrypt],
     ['Cemetery', cemetery],

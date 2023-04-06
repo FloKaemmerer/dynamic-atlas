@@ -1,11 +1,11 @@
-import {AtlasNode} from "@/model/atlasNode";
+import type {AtlasNode} from "@/model/atlasNode";
 import {defineStore} from "pinia";
 // @ts-ignore
 import atlasNodes from "@/assets/atlas/atlasNodes.json";
 
 
 interface State {
-    selectedAtlasNode: AtlasNode
+    selectedAtlasNode: AtlasNode | null
     atlasNodes: Array<AtlasNode>
 
     atlasNodesMap: Map<string, AtlasNode>
@@ -15,7 +15,7 @@ interface State {
 export const useAtlasNodeStore = defineStore("atlas-node", {
     state: (): State => {
         return {
-            selectedAtlasNode: new AtlasNode("","","",",","","",false,[],0,[],0,0,[]),
+            selectedAtlasNode: null,
             atlasNodes: [],
             atlasNodesMap: new Map(),
             filteredAtlasNodes: [],
@@ -35,17 +35,21 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
             console.log("setting up Atlas Data")
 
             atlasNodes.forEach(atlasNodeElement => {
-                const atlasNode = atlasNodeElement as AtlasNode
-                atlasNode.FilterTags = [atlasNode.Name.toLowerCase()]
-                if(atlasNode.DivinationCards) {
-                    atlasNode.FilterTags = atlasNode.FilterTags.concat(atlasNode.DivinationCards.map(value => value.toLowerCase()))
+                if (atlasNodeElement.active) {
+                    const atlasNode = atlasNodeElement as AtlasNode
+                    atlasNode.FilterTags = [atlasNode.Name.toLowerCase()]
+                    if (atlasNode.DivinationCards) {
+                        atlasNode.FilterTags = atlasNode.FilterTags.concat(atlasNode.DivinationCards.map(value => value.name.toLowerCase()))
+                    }
+                    atlasNode.FilterTags = atlasNode.FilterTags.concat(getMapTierFilterTags(atlasNode.MapTier))
+                    this.atlasNodesMap.set(atlasNode.ID, atlasNode)
+                    console.log("added: " + atlasNode.Name + " using ID: " + atlasNode.ID)
+                    this.atlasNodes.push(atlasNode)
                 }
-                atlasNode.FilterTags = atlasNode.FilterTags.concat(getMapTierFilterTags(atlasNode.MapTier))
-                this.atlasNodesMap.set(atlasNodeElement.ID, atlasNode)
-                this.atlasNodes.push(atlasNode)
             });
-            function getMapTierFilterTags(mapTier: string): string[] {
-                return ["tier "+mapTier,"t"+mapTier, "tier: "+mapTier,mapTier,"natural tier: "+mapTier,"natural tier "+mapTier]
+
+            function getMapTierFilterTags(mapTier: number): string[] {
+                return ["tier " + mapTier, "t" + mapTier, "tier: " + mapTier, "" + mapTier, "natural tier: " + mapTier, "natural tier " + mapTier]
             }
         }
     }

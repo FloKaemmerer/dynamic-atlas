@@ -1,34 +1,36 @@
 <template>
-  <v-navigation-drawer :model-value="drawer" absolute location="right" :width="350">
-    <v-label class="text-h4">{{ atlasNode.Name }}</v-label>
-    <v-spacer></v-spacer>
-    <v-label class="text-h5">Natural Tier: {{atlasNode.MapTier}}</v-label>
-    <v-spacer></v-spacer>
-    <v-label class="text-h5">Number of Bosses: {{atlasNode.NumberOfBosses}}</v-label>
-    <v-spacer></v-spacer>
-    <v-row justify="center">
-      <v-col>
-        <v-sheet
-            elevation="10"
-            rounded="xl">
-          <v-sheet class="pa-3 bg-black"
-                   rounded="t-xl">Divination Cards
-          </v-sheet>
+  <v-navigation-drawer v-if="atlasNode" :model-value="drawer" absolute location="right" :width="350">
+    <v-container>
+      <v-label class="text-h4">{{ atlasNode.Name}}</v-label>
+      <v-spacer></v-spacer>
+      <v-label class="text-h5">Natural Tier: {{ atlasNode.MapTier }}</v-label>
+      <v-spacer></v-spacer>
+      <v-label class="text-h5">Number of Bosses: {{ atlasNode.NumberOfBosses }}</v-label>
+      <v-spacer></v-spacer>
+      <v-row justify="center">
+        <v-col>
+          <v-sheet
+              elevation="10"
+              rounded="xl">
+            <v-sheet class="pa-3 bg-black"
+                     rounded="t-xl">Divination Cards
+            </v-sheet>
 
-          <div class="pa-4">
-            <v-chip-group
-                selected-class="text-primary"
-                column>
-              <v-chip
-                  v-for="tag in atlasNode.DivinationCards"
-                  :key="tag">
-                {{ tag }}
-              </v-chip>
-            </v-chip-group>
-          </div>
-        </v-sheet>
-      </v-col>
-    </v-row>
+            <div class="pa-4">
+              <v-chip-group
+                            selected-class="text-primary"
+                            column>
+                <v-chip
+                    v-for="tag in atlasNode.DivinationCards"
+                    :key="tag">
+                  {{ tag }}
+                </v-chip>
+              </v-chip-group>
+            </div>
+          </v-sheet>
+        </v-col>
+      </v-row>
+    </v-container>
   </v-navigation-drawer>
 </template>
 
@@ -42,6 +44,6 @@ import type {AtlasNode} from '@/model/atlasNode'
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 
-const atlasNode = computed<AtlasNode>(() => atlasNodeStore.selectedAtlasNode);
+const atlasNode = computed<AtlasNode | null>(() => atlasNodeStore.selectedAtlasNode);
 const drawer = computed<boolean>(() => detailsDrawerStore.drawer)
 </script>

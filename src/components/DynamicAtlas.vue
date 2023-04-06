@@ -63,38 +63,40 @@ const mounted = () => {
 
   let drawnLinks: [string, string][] = [];
   atlasNodeStore.atlasNodesMap.forEach((atlasNode: AtlasNode) => {
-    let locX = getScaledAtlasNodeLocX(atlasNode)
-    let locY = getScaledAtlasNodeLocY(atlasNode)
-    let mapNodeName = atlasNode.Name.replace(/'|,|\s/g, '')
+    if (atlasNode.active) {
+      let locX = getScaledAtlasNodeLocX(atlasNode)
+      let locY = getScaledAtlasNodeLocY(atlasNode)
+      let mapNodeName = atlasNode.Name.replace(/'|,|\s/g, '')
 
-    addLinkToGroup(linksGroup, atlasNode, drawnLinks, atlasNodeStore.atlasNodesMap)
-    if (atlasNode.Unique) {
-      addImageToGroup(mapSymbolGroup, uniqueMapList.get(mapNodeName) || "", locX, locY)
-    } else {
-      addImageToGroup(mapBaseGroup, mapBase, locX, locY);
-      let mapNodeSource: string
-      if (isRedTier(atlasNode.MapTier)) {
-        mapNodeSource = redTierMapList.get(mapNodeName) || ""
-      } else if (isYellowTier(atlasNode.MapTier)) {
-        mapNodeSource = yellowTierMapList.get(mapNodeName) || ""
+      addLinkToGroup(linksGroup, atlasNode, drawnLinks, atlasNodeStore.atlasNodesMap)
+      if (atlasNode.UniqueMap) {
+        addImageToGroup(mapSymbolGroup, uniqueMapList.get(mapNodeName) || "", locX, locY)
       } else {
-        // not red or yellow, has to be white
-        mapNodeSource = whiteTierMapList.get(mapNodeName) || ""
+        addImageToGroup(mapBaseGroup, mapBase, locX, locY);
+        let mapNodeSource: string
+        if (isRedTier(atlasNode.MapTier)) {
+          mapNodeSource = redTierMapList.get(mapNodeName) || ""
+        } else if (isYellowTier(atlasNode.MapTier)) {
+          mapNodeSource = yellowTierMapList.get(mapNodeName) || ""
+        } else {
+          // not red or yellow, has to be white
+          mapNodeSource = whiteTierMapList.get(mapNodeName) || ""
+        }
+        addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY);
       }
-      addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY);
+      addMapNameToGroup(mapNameGroup, atlasNode.Name, locX, locY);
+
+      let mapHighlightArea = getHighlightArea(locX, locY);
+      mapHighlightArea.on('click', function () {
+        handleToggleDrawer(true)
+        atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
+      })
+      showTooltip(mapHighlightArea, tooltipText, tooltipContainer, atlasNode)
+
+      hideTooltip(mapHighlightArea, tooltipText, tooltipContainer)
+
+      highlightLayer.add(mapHighlightArea)
     }
-    addMapNameToGroup(mapNameGroup, atlasNode.Name, locX, locY);
-
-    let mapHighlightArea = getHighlightArea(locX, locY);
-    mapHighlightArea.on('click', function () {
-      handleToggleDrawer(true)
-      atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
-    })
-    showTooltip(mapHighlightArea, tooltipText, tooltipContainer, atlasNode)
-
-    hideTooltip(mapHighlightArea, tooltipText, tooltipContainer)
-
-    highlightLayer.add(mapHighlightArea)
   });
 
   mapLayer.add(backgroundGroup)
@@ -219,12 +221,12 @@ function getLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
   });
 }
 
-function isYellowTier(mapTier: string) {
-  return Number(mapTier) > 5 && Number(mapTier) < 11
+function isYellowTier(mapTier: number) {
+  return mapTier > 5 && mapTier < 11
 }
 
-function isRedTier(mapTier: string) {
-  return Number(mapTier) > 10
+function isRedTier(mapTier: number) {
+  return mapTier > 10
 }
 
 function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, atlasNode: AtlasNode) {
