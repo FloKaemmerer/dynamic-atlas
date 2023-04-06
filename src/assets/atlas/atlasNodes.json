@@ -26555,7 +26555,38 @@
     "LocY": "338.79",
     "Name": "Marshes",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Death"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Inoculated"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26571,7 +26602,50 @@
     "LocY": "318.505",
     "Name": "Pit",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Gladiator"
+      },
+      {
+        "name": "The King's Blade"
+      },
+      {
+        "name": "The Last One Standing"
+      },
+      {
+        "name": "The Sword King's Salute"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Unchained"
+      },
+      {
+        "name": "The Arena Champion"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26587,7 +26661,59 @@
     "LocY": "389.718",
     "Name": "Stagnation",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Azyran's Reward"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Struck by Lightning"
+      },
+      {
+        "name": "The Coming Storm"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Inoculated"
+      },
+      {
+        "name": "The Pack Leader"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Scout"
+      },
+      {
+        "name": "Alivia's Grace"
+      },
+      {
+        "name": "The Bitter Blossom"
+      },
+      {
+        "name": "The Offspring"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26603,7 +26729,56 @@
     "LocY": "494.201",
     "Name": "Scriptorium",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "A Dab of Ink"
+      },
+      {
+        "name": "Destined to Crumble"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Enthusiasts"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Professor"
+      },
+      {
+        "name": "The Scholar"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Thirst for Knowledge"
+      },
+      {
+        "name": "The Aesthete"
+      },
+      {
+        "name": "The Offering"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26619,7 +26794,62 @@
     "LocY": "96.483",
     "Name": "Tropical Island",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lantador's Lost Love"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Prosperity"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Flora's Gift"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Journey"
+      },
+      {
+        "name": "The Old Man"
+      },
+      {
+        "name": "The Pack Leader"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Catch"
+      },
+      {
+        "name": "The Scout"
+      },
+      {
+        "name": "The Destination"
+      },
+      {
+        "name": "Alivia's Grace"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26635,7 +26865,47 @@
     "LocY": "169.939",
     "Name": "Malformation",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Hunger"
+      },
+      {
+        "name": "The Oath"
+      },
+      {
+        "name": "The Surveyor"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Vile Power"
+      },
+      {
+        "name": "Vinia's Token"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26651,7 +26921,59 @@
     "LocY": "228.411",
     "Name": "Ramparts",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Hunter's Resolve"
+      },
+      {
+        "name": "Left to Fate"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Carrion Crow"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Drunken Aristocrat"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Flora's Gift"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Pack Leader"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Traitor"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Scout"
+      },
+      {
+        "name": "Alivia's Grace"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26667,7 +26989,56 @@
     "LocY": "144.944",
     "Name": "Desert Spring",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "A Note in the Wind"
+      },
+      {
+        "name": "Acclimatisation"
+      },
+      {
+        "name": "Baited Expectations"
+      },
+      {
+        "name": "Earth Drinker"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Imperial Legacy"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Tumbleweed"
+      },
+      {
+        "name": "Ambitious Obsession"
+      },
+      {
+        "name": "More is Never Enough"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26683,7 +27054,44 @@
     "LocY": "144.777",
     "Name": "Conservatory",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Boon of Justice"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Lord of Celebration"
+      },
+      {
+        "name": "The Opulent"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Undaunted"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26699,7 +27107,68 @@
     "LocY": "62.283",
     "Name": "Dig",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Buried Treasure"
+      },
+      {
+        "name": "Gift of Asenath"
+      },
+      {
+        "name": "Gift of the Gemling Queen"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Endurance"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Ruthless Ceinture"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Wolf"
+      },
+      {
+        "name": "Time-Lost Relic"
+      },
+      {
+        "name": "Volatile Power"
+      },
+      {
+        "name": "Bijoux"
+      },
+      {
+        "name": "Ambitious Obsession"
+      },
+      {
+        "name": "More is Never Enough"
+      },
+      {
+        "name": "The Mind's Eyes"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26715,7 +27184,47 @@
     "LocY": "355.889",
     "Name": "Lighthouse",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lantador's Lost Love"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Prosperity"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Journey"
+      },
+      {
+        "name": "The Old Man"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Wind"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26731,7 +27240,38 @@
     "LocY": "181.784",
     "Name": "Fungal Hollow",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Betrayal"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Treasure Hunter"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26747,7 +27287,44 @@
     "LocY": "172.483",
     "Name": "Beach",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lantador's Lost Love"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Prosperity"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Catch"
+      },
+      {
+        "name": "The Destination"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26763,7 +27340,44 @@
     "LocY": "259.429",
     "Name": "Armoury",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Merciless Armament"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Patient"
+      },
+      {
+        "name": "The Side Quest"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Warlord"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26779,7 +27393,77 @@
     "LocY": "97.409",
     "Name": "Core",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Echoes of Love"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Hunger"
+      },
+      {
+        "name": "The Insatiable"
+      },
+      {
+        "name": "The Nurse"
+      },
+      {
+        "name": "The Oath"
+      },
+      {
+        "name": "The Soul"
+      },
+      {
+        "name": "The Surveyor"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Vile Power"
+      },
+      {
+        "name": "Vinia's Token"
+      },
+      {
+        "name": "A Modest Request"
+      },
+      {
+        "name": "Brush, Paint and Palette"
+      },
+      {
+        "name": "Doedre's Madness"
+      },
+      {
+        "name": "The Aesthete"
+      },
+      {
+        "name": "The Offering"
+      },
+      {
+        "name": "The Prince of Darkness"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26795,7 +27479,62 @@
     "LocY": "178.534",
     "Name": "Geode",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Buried Treasure"
+      },
+      {
+        "name": "Gift of the Gemling Queen"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Endurance"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Primordial"
+      },
+      {
+        "name": "The Rite of Elements"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Watcher"
+      },
+      {
+        "name": "The Wolf"
+      },
+      {
+        "name": "Time-Lost Relic"
+      },
+      {
+        "name": "Volatile Power"
+      },
+      {
+        "name": "Terrible Secret of Space"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26811,7 +27550,62 @@
     "LocY": "427.324",
     "Name": "Excavation",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Buried Treasure"
+      },
+      {
+        "name": "Gift of the Gemling Queen"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Endurance"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Wolf"
+      },
+      {
+        "name": "Time-Lost Relic"
+      },
+      {
+        "name": "Treasure Hunter"
+      },
+      {
+        "name": "Volatile Power"
+      },
+      {
+        "name": "Bijoux"
+      },
+      {
+        "name": "The Cacophony"
+      },
+      {
+        "name": "The Mind's Eyes"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26827,7 +27621,38 @@
     "LocY": "491.297",
     "Name": "Belfry",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Enlightened"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Wrath"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26843,7 +27668,41 @@
     "LocY": "84.504",
     "Name": "Racecourse",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Deceiver"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Visionary"
+      },
+      {
+        "name": "Three Voices"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26859,7 +27718,47 @@
     "LocY": "115.216",
     "Name": "Barrows",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Loyalty"
+      },
+      {
+        "name": "Pride of the First Ones"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Fox"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The One With All"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Shepherd's Sandals"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26875,7 +27774,41 @@
     "LocY": "228.348",
     "Name": "Siege",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Lord of Celebration"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Ambitious Obsession"
+      },
+      {
+        "name": "More is Never Enough"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26891,7 +27824,53 @@
     "LocY": "263.98",
     "Name": "Relic Chambers",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Azyran's Reward"
+      },
+      {
+        "name": "Blind Venture"
+      },
+      {
+        "name": "Costly Curio"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Might is Right"
+      },
+      {
+        "name": "No Traces"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Opulent"
+      },
+      {
+        "name": "The Polymath"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26907,7 +27886,32 @@
     "LocY": "138.182",
     "Name": "Arid Lake",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Her Mask"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26923,7 +27927,50 @@
     "LocY": "143.278",
     "Name": "Jungle Valley",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Flora's Gift"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Pack Leader"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Web"
+      },
+      {
+        "name": "The Wind"
+      },
+      {
+        "name": "The Scout"
+      },
+      {
+        "name": "Alivia's Grace"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26939,7 +27986,62 @@
     "LocY": "306.299",
     "Name": "Waste Pool",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Doctor"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Feast"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Incantation"
+      },
+      {
+        "name": "The Soul"
+      },
+      {
+        "name": "The Throne"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Witch"
+      },
+      {
+        "name": "Vile Power"
+      },
+      {
+        "name": "The Brawny Battle Mage"
+      },
+      {
+        "name": "Brush, Paint and Palette"
+      },
+      {
+        "name": "Doedre's Madness"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26955,7 +28057,50 @@
     "LocY": "287.888",
     "Name": "Chateau",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Boon of Justice"
+      },
+      {
+        "name": "Brotherhood in Exile"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Lord of Celebration"
+      },
+      {
+        "name": "The Opulent"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Home"
+      },
+      {
+        "name": "The Scavenger"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26971,7 +28116,59 @@
     "LocY": "177.8",
     "Name": "Cells",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Chains that Bind"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Nurse"
+      },
+      {
+        "name": "The Penitent"
+      },
+      {
+        "name": "The Soul"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Warden"
+      },
+      {
+        "name": "The Dungeon Master"
+      },
+      {
+        "name": "Harmony of Souls"
+      },
+      {
+        "name": "The Aesthete"
+      },
+      {
+        "name": "The Offering"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -26987,7 +28184,80 @@
     "LocY": "231.435",
     "Name": "Flooded Mine",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Buried Treasure"
+      },
+      {
+        "name": "Gift of the Gemling Queen"
+      },
+      {
+        "name": "Glimmer of Hope"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Endurance"
+      },
+      {
+        "name": "The Fathomless Depths"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Primordial"
+      },
+      {
+        "name": "The Rite of Elements"
+      },
+      {
+        "name": "The Survivalist"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Wolf"
+      },
+      {
+        "name": "Time-Lost Relic"
+      },
+      {
+        "name": "Treasure Hunter"
+      },
+      {
+        "name": "Volatile Power"
+      },
+      {
+        "name": "A Stone Perfected"
+      },
+      {
+        "name": "Bijoux"
+      },
+      {
+        "name": "Terrible Secret of Space"
+      },
+      {
+        "name": "The Mind's Eyes"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -27003,7 +28273,68 @@
     "LocY": "151.701",
     "Name": "Wharf",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lantador's Lost Love"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Lucky Connections"
+      },
+      {
+        "name": "Prosperity"
+      },
+      {
+        "name": "Struck by Lightning"
+      },
+      {
+        "name": "The Coming Storm"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Journey"
+      },
+      {
+        "name": "The Old Man"
+      },
+      {
+        "name": "The Pact"
+      },
+      {
+        "name": "The Primordial"
+      },
+      {
+        "name": "The Rite of Elements"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "A Stone Perfected"
+      },
+      {
+        "name": "Terrible Secret of Space"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -27019,7 +28350,74 @@
     "LocY": "263.775",
     "Name": "Crystal Ore",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "A Sea of Blue"
+      },
+      {
+        "name": "Buried Treasure"
+      },
+      {
+        "name": "Gift of the Gemling Queen"
+      },
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Drunken Aristocrat"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Endurance"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Jeweller's Boon"
+      },
+      {
+        "name": "The Messenger"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "The Wolf"
+      },
+      {
+        "name": "Three Voices"
+      },
+      {
+        "name": "Time-Lost Relic"
+      },
+      {
+        "name": "Treasure Hunter"
+      },
+      {
+        "name": "Volatile Power"
+      },
+      {
+        "name": "Bijoux"
+      },
+      {
+        "name": "The Mind's Eyes"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -27035,7 +28433,59 @@
     "LocY": "354.779",
     "Name": "Tower",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Struck by Lightning"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Nurse"
+      },
+      {
+        "name": "The Soul"
+      },
+      {
+        "name": "The Stormcaller"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Tower"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Thunderous Skies"
+      },
+      {
+        "name": "Home"
+      },
+      {
+        "name": "The Aesthete"
+      },
+      {
+        "name": "The Offering"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
@@ -27051,7 +28501,53 @@
     "LocY": "420.919",
     "Name": "Fields",
     "UniqueMap": false,
-    "DivinationCards": [],
+    "DivinationCards": [
+      {
+        "name": "Her Mask"
+      },
+      {
+        "name": "Hope"
+      },
+      {
+        "name": "Lingering Remnants"
+      },
+      {
+        "name": "Rain of Chaos"
+      },
+      {
+        "name": "The Dragon's Heart"
+      },
+      {
+        "name": "The Encroaching Darkness"
+      },
+      {
+        "name": "The Fox"
+      },
+      {
+        "name": "The Gambler"
+      },
+      {
+        "name": "The Harvester"
+      },
+      {
+        "name": "The Scarred Meadow"
+      },
+      {
+        "name": "The Tinkerer's Table"
+      },
+      {
+        "name": "The Trial"
+      },
+      {
+        "name": "Tranquillity"
+      },
+      {
+        "name": "Ambitious Obsession"
+      },
+      {
+        "name": "More is Never Enough"
+      }
+    ],
     "Layout": 0,
     "FilterTags": [],
     "Traversability": 0,
