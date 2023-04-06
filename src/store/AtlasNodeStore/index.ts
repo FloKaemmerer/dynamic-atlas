@@ -45,6 +45,11 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
                     this.atlasNodesMap.set(atlasNode.ID, atlasNode)
                     console.log("added: " + atlasNode.Name + " using ID: " + atlasNode.ID)
                     this.atlasNodes.push(atlasNode)
+                    if (atlasNode.DivinationCards) {
+                        atlasNode.DivinationCards = atlasNode.DivinationCards.sort((a, b) => {
+                            return a.chaosValue >= b.chaosValue ? -1 : 1
+                        })
+                    }
                 }
             });
 

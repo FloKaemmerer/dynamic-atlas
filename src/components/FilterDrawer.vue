@@ -52,6 +52,20 @@
           </v-row>
         </v-card-text>
       </v-card>
+      <v-card>
+        <v-card-text>
+          <v-label class="text-h5" style="white-space: break-spaces">Minimum Divination Card Value:</v-label>
+          <v-text-field
+              v-model="minDivinationCardValue"
+              hide-details
+              single-line
+              type="number"
+              variant="outlined"
+              style="width: 100%"
+              density="compact"
+          clearable></v-text-field>
+        </v-card-text>
+      </v-card>
     </v-container>
   </v-navigation-drawer>
 </template>
@@ -65,12 +79,13 @@ let searchText = ref("");
 let includeNumberOfBosses = ref(false)
 let maxNumberOfBosses = ref(6)
 let minNumberOfBosses = ref(1)
+let minDivinationCardValue = ref()
 
-watch([searchText, includeNumberOfBosses, minNumberOfBosses, maxNumberOfBosses],
+watch([searchText, includeNumberOfBosses, minNumberOfBosses, maxNumberOfBosses, minDivinationCardValue],
     (searchValues) => {
       console.log(searchValues[2])
       console.log(searchValues[3])
-      handleSearch(searchValues[0], searchValues[1], [searchValues[2], searchValues[3]])
+      handleSearch(searchValues[0], searchValues[1], [searchValues[2], searchValues[3]],searchValues[4])
     });
 
 </script>

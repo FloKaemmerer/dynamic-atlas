@@ -1,6 +1,22 @@
 [
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "0",
     "Linked": "35,103,32,1",
     "MapTier": 5,
@@ -242,6 +258,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "1",
     "Linked": "0",
     "MapTier": 5,
@@ -483,6 +515,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "2",
     "Linked": "39,90,3",
     "MapTier": 1,
@@ -788,6 +836,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "3",
     "Linked": "2",
     "MapTier": 1,
@@ -821,6 +885,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Brother's Stash",
+      "chaosValue": 40.6,
+      "exaltedValue": 1.8,
+      "divineValue": 0.16,
+      "bossOnly": false,
+      "stackSize": 0,
+      "flavourText": "Even though he found the stash just in time,\nHe would trade it all away and then some to have him back.",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{5x Exalted Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "BrothersStash"
+    },
     "ID": "4",
     "Linked": "48,109,97,34,16,5",
     "MapTier": 4,
@@ -1142,6 +1222,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "5",
     "Linked": "4",
     "MapTier": 4,
@@ -1175,6 +1271,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "6",
     "Linked": "58,32,7",
     "MapTier": 7,
@@ -1400,6 +1512,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Craving",
+      "chaosValue": 4.8,
+      "exaltedValue": 0.21,
+      "divineValue": 0.02,
+      "bossOnly": false,
+      "stackSize": 4,
+      "flavourText": "What was once a passing thought tickling the back of the mind is now a desperate, driving desire.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Unending Hunger}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheCraving"
+    },
     "ID": "7",
     "Linked": "6",
     "MapTier": 7,
@@ -1433,6 +1561,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "8",
     "Linked": "113,80,94,9",
     "MapTier": 2,
@@ -1690,6 +1834,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "9",
     "Linked": "8",
     "MapTier": 2,
@@ -1739,6 +1899,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Wealth and Power",
+      "chaosValue": 127,
+      "exaltedValue": 5.64,
+      "divineValue": 0.52,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "<size:31>{The greatness of a man is not in how much wealth or power he acquires, but in his integrity and his ability to positively affect those around him.}",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Enlighten}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "WealthAndPower"
+    },
     "ID": "10",
     "Linked": "108,69,11",
     "MapTier": 4,
@@ -1964,6 +2140,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "11",
     "Linked": "10",
     "MapTier": 4,
@@ -2125,6 +2317,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Soul",
+      "chaosValue": 345.1,
+      "exaltedValue": 15.32,
+      "divineValue": 1.4,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "\"Most people only have one. I'm a bit of a hoarder.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Soul Taker}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSoul"
+    },
     "ID": "12",
     "Linked": "100,40,13",
     "MapTier": 12,
@@ -2462,6 +2670,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Doctor",
+      "chaosValue": 1848.75,
+      "exaltedValue": 82.09,
+      "divineValue": 7.5,
+      "bossOnly": false,
+      "stackSize": 8,
+      "flavourText": "\"They said I needed my head examined, but I'd rather just take yours.\" - Klopek the Cannibal",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDoctor"
+    },
     "ID": "13",
     "Linked": "12",
     "MapTier": 12,
@@ -2559,6 +2783,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "14",
     "Linked": "63,56,79,77,15",
     "MapTier": 12,
@@ -2752,6 +2992,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "15",
     "Linked": "14",
     "MapTier": 12,
@@ -2785,6 +3041,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Soul",
+      "chaosValue": 345.1,
+      "exaltedValue": 15.32,
+      "divineValue": 1.4,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "\"Most people only have one. I'm a bit of a hoarder.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Soul Taker}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSoul"
+    },
     "ID": "16",
     "Linked": "39,72,17,4",
     "MapTier": 3,
@@ -3074,6 +3346,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "17",
     "Linked": "16",
     "MapTier": 3,
@@ -3139,6 +3427,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "18",
     "Linked": "83,71,68,75,19",
     "MapTier": 6,
@@ -3428,6 +3732,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "19",
     "Linked": "18",
     "MapTier": 6,
@@ -3557,6 +3877,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "20",
     "Linked": "52,66,103,21",
     "MapTier": 3,
@@ -3926,6 +4262,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Divine Beauty",
+      "chaosValue": 115,
+      "exaltedValue": 5.11,
+      "divineValue": 0.47,
+      "bossOnly": false,
+      "stackSize": 12,
+      "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{7x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "DivineBeauty"
+    },
     "ID": "21",
     "Linked": "20",
     "MapTier": 3,
@@ -4135,6 +4487,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Enlightened",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 6,
+      "flavourText": "Weaving the six,\na serpent stands tall.\nWearing a crown,\nthe thousand petals call.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 3 Enlighten}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheEnlightened"
+    },
     "ID": "22",
     "Linked": "86,102,67,38,23",
     "MapTier": 14,
@@ -4440,6 +4808,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Fiend",
+      "chaosValue": 986,
+      "exaltedValue": 43.78,
+      "divineValue": 4,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "<size:31>{Your era is now,\nyour power unwavered, \nsoon we will see\nwho the gods truly favoured.}",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheFiend"
+    },
     "ID": "23",
     "Linked": "22",
     "MapTier": 14,
@@ -4569,6 +4953,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Divine Beauty",
+      "chaosValue": 115,
+      "exaltedValue": 5.11,
+      "divineValue": 0.47,
+      "bossOnly": false,
+      "stackSize": 12,
+      "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{7x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "DivineBeauty"
+    },
     "ID": "24",
     "Linked": "63,61,59,43,25",
     "MapTier": 10,
@@ -4906,6 +5306,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "25",
     "Linked": "24",
     "MapTier": 10,
@@ -4939,6 +5355,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "26",
     "Linked": "95,49,27",
     "MapTier": 15,
@@ -5116,6 +5548,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "27",
     "Linked": "26",
     "MapTier": 15,
@@ -5229,6 +5677,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Unrequited Love",
+      "chaosValue": 7395,
+      "exaltedValue": 328.37,
+      "divineValue": 30,
+      "bossOnly": false,
+      "stackSize": 16,
+      "flavourText": "<size:26>{The pale flame of his heart disappeared in his azure reflection.\nThe work of a life.\nAmbitious, and unfinished.}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{19x Mirror Shard}",
+          "optional": false
+        }
+      ],
+      "artFilename": "UnrequitedLove"
+    },
     "ID": "28",
     "Linked": "113,33,96,94,29",
     "MapTier": 4,
@@ -5502,6 +5966,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Monochrome",
+      "chaosValue": 20,
+      "exaltedValue": 0.89,
+      "divineValue": 0.08,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "<size:28>{\"You cannot portray the world using just one colour. Together, you and I, we will paint our world into perfection.\" \n- Kyra, renegade thaumaturgist}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{2x Elevated Sextant}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Monochrome"
+    },
     "ID": "29",
     "Linked": "28",
     "MapTier": 4,
@@ -5695,6 +6175,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "30",
     "Linked": "52,35,103",
     "MapTier": 5,
@@ -6016,6 +6512,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "31",
     "Linked": "46,86,100",
     "MapTier": 14,
@@ -6337,6 +6849,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "32",
     "Linked": "84,0,6",
     "MapTier": 6,
@@ -6642,6 +7170,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "33",
     "Linked": "0,88,65,89",
     "MapTier": 5,
@@ -6819,6 +7363,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Enlightened",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 6,
+      "flavourText": "Weaving the six,\na serpent stands tall.\nWearing a crown,\nthe thousand petals call.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 3 Enlighten}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheEnlightened"
+    },
     "ID": "34",
     "Linked": "50,18,42",
     "MapTier": 5,
@@ -7028,6 +7588,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "71",
     "Linked": "98,42,47,18",
     "MapTier": 7,
@@ -7205,6 +7781,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "85",
     "Linked": "84,74,114",
     "MapTier": 8,
@@ -7398,6 +7990,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "37",
     "Linked": "39,72,66",
     "MapTier": 1,
@@ -7575,6 +8183,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Fiend",
+      "chaosValue": 986,
+      "exaltedValue": 43.78,
+      "divineValue": 4,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "<size:31>{Your era is now,\nyour power unwavered, \nsoon we will see\nwho the gods truly favoured.}",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheFiend"
+    },
     "ID": "51",
     "Linked": "41,74,40",
     "MapTier": 10,
@@ -7768,6 +8392,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Apothecary",
+      "chaosValue": 9569.13,
+      "exaltedValue": 424.92,
+      "divineValue": 38.82,
+      "bossOnly": false,
+      "stackSize": 5,
+      "flavourText": "\"You seek the power of my strongest potions, but the price will be far higher than you can imagine.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Mageblood}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheApothecary"
+    },
     "ID": "47",
     "Linked": "71,74,114,73",
     "MapTier": 8,
@@ -8057,6 +8697,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "41",
     "Linked": "51,58",
     "MapTier": 9,
@@ -8218,6 +8874,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "41",
     "Linked": "51,58",
     "MapTier": 9,
@@ -8459,6 +9131,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "42",
     "Linked": "83,71,114,97,34",
     "MapTier": 6,
@@ -8780,6 +9468,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "112",
     "Linked": "50,107,36,90",
     "MapTier": 3,
@@ -8973,6 +9677,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "44",
     "Linked": "63,102,59,77",
     "MapTier": 12,
@@ -9150,6 +9870,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Wealth and Power",
+      "chaosValue": 127,
+      "exaltedValue": 5.64,
+      "divineValue": 0.52,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "<size:31>{The greatness of a man is not in how much wealth or power he acquires, but in his integrity and his ability to positively affect those around him.}",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Enlighten}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "WealthAndPower"
+    },
     "ID": "73",
     "Linked": "98,93,101,87,47",
     "MapTier": 9,
@@ -9487,6 +10223,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "61",
     "Linked": "98,93,57,24",
     "MapTier": 9,
@@ -9744,6 +10496,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "47",
     "Linked": "71,74,114,73",
     "MapTier": 8,
@@ -9985,6 +10753,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Soul",
+      "chaosValue": 345.1,
+      "exaltedValue": 15.32,
+      "divineValue": 1.4,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "\"Most people only have one. I'm a bit of a hoarder.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Soul Taker}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSoul"
+    },
     "ID": "42",
     "Linked": "83,71,114,97,34",
     "MapTier": 6,
@@ -10242,6 +11026,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "49",
     "Linked": "46,8",
     "MapTier": 16,
@@ -10483,6 +11283,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "108",
     "Linked": "65,89,10",
     "MapTier": 5,
@@ -10772,6 +11588,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "51",
     "Linked": "41,74,40",
     "MapTier": 10,
@@ -11013,6 +11845,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "111",
     "Linked": "106,88,65,60",
     "MapTier": 7,
@@ -11254,6 +12102,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "65",
     "Linked": "111,108,33",
     "MapTier": 6,
@@ -11527,6 +12391,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "54",
     "Linked": "106,55,60",
     "MapTier": 9,
@@ -11752,6 +12632,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "114",
     "Linked": "35,85,42,47",
     "MapTier": 7,
@@ -12057,6 +12953,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "33",
     "Linked": "88,65,89,28",
     "MapTier": 5,
@@ -12298,6 +13210,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "109",
     "Linked": "72,52,66,4",
     "MapTier": 3,
@@ -12507,6 +13435,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "105",
     "Linked": "62,38",
     "MapTier": 16,
@@ -12780,6 +13724,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "59",
     "Linked": "81,93,26,44",
     "MapTier": 11,
@@ -12957,6 +13917,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "76",
     "Linked": "62,79,77",
     "MapTier": 14,
@@ -13166,6 +14142,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "61",
     "Linked": "98,93,26,57",
     "MapTier": 9,
@@ -13519,6 +14511,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "62",
     "Linked": "76,105",
     "MapTier": 15,
@@ -13792,6 +14800,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "69",
     "Linked": "53,89,10",
     "MapTier": 3,
@@ -14049,6 +15073,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "64",
     "Linked": "80,78,94",
     "MapTier": 2,
@@ -14274,6 +15314,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Apothecary",
+      "chaosValue": 9569.13,
+      "exaltedValue": 424.92,
+      "divineValue": 38.82,
+      "bossOnly": false,
+      "stackSize": 5,
+      "flavourText": "\"You seek the power of my strongest potions, but the price will be far higher than you can imagine.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Mageblood}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheApothecary"
+    },
     "ID": "65",
     "Linked": "111,108,33",
     "MapTier": 6,
@@ -14531,6 +15587,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "66",
     "Linked": "37,2,109",
     "MapTier": 2,
@@ -14724,6 +15796,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "90",
     "Linked": "48,112,2",
     "MapTier": 2,
@@ -15189,6 +16277,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "72",
     "Linked": "37,109,16",
     "MapTier": 2,
@@ -15430,6 +16534,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "103",
     "Linked": "30,20,0",
     "MapTier": 4,
@@ -15767,6 +16887,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "68",
     "Linked": "82,106,88,57,18",
     "MapTier": 7,
@@ -15976,6 +17112,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "Divine Beauty",
+      "chaosValue": 115,
+      "exaltedValue": 5.11,
+      "divineValue": 0.47,
+      "bossOnly": false,
+      "stackSize": 12,
+      "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{7x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "DivineBeauty"
+    },
     "ID": "83",
     "Linked": "82,50,107,42,18",
     "MapTier": 5,
@@ -16297,6 +17449,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Doctor",
+      "chaosValue": 1848.75,
+      "exaltedValue": 82.09,
+      "divineValue": 7.5,
+      "bossOnly": false,
+      "stackSize": 8,
+      "flavourText": "\"They said I needed my head examined, but I'd rather just take yours.\" - Klopek the Cannibal",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDoctor"
+    },
     "ID": "72",
     "Linked": "37,109,12",
     "MapTier": 2,
@@ -16602,6 +17770,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Last One Standing",
+      "chaosValue": 60,
+      "exaltedValue": 2.66,
+      "divineValue": 0.24,
+      "bossOnly": false,
+      "stackSize": 10,
+      "flavourText": "The strongest emerge from suffering. The toughest bear the most scars. The sole survivor claims the greatest of rewards.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Atziri's Disfavour}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheLastOneStanding"
+    },
     "ID": "46",
     "Linked": "31,95,92,49",
     "MapTier": 15,
@@ -16891,6 +18075,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "97",
     "Linked": "52,35,42,4",
     "MapTier": 5,
@@ -17116,6 +18316,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "93",
     "Linked": "61,59,73,91",
     "MapTier": 10,
@@ -17341,6 +18557,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "76",
     "Linked": "62,79,77",
     "MapTier": 14,
@@ -17598,6 +18830,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "48",
     "Linked": "39,50,90,4",
     "MapTier": 3,
@@ -17935,6 +19183,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Demon",
+      "chaosValue": 1528.3,
+      "exaltedValue": 67.86,
+      "divineValue": 6.2,
+      "bossOnly": false,
+      "stackSize": 10,
+      "flavourText": "A man who hears voices may not necessarily be crazy.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}\n<corrupted>{Two-Implicit}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDemon"
+    },
     "ID": "78",
     "Linked": "36,64",
     "MapTier": 1,
@@ -18144,6 +19408,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "52",
     "Linked": "109,97,30,20",
     "MapTier": 4,
@@ -18433,6 +19713,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "95",
     "Linked": "46,100,26",
     "MapTier": 14,
@@ -18706,6 +20002,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "80",
     "Linked": "53,64,8",
     "MapTier": 1,
@@ -18995,6 +20307,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "82",
     "Linked": "83,68,96",
     "MapTier": 6,
@@ -19172,6 +20500,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "89",
     "Linked": "113,108,33,69",
     "MapTier": 4,
@@ -19397,6 +20741,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Doctor",
+      "chaosValue": 1848.75,
+      "exaltedValue": 82.09,
+      "divineValue": 7.5,
+      "bossOnly": false,
+      "stackSize": 8,
+      "flavourText": "\"They said I needed my head examined, but I'd rather just take yours.\" - Klopek the Cannibal",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDoctor"
+    },
     "ID": "84",
     "Linked": "35,85,58,32",
     "MapTier": 7,
@@ -19654,6 +21014,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "85",
     "Linked": "84,74,114",
     "MapTier": 8,
@@ -19943,6 +21319,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Fiend",
+      "chaosValue": 986,
+      "exaltedValue": 43.78,
+      "divineValue": 4,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "<size:31>{Your era is now,\nyour power unwavered, \nsoon we will see\nwho the gods truly favoured.}",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheFiend"
+    },
     "ID": "94",
     "Linked": "107,36,64,8,28",
     "MapTier": 3,
@@ -20152,6 +21544,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "Brother's Stash",
+      "chaosValue": 40.6,
+      "exaltedValue": 1.8,
+      "divineValue": 0.16,
+      "bossOnly": false,
+      "stackSize": 0,
+      "flavourText": "Even though he found the stash just in time,\nHe would trade it all away and then some to have him back.",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{5x Exalted Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "BrothersStash"
+    },
     "ID": "87",
     "Linked": "110,73,91",
     "MapTier": 10,
@@ -20361,6 +21769,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "92",
     "Linked": "46,67",
     "MapTier": 16,
@@ -20586,6 +22010,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "89",
     "Linked": "113,108,33,69",
     "MapTier": 4,
@@ -20747,6 +22187,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "78",
     "Linked": "36,64",
     "MapTier": 1,
@@ -21036,6 +22492,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "53",
     "Linked": "113,80,69",
     "MapTier": 2,
@@ -21261,6 +22733,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "88",
     "Linked": "111,33,68,96",
     "MapTier": 6,
@@ -21470,6 +22958,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Apothecary",
+      "chaosValue": 9569.13,
+      "exaltedValue": 424.92,
+      "divineValue": 38.82,
+      "bossOnly": false,
+      "stackSize": 5,
+      "flavourText": "\"You seek the power of my strongest potions, but the price will be far higher than you can imagine.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Mageblood}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheApothecary"
+    },
     "ID": "86",
     "Linked": "31,104,45,22",
     "MapTier": 13,
@@ -21743,6 +23247,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "99",
     "Linked": "67,38",
     "MapTier": 16,
@@ -22080,6 +23600,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Nurse",
+      "chaosValue": 160,
+      "exaltedValue": 7.1,
+      "divineValue": 0.65,
+      "bossOnly": false,
+      "stackSize": 8,
+      "flavourText": "We tried to tell him to get his head checked.",
+      "explicitModifiers": [
+        {
+          "text": "<divination>{The Doctor}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheNurse"
+    },
     "ID": "95",
     "Linked": "46,8,100",
     "MapTier": 14,
@@ -22369,6 +23905,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "96",
     "Linked": "82,0,107,88",
     "MapTier": 5,
@@ -22578,6 +24130,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "39",
     "Linked": "37,48,2,16",
     "MapTier": 2,
@@ -22803,6 +24371,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Apothecary",
+      "chaosValue": 9569.13,
+      "exaltedValue": 424.92,
+      "divineValue": 38.82,
+      "bossOnly": false,
+      "stackSize": 5,
+      "flavourText": "\"You seek the power of my strongest potions, but the price will be far higher than you can imagine.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Mageblood}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheApothecary"
+    },
     "ID": "91",
     "Linked": "81,93,87,45",
     "MapTier": 11,
@@ -23012,6 +24596,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "Brother's Stash",
+      "chaosValue": 40.6,
+      "exaltedValue": 1.8,
+      "divineValue": 0.16,
+      "bossOnly": false,
+      "stackSize": 0,
+      "flavourText": "Even though he found the stash just in time,\nHe would trade it all away and then some to have him back.",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{5x Exalted Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "BrothersStash"
+    },
     "ID": "99",
     "Linked": "67,38",
     "MapTier": 16,
@@ -23301,6 +24901,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "101",
     "Linked": "110,74,73,40",
     "MapTier": 10,
@@ -23494,6 +25110,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Enlightened",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 6,
+      "flavourText": "Weaving the six,\na serpent stands tall.\nWearing a crown,\nthe thousand petals call.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 3 Enlighten}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheEnlightened"
+    },
     "ID": "101",
     "Linked": "110,74,73,40",
     "MapTier": 10,
@@ -23703,6 +25335,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "102",
     "Linked": "70,81,24,44",
     "MapTier": 13,
@@ -23896,6 +25544,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "102",
     "Linked": "70,81,44,22",
     "MapTier": 13,
@@ -24121,6 +25785,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "57",
     "Linked": "68,61,75,43",
     "MapTier": 8,
@@ -24378,6 +26058,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "105",
     "Linked": "62,38",
     "MapTier": 16,
@@ -24603,6 +26299,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "79",
     "Linked": "76,14",
     "MapTier": 13,
@@ -24780,6 +26492,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "55",
     "Linked": "63,54,56,43",
     "MapTier": 10,
@@ -24941,6 +26669,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "54",
     "Linked": "106,55,60",
     "MapTier": 9,
@@ -25198,6 +26942,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "58",
     "Linked": "84,41,74,6",
     "MapTier": 8,
@@ -25423,6 +27183,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Sephirot",
+      "chaosValue": 200,
+      "exaltedValue": 8.88,
+      "divineValue": 0.81,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "If the path to divinity were simple, we'd all be gods.",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{10x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSephirot"
+    },
     "ID": "110",
     "Linked": "104,101,87,45",
     "MapTier": 11,
@@ -25728,6 +27504,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "100",
     "Linked": "31,95,104,12",
     "MapTier": 13,
@@ -25889,6 +27681,22 @@
   },
   {
     "active": false,
+    "highestValueDivinationCard": {
+      "name": "Seven Years Bad Luck",
+      "chaosValue": 493,
+      "exaltedValue": 21.89,
+      "divineValue": 2,
+      "bossOnly": false,
+      "stackSize": 13,
+      "flavourText": "If enough people believe something to be true, whether or not it is becomes irrelevant.",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{Mirror Shard}",
+          "optional": false
+        }
+      ],
+      "artFilename": "SevenYearsBadLuck"
+    },
     "ID": "112",
     "Linked": "50,107,36,90",
     "MapTier": 3,
@@ -26146,6 +27954,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "96",
     "Linked": "82,107,88,28",
     "MapTier": 5,
@@ -26371,6 +28195,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "110",
     "Linked": "104,101,87,45",
     "MapTier": 11,
@@ -26548,6 +28388,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "34",
     "Linked": "50,42,4",
     "MapTier": 5,
@@ -26725,6 +28581,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Last One Standing",
+      "chaosValue": 60,
+      "exaltedValue": 2.66,
+      "divineValue": 0.24,
+      "bossOnly": false,
+      "stackSize": 10,
+      "flavourText": "The strongest emerge from suffering. The toughest bear the most scars. The sole survivor claims the greatest of rewards.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Atziri's Disfavour}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheLastOneStanding"
+    },
     "ID": "35",
     "Linked": "84,114,97,30,0",
     "MapTier": 6,
@@ -26966,6 +28838,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "36",
     "Linked": "78,94,112",
     "MapTier": 2,
@@ -27255,6 +29143,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "37",
     "Linked": "39,72,66",
     "MapTier": 1,
@@ -27528,6 +29432,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "38",
     "Linked": "70,99,105,22",
     "MapTier": 15,
@@ -27833,6 +29753,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "40",
     "Linked": "51,104,101,12",
     "MapTier": 11,
@@ -28058,6 +29994,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "43",
     "Linked": "106,55,57,24",
     "MapTier": 9,
@@ -28347,6 +30299,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "44",
     "Linked": "63,102,59,77",
     "MapTier": 12,
@@ -28620,6 +30588,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "45",
     "Linked": "110,86,91",
     "MapTier": 12,
@@ -28829,6 +30813,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "49",
     "Linked": "46,26",
     "MapTier": 16,
@@ -29166,6 +31166,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "50",
     "Linked": "83,48,112,34",
     "MapTier": 4,
@@ -29391,6 +31407,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "56",
     "Linked": "55,14",
     "MapTier": 11,
@@ -29568,6 +31600,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "59",
     "Linked": "81,93,44,24",
     "MapTier": 11,
@@ -29777,6 +31825,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "60",
     "Linked": "111,54",
     "MapTier": 8,
@@ -29986,6 +32050,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Soul",
+      "chaosValue": 345.1,
+      "exaltedValue": 15.32,
+      "divineValue": 1.4,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "\"Most people only have one. I'm a bit of a hoarder.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Soul Taker}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSoul"
+    },
     "ID": "62",
     "Linked": "76,105",
     "MapTier": 15,
@@ -30371,6 +32451,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "63",
     "Linked": "44,55,24,14",
     "MapTier": 11,
@@ -30676,6 +32772,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "64",
     "Linked": "80,78,94",
     "MapTier": 2,
@@ -30981,6 +33093,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Enlightened",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 6,
+      "flavourText": "Weaving the six,\na serpent stands tall.\nWearing a crown,\nthe thousand petals call.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 3 Enlighten}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheEnlightened"
+    },
     "ID": "66",
     "Linked": "37,109,20",
     "MapTier": 2,
@@ -31158,6 +33286,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "67",
     "Linked": "92,99,22",
     "MapTier": 15,
@@ -31351,6 +33495,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "70",
     "Linked": "102,38,77",
     "MapTier": 14,
@@ -31576,6 +33736,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "74",
     "Linked": "51,101,85,47,58",
     "MapTier": 9,
@@ -31769,6 +33945,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "75",
     "Linked": "98,57,18",
     "MapTier": 7,
@@ -32026,6 +34218,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "77",
     "Linked": "70,76,44,14",
     "MapTier": 13,
@@ -32171,6 +34379,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "81",
     "Linked": "102,59,91",
     "MapTier": 12,
@@ -32412,6 +34636,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Doctor",
+      "chaosValue": 1848.75,
+      "exaltedValue": 82.09,
+      "divineValue": 7.5,
+      "bossOnly": false,
+      "stackSize": 8,
+      "flavourText": "\"They said I needed my head examined, but I'd rather just take yours.\" - Klopek the Cannibal",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Headhunter}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDoctor"
+    },
     "ID": "82",
     "Linked": "83,68,96",
     "MapTier": 6,
@@ -32717,6 +34957,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "84",
     "Linked": "35,85,58,32",
     "MapTier": 7,
@@ -32958,6 +35214,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Soul",
+      "chaosValue": 345.1,
+      "exaltedValue": 15.32,
+      "divineValue": 1.4,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "\"Most people only have one. I'm a bit of a hoarder.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Soul Taker}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSoul"
+    },
     "ID": "87",
     "Linked": "110,73,91",
     "MapTier": 10,
@@ -33247,6 +35519,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "98",
     "Linked": "71,61,75,73",
     "MapTier": 8,
@@ -33648,6 +35936,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "104",
     "Linked": "110,86,100,40",
     "MapTier": 12,
@@ -33985,6 +36289,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "106",
     "Linked": "111,54,68,43",
     "MapTier": 8,
@@ -34354,6 +36674,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Soul",
+      "chaosValue": 345.1,
+      "exaltedValue": 15.32,
+      "divineValue": 1.4,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "\"Most people only have one. I'm a bit of a hoarder.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Soul Taker}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSoul"
+    },
     "ID": "107",
     "Linked": "83,96,94,112",
     "MapTier": 4,
@@ -34643,6 +36979,22 @@
   },
   {
     "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 35,
+      "exaltedValue": 1.55,
+      "divineValue": 0.14,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
     "ID": "113",
     "Linked": "53,89,8,28",
     "MapTier": 3,

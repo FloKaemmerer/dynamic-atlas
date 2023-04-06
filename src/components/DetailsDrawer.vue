@@ -21,9 +21,9 @@
                             selected-class="text-primary"
                             column>
                 <v-chip
-                    v-for="tag in atlasNode.DivinationCards"
-                    :key="tag">
-                  {{ tag }}
+                    v-for="divinationCard in atlasNode.DivinationCards"
+                    :key="divinationCard">
+                  {{ divinationCard.name }} - {{ divinationCard.chaosValue}} Chaos
                 </v-chip>
               </v-chip-group>
             </div>

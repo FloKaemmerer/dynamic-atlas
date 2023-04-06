@@ -16,4 +16,5 @@ export interface AtlasNode {
     NumberOfBosses: number
     AdditionalTags: any[]
 
+    highestValueDivinationCard: DivinationCard
 }
