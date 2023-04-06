@@ -36,6 +36,7 @@
                   variant="outlined"
                   density="compact"
                   style="width: 70px"
+                  min="0"
               ></v-text-field>
             </v-col>
             <v-col>
@@ -47,6 +48,7 @@
                   variant="outlined"
                   style="width: 70px"
                   density="compact"
+                  min="0"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -63,7 +65,8 @@
               variant="outlined"
               style="width: 100%"
               density="compact"
-          clearable></v-text-field>
+              clearable
+              min="0"></v-text-field>
         </v-card-text>
       </v-card>
     </v-container>
@@ -85,7 +88,7 @@ watch([searchText, includeNumberOfBosses, minNumberOfBosses, maxNumberOfBosses, 
     (searchValues) => {
       console.log(searchValues[2])
       console.log(searchValues[3])
-      handleSearch(searchValues[0], searchValues[1], [searchValues[2], searchValues[3]],searchValues[4])
+      handleSearch(searchValues[0], searchValues[1], [searchValues[2], searchValues[3]], searchValues[4])
     });
 
 </script>
