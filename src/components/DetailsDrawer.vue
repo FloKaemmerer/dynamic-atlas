@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer v-if="atlasNode" :model-value="drawer" absolute location="right" :width="350">
     <v-container>
-      <v-label class="text-h4">{{ atlasNode.Name}}</v-label>
+      <v-label class="text-h4">{{ atlasNode.Name }}</v-label>
       <v-spacer></v-spacer>
       <v-label class="text-h5">Natural Tier: {{ atlasNode.MapTier }}</v-label>
       <v-spacer></v-spacer>
@@ -18,12 +18,19 @@
 
             <div class="pa-4">
               <v-chip-group
-                            selected-class="text-primary"
-                            column>
+                  selected-class="text-primary"
+                  column>
                 <v-chip
                     v-for="divinationCard in atlasNode.DivinationCards"
                     :key="divinationCard">
-                  {{ divinationCard.name }} - {{ divinationCard.chaosValue}} Chaos
+                  {{ divinationCard.name }} - {{ divinationCard.chaosValue }} Chaos
+                  <template v-slot:append v-if="divinationCard.bossOnly">
+                    <v-tooltip text="Boss only drop">
+                      <template v-slot:activator="{ props }">
+                        <v-icon icon="mdi-skull" v-bind="props"></v-icon>
+                      </template>
+                    </v-tooltip>
+                  </template>
                 </v-chip>
               </v-chip-group>
             </div>
