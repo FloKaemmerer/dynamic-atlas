@@ -135,14 +135,26 @@ let maxNumberOfBosses = ref(6)
 let minNumberOfBosses = ref(1)
 let minDivinationCardValue = ref()
 let layout = ref([0, 10])
-let traversability = ref([0,10])
+let traversability = ref([0, 10])
 
-watch([searchText, includeNumberOfBosses,excludePhasedBosses, minNumberOfBosses, maxNumberOfBosses, minDivinationCardValue, layout, traversability],
+watch([searchText, includeNumberOfBosses, excludePhasedBosses, minNumberOfBosses, maxNumberOfBosses, minDivinationCardValue, layout, traversability],
     (searchValues) => {
       if (includeNumberOfBosses.value) {
-        handleSearch(searchValues[0], searchValues[2],[searchValues[3], searchValues[4]], searchValues[5], searchValues[6],searchValues[7])
+        handleSearch(
+            searchValues[0],
+            searchValues[2],
+            [searchValues[3], searchValues[4]],
+            searchValues[5],
+            searchValues[6],
+            searchValues[7])
       } else {
-        handleSearch(searchValues[0],  searchValues[2],[-1, -1], searchValues[5], searchValues[6],searchValues[7])
+        handleSearch(
+            searchValues[0],
+            searchValues[2],
+            [-1, -1],
+            searchValues[5],
+            searchValues[6],
+            searchValues[7])
       }
     });
 

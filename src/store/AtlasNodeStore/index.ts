@@ -37,16 +37,16 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
             atlasNodes.forEach(atlasNodeElement => {
                 if (atlasNodeElement.active) {
                     const atlasNode = atlasNodeElement as AtlasNode
-                    atlasNode.FilterTags = [atlasNode.Name.toLowerCase()]
-                    if (atlasNode.DivinationCards) {
-                        atlasNode.FilterTags = atlasNode.FilterTags.concat(atlasNode.DivinationCards.map(value => value.name.toLowerCase()))
+                    atlasNode.filterTags = [atlasNode.name.toLowerCase()]
+                    if (atlasNode.divinationCards) {
+                        atlasNode.filterTags = atlasNode.filterTags.concat(atlasNode.divinationCards.map(value => value.name.toLowerCase()))
                     }
-                    atlasNode.FilterTags = atlasNode.FilterTags.concat(getMapTierFilterTags(atlasNode.MapTier))
-                    this.atlasNodesMap.set(atlasNode.ID, atlasNode)
-                    console.log("added: " + atlasNode.Name + " using ID: " + atlasNode.ID)
+                    atlasNode.filterTags = atlasNode.filterTags.concat(getMapTierFilterTags(atlasNode.mapTier))
+                    this.atlasNodesMap.set(atlasNode.id, atlasNode)
+                    console.log("added: " + atlasNode.name + " using ID: " + atlasNode.id)
                     this.atlasNodes.push(atlasNode)
-                    if (atlasNode.DivinationCards) {
-                        atlasNode.DivinationCards = atlasNode.DivinationCards.sort((a, b) => {
+                    if (atlasNode.divinationCards) {
+                        atlasNode.divinationCards = atlasNode.divinationCards.sort((a, b) => {
                             return a.chaosValue >= b.chaosValue ? -1 : 1
                         })
                     }

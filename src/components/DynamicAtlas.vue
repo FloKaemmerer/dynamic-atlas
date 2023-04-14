@@ -64,17 +64,17 @@ const mounted = () => {
     if (atlasNode.active) {
       let locX = getScaledAtlasNodeLocX(atlasNode)
       let locY = getScaledAtlasNodeLocY(atlasNode)
-      let mapNodeName = atlasNode.Name.replace(/'|,|\s/g, '')
+      let mapNodeName = atlasNode.name.replace(/'|,|\s/g, '')
 
       addLinkToGroup(linksGroup, atlasNode, drawnLinks, atlasNodeStore.atlasNodesMap)
-      if (atlasNode.UniqueMap) {
+      if (atlasNode.uniqueMap) {
         addImageToGroup(mapSymbolGroup, uniqueMapList.get(mapNodeName) || "", locX, locY)
       } else {
         addImageToGroup(mapBaseGroup, mapBase, locX, locY);
         let mapNodeSource: string
-        if (isRedTier(atlasNode.MapTier)) {
+        if (isRedTier(atlasNode.mapTier)) {
           mapNodeSource = redTierMapList.get(mapNodeName) || ""
-        } else if (isYellowTier(atlasNode.MapTier)) {
+        } else if (isYellowTier(atlasNode.mapTier)) {
           mapNodeSource = yellowTierMapList.get(mapNodeName) || ""
         } else {
           // not red or yellow, has to be white
@@ -82,7 +82,7 @@ const mounted = () => {
         }
         addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY);
       }
-      addMapNameToGroup(mapNameGroup, atlasNode.Name, locX, locY);
+      addMapNameToGroup(mapNameGroup, atlasNode.name, locX, locY);
 
       let mapHighlightArea = getHighlightArea(locX, locY);
       mapHighlightArea.on('click', function () {
@@ -119,7 +119,7 @@ atlasNodeStore.$subscribe((mutation, state) => {
   state.filteredAtlasNodes.forEach(value => {
 
     let filterHighlight = new Konva.Circle({
-      id: value.ID,
+      id: value.id,
       x: getScaledAtlasNodeLocX(value),
       y: getScaledAtlasNodeLocY(value),
       stroke: 'black',
@@ -133,11 +133,11 @@ atlasNodeStore.$subscribe((mutation, state) => {
 })
 
 function getScaledAtlasNodeLocX(atlasNode: AtlasNode) {
-  return Number(atlasNode.LocX) * coordinatesScaleFactor
+  return Number(atlasNode.locX) * coordinatesScaleFactor
 }
 
 function getScaledAtlasNodeLocY(atlasNode: AtlasNode) {
-  return Number(atlasNode.LocY) * coordinatesScaleFactor
+  return Number(atlasNode.locY) * coordinatesScaleFactor
 }
 
 function createBackgroundImage() {
@@ -185,13 +185,13 @@ function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, lo
 }
 
 function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [string, string][], atlasNodesMap: Map<string, AtlasNode>) {
-  let linkedNodeIds = atlasNode.Linked.split(',');
+  let linkedNodeIds = atlasNode.linked.split(',');
   linkedNodeIds.forEach(linkedNodeId => {
     let linkedNode = atlasNodesMap.get(linkedNodeId)
-    let atlasNodeId = atlasNode.ID
+    let atlasNodeId = atlasNode.id
     if (linkedNode) {
       let lineDrawn = false;
-      let linkedNodeId = linkedNode.ID
+      let linkedNodeId = linkedNode.id
       drawnLinks.forEach(drawnLink => {
         if (drawnLink[0] === atlasNodeId && drawnLink[1] === linkedNodeId
             || drawnLink[0] === linkedNodeId && drawnLink[1] === atlasNodeId) {
@@ -201,7 +201,7 @@ function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [s
       if (!lineDrawn) {
         let line = getLinkLine(atlasNode, linkedNode)
         group.add(line)
-        drawnLinks.push([atlasNode.ID, linkedNodeId])
+        drawnLinks.push([atlasNode.id, linkedNodeId])
       }
     }
   });
@@ -239,7 +239,7 @@ function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
       x: locX + 50,
       y: locY - 70
     })
-    tooltipText.text(atlasNode.Name + "\n\n" + "Natural Tier: " + atlasNode.MapTier + "\nSome useful Information about the Map. Like layout (open or close), some ratings, number of Bosses, noteable Divcards and so on.")
+    tooltipText.text(atlasNode.name + "\n\n" + "Natural Tier: " + atlasNode.mapTier + "\nSome useful Information about the Map. Like layout (open or close), some ratings, number of Bosses, noteable Divcards and so on.")
     tooltipContainer.height(tooltipText.height())
 
 

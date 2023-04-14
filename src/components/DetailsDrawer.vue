@@ -1,11 +1,11 @@
 <template>
   <v-navigation-drawer v-if="atlasNode" :model-value="drawer" absolute location="right" :width="350">
     <v-container>
-      <v-label class="text-h4">{{ atlasNode.Name }}</v-label>
+      <v-label class="text-h4">{{ atlasNode.name }}</v-label>
       <v-spacer></v-spacer>
-      <v-label class="text-h5">Natural Tier: {{ atlasNode.MapTier }}</v-label>
+      <v-label class="text-h5">Natural Tier: {{ atlasNode.mapTier }}</v-label>
       <v-spacer></v-spacer>
-      <v-label class="text-h5">Number of Bosses: {{ atlasNode.NumberOfBosses }}</v-label>
+      <v-label class="text-h5">Number of Bosses: {{ atlasNode.numberOfBosses }}</v-label>
       <v-spacer></v-spacer>
       <v-row justify="center">
         <v-col>
@@ -21,7 +21,7 @@
                   selected-class="text-primary"
                   column>
                 <v-chip
-                    v-for="divinationCard in atlasNode.DivinationCards"
+                    v-for="divinationCard in atlasNode.divinationCards"
                     :key="divinationCard">
                   {{ divinationCard.name }} - {{ divinationCard.chaosValue }} Chaos
                   <template v-slot:append v-if="divinationCard.bossOnly">
