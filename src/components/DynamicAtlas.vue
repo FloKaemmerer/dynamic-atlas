@@ -1,7 +1,6 @@
 <template>
   <v-container id="atlas">
   </v-container>
-  <DetailsDrawer :drawer="false"/>
 </template>
 
 <script setup lang="ts">
@@ -12,7 +11,6 @@ import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
 import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
 import redTierMapList from '@/assets/atlas/maps/tier11-16/index.js'
 import Konva from 'konva';
-import DetailsDrawer from '@/components/DetailsDrawer.vue'
 import {onMounted, onUnmounted} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
@@ -48,7 +46,7 @@ const mounted = () => {
     draggable: true
   });
 
- createBackgroundImage();
+  createBackgroundImage();
   let mapLayer = new Konva.Layer();
   let highlightLayer = new Konva.Layer();
 
@@ -142,7 +140,7 @@ function getScaledAtlasNodeLocY(atlasNode: AtlasNode) {
   return Number(atlasNode.LocY) * coordinatesScaleFactor
 }
 
-function createBackgroundImage(){
+function createBackgroundImage() {
   let atlasBackgroundImage = new Image();
   atlasBackgroundImage.src = atlasBackgroundSource;
   let atlasBackgroundKonvaImage = new Konva.Image({
