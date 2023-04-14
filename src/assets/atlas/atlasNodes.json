@@ -529,7 +529,7 @@
         "chaosValue": 6,
         "exaltedValue": 0.46,
         "divineValue": 0.03,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "What was once a passing thought tickling the back of the mind is now a desperate, driving desire.",
         "explicitModifiers": [
@@ -545,7 +545,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 12,
         "flavourText": "When the dead raise and master their own, the land is truly lost.",
         "explicitModifiers": [
@@ -561,7 +561,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "<size:28>{Through the eyes of a person, \nyou can see their soul\nThrough the eyes of a jewel, \nyou can see the universe}",
         "explicitModifiers": [
@@ -901,7 +901,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -917,7 +917,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -933,7 +933,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 6,
         "flavourText": "<size:24>{For the blessed bear in the cave,\nA hundred days pass in silence and darkness,\nuntil moon begins its fourth passage,\nthe bear sheds her beastly fur,\nand is reborn, human and whole.}",
         "explicitModifiers": [
@@ -949,7 +949,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Nothing can be heard above the din or seen amongst the turmoil. The senses are shattered. All is left to fate.",
         "explicitModifiers": [
@@ -1531,7 +1531,7 @@
         "chaosValue": 6,
         "exaltedValue": 0.46,
         "divineValue": 0.03,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "What was once a passing thought tickling the back of the mind is now a desperate, driving desire.",
         "explicitModifiers": [
@@ -1554,7 +1554,7 @@
       "chaosValue": 6,
       "exaltedValue": 0.46,
       "divineValue": 0.03,
-      "bossOnly": false,
+      "bossOnly": true,
       "stackSize": 4,
       "flavourText": "What was once a passing thought tickling the back of the mind is now a desperate, driving desire.",
       "explicitModifiers": [
@@ -3325,7 +3325,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "<size:29>{Shrieking souls locked away \nHate splits frozen cells asunder \nThe knot of corruption\nundone at last}",
         "explicitModifiers": [
@@ -3859,7 +3859,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 6,
         "flavourText": "They stand among us, and within us.",
         "explicitModifiers": [
@@ -4471,7 +4471,7 @@
         "chaosValue": 110,
         "exaltedValue": 8.39,
         "divineValue": 0.57,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 12,
         "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
         "explicitModifiers": [
@@ -4494,7 +4494,7 @@
       "chaosValue": 110,
       "exaltedValue": 8.39,
       "divineValue": 0.57,
-      "bossOnly": false,
+      "bossOnly": true,
       "stackSize": 12,
       "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
       "explicitModifiers": [
@@ -4793,7 +4793,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "Some things should not be used. Some power is too great a risk.",
         "explicitModifiers": [
@@ -5277,7 +5277,7 @@
         "chaosValue": 110,
         "exaltedValue": 8.39,
         "divineValue": 0.57,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 12,
         "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
         "explicitModifiers": [
@@ -5293,7 +5293,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Nothing can be heard above the din or seen amongst the turmoil. The senses are shattered. All is left to fate.",
         "explicitModifiers": [
@@ -5316,7 +5316,7 @@
       "chaosValue": 110,
       "exaltedValue": 8.39,
       "divineValue": 0.57,
-      "bossOnly": false,
+      "bossOnly": true,
       "stackSize": 12,
       "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
       "explicitModifiers": [
@@ -5537,7 +5537,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Take small pieces of things and then assemble them together",
         "explicitModifiers": [
@@ -8699,7 +8699,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Nothing can be heard above the din or seen amongst the turmoil. The senses are shattered. All is left to fate.",
         "explicitModifiers": [
@@ -8877,7 +8877,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "<size:31>{\"When Voll spared Malachai, accepting his aid in pursuit of Purity, the strongest faith was infected by Corruption and made brittle as glass.\"\n- Victario, the People's Poet}",
         "explicitModifiers": [
@@ -9473,7 +9473,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "They said they were here to protect us.",
         "explicitModifiers": [
@@ -9667,7 +9667,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 3,
         "flavourText": "<size:25>{Cede all power and wealth to me and serve me in perpetuity.\nA minor inconvenience I assure you.}",
         "explicitModifiers": [
@@ -9683,7 +9683,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 6,
         "flavourText": "<size:30>{Fear a man who is willing to sacrifice anything for power.}",
         "explicitModifiers": [
@@ -9927,7 +9927,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -9943,7 +9943,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "Some things should not be used. Some power is too great a risk.",
         "explicitModifiers": [
@@ -9959,7 +9959,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -9975,7 +9975,7 @@
         "chaosValue": 16,
         "exaltedValue": 1.22,
         "divineValue": 0.08,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 2,
         "flavourText": "Born beneath silver light, bearing Lunaris' mark.\nConjuring all his might, the Prodigy turned light to dark.",
         "explicitModifiers": [
@@ -11021,7 +11021,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 5,
         "flavourText": "\"Man may shape the world, but these? These shape the man.\" -Inquisitor Maligaro",
         "explicitModifiers": [
@@ -11037,7 +11037,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "\"Hold your tongue before I claim it.\" - Doedre Darktongue",
         "explicitModifiers": [
@@ -14535,7 +14535,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "When you strive to write your name on the dense pages of History, someone else, inevitably, must be crossed out.",
         "explicitModifiers": [
@@ -14809,7 +14809,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 6,
         "flavourText": "If this is my dream, I don't wish to wake.",
         "explicitModifiers": [
@@ -14825,7 +14825,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 5,
         "flavourText": "Let these fine arrows pack a punch.",
         "explicitModifiers": [
@@ -15067,7 +15067,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -15083,7 +15083,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -15099,7 +15099,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "The swarm began with just a couple of children. Now, it is her entire existence.",
         "explicitModifiers": [
@@ -16291,7 +16291,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "They said they were here to protect us.",
         "explicitModifiers": [
@@ -16307,7 +16307,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "<size:28>{Through the eyes of a person, \nyou can see their soul\nThrough the eyes of a jewel, \nyou can see the universe}",
         "explicitModifiers": [
@@ -17097,7 +17097,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 6,
         "flavourText": "If this is my dream, I don't wish to wake.",
         "explicitModifiers": [
@@ -17113,7 +17113,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 5,
         "flavourText": "Let these fine arrows pack a punch.",
         "explicitModifiers": [
@@ -17129,7 +17129,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Take small pieces of things and then assemble them together",
         "explicitModifiers": [
@@ -17145,7 +17145,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "<size:25>{They thought winter had come early,\nthat snow blanketed the land,\nbut in truth, all their chickens\nhad come home to roost.}",
         "explicitModifiers": [
@@ -17483,7 +17483,7 @@
         "chaosValue": 110,
         "exaltedValue": 8.39,
         "divineValue": 0.57,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 12,
         "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
         "explicitModifiers": [
@@ -17506,7 +17506,7 @@
       "chaosValue": 110,
       "exaltedValue": 8.39,
       "divineValue": 0.57,
-      "bossOnly": false,
+      "bossOnly": true,
       "stackSize": 12,
       "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
       "explicitModifiers": [
@@ -18111,7 +18111,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 10,
         "flavourText": "The fight is the easy part. It's the years of training that'll kill you.",
         "explicitModifiers": [
@@ -18853,7 +18853,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -18869,7 +18869,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -19449,7 +19449,7 @@
         "chaosValue": 2071.91,
         "exaltedValue": 158.04,
         "divineValue": 10.82,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 10,
         "flavourText": "A man who hears voices may not necessarily be crazy.",
         "explicitModifiers": [
@@ -19472,7 +19472,7 @@
       "chaosValue": 2071.91,
       "exaltedValue": 158.04,
       "divineValue": 10.82,
-      "bossOnly": false,
+      "bossOnly": true,
       "stackSize": 10,
       "flavourText": "A man who hears voices may not necessarily be crazy.",
       "explicitModifiers": [
@@ -20029,7 +20029,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -20045,7 +20045,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -22545,7 +22545,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "They said they were here to protect us.",
         "explicitModifiers": [
@@ -23657,7 +23657,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "They said they were here to protect us.",
         "explicitModifiers": [
@@ -24947,7 +24947,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 6,
         "flavourText": "If this is my dream, I don't wish to wake.",
         "explicitModifiers": [
@@ -24963,7 +24963,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 5,
         "flavourText": "Let these fine arrows pack a punch.",
         "explicitModifiers": [
@@ -27545,7 +27545,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 3,
         "flavourText": "<size:25>{Cede all power and wealth to me and serve me in perpetuity.\nA minor inconvenience I assure you.}",
         "explicitModifiers": [
@@ -27561,7 +27561,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "The path to godhood is guided by the hand of sacrifice.",
         "explicitModifiers": [
@@ -27577,7 +27577,7 @@
         "chaosValue": 170,
         "exaltedValue": 12.97,
         "divineValue": 0.89,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 11,
         "flavourText": "If the path to divinity were simple, we'd all be gods.",
         "explicitModifiers": [
@@ -27600,7 +27600,7 @@
       "chaosValue": 170,
       "exaltedValue": 12.97,
       "divineValue": 0.89,
-      "bossOnly": false,
+      "bossOnly": true,
       "stackSize": 11,
       "flavourText": "If the path to divinity were simple, we'd all be gods.",
       "explicitModifiers": [
@@ -27997,7 +27997,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "\"Hold your tongue before I claim it.\" - Doedre Darktongue",
         "explicitModifiers": [
@@ -28013,7 +28013,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "<size:29>{Shrieking souls locked away \nHate splits frozen cells asunder \nThe knot of corruption\nundone at last}",
         "explicitModifiers": [
@@ -28029,7 +28029,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Nothing can be heard above the din or seen amongst the turmoil. The senses are shattered. All is left to fate.",
         "explicitModifiers": [
@@ -28917,7 +28917,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 10,
         "flavourText": "The fight is the easy part. It's the years of training that'll kill you.",
         "explicitModifiers": [
@@ -29223,7 +29223,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "The swarm began with just a couple of children. Now, it is her entire existence.",
         "explicitModifiers": [
@@ -30657,7 +30657,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -30673,7 +30673,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -31221,7 +31221,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -31237,7 +31237,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -31253,7 +31253,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "<size:28>{Through the eyes of a person, \nyou can see their soul\nThrough the eyes of a jewel, \nyou can see the universe}",
         "explicitModifiers": [
@@ -32463,7 +32463,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 3,
         "flavourText": "<size:25>{Cede all power and wealth to me and serve me in perpetuity.\nA minor inconvenience I assure you.}",
         "explicitModifiers": [
@@ -32479,7 +32479,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 5,
         "flavourText": "\"Man may shape the world, but these? These shape the man.\" -Inquisitor Maligaro",
         "explicitModifiers": [
@@ -32495,7 +32495,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "\"Hold your tongue before I claim it.\" - Doedre Darktongue",
         "explicitModifiers": [
@@ -32543,7 +32543,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 6,
         "flavourText": "<size:30>{Fear a man who is willing to sacrifice anything for power.}",
         "explicitModifiers": [
@@ -32865,7 +32865,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "They said they were here to protect us.",
         "explicitModifiers": [
@@ -33171,7 +33171,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Nothing can be heard above the din or seen amongst the turmoil. The senses are shattered. All is left to fate.",
         "explicitModifiers": [
@@ -33187,7 +33187,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "<size:28>{Through the eyes of a person, \nyou can see their soul\nThrough the eyes of a jewel, \nyou can see the universe}",
         "explicitModifiers": [
@@ -34027,7 +34027,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -34043,7 +34043,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
@@ -35043,7 +35043,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 5,
         "flavourText": "\"Man may shape the world, but these? These shape the man.\" -Inquisitor Maligaro",
         "explicitModifiers": [
@@ -35059,7 +35059,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "\"Hold your tongue before I claim it.\" - Doedre Darktongue",
         "explicitModifiers": [
@@ -35317,7 +35317,7 @@
         "chaosValue": 1,
         "exaltedValue": 0.08,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "Take small pieces of things and then assemble them together",
         "explicitModifiers": [
@@ -35591,7 +35591,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 9,
         "flavourText": "<size:29>{Shrieking souls locked away \nHate splits frozen cells asunder \nThe knot of corruption\nundone at last}",
         "explicitModifiers": [
@@ -36025,7 +36025,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "They said they were here to protect us.",
         "explicitModifiers": [
@@ -36041,7 +36041,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "<size:28>{Through the eyes of a person, \nyou can see their soul\nThrough the eyes of a jewel, \nyou can see the universe}",
         "explicitModifiers": [
@@ -36395,7 +36395,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 8,
         "flavourText": "They said they were here to protect us.",
         "explicitModifiers": [
@@ -36781,7 +36781,7 @@
         "chaosValue": 4,
         "exaltedValue": 0.31,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "<size:28>{Through the eyes of a person, \nyou can see their soul\nThrough the eyes of a jewel, \nyou can see the universe}",
         "explicitModifiers": [
@@ -37345,7 +37345,7 @@
         "chaosValue": 3,
         "exaltedValue": 0.23,
         "divineValue": 0.02,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 4,
         "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
         "explicitModifiers": [
@@ -37361,7 +37361,7 @@
         "chaosValue": 2,
         "exaltedValue": 0.15,
         "divineValue": 0.01,
-        "bossOnly": false,
+        "bossOnly": true,
         "stackSize": 7,
         "flavourText": "Greed is a hunger that only grows as you feed it",
         "explicitModifiers": [
