@@ -76,6 +76,7 @@
         <v-card-title>Layout (Openness of the Map)</v-card-title>
         <v-card-text>
           <template v-slot:default>
+            <v-checkbox label="Include Layout" v-model="includeLayout" density="compact"></v-checkbox>
             <v-range-slider
                 v-model="layout"
                 strict
@@ -100,6 +101,7 @@
         <v-card-title>Traversability</v-card-title>
         <v-card-text>
           <template v-slot:default>
+            <v-checkbox label="Include Traversability" v-model="includeTraversability" density="compact"></v-checkbox>
             <v-range-slider
                 v-model="traversability"
                 strict
@@ -134,28 +136,30 @@ let excludePhasedBosses = ref(false)
 let maxNumberOfBosses = ref(6)
 let minNumberOfBosses = ref(1)
 let minDivinationCardValue = ref()
+let includeLayout = ref(false)
 let layout = ref([0, 10])
+let includeTraversability = ref(false)
 let traversability = ref([0, 10])
 
-watch([searchText, includeNumberOfBosses, excludePhasedBosses, minNumberOfBosses, maxNumberOfBosses, minDivinationCardValue, layout, traversability],
-    (searchValues) => {
-      if (includeNumberOfBosses.value) {
-        handleSearch(
-            searchValues[0],
-            searchValues[2],
-            [searchValues[3], searchValues[4]],
-            searchValues[5],
-            searchValues[6],
-            searchValues[7])
-      } else {
-        handleSearch(
-            searchValues[0],
-            searchValues[2],
-            [-1, -1],
-            searchValues[5],
-            searchValues[6],
-            searchValues[7])
-      }
+watch([
+    searchText,
+      includeNumberOfBosses,
+      excludePhasedBosses,
+      minNumberOfBosses,
+      maxNumberOfBosses,
+      minDivinationCardValue,
+      includeLayout,
+      layout,
+      includeTraversability,
+      traversability],
+    () => {
+      handleSearch(
+          searchText.value,
+          excludePhasedBosses.value,
+          includeNumberOfBosses.value ? [minNumberOfBosses.value, maxNumberOfBosses.value] : [-1, -1],
+          minDivinationCardValue.value,
+          includeLayout.value ? layout.value : [-1, -1],
+          includeTraversability.value ? traversability.value : [-1, -1])
     });
 
 </script>
