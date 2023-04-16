@@ -897,6 +897,22 @@
     "uniqueMap": false,
     "divinationCards": [
       {
+        "name": "Brother's Gift",
+        "chaosValue": 996.11,
+        "exaltedValue": 75.98,
+        "divineValue": 5.2,
+        "bossOnly": false,
+        "stackSize": 0,
+        "flavourText": "<size:23>{Even though his flame has burned out,\nhe will never fade away.}",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Divine Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "BrotherGift"
+      },
+      {
         "name": "Ambitious Obsession",
         "chaosValue": 3,
         "exaltedValue": 0.23,
@@ -8229,6 +8245,22 @@
     "uniqueMap": false,
     "divinationCards": [
       {
+        "name": "Soul Quenched",
+        "chaosValue": 2,
+        "exaltedValue": 0.15,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:30>{Weapons such as these require a darker kind of forge...}",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem> {Experimented Two-Handed Weapon}\n<default>{Item Level:} <normal>{86}\n<default>{Quality:} <augmented>{+30%}",
+            "optional": false
+          }
+        ],
+        "artFilename": "SoulQuenched"
+      },
+      {
         "name": "Her Mask",
         "chaosValue": 1,
         "exaltedValue": 0.08,
@@ -9922,6 +9954,22 @@
     "name": "Cold River",
     "uniqueMap": false,
     "divinationCards": [
+      {
+        "name": "A Chilling Wind",
+        "chaosValue": 3,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "<size:26>{All things slow under winter's \nonslaught - even life itself.}",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Vaal Cold Snap}\n<default>{Quality:} <augmented>{+20%}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AChillingWind"
+      },
       {
         "name": "Ambitious Obsession",
         "chaosValue": 3,
@@ -12694,6 +12742,22 @@
     "name": "Forbidden Woods",
     "uniqueMap": false,
     "divinationCards": [
+      {
+        "name": "A Chilling Wind",
+        "chaosValue": 3,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "<size:26>{All things slow under winter's \nonslaught - even life itself.}",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Vaal Cold Snap}\n<default>{Quality:} <augmented>{+20%}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AChillingWind"
+      },
       {
         "name": "Call to the First Ones",
         "chaosValue": 1,
@@ -18398,6 +18462,22 @@
     "name": "Factory",
     "uniqueMap": false,
     "divinationCards": [
+      {
+        "name": "Soul Quenched",
+        "chaosValue": 2,
+        "exaltedValue": 0.15,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:30>{Weapons such as these require a darker kind of forge...}",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem> {Experimented Two-Handed Weapon}\n<default>{Item Level:} <normal>{86}\n<default>{Quality:} <augmented>{+30%}",
+            "optional": false
+          }
+        ],
+        "artFilename": "SoulQuenched"
+      },
       {
         "name": "Her Mask",
         "chaosValue": 1,
