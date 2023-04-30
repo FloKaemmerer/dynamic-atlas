@@ -2,13 +2,17 @@
   <v-navigation-drawer floating :width="350" class="bg-surface-variant mb-6">
     <v-container>
       <v-card>
+        <v-toolbar>
+          <v-toolbar-title class="text-h6">
+            Filter by Text
+          </v-toolbar-title>
+        </v-toolbar>
         <v-card-text>
-          <v-card-title>Search:</v-card-title>
           <v-text-field
               v-model="filterText"
               density="compact"
               variant="underlined"
-              label="Search... (eg: Atoll, Doctor)"
+              label="Search... (eg: Doctor|Nurse|Patient)"
               prepend-inner-icon="mdi-magnify"
               single-line
               class="mx-2"
@@ -17,47 +21,76 @@
               clearable></v-text-field>
         </v-card-text>
       </v-card>
-      <v-spacer></v-spacer>
       <v-card>
-        <v-card-title>Bosses:</v-card-title>
+        <v-toolbar>
+          <v-toolbar-title class="text-h6">
+            Map Tier
+          </v-toolbar-title>
+          <template v-slot:append>
+            <v-checkbox v-model="includeMapTier" density="compact"></v-checkbox>
+          </template>
+        </v-toolbar>
         <v-card-text>
-          <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses" density="compact"></v-checkbox>
-          <v-checkbox label="Include Number of Bosses" v-model="includeNumberOfBosses" density="compact"></v-checkbox>
-          <v-row no-gutters>
-            <v-col> Min:</v-col>
-            <v-col> Max:</v-col>
-          </v-row>
-          <v-row no-gutters>
-            <v-col>
-              <v-text-field
-                  v-model="minNumberOfBosses"
-                  hide-details
-                  single-line
-                  type="number"
-                  variant="outlined"
-                  density="compact"
-                  style="width: 70px"
-                  min="0"
-              ></v-text-field>
-            </v-col>
-            <v-col>
-              <v-text-field
-                  v-model="maxNumberOfBosses"
-                  hide-details
-                  single-line
-                  type="number"
-                  variant="outlined"
-                  style="width: 70px"
-                  density="compact"
-                  min="0"
-              ></v-text-field>
-            </v-col>
-          </v-row>
+          <template v-slot:default>
+            <v-range-slider
+                v-model="mapTier"
+                strict
+                direction="horizontal"
+                step="1"
+                show-ticks="always"
+                tick-size="4"
+                :max="16"
+                :min="1"
+            >
+              <template v-slot:prepend>
+                <v-label style="white-space: break-spaces">{{ mapTier[0] }}</v-label>
+              </template>
+              <template v-slot:append>
+                <v-label style="white-space: break-spaces">{{ mapTier[1] }}</v-label>
+              </template>
+            </v-range-slider>
+          </template>
+        </v-card-text>
+      </v-card>
+      <v-card>
+        <v-toolbar>
+          <v-toolbar-title class="text-h6">
+            Bosses
+          </v-toolbar-title>
+
+          <template v-slot:append>
+            <v-checkbox v-model="includeNumberOfBosses" density="compact"></v-checkbox>
+          </template>
+        </v-toolbar>
+        <v-card-text>
+          <template v-slot:default>
+            <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses" density="compact"></v-checkbox>
+            <v-range-slider
+                v-model="numberOfBosses"
+                strict
+                direction="horizontal"
+                step="1"
+                show-ticks="always"
+                tick-size="4"
+                :max="6"
+                :min="0"
+            >
+              <template v-slot:prepend>
+                <v-label style="white-space: break-spaces">{{ numberOfBosses[0] }}</v-label>
+              </template>
+              <template v-slot:append>
+                <v-label style="white-space: break-spaces">{{ numberOfBosses[1] }}</v-label>
+              </template>
+            </v-range-slider>
+          </template>
         </v-card-text>
       </v-card>
       <v-spacer></v-spacer>
       <v-card>
-        <v-card-title style="white-space: break-spaces">Minimum Divination Card Value:</v-card-title>
+        <v-toolbar>
+          <v-toolbar-title class="text-h6" style="white-space: break-spaces" text="Divination Card Value:">
+          </v-toolbar-title>
+        </v-toolbar>
         <v-card-text>
           <v-text-field
               v-model="minDivinationCardValue"
@@ -73,10 +106,16 @@
       </v-card>
       <v-spacer></v-spacer>
       <v-card>
-        <v-card-title>Layout (Openness of the Map)</v-card-title>
+        <v-toolbar>
+          <v-toolbar-title class="text-h6">
+            Layout
+          </v-toolbar-title>
+          <template v-slot:append>
+            <v-checkbox v-model="includeLayout" density="compact"></v-checkbox>
+          </template>
+        </v-toolbar>
         <v-card-text>
           <template v-slot:default>
-            <v-checkbox label="Include Layout" v-model="includeLayout" density="compact"></v-checkbox>
             <v-range-slider
                 v-model="layout"
                 strict
@@ -98,10 +137,16 @@
       </v-card>
       <v-spacer></v-spacer>
       <v-card>
-        <v-card-title>Traversability</v-card-title>
+        <v-toolbar>
+          <v-toolbar-title class="text-h6">
+            Traversability
+          </v-toolbar-title>
+          <template v-slot:append>
+            <v-checkbox v-model="includeTraversability" density="compact"></v-checkbox>
+          </template>
+        </v-toolbar>
         <v-card-text>
           <template v-slot:default>
-            <v-checkbox label="Include Traversability" v-model="includeTraversability" density="compact"></v-checkbox>
             <v-range-slider
                 v-model="traversability"
                 strict
@@ -128,13 +173,14 @@
 <script setup lang="ts">
 
 import {ref, watch} from "vue";
-import {handleSearch} from "@/composable/atlasFilter";
+import {handleFilter} from "@/composable/atlasFilter";
 
 let filterText = ref("");
+let includeMapTier = ref(false)
+let mapTier = ref([1, 16])
 let includeNumberOfBosses = ref(false)
 let excludePhasedBosses = ref(false)
-let maxNumberOfBosses = ref(6)
-let minNumberOfBosses = ref(1)
+let numberOfBosses = ref([0, 6])
 let minDivinationCardValue = ref()
 let includeLayout = ref(false)
 let layout = ref([0, 10])
@@ -143,20 +189,22 @@ let traversability = ref([0, 10])
 
 watch([
       filterText,
+      includeMapTier,
+      mapTier,
       includeNumberOfBosses,
       excludePhasedBosses,
-      minNumberOfBosses,
-      maxNumberOfBosses,
+      numberOfBosses,
       minDivinationCardValue,
       includeLayout,
       layout,
       includeTraversability,
       traversability],
     () => {
-      handleSearch(
+      handleFilter(
           filterText.value,
+          includeMapTier.value ? mapTier.value : [-1, -1],
           excludePhasedBosses.value,
-          includeNumberOfBosses.value ? [minNumberOfBosses.value, maxNumberOfBosses.value] : [-1, -1],
+          includeNumberOfBosses.value ? numberOfBosses.value : [-1, -1],
           minDivinationCardValue.value,
           includeLayout.value ? layout.value : [-1, -1],
           includeTraversability.value ? traversability.value : [-1, -1])

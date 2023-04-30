@@ -1,7 +1,8 @@
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import type {AtlasNode} from "@/model/atlasNode";
 
-export const handleSearch = (filterText: string,
+export const handleFilter = (filterText: string,
+                             mapTier: number[],
                              excludePhasedBosses: boolean,
                              numberOfBosses: number[],
                              minDivinationCardValue: number,
@@ -9,13 +10,16 @@ export const handleSearch = (filterText: string,
                              traversability: number[]) => {
     const atlasNodeStore = useAtlasNodeStore();
     let result = [] as AtlasNode[]
-    const needToFilter = filterText || numberOfBosses[0] > -1 || excludePhasedBosses || minDivinationCardValue > 0 || layout[0] > -1 || traversability[0] > -1;
+    const needToFilter = filterText || mapTier[0] > -1 || numberOfBosses[0] > -1 || excludePhasedBosses || minDivinationCardValue > 0 || layout[0] > -1 || traversability[0] > -1;
 
     if (needToFilter) {
         result = atlasNodeStore.atlasNodes.filter(value => value.active)
 
-        //Filter by Text
+        // Filter by Text
         result = filterByText(filterText, result);
+
+        // Filter by MapTier
+        result = filterByMapTier(mapTier, result);
 
         // Filter by Number of Bosses
         result = filterByNumberOfBosses(numberOfBosses, result);
@@ -34,6 +38,16 @@ export const handleSearch = (filterText: string,
     }
     atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
 }
+
+function filterByMapTier(mapTier: number[], result: AtlasNode[]) {
+    if(mapTier[0]>-1){
+        result = result.filter(atlasNode =>{
+            return mapTier[0] <= atlasNode.mapTier && atlasNode.mapTier <=mapTier[1]
+        })
+    }
+    return result;
+}
+
 
 function filterByNumberOfBosses(numberOfBosses: number[], result: AtlasNode[]) {
     if (numberOfBosses[0] > -1) {
