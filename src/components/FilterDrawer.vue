@@ -1,6 +1,6 @@
 <template>
-  <v-navigation-drawer permanent floating :width="350">
-    <v-container>
+  <v-navigation-drawer floating :width="350" class="bg-surface-variant mb-6">
+    <v-container >
       <v-card>
         <v-card-text>
           <v-card-title>Search:</v-card-title>

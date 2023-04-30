@@ -10,54 +10,58 @@ export const handleSearch = (searchText: string,
                              traversability: number[]) => {
     const atlasNodeStore = useAtlasNodeStore();
     let result = [] as AtlasNode[]
-    atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS([])
+    if (searchText || numberOfBosses[0] > -1 || excludePhasedBosses || minDivinationCardValue > 0 || layout[0] > -1 || traversability[0] > -1) {
+        result = atlasNodeStore.atlasNodes.filter(value => value.active)
 
-    //Filter by search Text
-    if (searchText) {
-        const regExp = new RegExp(searchText.toLowerCase());
+        //Filter by search Text
+        if (searchText) {
+            const regExp = new RegExp(searchText.toLowerCase());
 
-        result = result.concat(atlasNodeStore.atlasNodes.filter(atlasNode =>
-            atlasNode.filterTags.some(e => regExp.test(e))))
+            result = result.filter(atlasNode =>
+                atlasNode.filterTags.some(e => regExp.test(e)))
+            console.log("Filter by SearchText FilterTags:\n Name="+result.map(value => value.name) +", FitlerTags=" +result.map(value => value.filterTags)+"\n")
+        }
+
+        // Filter by Number of Bosses
+        if (numberOfBosses[0] > -1) {
+            result = result.filter(atlasNode => {
+                return numberOfBosses[0] <= atlasNode.numberOfBosses && atlasNode.numberOfBosses <= numberOfBosses[1]
+            })
+            console.log("Filter By Number of Bosses: \n Name="+result.map(value => value.name) +", NumberOfBosses=" +result.map(value => value.numberOfBosses)+"\n" )
+        }
+
+        // Filter by phased Bosses
+        if (excludePhasedBosses) {
+            result = result.filter(atlasNode => {
+                return !atlasNode.phasedBoss
+            })
+            console.log("Filter By Phased Boss: \n Name="+result.map(value => value.name) +", PhasedBoss=" +result.map(value => value.phasedBoss)+"\n" )
+        }
+
+        // Filter by Divination Card Value
+        if (minDivinationCardValue > 0) {
+            result = result.filter(atlasNode => {
+                return atlasNode.highestValueDivinationCard.chaosValue && atlasNode.highestValueDivinationCard.chaosValue >= minDivinationCardValue
+            })
+            console.log("Filter By Divination Card Value: \n Name="+result.map(value => value.name) +", DivinationCardValue=" +result.map(value => value.highestValueDivinationCard.chaosValue)+"\n" )
+        }
+
+        // Filter by Layout
+        if (layout[0] > -1) {
+            result = result.filter(atlasNode => {
+                return layout[0] <= atlasNode.layout && atlasNode.layout <= layout[1]
+            })
+            console.log("Filter By Layout: \n Name="+result.map(value => value.name) +", Layout=" +result.map(value => value.layout)+"\n" )
+        }
+
+        // Filter by traversability
+        if (traversability[0] > -1) {
+            result = result.filter(atlasNode => {
+                console.log("Traversability: " + atlasNode.traversability + ", Min Number: " + traversability[0] + ", Max Number: " + traversability[1])
+                return traversability[0] <= atlasNode.traversability && atlasNode.traversability <= traversability[1]
+            })
+            console.log("Filter By Traversability: \n Name="+result.map(value => value.name) +", Traversability=" +result.map(value => value.traversability)+"\n" )
+        }
     }
-
-    // Filter by Number of Bosses
-    if (numberOfBosses[0] > -1) {
-        result = result.concat(atlasNodeStore.atlasNodes.filter(atlasNode => {
-            console.log("Number of Bosses: " + atlasNode.numberOfBosses + ", Min Number: " + numberOfBosses[0] + ", Max Number: " + numberOfBosses[1])
-            return numberOfBosses[0] <= atlasNode.numberOfBosses && atlasNode.numberOfBosses <= numberOfBosses[1]
-        }))
-    }
-
-    // Filter by phased Bosses
-    if (excludePhasedBosses) {
-        result = result.concat(atlasNodeStore.atlasNodes.filter(atlasNode => {
-            return !atlasNode.phasedBoss
-        }))
-    }
-
-    // Filter by Divination Card Value
-    if (minDivinationCardValue > 0) {
-        console.log()
-        result = result.concat(atlasNodeStore.atlasNodes.filter(atlasNode => {
-            return atlasNode.highestValueDivinationCard.chaosValue && atlasNode.highestValueDivinationCard.chaosValue >= minDivinationCardValue
-        }))
-    }
-
-    // Filter by Layout
-    if (layout[0] > -1) {
-        result = result.concat(atlasNodeStore.atlasNodes.filter(atlasNode => {
-            console.log("Layout: " + atlasNode.layout + ", Min Number: " + layout[0] + ", Max Number: " + layout[1])
-            return layout[0] <= atlasNode.layout && atlasNode.layout <= layout[1]
-        }))
-    }
-
-    // Filter by traversability
-    if (traversability[0] > -1) {
-        result = result.concat(atlasNodeStore.atlasNodes.filter(atlasNode => {
-            console.log("Traversability: " + atlasNode.traversability + ", Min Number: " + traversability[0] + ", Max Number: " + traversability[1])
-            return traversability[0] <= atlasNode.traversability && atlasNode.traversability <= traversability[1]
-        }))
-    }
-
     atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
 }

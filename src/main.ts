@@ -6,6 +6,7 @@ import {createPinia} from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import axios from 'axios'
 
 import 'vuetify/styles'
 import {createVuetify} from 'vuetify'
@@ -23,5 +24,7 @@ app.use(createPinia())
 app.use(vuetify);
 app.use(router)
 app.use(VueKonva, { prefix: 'k'});
+app.config.globalProperties.axios=axios
+
 
 app.mount('#app')

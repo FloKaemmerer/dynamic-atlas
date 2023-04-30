@@ -35,21 +35,19 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
             console.log("setting up Atlas Data")
 
             atlasNodes.forEach(atlasNodeElement => {
-                if (atlasNodeElement.active) {
-                    const atlasNode = atlasNodeElement as AtlasNode
-                    atlasNode.filterTags = [atlasNode.name.toLowerCase()]
-                    if (atlasNode.divinationCards) {
-                        atlasNode.filterTags = atlasNode.filterTags.concat(atlasNode.divinationCards.map(value => value.name.toLowerCase()))
-                    }
-                    atlasNode.filterTags = atlasNode.filterTags.concat(getMapTierFilterTags(atlasNode.mapTier))
-                    this.atlasNodesMap.set(atlasNode.id, atlasNode)
-                    console.log("added: " + atlasNode.name + " using ID: " + atlasNode.id)
-                    this.atlasNodes.push(atlasNode)
-                    if (atlasNode.divinationCards) {
-                        atlasNode.divinationCards = atlasNode.divinationCards.sort((a, b) => {
-                            return a.chaosValue >= b.chaosValue ? -1 : 1
-                        })
-                    }
+                const atlasNode = atlasNodeElement as AtlasNode
+                atlasNode.filterTags = [atlasNode.name.toLowerCase()]
+                if (atlasNode.divinationCards) {
+                    atlasNode.filterTags = atlasNode.filterTags.concat(atlasNode.divinationCards.map(value => value.name.toLowerCase()))
+                }
+                atlasNode.filterTags = atlasNode.filterTags.concat(getMapTierFilterTags(atlasNode.mapTier))
+                this.atlasNodesMap.set(atlasNode.id, atlasNode)
+                console.log("added: " + atlasNode.name + " using ID: " + atlasNode.id)
+                this.atlasNodes.push(atlasNode)
+                if (atlasNode.divinationCards) {
+                    atlasNode.divinationCards = atlasNode.divinationCards.sort((a, b) => {
+                        return a.chaosValue >= b.chaosValue ? -1 : 1
+                    })
                 }
             });
 

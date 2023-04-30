@@ -1,6 +1,8 @@
 <template>
-  <v-container id="atlas">
-  </v-container>
+  <FilterDrawer/>
+  <v-main style="width: 100%" id="atlas">
+  </v-main>
+  <DetailsDrawer :drawer="false"/>
 </template>
 
 <script setup lang="ts">
@@ -16,6 +18,8 @@ import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
 import {AtlasNode} from "@/model/atlasNode";
 import {handleZoom} from "@/composable/stage-zoom";
+import DetailsDrawer from "@/components/DetailsDrawer.vue";
+import FilterDrawer from "@/components/FilterDrawer.vue";
 
 const coordinatesScaleFactor = 4.1
 const atlasNodeStore = useAtlasNodeStore();
@@ -60,7 +64,7 @@ const mounted = () => {
   tooltipGroup.add(tooltipText);
 
   let drawnLinks: [string, string][] = [];
-  atlasNodeStore.atlasNodesMap.forEach((atlasNode: AtlasNode) => {
+  atlasNodeStore.atlasNodes.forEach((atlasNode: AtlasNode) => {
     if (atlasNode.active) {
       let locX = getScaledAtlasNodeLocX(atlasNode)
       let locY = getScaledAtlasNodeLocY(atlasNode)
@@ -189,7 +193,7 @@ function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [s
   linkedNodeIds.forEach(linkedNodeId => {
     let linkedNode = atlasNodesMap.get(linkedNodeId)
     let atlasNodeId = atlasNode.id
-    if (linkedNode) {
+    if (linkedNode && linkedNode.active) {
       let lineDrawn = false;
       let linkedNodeId = linkedNode.id
       drawnLinks.forEach(drawnLink => {
