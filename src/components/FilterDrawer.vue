@@ -1,11 +1,11 @@
 <template>
   <v-navigation-drawer floating :width="350" class="bg-surface-variant mb-6">
-    <v-container >
+    <v-container>
       <v-card>
         <v-card-text>
           <v-card-title>Search:</v-card-title>
           <v-text-field
-              v-model="searchText"
+              v-model="filterText"
               density="compact"
               variant="underlined"
               label="Search... (eg: Atoll, Doctor)"
@@ -128,9 +128,9 @@
 <script setup lang="ts">
 
 import {ref, watch} from "vue";
-import {handleSearch} from "@/composable/atlasSearch";
+import {handleSearch} from "@/composable/atlasFilter";
 
-let searchText = ref("");
+let filterText = ref("");
 let includeNumberOfBosses = ref(false)
 let excludePhasedBosses = ref(false)
 let maxNumberOfBosses = ref(6)
@@ -142,7 +142,7 @@ let includeTraversability = ref(false)
 let traversability = ref([0, 10])
 
 watch([
-    searchText,
+      filterText,
       includeNumberOfBosses,
       excludePhasedBosses,
       minNumberOfBosses,
@@ -154,7 +154,7 @@ watch([
       traversability],
     () => {
       handleSearch(
-          searchText.value,
+          filterText.value,
           excludePhasedBosses.value,
           includeNumberOfBosses.value ? [minNumberOfBosses.value, maxNumberOfBosses.value] : [-1, -1],
           minDivinationCardValue.value,
