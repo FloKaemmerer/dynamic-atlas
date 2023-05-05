@@ -234,29 +234,7 @@
       }
     ],
     "layout": 1,
-    "filterTags": [
-      "atoll",
-      "her mask",
-      "hope",
-      "lantador's lost love",
-      "lingering remnants",
-      "prosperity",
-      "the catch",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the journey",
-      "the spark and the flame",
-      "the tinkerer's table",
-      "the trial",
-      "the wind",
-      "tier 5",
-      "t5",
-      "tier: 5",
-      "5",
-      "natural tier: 5",
-      "natural tier 5"
-    ],
+    "filterTags": [],
     "traversability": 8,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -838,33 +816,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "bone crypt",
-      "coveted possession",
-      "grave knowledge",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the celestial justicar",
-      "the craving",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the forsaken",
-      "the gambler",
-      "the lich",
-      "the mind's eyes",
-      "the rabbit's foot",
-      "the summoner",
-      "the tinkerer's table",
-      "the trial",
-      "the wretched",
-      "tier 1",
-      "t1",
-      "tier: 1",
-      "1",
-      "natural tier: 1",
-      "natural tier 1"
-    ],
+    "filterTags": [],
     "traversability": 8,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -1270,35 +1222,7 @@
       }
     ],
     "layout": 8,
-    "filterTags": [
-      "cemetery",
-      "ambitious obsession",
-      "brother's gift",
-      "brother's stash",
-      "cursed words",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "man with bear",
-      "more is never enough",
-      "struck by lightning",
-      "the bear woman",
-      "the cacophony",
-      "the coming storm",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the one with all",
-      "the tinkerer's table",
-      "the trial",
-      "the union",
-      "tier 4",
-      "t4",
-      "tier: 4",
-      "4",
-      "natural tier: 4",
-      "natural tier 4"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -1592,28 +1516,7 @@
       }
     ],
     "layout": 3,
-    "filterTags": [
-      "cursed crypt",
-      "grave knowledge",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the celestial justicar",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the forsaken",
-      "the gambler",
-      "the rabbit's foot",
-      "the tinkerer's table",
-      "the trial",
-      "the wretched",
-      "tier 7",
-      "t7",
-      "tier: 7",
-      "7",
-      "natural tier: 7",
-      "natural tier 7"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -1939,30 +1842,7 @@
       }
     ],
     "layout": 10,
-    "filterTags": [
-      "dunes",
-      "a note in the wind",
-      "acclimatisation",
-      "baited expectations",
-      "earth drinker",
-      "her mask",
-      "hope",
-      "imperial legacy",
-      "lingering remnants",
-      "sambodhi's wisdom",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "the tumbleweed",
-      "tier 2",
-      "t2",
-      "tier: 2",
-      "2",
-      "natural tier: 2",
-      "natural tier 2"
-    ],
+    "filterTags": [],
     "traversability": 0,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -6684,34 +6564,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "courtyard",
-      "emperor's luck",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "peaceful moments",
-      "rain tempter",
-      "struck by lightning",
-      "the carrion crow",
-      "the dragon's heart",
-      "the easy stroll",
-      "the encroaching darkness",
-      "the fox in the brambles",
-      "the gambler",
-      "the porcupine",
-      "the stormcaller",
-      "the tinkerer's table",
-      "the trial",
-      "three voices",
-      "thunderous skies",
-      "tier 5",
-      "t5",
-      "tier: 5",
-      "5",
-      "natural tier: 5",
-      "natural tier 5"
-    ],
+    "filterTags": [],
     "traversability": 7,
     "numberOfBosses": 3,
     "additionalTags": [],
@@ -7632,29 +7485,7 @@
       }
     ],
     "layout": 6,
-    "filterTags": [
-      "city square",
-      "her mask",
-      "home",
-      "hope",
-      "lingering remnants",
-      "the blazing fire",
-      "the carrion crow",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the journalist",
-      "the life thief",
-      "the tinkerer's table",
-      "the trial",
-      "three voices",
-      "tier 5",
-      "t5",
-      "tier: 5",
-      "5",
-      "natural tier: 5",
-      "natural tier 5"
-    ],
+    "filterTags": [],
     "traversability": 2,
     "numberOfBosses": 3,
     "additionalTags": [],
@@ -7849,25 +7680,7 @@
       }
     ],
     "layout": 3,
-    "filterTags": [
-      "acid caverns",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the inoculated",
-      "the tinkerer's table",
-      "the trial",
-      "vile power",
-      "tier 5",
-      "t5",
-      "tier: 5",
-      "5",
-      "natural tier: 5",
-      "natural tier 5"
-    ],
+    "filterTags": [],
     "traversability": 4,
     "numberOfBosses": 2,
     "additionalTags": [],
@@ -10409,29 +10222,7 @@
       }
     ],
     "layout": 7,
-    "filterTags": [
-      "bazaar",
-      "assassin's favour",
-      "her mask",
-      "home",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the drunken aristocrat",
-      "the encroaching darkness",
-      "the gambler",
-      "the poet",
-      "the saint's treasure",
-      "the tinkerer's table",
-      "the trial",
-      "the tyrant",
-      "tier 9",
-      "t9",
-      "tier: 9",
-      "9",
-      "natural tier: 9",
-      "natural tier 9"
-    ],
+    "filterTags": [],
     "traversability": 7,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -11726,25 +11517,7 @@
       }
     ],
     "layout": 4,
-    "filterTags": [
-      "courthouse",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "the undaunted",
-      "three voices",
-      "tier 12",
-      "t12",
-      "tier: 12",
-      "12",
-      "natural tier: 12",
-      "natural tier 12"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 3,
     "additionalTags": [],
@@ -12035,31 +11808,7 @@
       }
     ],
     "layout": 6,
-    "filterTags": [
-      "desert spring",
-      "a note in the wind",
-      "acclimatisation",
-      "ambitious obsession",
-      "baited expectations",
-      "earth drinker",
-      "her mask",
-      "hope",
-      "imperial legacy",
-      "lingering remnants",
-      "more is never enough",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "the tumbleweed",
-      "tier 12",
-      "t12",
-      "tier: 12",
-      "12",
-      "natural tier: 12",
-      "natural tier 12"
-    ],
+    "filterTags": [],
     "traversability": 2,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -12286,27 +12035,7 @@
       }
     ],
     "layout": 4,
-    "filterTags": [
-      "conservatory",
-      "boon of justice",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the lord of celebration",
-      "the opulent",
-      "the tinkerer's table",
-      "the trial",
-      "the undaunted",
-      "tier 12",
-      "t12",
-      "tier: 12",
-      "12",
-      "natural tier: 12",
-      "natural tier 12"
-    ],
+    "filterTags": [],
     "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -12613,32 +12342,7 @@
       }
     ],
     "layout": 4,
-    "filterTags": [
-      "colosseum",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the arena champion",
-      "the deceiver",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the gladiator",
-      "the king's blade",
-      "the last one standing",
-      "the mad king",
-      "the sword king's salute",
-      "the tinkerer's table",
-      "the trial",
-      "the visionary",
-      "unchained",
-      "tier 15",
-      "t15",
-      "tier: 15",
-      "15",
-      "natural tier: 15",
-      "natural tier 15"
-    ],
+    "filterTags": [],
     "traversability": 7,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -12661,265 +12365,6 @@
     },
     "phasedBoss": false,
     "backtrackFactor": 6
-  },
-  {
-    "id": "47",
-    "linked": "71,74,114,73",
-    "mapTier": 8,
-    "locX": "593.215",
-    "locY": "241.805",
-    "name": "Estuary",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "From Bone to Ashes",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "For centuries, they stood vigil in secret over their sleeping goddess, even as contamination oozed out of the decadent Vaal empire.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Ngamahu's Flame}\n<corrupted>{Two-Implicit}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "FromBonesToAshes"
-      },
-      {
-        "name": "Her Mask",
-        "chaosValue": 1,
-        "exaltedValue": 0.07,
-        "divineValue": 0,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Sacrifice Fragment}",
-            "optional": false
-          }
-        ],
-        "artFilename": "HerMask"
-      },
-      {
-        "name": "Heterochromia",
-        "chaosValue": 4.3,
-        "exaltedValue": 0.3,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 2,
-        "flavourText": "<size:26>{Black and White, Silver and Gold\nLet us see the world Unfold\nRed and Blue, Yellow and Green\nLet us remake it in colours Unseen}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Two-Stone Ring}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Heterochromia"
-      },
-      {
-        "name": "Hope",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Hope"
-      },
-      {
-        "name": "Lantador's Lost Love",
-        "chaosValue": 1,
-        "exaltedValue": 0.07,
-        "divineValue": 0,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "<smaller>{They fought the storm together as one, \nUntil the longest of days was done. \nTheir love grew stronger\nwith every breath, \nUntil it was broken apart in death.}",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Two-Stone Ring}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LantadorsLostLove"
-      },
-      {
-        "name": "Lingering Remnants",
-        "chaosValue": 1.5,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 16,
-        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LingeringRemnants"
-      },
-      {
-        "name": "Prosperity",
-        "chaosValue": 2,
-        "exaltedValue": 0.14,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 10,
-        "flavourText": "Accumulating wealth has its own costs.",
-        "explicitModifiers": [
-          {
-            "text": "<magicitem>{Perandus' Gold Ring}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Prosperity"
-      },
-      {
-        "name": "The Dragon's Heart",
-        "chaosValue": 78,
-        "exaltedValue": 5.5,
-        "divineValue": 0.35,
-        "bossOnly": false,
-        "stackSize": 11,
-        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheDragonsHeart"
-      },
-      {
-        "name": "The Encroaching Darkness",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEncroachingDarkness"
-      },
-      {
-        "name": "The Gambler",
-        "chaosValue": 2.64,
-        "exaltedValue": 0.19,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{Divination Card}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGambler"
-      },
-      {
-        "name": "The Journey",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 3,
-        "flavourText": "Oh the places you will go, the sights you will see, the things you will meet.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{Harbinger's Orb}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheJourney"
-      },
-      {
-        "name": "The Standoff",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 3,
-        "flavourText": "Sometimes your greatest enemy is the only one keeping you breathing.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Rustic Sash}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheStandOff"
-      },
-      {
-        "name": "The Tinkerer's Table",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Fossil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTinkerersTable"
-      },
-      {
-        "name": "The Trial",
-        "chaosValue": 1.51,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTrial"
-      }
-    ],
-    "layout": 0,
-    "filterTags": [],
-    "traversability": 0,
-    "numberOfBosses": 1,
-    "additionalTags": [],
-    "active": false,
-    "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 78,
-      "exaltedValue": 5.5,
-      "divineValue": 0.35,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-      "explicitModifiers": [
-        {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheDragonsHeart"
-    },
-    "phasedBoss": false,
-    "backtrackFactor": 0
   },
   {
     "id": "47",
@@ -13204,32 +12649,7 @@
       }
     ],
     "layout": 3,
-    "filterTags": [
-      "crimson temple",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "seven years bad luck",
-      "the apothecary",
-      "the blazing fire",
-      "the cacophony",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the enlightened",
-      "the gambler",
-      "the journalist",
-      "the life thief",
-      "the lord of celebration",
-      "the opulent",
-      "the tinkerer's table",
-      "the trial",
-      "tier 8",
-      "t8",
-      "tier: 8",
-      "8",
-      "natural tier: 8",
-      "natural tier 8"
-    ],
+    "filterTags": [],
     "traversability": 4,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -13252,6 +12672,265 @@
     },
     "phasedBoss": false,
     "backtrackFactor": 2
+  },
+  {
+    "id": "47",
+    "linked": "71,74,114,73",
+    "mapTier": 8,
+    "locX": "593.215",
+    "locY": "241.805",
+    "name": "Estuary",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "From Bone to Ashes",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "For centuries, they stood vigil in secret over their sleeping goddess, even as contamination oozed out of the decadent Vaal empire.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Ngamahu's Flame}\n<corrupted>{Two-Implicit}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "FromBonesToAshes"
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1,
+        "exaltedValue": 0.07,
+        "divineValue": 0,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask"
+      },
+      {
+        "name": "Heterochromia",
+        "chaosValue": 4.3,
+        "exaltedValue": 0.3,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 2,
+        "flavourText": "<size:26>{Black and White, Silver and Gold\nLet us see the world Unfold\nRed and Blue, Yellow and Green\nLet us remake it in colours Unseen}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Two-Stone Ring}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Heterochromia"
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope"
+      },
+      {
+        "name": "Lantador's Lost Love",
+        "chaosValue": 1,
+        "exaltedValue": 0.07,
+        "divineValue": 0,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "<smaller>{They fought the storm together as one, \nUntil the longest of days was done. \nTheir love grew stronger\nwith every breath, \nUntil it was broken apart in death.}",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Two-Stone Ring}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LantadorsLostLove"
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.5,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants"
+      },
+      {
+        "name": "Prosperity",
+        "chaosValue": 2,
+        "exaltedValue": 0.14,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 10,
+        "flavourText": "Accumulating wealth has its own costs.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Perandus' Gold Ring}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Prosperity"
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 78,
+        "exaltedValue": 5.5,
+        "divineValue": 0.35,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart"
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness"
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 2.64,
+        "exaltedValue": 0.19,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler"
+      },
+      {
+        "name": "The Journey",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "Oh the places you will go, the sights you will see, the things you will meet.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{Harbinger's Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheJourney"
+      },
+      {
+        "name": "The Standoff",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "Sometimes your greatest enemy is the only one keeping you breathing.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Rustic Sash}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheStandOff"
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable"
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.51,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial"
+      }
+    ],
+    "layout": 6,
+    "filterTags": [],
+    "traversability": 3,
+    "numberOfBosses": 1,
+    "additionalTags": [],
+    "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 78,
+      "exaltedValue": 5.5,
+      "divineValue": 0.35,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
+    "phasedBoss": false,
+    "backtrackFactor": 7
   },
   {
     "id": "48",
@@ -13843,29 +13522,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "ancient city",
-      "arrogance of the vaal",
-      "her mask",
-      "home",
-      "hope",
-      "lingering remnants",
-      "the admirer",
-      "the catalyst",
-      "the damned",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "the tyrant",
-      "tier 16",
-      "t16",
-      "tier: 16",
-      "16",
-      "natural tier: 16",
-      "natural tier 16"
-    ],
+    "filterTags": [],
     "traversability": 10,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -14220,35 +13877,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "dig",
-      "ambitious obsession",
-      "bijoux",
-      "buried treasure",
-      "gift of asenath",
-      "gift of the gemling queen",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "more is never enough",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the endurance",
-      "the gambler",
-      "the mind's eyes",
-      "the ruthless ceinture",
-      "the tinkerer's table",
-      "the trial",
-      "the wolf",
-      "time-lost relic",
-      "volatile power",
-      "tier 16",
-      "t16",
-      "tier: 16",
-      "16",
-      "natural tier: 16",
-      "natural tier 16"
-    ],
+    "filterTags": [],
     "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -14717,9 +14346,9 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
+    "layout": 3,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 7,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -14740,7 +14369,7 @@
       "artFilename": "TheFiend"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 7
   },
   {
     "id": "51",
@@ -14976,9 +14605,9 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
+    "layout": 4,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 9,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
@@ -14999,7 +14628,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 8
   },
   {
     "id": "52",
@@ -15527,28 +15156,7 @@
       }
     ],
     "layout": 6,
-    "filterTags": [
-      "dry sea",
-      "a note in the wind",
-      "acclimatisation",
-      "baited expectations",
-      "earth drinker",
-      "her mask",
-      "hope",
-      "imperial legacy",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "tier 2",
-      "t2",
-      "tier: 2",
-      "2",
-      "natural tier: 2",
-      "natural tier 2"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -15791,28 +15399,7 @@
       }
     ],
     "layout": 6,
-    "filterTags": [
-      "desert",
-      "a note in the wind",
-      "acclimatisation",
-      "baited expectations",
-      "earth drinker",
-      "her mask",
-      "hope",
-      "imperial legacy",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "tier 9",
-      "t9",
-      "tier: 9",
-      "9",
-      "natural tier: 9",
-      "natural tier 9"
-    ],
+    "filterTags": [],
     "traversability": 2,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -16266,24 +15853,7 @@
       }
     ],
     "layout": 3,
-    "filterTags": [
-      "arachnid nest",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "the web",
-      "tier 10",
-      "t10",
-      "tier: 10",
-      "10",
-      "natural tier: 10",
-      "natural tier 10"
-    ],
+    "filterTags": [],
     "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -16477,9 +16047,9 @@
         "artFilename": "TreasureHunter"
       }
     ],
-    "layout": 0,
+    "layout": 4,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -16500,7 +16070,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 5
   },
   {
     "id": "57",
@@ -16996,28 +16566,7 @@
       }
     ],
     "layout": 3,
-    "filterTags": [
-      "caldera",
-      "from bone to ashes",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "pride before the fall",
-      "the battle born",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the king's heart",
-      "the mad king",
-      "the tinkerer's table",
-      "the trial",
-      "tier 8",
-      "t8",
-      "tier: 8",
-      "8",
-      "natural tier: 8",
-      "natural tier 8"
-    ],
+    "filterTags": [],
     "traversability": 4,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -17439,27 +16988,7 @@
       }
     ],
     "layout": 9,
-    "filterTags": [
-      "beach",
-      "her mask",
-      "hope",
-      "lantador's lost love",
-      "lingering remnants",
-      "prosperity",
-      "the catch",
-      "the destination",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "tier 11",
-      "t11",
-      "tier: 11",
-      "11",
-      "natural tier: 11",
-      "natural tier 11"
-    ],
+    "filterTags": [],
     "traversability": 0,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -17686,27 +17215,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "armoury",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "merciless armament",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the patient",
-      "the side quest",
-      "the tinkerer's table",
-      "the trial",
-      "the warlord",
-      "tier 8",
-      "t8",
-      "tier: 8",
-      "8",
-      "natural tier: 8",
-      "natural tier 8"
-    ],
+    "filterTags": [],
     "traversability": 5,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -18352,36 +17861,7 @@
       }
     ],
     "layout": 6,
-    "filterTags": [
-      "dark forest",
-      "alivia's grace",
-      "call to the first ones",
-      "etched in blood",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "mawr blaidd",
-      "the demoness",
-      "the dragon",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the flora's gift",
-      "the gambler",
-      "the mad king",
-      "the pack leader",
-      "the road to power",
-      "the scout",
-      "the tinkerer's table",
-      "the trial",
-      "the wolf's shadow",
-      "the wolven king's bite",
-      "tier 9",
-      "t9",
-      "tier: 9",
-      "9",
-      "natural tier: 9",
-      "natural tier 9"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -18672,31 +18152,7 @@
       }
     ],
     "layout": 9,
-    "filterTags": [
-      "ashen wood",
-      "alivia's grace",
-      "bowyer's dream",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the fletcher",
-      "the flora's gift",
-      "the gambler",
-      "the pack leader",
-      "the scarred meadow",
-      "the scout",
-      "the tinkerer's table",
-      "the trial",
-      "tranquillity",
-      "tier 15",
-      "t15",
-      "tier: 15",
-      "15",
-      "natural tier: 15",
-      "natural tier 15"
-    ],
+    "filterTags": [],
     "traversability": 9,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -19099,38 +18555,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "core",
-      "a modest request",
-      "brush, paint and palette",
-      "doedre's madness",
-      "echoes of love",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the aesthete",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the hunger",
-      "the insatiable",
-      "the nurse",
-      "the oath",
-      "the offering",
-      "the prince of darkness",
-      "the soul",
-      "the surveyor",
-      "the tinkerer's table",
-      "the trial",
-      "vile power",
-      "vinia's token",
-      "tier 15",
-      "t15",
-      "tier: 15",
-      "15",
-      "natural tier: 15",
-      "natural tier 15"
-    ],
+    "filterTags": [],
     "traversability": 7,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -19452,9 +18877,9 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 0,
+    "layout": 8,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 4,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -19475,7 +18900,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 2
   },
   {
     "id": "64",
@@ -19696,28 +19121,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "cage",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the chains that bind",
-      "the dragon's heart",
-      "the dungeon master",
-      "the encroaching darkness",
-      "the gambler",
-      "the penitent",
-      "the summoner",
-      "the tinkerer's table",
-      "the trial",
-      "the warden",
-      "tier 2",
-      "t2",
-      "tier: 2",
-      "2",
-      "natural tier: 2",
-      "natural tier 2"
-    ],
+    "filterTags": [],
     "traversability": 5,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -20039,9 +19443,9 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 0,
+    "layout": 3,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 7,
     "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
@@ -20062,7 +19466,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 6
   },
   {
     "id": "65",
@@ -20331,31 +19735,7 @@
       }
     ],
     "layout": 6,
-    "filterTags": [
-      "castle ruins",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "rain of chaos",
-      "the betrayal",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the fox",
-      "the gambler",
-      "the harvester",
-      "the mercenary",
-      "the road to power",
-      "the side quest",
-      "the tinkerer's table",
-      "the trial",
-      "the tyrant",
-      "tier 6",
-      "t6",
-      "tier: 6",
-      "6",
-      "natural tier: 6",
-      "natural tier 6"
-    ],
+    "filterTags": [],
     "traversability": 4,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -20656,6 +20036,201 @@
   },
   {
     "id": "66",
+    "linked": "37,109,20",
+    "mapTier": 2,
+    "locX": "677.004",
+    "locY": "491.297",
+    "name": "Belfry",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "Her Mask",
+        "chaosValue": 1,
+        "exaltedValue": 0.07,
+        "divineValue": 0,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask"
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope"
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.5,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants"
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 78,
+        "exaltedValue": 5.5,
+        "divineValue": 0.35,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart"
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness"
+      },
+      {
+        "name": "The Enlightened",
+        "chaosValue": 59,
+        "exaltedValue": 4.16,
+        "divineValue": 0.27,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "Weaving the six,\na serpent stands tall.\nWearing a crown,\nthe thousand petals call.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 3 Enlighten}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEnlightened"
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 2.64,
+        "exaltedValue": 0.19,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler"
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable"
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.51,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial"
+      },
+      {
+        "name": "The Wrath",
+        "chaosValue": 4,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "<size:31>{\"Daughter of catastrophe, mother of pain. Amongst the filth of Wraeclast, she wanders, and her wrath follows.\" - Quintoon the Returned}",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Chaos Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheWrath"
+      }
+    ],
+    "layout": 4,
+    "filterTags": [],
+    "traversability": 8,
+    "numberOfBosses": 1,
+    "additionalTags": [],
+    "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 78,
+      "exaltedValue": 5.5,
+      "divineValue": 0.35,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
+    "phasedBoss": true,
+    "backtrackFactor": 0
+  },
+  {
+    "id": "66",
     "linked": "37,2,109",
     "mapTier": 2,
     "locX": "677.004",
@@ -20840,9 +20415,9 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
+    "layout": 3,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
@@ -20863,220 +20438,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
-  },
-  {
-    "id": "66",
-    "linked": "37,109,20",
-    "mapTier": 2,
-    "locX": "677.004",
-    "locY": "491.297",
-    "name": "Belfry",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "Her Mask",
-        "chaosValue": 1,
-        "exaltedValue": 0.07,
-        "divineValue": 0,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Sacrifice Fragment}",
-            "optional": false
-          }
-        ],
-        "artFilename": "HerMask"
-      },
-      {
-        "name": "Hope",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Hope"
-      },
-      {
-        "name": "Lingering Remnants",
-        "chaosValue": 1.5,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 16,
-        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LingeringRemnants"
-      },
-      {
-        "name": "The Dragon's Heart",
-        "chaosValue": 78,
-        "exaltedValue": 5.5,
-        "divineValue": 0.35,
-        "bossOnly": false,
-        "stackSize": 11,
-        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheDragonsHeart"
-      },
-      {
-        "name": "The Encroaching Darkness",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEncroachingDarkness"
-      },
-      {
-        "name": "The Enlightened",
-        "chaosValue": 59,
-        "exaltedValue": 4.16,
-        "divineValue": 0.27,
-        "bossOnly": false,
-        "stackSize": 6,
-        "flavourText": "Weaving the six,\na serpent stands tall.\nWearing a crown,\nthe thousand petals call.",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 3 Enlighten}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEnlightened"
-      },
-      {
-        "name": "The Gambler",
-        "chaosValue": 2.64,
-        "exaltedValue": 0.19,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{Divination Card}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGambler"
-      },
-      {
-        "name": "The Tinkerer's Table",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Fossil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTinkerersTable"
-      },
-      {
-        "name": "The Trial",
-        "chaosValue": 1.51,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTrial"
-      },
-      {
-        "name": "The Wrath",
-        "chaosValue": 4,
-        "exaltedValue": 0.28,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "<size:31>{\"Daughter of catastrophe, mother of pain. Amongst the filth of Wraeclast, she wanders, and her wrath follows.\" - Quintoon the Returned}",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{10x Chaos Orb}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheWrath"
-      }
-    ],
-    "layout": 4,
-    "filterTags": [
-      "belfry",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the enlightened",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "the wrath",
-      "tier 2",
-      "t2",
-      "tier: 2",
-      "2",
-      "natural tier: 2",
-      "natural tier 2"
-    ],
-    "traversability": 8,
-    "numberOfBosses": 1,
-    "additionalTags": [],
-    "active": true,
-    "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 78,
-      "exaltedValue": 5.5,
-      "divineValue": 0.35,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-      "explicitModifiers": [
-        {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheDragonsHeart"
-    },
-    "phasedBoss": true,
-    "backtrackFactor": 0
+    "backtrackFactor": 5
   },
   {
     "id": "67",
@@ -21492,27 +20854,7 @@
       }
     ],
     "layout": 7,
-    "filterTags": [
-      "canyon",
-      "bowyer's dream",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the fletcher",
-      "the gambler",
-      "the scavenger",
-      "the tinkerer's table",
-      "the trial",
-      "the whiteout",
-      "tier 7",
-      "t7",
-      "tier: 7",
-      "7",
-      "natural tier: 7",
-      "natural tier 7"
-    ],
+    "filterTags": [],
     "traversability": 2,
     "numberOfBosses": 2,
     "additionalTags": [],
@@ -22030,28 +21372,7 @@
       }
     ],
     "layout": 6,
-    "filterTags": [
-      "barrows",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "loyalty",
-      "pride of the first ones",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the fox",
-      "the gambler",
-      "the one with all",
-      "the shepherd's sandals",
-      "the tinkerer's table",
-      "the trial",
-      "tier 14",
-      "t14",
-      "tier: 14",
-      "14",
-      "natural tier: 14",
-      "natural tier 14"
-    ],
+    "filterTags": [],
     "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -23199,36 +22520,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "cold river",
-      "a chilling wind",
-      "ambitious obsession",
-      "boundless realms",
-      "dialla's subjugation",
-      "forbidden power",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "mitts",
-      "more is never enough",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the lunaris priestess",
-      "the progeny of lunaris",
-      "the sun",
-      "the tinkerer's table",
-      "the trial",
-      "the twilight moon",
-      "the twins",
-      "wealth and power",
-      "tier 9",
-      "t9",
-      "tier: 9",
-      "9",
-      "natural tier: 9",
-      "natural tier 9"
-    ],
+    "filterTags": [],
     "traversability": 5,
     "numberOfBosses": 2,
     "additionalTags": [],
@@ -23941,27 +23233,7 @@
       }
     ],
     "layout": 3,
-    "filterTags": [
-      "dungeon",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the chains that bind",
-      "the dragon's heart",
-      "the dungeon master",
-      "the encroaching darkness",
-      "the gambler",
-      "the penitent",
-      "the tinkerer's table",
-      "the trial",
-      "the warden",
-      "tier 14",
-      "t14",
-      "tier: 14",
-      "14",
-      "natural tier: 14",
-      "natural tier 14"
-    ],
+    "filterTags": [],
     "traversability": 9,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -24399,23 +23671,7 @@
       }
     ],
     "layout": 8,
-    "filterTags": [
-      "arid lake",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "tier 13",
-      "t13",
-      "tier: 13",
-      "13",
-      "natural tier: 13",
-      "natural tier 13"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -24949,32 +24205,7 @@
       }
     ],
     "layout": 1,
-    "filterTags": [
-      "alleyways",
-      "assassin's favour",
-      "her mask",
-      "home",
-      "hope",
-      "lingering remnants",
-      "terrible secret of space",
-      "the blazing fire",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the journalist",
-      "the life thief",
-      "the poet",
-      "the saint's treasure",
-      "the side quest",
-      "the tinkerer's table",
-      "the trial",
-      "tier 1",
-      "t1",
-      "tier: 1",
-      "1",
-      "natural tier: 1",
-      "natural tier 1"
-    ],
+    "filterTags": [],
     "traversability": 2,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -25476,32 +24707,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "colonnade",
-      "dying anguish",
-      "gemcutter's promise",
-      "her mask",
-      "hope",
-      "jack in the box",
-      "lingering remnants",
-      "merciless armament",
-      "struck by lightning",
-      "the carrion crow",
-      "the coming storm",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the patient",
-      "the tinkerer's table",
-      "the trial",
-      "the warlord",
-      "tier 1",
-      "t1",
-      "tier: 1",
-      "1",
-      "natural tier: 1",
-      "natural tier 1"
-    ],
+    "filterTags": [],
     "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -26083,33 +25289,7 @@
       }
     ],
     "layout": 0,
-    "filterTags": [
-      "waste pool",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the doctor",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the feast",
-      "the gambler",
-      "the incantation",
-      "the soul",
-      "the throne",
-      "the tinkerer's table",
-      "the trial",
-      "the witch",
-      "vile power",
-      "the brawny battle mage",
-      "brush, paint and palette",
-      "doedre's madness",
-      "tier 6",
-      "t6",
-      "tier: 6",
-      "6",
-      "natural tier: 6",
-      "natural tier 6"
-    ],
+    "filterTags": [],
     "traversability": 8,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -26918,30 +26098,7 @@
       }
     ],
     "layout": 8,
-    "filterTags": [
-      "burial chambers",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the betrayal",
-      "the brawny battle mage",
-      "the doctor",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the incantation",
-      "the one with all",
-      "the summoner",
-      "the tinkerer's table",
-      "the trial",
-      "the witch",
-      "tier 7",
-      "t7",
-      "tier: 7",
-      "7",
-      "natural tier: 7",
-      "natural tier 7"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -27200,29 +26357,7 @@
       }
     ],
     "layout": 4,
-    "filterTags": [
-      "chateau",
-      "boon of justice",
-      "brotherhood in exile",
-      "her mask",
-      "home",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the lord of celebration",
-      "the opulent",
-      "the scavenger",
-      "the tinkerer's table",
-      "the trial",
-      "tier 7",
-      "t7",
-      "tier: 7",
-      "7",
-      "natural tier: 7",
-      "natural tier 7"
-    ],
+    "filterTags": [],
     "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -27529,32 +26664,7 @@
       }
     ],
     "layout": 4,
-    "filterTags": [
-      "academy",
-      "a dab of ink",
-      "checkmate",
-      "destined to crumble",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the academic",
-      "the dragon's heart",
-      "the drunken aristocrat",
-      "the encroaching darkness",
-      "the enthusiasts",
-      "the gambler",
-      "the professor",
-      "the scholar",
-      "the tinkerer's table",
-      "the trial",
-      "thirst for knowledge",
-      "tier 8",
-      "t8",
-      "tier: 8",
-      "8",
-      "natural tier: 8",
-      "natural tier 8"
-    ],
+    "filterTags": [],
     "traversability": 7,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -27765,26 +26875,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "arachnid tomb",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "parasitic passengers",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the side quest",
-      "the tinkerer's table",
-      "the trial",
-      "the web",
-      "tier 8",
-      "t8",
-      "tier: 8",
-      "8",
-      "natural tier: 8",
-      "natural tier 8"
-    ],
+    "filterTags": [],
     "traversability": 4,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -28075,31 +27166,7 @@
       }
     ],
     "layout": 3,
-    "filterTags": [
-      "defiled cathedral",
-      "her mask",
-      "hope",
-      "lachrymal necrosis",
-      "lingering remnants",
-      "seven years bad luck",
-      "the apothecary",
-      "the blazing fire",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the enlightened",
-      "the gambler",
-      "the innocent",
-      "the journalist",
-      "the life thief",
-      "the tinkerer's table",
-      "the trial",
-      "tier 13",
-      "t13",
-      "tier: 13",
-      "13",
-      "natural tier: 13",
-      "natural tier 13"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -28325,9 +27392,9 @@
         "artFilename": "TheUnion"
       }
     ],
-    "layout": 0,
+    "layout": 7,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 10,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
@@ -28348,7 +27415,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 7
   },
   {
     "id": "87",
@@ -28633,32 +27700,7 @@
       }
     ],
     "layout": 4,
-    "filterTags": [
-      "cells",
-      "harmony of souls",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the aesthete",
-      "the chains that bind",
-      "the dragon's heart",
-      "the dungeon master",
-      "the encroaching darkness",
-      "the gambler",
-      "the nurse",
-      "the offering",
-      "the penitent",
-      "the soul",
-      "the tinkerer's table",
-      "the trial",
-      "the warden",
-      "tier 10",
-      "t10",
-      "tier: 10",
-      "10",
-      "natural tier: 10",
-      "natural tier 10"
-    ],
+    "filterTags": [],
     "traversability": 9,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -29789,9 +28831,9 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 0,
+    "layout": 3,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -29812,7 +28854,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 2
   },
   {
     "id": "91",
@@ -30017,27 +29059,7 @@
       }
     ],
     "layout": 4,
-    "filterTags": [
-      "crimson township",
-      "her mask",
-      "home",
-      "hope",
-      "lingering remnants",
-      "the apothecary",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the lord of celebration",
-      "the opulent",
-      "the tinkerer's table",
-      "the trial",
-      "tier 11",
-      "t11",
-      "tier: 11",
-      "11",
-      "natural tier: 11",
-      "natural tier 11"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -30538,9 +29560,9 @@
         "artFilename": "ThreeFacesInTheDark"
       }
     ],
-    "layout": 0,
+    "layout": 4,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 5,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -30561,7 +29583,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 4
   },
   {
     "id": "94",
@@ -31364,32 +30386,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "carcass",
-      "her mask",
-      "hope",
-      "immortal resolve",
-      "lingering remnants",
-      "the aesthete",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the hunger",
-      "the insatiable",
-      "the nurse",
-      "the oath",
-      "the offering",
-      "the surveyor",
-      "the tinkerer's table",
-      "the trial",
-      "vile power",
-      "tier 14",
-      "t14",
-      "tier: 14",
-      "14",
-      "natural tier: 14",
-      "natural tier 14"
-    ],
+    "filterTags": [],
     "traversability": 1,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -31859,27 +30856,7 @@
       }
     ],
     "layout": 8,
-    "filterTags": [
-      "bog",
-      "death",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the fishmonger",
-      "the gambler",
-      "the inoculated",
-      "the rabid rhoa",
-      "the tinkerer's table",
-      "the trial",
-      "tier 5",
-      "t5",
-      "tier: 5",
-      "5",
-      "natural tier: 5",
-      "natural tier 5"
-    ],
+    "filterTags": [],
     "traversability": 5,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -32122,28 +31099,7 @@
       }
     ],
     "layout": 7,
-    "filterTags": [
-      "arcade",
-      "assassin's favour",
-      "her mask",
-      "home",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the poet",
-      "the saint's treasure",
-      "the tinkerer's table",
-      "the trial",
-      "the tyrant",
-      "tier 5",
-      "t5",
-      "tier: 5",
-      "5",
-      "natural tier: 5",
-      "natural tier 5"
-    ],
+    "filterTags": [],
     "traversability": 7,
     "numberOfBosses": 2,
     "additionalTags": [],
@@ -32561,9 +31517,9 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 0,
+    "layout": 2,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 10,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -32584,314 +31540,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
-  },
-  {
-    "id": "99",
-    "linked": "67,38",
-    "mapTier": 16,
-    "locX": "339.113",
-    "locY": "68.86",
-    "name": "Graveyard",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "Bowyer's Dream",
-        "chaosValue": 4,
-        "exaltedValue": 0.28,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 6,
-        "flavourText": "If this is my dream, I don't wish to wake.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Six-Link Harbinger Bow}\n<default>{Item Level:} <normal>{91}",
-            "optional": false
-          }
-        ],
-        "artFilename": "BowyersDream"
-      },
-      {
-        "name": "Brother's Stash",
-        "chaosValue": 70,
-        "exaltedValue": 4.94,
-        "divineValue": 0.32,
-        "bossOnly": false,
-        "stackSize": 0,
-        "flavourText": "Even though he found the stash just in time,\nHe would trade it all away and then some to have him back.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Exalted Orb}",
-            "optional": false
-          }
-        ],
-        "artFilename": "BrothersStash"
-      },
-      {
-        "name": "Cursed Words",
-        "chaosValue": 2,
-        "exaltedValue": 0.14,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 13,
-        "flavourText": "If you look hard enough for hidden meaning, you will find it.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Maw of Mischief}",
-            "optional": false
-          }
-        ],
-        "artFilename": "CursedWords"
-      },
-      {
-        "name": "Her Mask",
-        "chaosValue": 1,
-        "exaltedValue": 0.07,
-        "divineValue": 0,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Sacrifice Fragment}",
-            "optional": false
-          }
-        ],
-        "artFilename": "HerMask"
-      },
-      {
-        "name": "Hope",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Hope"
-      },
-      {
-        "name": "Lingering Remnants",
-        "chaosValue": 1.5,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 16,
-        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LingeringRemnants"
-      },
-      {
-        "name": "Struck by Lightning",
-        "chaosValue": 2,
-        "exaltedValue": 0.14,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 3,
-        "flavourText": "'Lightning never strikes the same place twice'\nis really just wishful thinking.",
-        "explicitModifiers": [
-          {
-            "text": "<magicitem>{Electrocuting Jewellery}\n<default>{Item Level:} <normal>{76}",
-            "optional": false
-          }
-        ],
-        "artFilename": "StruckbyLightning"
-      },
-      {
-        "name": "The Coming Storm",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No man may hope to turn back the storm. You can only hope you do not attract its ire.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Lightning Coil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheComingStorm"
-      },
-      {
-        "name": "The Dragon's Heart",
-        "chaosValue": 78,
-        "exaltedValue": 5.5,
-        "divineValue": 0.35,
-        "bossOnly": false,
-        "stackSize": 11,
-        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheDragonsHeart"
-      },
-      {
-        "name": "The Encroaching Darkness",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEncroachingDarkness"
-      },
-      {
-        "name": "The Fletcher",
-        "chaosValue": 4,
-        "exaltedValue": 0.28,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Let these fine arrows pack a punch.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Drillneck}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheFletcher"
-      },
-      {
-        "name": "The Gambler",
-        "chaosValue": 2.64,
-        "exaltedValue": 0.19,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{Divination Card}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGambler"
-      },
-      {
-        "name": "The One With All",
-        "chaosValue": 3.42,
-        "exaltedValue": 0.24,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 6,
-        "flavourText": "<size:26>{Embrace death to honour the lost,\nno fear in life no matter the cost. \nWith one of all we are, \nand all of one we trust, \nthroughout past, present and future... be just.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Le Heup of All}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheOneWithAll"
-      },
-      {
-        "name": "The Tinkerer's Table",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Fossil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTinkerersTable"
-      },
-      {
-        "name": "The Trial",
-        "chaosValue": 1.51,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTrial"
-      },
-      {
-        "name": "The Union",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "On the 21st of Eterni, \ntwo become one, \ntheir light outshines \nthe setting sun.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{10x Gemcutter's Prism}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheUnion"
-      },
-      {
-        "name": "Three Voices",
-        "chaosValue": 2.12,
-        "exaltedValue": 0.15,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 3,
-        "flavourText": "The village elders had a curious rule: If you hear three voices scream for aid, flee as fast as you can.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{3x Essence}",
-            "optional": false
-          }
-        ],
-        "artFilename": "ThreeVoices"
-      }
-    ],
-    "layout": 0,
-    "filterTags": [],
-    "traversability": 0,
-    "numberOfBosses": 3,
-    "additionalTags": [],
-    "active": false,
-    "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 78,
-      "exaltedValue": 5.5,
-      "divineValue": 0.35,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-      "explicitModifiers": [
-        {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheDragonsHeart"
-    },
-    "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 9
   },
   {
     "id": "99",
@@ -33224,35 +31873,7 @@
       }
     ],
     "layout": 7,
-    "filterTags": [
-      "coves",
-      "a stone perfected",
-      "from bone to ashes",
-      "her mask",
-      "hope",
-      "lantador's lost love",
-      "lingering remnants",
-      "prosperity",
-      "scholar of the seas",
-      "terrible secret of space",
-      "the catch",
-      "the deep ones",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the formless sea",
-      "the gambler",
-      "the journey",
-      "the primordial",
-      "the rite of elements",
-      "the tinkerer's table",
-      "the trial",
-      "tier 16",
-      "t16",
-      "tier: 16",
-      "16",
-      "natural tier: 16",
-      "natural tier 16"
-    ],
+    "filterTags": [],
     "traversability": 3,
     "numberOfBosses": 2,
     "additionalTags": [],
@@ -33275,6 +31896,313 @@
     },
     "phasedBoss": false,
     "backtrackFactor": 2
+  },
+  {
+    "id": "99",
+    "linked": "67,38",
+    "mapTier": 16,
+    "locX": "339.113",
+    "locY": "68.86",
+    "name": "Graveyard",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "Bowyer's Dream",
+        "chaosValue": 4,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "If this is my dream, I don't wish to wake.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Six-Link Harbinger Bow}\n<default>{Item Level:} <normal>{91}",
+            "optional": false
+          }
+        ],
+        "artFilename": "BowyersDream"
+      },
+      {
+        "name": "Brother's Stash",
+        "chaosValue": 70,
+        "exaltedValue": 4.94,
+        "divineValue": 0.32,
+        "bossOnly": false,
+        "stackSize": 0,
+        "flavourText": "Even though he found the stash just in time,\nHe would trade it all away and then some to have him back.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Exalted Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "BrothersStash"
+      },
+      {
+        "name": "Cursed Words",
+        "chaosValue": 2,
+        "exaltedValue": 0.14,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 13,
+        "flavourText": "If you look hard enough for hidden meaning, you will find it.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Maw of Mischief}",
+            "optional": false
+          }
+        ],
+        "artFilename": "CursedWords"
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1,
+        "exaltedValue": 0.07,
+        "divineValue": 0,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask"
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope"
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.5,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants"
+      },
+      {
+        "name": "Struck by Lightning",
+        "chaosValue": 2,
+        "exaltedValue": 0.14,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "'Lightning never strikes the same place twice'\nis really just wishful thinking.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Electrocuting Jewellery}\n<default>{Item Level:} <normal>{76}",
+            "optional": false
+          }
+        ],
+        "artFilename": "StruckbyLightning"
+      },
+      {
+        "name": "The Coming Storm",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No man may hope to turn back the storm. You can only hope you do not attract its ire.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Lightning Coil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheComingStorm"
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 78,
+        "exaltedValue": 5.5,
+        "divineValue": 0.35,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart"
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness"
+      },
+      {
+        "name": "The Fletcher",
+        "chaosValue": 4,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Let these fine arrows pack a punch.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Drillneck}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheFletcher"
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 2.64,
+        "exaltedValue": 0.19,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler"
+      },
+      {
+        "name": "The One With All",
+        "chaosValue": 3.42,
+        "exaltedValue": 0.24,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "<size:26>{Embrace death to honour the lost,\nno fear in life no matter the cost. \nWith one of all we are, \nand all of one we trust, \nthroughout past, present and future... be just.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Le Heup of All}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheOneWithAll"
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable"
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.51,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial"
+      },
+      {
+        "name": "The Union",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "On the 21st of Eterni, \ntwo become one, \ntheir light outshines \nthe setting sun.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Gemcutter's Prism}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheUnion"
+      },
+      {
+        "name": "Three Voices",
+        "chaosValue": 2.12,
+        "exaltedValue": 0.15,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "The village elders had a curious rule: If you hear three voices scream for aid, flee as fast as you can.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{3x Essence}",
+            "optional": false
+          }
+        ],
+        "artFilename": "ThreeVoices"
+      }
+    ],
+    "layout": 9,
+    "filterTags": [],
+    "traversability": 2,
+    "numberOfBosses": 3,
+    "additionalTags": [],
+    "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 78,
+      "exaltedValue": 5.5,
+      "divineValue": 0.35,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
+    "phasedBoss": true,
+    "backtrackFactor": 3
   },
   {
     "id": "100",
@@ -33431,24 +32359,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "crater",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the standoff",
-      "the tinkerer's table",
-      "the trial",
-      "tier 13",
-      "t13",
-      "tier: 13",
-      "13",
-      "natural tier: 13",
-      "natural tier 13"
-    ],
+    "filterTags": [],
     "traversability": 8,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -34340,26 +33251,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "channel",
-      "her mask",
-      "hope",
-      "humility",
-      "lingering remnants",
-      "parasitic passengers",
-      "the carrion crow",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the tinkerer's table",
-      "the trial",
-      "tier 13",
-      "t13",
-      "tier: 13",
-      "13",
-      "natural tier: 13",
-      "natural tier 13"
-    ],
+    "filterTags": [],
     "traversability": 2,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -35360,31 +34252,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "arsenal",
-      "dying anguish",
-      "her mask",
-      "hope",
-      "jack in the box",
-      "lingering remnants",
-      "merciless armament",
-      "rats",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the patient",
-      "the return of the rat",
-      "the tinkerer's table",
-      "the trial",
-      "the warlord",
-      "three faces in the dark",
-      "tier 16",
-      "t16",
-      "tier: 16",
-      "16",
-      "natural tier: 16",
-      "natural tier 16"
-    ],
+    "filterTags": [],
     "traversability": 7,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -35626,9 +34494,9 @@
         "artFilename": "TheTyrant"
       }
     ],
-    "layout": 0,
+    "layout": 4,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 9,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
@@ -35649,7 +34517,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 8
   },
   {
     "id": "106",
@@ -36014,37 +34882,7 @@
       }
     ],
     "layout": 2,
-    "filterTags": [
-      "crystal ore",
-      "a sea of blue",
-      "bijoux",
-      "buried treasure",
-      "gift of the gemling queen",
-      "her mask",
-      "hope",
-      "lingering remnants",
-      "the dragon's heart",
-      "the drunken aristocrat",
-      "the encroaching darkness",
-      "the endurance",
-      "the gambler",
-      "the jeweller's boon",
-      "the messenger",
-      "the mind's eyes",
-      "the tinkerer's table",
-      "the trial",
-      "the wolf",
-      "three voices",
-      "time-lost relic",
-      "treasure hunter",
-      "volatile power",
-      "tier 8",
-      "t8",
-      "tier: 8",
-      "8",
-      "natural tier: 8",
-      "natural tier 8"
-    ],
+    "filterTags": [],
     "traversability": 5,
     "numberOfBosses": 3,
     "additionalTags": [],
@@ -37402,9 +36240,9 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
+    "layout": 2,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -37425,7 +36263,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 1
   },
   {
     "id": "111",
@@ -37662,29 +36500,7 @@
       }
     ],
     "layout": 5,
-    "filterTags": [
-      "coral ruins",
-      "her mask",
-      "hope",
-      "lantador's lost love",
-      "lingering remnants",
-      "prosperity",
-      "the deep ones",
-      "the dragon's heart",
-      "the encroaching darkness",
-      "the gambler",
-      "the journey",
-      "the tinkerer's table",
-      "the trial",
-      "the tyrant",
-      "the vast",
-      "tier 7",
-      "t7",
-      "tier: 7",
-      "7",
-      "natural tier: 7",
-      "natural tier 7"
-    ],
+    "filterTags": [],
     "traversability": 6,
     "numberOfBosses": 1,
     "additionalTags": [],
@@ -38444,9 +37260,9 @@
         "artFilename": "Tranquillity"
       }
     ],
-    "layout": 0,
+    "layout": 8,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 2,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -38467,7 +37283,7 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 6
   },
   {
     "id": "114",
@@ -38783,9 +37599,9 @@
         "artFilename": "ThreeVoices"
       }
     ],
-    "layout": 0,
+    "layout": 5,
     "filterTags": [],
-    "traversability": 0,
+    "traversability": 3,
     "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
@@ -38806,6 +37622,6 @@
       "artFilename": "TheDragonsHeart"
     },
     "phasedBoss": false,
-    "backtrackFactor": 0
+    "backtrackFactor": 5
   }
 ]
