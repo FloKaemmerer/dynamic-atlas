@@ -1,8 +1,8 @@
 <template>
-  <v-navigation-drawer floating :width="350" class="bg-surface-variant mb-6">
+  <v-navigation-drawer floating :width="400" class="bg-surface-variant mb-6">
     <v-container>
       <v-card>
-        <v-toolbar>
+        <v-toolbar density="compact">
           <v-toolbar-title class="text-h6">
             Filter by Text
           </v-toolbar-title>
@@ -12,7 +12,7 @@
               v-model="filterText"
               density="compact"
               variant="underlined"
-              label="Search... (eg: Doctor|Nurse|Patient)"
+              label="Filter... (eg: Doctor|Nurse|Patient)"
               prepend-inner-icon="mdi-magnify"
               single-line
               class="mx-2"
@@ -22,7 +22,7 @@
         </v-card-text>
       </v-card>
       <v-card>
-        <v-toolbar>
+        <v-toolbar density="compact">
           <v-toolbar-title class="text-h6">
             Map Tier
           </v-toolbar-title>
@@ -41,6 +41,7 @@
                 tick-size="4"
                 :max="16"
                 :min="1"
+                :disabled="!includeMapTier"
             >
               <template v-slot:prepend>
                 <v-label style="white-space: break-spaces">{{ mapTier[0] }}</v-label>
@@ -53,7 +54,7 @@
         </v-card-text>
       </v-card>
       <v-card>
-        <v-toolbar>
+        <v-toolbar density="compact">
           <v-toolbar-title class="text-h6">
             Bosses
           </v-toolbar-title>
@@ -74,6 +75,7 @@
                 tick-size="4"
                 :max="6"
                 :min="0"
+                :disabled="!includeNumberOfBosses"
             >
               <template v-slot:prepend>
                 <v-label style="white-space: break-spaces">{{ numberOfBosses[0] }}</v-label>
@@ -87,7 +89,7 @@
       </v-card>
       <v-spacer></v-spacer>
       <v-card>
-        <v-toolbar>
+        <v-toolbar density="compact">
           <v-toolbar-title class="text-h6" style="white-space: break-spaces" text="Divination Card Value:">
           </v-toolbar-title>
         </v-toolbar>
@@ -106,7 +108,7 @@
       </v-card>
       <v-spacer></v-spacer>
       <v-card>
-        <v-toolbar>
+        <v-toolbar density="compact">
           <v-toolbar-title class="text-h6">
             Layout
           </v-toolbar-title>
@@ -124,6 +126,7 @@
                 show-ticks="always"
                 tick-size="4"
                 :max="10"
+                :disabled="!includeLayout"
             >
               <template v-slot:prepend>
                 <v-label style="white-space: break-spaces">Closed</v-label>
@@ -137,7 +140,7 @@
       </v-card>
       <v-spacer></v-spacer>
       <v-card>
-        <v-toolbar>
+        <v-toolbar density="compact">
           <v-toolbar-title class="text-h6">
             Traversability
           </v-toolbar-title>
@@ -155,12 +158,44 @@
                 show-ticks="always"
                 tick-size="4"
                 :max="10"
+                :disabled="!includeTraversability"
             >
               <template v-slot:prepend>
                 <v-label style="white-space: break-spaces">Easy</v-label>
               </template>
               <template v-slot:append>
                 <v-label style="white-space: break-spaces">Annoying</v-label>
+              </template>
+            </v-range-slider>
+          </template>
+        </v-card-text>
+      </v-card>
+      <v-card>
+        <v-toolbar density="compact">
+          <v-toolbar-title class="text-h6">
+            Backtrack Factor
+          </v-toolbar-title>
+          <template v-slot:append>
+            <v-checkbox v-model="includeBacktrackFactor" density="compact"></v-checkbox>
+          </template>
+        </v-toolbar>
+        <v-card-text>
+          <template v-slot:default>
+            <v-range-slider
+                v-model="backtrackFactor"
+                strict
+                direction="horizontal"
+                step="1"
+                show-ticks="always"
+                tick-size="4"
+                :max="10"
+                :disabled="!includeBacktrackFactor"
+            >
+              <template v-slot:prepend>
+                <v-label style="white-space: break-spaces">None</v-label>
+              </template>
+              <template v-slot:append>
+                <v-label style="white-space: break-spaces">Alot</v-label>
               </template>
             </v-range-slider>
           </template>
@@ -186,6 +221,8 @@ let includeLayout = ref(false)
 let layout = ref([0, 10])
 let includeTraversability = ref(false)
 let traversability = ref([0, 10])
+let includeBacktrackFactor = ref(false)
+let backtrackFactor = ref([0, 10])
 
 watch([
       filterText,
@@ -198,7 +235,9 @@ watch([
       includeLayout,
       layout,
       includeTraversability,
-      traversability],
+      traversability,
+      includeBacktrackFactor,
+      backtrackFactor],
     () => {
       handleFilter(
           filterText.value,
@@ -207,7 +246,9 @@ watch([
           includeNumberOfBosses.value ? numberOfBosses.value : [-1, -1],
           minDivinationCardValue.value,
           includeLayout.value ? layout.value : [-1, -1],
-          includeTraversability.value ? traversability.value : [-1, -1])
-    });
+          includeTraversability.value ? traversability.value : [-1, -1],
+          includeBacktrackFactor.value ? backtrackFactor.value : [-1,-1]
+
+      )    });
 
 </script>

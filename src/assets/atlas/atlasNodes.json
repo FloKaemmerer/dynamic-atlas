@@ -277,7 +277,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "1",
@@ -535,7 +536,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "2",
@@ -857,7 +859,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "3",
@@ -907,7 +910,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "4",
@@ -1261,7 +1265,8 @@
       ],
       "artFilename": "BrotherGift"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "5",
@@ -1311,7 +1316,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "6",
@@ -1553,7 +1559,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "7",
@@ -1603,7 +1610,8 @@
       ],
       "artFilename": "TheCraving"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "8",
@@ -1900,7 +1908,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "9",
@@ -1966,7 +1975,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "10",
@@ -2208,7 +2218,8 @@
       ],
       "artFilename": "WealthAndPower"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "11",
@@ -2386,7 +2397,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "12",
@@ -2740,7 +2752,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "13",
@@ -2854,7 +2867,8 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "14",
@@ -3064,7 +3078,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "15",
@@ -3114,7 +3129,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "16",
@@ -3420,7 +3436,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "17",
@@ -3502,7 +3519,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "18",
@@ -3808,7 +3826,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "19",
@@ -3954,7 +3973,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "20",
@@ -4340,7 +4360,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "21",
@@ -4566,7 +4587,8 @@
       ],
       "artFilename": "DivineBeauty"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "22",
@@ -4888,7 +4910,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "23",
@@ -5034,7 +5057,8 @@
       ],
       "artFilename": "TheFiend"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "24",
@@ -5388,7 +5412,8 @@
       ],
       "artFilename": "DivineBeauty"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "25",
@@ -5438,7 +5463,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "26",
@@ -5632,7 +5658,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "27",
@@ -5762,7 +5789,8 @@
       ],
       "artFilename": "PrideOfTheFirstOnes"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "28",
@@ -6052,7 +6080,8 @@
       ],
       "artFilename": "UnrequitedLove"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "29",
@@ -6262,7 +6291,8 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "30",
@@ -6600,7 +6630,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "31",
@@ -6938,7 +6969,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "32",
@@ -7260,201 +7292,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
-  },
-  {
-    "id": "33",
-    "linked": "0,88,65,89",
-    "mapTier": 5,
-    "locX": "285.137",
-    "locY": "348.386",
-    "name": "Acid Caverns",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "Her Mask",
-        "chaosValue": 1,
-        "exaltedValue": 0.07,
-        "divineValue": 0,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Sacrifice Fragment}",
-            "optional": false
-          }
-        ],
-        "artFilename": "HerMask"
-      },
-      {
-        "name": "Hope",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Hope"
-      },
-      {
-        "name": "Lingering Remnants",
-        "chaosValue": 1.5,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 16,
-        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LingeringRemnants"
-      },
-      {
-        "name": "The Dragon's Heart",
-        "chaosValue": 78,
-        "exaltedValue": 5.5,
-        "divineValue": 0.35,
-        "bossOnly": false,
-        "stackSize": 11,
-        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheDragonsHeart"
-      },
-      {
-        "name": "The Encroaching Darkness",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEncroachingDarkness"
-      },
-      {
-        "name": "The Gambler",
-        "chaosValue": 2.64,
-        "exaltedValue": 0.19,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{Divination Card}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGambler"
-      },
-      {
-        "name": "The Inoculated",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "Chaos spread, wreaking havoc and death. They said none would be spared, and yet here I stand.",
-        "explicitModifiers": [
-          {
-            "text": "<magicitem>{Seraphim's Armour}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheInoculated"
-      },
-      {
-        "name": "The Tinkerer's Table",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Fossil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTinkerersTable"
-      },
-      {
-        "name": "The Trial",
-        "chaosValue": 1.51,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTrial"
-      },
-      {
-        "name": "Vile Power",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:24>{Dread and danger \nmakes the air feel thin. \nAbove, power slumbers, tempting fate. \nGreed and ambition \ndraws countless in, \nFor those who seek power \ncan never wait.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Doomfletch}",
-            "optional": false
-          }
-        ],
-        "artFilename": "VilePower"
-      }
-    ],
-    "layout": 0,
-    "filterTags": [],
-    "traversability": 0,
-    "numberOfBosses": 2,
-    "additionalTags": [],
-    "active": false,
-    "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 78,
-      "exaltedValue": 5.5,
-      "divineValue": 0.35,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-      "explicitModifiers": [
-        {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheDragonsHeart"
-    },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "33",
@@ -7712,7 +7551,221 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
+  },
+  {
+    "id": "33",
+    "linked": "0,88,65,89",
+    "mapTier": 5,
+    "locX": "285.137",
+    "locY": "348.386",
+    "name": "Acid Caverns",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "Her Mask",
+        "chaosValue": 1,
+        "exaltedValue": 0.07,
+        "divineValue": 0,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask"
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope"
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.5,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants"
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 78,
+        "exaltedValue": 5.5,
+        "divineValue": 0.35,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart"
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness"
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 2.64,
+        "exaltedValue": 0.19,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler"
+      },
+      {
+        "name": "The Inoculated",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Chaos spread, wreaking havoc and death. They said none would be spared, and yet here I stand.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Seraphim's Armour}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheInoculated"
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable"
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.51,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial"
+      },
+      {
+        "name": "Vile Power",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:24>{Dread and danger \nmakes the air feel thin. \nAbove, power slumbers, tempting fate. \nGreed and ambition \ndraws countless in, \nFor those who seek power \ncan never wait.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Doomfletch}",
+            "optional": false
+          }
+        ],
+        "artFilename": "VilePower"
+      }
+    ],
+    "layout": 3,
+    "filterTags": [
+      "acid caverns",
+      "her mask",
+      "hope",
+      "lingering remnants",
+      "the dragon's heart",
+      "the encroaching darkness",
+      "the gambler",
+      "the inoculated",
+      "the tinkerer's table",
+      "the trial",
+      "vile power",
+      "tier 5",
+      "t5",
+      "tier: 5",
+      "5",
+      "natural tier: 5",
+      "natural tier 5"
+    ],
+    "traversability": 3,
+    "numberOfBosses": 2,
+    "additionalTags": [],
+    "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 78,
+      "exaltedValue": 5.5,
+      "divineValue": 0.35,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "34",
@@ -7938,7 +7991,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "34",
@@ -8132,7 +8186,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "35",
@@ -8390,7 +8445,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "36",
@@ -8696,7 +8752,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "37",
@@ -8890,7 +8947,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "37",
@@ -9180,7 +9238,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "38",
@@ -9502,7 +9561,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "39",
@@ -9744,7 +9804,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "40",
@@ -9986,7 +10047,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "41",
@@ -10164,7 +10226,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "41",
@@ -10422,7 +10485,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "42",
@@ -10760,7 +10824,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "42",
@@ -11034,7 +11099,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "43",
@@ -11340,7 +11406,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "44",
@@ -11534,7 +11601,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "44",
@@ -11824,7 +11892,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "45",
@@ -12050,7 +12119,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "46",
@@ -12356,7 +12426,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "47",
@@ -12662,7 +12733,8 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "47",
@@ -12920,7 +12992,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "48",
@@ -13274,7 +13347,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "49",
@@ -13532,7 +13606,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "49",
@@ -13886,7 +13961,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "50",
@@ -14128,7 +14204,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "51",
@@ -14354,7 +14431,8 @@
       ],
       "artFilename": "TheFiend"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "51",
@@ -14612,7 +14690,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "52",
@@ -14918,7 +14997,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "53",
@@ -15160,7 +15240,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "54",
@@ -15402,7 +15483,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "54",
@@ -15676,7 +15758,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "55",
@@ -15854,7 +15937,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "56",
@@ -16048,7 +16132,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "57",
@@ -16322,7 +16407,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "58",
@@ -16564,7 +16650,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "59",
@@ -16758,7 +16845,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "59",
@@ -16984,7 +17072,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "60",
@@ -17210,7 +17299,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "61",
@@ -17484,7 +17574,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "61",
@@ -17854,7 +17945,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "62",
@@ -18144,7 +18236,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "62",
@@ -18546,7 +18639,8 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "63",
@@ -18868,7 +18962,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "64",
@@ -19110,7 +19205,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "64",
@@ -19432,7 +19528,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "65",
@@ -19722,7 +19819,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "65",
@@ -19996,7 +20094,8 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "66",
@@ -20206,7 +20305,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "66",
@@ -20400,7 +20500,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "67",
@@ -20610,7 +20711,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "68",
@@ -20836,7 +20938,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "69",
@@ -21110,7 +21213,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "70",
@@ -21352,7 +21456,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "71",
@@ -21546,265 +21651,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
-  },
-  {
-    "id": "72",
-    "linked": "37,109,16",
-    "mapTier": 2,
-    "locX": "642.142",
-    "locY": "451.676",
-    "name": "Precinct",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "Dying Anguish",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "<size:29>{Moribund, he gazed upon the journey taken as blood trickled down his chin. His eye closed on the city ahead that he would never call home.}",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 19 Gem}\n<default>{Alternate Quality:} <augmented>{+19%}",
-            "optional": false
-          }
-        ],
-        "artFilename": "DyingAnguish"
-      },
-      {
-        "name": "Her Mask",
-        "chaosValue": 1,
-        "exaltedValue": 0.07,
-        "divineValue": 0,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Sacrifice Fragment}",
-            "optional": false
-          }
-        ],
-        "artFilename": "HerMask"
-      },
-      {
-        "name": "Hope",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Hope"
-      },
-      {
-        "name": "Jack in the Box",
-        "chaosValue": 2.46,
-        "exaltedValue": 0.17,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "Turn the crank, \nclose your eyes, \nand pray to the gods \nfor a pleasant surprise.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Item}",
-            "optional": false
-          }
-        ],
-        "artFilename": "JackInTheBox"
-      },
-      {
-        "name": "Lingering Remnants",
-        "chaosValue": 1.5,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 16,
-        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LingeringRemnants"
-      },
-      {
-        "name": "The Dragon's Heart",
-        "chaosValue": 78,
-        "exaltedValue": 5.5,
-        "divineValue": 0.35,
-        "bossOnly": false,
-        "stackSize": 11,
-        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheDragonsHeart"
-      },
-      {
-        "name": "The Encroaching Darkness",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEncroachingDarkness"
-      },
-      {
-        "name": "The Gambler",
-        "chaosValue": 2.64,
-        "exaltedValue": 0.19,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{Divination Card}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGambler"
-      },
-      {
-        "name": "The Gentleman",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "\"Axes and mauls are so uncivilised. A good clean cut to the neck with a sharp blade, that's the Sarn way!\"",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Sword}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGentleman"
-      },
-      {
-        "name": "The Saint's Treasure",
-        "chaosValue": 3.74,
-        "exaltedValue": 0.26,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 10,
-        "flavourText": "<size:31>{Publicly, he lived a pious and chaste life of poverty. Privately, tithes and tributes made him and his lascivious company very comfortable indeed.}",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{2x Exalted Orb}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheSaintsTreasure"
-      },
-      {
-        "name": "The Tinkerer's Table",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Fossil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTinkerersTable"
-      },
-      {
-        "name": "The Trial",
-        "chaosValue": 1.51,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTrial"
-      },
-      {
-        "name": "The Tyrant",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 9,
-        "flavourText": "\"Fear controls the masses.\"\n- Laszlo, the Scourge",
-        "explicitModifiers": [
-          {
-            "text": "<magicitem>{Merciless Weapon}\n<default>{Item Level:} <normal>{100}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTyrant"
-      },
-      {
-        "name": "The Undaunted",
-        "chaosValue": 4.6,
-        "exaltedValue": 0.32,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:29>{\"Fate was always my nemesis... \nBut it didn't stop me then, and it won't stop me now.\"\n- Kjetilbrann, The Undaunted}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Nemesis Item}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheUndaunted"
-      }
-    ],
-    "layout": 0,
-    "filterTags": [],
-    "traversability": 0,
-    "numberOfBosses": 3,
-    "additionalTags": [],
-    "active": true,
-    "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 78,
-      "exaltedValue": 5.5,
-      "divineValue": 0.35,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-      "explicitModifiers": [
-        {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheDragonsHeart"
-    },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "72",
@@ -22126,7 +21974,267 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
+  },
+  {
+    "id": "72",
+    "linked": "37,109,16",
+    "mapTier": 2,
+    "locX": "642.142",
+    "locY": "451.676",
+    "name": "Precinct",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "Dying Anguish",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "<size:29>{Moribund, he gazed upon the journey taken as blood trickled down his chin. His eye closed on the city ahead that he would never call home.}",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 19 Gem}\n<default>{Alternate Quality:} <augmented>{+19%}",
+            "optional": false
+          }
+        ],
+        "artFilename": "DyingAnguish"
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1,
+        "exaltedValue": 0.07,
+        "divineValue": 0,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask"
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope"
+      },
+      {
+        "name": "Jack in the Box",
+        "chaosValue": 2.46,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Turn the crank, \nclose your eyes, \nand pray to the gods \nfor a pleasant surprise.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Item}",
+            "optional": false
+          }
+        ],
+        "artFilename": "JackInTheBox"
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.5,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants"
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 78,
+        "exaltedValue": 5.5,
+        "divineValue": 0.35,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart"
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness"
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 2.64,
+        "exaltedValue": 0.19,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler"
+      },
+      {
+        "name": "The Gentleman",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "\"Axes and mauls are so uncivilised. A good clean cut to the neck with a sharp blade, that's the Sarn way!\"",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Sword}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGentleman"
+      },
+      {
+        "name": "The Saint's Treasure",
+        "chaosValue": 3.74,
+        "exaltedValue": 0.26,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 10,
+        "flavourText": "<size:31>{Publicly, he lived a pious and chaste life of poverty. Privately, tithes and tributes made him and his lascivious company very comfortable indeed.}",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{2x Exalted Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheSaintsTreasure"
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable"
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.51,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial"
+      },
+      {
+        "name": "The Tyrant",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "\"Fear controls the masses.\"\n- Laszlo, the Scourge",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Merciless Weapon}\n<default>{Item Level:} <normal>{100}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTyrant"
+      },
+      {
+        "name": "The Undaunted",
+        "chaosValue": 4.6,
+        "exaltedValue": 0.32,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:29>{\"Fate was always my nemesis... \nBut it didn't stop me then, and it won't stop me now.\"\n- Kjetilbrann, The Undaunted}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Nemesis Item}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheUndaunted"
+      }
+    ],
+    "layout": 0,
+    "filterTags": [],
+    "traversability": 0,
+    "numberOfBosses": 3,
+    "additionalTags": [],
+    "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 78,
+      "exaltedValue": 5.5,
+      "divineValue": 0.35,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "73",
@@ -22496,7 +22604,8 @@
       ],
       "artFilename": "WealthAndPower"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "74",
@@ -22706,7 +22815,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "75",
@@ -22980,7 +23090,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "76",
@@ -23206,7 +23317,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "76",
@@ -23480,7 +23592,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "77",
@@ -23642,7 +23755,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "78",
@@ -23868,7 +23982,8 @@
       ],
       "artFilename": "TheDemon"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "78",
@@ -24174,7 +24289,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "79",
@@ -24368,7 +24484,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "80",
@@ -24674,7 +24791,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "81",
@@ -24932,201 +25050,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
-  },
-  {
-    "id": "82",
-    "linked": "83,68,96",
-    "mapTier": 6,
-    "locX": "414.221",
-    "locY": "306.299",
-    "name": "Iceberg",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "Her Mask",
-        "chaosValue": 1,
-        "exaltedValue": 0.07,
-        "divineValue": 0,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Sacrifice Fragment}",
-            "optional": false
-          }
-        ],
-        "artFilename": "HerMask"
-      },
-      {
-        "name": "Hope",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Hope"
-      },
-      {
-        "name": "Lingering Remnants",
-        "chaosValue": 1.5,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 16,
-        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LingeringRemnants"
-      },
-      {
-        "name": "Mitts",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Those whose hands are their livelihood know the importance of keeping them safe and warm.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Gloves}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Mitts"
-      },
-      {
-        "name": "The Dragon's Heart",
-        "chaosValue": 78,
-        "exaltedValue": 5.5,
-        "divineValue": 0.35,
-        "bossOnly": false,
-        "stackSize": 11,
-        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-        "explicitModifiers": [
-          {
-            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheDragonsHeart"
-      },
-      {
-        "name": "The Encroaching Darkness",
-        "chaosValue": 3,
-        "exaltedValue": 0.21,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEncroachingDarkness"
-      },
-      {
-        "name": "The Gambler",
-        "chaosValue": 2.64,
-        "exaltedValue": 0.19,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{Divination Card}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGambler"
-      },
-      {
-        "name": "The Side Quest",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "You'll never know the things you miss if you keep your eyes closed",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{20x Scouting Report}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheSideQuest"
-      },
-      {
-        "name": "The Tinkerer's Table",
-        "chaosValue": 5,
-        "exaltedValue": 0.35,
-        "divineValue": 0.02,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Fossil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTinkerersTable"
-      },
-      {
-        "name": "The Trial",
-        "chaosValue": 1.51,
-        "exaltedValue": 0.11,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTrial"
-      }
-    ],
-    "layout": 0,
-    "filterTags": [],
-    "traversability": 0,
-    "numberOfBosses": 1,
-    "additionalTags": [],
-    "active": false,
-    "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 78,
-      "exaltedValue": 5.5,
-      "divineValue": 0.35,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
-      "explicitModifiers": [
-        {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheDragonsHeart"
-    },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "82",
@@ -25474,7 +25399,203 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
+  },
+  {
+    "id": "82",
+    "linked": "83,68,96",
+    "mapTier": 6,
+    "locX": "414.221",
+    "locY": "306.299",
+    "name": "Iceberg",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "Her Mask",
+        "chaosValue": 1,
+        "exaltedValue": 0.07,
+        "divineValue": 0,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask"
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope"
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.5,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants"
+      },
+      {
+        "name": "Mitts",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Those whose hands are their livelihood know the importance of keeping them safe and warm.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Gloves}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Mitts"
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 78,
+        "exaltedValue": 5.5,
+        "divineValue": 0.35,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart"
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 3,
+        "exaltedValue": 0.21,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness"
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 2.64,
+        "exaltedValue": 0.19,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler"
+      },
+      {
+        "name": "The Side Quest",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "You'll never know the things you miss if you keep your eyes closed",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{20x Scouting Report}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheSideQuest"
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 5,
+        "exaltedValue": 0.35,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable"
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.51,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial"
+      }
+    ],
+    "layout": 0,
+    "filterTags": [],
+    "traversability": 0,
+    "numberOfBosses": 1,
+    "additionalTags": [],
+    "active": false,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 78,
+      "exaltedValue": 5.5,
+      "divineValue": 0.35,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart"
+    },
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "83",
@@ -25812,7 +25933,8 @@
       ],
       "artFilename": "DivineBeauty"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "84",
@@ -26086,7 +26208,8 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "84",
@@ -26344,7 +26467,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "85",
@@ -26554,7 +26678,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "85",
@@ -26860,7 +26985,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "86",
@@ -27150,7 +27276,8 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "87",
@@ -27376,7 +27503,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "87",
@@ -27682,7 +27810,8 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "88",
@@ -27908,7 +28037,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "89",
@@ -28150,7 +28280,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "89",
@@ -28328,7 +28459,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "90",
@@ -28810,7 +28942,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "91",
@@ -29036,7 +29169,8 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "92",
@@ -29278,7 +29412,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "93",
@@ -29536,7 +29671,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "94",
@@ -29762,7 +29898,8 @@
       ],
       "artFilename": "TheFiend"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "95",
@@ -30052,7 +30189,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "95",
@@ -30358,7 +30496,8 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "96",
@@ -30584,7 +30723,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "96",
@@ -30826,7 +30966,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "97",
@@ -31068,7 +31209,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "98",
@@ -31486,7 +31628,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "99",
@@ -31840,7 +31983,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "99",
@@ -32146,7 +32290,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "100",
@@ -32324,7 +32469,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "101",
@@ -32534,7 +32680,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "101",
@@ -32760,7 +32907,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "102",
@@ -32970,7 +33118,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "102",
@@ -33212,7 +33361,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "103",
@@ -33566,7 +33716,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "104",
@@ -33920,7 +34071,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "105",
@@ -34210,7 +34362,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "105",
@@ -34452,7 +34605,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "106",
@@ -34838,7 +34992,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "107",
@@ -35144,7 +35299,8 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "108",
@@ -35450,7 +35606,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "109",
@@ -35676,7 +35833,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "110",
@@ -35998,7 +36156,8 @@
       ],
       "artFilename": "TheSephirot"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "110",
@@ -36192,7 +36351,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "111",
@@ -36450,7 +36610,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "112",
@@ -36660,7 +36821,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "112",
@@ -36934,7 +37096,8 @@
       ],
       "artFilename": "SevenYearsBadLuck"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "113",
@@ -37208,7 +37371,8 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   },
   {
     "id": "114",
@@ -37546,6 +37710,7 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false
+    "phasedBoss": false,
+    "backtrackFactor": 0
   }
 ]

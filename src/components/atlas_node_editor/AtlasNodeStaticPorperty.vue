@@ -3,6 +3,17 @@
   <v-row no-gutters>
     <v-col cols="2">
       <v-sheet class="pa-2">
+        Highest Value Divination Card
+      </v-sheet>
+    </v-col>
+    <v-col cols="5">
+      <v-sheet class="pa-2">
+        <v-label>{{atlasNode.highestValueDivinationCard.name}}</v-label>
+      </v-sheet>
+    </v-col>
+    <v-col cols="5"></v-col>
+    <v-col cols="2">
+      <v-sheet class="pa-2">
         Map Tier
       </v-sheet>
     </v-col>

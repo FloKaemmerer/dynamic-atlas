@@ -7,10 +7,11 @@ export const handleFilter = (filterText: string,
                              numberOfBosses: number[],
                              minDivinationCardValue: number,
                              layout: number[],
-                             traversability: number[]) => {
+                             traversability: number[],
+                             backtrackFactor: number[]) => {
     const atlasNodeStore = useAtlasNodeStore();
     let result = [] as AtlasNode[]
-    const needToFilter = filterText || mapTier[0] > -1 || numberOfBosses[0] > -1 || excludePhasedBosses || minDivinationCardValue > 0 || layout[0] > -1 || traversability[0] > -1;
+    const needToFilter = filterText || mapTier[0] > -1 || numberOfBosses[0] > -1 || excludePhasedBosses || minDivinationCardValue > 0 || layout[0] > -1 || traversability[0] > -1 || backtrackFactor[0] > -1;
 
     if (needToFilter) {
         result = atlasNodeStore.atlasNodes.filter(value => value.active)
@@ -35,6 +36,8 @@ export const handleFilter = (filterText: string,
 
         // Filter by traversability
         result = filterByTraversability(traversability, result);
+
+        result = filterByBacktrackFactor(backtrackFactor,result);
     }
     atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
 }
@@ -90,6 +93,16 @@ function filterByTraversability(traversability: number[], result: AtlasNode[]) {
         result = result.filter(atlasNode => {
             console.log("Traversability: " + atlasNode.traversability + ", Min Number: " + traversability[0] + ", Max Number: " + traversability[1])
             return traversability[0] <= atlasNode.traversability && atlasNode.traversability <= traversability[1]
+        })
+    }
+    return result;
+}
+
+function filterByBacktrackFactor(backtrackFactor: number[], result: AtlasNode[]) {
+    if (backtrackFactor[0] > -1) {
+        result = result.filter(atlasNode => {
+            console.log("BacktrackFactor: " + atlasNode.backtrackFactor + ", Min Number: " + backtrackFactor[0] + ", Max Number: " + backtrackFactor[1])
+            return backtrackFactor[0] <= atlasNode.backtrackFactor && atlasNode.backtrackFactor <= backtrackFactor[1]
         })
     }
     return result;

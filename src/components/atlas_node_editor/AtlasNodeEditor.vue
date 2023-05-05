@@ -94,23 +94,6 @@
 
                   <v-col cols="2">
                     <v-sheet>
-                      Highest Value Divination Card
-                    </v-sheet>
-                  </v-col>
-                  <v-col cols="5">
-                    <v-text-field
-                        hide-details
-                        single-line
-                        v-model="selectedAtlasNode.highestValueDivinationCard.name"
-                        min="0"
-                        density="compact"
-                        disabled>
-                    </v-text-field>
-                  </v-col>
-                  <v-col cols="5"></v-col>
-
-                  <v-col cols="2">
-                    <v-sheet>
                       Number of Bosses
                     </v-sheet>
                   </v-col>
@@ -154,6 +137,23 @@
                         single-line
                         type="number"
                         v-model="selectedAtlasNode.traversability"
+                        min="0"
+                        density="compact">
+                    </v-text-field>
+                  </v-col>
+                  <v-col cols="5"></v-col>
+
+                  <v-col cols="2">
+                    <v-sheet>
+                      Backtrack Factor
+                    </v-sheet>
+                  </v-col>
+                  <v-col cols="5">
+                    <v-text-field
+                        hide-details
+                        single-line
+                        type="number"
+                        v-model="selectedAtlasNode.backtrackFactor"
                         min="0"
                         density="compact">
                     </v-text-field>
@@ -253,10 +253,16 @@ async function updateSelectedAtlasNode(selectedAtlasNode: AtlasNode) {
   loading.value = true;
   const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
 
-  console.log(link)
-  const res = await axios.put(link, selectedAtlasNode);
-  console.log(res.data)
-  loading.value = false;
+  await axios.put(link, selectedAtlasNode).then((res) => {
+    // selectedAtlasNode = res.data
+    console.log(res.data)
+
+  }).catch((res) =>{
+    console.log(res)
+  }).finally(() =>
+    loading.value = false
+  );
+
 
 }
 </script>

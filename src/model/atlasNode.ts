@@ -33,4 +33,6 @@ export interface AtlasNode {
     highestValueDivinationCard: DivinationCard
 
     phasedBoss: boolean
+
+    backtrackFactor: number
 }
