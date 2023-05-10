@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
-import mapBase from '@/assets/atlas/maps/Base16.png'
+import mapBase from '@/assets/atlas/maps/Base.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
 import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
 import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
