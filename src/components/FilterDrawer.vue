@@ -247,8 +247,8 @@ watch([
           minDivinationCardValue.value,
           includeLayout.value ? layout.value : [-1, -1],
           includeTraversability.value ? traversability.value : [-1, -1],
-          includeBacktrackFactor.value ? backtrackFactor.value : [-1,-1]
-
-      )    });
+          includeBacktrackFactor.value ? backtrackFactor.value : [-1, -1]
+      )
+    });
 
 </script>
