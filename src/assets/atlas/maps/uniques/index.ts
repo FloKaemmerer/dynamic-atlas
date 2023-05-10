@@ -15,7 +15,7 @@ import obasCursedTrove from "./Obas_Cursed_Trove.png";
 import caerBlaiddWolfpacksDen from "./Caer_Blaidd_Wolfpacks_Den.png";
 
 
-let uniqueMapList = new Map<string, string>([
+const uniqueMapList = new Map<string, string>([
     ['MaelströmofChaos', maelströmofChaos],
     ['OlmecsSanctum', olmecsSanctum],
     ['HallowedGround', hallowedGround],
