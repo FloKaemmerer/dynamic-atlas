@@ -1,6 +1,6 @@
 import vaultsofAtziri from "./Vaults_of_Atziri.png";
 import maelstroemofChaos from "./Maelstroem_of_Chaos.png";
-import olmecsSanctum from "./Olmecs_sanctum.png";
+import olmecsSanctum from "./Olmecs_Sanctum.png";
 import hallowedGround from "./Hallowed_Ground.png";
 import theCowardsTrial from "./The_Cowards_Trial.png";
 import pillarsofArun from "./Pillars_of_Arun.png";
