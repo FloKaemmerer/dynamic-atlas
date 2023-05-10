@@ -1,5 +1,5 @@
 import vaultsofAtziri from "./Vaults_of_Atziri.png";
-import maelströmofChaos from "./Maelström_of_Chaos.png";
+import maelstroemofChaos from "./Maelström_of_Chaos.png";
 import olmecsSanctum from "./Olmecs_sanctum.png";
 import hallowedGround from "./Hallowed_Ground.png";
 import theCowardsTrial from "./The_Cowards_Trial.png";
@@ -16,7 +16,7 @@ import caerBlaiddWolfpacksDen from "./Caer_Blaidd_Wolfpacks_Den.png";
 
 
 const uniqueMapList = new Map<string, string>([
-    ['MaelströmofChaos', maelströmofChaos],
+    ['MaelströmofChaos', maelstroemofChaos],
     ['OlmecsSanctum', olmecsSanctum],
     ['HallowedGround', hallowedGround],
     ['TheCowardsTrial', theCowardsTrial],
