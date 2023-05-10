@@ -1,4 +1,4 @@
-import dungeon from "./dungeon.png";
+import dungeon from "./Dungeon.png";
 import darkForest from "./darkForest.png";
 import ashenWood from "./ashenWood.png";
 import infestedValley from "./infestedValley.png";
