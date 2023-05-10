@@ -90,7 +90,7 @@ import phantasmagoria from "./Phantasmagoria.png";
 import ancientCity from "./AncientCity.png";
 import residence from "./Residence.png";
 import gardens from "./Gardens.png";
-import coralRuins from "./coralRuins.png";
+import coralRuins from "./CoralRuins.png";
 import castleRuins from "./CastleRuins.png";
 import desert from "./Desert.png";
 import forbiddenWoods from "./ForbiddenWoods.png";
