@@ -22,7 +22,7 @@
                   column>
                 <v-chip
                     v-for="divinationCard in atlasNode.divinationCards"
-                    :key="divinationCard">
+                    :key="divinationCard.name">
                   {{ divinationCard.name }} - {{ divinationCard.chaosValue }} Chaos
                   <template v-slot:append v-if="divinationCard.bossOnly">
                     <v-tooltip text="Boss only drop">

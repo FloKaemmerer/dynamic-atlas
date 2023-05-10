@@ -187,7 +187,7 @@
 <script setup lang="ts">
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import {computed, ref, watch} from "vue";
-import {AtlasNode} from "@/model/atlasNode";
+import type {AtlasNode} from "@/model/atlasNode";
 import AtlasNodeStaticPorperty from "@/components/atlas_node_editor/AtlasNodeStaticPorperty.vue";
 import axios from 'axios'
 
@@ -249,7 +249,7 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
   return additionalTags
 }
 
-async function updateSelectedAtlasNode(selectedAtlasNode: AtlasNode) {
+async function updateSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
   loading.value = true;
   const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
 

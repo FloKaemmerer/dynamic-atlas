@@ -1,6 +1,6 @@
 <template>
   <v-label>Static Map Properties</v-label>
-  <v-row no-gutters>
+  <v-row no-gutters v-if="atlasNode">
     <v-col cols="2">
       <v-sheet class="pa-2">
         Highest Value Divination Card
