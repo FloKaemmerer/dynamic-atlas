@@ -42,7 +42,7 @@ import lookout from "./Lookout.png";
 import channel from "./Channel.png";
 import thicket from "./Thicket.png";
 import shipyard from "./Shipyard.png";
-import ghetto from "./ghetto.png";
+import ghetto from "./Ghetto.png";
 import leyline from "./Leyline.png";
 import arachnidNest from "./ArachnidNest.png";
 import pier from "./Pier.png";
