@@ -1,4 +1,6 @@
 const execa = require("execa");
+const rmrf = require("rimraf");
+let exitCode = 0;
 
 (async () => {
     try {
@@ -10,12 +12,14 @@ const execa = require("execa");
         await execa("git", ["--work-tree", "dist", "commit", "-m", "gh-pages"]);
         console.log("Pushing to gh-pages...");
         await execa("git", ["push", "origin", "HEAD:gh-pages", "--force"]);
-        await execa("rm", ["-r", "dist"]);
-        await execa("git", ["checkout", "-f", "main"]);
-        await execa("git", ["branch", "-D", "gh-pages"]);
+        await rmrf("dist", { glob: false })
         console.log("Successfully deployed");
     } catch (e) {
         console.log(e.message);
-        process.exit(1);
+        exitCode = 1;
+    } finally {
+        await execa("git", ["checkout", "-f", "main"]);
+        await execa("git", ["branch", "-D", "gh-pages"]);
     }
+    process.exit(exitCode);
 })();
