@@ -17,9 +17,6 @@
             </v-sheet>
 
             <div class="pa-4">
-              <v-chip-group
-                  selected-class="text-primary"
-                  column>
                 <v-chip
                     v-for="divinationCard in atlasNode.divinationCards"
                     :key="divinationCard.name">
@@ -32,7 +29,6 @@
                     </v-tooltip>
                   </template>
                 </v-chip>
-              </v-chip-group>
             </div>
           </v-sheet>
         </v-col>
