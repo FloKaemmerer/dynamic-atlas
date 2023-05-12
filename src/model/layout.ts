@@ -3,6 +3,6 @@ export interface Layout {
     traversability: number
     backtrackFactor: number
     rushableBoss: boolean
-    notes: string
+    notes: any
     openness: number
 }

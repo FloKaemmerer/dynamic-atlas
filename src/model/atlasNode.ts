@@ -16,11 +16,11 @@ export interface AtlasNode {
     filterTags: any[]
     traversability: number
     numberOfBosses: number
-    additionalTags: string[]
+    additionalTags: any[]
     highestValueDivinationCard: DivinationCard
     phasedBoss: boolean
     backtrackFactor: number
     boss: Boss
     nodeLayout: Layout
-    notes: string
+    notes: any
 }
