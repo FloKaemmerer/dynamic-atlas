@@ -37,15 +37,15 @@ export const handleFilter = (filterText: string,
         // Filter by traversability
         result = filterByTraversability(traversability, result);
 
-        result = filterByBacktrackFactor(backtrackFactor,result);
+        result = filterByBacktrackFactor(backtrackFactor, result);
     }
     atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
 }
 
 function filterByMapTier(mapTier: number[], result: AtlasNode[]) {
-    if(mapTier[0]>-1){
-        result = result.filter(atlasNode =>{
-            return mapTier[0] <= atlasNode.mapTier && atlasNode.mapTier <=mapTier[1]
+    if (mapTier[0] > -1) {
+        result = result.filter(atlasNode => {
+            return mapTier[0] <= atlasNode.mapTier && atlasNode.mapTier <= mapTier[1]
         })
     }
     return result;
@@ -55,7 +55,7 @@ function filterByMapTier(mapTier: number[], result: AtlasNode[]) {
 function filterByNumberOfBosses(numberOfBosses: number[], result: AtlasNode[]) {
     if (numberOfBosses[0] > -1) {
         result = result.filter(atlasNode => {
-            return numberOfBosses[0] <= atlasNode.numberOfBosses && atlasNode.numberOfBosses <= numberOfBosses[1]
+            return numberOfBosses[0] <= atlasNode.boss.numberOfBosses && atlasNode.boss.numberOfBosses <= numberOfBosses[1]
         })
     }
     return result;
@@ -64,7 +64,7 @@ function filterByNumberOfBosses(numberOfBosses: number[], result: AtlasNode[]) {
 function filterByPhasedBosses(excludePhasedBosses: boolean, result: AtlasNode[]) {
     if (excludePhasedBosses) {
         result = result.filter(atlasNode => {
-            return !atlasNode.phasedBoss
+            return !atlasNode.boss.phased
         })
     }
     return result;
@@ -82,7 +82,7 @@ function filterByDivinationCardValue(minDivinationCardValue: number, result: Atl
 function filterByLayout(layout: number[], result: AtlasNode[]) {
     if (layout[0] > -1) {
         result = result.filter(atlasNode => {
-            return layout[0] <= atlasNode.layout && atlasNode.layout <= layout[1]
+            return layout[0] <= atlasNode.nodeLayout.openness && atlasNode.nodeLayout.openness <= layout[1]
         })
     }
     return result;
@@ -91,8 +91,8 @@ function filterByLayout(layout: number[], result: AtlasNode[]) {
 function filterByTraversability(traversability: number[], result: AtlasNode[]) {
     if (traversability[0] > -1) {
         result = result.filter(atlasNode => {
-            console.log("Traversability: " + atlasNode.traversability + ", Min Number: " + traversability[0] + ", Max Number: " + traversability[1])
-            return traversability[0] <= atlasNode.traversability && atlasNode.traversability <= traversability[1]
+            console.log("Traversability: " + atlasNode.nodeLayout.traversability + ", Min Number: " + traversability[0] + ", Max Number: " + traversability[1])
+            return traversability[0] <= atlasNode.nodeLayout.traversability && atlasNode.nodeLayout.traversability <= traversability[1]
         })
     }
     return result;
@@ -101,8 +101,8 @@ function filterByTraversability(traversability: number[], result: AtlasNode[]) {
 function filterByBacktrackFactor(backtrackFactor: number[], result: AtlasNode[]) {
     if (backtrackFactor[0] > -1) {
         result = result.filter(atlasNode => {
-            console.log("BacktrackFactor: " + atlasNode.backtrackFactor + ", Min Number: " + backtrackFactor[0] + ", Max Number: " + backtrackFactor[1])
-            return backtrackFactor[0] <= atlasNode.backtrackFactor && atlasNode.backtrackFactor <= backtrackFactor[1]
+            console.log("BacktrackFactor: " + atlasNode.nodeLayout.backtrackFactor + ", Min Number: " + backtrackFactor[0] + ", Max Number: " + backtrackFactor[1])
+            return backtrackFactor[0] <= atlasNode.nodeLayout.backtrackFactor && atlasNode.nodeLayout.backtrackFactor <= backtrackFactor[1]
         })
     }
     return result;

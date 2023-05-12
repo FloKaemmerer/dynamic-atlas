@@ -45,7 +45,7 @@
                   </v-col>
                   <v-col cols="10">
                     <v-sheet class="pa-2">
-                      <v-radio-group v-model="selectedAtlasNode.phasedBoss" density="compact">
+                      <v-radio-group v-model="selectedAtlasNode.boss.phased" density="compact">
                         <v-radio :value=true>
                           <template v-slot:label>
                             <div><strong>Phased</strong></div>
@@ -102,7 +102,7 @@
                         hide-details
                         single-line
                         type="number"
-                        v-model="selectedAtlasNode.numberOfBosses"
+                        v-model="selectedAtlasNode.boss.numberOfBosses"
                         min="0"
                         density="compact">
                     </v-text-field>
@@ -119,7 +119,7 @@
                         hide-details
                         single-line
                         type="number"
-                        v-model="selectedAtlasNode.layout"
+                        v-model="selectedAtlasNode.nodeLayout.openness"
                         min="0"
                         density="compact">
                     </v-text-field>
@@ -136,7 +136,7 @@
                         hide-details
                         single-line
                         type="number"
-                        v-model="selectedAtlasNode.traversability"
+                        v-model="selectedAtlasNode.nodeLayout.traversability"
                         min="0"
                         density="compact">
                     </v-text-field>
@@ -153,7 +153,7 @@
                         hide-details
                         single-line
                         type="number"
-                        v-model="selectedAtlasNode.backtrackFactor"
+                        v-model="selectedAtlasNode.nodeLayout.backtrackFactor"
                         min="0"
                         density="compact">
                     </v-text-field>

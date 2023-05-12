@@ -5,7 +5,7 @@
       <v-spacer></v-spacer>
       <v-label class="text-h5">Natural Tier: {{ atlasNode.mapTier }}</v-label>
       <v-spacer></v-spacer>
-      <v-label class="text-h5">Number of Bosses: {{ atlasNode.numberOfBosses }}</v-label>
+      <v-label class="text-h5">Number of Bosses: {{ atlasNode.boss.numberOfBosses }}</v-label>
       <v-spacer></v-spacer>
       <v-row justify="center">
         <v-col>
