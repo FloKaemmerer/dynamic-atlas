@@ -150,6 +150,69 @@
                     </v-range-slider>
                   </v-col>
                 </v-row>
+                <v-row no-gutters>
+                  <v-col>
+                    Linearity
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col cols="1">
+                    <v-checkbox v-model="includeLinearity" density="compact" disabled></v-checkbox>
+                  </v-col>
+                  <v-col>
+                    <v-range-slider
+                        v-model="mapTier"
+                        strict
+                        direction="horizontal"
+                        step="1"
+                        show-ticks="always"
+                        tick-size="4"
+                        :max="16"
+                        :min="1"
+                        disabled
+                    >
+                      <template v-slot:prepend>
+                        <v-label style="white-space: break-spaces">{{ mapTier[0] }}</v-label>
+                      </template>
+                      <template v-slot:append>
+                        <v-label style="white-space: break-spaces">{{ mapTier[1] }}</v-label>
+                      </template>
+                    </v-range-slider>
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col>
+                    Base Mob Count
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col cols="1">
+                    <v-checkbox v-model="includeBaseMobCount" density="compact" disabled></v-checkbox>
+                  </v-col>
+                  <v-col>
+                    <v-range-slider
+                        v-model="mapTier"
+                        strict
+                        direction="horizontal"
+                        step="1"
+                        show-ticks="always"
+                        tick-size="4"
+                        :max="10"
+                        :min="1"
+                        disabled
+                    >
+                      <template v-slot:prepend>
+                        <v-label style="white-space: break-spaces">{{ mapTier[0] }}</v-label>
+                      </template>
+                      <template v-slot:append>
+                        <v-label style="white-space: break-spaces">{{ mapTier[1] }}</v-label>
+                      </template>
+                    </v-range-slider>
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-checkbox label="Rushable Boss" v-model="rushableBoss" density="compact" disabled></v-checkbox>
+                </v-row>
               </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -161,7 +224,13 @@
             <v-expansion-panel>
               <v-expansion-panel-title>Boss Filters</v-expansion-panel-title>
               <v-expansion-panel-text>
-                <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses" density="compact"></v-checkbox>
+                <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses" density="compact"
+                            disabled></v-checkbox>
+                <v-checkbox label="Include Bosses With skippable Phases" v-model="skippablePhases" density="compact"
+                            disabled></v-checkbox>
+                <v-checkbox label="Include Bosses With Spawn-Intro" v-model="spawnIntro" density="compact"
+                            disabled></v-checkbox>
+                <v-checkbox label="Include Spawned Bosses" v-model="spawnIntro" density="compact" disabled></v-checkbox>
                 <v-row no-gutters>
                   <v-col>
                     Number of Bosses
@@ -213,6 +282,30 @@
                     style="width: 100%"
                     density="compact"
                     min="0"></v-text-field>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-card-text>
+      </v-card>
+      <v-card>
+        <v-toolbar density="compact">
+          <v-toolbar-title class="text-h6">
+            Overlays
+          </v-toolbar-title>
+        </v-toolbar>
+        <v-card-text>
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-title>Overlays</v-expansion-panel-title>
+              <v-expansion-panel-text>
+                <v-checkbox label="Openness" v-model="openessOverlay" density="compact" disabled></v-checkbox>
+                <v-checkbox label="Traversability" v-model="traversabilityOverlay" density="compact"
+                            disabled></v-checkbox>
+                <v-checkbox label="Linearity" v-model="linearityOverlay" density="compact" disabled></v-checkbox>
+                <v-checkbox label="Backtrack Factor" v-model="backtrackFactorOverlay" density="compact"
+                            disabled></v-checkbox>
+                <v-checkbox label="Base Mob Count" v-model="baseMapCountOverlay" density="compact"
+                            disabled></v-checkbox>
               </v-expansion-panel-text>
             </v-expansion-panel>
           </v-expansion-panels>
