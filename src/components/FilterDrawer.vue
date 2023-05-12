@@ -226,11 +226,11 @@
               <v-expansion-panel-text>
                 <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses" density="compact"
                             disabled></v-checkbox>
-                <v-checkbox label="Include Bosses With skippable Phases" v-model="skippablePhases" density="compact"
+                <v-checkbox label="Include Bosses With skippable Phases" v-model="includeSkippablePhases" density="compact"
                             disabled></v-checkbox>
-                <v-checkbox label="Include Bosses With Spawn-Intro" v-model="spawnIntro" density="compact"
+                <v-checkbox label="Include Bosses With Spawn-Intro" v-model="includeSpawnIntro" density="compact"
                             disabled></v-checkbox>
-                <v-checkbox label="Include Spawned Bosses" v-model="spawnIntro" density="compact" disabled></v-checkbox>
+                <v-checkbox label="Include Spawned Bosses" v-model="includeSpawnedBosses" density="compact" disabled></v-checkbox>
                 <v-row no-gutters>
                   <v-col>
                     Number of Bosses
@@ -298,13 +298,13 @@
             <v-expansion-panel>
               <v-expansion-panel-title>Overlays</v-expansion-panel-title>
               <v-expansion-panel-text>
-                <v-checkbox label="Openness" v-model="openessOverlay" density="compact" disabled></v-checkbox>
+                <v-checkbox label="Openness" v-model="opennessOverlay" density="compact" disabled></v-checkbox>
                 <v-checkbox label="Traversability" v-model="traversabilityOverlay" density="compact"
                             disabled></v-checkbox>
                 <v-checkbox label="Linearity" v-model="linearityOverlay" density="compact" disabled></v-checkbox>
                 <v-checkbox label="Backtrack Factor" v-model="backtrackFactorOverlay" density="compact"
                             disabled></v-checkbox>
-                <v-checkbox label="Base Mob Count" v-model="baseMapCountOverlay" density="compact"
+                <v-checkbox label="Base Mob Count" v-model="baseMobCountOverlay" density="compact"
                             disabled></v-checkbox>
               </v-expansion-panel-text>
             </v-expansion-panel>
@@ -321,18 +321,34 @@ import {ref, watch} from "vue";
 import {handleFilter} from "@/composable/atlasFilter";
 
 let filterText = ref("");
+
 let includeMapTier = ref(false)
-let mapTier = ref([1, 16])
 let includeNumberOfBosses = ref(false)
-let excludePhasedBosses = ref(false)
-let numberOfBosses = ref([0, 6])
-let minDivinationCardValue = ref()
 let includeLayout = ref(false)
-let layout = ref([0, 10])
 let includeTraversability = ref(false)
-let traversability = ref([0, 10])
 let includeBacktrackFactor = ref(false)
+let includeLinearity = ref(false)
+let includeBaseMobCount = ref(false)
+
+let rushableBoss = ref(false)
+let excludePhasedBosses = ref(false)
+let includeSkippablePhases = ref(false)
+let includeSpawnIntro = ref(false)
+let includeSpawnedBosses = ref(false)
+
+let mapTier = ref([1, 16])
+let numberOfBosses = ref([0, 6])
+let layout = ref([0, 10])
+let traversability = ref([0, 10])
 let backtrackFactor = ref([0, 10])
+
+let minDivinationCardValue = ref()
+
+let opennessOverlay = ref(false)
+let traversabilityOverlay = ref(false)
+let backtrackFactorOverlay = ref(false)
+let linearityOverlay = ref(false)
+let baseMobCountOverlay = ref(false)
 
 watch([
       filterText,
