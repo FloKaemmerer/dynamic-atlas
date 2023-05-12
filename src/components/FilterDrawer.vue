@@ -24,181 +24,198 @@
       <v-card>
         <v-toolbar density="compact">
           <v-toolbar-title class="text-h6">
-            Map Tier
+            Filters
           </v-toolbar-title>
-          <template v-slot:append>
-            <v-checkbox v-model="includeMapTier" density="compact"></v-checkbox>
-          </template>
         </v-toolbar>
         <v-card-text>
-          <template v-slot:default>
-            <v-range-slider
-                v-model="mapTier"
-                strict
-                direction="horizontal"
-                step="1"
-                show-ticks="always"
-                tick-size="4"
-                :max="16"
-                :min="1"
-                :disabled="!includeMapTier"
-            >
-              <template v-slot:prepend>
-                <v-label style="white-space: break-spaces">{{ mapTier[0] }}</v-label>
-              </template>
-              <template v-slot:append>
-                <v-label style="white-space: break-spaces">{{ mapTier[1] }}</v-label>
-              </template>
-            </v-range-slider>
-          </template>
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-title>Layout Filters
+              </v-expansion-panel-title>
+              <v-expansion-panel-text>
+                <v-row no-gutters>
+                  <v-col>
+                    Map Tier
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col cols="1">
+                    <v-checkbox v-model="includeMapTier" density="compact"></v-checkbox>
+                  </v-col>
+                  <v-col>
+                    <v-range-slider
+                        v-model="mapTier"
+                        strict
+                        direction="horizontal"
+                        step="1"
+                        show-ticks="always"
+                        tick-size="4"
+                        :max="16"
+                        :min="1"
+                        :disabled="!includeMapTier"
+                    >
+                      <template v-slot:prepend>
+                        <v-label style="white-space: break-spaces">{{ mapTier[0] }}</v-label>
+                      </template>
+                      <template v-slot:append>
+                        <v-label style="white-space: break-spaces">{{ mapTier[1] }}</v-label>
+                      </template>
+                    </v-range-slider>
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col>
+                    Openness
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col cols="1">
+                    <v-checkbox v-model="includeLayout" density="compact"></v-checkbox>
+                  </v-col>
+                  <v-col>
+                    <v-range-slider
+                        v-model="layout"
+                        strict
+                        direction="horizontal"
+                        step="1"
+                        show-ticks="always"
+                        tick-size="4"
+                        :max="10"
+                        :disabled="!includeLayout"
+                    >
+                      <template v-slot:prepend>
+                        <v-label style="white-space: break-spaces">Closed</v-label>
+                      </template>
+                      <template v-slot:append>
+                        <v-label style="white-space: break-spaces">Open</v-label>
+                      </template>
+                    </v-range-slider>
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col>
+                    Traversability
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col cols="1">
+                    <v-checkbox v-model="includeTraversability" density="compact"></v-checkbox>
+                  </v-col>
+                  <v-col>
+                    <v-range-slider
+                        v-model="traversability"
+                        strict
+                        direction="horizontal"
+                        step="1"
+                        show-ticks="always"
+                        tick-size="4"
+                        :max="10"
+                        :disabled="!includeTraversability"
+                    >
+                      <template v-slot:prepend>
+                        <v-label style="white-space: break-spaces">Easy</v-label>
+                      </template>
+                      <template v-slot:append>
+                        <v-label style="white-space: break-spaces">Annoying</v-label>
+                      </template>
+                    </v-range-slider>
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col>
+                    Backtrack Factor
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col cols="1">
+                    <v-checkbox v-model="includeBacktrackFactor" density="compact"></v-checkbox>
+                  </v-col>
+                  <v-col>
+                    <v-range-slider
+                        v-model="backtrackFactor"
+                        strict
+                        direction="horizontal"
+                        step="1"
+                        show-ticks="always"
+                        tick-size="4"
+                        :max="10"
+                        :disabled="!includeBacktrackFactor"
+                    >
+                      <template v-slot:prepend>
+                        <v-label style="white-space: break-spaces">None</v-label>
+                      </template>
+                      <template v-slot:append>
+                        <v-label style="white-space: break-spaces">Alot</v-label>
+                      </template>
+                    </v-range-slider>
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </v-card-text>
       </v-card>
       <v-card>
-        <v-toolbar density="compact">
-          <v-toolbar-title class="text-h6">
-            Bosses
-          </v-toolbar-title>
-
-          <template v-slot:append>
-            <v-checkbox v-model="includeNumberOfBosses" density="compact"></v-checkbox>
-          </template>
-        </v-toolbar>
         <v-card-text>
-          <template v-slot:default>
-            <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses" density="compact"></v-checkbox>
-            <v-range-slider
-                v-model="numberOfBosses"
-                strict
-                direction="horizontal"
-                step="1"
-                show-ticks="always"
-                tick-size="4"
-                :max="6"
-                :min="0"
-                :disabled="!includeNumberOfBosses"
-            >
-              <template v-slot:prepend>
-                <v-label style="white-space: break-spaces">{{ numberOfBosses[0] }}</v-label>
-              </template>
-              <template v-slot:append>
-                <v-label style="white-space: break-spaces">{{ numberOfBosses[1] }}</v-label>
-              </template>
-            </v-range-slider>
-          </template>
-        </v-card-text>
-      </v-card>
-      <v-spacer></v-spacer>
-      <v-card>
-        <v-toolbar density="compact">
-          <v-toolbar-title class="text-h6" style="white-space: break-spaces" text="Divination Card Value:">
-          </v-toolbar-title>
-        </v-toolbar>
-        <v-card-text>
-          <v-text-field
-              v-model="minDivinationCardValue"
-              hide-details
-              single-line
-              label="Minimal Value in Chaos Orbs"
-              type="number"
-              variant="outlined"
-              style="width: 100%"
-              density="compact"
-              min="0"></v-text-field>
-        </v-card-text>
-      </v-card>
-      <v-spacer></v-spacer>
-      <v-card>
-        <v-toolbar density="compact">
-          <v-toolbar-title class="text-h6">
-            Layout
-          </v-toolbar-title>
-          <template v-slot:append>
-            <v-checkbox v-model="includeLayout" density="compact"></v-checkbox>
-          </template>
-        </v-toolbar>
-        <v-card-text>
-          <template v-slot:default>
-            <v-range-slider
-                v-model="layout"
-                strict
-                direction="horizontal"
-                step="1"
-                show-ticks="always"
-                tick-size="4"
-                :max="10"
-                :disabled="!includeLayout"
-            >
-              <template v-slot:prepend>
-                <v-label style="white-space: break-spaces">Closed</v-label>
-              </template>
-              <template v-slot:append>
-                <v-label style="white-space: break-spaces">Open</v-label>
-              </template>
-            </v-range-slider>
-          </template>
-        </v-card-text>
-      </v-card>
-      <v-spacer></v-spacer>
-      <v-card>
-        <v-toolbar density="compact">
-          <v-toolbar-title class="text-h6">
-            Traversability
-          </v-toolbar-title>
-          <template v-slot:append>
-            <v-checkbox v-model="includeTraversability" density="compact"></v-checkbox>
-          </template>
-        </v-toolbar>
-        <v-card-text>
-          <template v-slot:default>
-            <v-range-slider
-                v-model="traversability"
-                strict
-                direction="horizontal"
-                step="1"
-                show-ticks="always"
-                tick-size="4"
-                :max="10"
-                :disabled="!includeTraversability"
-            >
-              <template v-slot:prepend>
-                <v-label style="white-space: break-spaces">Easy</v-label>
-              </template>
-              <template v-slot:append>
-                <v-label style="white-space: break-spaces">Annoying</v-label>
-              </template>
-            </v-range-slider>
-          </template>
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-title>Boss Filters</v-expansion-panel-title>
+              <v-expansion-panel-text>
+                <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses" density="compact"></v-checkbox>
+                <v-row no-gutters>
+                  <v-col>
+                    Number of Bosses
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col cols="1">
+                    <v-checkbox v-model="includeNumberOfBosses" density="compact"></v-checkbox>
+                  </v-col>
+                  <v-col>
+                    <v-range-slider
+                        v-model="numberOfBosses"
+                        strict
+                        direction="horizontal"
+                        step="1"
+                        show-ticks="always"
+                        tick-size="4"
+                        :max="4"
+                        :min="0"
+                        :disabled="!includeNumberOfBosses"
+                    >
+                      <template v-slot:prepend>
+                        <v-label style="white-space: break-spaces">{{ numberOfBosses[0] }}</v-label>
+                      </template>
+                      <template v-slot:append>
+                        <v-label style="white-space: break-spaces">{{ numberOfBosses[1] }}</v-label>
+                      </template>
+                    </v-range-slider>
+                  </v-col>
+                </v-row>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </v-card-text>
       </v-card>
       <v-card>
-        <v-toolbar density="compact">
-          <v-toolbar-title class="text-h6">
-            Backtrack Factor
-          </v-toolbar-title>
-          <template v-slot:append>
-            <v-checkbox v-model="includeBacktrackFactor" density="compact"></v-checkbox>
-          </template>
-        </v-toolbar>
         <v-card-text>
-          <template v-slot:default>
-            <v-range-slider
-                v-model="backtrackFactor"
-                strict
-                direction="horizontal"
-                step="1"
-                show-ticks="always"
-                tick-size="4"
-                :max="10"
-                :disabled="!includeBacktrackFactor"
-            >
-              <template v-slot:prepend>
-                <v-label style="white-space: break-spaces">None</v-label>
-              </template>
-              <template v-slot:append>
-                <v-label style="white-space: break-spaces">Alot</v-label>
-              </template>
-            </v-range-slider>
-          </template>
+          <v-expansion-panels>
+            <v-expansion-panel>
+              <v-expansion-panel-title>Divination Card Filters</v-expansion-panel-title>
+              <v-expansion-panel-text>
+                <v-text-field
+                    v-model="minDivinationCardValue"
+                    hide-details
+                    single-line
+                    label="Minimal Value in Chaos Orbs"
+                    type="number"
+                    variant="outlined"
+                    style="width: 100%"
+                    density="compact"
+                    min="0"></v-text-field>
+              </v-expansion-panel-text>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </v-card-text>
       </v-card>
     </v-container>
