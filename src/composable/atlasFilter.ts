@@ -8,10 +8,30 @@ export const handleFilter = (filterText: string,
                              minDivinationCardValue: number,
                              layout: number[],
                              traversability: number[],
-                             backtrackFactor: number[]) => {
+                             backtrackFactor: number[],
+                             linearity: number[],
+                             baseMobCount: number[],
+                             includeRushableBoss: boolean,
+                             includeSkippablePhases: boolean,
+                             excludeSpawnedBosses: boolean,
+                             spawnIntro: boolean) => {
     const atlasNodeStore = useAtlasNodeStore();
     let result = [] as AtlasNode[]
-    const needToFilter = filterText || mapTier[0] > -1 || numberOfBosses[0] > -1 || excludePhasedBosses || minDivinationCardValue > 0 || layout[0] > -1 || traversability[0] > -1 || backtrackFactor[0] > -1;
+    const needToFilter =
+        filterText ||
+        mapTier[0] > -1 ||
+        numberOfBosses[0] > -1 ||
+        excludePhasedBosses ||
+        minDivinationCardValue > 0 ||
+        layout[0] > -1 ||
+        traversability[0] > -1 ||
+        backtrackFactor[0] > -1 ||
+        linearity[0] > -1 ||
+        baseMobCount[0] > -1 ||
+        includeRushableBoss ||
+        includeSkippablePhases ||
+        excludeSpawnedBosses ||
+        spawnIntro;
 
     if (needToFilter) {
         result = atlasNodeStore.atlasNodes.filter(value => value.active)
@@ -26,7 +46,13 @@ export const handleFilter = (filterText: string,
         result = filterByNumberOfBosses(numberOfBosses, result);
 
         // Filter by phased Bosses
-        result = filterByPhasedBosses(excludePhasedBosses, result);
+        result = filterByPhasedBosses(excludePhasedBosses, includeSkippablePhases, spawnIntro, result);
+
+        // Filter by Spawned Bosses
+        result = filterBySpawnedBosses(excludeSpawnedBosses, result)
+
+        // Filter by Rushable Boss
+        result = filterByRushableBoss(includeRushableBoss, result)
 
         // Filter by Divination Card Value
         result = filterByDivinationCardValue(minDivinationCardValue, result);
@@ -37,6 +63,7 @@ export const handleFilter = (filterText: string,
         // Filter by traversability
         result = filterByTraversability(traversability, result);
 
+        //Filter by BacktrackFactor
         result = filterByBacktrackFactor(backtrackFactor, result);
     }
     atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
@@ -61,10 +88,28 @@ function filterByNumberOfBosses(numberOfBosses: number[], result: AtlasNode[]) {
     return result;
 }
 
-function filterByPhasedBosses(excludePhasedBosses: boolean, result: AtlasNode[]) {
+function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhases: boolean, includeSpawnIntro: boolean, result: AtlasNode[]) {
     if (excludePhasedBosses) {
         result = result.filter(atlasNode => {
             return !atlasNode.boss.phased
+        })
+    }
+    return result;
+}
+
+function filterBySpawnedBosses(excludeSpawnedBosses: boolean, result: AtlasNode[]) {
+    if (excludeSpawnedBosses) {
+        result = result.filter(atlasNode => {
+            return !atlasNode.boss.spawned
+        })
+    }
+    return result;
+}
+
+function filterByRushableBoss(includeRushableBoss: boolean, result: AtlasNode[]) {
+    if (includeRushableBoss) {
+        result = result.filter(atlasNode => {
+            return atlasNode.nodeLayout.rushableBoss;
         })
     }
     return result;

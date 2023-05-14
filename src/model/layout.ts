@@ -5,4 +5,5 @@ export interface Layout {
     rushableBoss: boolean
     notes: any
     openness: number
+    baseMobCount: number
 }
