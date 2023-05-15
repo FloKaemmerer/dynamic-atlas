@@ -6,7 +6,7 @@ export const handleFilter = (filterText: string,
                              excludePhasedBosses: boolean,
                              numberOfBosses: number[],
                              minDivinationCardValue: number,
-                             layout: number[],
+                             openness: number[],
                              traversability: number[],
                              backtrackFactor: number[],
                              linearity: number[],
@@ -23,7 +23,7 @@ export const handleFilter = (filterText: string,
         numberOfBosses[0] > -1 ||
         excludePhasedBosses ||
         minDivinationCardValue > 0 ||
-        layout[0] > -1 ||
+        openness[0] > -1 ||
         traversability[0] > -1 ||
         backtrackFactor[0] > -1 ||
         linearity[0] > -1 ||
@@ -57,14 +57,20 @@ export const handleFilter = (filterText: string,
         // Filter by Divination Card Value
         result = filterByDivinationCardValue(minDivinationCardValue, result);
 
-        // Filter by Layout
-        result = filterByLayout(layout, result);
+        // Filter by Openness
+        result = filterByOpenness(openness, result);
 
         // Filter by traversability
         result = filterByTraversability(traversability, result);
 
         //Filter by BacktrackFactor
         result = filterByBacktrackFactor(backtrackFactor, result);
+
+        // Filter by Linearity
+        result = filterByLinearity(linearity, result)
+
+        // Filter by BaseMobCount
+        result = filterByBaseMobCount(baseMobCount, result)
     }
     atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
 }
@@ -90,9 +96,27 @@ function filterByNumberOfBosses(numberOfBosses: number[], result: AtlasNode[]) {
 
 function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhases: boolean, includeSpawnIntro: boolean, result: AtlasNode[]) {
     if (excludePhasedBosses) {
-        result = result.filter(atlasNode => {
-            return !atlasNode.boss.phased
-        })
+        if (includeSkippablePhases && includeSpawnIntro) {
+            result = result.filter(atlasNode => {
+                return !atlasNode.boss.phased ||
+                    atlasNode.boss.phased && atlasNode.boss.skippablePhases ||
+                    atlasNode.boss.phased && atlasNode.boss.introPhase
+            })
+        } else if (includeSkippablePhases && !includeSpawnIntro) {
+            result = result.filter(atlasNode => {
+                return !atlasNode.boss.phased ||
+                    atlasNode.boss.phased && atlasNode.boss.skippablePhases
+            })
+        } else if (!includeSkippablePhases && includeSpawnIntro) {
+            result = result.filter(atlasNode => {
+                return !atlasNode.boss.phased ||
+                    atlasNode.boss.phased && atlasNode.boss.introPhase
+            })
+        } else {
+            result = result.filter(atlasNode => {
+                return !atlasNode.boss.phased
+            })
+        }
     }
     return result;
 }
@@ -124,7 +148,7 @@ function filterByDivinationCardValue(minDivinationCardValue: number, result: Atl
     return result;
 }
 
-function filterByLayout(layout: number[], result: AtlasNode[]) {
+function filterByOpenness(layout: number[], result: AtlasNode[]) {
     if (layout[0] > -1) {
         result = result.filter(atlasNode => {
             return layout[0] <= atlasNode.nodeLayout.openness && atlasNode.nodeLayout.openness <= layout[1]
@@ -148,6 +172,24 @@ function filterByBacktrackFactor(backtrackFactor: number[], result: AtlasNode[])
         result = result.filter(atlasNode => {
             console.log("BacktrackFactor: " + atlasNode.nodeLayout.backtrackFactor + ", Min Number: " + backtrackFactor[0] + ", Max Number: " + backtrackFactor[1])
             return backtrackFactor[0] <= atlasNode.nodeLayout.backtrackFactor && atlasNode.nodeLayout.backtrackFactor <= backtrackFactor[1]
+        })
+    }
+    return result;
+}
+
+function filterByBaseMobCount(baseMobCount: number[], result: AtlasNode[]) {
+    if (baseMobCount[0] > -1) {
+        result = result.filter(atlasNode => {
+            return baseMobCount[0] <= atlasNode.nodeLayout.baseMobCount && atlasNode.nodeLayout.baseMobCount <= baseMobCount[1]
+        })
+    }
+    return result;
+}
+
+function filterByLinearity(linearity: number[], result: AtlasNode[]) {
+    if (linearity[0] > -1) {
+        result = result.filter(atlasNode => {
+            return linearity[0] <= atlasNode.nodeLayout.linearity && atlasNode.nodeLayout.linearity <= linearity[1]
         })
     }
     return result;

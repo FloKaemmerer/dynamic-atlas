@@ -2044,7 +2044,7 @@
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": true,
       "spawned": true,
       "bossArena": false,
@@ -3422,7 +3422,7 @@
       "numberOfBosses": 1,
       "phased": true,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [
         "Avatar of Apocalypse"
@@ -27533,7 +27533,7 @@
         "Portentia, the Foul"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
       "linearity": 0,

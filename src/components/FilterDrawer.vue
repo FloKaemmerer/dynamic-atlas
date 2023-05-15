@@ -181,7 +181,7 @@
                                 </v-row>
                                 <v-row no-gutters>
                                     <v-col cols="1">
-                                        <v-checkbox v-model="includeLinearity" density="compact" disabled></v-checkbox>
+                                        <v-checkbox v-model="includeLinearity" density="compact"></v-checkbox>
                                     </v-col>
                                     <v-col>
                                         <v-range-slider
@@ -193,7 +193,7 @@
                                                 tick-size="4"
                                                 :max="10"
                                                 :min="0"
-                                                disabled
+                                                :disabled="!includeLinearity"
                                         >
                                             <template v-slot:prepend>
                                                 <v-label style="white-space: break-spaces">Linear</v-label>
@@ -217,8 +217,7 @@
                                 </v-row>
                                 <v-row no-gutters>
                                     <v-col cols="1">
-                                        <v-checkbox v-model="includeBaseMobCount" density="compact"
-                                                    disabled></v-checkbox>
+                                        <v-checkbox v-model="includeBaseMobCount" density="compact"></v-checkbox>
                                     </v-col>
                                     <v-col>
                                         <v-range-slider
@@ -230,7 +229,7 @@
                                                 tick-size="4"
                                                 :max="10"
                                                 :min="1"
-                                                disabled
+                                                :disabled="!includeBaseMobCount"
                                         >
                                             <template v-slot:prepend>
                                                 <v-label style="white-space: break-spaces">Low
@@ -266,16 +265,6 @@
                         <v-expansion-panel>
                             <v-expansion-panel-title>Boss Filters</v-expansion-panel-title>
                             <v-expansion-panel-text>
-                                <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses"
-                                            density="compact"></v-checkbox>
-                                <v-checkbox label="Include Bosses With skippable Phases"
-                                            v-model="includeSkippablePhases" density="compact"
-                                            :disabled="!excludePhasedBosses"></v-checkbox>
-                                <v-checkbox label="Include Bosses With Spawn-Intro" v-model="includeSpawnIntro"
-                                            density="compact"
-                                            :disabled="!excludePhasedBosses"></v-checkbox>
-                                <v-checkbox label="Exclude Spawned Bosses" v-model="excludeSpawnedBosses"
-                                            density="compact"></v-checkbox>
                                 <v-row no-gutters>
                                     <v-col>
                                         Number of Bosses
@@ -298,20 +287,26 @@
                                                 :disabled="!includeNumberOfBosses"
                                         >
                                             <template v-slot:prepend>
-                                                <v-label style="white-space: break-spaces">{{
-                                                    numberOfBosses[0]
-                                                    }}
+                                                <v-label style="white-space: break-spaces">{{ numberOfBosses[0] }}
                                                 </v-label>
                                             </template>
                                             <template v-slot:append>
-                                                <v-label style="white-space: break-spaces">{{
-                                                    numberOfBosses[1]
-                                                    }}
+                                                <v-label style="white-space: break-spaces">{{ numberOfBosses[1] }}
                                                 </v-label>
                                             </template>
                                         </v-range-slider>
                                     </v-col>
                                 </v-row>
+                                <v-checkbox label="Exclude Phased Bosses" v-model="excludePhasedBosses"
+                                            density="compact"></v-checkbox>
+                                <v-checkbox label="Include Bosses With skippable Phases"
+                                            v-model="includeSkippablePhases" density="compact"
+                                            :disabled="!excludePhasedBosses"></v-checkbox>
+                                <v-checkbox label="Include Bosses With Spawn-Intro" v-model="includeSpawnIntro"
+                                            density="compact"
+                                            :disabled="!excludePhasedBosses"></v-checkbox>
+                                <v-checkbox label="Exclude Spawned Bosses" v-model="excludeSpawnedBosses"
+                                            density="compact"></v-checkbox>
                             </v-expansion-panel-text>
                         </v-expansion-panel>
                     </v-expansion-panels>
@@ -349,23 +344,32 @@
                         <v-expansion-panel>
                             <v-expansion-panel-title>Overlays</v-expansion-panel-title>
                             <v-expansion-panel-text>
-                                <v-checkbox label="Openness" v-model="opennessOverlay" density="compact" disabled>
-                                    <template v-slot:append>
-                                        <v-tooltip text="Openness = 10 =Dunes; Openness = 0 = Toxic Sewers">
-                                            <template v-slot:activator="{ props }">
-                                                <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
-                                            </template>
-                                        </v-tooltip>
-                                    </template>
-                                </v-checkbox>
-                                <v-checkbox label="Traversability" v-model="traversabilityOverlay" density="compact"
-                                            disabled></v-checkbox>
-                                <v-checkbox label="Linearity" v-model="linearityOverlay" density="compact"
-                                            disabled></v-checkbox>
-                                <v-checkbox label="Backtrack Factor" v-model="backtrackFactorOverlay" density="compact"
-                                            disabled></v-checkbox>
-                                <v-checkbox label="Base Mob Count" v-model="baseMobCountOverlay" density="compact"
-                                            disabled></v-checkbox>
+                                <v-radio-group v-model="activeOverlay" disabled>
+                                    <v-radio label="none" value="none" density="compact"></v-radio>
+                                    <v-radio label="Openness" v-model="opennessOverlay" value="opennessOverlay"
+                                             density="compact">
+                                        <!--                                        <v-tooltip text="Openness = 10 = Dunes; Openness = 0 = Toxic Sewers">-->
+                                        <!--                                            <template v-slot:activator="{ props }">-->
+                                        <!--                                                <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>-->
+                                        <!--                                            </template>-->
+                                        <!--                                        </v-tooltip>-->
+                                    </v-radio>
+                                    <v-radio label="Traversability" v-model="traversabilityOverlay"
+                                             value="traversabilityOverlay"
+                                             density="compact"
+                                    ></v-radio>
+                                    <v-radio label="Linearity" v-model="linearityOverlay" value="linearityOverlay"
+                                             density="compact"
+                                    ></v-radio>
+                                    <v-radio label="Backtrack Factor" v-model="backtrackFactorOverlay"
+                                             value="backtrackFactorOverlay"
+                                             density="compact"
+                                    ></v-radio>
+                                    <v-radio label="Base Mob Count" v-model="baseMobCountOverlay"
+                                             value="baseMobCountOverlay"
+                                             density="compact"
+                                    ></v-radio>
+                                </v-radio-group>
                             </v-expansion-panel-text>
                         </v-expansion-panel>
                     </v-expansion-panels>
@@ -397,7 +401,7 @@ let includeSpawnIntro = ref(false)
 let excludeSpawnedBosses = ref(false)
 
 let mapTier = ref([1, 16])
-let numberOfBosses = ref([0, 6])
+let numberOfBosses = ref([0, 4])
 let layout = ref([0, 10])
 let traversability = ref([0, 10])
 let backtrackFactor = ref([0, 10])
@@ -405,6 +409,8 @@ let linearity = ref([0, 10])
 let baseMobCount = ref([0, 10])
 
 let minDivinationCardValue = ref()
+
+let activeOverlay = ref('none')
 
 let opennessOverlay = ref(false)
 let traversabilityOverlay = ref(false)
