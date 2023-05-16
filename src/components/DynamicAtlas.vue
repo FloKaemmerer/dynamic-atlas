@@ -16,6 +16,7 @@ import Konva from 'konva';
 import {onMounted, onUnmounted} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
+import {useOverlayStore} from "@/store/OverlayStore";
 import type {AtlasNode} from "@/model/atlasNode";
 import {handleZoom} from "@/composable/stage-zoom";
 import DetailsDrawer from "@/components/DetailsDrawer.vue";
@@ -24,6 +25,7 @@ import FilterDrawer from "@/components/FilterDrawer.vue";
 const coordinatesScaleFactor = 4.1
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
+const overlayStore = useOverlayStore();
 
 const backgroundGroup = new Konva.Group();
 const linksGroup = new Konva.Group();
@@ -112,6 +114,68 @@ const mounted = () => {
     mapLayer.add(tooltipGroup)
 
     handleZoom(stage)
+}
+
+overlayStore.$subscribe((mutation, state) => {
+    // destroy previous Highlights
+    let allHighlights = overlayGroup.find("Circle") as Konva.Circle[];
+    allHighlights.forEach(value => value.destroy())
+
+    //show all overlay on all AtlasNodes
+    state.overlayNodesMap.forEach((value: number, key: AtlasNode) => {
+        console.log(key, value);
+        let overlayCircle = new Konva.Circle({
+            id: key.id,
+            x: getScaledAtlasNodeLocX(key),
+            y: getScaledAtlasNodeLocY(key),
+            fill: getOverlayColor(value),
+            strokeWidth: 4,
+            radius: 35,
+            opacity: 1,
+        })
+        overlayGroup.add(overlayCircle)
+    });
+})
+
+function getOverlayColor(value: number) {
+    switch (value) {
+        case 0: {
+            return 'red';
+        }
+        case 1: {
+            return '#dd776e';
+        }
+        case 2: {
+            return '#e98f6f';
+        }
+        case 3: {
+            return '#f2a46d';
+        }
+        case 4: {
+            return '#f6b86a';
+        }
+        case 5: {
+            return '#fdcc67';
+        }
+        case 6: {
+            return '#ecd36a';
+        }
+        case 7: {
+            return '#c7cd72';
+        }
+        case 8: {
+            return '#a1c77a';
+        }
+        case 9: {
+            return '#7cc081';
+        }
+        case 10: {
+            return '#56b888';
+        }
+        default: {
+            return 'red';
+        }
+    }
 }
 
 atlasNodeStore.$subscribe((mutation, state) => {

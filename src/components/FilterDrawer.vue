@@ -344,7 +344,7 @@
                         <v-expansion-panel>
                             <v-expansion-panel-title>Overlays</v-expansion-panel-title>
                             <v-expansion-panel-text>
-                                <v-radio-group v-model="activeOverlay" disabled>
+                                <v-radio-group v-model="activeOverlay">
                                     <v-radio label="none" value="none" density="compact"></v-radio>
                                     <v-radio label="Openness" v-model="opennessOverlay" value="opennessOverlay"
                                              density="compact">
@@ -383,6 +383,7 @@
 
 import {ref, watch} from "vue";
 import {handleFilter} from "@/composable/atlasFilter";
+import {handleOverlay} from "@/composable/overlayHandler";
 
 let filterText = ref("");
 
@@ -459,4 +460,8 @@ watch([
         )
     });
 
+watch(activeOverlay, () => {
+    console.log("Activating overlay for: " + activeOverlay.value)
+    handleOverlay(activeOverlay.value)
+});
 </script>
