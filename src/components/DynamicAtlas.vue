@@ -140,40 +140,40 @@ overlayStore.$subscribe((mutation, state) => {
 function getOverlayColor(value: number) {
     switch (value) {
         case 0: {
-            return 'red';
+            return '#c20301';
         }
         case 1: {
-            return '#dd776e';
+            return '#eb4823';
         }
         case 2: {
-            return '#e98f6f';
+            return '#fd7842';
         }
         case 3: {
-            return '#f2a46d';
+            return '#f6a676';
         }
         case 4: {
-            return '#f6b86a';
+            return '#f6bf99';
         }
         case 5: {
-            return '#fdcc67';
+            return '#fdc32c';
         }
         case 6: {
-            return '#ecd36a';
+            return '#ffcf3d';
         }
         case 7: {
-            return '#c7cd72';
+            return '#ebdeb2';
         }
         case 8: {
-            return '#a1c77a';
+            return '#c4d7ee';
         }
         case 9: {
-            return '#7cc081';
+            return '#a5ccab';
         }
         case 10: {
-            return '#56b888';
+            return '#59873a';
         }
         default: {
-            return 'red';
+            return '#ff0904';
         }
     }
 }
