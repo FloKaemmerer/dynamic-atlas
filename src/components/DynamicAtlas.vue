@@ -7,7 +7,6 @@
 
 <script setup lang="ts">
 import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
-import overlayColorRangeSource from '@/assets/atlas/overlayColorRange.png'
 import mapBase from '@/assets/atlas/maps/Base.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
 import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
@@ -118,42 +117,54 @@ const mounted = () => {
 }
 
 overlayStore.$subscribe((mutation, state) => {
-    // destroy previous Highlights
-    let allOverlays = overlayGroup.find("Circle") as Konva.Circle[];
-    allOverlays.forEach(value => value.destroy())
-
-    const colorRangeImage = overlayGroup.find("#overlayColorRange") as Konva.Image[];
-    colorRangeImage.forEach(value => value.destroy())
+    // destroy previous overlay
+    let allOverlayCircles = overlayGroup.find("Circle") as Konva.Circle[];
+    allOverlayCircles.forEach(value => value.destroy())
+    let allOverlayRects = overlayGroup.find("Rect") as Konva.Rect[];
+    allOverlayRects.forEach(value => value.destroy())
+    let allOverlayText = overlayGroup.find("Text") as Konva.Text[];
+    allOverlayText.forEach(value => value.destroy())
 
     //show all overlay on all AtlasNodes
     state.overlayNodesMap.forEach((value: number, key: AtlasNode) => {
-        console.log(key, value);
         let overlayCircle = new Konva.Circle({
-            id: key.id,
+            id: key.id + "-circle",
             x: getScaledAtlasNodeLocX(key),
             y: getScaledAtlasNodeLocY(key),
             fill: getOverlayColor(value),
-            strokeWidth: 4,
             radius: 35,
             opacity: 1,
         })
         overlayGroup.add(overlayCircle)
-    });
 
-    if (state.overlayNodesMap.size > 0) {
-        let image = new Image()
-        image.src = overlayColorRangeSource
-        let konvaImage = new Konva.Image({
-            id: "overlayColorRange",
-            image: image,
-            x: 500 * coordinatesScaleFactor,
-            y: 450 * coordinatesScaleFactor,
-            scaleY: 0.4,
+        let overlayRect = new Konva.Rect({
+            id: key.id + "-rect",
+            x: getScaledAtlasNodeLocX(key) - 25,
+            y: getScaledAtlasNodeLocY(key) - 60,
+            fill: getOverlayColor(value),
+            width: 50,
+            height: 50,
+            cornerRadius: 10,
+            opacity: 1,
         })
-        image.onload = function () {
-            overlayGroup.add(konvaImage)
-        }
-    }
+        overlayGroup.add(overlayRect)
+
+        let overlayText = new Konva.Text({
+            Text: value,
+            x: getScaledAtlasNodeLocX(key) - 5,
+            y: getScaledAtlasNodeLocY(key) - 55,
+            offsetX: (value + "").length * 3.75,
+            fontSize: 30,
+            fontFamily: 'Arial',
+            fontStyle: 'bold',
+            fill: 'white',
+            shadowColor: 'black',
+            shadowBlur: 10,
+            shadowOffset: {x: 1, y: 1},
+            shadowOpacity: 1,
+        })
+        overlayGroup.add(overlayText)
+    });
 })
 
 function getOverlayColor(value: number) {
@@ -265,10 +276,15 @@ function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, lo
         Text: mapName,
         x: locX,
         y: locY + 22,
-        offsetX: mapName.length * 3.75,
-        fontSize: 18,
+        offsetX: mapName.length * 5,
+        fontSize: 25,
         fontFamily: 'Arial',
-        fill: 'black'
+        fill: 'black',
+        fontStyle: 'bold',
+        shadowColor: 'white',
+        shadowBlur: 10,
+        shadowOffset: {x: 1, y: 1},
+        shadowOpacity: 1,
     })
     group.add(mapNodeNameKonvaText)
 }
@@ -347,10 +363,10 @@ function hideTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
 function getTooltipBaseText() {
     return new Konva.Text({
         text: "",
-        fontSize: 18,
+        fontSize: 35,
         fontFamily: 'Calibri',
         fill: '#555',
-        width: 300,
+        width: 400,
         padding: 20,
         align: 'center',
         visible: false,
@@ -362,7 +378,7 @@ function getTooltipContainer() {
         stroke: '#555',
         strokeWidth: 5,
         fill: '#ddd',
-        width: 300,
+        width: 400,
         height: getTooltipBaseText().height(),
         shadowColor: 'black',
         shadowBlur: 10,

@@ -9,7 +9,7 @@ const atlasNodeStore = useAtlasNodeStore();
 function getOpennessOverlayNodes() {
     const opennessOverlayNodes = new Map<AtlasNode, number>();
     atlasNodeStore.atlasNodes.filter(atlasNode => {
-        if (atlasNode.active) {
+        if (atlasNode.active && !atlasNode.uniqueMap) {
             opennessOverlayNodes.set(atlasNode, atlasNode.nodeLayout.openness)
         }
     })
@@ -19,7 +19,7 @@ function getOpennessOverlayNodes() {
 function getTraversabilityOverlayNodes() {
     const traversabilityOverlayNodes = new Map<AtlasNode, number>();
     atlasNodeStore.atlasNodes.filter(atlasNode => {
-        if (atlasNode.active) {
+        if (atlasNode.active && !atlasNode.uniqueMap) {
             traversabilityOverlayNodes.set(atlasNode, atlasNode.nodeLayout.traversability)
         }
     })
@@ -29,7 +29,7 @@ function getTraversabilityOverlayNodes() {
 function getBacktrackFactorOverlayNodes() {
     const backTrackFactorOverlayNodes = new Map<AtlasNode, number>();
     atlasNodeStore.atlasNodes.filter(atlasNode => {
-        if (atlasNode.active) {
+        if (atlasNode.active && !atlasNode.uniqueMap) {
             backTrackFactorOverlayNodes.set(atlasNode, atlasNode.nodeLayout.backtrackFactor)
         }
     })
@@ -39,7 +39,7 @@ function getBacktrackFactorOverlayNodes() {
 function getLinearityOverlayNodes() {
     const linearityOverlayNodes = new Map<AtlasNode, number>();
     atlasNodeStore.atlasNodes.filter(atlasNode => {
-        if (atlasNode.active) {
+        if (atlasNode.active && !atlasNode.uniqueMap) {
             linearityOverlayNodes.set(atlasNode, atlasNode.nodeLayout.linearity)
         }
     })
@@ -49,7 +49,7 @@ function getLinearityOverlayNodes() {
 function getBaseMobCountOverlayNodes() {
     const baseMobCountOverlayNodes = new Map<AtlasNode, number>();
     atlasNodeStore.atlasNodes.filter(atlasNode => {
-        if (atlasNode.active) {
+        if (atlasNode.active && !atlasNode.uniqueMap) {
             baseMobCountOverlayNodes.set(atlasNode, atlasNode.nodeLayout.baseMobCount)
         }
     })
