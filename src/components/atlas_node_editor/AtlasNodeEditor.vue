@@ -155,12 +155,12 @@
                                     </v-sheet>
                                     <div class="pa-4">
                                         <v-row no-gutters>
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Active
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-radio-group v-model="selectedAtlasNode.active" density="compact">
                                                     <v-radio :value=true>
                                                         <template v-slot:label>
@@ -175,12 +175,12 @@
                                                 </v-radio-group>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Divination Cards
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-textarea
                                                         hide-details
                                                         single-line
@@ -191,12 +191,12 @@
                                                 </v-textarea>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Additional Tags
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-text-field
                                                         hide-details
                                                         single-line
@@ -207,12 +207,12 @@
                                                 </v-text-field>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Notes
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-text-field
                                                         hide-details
                                                         single-line
@@ -238,7 +238,7 @@
                                     <div class="pa-4">
                                         <v-row no-gutters>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Number of Bosses
                                                 </v-sheet>
@@ -253,14 +253,14 @@
                                                         density="compact">
                                                 </v-text-field>
                                             </v-col>
-                                            <v-col cols="5"></v-col>
+                                            <v-col cols="3"></v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Phased Boss
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-radio-group v-model="selectedAtlasNode.boss.phased"
                                                                density="compact">
                                                     <v-radio :value=true>
@@ -276,12 +276,12 @@
                                                 </v-radio-group>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Skippable Phases
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-radio-group v-model="selectedAtlasNode.boss.skippablePhases"
                                                                density="compact">
                                                     <v-radio :value=true>
@@ -297,12 +297,12 @@
                                                 </v-radio-group>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Spawn-Intro Phase
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-radio-group v-model="selectedAtlasNode.boss.introPhase"
                                                                density="compact">
                                                     <v-radio :value=true>
@@ -318,12 +318,12 @@
                                                 </v-radio-group>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Boss Arena
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-radio-group v-model="selectedAtlasNode.boss.bossArena"
                                                                density="compact">
                                                     <v-radio :value=true>
@@ -339,12 +339,12 @@
                                                 </v-radio-group>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Boss Spawned
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-radio-group v-model="selectedAtlasNode.boss.spawned"
                                                                density="compact">
                                                     <v-radio :value=true>
@@ -360,32 +360,34 @@
                                                 </v-radio-group>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Boss Names
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-textarea
                                                         hide-details
                                                         single-line
                                                         v-model="selectedAtlasNode.boss.names"
                                                         rows="1"
+                                                        auto-grow
                                                         density="compact">
                                                 </v-textarea>
                                             </v-col>
 
-                                            <v-col cols="2">
+                                            <v-col cols="3">
                                                 <v-sheet>
                                                     Notes
                                                 </v-sheet>
                                             </v-col>
-                                            <v-col cols="10">
+                                            <v-col cols="9">
                                                 <v-textarea
                                                         hide-details
                                                         single-line
                                                         v-model="selectedAtlasNode.boss.notes"
                                                         rows="1"
+                                                        auto-grow
                                                         density="compact">
                                                 </v-textarea>
                                             </v-col>

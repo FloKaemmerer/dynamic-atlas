@@ -1,6 +1,6 @@
 <template>
     <v-row no-gutters v-if="atlasNode">
-        <v-col cols="2">
+        <v-col cols="3">
             <v-sheet class="pa-2">
                 Highest Value Divination Card
             </v-sheet>
@@ -10,8 +10,8 @@
                 <v-label>{{ atlasNode.highestValueDivinationCard.name }}</v-label>
             </v-sheet>
         </v-col>
-        <v-col cols="5"></v-col>
-        <v-col cols="2">
+        <v-col cols="3"></v-col>
+        <v-col cols="3">
             <v-sheet class="pa-2">
                 Map Tier
             </v-sheet>
@@ -21,9 +21,9 @@
                 <v-label>{{ atlasNode.mapTier }}</v-label>
             </v-sheet>
         </v-col>
-        <v-col cols="5"></v-col>
+        <v-col cols="3"></v-col>
 
-        <v-col cols="2">
+        <v-col cols="3">
             <v-sheet class="pa-2">
                 ID
             </v-sheet>
@@ -33,9 +33,9 @@
                 <v-label>{{ atlasNode.id }}</v-label>
             </v-sheet>
         </v-col>
-        <v-col cols="5"></v-col>
+        <v-col cols="3"></v-col>
 
-        <v-col cols="2">
+        <v-col cols="3">
             <v-sheet class="pa-2">
                 Linked Maps
             </v-sheet>
@@ -45,9 +45,9 @@
                 <v-label>{{ atlasNode.linked }}</v-label>
             </v-sheet>
         </v-col>
-        <v-col cols="5"></v-col>
+        <v-col cols="3"></v-col>
 
-        <v-col cols="2">
+        <v-col cols="3">
             <v-sheet class="pa-2">
                 Loc X
             </v-sheet>
@@ -57,9 +57,9 @@
                 <v-label>{{ atlasNode.locX }}</v-label>
             </v-sheet>
         </v-col>
-        <v-col cols="5"></v-col>
+        <v-col cols="3"></v-col>
 
-        <v-col cols="2">
+        <v-col cols="3">
             <v-sheet class="pa-2">
                 Loc Y
             </v-sheet>
@@ -69,9 +69,9 @@
                 <v-label>{{ atlasNode.locY }}</v-label>
             </v-sheet>
         </v-col>
-        <v-col cols="5"></v-col>
+        <v-col cols="3"></v-col>
 
-        <v-col cols="2">
+        <v-col cols="3">
             <v-sheet class="pa-2">
                 Unique Map
             </v-sheet>
