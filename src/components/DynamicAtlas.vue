@@ -7,6 +7,7 @@
 
 <script setup lang="ts">
 import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
+import overlayColorRangeSource from '@/assets/atlas/overlayColorRange.png'
 import mapBase from '@/assets/atlas/maps/Base.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
 import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
@@ -118,8 +119,11 @@ const mounted = () => {
 
 overlayStore.$subscribe((mutation, state) => {
     // destroy previous Highlights
-    let allHighlights = overlayGroup.find("Circle") as Konva.Circle[];
-    allHighlights.forEach(value => value.destroy())
+    let allOverlays = overlayGroup.find("Circle") as Konva.Circle[];
+    allOverlays.forEach(value => value.destroy())
+
+    const colorRangeImage = overlayGroup.find("#overlayColorRange") as Konva.Image[];
+    colorRangeImage.forEach(value => value.destroy())
 
     //show all overlay on all AtlasNodes
     state.overlayNodesMap.forEach((value: number, key: AtlasNode) => {
@@ -135,6 +139,21 @@ overlayStore.$subscribe((mutation, state) => {
         })
         overlayGroup.add(overlayCircle)
     });
+
+    if (state.overlayNodesMap.size > 0) {
+        let image = new Image()
+        image.src = overlayColorRangeSource
+        let konvaImage = new Konva.Image({
+            id: "overlayColorRange",
+            image: image,
+            x: 500 * coordinatesScaleFactor,
+            y: 450 * coordinatesScaleFactor,
+            scaleY: 0.4,
+        })
+        image.onload = function () {
+            overlayGroup.add(konvaImage)
+        }
+    }
 })
 
 function getOverlayColor(value: number) {
