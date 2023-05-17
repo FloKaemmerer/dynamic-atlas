@@ -13,7 +13,6 @@ export const handleZoom = (stage: Konva.Stage) => {
                 x: (pointer.x - stage.x()) / oldScale,
                 y: (pointer.y - stage.y()) / oldScale,
             };
-
             // how to scale? Zoom in? Or zoom out?
             let direction = e.evt.deltaY > 0 ? -1 : 1;
 
