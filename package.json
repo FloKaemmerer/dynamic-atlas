@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@mdi/font": "^7.2.96",
+    "@vueuse/core": "^10.1.2",
     "konva": "^8.4.3",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",

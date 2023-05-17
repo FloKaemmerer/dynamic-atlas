@@ -434,6 +434,7 @@ import {computed, ref, watch} from "vue";
 import type {AtlasNode} from "@/model/atlasNode";
 import AtlasNodeStaticPorperty from "@/components/atlas_node_editor/AtlasNodeStaticPorperty.vue";
 import axios from 'axios'
+import copyToClipBoard from "@/composable/copy-utils";
 
 const atlasNodeStore = useAtlasNodeStore();
 const atlasNodes = computed<AtlasNode[] | null>(() => atlasNodeStore.atlasNodes);
@@ -496,7 +497,7 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
 async function updateSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
     loading.value = true;
     const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
-
+    await copyToClipBoard(JSON.stringify(selectedAtlasNode))
     await axios.put(link, selectedAtlasNode).then((res) => {
         // selectedAtlasNode = res.data
         console.log(res.data)
