@@ -5,6 +5,7 @@
     <DetailsDrawer :drawer="false"/>
 </template>
 
+
 <script setup lang="ts">
 import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
 import mapBase from '@/assets/atlas/maps/Base.png'
@@ -21,8 +22,12 @@ import type {AtlasNode} from "@/model/atlasNode";
 import {handleZoom} from "@/composable/stage-zoom";
 import DetailsDrawer from "@/components/DetailsDrawer.vue";
 import FilterDrawer from "@/components/FilterDrawer.vue";
+import getOverlayColor from "@/composable/overlay-color-utils";
+import type {StageState} from "@/model/stageState";
 
 const coordinatesScaleFactor = 4.1
+const minHeight = 969
+const minWidth = 1920
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 const overlayStore = useOverlayStore();
@@ -36,22 +41,34 @@ const tooltipGroup = new Konva.Group();
 const overlayGroup = new Konva.Group();
 const filterHighlightGroup = new Konva.Group();
 
+let state: StageState
+
 function handleToggleDrawer(e: boolean) {
     detailsDrawerStore.SET_DRAWER(e)
 }
 
 const mounted = () => {
+
+    state = {
+        stage: undefined,
+        currentScale: 0.46,
+        height: minHeight,
+        width: minWidth,
+    }
+
     let stage = new Konva.Stage({
         container: 'atlas',
         id: 'atlas-stage',
-        width: window.innerWidth,
-        height: window.innerHeight,
-        scaleX: 0.46,
-        scaleY: 0.46,
+        width: state.width,
+        height: state.height,
+        scaleX: state.currentScale,
+        scaleY: state.currentScale,
         offsetX: 350,
         offsetY: 150,
         draggable: true
     });
+
+    state.stage = stage
 
     createBackgroundImage();
     let mapLayer = new Konva.Layer();
@@ -166,47 +183,6 @@ overlayStore.$subscribe((mutation, state) => {
         overlayGroup.add(overlayText)
     });
 })
-
-function getOverlayColor(value: number) {
-    switch (value) {
-        case 0: {
-            return '#c20301';
-        }
-        case 1: {
-            return '#eb4823';
-        }
-        case 2: {
-            return '#fd7842';
-        }
-        case 3: {
-            return '#f6a676';
-        }
-        case 4: {
-            return '#f6bf99';
-        }
-        case 5: {
-            return '#fdc32c';
-        }
-        case 6: {
-            return '#ffcf3d';
-        }
-        case 7: {
-            return '#ebdeb2';
-        }
-        case 8: {
-            return '#c4d7ee';
-        }
-        case 9: {
-            return '#a5ccab';
-        }
-        case 10: {
-            return '#59873a';
-        }
-        default: {
-            return '#ff0904';
-        }
-    }
-}
 
 atlasNodeStore.$subscribe((mutation, state) => {
     console.log(state.filteredAtlasNodes)
@@ -403,6 +379,17 @@ function getHighlightArea(locX: number, locY: number) {
 
 const handleWindowSizeChange = () => {
     console.log("window resized")
+    // now we need to fit stage into parent container
+    var containerWidth = window.innerWidth
+
+    // but we also make the full scene visible
+    // so we need to scale all objects on canvas
+    var scale = containerWidth / state.width;
+    if (state.stage) {
+        // state.stage.width(state.width * scale);
+        // state.stage.height(state.height * scale);
+        // state.stage.scale({x: scale, y: scale});
+    }
 };
 
 onMounted(() => {
