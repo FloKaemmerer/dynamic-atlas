@@ -26,7 +26,7 @@ import getOverlayColor from "@/composable/overlay-color-utils";
 import type {StageState} from "@/model/stageState";
 
 const coordinatesScaleFactor = 4.1
-const minHeight = 969
+const minHeight = 937
 const minWidth = 1920
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
@@ -48,7 +48,6 @@ function handleToggleDrawer(e: boolean) {
 }
 
 const mounted = () => {
-
     state = {
         stage: undefined,
         currentScale: 0.46,
@@ -380,11 +379,11 @@ function getHighlightArea(locX: number, locY: number) {
 const handleWindowSizeChange = () => {
     console.log("window resized")
     // now we need to fit stage into parent container
-    var containerWidth = window.innerWidth
+    // var containerWidth = window.innerWidth
 
     // but we also make the full scene visible
     // so we need to scale all objects on canvas
-    var scale = containerWidth / state.width;
+    // var scale = containerWidth / state.width;
     if (state.stage) {
         // state.stage.width(state.width * scale);
         // state.stage.height(state.height * scale);
