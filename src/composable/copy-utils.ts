@@ -4,7 +4,7 @@ const permissionRead = usePermission('clipboard-read')
 const permissionWrite = usePermission('clipboard-write')
 const {text, copy, copied, isSupported} = useClipboard()
 const copyToClipBoard = async (value: string) => {
-    copy(value)
+    await copy(value)
     // ElMessage({
     //     dangerouslyUseHTMLString: true,
     //     type: "success",

@@ -1,7 +1,7 @@
 <template>
     <v-container class="bg-surface-variant mb-6">
         <v-row no-gutters>
-            <v-col cols="3">
+            <v-col cols="2">
                 <v-sheet class="pa-2 ma-2">
                     <v-select density="compact"
                               :items="atlasNodeNames()"
@@ -9,12 +9,12 @@
                     ></v-select>
                 </v-sheet>
             </v-col>
-            <v-col cols="9" v-if="selectedAtlasNode">
+            <v-col cols="10" v-if="selectedAtlasNode">
                 <v-card>
                     <v-card-title>{{ selectedAtlasNode.name }}</v-card-title>
                     <v-card-text>
                         <v-row no-gutters>
-                            <v-col cols="6">
+                            <v-col cols="4">
                                 <v-sheet elevation="10" rounded="xl">
                                     <v-sheet class="pa-3 bg-black" rounded="t-xl">
                                         Layout
@@ -147,90 +147,7 @@
                                     </div>
                                 </v-sheet>
                             </v-col>
-                            <v-col cols="6">
-
-                                <v-sheet elevation="10" rounded="xl">
-                                    <v-sheet class="pa-3 bg-black" rounded="t-xl">
-                                        Misc
-                                    </v-sheet>
-                                    <div class="pa-4">
-                                        <v-row no-gutters>
-                                            <v-col cols="3">
-                                                <v-sheet>
-                                                    Active
-                                                </v-sheet>
-                                            </v-col>
-                                            <v-col cols="9">
-                                                <v-radio-group v-model="selectedAtlasNode.active" density="compact">
-                                                    <v-radio :value=true>
-                                                        <template v-slot:label>
-                                                            <div><strong>Active</strong></div>
-                                                        </template>
-                                                    </v-radio>
-                                                    <v-radio :value=false>
-                                                        <template v-slot:label>
-                                                            <div><strong>Inactive</strong></div>
-                                                        </template>
-                                                    </v-radio>
-                                                </v-radio-group>
-                                            </v-col>
-
-                                            <v-col cols="3">
-                                                <v-sheet>
-                                                    Divination Cards
-                                                </v-sheet>
-                                            </v-col>
-                                            <v-col cols="9">
-                                                <v-textarea
-                                                        hide-details
-                                                        single-line
-                                                        v-model="divinationCardNames"
-                                                        rows="1"
-                                                        auto-grow
-                                                        density="compact">
-                                                </v-textarea>
-                                            </v-col>
-
-                                            <v-col cols="3">
-                                                <v-sheet>
-                                                    Additional Tags
-                                                </v-sheet>
-                                            </v-col>
-                                            <v-col cols="9">
-                                                <v-text-field
-                                                        hide-details
-                                                        single-line
-                                                        :v-model="additionalTags"
-                                                        rows="1"
-                                                        auto-grow
-                                                        density="compact">
-                                                </v-text-field>
-                                            </v-col>
-
-                                            <v-col cols="3">
-                                                <v-sheet>
-                                                    Notes
-                                                </v-sheet>
-                                            </v-col>
-                                            <v-col cols="9">
-                                                <v-text-field
-                                                        hide-details
-                                                        single-line
-                                                        :v-model="selectedAtlasNode.notes"
-                                                        rows="1"
-                                                        auto-grow
-                                                        density="compact">
-                                                </v-text-field>
-                                            </v-col>
-                                        </v-row>
-                                    </div>
-                                </v-sheet>
-
-
-                            </v-col>
-                        </v-row>
-                        <v-row no-gutters>
-                            <v-col cols="6">
+                            <v-col cols="4">
                                 <v-sheet elevation="10" rounded="xl">
                                     <v-sheet class="pa-3 bg-black" rounded="t-xl">
                                         Boss
@@ -395,19 +312,90 @@
                                     </div>
                                 </v-sheet>
                             </v-col>
-                            <v-col cols="6">
+                            <v-col cols="4">
                                 <v-sheet elevation="10" rounded="xl">
                                     <v-sheet class="pa-3 bg-black" rounded="t-xl">
-                                        Static Properties
+                                        Misc
                                     </v-sheet>
                                     <div class="pa-4">
-                                        <atlas-node-static-porperty :atlas-node="selectedAtlasNode"/>
+                                        <v-row no-gutters>
+                                            <v-col cols="3">
+                                                <v-sheet>
+                                                    Active
+                                                </v-sheet>
+                                            </v-col>
+                                            <v-col cols="9">
+                                                <v-radio-group v-model="selectedAtlasNode.active" density="compact">
+                                                    <v-radio :value=true>
+                                                        <template v-slot:label>
+                                                            <div><strong>Active</strong></div>
+                                                        </template>
+                                                    </v-radio>
+                                                    <v-radio :value=false>
+                                                        <template v-slot:label>
+                                                            <div><strong>Inactive</strong></div>
+                                                        </template>
+                                                    </v-radio>
+                                                </v-radio-group>
+                                            </v-col>
+
+                                            <v-col cols="3">
+                                                <v-sheet>
+                                                    Divination Cards
+                                                </v-sheet>
+                                            </v-col>
+                                            <v-col cols="9">
+                                                <v-textarea
+                                                        hide-details
+                                                        single-line
+                                                        v-model="divinationCardNames"
+                                                        rows="1"
+                                                        auto-grow
+                                                        density="compact">
+                                                </v-textarea>
+                                            </v-col>
+
+                                            <v-col cols="3">
+                                                <v-sheet>
+                                                    Additional Tags
+                                                </v-sheet>
+                                            </v-col>
+                                            <v-col cols="9">
+                                                <v-text-field
+                                                        hide-details
+                                                        single-line
+                                                        :v-model="additionalTags"
+                                                        rows="1"
+                                                        auto-grow
+                                                        density="compact">
+                                                </v-text-field>
+                                            </v-col>
+
+                                            <v-col cols="3">
+                                                <v-sheet>
+                                                    Notes
+                                                </v-sheet>
+                                            </v-col>
+                                            <v-col cols="9">
+                                                <v-text-field
+                                                        hide-details
+                                                        single-line
+                                                        :v-model="selectedAtlasNode.notes"
+                                                        rows="1"
+                                                        auto-grow
+                                                        density="compact">
+                                                </v-text-field>
+                                            </v-col>
+                                        </v-row>
                                     </div>
                                 </v-sheet>
+
+
                             </v-col>
+
                         </v-row>
-                        <v-row>
-                            <v-col cols="4">
+                        <v-row no-gutters>
+                            <v-col cols="3">
                                 <v-btn
                                         :disabled="loading"
                                         :loading="loading"
@@ -416,8 +404,8 @@
                                         color="indigo-darken-3"
                                         size="x-large"
                                         variant="flat"
-                                        @click="updateSelectedAtlasNode(selectedAtlasNode)">
-                                    Update
+                                        @click="copySelectedAtlasNodeToClipboard(selectedAtlasNode)">
+                                    Copy
                                 </v-btn>
                             </v-col>
                         </v-row>
@@ -432,8 +420,6 @@
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import {computed, ref, watch} from "vue";
 import type {AtlasNode} from "@/model/atlasNode";
-import AtlasNodeStaticPorperty from "@/components/atlas_node_editor/AtlasNodeStaticPorperty.vue";
-import axios from 'axios'
 import copyToClipBoard from "@/composable/copy-utils";
 
 const atlasNodeStore = useAtlasNodeStore();
@@ -494,19 +480,23 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
     return additionalTags
 }
 
-async function updateSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
+async function copySelectedAtlasNodeToClipboard(selectedAtlasNode: AtlasNode | undefined) {
     loading.value = true;
-    const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
-    await copyToClipBoard(JSON.stringify(selectedAtlasNode))
-    await axios.put(link, selectedAtlasNode).then((res) => {
-        // selectedAtlasNode = res.data
-        console.log(res.data)
-
-    }).catch((res) => {
-        console.log(res)
-    }).finally(() =>
-        loading.value = false
-    );
+    // const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
+    const atlasNodeJson = JSON.stringify(selectedAtlasNode);
+    await copyToClipBoard(atlasNodeJson).then(() => {
+        console.log("Successfully copied '" + atlasNodeJson + "' to clipboard")
+        loading.value = false;
+    })
+    // await axios.put(link, selectedAtlasNode).then((res) => {
+    //     // selectedAtlasNode = res.data
+    //     console.log(res.data)
+    //
+    // }).catch((res) => {
+    //     console.log(res)
+    // }).finally(() =>
+    //     loading.value = false
+    // );
 
 
 }

@@ -73,7 +73,8 @@
                                     <v-row no-gutters>
                                         <v-col>
                                             Openness
-                                            <v-tooltip text="Openness = Narrow = Toxic Sewers; Openness = Open = Dunes">
+                                            <v-tooltip
+                                                    text="Openness = Narrow = Toxic Sewers; Openness = Open = Dunes">
                                                 <template v-slot:activator="{ props }">
                                                     <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
                                                 </template>
@@ -117,7 +118,8 @@
                                     </v-row>
                                     <v-row no-gutters>
                                         <v-col cols="1">
-                                            <v-checkbox v-model="includeTraversability" density="compact"></v-checkbox>
+                                            <v-checkbox v-model="includeTraversability"
+                                                        density="compact"></v-checkbox>
                                         </v-col>
                                         <v-col>
                                             <v-range-slider
@@ -152,7 +154,8 @@
                                     </v-row>
                                     <v-row no-gutters>
                                         <v-col cols="1">
-                                            <v-checkbox v-model="includeBacktrackFactor" density="compact"></v-checkbox>
+                                            <v-checkbox v-model="includeBacktrackFactor"
+                                                        density="compact"></v-checkbox>
                                         </v-col>
                                         <v-col>
                                             <v-range-slider
@@ -224,7 +227,8 @@
                                     </v-row>
                                     <v-row no-gutters>
                                         <v-col cols="1">
-                                            <v-checkbox v-model="includeBaseMobCount" density="compact"></v-checkbox>
+                                            <v-checkbox v-model="includeBaseMobCount"
+                                                        density="compact"></v-checkbox>
                                         </v-col>
                                         <v-col>
                                             <v-range-slider
@@ -255,7 +259,8 @@
                                                 <v-tooltip
                                                         text="A Boss is considered Rushable, if it is easy and/or predictable to reach (eg. Mesa, Dunes)">
                                                     <template v-slot:activator="{ props }">
-                                                        <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
+                                                        <v-icon icon="mdi-information-outline"
+                                                                v-bind="props"></v-icon>
                                                     </template>
                                                 </v-tooltip>
                                             </template>
@@ -279,7 +284,8 @@
                                     </v-row>
                                     <v-row no-gutters>
                                         <v-col cols="1">
-                                            <v-checkbox v-model="includeNumberOfBosses" density="compact"></v-checkbox>
+                                            <v-checkbox v-model="includeNumberOfBosses"
+                                                        density="compact"></v-checkbox>
                                         </v-col>
                                         <v-col>
                                             <v-range-slider
@@ -294,11 +300,15 @@
                                                     :disabled="!includeNumberOfBosses"
                                             >
                                                 <template v-slot:prepend>
-                                                    <v-label style="white-space: break-spaces">{{ numberOfBosses[0] }}
+                                                    <v-label style="white-space: break-spaces">{{
+                                                        numberOfBosses[0]
+                                                        }}
                                                     </v-label>
                                                 </template>
                                                 <template v-slot:append>
-                                                    <v-label style="white-space: break-spaces">{{ numberOfBosses[1] }}
+                                                    <v-label style="white-space: break-spaces">{{
+                                                        numberOfBosses[1]
+                                                        }}
                                                     </v-label>
                                                 </template>
                                             </v-range-slider>
@@ -382,39 +392,55 @@
                 </v-card>
             </v-col>
         </v-row>
-        <template v-slot:append>
-            <v-row>
-                <v-col>
-                    This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
-                </v-col>
-            </v-row>
-            <v-row>
-                <v-col>
-                    <v-btn variant="text" @click="aboutOverlay = !aboutOverlay">
-                        About
-                    </v-btn>
-                    <v-label>|</v-label>
-                    <v-btn variant="text" @click="improveOverlay = !improveOverlay">
-                        Improve
-                    </v-btn>
-                    <v-label>|</v-label>
-                    <v-btn variant="text" @click="contactOverlay = !contactOverlay">
-                        Contact
-                    </v-btn>
-                </v-col>
-            </v-row>
-        </template>
+        <v-row>
+            <v-col>
+                This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
+                <v-btn variant="text" @click="aboutOverlay = !aboutOverlay">
+                    About
+                </v-btn>
+                <v-label>|</v-label>
+                <v-btn variant="text" @click="improveOverlay = !improveOverlay">
+                    Improve
+                </v-btn>
+                <v-label>|</v-label>
+                <v-btn variant="text" @click="contactOverlay = !contactOverlay">
+                    Contact
+                </v-btn>
+            </v-col>
+        </v-row>
 
-        <v-overlay v-model="aboutOverlay" class="align-center justify-center">
-            <v-card>
-                <v-card-title>Hell on Earth!</v-card-title>
-                <v-card-text>for real this time!</v-card-text>
-            </v-card>
-        </v-overlay>
-        <v-overlay v-model="improveOverlay" class="align-center justify-center">
-            <!--            <AtlasNodeEditor/>-->
-        </v-overlay>
     </v-navigation-drawer>
+    <v-overlay v-model="aboutOverlay" class="align-center justify-center">
+        <v-card>
+            <v-card-title>About / Credits</v-card-title>
+            <v-card-text>
+                All Assets used are property of Grinding Gear Games <br>
+                <br>
+                AtlasNode Data from poedb.tw<br>
+                Divination Card Data from poe.ninja<br>
+                Some Layout and Boss Values from mapsOfExile.com<br>
+                General Data about Maps from poewiki.net
+            </v-card-text>
+        </v-card>
+    </v-overlay>
+    <v-overlay v-model="improveOverlay" class="align-center justify-center" min-width="30%">
+        <v-sheet>
+            <AtlasNodeEditor/>
+        </v-sheet>
+    </v-overlay>
+    <v-overlay v-model="contactOverlay" class="align-center justify-center" min-width="30%">
+        <v-sheet>
+            <v-card>
+                <v-card-text>
+                    info@poeatlas.app
+                </v-card-text>
+            </v-card>
+        </v-sheet>
+    </v-overlay>
 </template>
 
 <script setup lang="ts">
@@ -422,8 +448,8 @@
 import {ref, watch} from "vue";
 import {handleFilter} from "@/composable/atlasFilter";
 import {handleOverlay} from "@/composable/overlayHandler";
+import AtlasNodeEditor from "@/components/atlas_node_editor/AtlasNodeEditor.vue";
 
-let filterDrawer = ref(true)
 let aboutOverlay = ref(false)
 let improveOverlay = ref(false)
 let contactOverlay = ref(false)
