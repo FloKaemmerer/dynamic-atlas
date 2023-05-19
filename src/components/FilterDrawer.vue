@@ -31,7 +31,7 @@
                     <v-card-text>
                         <v-expansion-panels>
                             <v-expansion-panel>
-                                <v-expansion-panel-title>Layout Filters
+                                <v-expansion-panel-title>Map Filters
                                 </v-expansion-panel-title>
                                 <v-expansion-panel-text>
                                     <v-row no-gutters>
