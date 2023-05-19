@@ -486,8 +486,11 @@ async function copySelectedAtlasNodeToClipboard(selectedAtlasNode: AtlasNode | u
     const atlasNodeJson = JSON.stringify(selectedAtlasNode);
     await copyToClipBoard(atlasNodeJson).then(() => {
         console.log("Successfully copied '" + atlasNodeJson + "' to clipboard")
-        loading.value = false;
-    })
+    }).catch((reason) => {
+        console.log(reason)
+    }).finally(() =>
+        loading.value = false
+    );
     // await axios.put(link, selectedAtlasNode).then((res) => {
     //     // selectedAtlasNode = res.data
     //     console.log(res.data)
