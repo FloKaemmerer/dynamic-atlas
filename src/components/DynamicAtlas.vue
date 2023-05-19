@@ -14,7 +14,7 @@ import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
 import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
 import redTierMapList from '@/assets/atlas/maps/tier11-16/index.js'
 import Konva from 'konva';
-import {onMounted, onUnmounted} from 'vue'
+import {onMounted} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
 import {useOverlayStore} from "@/store/OverlayStore";
@@ -28,6 +28,7 @@ import type {StageState} from "@/model/stageState";
 const coordinatesScaleFactor = 4.1
 const minHeight = 937
 const minWidth = 1920
+
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 const overlayStore = useOverlayStore();
@@ -40,6 +41,7 @@ const mapSymbolGroup = new Konva.Group();
 const tooltipGroup = new Konva.Group();
 const overlayGroup = new Konva.Group();
 const filterHighlightGroup = new Konva.Group();
+const highlightGroup = new Konva.Group();
 
 let state: StageState
 
@@ -53,6 +55,8 @@ const mounted = () => {
         currentScale: 0.46,
         height: minHeight,
         width: minWidth,
+        offsetX: 350,
+        offsetY: 150,
     }
 
     let stage = new Konva.Stage({
@@ -62,19 +66,20 @@ const mounted = () => {
         height: state.height,
         scaleX: state.currentScale,
         scaleY: state.currentScale,
-        offsetX: 350,
-        offsetY: 150,
-        draggable: true
+        offsetX: state.offsetX,
+        offsetY: state.offsetY,
+
     });
 
     state.stage = stage
 
     createBackgroundImage();
-    let mapLayer = new Konva.Layer();
-    let highlightLayer = new Konva.Layer();
+    let mapLayer = new Konva.Layer({
+        draggable: true,
+        dragBoundFunc: dragBound.bind(this)
+    });
 
     stage.add(mapLayer);
-    stage.add(highlightLayer)
 
     let tooltipText = getTooltipBaseText();
     let tooltipContainer = getTooltipContainer();
@@ -116,7 +121,7 @@ const mounted = () => {
 
             hideTooltip(mapHighlightArea, tooltipText, tooltipContainer)
 
-            highlightLayer.add(mapHighlightArea)
+            highlightGroup.add(mapHighlightArea)
         }
     });
 
@@ -129,7 +134,9 @@ const mounted = () => {
     mapLayer.add(mapSymbolGroup)
     mapLayer.add(tooltipGroup)
 
-    handleZoom(stage)
+    mapLayer.add(highlightGroup)
+
+    handleZoom(state)
 }
 
 overlayStore.$subscribe((mutation, state) => {
@@ -376,28 +383,23 @@ function getHighlightArea(locX: number, locY: number) {
     })
 }
 
-const handleWindowSizeChange = () => {
-    console.log("window resized")
-    // now we need to fit stage into parent container
-    // var containerWidth = window.innerWidth
-
-    // but we also make the full scene visible
-    // so we need to scale all objects on canvas
-    // var scale = containerWidth / state.width;
+function dragBound(pos: any) {
+    // This limits how much you can drag the image
+    // TODO: somehow make this dynamic based on loaded image size
+    let x = minWidth
+    let y = minHeight
     if (state.stage) {
-        // state.stage.width(state.width * scale);
-        // state.stage.height(state.height * scale);
-        // state.stage.scale({x: scale, y: scale});
+        x = Math.max(Math.min(pos.x, 800), -state.width * state.currentScale)
+        y = Math.max(Math.min(pos.y, 500), -state.height * state.currentScale)
     }
-};
+
+    return {
+        x: x,
+        y: y
+    }
+}
 
 onMounted(() => {
     mounted()
-    window.addEventListener("resize", handleWindowSizeChange);
-    handleWindowSizeChange();
 })
-
-onUnmounted(() => {
-    window.removeEventListener("resize", handleWindowSizeChange);
-});
 </script>

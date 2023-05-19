@@ -8,11 +8,11 @@ atlasNodeStore.setupAtlasData()
 </script>
 
 <template>
-  <v-app>
-    <v-layout>
-        <RouterView/>
-    </v-layout>
-  </v-app>
+    <v-app :style="{background: '#282828'}">
+        <v-layout>
+            <RouterView/>
+        </v-layout>
+    </v-app>
 </template>
 
 <style scoped></style>

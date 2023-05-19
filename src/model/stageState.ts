@@ -5,4 +5,6 @@ export interface StageState {
     currentScale: number
     width: number
     height: number
+    offsetX: number
+    offsetY: number
 }

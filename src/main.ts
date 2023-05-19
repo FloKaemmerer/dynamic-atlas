@@ -18,13 +18,16 @@ import VueKonva from 'vue-konva';
 const vuetify = createVuetify({
     components,
     directives,
+    theme: {
+        defaultTheme: 'light'
+    },
 })
 const app = createApp(App)
 app.use(createPinia())
 app.use(vuetify);
 app.use(router)
-app.use(VueKonva, { prefix: 'k'});
-app.config.globalProperties.axios=axios
+app.use(VueKonva, {prefix: 'k'});
+app.config.globalProperties.axios = axios
 
 
 app.mount('#app')

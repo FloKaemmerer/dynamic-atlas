@@ -383,13 +383,26 @@
             </v-col>
         </v-row>
         <template v-slot:append>
-            <v-btn variant="text"
-                   @click="aboutOverlay = !aboutOverlay">About
-            </v-btn>
-            <v-label>|</v-label>
-            <v-btn variant="text" @click="improveOverlay = !improveOverlay">Improve</v-btn>
-            <v-label>|</v-label>
-            <v-btn variant="text" @click="contactOverlay = !contactOverlay">Contact</v-btn>
+            <v-row>
+                <v-col>
+                    This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col>
+                    <v-btn variant="text" @click="aboutOverlay = !aboutOverlay">
+                        About
+                    </v-btn>
+                    <v-label>|</v-label>
+                    <v-btn variant="text" @click="improveOverlay = !improveOverlay">
+                        Improve
+                    </v-btn>
+                    <v-label>|</v-label>
+                    <v-btn variant="text" @click="contactOverlay = !contactOverlay">
+                        Contact
+                    </v-btn>
+                </v-col>
+            </v-row>
         </template>
 
         <v-overlay v-model="aboutOverlay" class="align-center justify-center">
