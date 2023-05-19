@@ -24,6 +24,7 @@ import DetailsDrawer from "@/components/DetailsDrawer.vue";
 import FilterDrawer from "@/components/FilterDrawer.vue";
 import getOverlayColor from "@/composable/overlay-color-utils";
 import type {StageState} from "@/model/stageState";
+import buildAtlasNodeTooltipText from "@/composable/atlas-node-tooltip-text-builder";
 
 const coordinatesScaleFactor = 4.1
 const minHeight = 937
@@ -326,7 +327,7 @@ function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
             x: locX + 50,
             y: locY - 70
         })
-        tooltipText.text(atlasNode.name + "\n\n" + "Natural Tier: " + atlasNode.mapTier + "\nSome useful Information about the Map. Like layout (open or close), some ratings, number of Bosses, noteable Divcards and so on.")
+        tooltipText.text(buildAtlasNodeTooltipText(atlasNode))
         tooltipContainer.height(tooltipText.height())
 
 
@@ -384,8 +385,6 @@ function getHighlightArea(locX: number, locY: number) {
 }
 
 function dragBound(pos: any) {
-    // This limits how much you can drag the image
-    // TODO: somehow make this dynamic based on loaded image size
     let x = minWidth
     let y = minHeight
     if (state.stage) {

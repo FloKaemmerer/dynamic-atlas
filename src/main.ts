@@ -18,9 +18,6 @@ import VueKonva from 'vue-konva';
 const vuetify = createVuetify({
     components,
     directives,
-    theme: {
-        defaultTheme: 'light'
-    },
 })
 const app = createApp(App)
 app.use(createPinia())
