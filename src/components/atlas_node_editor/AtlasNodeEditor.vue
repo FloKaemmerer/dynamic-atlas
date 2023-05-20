@@ -405,7 +405,7 @@
                                         size="x-large"
                                         variant="flat"
                                         @click="copySelectedAtlasNodeToClipboard(selectedAtlasNode)">
-                                    Copy
+                                    Update
                                 </v-btn>
                             </v-col>
                         </v-row>
@@ -419,8 +419,8 @@
 <script setup lang="ts">
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import {computed, ref, watch} from "vue";
+import axios from 'axios'
 import type {AtlasNode} from "@/model/atlasNode";
-import copyToClipBoard from "@/composable/copy-utils";
 
 const atlasNodeStore = useAtlasNodeStore();
 const atlasNodes = computed<AtlasNode[] | null>(() => atlasNodeStore.atlasNodes);
@@ -482,24 +482,24 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
 
 async function copySelectedAtlasNodeToClipboard(selectedAtlasNode: AtlasNode | undefined) {
     loading.value = true;
-    // const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
-    const atlasNodeJson = JSON.stringify(selectedAtlasNode);
-    await copyToClipBoard(atlasNodeJson).then(() => {
-        console.log("Successfully copied '" + atlasNodeJson + "' to clipboard")
-    }).catch((reason) => {
-        console.log(reason)
-    }).finally(() =>
-        loading.value = false
-    );
-    // await axios.put(link, selectedAtlasNode).then((res) => {
-    //     // selectedAtlasNode = res.data
-    //     console.log(res.data)
-    //
-    // }).catch((res) => {
-    //     console.log(res)
+    // const atlasNodeJson = JSON.stringify(selectedAtlasNode);
+    // await copyToClipBoard(atlasNodeJson).then(() => {
+    //     console.log("Successfully copied '" + atlasNodeJson + "' to clipboard")
+    // }).catch((reason) => {
+    //     console.log(reason)
     // }).finally(() =>
     //     loading.value = false
     // );
+    const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
+    await axios.put(link, selectedAtlasNode).then((res) => {
+        selectedAtlasNode = res.data
+        console.log(res.data)
+
+    }).catch((res) => {
+        console.log(res)
+    }).finally(() =>
+        loading.value = false
+    );
 
 
 }

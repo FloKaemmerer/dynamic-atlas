@@ -133,10 +133,10 @@
                                                     :disabled="!includeTraversability"
                                             >
                                                 <template v-slot:prepend>
-                                                    <v-label style="white-space: break-spaces">Easy</v-label>
+                                                    <v-label style="white-space: break-spaces">Annoying</v-label>
                                                 </template>
                                                 <template v-slot:append>
-                                                    <v-label style="white-space: break-spaces">Annoying</v-label>
+                                                    <v-label style="white-space: break-spaces">Easy</v-label>
                                                 </template>
                                             </v-range-slider>
                                         </v-col>
@@ -403,10 +403,10 @@
                     About
                 </v-btn>
                 <v-label>|</v-label>
-                <v-btn variant="text" @click="improveOverlay = !improveOverlay">
-                    Improve
-                </v-btn>
-                <v-label>|</v-label>
+                <!--                <v-btn variant="text" @click="improveOverlay = !improveOverlay">-->
+                <!--                    Improve-->
+                <!--                </v-btn>-->
+                <!--                <v-label>|</v-label>-->
                 <v-btn variant="text" @click="contactOverlay = !contactOverlay">
                     Contact
                 </v-btn>
