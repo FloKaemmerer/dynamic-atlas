@@ -16,7 +16,6 @@ export interface AtlasNode {
     traversability: number
     additionalTags: any[]
     highestValueDivinationCard: DivinationCard
-    backtrackFactor: number
     boss: Boss
     nodeLayout: Layout
     notes: any
