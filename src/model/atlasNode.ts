@@ -13,7 +13,6 @@ export interface AtlasNode {
     uniqueMap: boolean
     divinationCards: DivinationCard[]
     filterTags: any[]
-    traversability: number
     additionalTags: any[]
     highestValueDivinationCard: DivinationCard
     boss: Boss
