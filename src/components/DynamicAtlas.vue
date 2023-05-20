@@ -69,18 +69,19 @@ const mounted = () => {
         scaleY: state.currentScale,
         offsetX: state.offsetX,
         offsetY: state.offsetY,
+        draggable: true,
+        dragBoundFunc: dragBound.bind(this)
 
     });
 
     state.stage = stage
 
     createBackgroundImage();
-    let mapLayer = new Konva.Layer({
-        draggable: true,
-        dragBoundFunc: dragBound.bind(this)
-    });
+    let mapLayer = new Konva.Layer();
+    let reactiveLayer = new Konva.Layer();
 
     stage.add(mapLayer);
+    stage.add(reactiveLayer)
 
     let tooltipText = getTooltipBaseText();
     let tooltipContainer = getTooltipContainer();
@@ -135,7 +136,7 @@ const mounted = () => {
     mapLayer.add(mapSymbolGroup)
     mapLayer.add(tooltipGroup)
 
-    mapLayer.add(highlightGroup)
+    reactiveLayer.add(highlightGroup)
 
     handleZoom(state)
 }
