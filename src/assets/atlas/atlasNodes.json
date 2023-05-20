@@ -233,10 +233,8 @@
         "artFilename": "TheWind"
       }
     ],
-    "layout": 1,
     "filterTags": [],
     "traversability": 8,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -255,7 +253,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 1,
     "boss": {
       "numberOfBosses": 1,
@@ -514,10 +511,8 @@
         "artFilename": "TheWind"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -536,7 +531,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -860,10 +854,8 @@
         "artFilename": "TheWretched"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 8,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -882,7 +874,6 @@
       ],
       "artFilename": "TheRabbitsFoot"
     },
-    "phasedBoss": false,
     "backtrackFactor": 4,
     "boss": {
       "numberOfBosses": 1,
@@ -933,10 +924,8 @@
         "artFilename": "Monochrome"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -955,7 +944,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -1310,10 +1298,8 @@
         "artFilename": "TheUnion"
       }
     ],
-    "layout": 8,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -1332,7 +1318,6 @@
       ],
       "artFilename": "BrotherGift"
     },
-    "phasedBoss": false,
     "backtrackFactor": 5,
     "boss": {
       "numberOfBosses": 1,
@@ -1383,10 +1368,8 @@
         "artFilename": "Monochrome"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -1405,7 +1388,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -1648,10 +1630,8 @@
         "artFilename": "TheWretched"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -1670,7 +1650,6 @@
       ],
       "artFilename": "TheRabbitsFoot"
     },
-    "phasedBoss": false,
     "backtrackFactor": 6,
     "boss": {
       "numberOfBosses": 1,
@@ -1721,10 +1700,8 @@
         "artFilename": "TheCraving"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -1743,7 +1720,6 @@
       ],
       "artFilename": "TheCraving"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -2018,10 +1994,8 @@
         "artFilename": "TheTumbleWeed"
       }
     ],
-    "layout": 10,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -2040,7 +2014,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -2107,10 +2080,8 @@
         "artFilename": "Monochrome"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -2129,7 +2100,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -2372,10 +2342,8 @@
         "artFilename": "WealthAndPower"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -2394,7 +2362,6 @@
       ],
       "artFilename": "WealthAndPower"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -2573,10 +2540,8 @@
         "artFilename": "TheTwins"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -2595,7 +2560,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -2951,10 +2915,8 @@
         "artFilename": "ThirstForKnowledge"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -2973,7 +2935,6 @@
       ],
       "artFilename": "TheSoul"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -3088,10 +3049,8 @@
         "artFilename": "TheWitch"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -3110,7 +3069,6 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -3321,10 +3279,8 @@
         "artFilename": "TheWretched"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -3343,7 +3299,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -3394,10 +3349,8 @@
         "artFilename": "Monochrome"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -3416,7 +3369,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -3723,10 +3675,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -3745,7 +3695,6 @@
       ],
       "artFilename": "TheSoul"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -3828,10 +3777,8 @@
         "artFilename": "TheWretched"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -3850,7 +3797,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -4158,10 +4104,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -4180,7 +4124,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -4327,10 +4270,8 @@
         "artFilename": "TheSkeleton"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -4349,7 +4290,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -4736,10 +4676,8 @@
         "artFilename": "ThunderousSkies"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -4758,7 +4696,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -4986,10 +4923,8 @@
         "artFilename": "TheUndaunted"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -5008,7 +4943,6 @@
       ],
       "artFilename": "DivineBeauty"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -5331,10 +5265,8 @@
         "artFilename": "TheTwins"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -5353,7 +5285,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -5500,10 +5431,8 @@
         "artFilename": "TheThaumaturgist"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -5522,7 +5451,6 @@
       ],
       "artFilename": "TheFiend"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -5877,10 +5805,8 @@
         "artFilename": "TreasureHunter"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -5899,7 +5825,6 @@
       ],
       "artFilename": "DivineBeauty"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -5951,10 +5876,8 @@
         "artFilename": "Monochrome"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 0,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -5973,7 +5896,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 0,
@@ -6166,10 +6088,8 @@
         "artFilename": "TreasureHunter"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -6188,7 +6108,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -6319,10 +6238,8 @@
         "artFilename": "TreasureHunter"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -6341,7 +6258,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 3,
@@ -6634,10 +6550,8 @@
         "artFilename": "UnrequitedLove"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -6656,7 +6570,6 @@
       ],
       "artFilename": "UnrequitedLove"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 3,
@@ -6869,10 +6782,8 @@
         "artFilename": "TheQueen"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 0,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -6891,7 +6802,6 @@
       ],
       "artFilename": "Monochrome"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 0,
@@ -7228,10 +7138,8 @@
         "artFilename": "ThunderousSkies"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -7250,7 +7158,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 3,
@@ -7591,10 +7498,8 @@
         "artFilename": "ThunderousSkies"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -7613,7 +7518,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -7936,10 +7840,8 @@
         "artFilename": "TheWarlord"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -7958,7 +7860,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -8218,10 +8119,8 @@
         "artFilename": "ThreeVoices"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -8240,7 +8139,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 3,
@@ -8437,10 +8335,8 @@
         "artFilename": "VilePower"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 4,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -8459,7 +8355,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 2,
@@ -8684,10 +8579,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 6,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -8706,7 +8599,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 6,
@@ -8899,10 +8791,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -8921,7 +8811,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -9180,10 +9069,8 @@
         "artFilename": "Unchained"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -9202,7 +9089,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -9509,10 +9395,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -9531,7 +9415,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -9726,10 +9609,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -9748,7 +9629,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -10037,10 +9917,8 @@
         "artFilename": "ThirstForKnowledge"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -10059,7 +9937,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -10382,10 +10259,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -10404,7 +10279,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -10647,10 +10521,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -10669,7 +10541,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -10912,10 +10783,8 @@
         "artFilename": "ViniasToken"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -10934,7 +10803,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -11193,10 +11061,8 @@
         "artFilename": "TheTyrant"
       }
     ],
-    "layout": 7,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -11215,7 +11081,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 1,
@@ -11392,10 +11257,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -11414,7 +11277,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -11753,10 +11615,8 @@
         "artFilename": "Tranquillity"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -11775,7 +11635,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -12048,10 +11907,8 @@
         "artFilename": "VilePower"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -12070,7 +11927,6 @@
       ],
       "artFilename": "TheSoul"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -12377,10 +12233,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -12399,7 +12253,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -12594,10 +12447,8 @@
         "artFilename": "ThreeVoices"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -12616,7 +12467,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 3,
@@ -12905,10 +12755,8 @@
         "artFilename": "TheTumbleWeed"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -12927,7 +12775,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": true,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 1,
@@ -13154,10 +13001,8 @@
         "artFilename": "TheUndaunted"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -13176,7 +13021,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 5,
     "boss": {
       "numberOfBosses": 1,
@@ -13483,10 +13327,8 @@
         "artFilename": "Unchained"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -13505,7 +13347,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 6,
     "boss": {
       "numberOfBosses": 1,
@@ -13812,10 +13653,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 4,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -13834,7 +13673,6 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -14093,10 +13931,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -14115,7 +13951,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 7,
     "boss": {
       "numberOfBosses": 1,
@@ -14468,10 +14303,8 @@
         "artFilename": "TreasureHunter"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -14490,7 +14323,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -14749,10 +14581,8 @@
         "artFilename": "TheTyrant"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 10,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -14771,7 +14601,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 8,
     "boss": {
       "numberOfBosses": 1,
@@ -15124,10 +14953,8 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -15146,7 +14973,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": true,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 1,
@@ -15389,10 +15215,8 @@
         "artFilename": "TheWind"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -15411,7 +15235,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 4,
@@ -15641,10 +15464,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -15663,7 +15484,6 @@
       ],
       "artFilename": "TheFiend"
     },
-    "phasedBoss": false,
     "backtrackFactor": 7,
     "boss": {
       "numberOfBosses": 2,
@@ -15923,10 +15743,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 9,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -15945,7 +15763,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 8,
     "boss": {
       "numberOfBosses": 1,
@@ -16250,10 +16067,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -16272,7 +16087,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -16515,10 +16329,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -16537,7 +16349,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 5,
     "boss": {
       "numberOfBosses": 1,
@@ -16780,10 +16591,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -16802,7 +16611,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": true,
     "backtrackFactor": 7,
     "boss": {
       "numberOfBosses": 1,
@@ -17075,10 +16883,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -17097,7 +16903,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -17276,10 +17081,8 @@
         "artFilename": "TheWeb"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -17298,7 +17101,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 6,
     "boss": {
       "numberOfBosses": 1,
@@ -17493,10 +17295,8 @@
         "artFilename": "TreasureHunter"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -17515,7 +17315,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 5,
     "boss": {
       "numberOfBosses": 1,
@@ -17790,10 +17589,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -17812,7 +17609,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 3,
@@ -18057,10 +17853,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 4,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -18079,7 +17873,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -18274,10 +18067,8 @@
         "artFilename": "TheWind"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -18296,7 +18087,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -18521,10 +18311,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 9,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -18543,7 +18331,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -18770,10 +18557,8 @@
         "artFilename": "TheWarlord"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 5,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -18792,7 +18577,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 1,
@@ -19067,10 +18851,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -19089,7 +18871,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -19460,10 +19241,8 @@
         "artFilename": "TheWolvenKingsBite"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -19482,7 +19261,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": true,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 1,
@@ -19771,10 +19549,8 @@
         "artFilename": "Tranquillity"
       }
     ],
-    "layout": 9,
     "filterTags": [],
     "traversability": 9,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -19793,7 +19569,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -20194,10 +19969,8 @@
         "artFilename": "ViniasToken"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -20216,7 +19989,6 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": true,
     "backtrackFactor": 9,
     "boss": {
       "numberOfBosses": 1,
@@ -20539,10 +20311,8 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 8,
     "filterTags": [],
     "traversability": 4,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -20561,7 +20331,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -20804,10 +20573,8 @@
         "artFilename": "TheWarden"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 5,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -20826,7 +20593,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 1,
     "boss": {
       "numberOfBosses": 1,
@@ -21147,10 +20913,8 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -21169,7 +20933,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 6,
     "boss": {
       "numberOfBosses": 2,
@@ -21461,10 +21224,8 @@
         "artFilename": "TheTyrant"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 4,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -21483,7 +21244,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 4,
     "boss": {
       "numberOfBosses": 1,
@@ -21758,10 +21518,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -21780,7 +21538,6 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -21973,10 +21730,8 @@
         "artFilename": "TheWrath"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 8,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -21995,7 +21750,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": true,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -22206,10 +21960,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -22228,7 +21980,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 5,
     "boss": {
       "numberOfBosses": 1,
@@ -22437,10 +22188,8 @@
         "artFilename": "ThreeVoices"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -22459,7 +22208,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 3,
@@ -22688,10 +22436,8 @@
         "artFilename": "TheWhiteout"
       }
     ],
-    "layout": 7,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -22710,7 +22456,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 1,
     "boss": {
       "numberOfBosses": 2,
@@ -22986,10 +22731,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -23008,7 +22751,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -23251,10 +22993,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 6,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -23273,7 +23013,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 6,
     "boss": {
       "numberOfBosses": 1,
@@ -23468,10 +23207,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -23490,7 +23227,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -23813,10 +23549,8 @@
         "artFilename": "TheWitch"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -23835,7 +23569,6 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -24092,10 +23825,8 @@
         "artFilename": "TheUndaunted"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -24114,7 +23845,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 7,
@@ -24491,10 +24221,8 @@
         "artFilename": "WealthAndPower"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 5,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -24513,7 +24241,6 @@
       ],
       "artFilename": "WealthAndPower"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 2,
@@ -24725,10 +24452,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -24747,7 +24472,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -25022,10 +24746,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -25044,7 +24766,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -25271,10 +24992,8 @@
         "artFilename": "TheWarden"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 9,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -25293,7 +25012,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 9,
     "boss": {
       "numberOfBosses": 1,
@@ -25568,10 +25286,8 @@
         "artFilename": "TheWeddingGift"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -25590,7 +25306,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -25751,10 +25466,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 8,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -25773,7 +25486,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -26000,10 +25712,8 @@
         "artFilename": "TheWrath"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -26022,7 +25732,6 @@
       ],
       "artFilename": "TheDemon"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -26327,10 +26036,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 1,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -26349,7 +26056,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -26544,10 +26250,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -26566,7 +26270,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -26873,10 +26576,8 @@
         "artFilename": "TheWarlord"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -26895,7 +26596,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 4,
     "boss": {
       "numberOfBosses": 1,
@@ -27154,10 +26854,8 @@
         "artFilename": "TheWind"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -27176,7 +26874,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -27499,10 +27196,8 @@
         "artFilename": "VilePower"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 8,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -27521,7 +27216,6 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -27533,7 +27227,7 @@
         "Portentia, the Foul"
       ],
       "notes": null,
-      "introPhase": true
+      "introPhase": false
     },
     "nodeLayout": {
       "linearity": 0,
@@ -27716,10 +27410,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -27738,7 +27430,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -28075,10 +27766,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -28097,7 +27786,6 @@
       ],
       "artFilename": "DivineBeauty"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -28372,10 +28060,8 @@
         "artFilename": "TheWitch"
       }
     ],
-    "layout": 8,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -28394,7 +28080,6 @@
       ],
       "artFilename": "TheDoctor"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -28651,10 +28336,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -28673,7 +28356,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 1,
@@ -28980,10 +28662,8 @@
         "artFilename": "ThirstForKnowledge"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -29002,7 +28682,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 8,
     "boss": {
       "numberOfBosses": 1,
@@ -29211,10 +28890,8 @@
         "artFilename": "TheWeb"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 4,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -29233,7 +28910,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 1,
     "boss": {
       "numberOfBosses": 1,
@@ -29524,10 +29200,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -29546,7 +29220,6 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -29773,10 +29446,8 @@
         "artFilename": "TheUnion"
       }
     ],
-    "layout": 7,
     "filterTags": [],
     "traversability": 10,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -29795,7 +29466,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 7,
     "boss": {
       "numberOfBosses": 1,
@@ -30100,10 +29770,8 @@
         "artFilename": "TheWarden"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 9,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -30122,7 +29790,6 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": false,
     "backtrackFactor": 9,
     "boss": {
       "numberOfBosses": 1,
@@ -30349,10 +30016,8 @@
         "artFilename": "VilePower"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -30371,7 +30036,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -30614,10 +30278,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -30636,7 +30298,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -30815,10 +30476,8 @@
         "artFilename": "TheWeb"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -30837,7 +30496,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -31318,10 +30976,8 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 3,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -31340,7 +30996,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -31567,10 +31222,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -31589,7 +31242,6 @@
       ],
       "artFilename": "TheApothecary"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 1,
@@ -31832,10 +31484,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -31854,7 +31504,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -32113,10 +31762,8 @@
         "artFilename": "ThreeFacesInTheDark"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 5,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -32135,7 +31782,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 4,
     "boss": {
       "numberOfBosses": 1,
@@ -32362,10 +32008,8 @@
         "artFilename": "ViniasToken"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -32384,7 +32028,6 @@
       ],
       "artFilename": "TheFiend"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -32675,10 +32318,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -32697,7 +32338,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -33004,10 +32644,8 @@
         "artFilename": "VilePower"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 1,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -33026,7 +32664,6 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": true,
     "backtrackFactor": 7,
     "boss": {
       "numberOfBosses": 1,
@@ -33267,10 +32904,8 @@
         "artFilename": "TheWind"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -33289,7 +32924,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -33517,10 +33151,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 8,
     "filterTags": [],
     "traversability": 5,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -33539,7 +33171,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 5,
     "boss": {
       "numberOfBosses": 1,
@@ -33780,10 +33411,8 @@
         "artFilename": "TheTyrant"
       }
     ],
-    "layout": 7,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -33802,7 +33431,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 4,
     "boss": {
       "numberOfBosses": 2,
@@ -34222,10 +33850,8 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 10,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -34244,7 +33870,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 9,
     "boss": {
       "numberOfBosses": 1,
@@ -34599,10 +34224,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 7,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -34621,7 +34244,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 2,
     "boss": {
       "numberOfBosses": 2,
@@ -34929,10 +34551,8 @@
         "artFilename": "ThreeVoices"
       }
     ],
-    "layout": 9,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -34951,7 +34571,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": true,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 3,
@@ -35128,10 +34747,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 8,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -35150,7 +34767,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 9,
     "boss": {
       "numberOfBosses": 1,
@@ -35361,10 +34977,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -35383,7 +34997,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -35610,10 +35223,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -35632,7 +35243,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -35873,10 +35483,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -35895,7 +35503,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -36106,10 +35713,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -36128,7 +35733,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 3,
     "boss": {
       "numberOfBosses": 1,
@@ -36481,10 +36085,8 @@
         "artFilename": "TheTyrant"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -36503,7 +36105,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -36858,10 +36459,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -36880,7 +36479,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -37171,10 +36769,8 @@
         "artFilename": "ThreeFacesInTheDark"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 7,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -37193,7 +36789,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 7,
     "boss": {
       "numberOfBosses": 1,
@@ -37436,10 +37031,8 @@
         "artFilename": "TheTyrant"
       }
     ],
-    "layout": 4,
     "filterTags": [],
     "traversability": 9,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -37458,7 +37051,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 8,
     "boss": {
       "numberOfBosses": 1,
@@ -37843,10 +37435,8 @@
         "artFilename": "VolatilePower"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 5,
-    "numberOfBosses": 3,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -37865,7 +37455,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 8,
     "boss": {
       "numberOfBosses": 3,
@@ -38174,10 +37763,8 @@
         "artFilename": "ThunderousSkies"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 2,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -38196,7 +37783,6 @@
       ],
       "artFilename": "TheNurse"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 2,
@@ -38504,10 +38090,8 @@
         "artFilename": "TheUnexpectedPrize"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -38526,7 +38110,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -38753,10 +38336,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -38775,7 +38356,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -39098,10 +38678,8 @@
         "artFilename": "TheUnexpectedPrize"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -39120,7 +38698,6 @@
       ],
       "artFilename": "TheSephirot"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -39313,10 +38890,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 2,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -39335,7 +38910,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 1,
     "boss": {
       "numberOfBosses": 1,
@@ -39594,10 +39168,8 @@
         "artFilename": "TheVast"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 6,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -39616,7 +39188,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 7,
     "boss": {
       "numberOfBosses": 1,
@@ -39827,10 +39398,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -39849,7 +39418,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -40124,10 +39692,8 @@
         "artFilename": "TheTrial"
       }
     ],
-    "layout": 0,
     "filterTags": [],
     "traversability": 0,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": false,
     "highestValueDivinationCard": {
@@ -40146,7 +39712,6 @@
       ],
       "artFilename": "SevenYearsBadLuck"
     },
-    "phasedBoss": false,
     "backtrackFactor": 0,
     "boss": {
       "numberOfBosses": 1,
@@ -40419,10 +39984,8 @@
         "artFilename": "Tranquillity"
       }
     ],
-    "layout": 8,
     "filterTags": [],
     "traversability": 2,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -40441,7 +40004,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 6,
     "boss": {
       "numberOfBosses": 1,
@@ -40780,10 +40342,8 @@
         "artFilename": "ThreeVoices"
       }
     ],
-    "layout": 5,
     "filterTags": [],
     "traversability": 3,
-    "numberOfBosses": 1,
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
@@ -40802,7 +40362,6 @@
       ],
       "artFilename": "TheDragonsHeart"
     },
-    "phasedBoss": false,
     "backtrackFactor": 5,
     "boss": {
       "numberOfBosses": 3,
