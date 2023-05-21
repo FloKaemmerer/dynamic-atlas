@@ -496,20 +496,11 @@ async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
             `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`)
             .then((result) => {
                 console.log('SUCCESS!', result.text);
-            }, (error) => {
-                console.log('FAILED...', error.text);
-            });
-        //
-        // const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
-        // await axios.put(link, selectedAtlasNode).then((res) => {
-        //     selectedAtlasNode = res.data
-        //     console.log(res.data)
-        //
-        // }).catch((res) => {
-        //     console.log(res)
-        // }).finally(() =>
-        //     loading.value = false
-        // );
+            }).catch((res) => {
+            console.log(res)
+        }).finally(() =>
+            loading.value = false
+        );
     }
 
 }

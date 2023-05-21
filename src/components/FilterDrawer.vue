@@ -403,10 +403,10 @@
                     About
                 </v-btn>
                 <v-label>|</v-label>
-                <!--                <v-btn variant="text" @click="improveOverlay = !improveOverlay">-->
-                <!--                    Improve-->
-                <!--                </v-btn>-->
-                <!--                <v-label>|</v-label>-->
+                <v-btn variant="text" @click="improveOverlay = !improveOverlay">
+                    Improve
+                </v-btn>
+                <v-label>|</v-label>
                 <v-btn variant="text" @click="contactOverlay = !contactOverlay">
                     Contact
                 </v-btn>
