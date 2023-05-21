@@ -42,7 +42,7 @@ const mapSymbolGroup = new Konva.Group();
 const tooltipGroup = new Konva.Group();
 const overlayGroup = new Konva.Group();
 const filterHighlightGroup = new Konva.Group();
-const highlightGroup = new Konva.Group();
+const reactiveGroup = new Konva.Group();
 
 let state: StageState
 
@@ -114,16 +114,16 @@ const mounted = () => {
             }
             addMapNameToGroup(mapNameGroup, atlasNode.name, locX, locY);
 
-            let mapHighlightArea = getHighlightArea(locX, locY);
-            mapHighlightArea.on('click', function () {
+            let reactiveNodeArea = getHighlightArea(locX, locY);
+            reactiveNodeArea.on('click', function () {
                 handleToggleDrawer(true)
                 atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
             })
-            showTooltip(mapHighlightArea, tooltipText, tooltipContainer, atlasNode)
+            showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, atlasNode)
 
-            hideTooltip(mapHighlightArea, tooltipText, tooltipContainer)
+            hideTooltip(reactiveNodeArea, tooltipText, tooltipContainer)
 
-            highlightGroup.add(mapHighlightArea)
+            reactiveGroup.add(reactiveNodeArea)
         }
     });
 
@@ -136,7 +136,7 @@ const mounted = () => {
     mapLayer.add(mapSymbolGroup)
     mapLayer.add(tooltipGroup)
 
-    reactiveLayer.add(highlightGroup)
+    reactiveLayer.add(reactiveGroup)
 
     handleZoom(state)
 }
@@ -157,7 +157,7 @@ overlayStore.$subscribe((mutation, state) => {
             x: getScaledAtlasNodeLocX(key),
             y: getScaledAtlasNodeLocY(key),
             fill: getOverlayColor(value),
-            radius: 35,
+            radius: 30,
             opacity: 1,
         })
         overlayGroup.add(overlayCircle)
@@ -207,11 +207,14 @@ atlasNodeStore.$subscribe((mutation, state) => {
             x: getScaledAtlasNodeLocX(value),
             y: getScaledAtlasNodeLocY(value),
             stroke: 'black',
-            fill: 'red',
             strokeWidth: 4,
-            radius: 35,
+            fill: 'red',
+            blurRadius: 8,
+            radius: 40,
             opacity: 1,
         })
+        filterHighlight.cache()
+        filterHighlight.filters([Konva.Filters.Blur]);
         filterHighlightGroup.add(filterHighlight)
     })
 })
