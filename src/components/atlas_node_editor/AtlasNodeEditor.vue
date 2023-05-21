@@ -404,8 +404,8 @@
                                         color="indigo-darken-3"
                                         size="x-large"
                                         variant="flat"
-                                        @click="copySelectedAtlasNodeToClipboard(selectedAtlasNode)">
-                                    Update
+                                        @click="sendSelectedAtlasNode(selectedAtlasNode)">
+                                    Send
                                 </v-btn>
                             </v-col>
                         </v-row>
@@ -419,8 +419,9 @@
 <script setup lang="ts">
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import {computed, ref, watch} from "vue";
-import axios from 'axios'
 import type {AtlasNode} from "@/model/atlasNode";
+import emailjs from '@emailjs/browser';
+import convertToAtlasNodeImproveDto from "@/composable/atlas-node-improve-dto-converter";
 
 const atlasNodeStore = useAtlasNodeStore();
 const atlasNodes = computed<AtlasNode[] | null>(() => atlasNodeStore.atlasNodes);
@@ -480,27 +481,36 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
     return additionalTags
 }
 
-async function copySelectedAtlasNodeToClipboard(selectedAtlasNode: AtlasNode | undefined) {
-    loading.value = true;
-    // const atlasNodeJson = JSON.stringify(selectedAtlasNode);
-    // await copyToClipBoard(atlasNodeJson).then(() => {
-    //     console.log("Successfully copied '" + atlasNodeJson + "' to clipboard")
-    // }).catch((reason) => {
-    //     console.log(reason)
-    // }).finally(() =>
-    //     loading.value = false
-    // );
-    const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
-    await axios.put(link, selectedAtlasNode).then((res) => {
-        selectedAtlasNode = res.data
-        console.log(res.data)
+async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
+    if (selectedAtlasNode) {
+        loading.value = true;
+        let atlasNodeImproveDto = convertToAtlasNodeImproveDto(selectedAtlasNode);
+        const templatePrams: Record<string, string> = {
+            atlasNode: JSON.stringify(atlasNodeImproveDto, null, '\t'),
+            atlasNodeName: atlasNodeImproveDto.name
+        }
 
-    }).catch((res) => {
-        console.log(res)
-    }).finally(() =>
-        loading.value = false
-    );
-
+        emailjs.send(`${import.meta.env.VITE_EMAILJS_SERVICE_ID}`,
+            `${import.meta.env.VITE_EMAILJS_TEMPLATE_ID}`,
+            templatePrams,
+            `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`)
+            .then((result) => {
+                console.log('SUCCESS!', result.text);
+            }, (error) => {
+                console.log('FAILED...', error.text);
+            });
+        //
+        // const link = `${import.meta.env.VITE_DYNAMIC_ATLAS_BACKEND_URL}/atlasNodes/atlasNode`;
+        // await axios.put(link, selectedAtlasNode).then((res) => {
+        //     selectedAtlasNode = res.data
+        //     console.log(res.data)
+        //
+        // }).catch((res) => {
+        //     console.log(res)
+        // }).finally(() =>
+        //     loading.value = false
+        // );
+    }
 
 }
 </script>

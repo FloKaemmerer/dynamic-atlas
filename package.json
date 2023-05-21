@@ -15,6 +15,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@mdi/font": "^7.2.96",
     "@vueuse/core": "^10.1.2",
     "konva": "^8.4.3",
