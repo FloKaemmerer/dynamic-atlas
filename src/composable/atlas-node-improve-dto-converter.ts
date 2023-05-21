@@ -2,19 +2,13 @@ import type {AtlasNode} from "@/model/atlasNode";
 import type {DivinationCardImproveDto} from "@/model/dtos/divinationCardImproveDto";
 import type {AtlasNodeImproveDto} from "@/model/dtos/atlasNodeImproveDto";
 
-const convertToAtlasNodeImproveDto = (atlasNode: AtlasNode) => {
-    const divinationCardImproveDtos: DivinationCardImproveDto[] = []
-    atlasNode?.divinationCards.forEach(value => {
-        divinationCardImproveDtos.push({
-            name: value.name
-        })
-    })
+const convertToAtlasNodeImproveDto = (atlasNode: AtlasNode, divinationCards: DivinationCardImproveDto[], additionalTags: string[]) => {
     const atlasNodeImproveDto: AtlasNodeImproveDto = {
         active: atlasNode.active,
         boss: atlasNode.boss,
-        additionalTags: atlasNode.additionalTags,
-        divinationCards: divinationCardImproveDtos,
-        filterTags: atlasNode.filterTags,
+        additionalTags: additionalTags,
+        divinationCards: divinationCards,
+        filterTags: [],
         highestValueDivinationCard: {name: atlasNode.highestValueDivinationCard.name},
         linked: atlasNode.linked,
         locX: atlasNode.locX,

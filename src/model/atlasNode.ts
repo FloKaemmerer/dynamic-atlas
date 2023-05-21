@@ -12,8 +12,8 @@ export interface AtlasNode {
     name: string
     uniqueMap: boolean
     divinationCards: DivinationCard[]
-    filterTags: any[]
-    additionalTags: any[]
+    filterTags: string[]
+    additionalTags: string[]
     highestValueDivinationCard: DivinationCard
     boss: Boss
     nodeLayout: Layout

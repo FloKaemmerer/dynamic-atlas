@@ -361,14 +361,14 @@
                                                 </v-sheet>
                                             </v-col>
                                             <v-col cols="9">
-                                                <v-text-field
+                                                <v-textarea
                                                         hide-details
                                                         single-line
-                                                        :v-model="additionalTags"
+                                                        v-model="additionalTags"
                                                         rows="1"
                                                         auto-grow
                                                         density="compact">
-                                                </v-text-field>
+                                                </v-textarea>
                                             </v-col>
 
                                             <v-col cols="3">
@@ -377,14 +377,14 @@
                                                 </v-sheet>
                                             </v-col>
                                             <v-col cols="9">
-                                                <v-text-field
+                                                <v-textarea
                                                         hide-details
                                                         single-line
-                                                        :v-model="selectedAtlasNode.notes"
+                                                        v-model="selectedAtlasNode.notes"
                                                         rows="1"
                                                         auto-grow
                                                         density="compact">
-                                                </v-text-field>
+                                                </v-textarea>
                                             </v-col>
                                         </v-row>
                                     </div>
@@ -422,14 +422,15 @@ import {computed, ref, watch} from "vue";
 import type {AtlasNode} from "@/model/atlasNode";
 import emailjs from '@emailjs/browser';
 import convertToAtlasNodeImproveDto from "@/composable/atlas-node-improve-dto-converter";
+import type {DivinationCardImproveDto} from "@/model/dtos/divinationCardImproveDto";
 
 const atlasNodeStore = useAtlasNodeStore();
 const atlasNodes = computed<AtlasNode[] | null>(() => atlasNodeStore.atlasNodes);
 const selectedAtlasNodeName = ref()
 
 let selectedAtlasNode = ref<AtlasNode>()
-let divinationCardNames = ref()
-let additionalTags = ref()
+let divinationCardNames = ref<string>()
+let additionalTags = ref<string>()
 let loading = ref()
 
 watch(selectedAtlasNodeName, () => {
@@ -438,8 +439,6 @@ watch(selectedAtlasNodeName, () => {
 
 function getAtlasNodeByName(): AtlasNode | undefined {
     const filterElement = atlasNodes.value?.filter(value => value.name == selectedAtlasNodeName.value)[0] as AtlasNode;
-    console.log(filterElement)
-    JSON.stringify(filterElement)
     selectedAtlasNode.value = filterElement
     divinationCardNames.value = getDivinationCardNames(filterElement)
     additionalTags.value = getAdditionalTags(filterElement)
@@ -472,10 +471,10 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
     let first = true
     atlasNode.additionalTags.forEach(value => {
         if (first) {
-            additionalTags = additionalTags.concat(value.name)
+            additionalTags = additionalTags.concat(value)
             first = false;
         } else {
-            additionalTags = additionalTags.concat(", " + value.name)
+            additionalTags = additionalTags.concat(", " + value)
         }
     })
     return additionalTags
@@ -484,7 +483,31 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
 async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
     if (selectedAtlasNode) {
         loading.value = true;
-        let atlasNodeImproveDto = convertToAtlasNodeImproveDto(selectedAtlasNode);
+        const tags: string[] = []
+        if (additionalTags.value) {
+            const tagsSplits = additionalTags.value.split(",");
+            tagsSplits.forEach(tag => {
+                const trimmed = tag.trim();
+                if (trimmed.length > 0) {
+                    tags.push(trimmed)
+                }
+            })
+        }
+
+        const divinationCardImproveDtos: DivinationCardImproveDto[] = [];
+        if (divinationCardNames.value) {
+            const divCardNames = divinationCardNames.value.split(",");
+            divCardNames.forEach(cardName => {
+                const trimmedName = cardName.trim();
+                if (trimmedName.length > 0)
+                    divinationCardImproveDtos.push({
+                        name: trimmedName
+                    })
+            })
+        }
+
+        let atlasNodeImproveDto = convertToAtlasNodeImproveDto(selectedAtlasNode, divinationCardImproveDtos, tags);
+        console.log(atlasNodeImproveDto)
         const templatePrams: Record<string, string> = {
             atlasNode: JSON.stringify(atlasNodeImproveDto, null, '\t'),
             atlasNodeName: atlasNodeImproveDto.name
@@ -502,7 +525,6 @@ async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
             loading.value = false
         );
     }
-
 }
 </script>
 
