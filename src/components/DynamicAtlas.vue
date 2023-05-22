@@ -353,9 +353,9 @@ function getTooltipBaseText() {
         fontSize: 35,
         fontFamily: 'Calibri',
         fill: '#555',
-        width: 400,
+        width: 500,
         padding: 20,
-        align: 'center',
+        align: 'left',
         visible: false,
     })
 }
@@ -365,7 +365,7 @@ function getTooltipContainer() {
         stroke: '#555',
         strokeWidth: 5,
         fill: '#ddd',
-        width: 400,
+        width: 500,
         height: getTooltipBaseText().height(),
         shadowColor: 'black',
         shadowBlur: 10,
