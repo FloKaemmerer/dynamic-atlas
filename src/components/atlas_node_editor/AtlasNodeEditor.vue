@@ -413,6 +413,19 @@
                 </v-card>
             </v-col>
         </v-row>
+        <v-snackbar v-model="snackbar"
+                    timeout="-1"
+                    multi-line>
+            {{ snackbarText }}
+
+            <template v-slot:actions>
+                <v-btn color="blue"
+                       variant="text"
+                       @click="snackbar = false">
+                    Close
+                </v-btn>
+            </template>
+        </v-snackbar>
     </v-container>
 </template>
 
@@ -431,10 +444,13 @@ const selectedAtlasNodeName = ref()
 let selectedAtlasNode = ref<AtlasNode>()
 let divinationCardNames = ref<string>()
 let additionalTags = ref<string>()
-let loading = ref()
+let loading = ref(false)
+let snackbar = ref(false)
+let snackbarText = ref<string>()
 
 watch(selectedAtlasNodeName, () => {
     getAtlasNodeByName()
+    snackbar.value = false
 });
 
 function getAtlasNodeByName(): AtlasNode | undefined {
@@ -519,7 +535,11 @@ async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
             `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`)
             .then((result) => {
                 console.log('SUCCESS!', result.text);
+                snackbarText.value = "Successfully send Values for AtlasNode: " + selectedAtlasNode.name
+                snackbar.value = true;
             }).catch((res) => {
+            snackbarText.value = "Failed to send Values for AtlasNode: " + selectedAtlasNode.name + " \nPlease try again later"
+            snackbar.value = true;
             console.log(res)
         }).finally(() =>
             loading.value = false
