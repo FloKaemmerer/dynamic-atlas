@@ -26,7 +26,7 @@ import getOverlayColor from "@/composable/overlay-color-utils";
 import type {StageState} from "@/model/stageState";
 import buildAtlasNodeTooltipText from "@/composable/atlas-node-tooltip-text-builder";
 
-const coordinatesScaleFactor = 4.1
+const coordinatesScaleFactor = 1.925
 const minHeight = 937
 const minWidth = 1920
 
@@ -53,11 +53,11 @@ function handleToggleDrawer(e: boolean) {
 const mounted = () => {
     state = {
         stage: undefined,
-        currentScale: 0.46,
+        currentScale: 1,
         height: minHeight,
         width: minWidth,
-        offsetX: 350,
-        offsetY: 150,
+        offsetX: 175,
+        offsetY: 65,
     }
 
     let stage = new Konva.Stage({
@@ -157,29 +157,29 @@ overlayStore.$subscribe((mutation, state) => {
             x: getScaledAtlasNodeLocX(key),
             y: getScaledAtlasNodeLocY(key),
             fill: getOverlayColor(value),
-            radius: 30,
+            radius: 20,
             opacity: 1,
         })
         overlayGroup.add(overlayCircle)
 
         let overlayRect = new Konva.Rect({
             id: key.id + "-rect",
-            x: getScaledAtlasNodeLocX(key) - 25,
-            y: getScaledAtlasNodeLocY(key) - 60,
+            x: getScaledAtlasNodeLocX(key) - 13,
+            y: getScaledAtlasNodeLocY(key) - 38,
             fill: getOverlayColor(value),
-            width: 50,
-            height: 50,
-            cornerRadius: 10,
+            width: 25,
+            height: 25,
+            cornerRadius: 5,
             opacity: 1,
         })
         overlayGroup.add(overlayRect)
 
         let overlayText = new Konva.Text({
             Text: value,
-            x: getScaledAtlasNodeLocX(key) - 5,
-            y: getScaledAtlasNodeLocY(key) - 55,
+            x: getScaledAtlasNodeLocX(key) - 3,
+            y: getScaledAtlasNodeLocY(key) - 32,
             offsetX: (value + "").length * 3.75,
-            fontSize: 30,
+            fontSize: 20,
             fontFamily: 'Arial',
             fontStyle: 'bold',
             fill: 'white',
@@ -205,10 +205,10 @@ atlasNodeStore.$subscribe((mutation, state) => {
             x: getScaledAtlasNodeLocX(value),
             y: getScaledAtlasNodeLocY(value),
             stroke: 'black',
-            strokeWidth: 4,
+            strokeWidth: 3,
             fill: 'red',
-            blurRadius: 8,
-            radius: 40,
+            blurRadius: 5,
+            radius: 25,
             opacity: 1,
         })
         filterHighlight.cache()
@@ -246,8 +246,8 @@ function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, 
         image: image,
         x: locX,
         y: locY,
-        scaleX: 0.4,
-        scaleY: 0.4,
+        scaleX: 0.25,
+        scaleY: 0.25,
     })
     image.onload = () => {
         konvaImage.offsetX(image.width / 2)
@@ -260,9 +260,9 @@ function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, lo
     let mapNodeNameKonvaText = new Konva.Text({
         Text: mapName,
         x: locX,
-        y: locY + 22,
-        offsetX: mapName.length * 5,
-        fontSize: 25,
+        y: locY + 15,
+        offsetX: mapName.length * 3.5,
+        fontSize: 12,
         fontFamily: 'Arial',
         fill: 'black',
         fontStyle: 'bold',
@@ -301,11 +301,10 @@ function getLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
     return new Konva.Line({
         points: [getScaledAtlasNodeLocX(sourceNode), getScaledAtlasNodeLocY(sourceNode), getScaledAtlasNodeLocX(targetNode), getScaledAtlasNodeLocY(targetNode)],
         stroke: 'black',
-        strokeWidth: 2,
+        strokeWidth: 1,
         lineJoin: 'round',
-        dash: [20, 10],
+        dash: [10, 5],
         lineCap: 'round',
-        tension: 0.5,
     });
 }
 
@@ -348,10 +347,10 @@ function hideTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
 function getTooltipBaseText() {
     return new Konva.Text({
         text: "",
-        fontSize: 35,
+        fontSize: 15,
         fontFamily: 'Calibri',
         fill: '#555',
-        width: 500,
+        width: 220,
         padding: 20,
         align: 'left',
         visible: false,
@@ -363,7 +362,7 @@ function getTooltipContainer() {
         stroke: '#555',
         strokeWidth: 5,
         fill: '#ddd',
-        width: 500,
+        width: 220,
         height: getTooltipBaseText().height(),
         shadowColor: 'black',
         shadowBlur: 10,
@@ -390,8 +389,8 @@ function dragBound(pos: any) {
     let x = minWidth
     let y = minHeight
     if (state.stage) {
-        x = Math.max(Math.min(pos.x, 800), -state.width * state.currentScale)
-        y = Math.max(Math.min(pos.y, 500), -state.height * state.currentScale)
+        x = Math.max(Math.min(pos.x, 800), -state.width * state.currentScale * 1.5 + window.innerWidth)
+        y = Math.max(Math.min(pos.y, 500), -state.height * state.currentScale * 1.5 + window.innerHeight)
     }
 
     return {
