@@ -193,8 +193,6 @@ overlayStore.$subscribe((mutation, state) => {
 })
 
 atlasNodeStore.$subscribe((mutation, state) => {
-    console.log(state.filteredAtlasNodes)
-
     // destroy previous Highlights
     let allHighlights = filterHighlightGroup.find("Circle") as Konva.Circle[];
     allHighlights.forEach(value => value.destroy())
