@@ -18,4 +18,6 @@ export interface DivinationCard {
     explicitModifiers: ExplicitModifier[]
 
     artFilename: string
+
+    dropWeight: number
 }

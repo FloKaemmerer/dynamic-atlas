@@ -25,10 +25,10 @@ export const handleZoom = (state: StageState) => {
                 }
 
                 let newScale = direction > 0 ? oldScale * scaleBy : oldScale / scaleBy;
-                if (newScale >= 0.9) {
-                    newScale = 0.9
-                } else if (newScale <= 0.3) {
-                    newScale = 0.3
+                if (newScale >= 1.75) {
+                    newScale = 1.75
+                } else if (newScale <= 0.5) {
+                    newScale = 0.5
                 }
 
                 stage.scale({x: newScale, y: newScale});
