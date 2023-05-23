@@ -51,6 +51,7 @@
                                                     step="1"
                                                     show-ticks="always"
                                                     tick-size="4"
+                                                    thumb-label
                                                     :max="16"
                                                     :min="1"
                                                     :disabled="!includeMapTier"
@@ -93,6 +94,7 @@
                                                     step="1"
                                                     show-ticks="always"
                                                     tick-size="4"
+                                                    thumb-label
                                                     :max="10"
                                                     :disabled="!includeOpenness"
                                             >
@@ -129,6 +131,7 @@
                                                     step="1"
                                                     show-ticks="always"
                                                     tick-size="4"
+                                                    thumb-label
                                                     :max="10"
                                                     :disabled="!includeTraversability"
                                             >
@@ -165,6 +168,7 @@
                                                     step="1"
                                                     show-ticks="always"
                                                     tick-size="4"
+                                                    thumb-label
                                                     :max="10"
                                                     :min="0"
                                                     :disabled="!includeBacktrackFactor"
@@ -201,6 +205,7 @@
                                                     step="1"
                                                     show-ticks="always"
                                                     tick-size="4"
+                                                    thumb-label
                                                     :max="10"
                                                     :min="0"
                                                     :disabled="!includeLinearity"
@@ -238,6 +243,7 @@
                                                     step="1"
                                                     show-ticks="always"
                                                     tick-size="4"
+                                                    thumb-label
                                                     :max="10"
                                                     :min="1"
                                                     :disabled="!includeBaseMobCount"
@@ -295,6 +301,7 @@
                                                     step="1"
                                                     show-ticks="always"
                                                     tick-size="4"
+                                                    thumb-label
                                                     :max="4"
                                                     :min="0"
                                                     :disabled="!includeNumberOfBosses"
