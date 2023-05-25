@@ -1,4 +1,4 @@
-import {useAtlasNodeOverlayStore} from "src/store/AtlasNodeOverlayStore";
+import {useAtlasNodeOverlayStore} from "@/store/AtlasNodeOverlayStore";
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import type {AtlasNode} from "@/model/atlasNode";
 

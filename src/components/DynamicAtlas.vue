@@ -17,7 +17,7 @@ import Konva from 'konva';
 import {onMounted} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
-import {useAtlasNodeOverlayStore} from "src/store/AtlasNodeOverlayStore";
+import {useAtlasNodeOverlayStore} from "@/store/AtlasNodeOverlayStore";
 import type {AtlasNode} from "@/model/atlasNode";
 import {handleZoom} from "@/composable/stage-zoom";
 import DetailsDrawer from "@/components/DetailsDrawer.vue";
