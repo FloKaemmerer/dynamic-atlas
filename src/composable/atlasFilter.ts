@@ -6,7 +6,6 @@ import {useFilterStore} from "@/store/FilterStore";
 const filterStore = useFilterStore();
 const atlasNodeStore = useAtlasNodeStore();
 filterStore.$subscribe((mutation, state) => {
-    console.log(state)
     handleFilter(state.filterText,
         state.includeMapTier ? state.mapTier : [-1, -1],
         state.excludePhasedBosses,
