@@ -1,6 +1,32 @@
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import type {AtlasNode} from "@/model/atlasNode";
 
+import {useFilterStore} from "@/store/FilterStore";
+
+const filterStore = useFilterStore();
+const atlasNodeStore = useAtlasNodeStore();
+filterStore.$subscribe((mutation, state) => {
+    console.log(state)
+    handleFilter(state.filterText,
+        state.includeMapTier ? state.mapTier : [-1, -1],
+        state.excludePhasedBosses,
+        state.includeNumberOfBosses ? state.numberOfBosses : [-1, -1],
+        state.minDivinationCardValue,
+        state.includeOpenness ? state.openness : [-1, -1],
+        state.includeTraversability ? state.traversability : [-1, -1],
+        state.includeBacktrackFactor ? state.backtrackFactor : [-1, -1],
+        state.includeLinearity ? state.linearity : [-1, -1],
+        state.includeBaseMobCount ? state.baseMobCount : [-1, -1],
+        state.rushableBoss,
+        state.includeSkippablePhases,
+        state.excludeSpawnedBosses,
+        state.includeSpawnIntro)
+})
+
+export const initFilter = () => {
+    console.log("Init Atlas Filter")
+}
+
 export const handleFilter = (filterText: string,
                              mapTier: number[],
                              excludePhasedBosses: boolean,
@@ -15,10 +41,9 @@ export const handleFilter = (filterText: string,
                              includeSkippablePhases: boolean,
                              excludeSpawnedBosses: boolean,
                              spawnIntro: boolean) => {
-    const atlasNodeStore = useAtlasNodeStore();
     let result = [] as AtlasNode[]
     const needToFilter =
-        filterText ||
+        (filterText && filterText.length) > 0 ||
         mapTier[0] > -1 ||
         numberOfBosses[0] > -1 ||
         excludePhasedBosses ||
@@ -160,7 +185,6 @@ function filterByOpenness(layout: number[], result: AtlasNode[]) {
 function filterByTraversability(traversability: number[], result: AtlasNode[]) {
     if (traversability[0] > -1) {
         result = result.filter(atlasNode => {
-            console.log("Traversability: " + atlasNode.nodeLayout.traversability + ", Min Number: " + traversability[0] + ", Max Number: " + traversability[1])
             return traversability[0] <= atlasNode.nodeLayout.traversability && atlasNode.nodeLayout.traversability <= traversability[1]
         })
     }
@@ -170,7 +194,6 @@ function filterByTraversability(traversability: number[], result: AtlasNode[]) {
 function filterByBacktrackFactor(backtrackFactor: number[], result: AtlasNode[]) {
     if (backtrackFactor[0] > -1) {
         result = result.filter(atlasNode => {
-            console.log("BacktrackFactor: " + atlasNode.nodeLayout.backtrackFactor + ", Min Number: " + backtrackFactor[0] + ", Max Number: " + backtrackFactor[1])
             return backtrackFactor[0] <= atlasNode.nodeLayout.backtrackFactor && atlasNode.nodeLayout.backtrackFactor <= backtrackFactor[1]
         })
     }
