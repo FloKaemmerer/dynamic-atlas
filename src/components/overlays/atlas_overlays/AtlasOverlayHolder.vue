@@ -1,7 +1,7 @@
 <script setup lang="ts">
 
 import {ref, watch} from "vue";
-import {handleOverlay} from "@/composable/overlayHandler";
+import {handleOverlay} from "@/composable/AtlasNodeOverlayHandler";
 
 let activeOverlay = ref('none')
 
