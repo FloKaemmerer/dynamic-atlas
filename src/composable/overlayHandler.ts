@@ -1,9 +1,9 @@
-import {useOverlayStore} from "@/store/OverlayStore";
+import {useAtlasNodeOverlayStore} from "src/store/AtlasNodeOverlayStore";
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import type {AtlasNode} from "@/model/atlasNode";
 
 
-const overlayStore = useOverlayStore();
+const overlayStore = useAtlasNodeOverlayStore();
 const atlasNodeStore = useAtlasNodeStore();
 
 function getOpennessOverlayNodes() {

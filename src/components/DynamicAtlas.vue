@@ -17,7 +17,7 @@ import Konva from 'konva';
 import {onMounted} from 'vue'
 import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
-import {useOverlayStore} from "@/store/OverlayStore";
+import {useAtlasNodeOverlayStore} from "src/store/AtlasNodeOverlayStore";
 import type {AtlasNode} from "@/model/atlasNode";
 import {handleZoom} from "@/composable/stage-zoom";
 import DetailsDrawer from "@/components/DetailsDrawer.vue";
@@ -32,7 +32,7 @@ const minWidth = 1920
 
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
-const overlayStore = useOverlayStore();
+const overlayStore = useAtlasNodeOverlayStore();
 
 const backgroundGroup = new Konva.Group();
 const linksGroup = new Konva.Group();
@@ -48,6 +48,13 @@ let state: StageState
 
 function handleToggleDrawer(e: boolean) {
     detailsDrawerStore.SET_DRAWER(e)
+}
+
+function getHandlerReactiveAreaClicked(atlasNode: AtlasNode) {
+    return function () {
+        handleToggleDrawer(true)
+        atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
+    };
 }
 
 const mounted = () => {
@@ -115,10 +122,8 @@ const mounted = () => {
             addMapNameToGroup(mapNameGroup, atlasNode.name, locX, locY);
 
             let reactiveNodeArea = getHighlightArea(locX, locY);
-            reactiveNodeArea.on('click', function () {
-                handleToggleDrawer(true)
-                atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
-            })
+            reactiveNodeArea.on('click', getHandlerReactiveAreaClicked(atlasNode))
+            reactiveNodeArea.on('touchend', getHandlerReactiveAreaClicked(atlasNode))
             showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, atlasNode)
 
             hideTooltip(reactiveNodeArea, tooltipText, tooltipContainer)
@@ -151,7 +156,7 @@ overlayStore.$subscribe((mutation, state) => {
     allOverlayText.forEach(value => value.destroy())
 
     //show all overlay on all AtlasNodes
-    state.overlayNodesMap.forEach((value: number, key: AtlasNode) => {
+    state.overlayAtlasNodesMap.forEach((value: number, key: AtlasNode) => {
         let overlayCircle = new Konva.Circle({
             id: key.id + "-circle",
             x: getScaledAtlasNodeLocX(key),
