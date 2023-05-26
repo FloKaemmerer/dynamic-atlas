@@ -29,7 +29,18 @@ watch([activeDivinationCardOverlay, selectedDivinationCardName], () => {
                           :items="atlasNodeStore.dropRestrictedDivinationCardNames"
                           variant="outlined"
                           clearable
-                          density="compact"></v-select>
+                          density="compact">
+
+                    <template v-slot:append>
+                        <v-tooltip>
+                            <template v-slot:activator="{ props }">
+                                <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
+                            </template>
+                            <p>The Base Drop Chance is the Chance that IF a Divination Card drops it is that Card.</p>
+                            <p>It is not the overall Chance to find that card!</p>
+                        </v-tooltip>
+                    </template>
+                </v-select>
             </template>
         </v-radio>
 
