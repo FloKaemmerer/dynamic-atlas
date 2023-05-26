@@ -438,7 +438,7 @@ function getHighlightArea(locX: number, locY: number) {
         y: locY,
         stroke: 'black',
         strokeWidth: 4,
-        radius: 35,
+        radius: 20,
         opacity: 0
     })
 }
