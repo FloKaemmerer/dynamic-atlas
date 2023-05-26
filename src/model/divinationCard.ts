@@ -20,4 +20,8 @@ export interface DivinationCard {
     artFilename: string
 
     dropWeight: number
+
+    dropRestricted: boolean
+
+    baseDropChance: number
 }

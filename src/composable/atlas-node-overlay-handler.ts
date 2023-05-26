@@ -1,9 +1,9 @@
-import {useOverlayStore} from "@/store/OverlayStore";
+import {useAtlasNodeOverlayStore} from "@/store/AtlasNodeOverlayStore";
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import type {AtlasNode} from "@/model/atlasNode";
 
 
-const overlayStore = useOverlayStore();
+const atlasNodeOverlayStore = useAtlasNodeOverlayStore();
 const atlasNodeStore = useAtlasNodeStore();
 
 function getOpennessOverlayNodes() {
@@ -56,31 +56,31 @@ function getBaseMobCountOverlayNodes() {
     return baseMobCountOverlayNodes;
 }
 
-export const handleOverlay = (activeOverlay: string) => {
+export const handleAtlasNodeOverlay = (activeOverlay: string) => {
 
     switch (activeOverlay) {
         case "opennessOverlay": {
-            overlayStore.SET_OVERLAY_ATLAS_NODES(getOpennessOverlayNodes())
+            atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getOpennessOverlayNodes())
             break;
         }
         case "traversabilityOverlay": {
-            overlayStore.SET_OVERLAY_ATLAS_NODES(getTraversabilityOverlayNodes())
+            atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getTraversabilityOverlayNodes())
             break;
         }
         case "linearityOverlay": {
-            overlayStore.SET_OVERLAY_ATLAS_NODES(getLinearityOverlayNodes())
+            atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getLinearityOverlayNodes())
             break;
         }
         case "backtrackFactorOverlay": {
-            overlayStore.SET_OVERLAY_ATLAS_NODES(getBacktrackFactorOverlayNodes())
+            atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getBacktrackFactorOverlayNodes())
             break;
         }
         case "baseMobCountOverlay": {
-            overlayStore.SET_OVERLAY_ATLAS_NODES(getBaseMobCountOverlayNodes())
+            atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getBaseMobCountOverlayNodes())
             break;
         }
         default: {
-            overlayStore.SET_OVERLAY_ATLAS_NODES(new Map())
+            atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(new Map())
             break;
         }
     }

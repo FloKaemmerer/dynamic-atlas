@@ -3,20 +3,20 @@ import {defineStore} from "pinia";
 
 
 interface State {
-    overlayNodesMap: Map<AtlasNode, number>
+    overlayAtlasNodesMap: Map<AtlasNode, number>
 }
 
-export const useOverlayStore = defineStore("overlay-nodes", {
+export const useAtlasNodeOverlayStore = defineStore("atlas-node-overlay-nodes", {
     state: (): State => {
         return {
-            overlayNodesMap: new Map(),
+            overlayAtlasNodesMap: new Map(),
         }
     },
 
     actions: {
 
         SET_OVERLAY_ATLAS_NODES(overlayAtlasNodesMap: Map<AtlasNode, number>) {
-            this.overlayNodesMap = overlayAtlasNodesMap;
+            this.overlayAtlasNodesMap = overlayAtlasNodesMap;
         },
     }
 })
