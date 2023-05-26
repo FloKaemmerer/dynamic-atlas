@@ -10,6 +10,8 @@ interface State {
 
     atlasNodesMap: Map<string, AtlasNode>
     filteredAtlasNodes: Array<AtlasNode>
+
+    dropRestrictedDivinationCardNames: Array<string>
 }
 
 export const useAtlasNodeStore = defineStore("atlas-node", {
@@ -19,6 +21,7 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
             atlasNodes: [],
             atlasNodesMap: new Map(),
             filteredAtlasNodes: [],
+            dropRestrictedDivinationCardNames: [],
         }
     },
 
@@ -35,21 +38,30 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
             console.log("setting up Atlas Data")
 
             atlasNodes.forEach(atlasNodeElement => {
-                const atlasNode = atlasNodeElement as AtlasNode
-                atlasNode.filterTags = [atlasNode.name.toLowerCase()]
-                if (atlasNode.divinationCards) {
-                    atlasNode.filterTags = atlasNode.filterTags.concat(atlasNode.divinationCards.map(value => value.name.toLowerCase()))
-                }
-                atlasNode.filterTags = atlasNode.filterTags.concat(getMapTierFilterTags(atlasNode.mapTier))
-                this.atlasNodesMap.set(atlasNode.id, atlasNode)
-                console.log("added: " + atlasNode.name + " using ID: " + atlasNode.id)
-                this.atlasNodes.push(atlasNode)
-                if (atlasNode.divinationCards) {
-                    atlasNode.divinationCards = atlasNode.divinationCards.sort((a, b) => {
-                        return a.chaosValue >= b.chaosValue ? -1 : 1
-                    })
+                if (atlasNodeElement.active) {
+                    const atlasNode = atlasNodeElement as AtlasNode
+                    atlasNode.filterTags = [atlasNode.name.toLowerCase()]
+                    if (atlasNode.divinationCards) {
+                        atlasNode.filterTags = atlasNode.filterTags.concat(atlasNode.divinationCards.map(value => {
+                            if (!this.dropRestrictedDivinationCardNames.includes(value.name)) {
+                                this.dropRestrictedDivinationCardNames.push(value.name)
+                            }
+                            return value.name.toLowerCase()
+                        }))
+
+                    }
+                    atlasNode.filterTags = atlasNode.filterTags.concat(getMapTierFilterTags(atlasNode.mapTier))
+                    this.atlasNodesMap.set(atlasNode.id, atlasNode)
+                    console.log("added: " + atlasNode.name + " using ID: " + atlasNode.id)
+                    this.atlasNodes.push(atlasNode)
+                    if (atlasNode.divinationCards) {
+                        atlasNode.divinationCards = atlasNode.divinationCards.sort((a, b) => {
+                            return a.chaosValue >= b.chaosValue ? -1 : 1
+                        })
+                    }
                 }
             });
+            this.dropRestrictedDivinationCardNames.sort()
 
             function getMapTierFilterTags(mapTier: number): string[] {
                 return ["tier " + mapTier, "t" + mapTier, "tier: " + mapTier, "" + mapTier, "natural tier: " + mapTier, "natural tier " + mapTier]
