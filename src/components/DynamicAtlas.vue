@@ -25,6 +25,7 @@ import FilterDrawer from "@/components/FilterDrawer.vue";
 import getOverlayColor from "@/composable/overlay-color-utils";
 import type {StageState} from "@/model/stageState";
 import buildAtlasNodeTooltipText from "@/composable/atlas-node-tooltip-text-builder";
+import {useDivinationCardOverlayStore} from "@/store/DivinationCardOverlayStore";
 
 const coordinatesScaleFactor = 1.925
 const minHeight = 937
@@ -32,7 +33,8 @@ const minWidth = 1920
 
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
-const overlayStore = useAtlasNodeOverlayStore();
+const atlasNodeOverlayStore = useAtlasNodeOverlayStore();
+const divinationCardOverlayStore = useDivinationCardOverlayStore();
 
 const backgroundGroup = new Konva.Group();
 const linksGroup = new Konva.Group();
@@ -146,7 +148,7 @@ const mounted = () => {
     handleZoom(state)
 }
 
-overlayStore.$subscribe((mutation, state) => {
+atlasNodeOverlayStore.$subscribe((mutation, state) => {
     // destroy previous overlay
     let allOverlayCircles = overlayGroup.find("Circle") as Konva.Circle[];
     allOverlayCircles.forEach(value => value.destroy())
@@ -184,6 +186,57 @@ overlayStore.$subscribe((mutation, state) => {
             x: getScaledAtlasNodeLocX(key) - 3,
             y: getScaledAtlasNodeLocY(key) - 32,
             offsetX: (value + "").length * 3.75,
+            fontSize: 20,
+            fontFamily: 'Arial',
+            fontStyle: 'bold',
+            fill: 'white',
+            shadowColor: 'black',
+            shadowBlur: 10,
+            shadowOffset: {x: 1, y: 1},
+            shadowOpacity: 1,
+        })
+        overlayGroup.add(overlayText)
+    });
+})
+
+divinationCardOverlayStore.$subscribe((mutation, state) => {
+    // destroy previous overlay
+    let allOverlayCircles = overlayGroup.find("Circle") as Konva.Circle[];
+    allOverlayCircles.forEach(value => value.destroy())
+    let allOverlayRects = overlayGroup.find("Rect") as Konva.Rect[];
+    allOverlayRects.forEach(value => value.destroy())
+    let allOverlayText = overlayGroup.find("Text") as Konva.Text[];
+    allOverlayText.forEach(value => value.destroy())
+
+    //show all overlay on all AtlasNodes
+    state.overlayDivinationCardsMap.forEach((value: number, key: AtlasNode) => {
+        let overlayCircle = new Konva.Circle({
+            id: key.id + "-circle",
+            x: getScaledAtlasNodeLocX(key),
+            y: getScaledAtlasNodeLocY(key),
+            fill: '#f6a676',
+            radius: 20,
+            opacity: 1,
+        })
+        overlayGroup.add(overlayCircle)
+
+        let overlayRect = new Konva.Rect({
+            id: key.id + "-rect",
+            x: getScaledAtlasNodeLocX(key) - 13,
+            y: getScaledAtlasNodeLocY(key) - 38,
+            fill: '#f6a676',
+            width: 25,
+            height: 25,
+            cornerRadius: 5,
+            opacity: 1,
+        })
+        overlayGroup.add(overlayRect)
+
+        let overlayText = new Konva.Text({
+            Text: (value * 100).toFixed(3) + "%",
+            x: getScaledAtlasNodeLocX(key) - 3,
+            y: getScaledAtlasNodeLocY(key) - 32,
+            offsetX: ((value * 100).toFixed(3) + "%").length * 3.75,
             fontSize: 20,
             fontFamily: 'Arial',
             fontStyle: 'bold',
