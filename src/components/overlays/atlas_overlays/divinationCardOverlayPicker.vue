@@ -38,6 +38,7 @@ watch([activeDivinationCardOverlay, selectedDivinationCardName], () => {
                             </template>
                             <p>The Base Drop Chance is the Chance that IF a Divination Card drops it is that Card.</p>
                             <p>It is not the overall Chance to find that card!</p>
+                            <p>The Value is determined by 'Card drop Weight / Total Div Card Droppool size'</p>
                         </v-tooltip>
                     </template>
                 </v-select>
