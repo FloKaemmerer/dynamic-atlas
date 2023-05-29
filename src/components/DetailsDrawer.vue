@@ -20,10 +20,10 @@ import {useAtlasNodeStore} from '@/store/AtlasNodeStore'
 import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
 import {computed} from "vue";
 import type {AtlasNode} from '@/model/atlasNode'
-import AdditionalTagsDetails from "@/components/filters/details_drawer/AdditionalTagsDetails.vue";
-import LayoutDetails from "@/components/filters/details_drawer/LayoutDetails.vue";
-import BossDetails from "@/components/filters/details_drawer/BossDetails.vue";
-import DivinationCardDetails from "@/components/filters/details_drawer/DivinationCardDetails.vue";
+import AdditionalTagsDetails from "@/components/details_drawer/AdditionalTagsDetails.vue";
+import LayoutDetails from "@/components/details_drawer/LayoutDetails.vue";
+import BossDetails from "@/components/details_drawer/BossDetails.vue";
+import DivinationCardDetails from "@/components/details_drawer/DivinationCardDetails.vue";
 
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
