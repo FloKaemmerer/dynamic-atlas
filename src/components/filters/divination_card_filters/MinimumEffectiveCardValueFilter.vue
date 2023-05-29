@@ -21,7 +21,17 @@ function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
             variant="outlined"
             style="width: 100%"
             density="compact"
-            min="0"></v-text-field>
+            min="0">
+        <template v-slot:append>
+            <v-tooltip>
+                <template v-slot:activator="{ props }">
+                    <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
+                </template>
+                <p>Filter based on the minimal required Effective Value of a Divination Card that drops in a Map.</p>
+                <p>The Effective Value is determined by 'Card sell Price * Base Drop Chance * 100'</p>
+            </v-tooltip>
+        </template>
+    </v-text-field>
 </template>
 
 <style scoped>

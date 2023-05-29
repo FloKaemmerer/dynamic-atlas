@@ -12,6 +12,7 @@ function handleMinimumDivinationCardPriceFilter(value: string) {
 </script>
 
 <template>
+
     <v-text-field
             v-model="minDivinationCardPrice"
             @update:model-value="val => handleMinimumDivinationCardPriceFilter(val)"
@@ -22,7 +23,16 @@ function handleMinimumDivinationCardPriceFilter(value: string) {
             variant="outlined"
             style="width: 100%"
             density="compact"
-            min="0"></v-text-field>
+            min="0">
+        <template v-slot:append>
+            <v-tooltip>
+                <template v-slot:activator="{ props }">
+                    <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
+                </template>
+                <p>Filter based on the minimal required estimated price of a Divination Card that drops in a Map.</p>
+            </v-tooltip>
+        </template>
+    </v-text-field>
 </template>
 
 <style scoped>
