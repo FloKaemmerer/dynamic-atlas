@@ -1,7 +1,9 @@
 <script setup lang="ts">
 
-import MinimumDivinationCardValueFilter
-    from "@/components/filters/divination_card_filters/MinimumDivinationCardValueFilter.vue";
+import MinimumDivinationCardPriceFilter
+    from "@/components/filters/divination_card_filters/MinimumDivinationCardPriceFilter.vue";
+import MinimumEffectiveCardValueFilter
+    from "@/components/filters/divination_card_filters/MinimumEffectiveCardValueFilter.vue";
 </script>
 
 <template>
@@ -11,7 +13,8 @@ import MinimumDivinationCardValueFilter
                 <v-expansion-panel>
                     <v-expansion-panel-title>Divination Card Filters</v-expansion-panel-title>
                     <v-expansion-panel-text>
-                        <MinimumDivinationCardValueFilter/>
+                        <MinimumDivinationCardPriceFilter/>
+                        <MinimumEffectiveCardValueFilter/>
                     </v-expansion-panel-text>
                 </v-expansion-panel>
             </v-expansion-panels>

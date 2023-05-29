@@ -295,6 +295,9 @@ function createBackgroundImage() {
     atlasBackgroundKonvaImage.on('click', function () {
         handleToggleDrawer(false)
     })
+    atlasBackgroundKonvaImage.on('touchend', function () {
+        handleToggleDrawer(false)
+    })
 }
 
 function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, locY: number) {
@@ -438,7 +441,7 @@ function getHighlightArea(locX: number, locY: number) {
         y: locY,
         stroke: 'black',
         strokeWidth: 4,
-        radius: 35,
+        radius: 20,
         opacity: 0
     })
 }

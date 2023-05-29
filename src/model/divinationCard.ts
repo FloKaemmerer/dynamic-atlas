@@ -24,4 +24,6 @@ export interface DivinationCard {
     dropRestricted: boolean
 
     baseDropChance: number
+
+    effectiveValue: number
 }
