@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-import {AtlasNode} from "@/model/atlasNode";
+import type {AtlasNode} from "@/model/atlasNode";
 import {ref} from "vue";
-import {DivinationCard} from "@/model/divinationCard";
+import type {DivinationCard} from "@/model/divinationCard";
 
 interface PropsInterface {
     atlasNode: AtlasNode;
