@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {AtlasNode} from "@/model/atlasNode";
+import type {AtlasNode} from "@/model/atlasNode";
 
 interface PropsInterface {
     atlasNode: AtlasNode;
