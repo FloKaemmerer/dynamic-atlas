@@ -10,7 +10,8 @@ filterStore.$subscribe((mutation, state) => {
         state.includeMapTier ? state.mapTier : [-1, -1],
         state.excludePhasedBosses,
         state.includeNumberOfBosses ? state.numberOfBosses : [-1, -1],
-        state.minDivinationCardValue,
+        state.minDivinationCardPrice,
+        state.minEffectiveDivinationCardValue,
         state.includeOpenness ? state.openness : [-1, -1],
         state.includeTraversability ? state.traversability : [-1, -1],
         state.includeBacktrackFactor ? state.backtrackFactor : [-1, -1],
@@ -30,7 +31,8 @@ export const handleFilter = (filterText: string,
                              mapTier: number[],
                              excludePhasedBosses: boolean,
                              numberOfBosses: number[],
-                             minDivinationCardValue: number,
+                             minDivinationCardPrice: number,
+                             minEffectiveDivinationCardValue: number,
                              openness: number[],
                              traversability: number[],
                              backtrackFactor: number[],
@@ -46,7 +48,8 @@ export const handleFilter = (filterText: string,
         mapTier[0] > -1 ||
         numberOfBosses[0] > -1 ||
         excludePhasedBosses ||
-        minDivinationCardValue > 0 ||
+        minDivinationCardPrice > 0 ||
+        minEffectiveDivinationCardValue > 0 ||
         openness[0] > -1 ||
         traversability[0] > -1 ||
         backtrackFactor[0] > -1 ||
@@ -78,13 +81,16 @@ export const handleFilter = (filterText: string,
         // Filter by Rushable Boss
         result = filterByRushableBoss(includeRushableBoss, result)
 
-        // Filter by Divination Card Value
-        result = filterByDivinationCardValue(minDivinationCardValue, result);
+        // Filter by minimum Divination Card Price
+        result = filterByMinimumDivinationCardPrice(minDivinationCardPrice, result);
+
+        // Filter by minimum effective Divination Card Value
+        result = filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue, result)
 
         // Filter by Openness
         result = filterByOpenness(openness, result);
 
-        // Filter by traversability
+        // Filter by Traversability
         result = filterByTraversability(traversability, result);
 
         //Filter by BacktrackFactor
@@ -163,10 +169,26 @@ function filterByRushableBoss(includeRushableBoss: boolean, result: AtlasNode[])
     return result;
 }
 
-function filterByDivinationCardValue(minDivinationCardValue: number, result: AtlasNode[]) {
-    if (minDivinationCardValue > 0) {
+function filterByMinimumDivinationCardPrice(minDivinationCardPrice: number, result: AtlasNode[]) {
+    if (minDivinationCardPrice > 0) {
         result = result.filter(atlasNode => {
-            return atlasNode.highestValueDivinationCard.chaosValue && atlasNode.highestValueDivinationCard.chaosValue >= minDivinationCardValue
+            return atlasNode.highestValueDivinationCard.chaosValue && atlasNode.highestValueDivinationCard.chaosValue >= minDivinationCardPrice
+        })
+    }
+    return result;
+}
+
+function filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue: number, result: AtlasNode[]) {
+    if (minEffectiveDivinationCardValue > 0) {
+        result = result.filter(atlasNode => {
+            const highestEffectiveValueDivinationCard = atlasNode.highestEffectiveValueDivinationCard;
+            const effectiveValue = highestEffectiveValueDivinationCard.effectiveValue;
+            if (effectiveValue) {
+                console.log("Div Card '" + highestEffectiveValueDivinationCard.name + "', Effective Value: " + effectiveValue)
+                return effectiveValue >= minEffectiveDivinationCardValue
+            } else {
+                return false
+            }
         })
     }
     return result;

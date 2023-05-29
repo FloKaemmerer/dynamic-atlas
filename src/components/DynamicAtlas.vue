@@ -295,6 +295,9 @@ function createBackgroundImage() {
     atlasBackgroundKonvaImage.on('click', function () {
         handleToggleDrawer(false)
     })
+    atlasBackgroundKonvaImage.on('touchend', function () {
+        handleToggleDrawer(false)
+    })
 }
 
 function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, locY: number) {

@@ -25,7 +25,9 @@ const buildAtlasNodeTooltipText = (atlasNode: AtlasNode): string => {
         "\n" +
         "Tags: " + getFormattedAdditionalTags() + "\n" +
         "\n" +
-        "Highest Value Div Card:\n" + atlasNode.highestValueDivinationCard.name + " - " + atlasNode.highestValueDivinationCard.chaosValue + "C" + "\n" +
+        "Highest Price Div Card:\n" + atlasNode.highestValueDivinationCard.name + " - " + atlasNode.highestValueDivinationCard.chaosValue + "C" + "\n" +
+        "\n" +
+        "Highest Effective Value Div Card:\n" + atlasNode.highestEffectiveValueDivinationCard.name + " - " + atlasNode.highestEffectiveValueDivinationCard.effectiveValue.toFixed(3) + "C" + "\n" +
         "\n" +
         "Notes: " + (atlasNode.notes ? atlasNode : "")
 }

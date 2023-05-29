@@ -49,7 +49,8 @@ interface State {
     includeSkippablePhases: boolean,
     includeSpawnIntro: boolean,
     excludeSpawnedBosses: boolean,
-    minDivinationCardValue: number,
+    minDivinationCardPrice: number,
+    minEffectiveDivinationCardValue: number,
 }
 
 export const useFilterStore = defineStore("filter", {
@@ -75,7 +76,8 @@ export const useFilterStore = defineStore("filter", {
             includeSkippablePhases: false,
             includeSpawnIntro: false,
             excludeSpawnedBosses: false,
-            minDivinationCardValue: 0,
+            minDivinationCardPrice: 0,
+            minEffectiveDivinationCardValue: 0,
         }
     },
 
@@ -160,8 +162,11 @@ export const useFilterStore = defineStore("filter", {
             this.excludeSpawnedBosses = excludeSpawnedBosses
         },
 
-        SET_MINIMUM_DIVINATION_CARD_VALUE(minDivinationCardValue: number) {
-            this.minDivinationCardValue = minDivinationCardValue
+        SET_MINIMUM_DIVINATION_CARD_PRICE(minDivinationCardPrice: number) {
+            this.minDivinationCardPrice = minDivinationCardPrice
+        },
+        SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(minEffectiveDivinationCardValue: number) {
+            this.minEffectiveDivinationCardValue = minEffectiveDivinationCardValue
         },
     }
 })
