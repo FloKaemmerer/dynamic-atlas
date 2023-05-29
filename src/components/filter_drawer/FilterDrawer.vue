@@ -47,10 +47,11 @@
 <script setup lang="ts">
 import {onMounted, ref} from "vue";
 import {initFilter} from "@/composable/atlasFilter";
-import DivinationCardFilterHolder from "@/components/filters/divination_card_filters/DivinationCardFilterHolder.vue";
-import BossFilterHolder from "@/components/filters/boss_filters/BossFilterHolder.vue";
-import MapFilterHolder from "@/components/filters/map_filters/MapFilterHolder.vue";
-import TextFilterHolder from "@/components/filters/text_filters/TextFilterHolder.vue";
+import DivinationCardFilterHolder
+    from "@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue";
+import BossFilterHolder from "@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue";
+import MapFilterHolder from "@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue";
+import TextFilterHolder from "@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue";
 import AtlasOverlayHolder from "@/components/overlays/atlas_overlays/overlayHolder.vue";
 import AboutOverlay from "@/components/overlays/AboutOverlay.vue";
 import ImproveOverlay from "@/components/overlays/ImproveOverlay.vue";

@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-import MapTierFilter from "@/components/filters/map_filters/MapTierFilter.vue";
-import OpennessFilter from "@/components/filters/map_filters/OpennessFilter.vue";
-import TraversabilityFilter from "@/components/filters/map_filters/TraversabilityFilter.vue";
-import BacktrackFactorFilter from "@/components/filters/map_filters/BacktrackFactorFilter.vue";
-import LinearityFilter from "@/components/filters/map_filters/LinearityFilter.vue";
-import RushableBossFilter from "@/components/filters/map_filters/RushableBossFilter.vue";
+import MapTierFilter from "@/components/filter_drawer/filters/map_filters/MapTierFilter.vue";
+import OpennessFilter from "@/components/filter_drawer/filters/map_filters/OpennessFilter.vue";
+import TraversabilityFilter from "@/components/filter_drawer/filters/map_filters/TraversabilityFilter.vue";
+import BacktrackFactorFilter from "@/components/filter_drawer/filters/map_filters/BacktrackFactorFilter.vue";
+import LinearityFilter from "@/components/filter_drawer/filters/map_filters/LinearityFilter.vue";
+import RushableBossFilter from "@/components/filter_drawer/filters/map_filters/RushableBossFilter.vue";
 </script>
 
 <template>

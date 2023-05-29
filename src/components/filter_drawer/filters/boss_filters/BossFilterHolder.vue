@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
-import NumberOfBossesFilter from "@/components/filters/boss_filters/NumberOfBossesFilter.vue";
-import PhasedBossesFilter from "@/components/filters/boss_filters/PhasedBossesFilter.vue";
-import SkippablePhasesFilter from "@/components/filters/boss_filters/SkippablePhasesFilter.vue";
-import SpawnIntroFilter from "@/components/filters/boss_filters/SpawnIntroFilter.vue";
-import SpawnedBossesFilter from "@/components/filters/boss_filters/SpawnedBossesFilter.vue";
+import NumberOfBossesFilter from "@/components/filter_drawer/filters/boss_filters/NumberOfBossesFilter.vue";
+import PhasedBossesFilter from "@/components/filter_drawer/filters/boss_filters/PhasedBossesFilter.vue";
+import SkippablePhasesFilter from "@/components/filter_drawer/filters/boss_filters/SkippablePhasesFilter.vue";
+import SpawnIntroFilter from "@/components/filter_drawer/filters/boss_filters/SpawnIntroFilter.vue";
+import SpawnedBossesFilter from "@/components/filter_drawer/filters/boss_filters/SpawnedBossesFilter.vue";
 </script>
 
 <template>
