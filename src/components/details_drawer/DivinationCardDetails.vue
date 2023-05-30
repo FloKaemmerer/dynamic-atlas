@@ -67,7 +67,7 @@ function getDivinationCards(): DivinationCard[] | undefined {
                                             Base Drop Chance:
                                         </v-col>
                                         <v-col>
-                                            {{ divinationCard.baseDropChance.toFixed(5) }}
+                                            {{ (divinationCard.baseDropChance * 100).toFixed(3) }}%
                                         </v-col>
                                     </v-row>
                                     <v-row no-gutters>
