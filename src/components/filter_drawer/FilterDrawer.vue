@@ -35,12 +35,22 @@
                 <v-btn variant="text" @click="toggleContactOverlay = !toggleContactOverlay">
                     Contact
                 </v-btn>
+                <v-label>|</v-label>
+                <v-btn variant="text" @click="toggleGlossaryOverlay = !toggleGlossaryOverlay">
+                    Glossary
+                </v-btn>
+                <v-label>|</v-label>
+                <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
+                    Changelog
+                </v-btn>
             </v-col>
         </v-row>
     </v-navigation-drawer>
     <AboutOverlay :toggleOverlay="toggleAboutOverlay"></AboutOverlay>
     <ImproveOverlay :toggleOverlay="toggleImproveOverlay"></ImproveOverlay>
     <ContactOverlay :toggleOverlay="toggleContactOverlay"></ContactOverlay>
+    <GlossaryOverlay :toggle-overlay="toggleGlossaryOverlay"></GlossaryOverlay>
+    <ChangelogOverlay :toggle-overlay="toggleChangelogOverlay"></ChangelogOverlay>
 
 </template>
 
@@ -56,10 +66,14 @@ import AtlasOverlayHolder from "@/components/overlays/atlas_overlays/overlayHold
 import AboutOverlay from "@/components/overlays/AboutOverlay.vue";
 import ImproveOverlay from "@/components/overlays/ImproveOverlay.vue";
 import ContactOverlay from "@/components/overlays/ContactOverlay.vue";
+import GlossaryOverlay from "@/components/overlays/GlossaryOverlay.vue";
+import ChangelogOverlay from "@/components/overlays/ChangelogOverlay.vue";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
 let toggleContactOverlay = ref(false)
+let toggleGlossaryOverlay = ref(false)
+let toggleChangelogOverlay = ref(false)
 
 onMounted(() => {
     // We need to import the AtlasFilter composable, otherwise it won't trigger, eventhough it is subscribed to the FilterStore

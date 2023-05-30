@@ -10,11 +10,11 @@ interface PropsInterface {
 
 const props = defineProps<PropsInterface>();
 
-let hideLowValueCards = ref(false)
+let showLowValueCards = ref(false)
 
 function getDivinationCards(): DivinationCard[] | undefined {
     const divinationCards = props.atlasNode.divinationCards;
-    if (!hideLowValueCards.value) {
+    if (showLowValueCards.value) {
         return divinationCards
     }
     return divinationCards?.filter(divinationCard => {
@@ -31,17 +31,63 @@ function getDivinationCards(): DivinationCard[] | undefined {
                     rounded="xl">
                 <v-sheet class="pa-3 bg-black"
                          rounded="t-xl">Divination Cards
-                    <v-checkbox label="Hide Low Value Cards" v-model="hideLowValueCards"
+                    <v-checkbox label="Show Low Value Cards" v-model="showLowValueCards"
                                 density="compact"></v-checkbox>
                 </v-sheet>
                 <div class="pa-4">
                     <v-chip-group>
                         <v-chip
                                 v-for="divinationCard in getDivinationCards()"
-                                :key="divinationCard.name">
+                                :key="divinationCard.name"
+                        >
                             {{ divinationCard.name }} - {{ divinationCard.chaosValue }} Chaos
-                            <template v-slot:append v-if="divinationCard.bossOnly">
-                                <v-tooltip text="Boss only drop">
+                            <template v-slot:append>
+                                <v-tooltip min-width="300">
+                                    <template v-slot:activator="{ props }">
+                                        <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
+                                    </template>
+                                    <v-row no-gutters>
+                                        <v-col cols="6">
+                                            Sell Price:
+                                        </v-col>
+                                        <v-col>
+                                            {{ divinationCard.chaosValue.toFixed(2) }} - Chaos Orbs
+                                        </v-col>
+                                    </v-row>
+                                    <v-row no-gutters>
+                                        <v-col cols="6">
+                                            Effective Value:
+                                        </v-col>
+                                        <v-col>
+                                            {{ divinationCard.effectiveValue.toFixed(2) }} - Chaos Orbs
+                                        </v-col>
+                                    </v-row>
+                                    <v-row no-gutters>
+                                        <v-col cols="6">
+                                            Base Drop Chance:
+                                        </v-col>
+                                        <v-col>
+                                            {{ divinationCard.baseDropChance.toFixed(5) }}
+                                        </v-col>
+                                    </v-row>
+                                    <v-row no-gutters>
+                                        <v-col cols="6">
+                                            Stack Size:
+                                        </v-col>
+                                        <v-col>
+                                            {{ divinationCard.stackSize }}
+                                        </v-col>
+                                    </v-row>
+                                    <!--                                    <v-row no-gutters>-->
+                                    <!--                                        <v-col cols="5">-->
+                                    <!--                                            Reward:-->
+                                    <!--                                        </v-col>-->
+                                    <!--                                        <v-col>-->
+                                    <!--                                            {{ divinationCard.explicitModifiers[0].text }}-->
+                                    <!--                                        </v-col>-->
+                                    <!--                                    </v-row>-->
+                                </v-tooltip>
+                                <v-tooltip text="Boss only drop" v-if="divinationCard.bossOnly">
                                     <template v-slot:activator="{ props }">
                                         <v-icon icon="mdi-skull" v-bind="props"></v-icon>
                                     </template>

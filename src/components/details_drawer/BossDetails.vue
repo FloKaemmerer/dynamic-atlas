@@ -37,7 +37,7 @@ defineProps<PropsInterface>();
                             <v-sheet>
                                 <v-icon class="mr-3">
                                     {{
-                                    atlasNode.boss.phased ? 'mdi-checkbox-outline' : 'mdi-checkbox-blank-outline'
+                                    atlasNode.boss.phased ? 'mdi-check-bold' : 'mdi-close-thick'
                                     }}
                                 </v-icon>
                             </v-sheet>
@@ -52,7 +52,7 @@ defineProps<PropsInterface>();
                             <v-sheet>
                                 <v-icon class="mr-3">
                                     {{
-                                    atlasNode.boss.skippablePhases ? 'mdi-checkbox-outline' : 'mdi-checkbox-blank-outline'
+                                    atlasNode.boss.skippablePhases ? 'mdi-check-bold' : 'mdi-close-thick'
                                     }}
                                 </v-icon>
                             </v-sheet>
@@ -66,7 +66,7 @@ defineProps<PropsInterface>();
                         <v-col cols="6">
                             <v-icon class="mr-3">
                                 {{
-                                atlasNode.boss.introPhase ? 'mdi-checkbox-outline' : 'mdi-checkbox-blank-outline'
+                                atlasNode.boss.introPhase ? 'mdi-check-bold' : 'mdi-close-thick'
                                 }}
                             </v-icon>
                         </v-col>
@@ -79,7 +79,7 @@ defineProps<PropsInterface>();
                         <v-col cols="6">
                             <v-icon class="mr-3">
                                 {{
-                                atlasNode.boss.spawned ? 'mdi-checkbox-outline' : 'mdi-checkbox-blank-outline'
+                                atlasNode.boss.spawned ? 'mdi-check-bold' : 'mdi-close-thick'
                                 }}
                             </v-icon>
                         </v-col>
@@ -93,7 +93,7 @@ defineProps<PropsInterface>();
                             <v-sheet>
                                 <v-icon class="mr-3">
                                     {{
-                                    atlasNode.boss.bossArena ? 'mdi-checkbox-outline' : 'mdi-checkbox-blank-outline'
+                                    atlasNode.boss.bossArena ? 'mdi-check-bold' : 'mdi-close-thick'
                                     }}
                                 </v-icon>
                             </v-sheet>
