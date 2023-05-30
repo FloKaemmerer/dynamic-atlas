@@ -1,9 +1,9 @@
 <script setup lang="ts">
 
 import MinimumDivinationCardPriceFilter
-    from "@/components/filters/divination_card_filters/MinimumDivinationCardPriceFilter.vue";
+    from "@/components/filter_drawer/filters/divination_card_filters/MinimumDivinationCardPriceFilter.vue";
 import MinimumEffectiveCardValueFilter
-    from "@/components/filters/divination_card_filters/MinimumEffectiveCardValueFilter.vue";
+    from "@/components/filter_drawer/filters/divination_card_filters/MinimumEffectiveCardValueFilter.vue";
 </script>
 
 <template>

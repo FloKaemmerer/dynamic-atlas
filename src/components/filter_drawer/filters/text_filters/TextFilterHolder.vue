@@ -1,6 +1,6 @@
 <script setup lang="ts">
 
-import TextFilter from "@/components/filters/text_filters/TextFilter.vue";
+import TextFilter from "@/components/filter_drawer/filters/text_filters/TextFilter.vue";
 </script>
 
 <template>

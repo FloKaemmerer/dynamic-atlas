@@ -29,6 +29,7 @@ function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
                 </template>
                 <p>Filter based on the minimal required Effective Value of a Divination Card that drops in a Map.</p>
                 <p>The Effective Value is determined by 'Card sell Price * Base Drop Chance * 100'</p>
+                <p>The Filter only takes Cards into account with a price >= 5 Chaos</p>
             </v-tooltip>
         </template>
     </v-text-field>

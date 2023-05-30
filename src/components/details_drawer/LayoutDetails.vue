@@ -81,7 +81,7 @@ defineProps<PropsInterface>();
                             <v-sheet>
                                 <v-icon class="mr-3">
                                     {{
-                                    atlasNode.nodeLayout.rushableBoss ? 'mdi-checkbox-outline' : 'mdi-checkbox-blank-outline'
+                                    atlasNode.nodeLayout.rushableBoss ? 'mdi-check-bold' : 'mdi-close-thick'
                                     }}
                                 </v-icon>
                             </v-sheet>
