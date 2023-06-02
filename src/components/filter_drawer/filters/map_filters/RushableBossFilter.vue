@@ -4,7 +4,7 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let rushableBoss = ref(false)
+let rushableBoss = ref(filterStore.rushableBoss)
 
 function handleRushableBossFilter() {
     filterStore.SET_RUSHABLE_BOSS(!rushableBoss.value)

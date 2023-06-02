@@ -4,8 +4,8 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeBaseMobCount = ref(false)
-let baseMobCount = ref([0, 10])
+let includeBaseMobCount = ref(filterStore.includeBaseMobCount)
+let baseMobCount = ref(filterStore.baseMobCount)
 
 function handleIncludeBaseMobCountFilter() {
     filterStore.SET_INCLUDE_BASE_MOB_COUNT(!includeBaseMobCount.value)

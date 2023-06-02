@@ -5,8 +5,8 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeOpenness = ref(false)
-let openness = ref([0, 10])
+let includeOpenness = ref(filterStore.includeOpenness)
+let openness = ref(filterStore.openness)
 
 function handleIncludeOpennessFilter() {
     filterStore.SET_INCLUDE_OPENNESS(!includeOpenness.value)

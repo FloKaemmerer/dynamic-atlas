@@ -3,7 +3,7 @@ import {useFilterStore} from "@/store/FilterStore";
 import {ref} from "vue";
 
 const filterStore = useFilterStore();
-let minEffectiveDivinationCardValue = ref()
+let minEffectiveDivinationCardValue = ref(filterStore.minEffectiveDivinationCardValue)
 
 function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
     filterStore.SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(Number.parseInt(value))
@@ -11,6 +11,9 @@ function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
 </script>
 
 <template>
+    <v-label>
+        Minimal Effective Value in Chaos Orbs
+    </v-label>
     <v-text-field
             v-model="minEffectiveDivinationCardValue"
             @update:model-value="val => handleMinimumEffectiveDivinationCardValueFilter(val)"

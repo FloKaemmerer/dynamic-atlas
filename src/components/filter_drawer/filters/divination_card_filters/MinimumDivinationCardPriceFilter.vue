@@ -4,7 +4,7 @@ import {ref} from "vue";
 import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
-let minDivinationCardPrice = ref()
+let minDivinationCardPrice = ref(filterStore.minDivinationCardPrice)
 
 function handleMinimumDivinationCardPriceFilter(value: string) {
     filterStore.SET_MINIMUM_DIVINATION_CARD_PRICE(Number.parseInt(value))
@@ -12,7 +12,9 @@ function handleMinimumDivinationCardPriceFilter(value: string) {
 </script>
 
 <template>
-
+    <v-label>
+        Minimal Price in Chaos Orbs
+    </v-label>
     <v-text-field
             v-model="minDivinationCardPrice"
             @update:model-value="val => handleMinimumDivinationCardPriceFilter(val)"

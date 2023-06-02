@@ -4,7 +4,7 @@ import {useFilterStore} from "@/store/FilterStore";
 import {ref} from "vue";
 
 const filterStore = useFilterStore();
-let excludeSpawnedBosses = ref(false)
+let excludeSpawnedBosses = ref(filterStore.excludeSpawnedBosses)
 
 function handleExcludeSpawnedBossesFilter() {
     filterStore.SET_EXCLUDE_SPAWNED_BOSSES(!excludeSpawnedBosses.value)
