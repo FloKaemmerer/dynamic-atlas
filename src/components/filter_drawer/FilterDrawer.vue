@@ -68,9 +68,10 @@ import ImproveOverlay from "@/components/overlays/ImproveOverlay.vue";
 import ContactOverlay from "@/components/overlays/ContactOverlay.vue";
 import GlossaryOverlay from "@/components/overlays/GlossaryOverlay.vue";
 import ChangelogOverlay from "@/components/overlays/ChangelogOverlay.vue";
-import {LocationQuery, RouteLocationNormalizedLoaded, Router, useRoute, useRouter} from "vue-router";
+import type {LocationQuery, RouteLocationNormalizedLoaded, Router} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import {useFilterStore} from "@/store/FilterStore";
-import {LooseFilters} from "@/model/looseFilters";
+import type {LooseFilters} from "@/model/looseFilters";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
