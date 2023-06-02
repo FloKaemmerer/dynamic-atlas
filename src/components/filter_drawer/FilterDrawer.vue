@@ -95,10 +95,8 @@ async function handleQueryParams() {
     const queryParams: LocationQuery = route.query;
     if (queryParams) {
         // ----- Map Filters -----
-        if ('filterText' in queryParams && queryParams.filterText && queryParams.filterText.toString().length > 0) {
-            const filterText: string = queryParams.filterText as string;
-            console.log("Setting FilterText to: " + filterText)
-            filterStore.SET_FILTER_TEXT(filterText)
+        if ('filterText' in queryParams && queryParams.filterText && String(queryParams.filterText).length > 0) {
+            filterStore.SET_FILTER_TEXT(String(queryParams.filterText))
         }
         if ('mapTier' in queryParams && queryParams.mapTier) {
             filterStore.SET_INCLUDE_MAP_TIER(true)
@@ -166,66 +164,67 @@ async function handleQueryParams() {
 }
 
 filterStore.$subscribe((mutation, state) => {
-    let newQueryFilters: LooseFilters = {}
+    let queryFilters: LooseFilters = {}
     // ----- Map Filters -----
     if (state.filterText && state.filterText.length > 0) {
-        newQueryFilters.filterText = state.filterText
+        queryFilters.filterText = state.filterText
     }
     if (state.mapTier[0] >= 0 && state.includeMapTier) {
-        newQueryFilters.mapTier = String(state.mapTier)
+        queryFilters.mapTier = String(state.mapTier)
     }
     if (state.openness[0] >= 0 && state.includeOpenness) {
-        newQueryFilters.openness = String(state.openness)
+        queryFilters.openness = String(state.openness)
     }
     if (state.traversability[0] >= 0 && state.includeTraversability) {
-        newQueryFilters.traversability = String(state.traversability)
+        queryFilters.traversability = String(state.traversability)
     }
     if (state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor) {
-        newQueryFilters.backtrackFactor = String(state.backtrackFactor)
+        queryFilters.backtrackFactor = String(state.backtrackFactor)
     }
     if (state.linearity[0] >= 0 && state.includeLinearity) {
-        newQueryFilters.linearity = String(state.linearity)
+        queryFilters.linearity = String(state.linearity)
     }
     if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount) {
-        newQueryFilters.baseMobCount = String(state.baseMobCount)
+        queryFilters.baseMobCount = String(state.baseMobCount)
     }
     if (state.rushableBoss) {
-        newQueryFilters.rushableBoss = String(state.rushableBoss)
+        queryFilters.rushableBoss = String(state.rushableBoss)
     }
     //--------------------------
 
     //------ Boss Filters ------
     if (state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses) {
-        newQueryFilters.numberOfBosses = String(state.numberOfBosses)
+        queryFilters.numberOfBosses = String(state.numberOfBosses)
     }
     if (state.excludePhasedBosses) {
-        newQueryFilters.excludePhasedBosses = String(state.excludePhasedBosses)
+        queryFilters.excludePhasedBosses = String(state.excludePhasedBosses)
     }
     if (state.includeSkippablePhases) {
-        newQueryFilters.includeSkippablePhases = String(state.includeSkippablePhases)
+        queryFilters.includeSkippablePhases = String(state.includeSkippablePhases)
     }
     if (state.includeSpawnIntro) {
-        newQueryFilters.includeSpawnIntro = String(state.includeSpawnIntro)
+        queryFilters.includeSpawnIntro = String(state.includeSpawnIntro)
     }
     if (state.excludeSpawnedBosses) {
-        newQueryFilters.excludeSpawnedBosses = String(state.excludeSpawnedBosses)
+        queryFilters.excludeSpawnedBosses = String(state.excludeSpawnedBosses)
     }
     //---------------------------
 
     //- Divination Card Filters -
     if (state.minDivinationCardPrice > 0) {
-        newQueryFilters.minDivinationCardPrice = state.minDivinationCardPrice
+        queryFilters.minDivinationCardPrice = state.minDivinationCardPrice
     }
     if (state.minEffectiveDivinationCardValue > 0) {
-        newQueryFilters.minEffectiveDivinationCardValue = state.minEffectiveDivinationCardValue
+        queryFilters.minEffectiveDivinationCardValue = state.minEffectiveDivinationCardValue
     }
-    pushToRouter(newQueryFilters).then(() => {
+    //---------------------------
+    pushToRouter(queryFilters).then(() => {
         console.log(route.query)
     })
 })
 
 async function pushToRouter(queryFilters: LooseFilters) {
     await router.isReady();
-    await router.push({name: 'home', query: queryFilters})
+    await router.push({query: queryFilters})
 }
 </script>
