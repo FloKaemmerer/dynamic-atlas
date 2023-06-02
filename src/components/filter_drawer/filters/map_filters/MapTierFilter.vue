@@ -4,8 +4,8 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeMapTier = ref(false)
-let mapTier = ref([1, 16])
+let includeMapTier = ref(filterStore.includeMapTier)
+let mapTier = ref(filterStore.mapTier)
 
 function handleIncludeMapTierFilter() {
     filterStore.SET_INCLUDE_MAP_TIER(!includeMapTier.value)

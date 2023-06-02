@@ -4,9 +4,9 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeBacktrackFactor = ref(false)
+let includeBacktrackFactor = ref(filterStore.includeBacktrackFactor)
 
-let backtrackFactor = ref([0, 10])
+let backtrackFactor = ref(filterStore.backtrackFactor)
 
 function handleIncludeBacktrackFactorFilter() {
     filterStore.SET_INCLUDE_BACKTRACK_FACTOR(!includeBacktrackFactor.value)

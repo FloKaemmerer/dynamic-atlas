@@ -22,7 +22,7 @@
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-konva": "^3.0.2",
-    "vue-router": "^4.1.6",
+    "vue-router": "^4.2.2",
     "vuetify": "^3.1.11"
   },
   "devDependencies": {

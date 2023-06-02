@@ -4,8 +4,8 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeLinearity = ref(false)
-let linearity = ref([0, 10])
+let includeLinearity = ref(filterStore.includeLinearity)
+let linearity = ref(filterStore.linearity)
 
 function handleIncludeLinearityFilter() {
     filterStore.SET_INCLUDE_LINEARITY(!includeLinearity.value)

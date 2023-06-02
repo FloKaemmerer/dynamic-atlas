@@ -5,8 +5,8 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeNumberOfBosses = ref(false)
-let numberOfBosses = ref([0, 4])
+let includeNumberOfBosses = ref(filterStore.includeNumberOfBosses)
+let numberOfBosses = ref(filterStore.numberOfBosses)
 
 function handleIncludeNumberOfBossesFilter() {
     filterStore.SET_INCLUDE_NUMBER_OF_BOSSES(!includeNumberOfBosses.value)

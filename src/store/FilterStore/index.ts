@@ -1,33 +1,5 @@
 import {defineStore} from "pinia";
 
-/*
-let filterText = ref("");
-
-let includeMapTier = ref(false)
-let includeNumberOfBosses = ref(false)
-let includeOpenness = ref(false)
-let includeTraversability = ref(false)
-let includeBacktrackFactor = ref(false)
-let includeLinearity = ref(false)
-let includeBaseMobCount = ref(false)
-
-let rushableBoss = ref(false)
-let excludePhasedBosses = ref(false)
-let includeSkippablePhases = ref(false)
-let includeSpawnIntro = ref(false)
-let excludeSpawnedBosses = ref(false)
-
-let mapTier = ref([1, 16])
-let numberOfBosses = ref([0, 4])
-let layout = ref([0, 10])
-let traversability = ref([0, 10])
-let backtrackFactor = ref([0, 10])
-let linearity = ref([0, 10])
-let baseMobCount = ref([0, 10])
-
-let minDivinationCardValue = ref()
- */
-
 interface State {
     filterText: string,
     includeMapTier: boolean,
@@ -56,7 +28,7 @@ interface State {
 export const useFilterStore = defineStore("filter", {
     state: (): State => {
         return {
-            filterText: "",
+            filterText: '',
             includeMapTier: false,
             mapTier: [1, 16],
             includeOpenness: false,

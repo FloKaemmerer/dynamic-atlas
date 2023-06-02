@@ -4,7 +4,7 @@ import {useFilterStore} from "@/store/FilterStore";
 import {ref} from "vue";
 
 const filterStore = useFilterStore();
-let includeSkippablePhases = ref(false)
+let includeSkippablePhases = ref(filterStore.includeSkippablePhases)
 
 function handleIncludeSkippablePhasesFilter() {
     filterStore.SET_INCLUDE_SKIPPABLE_PHASES(!includeSkippablePhases.value)

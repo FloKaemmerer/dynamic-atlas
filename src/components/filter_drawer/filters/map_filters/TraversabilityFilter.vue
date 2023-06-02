@@ -5,8 +5,8 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeTraversability = ref(false)
-let traversability = ref([0, 10])
+let includeTraversability = ref(filterStore.includeTraversability)
+let traversability = ref(filterStore.traversability)
 
 function handleIncludeTraversabilityFilter() {
     filterStore.SET_INCLUDE_TRAVERSABILITY(!includeTraversability.value)

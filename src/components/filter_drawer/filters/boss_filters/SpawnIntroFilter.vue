@@ -4,7 +4,7 @@ import {useFilterStore} from "@/store/FilterStore";
 import {ref} from "vue";
 
 const filterStore = useFilterStore();
-let includeSpawnIntro = ref(false)
+let includeSpawnIntro = ref(filterStore.includeSpawnIntro)
 
 function handleIncludeSpawnIntroFilter() {
     filterStore.SET_INCLUDE_SPAWN_INTRO(!includeSpawnIntro.value)

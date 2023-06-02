@@ -48,6 +48,8 @@ const reactiveGroup = new Konva.Group();
 
 let state: StageState
 
+//FIXME Refactor this abomination of a component
+
 function handleToggleDrawer(e: boolean) {
     detailsDrawerStore.SET_DRAWER(e)
 }

@@ -5,7 +5,7 @@ import {ref} from "vue";
 
 const filterStore = useFilterStore();
 
-let excludePhasedBosses = ref(false)
+let excludePhasedBosses = ref(filterStore.excludePhasedBosses)
 
 function handleExcludePhasedBossesFilter() {
     filterStore.SET_EXCLUDE_PHASED_BOSSES(!excludePhasedBosses.value)
