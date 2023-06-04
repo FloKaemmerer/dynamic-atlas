@@ -5,11 +5,6 @@ import TextFilter from "@/components/filter_drawer/filters/text_filters/TextFilt
 
 <template>
     <v-card>
-        <v-toolbar density="compact">
-            <v-toolbar-title class="text-h6">
-                Filter by Text
-            </v-toolbar-title>
-        </v-toolbar>
         <v-card-text>
             <TextFilter/>
         </v-card-text>
