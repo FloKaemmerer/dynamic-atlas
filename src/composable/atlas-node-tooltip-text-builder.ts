@@ -1,6 +1,5 @@
 import type {AtlasNode} from "@/model/atlasNode";
 
-
 const buildAtlasNodeTooltipText = (atlasNode: AtlasNode): string => {
 
     function getFormattedAdditionalTags() {
