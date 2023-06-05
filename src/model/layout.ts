@@ -6,4 +6,5 @@ export interface Layout {
     notes: any
     openness: number
     baseMobCount: number
+    terrainSlots: number
 }
