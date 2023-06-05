@@ -5,10 +5,13 @@ import {useFilterStore} from "@/store/FilterStore";
 const filterStore = useFilterStore()
 const handleUrlQueryFilters = (queryParams: LocationQuery) => {
     if (queryParams) {
-        // ----- Map Filters -----
+        //------ Text Filters -------
         if (FilterKeys.FILTER_TEXT in queryParams && queryParams.filterText && String(queryParams.filterText).length > 0) {
             filterStore.SET_FILTER_TEXT(String(queryParams.filterText))
         }
+        //---------------------------
+
+        // ------ Map Filters -------
         if (FilterKeys.MAP_TIER in queryParams && queryParams.mapTier) {
             filterStore.SET_INCLUDE_MAP_TIER(true)
             const split = queryParams.mapTier.toString().split(',');
@@ -71,6 +74,7 @@ const handleUrlQueryFilters = (queryParams: LocationQuery) => {
         if (FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE in queryParams && queryParams.minEffectiveDivinationCardValue) {
             filterStore.SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(Number(queryParams.minEffectiveDivinationCardValue))
         }
+        //---------------------------
     }
 }
 

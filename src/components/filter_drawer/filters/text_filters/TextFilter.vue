@@ -4,11 +4,17 @@ import {useFilterStore} from "@/store/FilterStore";
 import {ref} from "vue";
 
 const filterStore = useFilterStore();
-let filterText = ref(filterStore.filterText);
+let filterText = ref();
 
 function handleTextFilter(value: string) {
     filterStore.SET_FILTER_TEXT(value);
 }
+
+filterStore.$subscribe((mutation, state) => {
+    if (state.filterText && state.filterText != filterText.value) {
+        filterText.value = state.filterText
+    }
+})
 </script>
 
 <template>
