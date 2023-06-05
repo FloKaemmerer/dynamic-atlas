@@ -127,7 +127,7 @@ const mounted = () => {
 
             let reactiveNodeArea = getHighlightArea(locX, locY);
             reactiveNodeArea.on('click', getHandlerReactiveAreaClicked(atlasNode))
-            reactiveNodeArea.on('touchend', getHandlerReactiveAreaClicked(atlasNode))
+            reactiveNodeArea.on('tap', getHandlerReactiveAreaClicked(atlasNode))
             showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, atlasNode)
 
             hideTooltip(reactiveNodeArea, tooltipText, tooltipContainer)
@@ -297,7 +297,7 @@ function createBackgroundImage() {
     atlasBackgroundKonvaImage.on('click', function () {
         handleToggleDrawer(false)
     })
-    atlasBackgroundKonvaImage.on('touchend', function () {
+    atlasBackgroundKonvaImage.on('tap', function () {
         handleToggleDrawer(false)
     })
 }
