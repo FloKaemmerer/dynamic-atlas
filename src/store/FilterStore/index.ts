@@ -12,6 +12,8 @@ interface State {
     backtrackFactor: number[],
     includeLinearity: boolean,
     linearity: number[],
+    includeTerrainSlots: boolean,
+    terrainSlots: number[]
     includeBaseMobCount: boolean,
     baseMobCount: number[],
     rushableBoss: boolean,
@@ -39,6 +41,8 @@ export const useFilterStore = defineStore("filter", {
             backtrackFactor: [0, 10],
             includeLinearity: false,
             linearity: [0, 10],
+            includeTerrainSlots: false,
+            terrainSlots: [0, 10],
             includeBaseMobCount: false,
             baseMobCount: [0, 10],
             rushableBoss: false,
@@ -96,6 +100,14 @@ export const useFilterStore = defineStore("filter", {
 
         SET_LINEARITY(linearity: number[]) {
             this.linearity = linearity
+        },
+
+        SET_INCLUDE_TERRAIN_SLOTS(includeTerrainSlots: boolean) {
+            this.includeTerrainSlots = includeTerrainSlots
+        },
+
+        SET_TERRAIN_SLOTS(terrainSlots: number[]) {
+            this.terrainSlots = terrainSlots
         },
 
         SET_INCLUDE_BASE_MOB_COUNT(includeBaseMobCount: boolean) {

@@ -134,6 +134,9 @@ filterStore.$subscribe((mutation, state) => {
     if (state.linearity[0] >= 0 && state.includeLinearity) {
         queryFilters.linearity = String(state.linearity)
     }
+    if (state.terrainSlots[0] >= 0 && state.includeTerrainSlots) {
+        queryFilters.terrainSlots = String(state.terrainSlots)
+    }
     if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount) {
         queryFilters.baseMobCount = String(state.baseMobCount)
     }

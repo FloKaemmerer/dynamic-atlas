@@ -16,6 +16,7 @@ filterStore.$subscribe((mutation, state) => {
         state.includeTraversability ? state.traversability : [-1, -1],
         state.includeBacktrackFactor ? state.backtrackFactor : [-1, -1],
         state.includeLinearity ? state.linearity : [-1, -1],
+        state.includeTerrainSlots ? state.terrainSlots : [-1, -1],
         state.includeBaseMobCount ? state.baseMobCount : [-1, -1],
         state.rushableBoss,
         state.includeSkippablePhases,
@@ -37,6 +38,7 @@ export const handleFilter = (filterText: string,
                              traversability: number[],
                              backtrackFactor: number[],
                              linearity: number[],
+                             terrainSlots: number[],
                              baseMobCount: number[],
                              includeRushableBoss: boolean,
                              includeSkippablePhases: boolean,
@@ -54,6 +56,7 @@ export const handleFilter = (filterText: string,
         traversability[0] > -1 ||
         backtrackFactor[0] > -1 ||
         linearity[0] > -1 ||
+        terrainSlots[0] > -1 ||
         baseMobCount[0] > -1 ||
         includeRushableBoss ||
         includeSkippablePhases ||
@@ -98,6 +101,9 @@ export const handleFilter = (filterText: string,
 
         // Filter by Linearity
         result = filterByLinearity(linearity, result)
+
+        // Filter by TerrainSlots
+        result = filterByTerrainSlots(terrainSlots, result)
 
         // Filter by BaseMobCount
         result = filterByBaseMobCount(baseMobCount, result)
@@ -234,6 +240,15 @@ function filterByLinearity(linearity: number[], result: AtlasNode[]) {
     if (linearity[0] > -1) {
         result = result.filter(atlasNode => {
             return linearity[0] <= atlasNode.nodeLayout.linearity && atlasNode.nodeLayout.linearity <= linearity[1]
+        })
+    }
+    return result;
+}
+
+function filterByTerrainSlots(terrainSlots: number[], result: AtlasNode[]) {
+    if (terrainSlots[0] > -1) {
+        result = result.filter(atlasNode => {
+            return terrainSlots[0] <= atlasNode.nodeLayout.terrainSlots && atlasNode.nodeLayout.terrainSlots <= terrainSlots[1]
         })
     }
     return result;

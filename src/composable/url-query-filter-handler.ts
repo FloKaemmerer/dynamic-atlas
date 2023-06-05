@@ -37,6 +37,11 @@ const handleUrlQueryFilters = (queryParams: LocationQuery) => {
             const split = queryParams.linearity.toString().split(',');
             filterStore.SET_LINEARITY([Number(split[0]), Number(split[1])])
         }
+        if (FilterKeys.TERRAIN_SLOTS in queryParams && queryParams.terrainSlots) {
+            filterStore.SET_INCLUDE_TERRAIN_SLOTS(true)
+            const split = queryParams.terrainSlots.toString().split(',');
+            filterStore.SET_TERRAIN_SLOTS([Number(split[0]), Number(split[1])])
+        }
         if (FilterKeys.BASE_MOB_COUNT in queryParams && queryParams.baseMobCount) {
             filterStore.SET_INCLUDE_BASE_MOB_COUNT(true)
             const split = queryParams.baseMobCount.toString().split(',');

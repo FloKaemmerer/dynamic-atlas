@@ -13,6 +13,7 @@ export enum FilterKeys {
     INCLUDE_SPAWN_INTRO = "includeSpawnIntro",
     EXCLUDE_SPAWNED_BOSSES = "excludeSpawnedBosses",
     MIN_DIVINATION_CARD_PRICE = "minDivinationCardPrice",
-    MIN_EFFECTIVE_DIVINATION_CARD_VALUE = "minEffectiveDivinationCardValue"
+    MIN_EFFECTIVE_DIVINATION_CARD_VALUE = "minEffectiveDivinationCardValue",
+    TERRAIN_SLOTS = "terrainSlots",
 
 }

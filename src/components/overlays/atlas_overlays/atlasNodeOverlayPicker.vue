@@ -26,6 +26,9 @@ watch(activeAtlasNodeOverlay, () => {
         <v-radio label="Linearity" value="linearityOverlay"
                  density="compact"
         ></v-radio>
+        <v-radio label="Terrain Slots" value="terrainSlotsOverlay"
+                 density="compact"
+        ></v-radio>
         <v-radio label="Backtrack Factor"
                  value="backtrackFactorOverlay"
                  density="compact"

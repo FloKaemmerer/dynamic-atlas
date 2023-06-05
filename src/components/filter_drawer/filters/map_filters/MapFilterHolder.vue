@@ -7,6 +7,7 @@ import BacktrackFactorFilter from "@/components/filter_drawer/filters/map_filter
 import LinearityFilter from "@/components/filter_drawer/filters/map_filters/LinearityFilter.vue";
 import RushableBossFilter from "@/components/filter_drawer/filters/map_filters/RushableBossFilter.vue";
 import BaseMobCountFilter from "@/components/filter_drawer/filters/map_filters/BaseMobCountFilter.vue";
+import TerrainSlotsFilter from "@/components/filter_drawer/filters/map_filters/TerrainSlotsFilter.vue";
 </script>
 
 <template>
@@ -21,6 +22,7 @@ import BaseMobCountFilter from "@/components/filter_drawer/filters/map_filters/B
                         <TraversabilityFilter/>
                         <BacktrackFactorFilter/>
                         <LinearityFilter/>
+                        <TerrainSlotsFilter/>
                         <BaseMobCountFilter/>
                         <RushableBossFilter/>
                     </v-expansion-panel-text>
