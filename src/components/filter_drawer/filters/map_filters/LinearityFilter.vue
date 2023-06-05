@@ -7,6 +7,15 @@ const filterStore = useFilterStore();
 let includeLinearity = ref(filterStore.includeLinearity)
 let linearity = ref(filterStore.linearity)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeLinearity != includeLinearity.value) {
+        includeLinearity.value = state.includeLinearity
+    }
+    if (state.linearity != linearity.value) {
+        linearity.value = state.linearity
+    }
+})
+
 function handleIncludeLinearityFilter() {
     filterStore.SET_INCLUDE_LINEARITY(!includeLinearity.value)
 }

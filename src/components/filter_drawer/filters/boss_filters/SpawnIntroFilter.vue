@@ -6,6 +6,12 @@ import {ref} from "vue";
 const filterStore = useFilterStore();
 let includeSpawnIntro = ref(filterStore.includeSpawnIntro)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeSpawnIntro != includeSpawnIntro.value) {
+        includeSpawnIntro.value = state.includeSpawnIntro
+    }
+})
+
 function handleIncludeSpawnIntroFilter() {
     filterStore.SET_INCLUDE_SPAWN_INTRO(!includeSpawnIntro.value)
 }

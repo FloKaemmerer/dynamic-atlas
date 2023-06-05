@@ -8,6 +8,15 @@ const filterStore = useFilterStore();
 let includeOpenness = ref(filterStore.includeOpenness)
 let openness = ref(filterStore.openness)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeOpenness != includeOpenness.value) {
+        includeOpenness.value = state.includeOpenness
+    }
+    if (state.openness != openness.value) {
+        openness.value = state.openness
+    }
+})
+
 function handleIncludeOpennessFilter() {
     filterStore.SET_INCLUDE_OPENNESS(!includeOpenness.value)
 }

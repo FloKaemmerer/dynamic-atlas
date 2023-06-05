@@ -7,6 +7,12 @@ const filterStore = useFilterStore();
 
 let excludePhasedBosses = ref(filterStore.excludePhasedBosses)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.excludePhasedBosses != excludePhasedBosses.value) {
+        excludePhasedBosses.value = state.excludePhasedBosses
+    }
+})
+
 function handleExcludePhasedBossesFilter() {
     filterStore.SET_EXCLUDE_PHASED_BOSSES(!excludePhasedBosses.value)
 }

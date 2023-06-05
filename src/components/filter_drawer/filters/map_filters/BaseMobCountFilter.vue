@@ -7,6 +7,15 @@ const filterStore = useFilterStore();
 let includeBaseMobCount = ref(filterStore.includeBaseMobCount)
 let baseMobCount = ref(filterStore.baseMobCount)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeBaseMobCount != includeBaseMobCount.value) {
+        includeBaseMobCount.value = state.includeBaseMobCount
+    }
+    if (state.baseMobCount != baseMobCount.value) {
+        baseMobCount.value = state.baseMobCount
+    }
+})
+
 function handleIncludeBaseMobCountFilter() {
     filterStore.SET_INCLUDE_BASE_MOB_COUNT(!includeBaseMobCount.value)
 }

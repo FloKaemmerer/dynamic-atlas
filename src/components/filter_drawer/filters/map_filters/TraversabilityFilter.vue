@@ -8,6 +8,15 @@ const filterStore = useFilterStore();
 let includeTraversability = ref(filterStore.includeTraversability)
 let traversability = ref(filterStore.traversability)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeTraversability != includeTraversability.value) {
+        includeTraversability.value = state.includeTraversability
+    }
+    if (state.traversability != traversability.value) {
+        traversability.value = state.traversability
+    }
+})
+
 function handleIncludeTraversabilityFilter() {
     filterStore.SET_INCLUDE_TRAVERSABILITY(!includeTraversability.value)
 }

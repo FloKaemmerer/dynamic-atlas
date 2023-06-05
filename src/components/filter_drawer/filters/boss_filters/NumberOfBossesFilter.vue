@@ -8,6 +8,15 @@ const filterStore = useFilterStore();
 let includeNumberOfBosses = ref(filterStore.includeNumberOfBosses)
 let numberOfBosses = ref(filterStore.numberOfBosses)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeNumberOfBosses != includeNumberOfBosses.value) {
+        includeNumberOfBosses.value = state.includeNumberOfBosses
+    }
+    if (state.numberOfBosses != numberOfBosses.value) {
+        numberOfBosses.value = state.numberOfBosses
+    }
+})
+
 function handleIncludeNumberOfBossesFilter() {
     filterStore.SET_INCLUDE_NUMBER_OF_BOSSES(!includeNumberOfBosses.value)
 }

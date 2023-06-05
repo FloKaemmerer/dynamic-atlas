@@ -7,6 +7,15 @@ const filterStore = useFilterStore();
 let includeTerrainSlots = ref(filterStore.includeTerrainSlots)
 let terrainSlots = ref(filterStore.terrainSlots)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeTerrainSlots != includeTerrainSlots.value) {
+        includeTerrainSlots.value = state.includeTerrainSlots
+    }
+    if (state.terrainSlots != terrainSlots.value) {
+        terrainSlots.value = state.terrainSlots
+    }
+})
+
 function handleIncludeTerrainSlotsFilter() {
     filterStore.SET_INCLUDE_TERRAIN_SLOTS(!includeTerrainSlots.value)
 }

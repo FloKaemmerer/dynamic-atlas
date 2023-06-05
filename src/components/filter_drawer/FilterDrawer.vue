@@ -3,20 +3,7 @@
         <v-row no-gutters>
             <v-col>
                 <v-card>
-                    <v-toolbar density="compact">
-                        <v-toolbar-title class="text-h6">
-                            Filters
-                        </v-toolbar-title>
-                        <template v-slot:append>
-                            <v-tooltip>
-                                <template v-slot:activator="{ props }">
-                                    <v-btn icon="mdi-content-copy" @click="copyShareableLinkToClipboard()"
-                                           v-bind="props"></v-btn>
-                                </template>
-                                <p>Copy Shareable Link to Clipboard</p>
-                            </v-tooltip>
-                        </template>
-                    </v-toolbar>
+                    <FilterToolbar/>
                     <v-card-text>
                         <TextFilterHolder/>
 
@@ -85,9 +72,8 @@ import {useRoute, useRouter} from "vue-router";
 import {useFilterStore} from "@/store/FilterStore";
 import type {LooseFilters} from "@/model/looseFilters";
 import {useFilterQueryStore} from "@/store/FilterQueryStore";
-import buildShareableUrl from "@/composable/shareable-url-builder";
-import copyToClipBoard from "@/composable/copy-utils";
 import handleUrlQueryFilters from "@/composable/url-query-filter-handler";
+import FilterToolbar from "@/components/filter_drawer/FilterToolbar.vue";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
@@ -178,13 +164,6 @@ filterStore.$subscribe((mutation, state) => {
         console.log(route.query)
     })
 })
-
-function copyShareableLinkToClipboard() {
-    const queryParams = filterQueryStore.filterQuery;
-
-    const shareableUrl = buildShareableUrl(queryParams);
-    copyToClipBoard(shareableUrl)
-}
 
 async function pushToRouter(queryFilters: LooseFilters) {
     await router.isReady();
