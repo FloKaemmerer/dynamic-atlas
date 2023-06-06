@@ -7,7 +7,6 @@ const filterStore = useFilterStore()
 const activeFiltersStore = useActiveFiltersStore()
 const handleUrlQueryFilters = (queryParams: LocationQuery) => {
     if (queryParams) {
-        // activeFiltersStore.$reset()
         //------ Text Filters -------
         if (FilterKeys.FILTER_TEXT in queryParams && queryParams.filterText && String(queryParams.filterText).length > 0) {
             filterStore.SET_FILTER_TEXT(String(queryParams.filterText))
