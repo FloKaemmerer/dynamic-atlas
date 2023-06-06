@@ -60,7 +60,7 @@ function clearActiveBossFilters() {
                                                                    v-bind="props"
                                                                    :disabled="activeBossFilters < 1"></v-btn>
                                                         </template>
-                                                        <p>Clear Active Map Filters</p>
+                                                        <p>Clear Active Boss Filters</p>
                                                     </v-tooltip>
                                                 </v-col>
                                         </v-row>
