@@ -6,6 +6,12 @@ const filterStore = useFilterStore();
 
 let rushableBoss = ref(filterStore.rushableBoss)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.rushableBoss != rushableBoss.value) {
+        rushableBoss.value = state.rushableBoss
+    }
+})
+
 function handleRushableBossFilter() {
     filterStore.SET_RUSHABLE_BOSS(!rushableBoss.value)
 }

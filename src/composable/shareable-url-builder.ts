@@ -36,6 +36,11 @@ const buildShareableUrl = (queryParams: LooseFilters): string => {
         shareableUrl = shareableUrl.concat(FilterKeys.LINEARITY + "=" + queryParams.linearity)
         firstFilterValue = false;
     }
+    if (FilterKeys.TERRAIN_SLOTS in queryParams && queryParams.terrainSlots) {
+        shareableUrl = shareableUrl.concat(firstFilterValue ? "?" : "&")
+        shareableUrl = shareableUrl.concat(FilterKeys.TERRAIN_SLOTS + "=" + queryParams.terrainSlots)
+        firstFilterValue = false;
+    }
     if (FilterKeys.BASE_MOB_COUNT in queryParams && queryParams.baseMobCount) {
         shareableUrl = shareableUrl.concat(firstFilterValue ? "?" : "&")
         shareableUrl = shareableUrl.concat(FilterKeys.BASE_MOB_COUNT + "=" + queryParams.baseMobCount)

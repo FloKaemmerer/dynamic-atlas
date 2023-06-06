@@ -6,6 +6,12 @@ import {useFilterStore} from "@/store/FilterStore";
 const filterStore = useFilterStore();
 let minDivinationCardPrice = ref(filterStore.minDivinationCardPrice)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.minDivinationCardPrice != minDivinationCardPrice.value) {
+        minDivinationCardPrice.value = state.minDivinationCardPrice
+    }
+})
+
 function handleMinimumDivinationCardPriceFilter(value: string) {
     filterStore.SET_MINIMUM_DIVINATION_CARD_PRICE(Number.parseInt(value))
 }

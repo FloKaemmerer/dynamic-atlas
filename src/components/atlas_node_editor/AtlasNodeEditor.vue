@@ -91,6 +91,23 @@
 
                                             <v-col cols="3">
                                                 <v-sheet>
+                                                    Terrain Slots
+                                                </v-sheet>
+                                            </v-col>
+                                            <v-col cols="5">
+                                                <v-text-field
+                                                        hide-details
+                                                        single-line
+                                                        type="number"
+                                                        v-model="selectedAtlasNode.nodeLayout.terrainSlots"
+                                                        min="0"
+                                                        density="compact">
+                                                </v-text-field>
+                                            </v-col>
+                                            <v-col cols="3"></v-col>
+
+                                            <v-col cols="3">
+                                                <v-sheet>
                                                     Base Mob Count
                                                 </v-sheet>
                                             </v-col>

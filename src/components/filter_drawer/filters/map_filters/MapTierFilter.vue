@@ -7,6 +7,15 @@ const filterStore = useFilterStore();
 let includeMapTier = ref(filterStore.includeMapTier)
 let mapTier = ref(filterStore.mapTier)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeMapTier != includeMapTier.value) {
+        includeMapTier.value = state.includeMapTier
+    }
+    if (state.mapTier != mapTier.value) {
+        mapTier.value = state.mapTier
+    }
+})
+
 function handleIncludeMapTierFilter() {
     filterStore.SET_INCLUDE_MAP_TIER(!includeMapTier.value)
 }

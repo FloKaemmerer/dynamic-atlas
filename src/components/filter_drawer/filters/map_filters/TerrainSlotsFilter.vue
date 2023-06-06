@@ -4,25 +4,25 @@ import {useFilterStore} from "@/store/FilterStore";
 
 const filterStore = useFilterStore();
 
-let includeBaseMobCount = ref(filterStore.includeBaseMobCount)
-let baseMobCount = ref(filterStore.baseMobCount)
+let includeTerrainSlots = ref(filterStore.includeTerrainSlots)
+let terrainSlots = ref(filterStore.terrainSlots)
 
 filterStore.$subscribe((mutation, state) => {
-    if (state.includeBaseMobCount != includeBaseMobCount.value) {
-        includeBaseMobCount.value = state.includeBaseMobCount
+    if (state.includeTerrainSlots != includeTerrainSlots.value) {
+        includeTerrainSlots.value = state.includeTerrainSlots
     }
-    if (state.baseMobCount != baseMobCount.value) {
-        baseMobCount.value = state.baseMobCount
+    if (state.terrainSlots != terrainSlots.value) {
+        terrainSlots.value = state.terrainSlots
     }
 })
 
-function handleIncludeBaseMobCountFilter() {
-    filterStore.SET_INCLUDE_BASE_MOB_COUNT(!includeBaseMobCount.value)
+function handleIncludeTerrainSlotsFilter() {
+    filterStore.SET_INCLUDE_TERRAIN_SLOTS(!includeTerrainSlots.value)
 }
 
-function debounceBaseMobCountFilter(value: [number, number]) {
-    if (!(value[0] == filterStore.baseMobCount[0] && value[1] == filterStore.baseMobCount[1])) {
-        filterStore.SET_BASE_MOB_COUNT(value)
+function debounceTerrainSlotsFilter(value: [number, number]) {
+    if (!(value[0] == filterStore.terrainSlots[0] && value[1] == filterStore.terrainSlots[1])) {
+        filterStore.SET_TERRAIN_SLOTS(value)
     }
 }
 </script>
@@ -30,9 +30,9 @@ function debounceBaseMobCountFilter(value: [number, number]) {
 <template>
     <v-row no-gutters>
         <v-col>
-            Base Mob Count
+            Terrain Slots
             <v-tooltip
-                    text="The Base Mob count of Monsters present in the normal version of the map.">
+                    text="The number of slots within the map terrain, which can spawn a League Mechanic, aka the juiceability of a Map.">
                 <template v-slot:activator="{ props }">
                     <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
                 </template>
@@ -41,14 +41,15 @@ function debounceBaseMobCountFilter(value: [number, number]) {
     </v-row>
     <v-row no-gutters>
         <v-col cols="1">
-            <v-checkbox v-model="includeBaseMobCount"
-                        @click="handleIncludeBaseMobCountFilter()"
-                        density="compact"></v-checkbox>
+            <v-checkbox v-model="includeTerrainSlots"
+                        @click="handleIncludeTerrainSlotsFilter()"
+                        density="compact"
+            ></v-checkbox>
         </v-col>
         <v-col>
             <v-range-slider
-                    v-model="baseMobCount"
-                    @update:model-value="value => debounceBaseMobCountFilter(value)"
+                    v-model="terrainSlots"
+                    @update:model-value="value => debounceTerrainSlotsFilter(value)"
                     strict
                     direction="horizontal"
                     step="1"
@@ -56,8 +57,8 @@ function debounceBaseMobCountFilter(value: [number, number]) {
                     tick-size="4"
                     thumb-label
                     :max="10"
-                    :min="1"
-                    :disabled="!includeBaseMobCount"
+                    :min="0"
+                    :disabled="!includeTerrainSlots"
             >
                 <template v-slot:prepend>
                     <v-label style="white-space: break-spaces">Low

@@ -8,6 +8,15 @@ let includeBacktrackFactor = ref(filterStore.includeBacktrackFactor)
 
 let backtrackFactor = ref(filterStore.backtrackFactor)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.includeBacktrackFactor != includeBacktrackFactor.value) {
+        includeBacktrackFactor.value = state.includeBacktrackFactor
+    }
+    if (state.backtrackFactor != backtrackFactor.value) {
+        backtrackFactor.value = state.backtrackFactor
+    }
+})
+
 function handleIncludeBacktrackFactorFilter() {
     filterStore.SET_INCLUDE_BACKTRACK_FACTOR(!includeBacktrackFactor.value)
 }

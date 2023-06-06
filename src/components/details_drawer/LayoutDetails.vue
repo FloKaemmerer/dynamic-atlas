@@ -52,6 +52,17 @@ defineProps<PropsInterface>();
 
                         <v-col cols="6">
                             <v-sheet>
+                                Terrain Slots:
+                            </v-sheet>
+                        </v-col>
+                        <v-col cols="6">
+                            <v-sheet>
+                                <v-label>{{ atlasNode.nodeLayout.terrainSlots }}</v-label>
+                            </v-sheet>
+                        </v-col>
+
+                        <v-col cols="6">
+                            <v-sheet>
                                 Backtrack Factor:
                             </v-sheet>
                         </v-col>

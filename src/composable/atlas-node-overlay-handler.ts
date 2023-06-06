@@ -46,6 +46,16 @@ function getLinearityOverlayNodes() {
     return linearityOverlayNodes;
 }
 
+function getTerrainSlotsOverlayNodes() {
+    const terrainSlotsOverlayNodes = new Map<AtlasNode, number>();
+    atlasNodeStore.atlasNodes.filter(atlasNode => {
+        if (atlasNode.active && !atlasNode.uniqueMap) {
+            terrainSlotsOverlayNodes.set(atlasNode, atlasNode.nodeLayout.terrainSlots)
+        }
+    })
+    return terrainSlotsOverlayNodes;
+}
+
 function getBaseMobCountOverlayNodes() {
     const baseMobCountOverlayNodes = new Map<AtlasNode, number>();
     atlasNodeStore.atlasNodes.filter(atlasNode => {
@@ -69,6 +79,10 @@ export const handleAtlasNodeOverlay = (activeOverlay: string) => {
         }
         case "linearityOverlay": {
             atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getLinearityOverlayNodes())
+            break;
+        }
+        case "terrainSlotsOverlay": {
+            atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getTerrainSlotsOverlayNodes())
             break;
         }
         case "backtrackFactorOverlay": {

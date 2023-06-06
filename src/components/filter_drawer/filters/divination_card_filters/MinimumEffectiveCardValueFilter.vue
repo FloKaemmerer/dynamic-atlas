@@ -5,6 +5,12 @@ import {ref} from "vue";
 const filterStore = useFilterStore();
 let minEffectiveDivinationCardValue = ref(filterStore.minEffectiveDivinationCardValue)
 
+filterStore.$subscribe((mutation, state) => {
+    if (state.minEffectiveDivinationCardValue != minEffectiveDivinationCardValue.value) {
+        minEffectiveDivinationCardValue.value = state.minEffectiveDivinationCardValue
+    }
+})
+
 function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
     filterStore.SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(Number.parseInt(value))
 }

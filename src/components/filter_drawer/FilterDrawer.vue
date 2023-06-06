@@ -2,29 +2,12 @@
     <v-navigation-drawer floating :width="400" class="bg-surface-variant mb-6" permanent absolute>
         <v-row no-gutters>
             <v-col>
-                <v-card>
-                    <v-toolbar density="compact">
-                        <v-toolbar-title class="text-h6">
-                            Filters
-                        </v-toolbar-title>
-                        <template v-slot:append>
-                            <v-tooltip>
-                                <template v-slot:activator="{ props }">
-                                    <v-btn icon="mdi-content-copy" @click="copyShareableLinkToClipboard()"
-                                           v-bind="props"></v-btn>
-                                </template>
-                                <p>Copy Shareable Link to Clipboard</p>
-                            </v-tooltip>
-                        </template>
-                    </v-toolbar>
-                    <v-card-text>
-                        <TextFilterHolder/>
+                <FilterToolbar/>
+                <TextFilterHolder/>
 
-                        <MapFilterHolder/>
-                        <BossFilterHolder/>
-                        <DivinationCardFilterHolder/>
-                    </v-card-text>
-                </v-card>
+                <MapFilterHolder/>
+                <BossFilterHolder/>
+                <DivinationCardFilterHolder/>
                 <AtlasOverlayHolder/>
 
             </v-col>
@@ -68,7 +51,7 @@
 
 <script setup lang="ts">
 import {onBeforeMount, ref} from "vue";
-import {initFilter} from "@/composable/atlasFilter";
+import {initFilter} from "@/composable/atlas-filter-handler";
 import DivinationCardFilterHolder
     from "@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue";
 import BossFilterHolder from "@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue";
@@ -85,9 +68,8 @@ import {useRoute, useRouter} from "vue-router";
 import {useFilterStore} from "@/store/FilterStore";
 import type {LooseFilters} from "@/model/looseFilters";
 import {useFilterQueryStore} from "@/store/FilterQueryStore";
-import buildShareableUrl from "@/composable/shareable-url-builder";
-import copyToClipBoard from "@/composable/copy-utils";
 import handleUrlQueryFilters from "@/composable/url-query-filter-handler";
+import FilterToolbar from "@/components/filter_drawer/FilterToolbar.vue";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
@@ -134,6 +116,9 @@ filterStore.$subscribe((mutation, state) => {
     if (state.linearity[0] >= 0 && state.includeLinearity) {
         queryFilters.linearity = String(state.linearity)
     }
+    if (state.terrainSlots[0] >= 0 && state.includeTerrainSlots) {
+        queryFilters.terrainSlots = String(state.terrainSlots)
+    }
     if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount) {
         queryFilters.baseMobCount = String(state.baseMobCount)
     }
@@ -175,13 +160,6 @@ filterStore.$subscribe((mutation, state) => {
         console.log(route.query)
     })
 })
-
-function copyShareableLinkToClipboard() {
-    const queryParams = filterQueryStore.filterQuery;
-
-    const shareableUrl = buildShareableUrl(queryParams);
-    copyToClipBoard(shareableUrl)
-}
 
 async function pushToRouter(queryFilters: LooseFilters) {
     await router.isReady();
