@@ -144,11 +144,9 @@ function filterByNumberOfBosses(numberOfBosses: number[], result: AtlasNode[]) {
 
 function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhases: boolean, includeSpawnIntro: boolean, result: AtlasNode[]) {
     if (excludePhasedBosses) {
-        console.log("Exclude Phased Bosses")
         activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.EXCLUDE_PHASED_BOSSES)
         if (includeSkippablePhases && includeSpawnIntro) {
 
-            console.log("Exclude Phased Bosses, include Skippable Phases, include Intro Phases")
             result = result.filter(atlasNode => {
                 return !atlasNode.boss.phased ||
                     atlasNode.boss.phased && atlasNode.boss.skippablePhases ||
@@ -157,7 +155,6 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
             activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
             activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
         } else if (includeSkippablePhases && !includeSpawnIntro) {
-            console.log("Exclude Phased Bosses, include Skippable Phases, exclude Intro Phases")
             result = result.filter(atlasNode => {
                 return !atlasNode.boss.phased ||
                     atlasNode.boss.phased && atlasNode.boss.skippablePhases
@@ -165,7 +162,6 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
             activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
             activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
         } else if (!includeSkippablePhases && includeSpawnIntro) {
-            console.log("Exclude Phased Bosses, exclude Skippable Phases, include Intro Phases")
             result = result.filter(atlasNode => {
                 return !atlasNode.boss.phased ||
                     atlasNode.boss.phased && atlasNode.boss.introPhase
@@ -174,7 +170,6 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
             activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
 
         } else {
-            console.log("Exclude Phased Bosses, exclude Skippable Phases, exclude Intro Phases")
             result = result.filter(atlasNode => {
                 return !atlasNode.boss.phased
             })
@@ -182,7 +177,6 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
             activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
         }
     } else {
-        console.log("Include Phased Bosses")
         activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.EXCLUDE_PHASED_BOSSES)
         activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
         activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
