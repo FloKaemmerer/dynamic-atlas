@@ -16,7 +16,6 @@ let panel = ref()
 
 
 activeFiltersStore.$subscribe((mutation, state) => {
-    console.log("activeDivinationCardFilters value: " + activeDivinationCardFilters.value + "\nstate: " + state.activeDivinationCardFilters)
     if (state.activeDivinationCardFilters.length != activeDivinationCardFilters.value) {
         activeDivinationCardFilters.value = state.activeDivinationCardFilters.length
     }

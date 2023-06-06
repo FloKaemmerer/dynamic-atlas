@@ -16,7 +16,6 @@ let activeBossFilters = ref(activeFiltersStore.activeBossFilters.length)
 let panel = ref()
 
 activeFiltersStore.$subscribe((mutation, state) => {
-    console.log("activeBossFilters value: " + activeBossFilters.value + "\nstate: " + state.activeBossFilters)
     if (state.activeBossFilters.length != activeBossFilters.value) {
         activeBossFilters.value = state.activeBossFilters.length
     }

@@ -19,7 +19,6 @@ let activeMapFilters = ref(activeFiltersStore.activeMapFilters.length)
 let panel = ref()
 
 activeFiltersStore.$subscribe((mutation, state) => {
-    console.log("activeMapFilter value: " + activeMapFilters.value + "\nstate: " + state.activeMapFilters)
     if (state.activeMapFilters.length != activeMapFilters.value) {
         activeMapFilters.value = state.activeMapFilters.length
     }
