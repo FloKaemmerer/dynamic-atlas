@@ -152,5 +152,38 @@ export const useFilterStore = defineStore("filter", {
         SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(minEffectiveDivinationCardValue: number) {
             this.minEffectiveDivinationCardValue = minEffectiveDivinationCardValue
         },
+
+        CLEAR_MAP_FILTERS() {
+            this.includeMapTier = false
+            this.mapTier = [1, 16]
+            this.includeOpenness = false
+            this.openness = [0, 10]
+            this.includeTraversability = false
+            this.traversability = [0, 10]
+            this.includeBacktrackFactor = false
+            this.backtrackFactor = [0, 10]
+            this.includeLinearity = false
+            this.linearity = [0, 10]
+            this.includeTerrainSlots = false
+            this.terrainSlots = [0, 10]
+            this.includeBaseMobCount = false
+            this.baseMobCount = [0, 10]
+            this.rushableBoss = false
+            this.includeNumberOfBosses = false
+        },
+
+        CLEAR_BOSS_FILTERS() {
+            this.includeNumberOfBosses = false
+            this.numberOfBosses = [0, 4]
+            this.excludePhasedBosses = false
+            this.includeSkippablePhases = false
+            this.includeSpawnIntro = false
+            this.excludeSpawnedBosses = false
+        },
+
+        CLEAR_DIVINATION_CARD_FILTERS() {
+            this.minDivinationCardPrice = 0
+            this.minEffectiveDivinationCardValue = 0
+        },
     }
 })

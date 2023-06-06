@@ -3,12 +3,15 @@ import buildShareableUrl from "@/composable/shareable-url-builder";
 import copyToClipBoard from "@/composable/copy-utils";
 import {useFilterQueryStore} from "@/store/FilterQueryStore";
 import {useFilterStore} from "@/store/FilterStore";
+import {useActiveFiltersStore} from "@/store/activeFiltersStore";
 
 const filterQueryStore = useFilterQueryStore();
 const filterStore = useFilterStore();
+const activeFiltersStore = useActiveFiltersStore();
 
 function clearAllFilters() {
     filterStore.$reset()
+    activeFiltersStore.$reset()
 }
 
 function copyShareableLinkToClipboard() {

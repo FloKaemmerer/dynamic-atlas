@@ -2,16 +2,12 @@
     <v-navigation-drawer floating :width="400" class="bg-surface-variant mb-6" permanent absolute>
         <v-row no-gutters>
             <v-col>
-                <v-card>
-                    <FilterToolbar/>
-                    <v-card-text>
-                        <TextFilterHolder/>
+                <FilterToolbar/>
+                <TextFilterHolder/>
 
-                        <MapFilterHolder/>
-                        <BossFilterHolder/>
-                        <DivinationCardFilterHolder/>
-                    </v-card-text>
-                </v-card>
+                <MapFilterHolder/>
+                <BossFilterHolder/>
+                <DivinationCardFilterHolder/>
                 <AtlasOverlayHolder/>
 
             </v-col>
@@ -55,7 +51,7 @@
 
 <script setup lang="ts">
 import {onBeforeMount, ref} from "vue";
-import {initFilter} from "@/composable/atlasFilter";
+import {initFilter} from "@/composable/atlas-filter-handler";
 import DivinationCardFilterHolder
     from "@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue";
 import BossFilterHolder from "@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue";
