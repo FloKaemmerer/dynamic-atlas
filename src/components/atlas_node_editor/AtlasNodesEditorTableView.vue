@@ -288,7 +288,7 @@ onMounted(() => {
                                             density="compact"></v-checkbox>
                             </td>
                             <td>
-                                <v-btn density="compact" width="30%" disabled>Show</v-btn>
+                                <v-btn density="compact" width="30%" :disabled="true">Show</v-btn>
                             </td>
                         </tr>
                         </tbody>
