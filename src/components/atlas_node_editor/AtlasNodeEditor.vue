@@ -412,11 +412,10 @@
 
                         </v-row>
                         <v-row no-gutters>
-                            <v-col cols="3">
+                            <v-col cols="2">
                                 <v-btn
                                         :disabled="loading"
                                         :loading="loading"
-                                        block
                                         class="text-none mb-4"
                                         color="indigo-darken-3"
                                         size="x-large"
@@ -425,6 +424,20 @@
                                     Send
                                 </v-btn>
                             </v-col>
+                            <v-col cols="1"></v-col>
+                            <v-col cols="2">
+                                <v-btn
+                                        :disabled="loading"
+                                        :loading="loading"
+                                        class="text-none mb-4"
+                                        color="indigo-darken-3"
+                                        size="x-large"
+                                        variant="flat"
+                                        @click="putSelectedAtlasNode(selectedAtlasNode)">
+                                    PUT
+                                </v-btn>
+                            </v-col>
+                            <v-col cols="7"></v-col>
                         </v-row>
                     </v-card-text>
                 </v-card>
@@ -450,9 +463,10 @@
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import {computed, ref, watch} from "vue";
 import type {AtlasNode} from "@/model/atlasNode";
-import emailjs from '@emailjs/browser';
 import convertToAtlasNodeImproveDto from "@/composable/atlas-node-improve-dto-converter";
 import type {DivinationCardImproveDto} from "@/model/dtos/divinationCardImproveDto";
+import axios from 'axios'
+import {sendAtlasNode} from "@/composable/atlas-node-email-sender";
 
 const atlasNodeStore = useAtlasNodeStore();
 const atlasNodes = computed<AtlasNode[] | null>(() => atlasNodeStore.atlasNodes);
@@ -515,6 +529,26 @@ function getAdditionalTags(atlasNode: AtlasNode): string {
 
 async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
     if (selectedAtlasNode) {
+        loading.value = true
+        const effectiveAdditionalTags: string = additionalTags.value ? additionalTags.value : "";
+        const effectiveDivinationCardNames = divinationCardNames.value ? divinationCardNames.value : "";
+        await sendAtlasNode(selectedAtlasNode, effectiveAdditionalTags, effectiveDivinationCardNames)
+            .then((result) => {
+                console.log('SUCCESS!', result.text);
+                snackbarText.value = "Successfully send Values for AtlasNode: " + selectedAtlasNode.name
+                snackbar.value = true;
+            }).catch((res) => {
+                snackbarText.value = "Failed to send Values for AtlasNode: " + selectedAtlasNode.name + " \nPlease try again later"
+                snackbar.value = true;
+                console.log(res)
+            }).finally(() =>
+                loading.value = false
+            );
+    }
+}
+
+async function putSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
+    if (selectedAtlasNode) {
         loading.value = true;
         const tags: string[] = []
         if (additionalTags.value) {
@@ -541,26 +575,14 @@ async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
 
         let atlasNodeImproveDto = convertToAtlasNodeImproveDto(selectedAtlasNode, divinationCardImproveDtos, tags);
         console.log(atlasNodeImproveDto)
-        const templatePrams: Record<string, string> = {
-            atlasNode: JSON.stringify(atlasNodeImproveDto, null, '\t'),
-            atlasNodeName: atlasNodeImproveDto.name
-        }
 
-        emailjs.send(`${import.meta.env.VITE_EMAILJS_SERVICE_ID}`,
-            `${import.meta.env.VITE_EMAILJS_TEMPLATE_ID}`,
-            templatePrams,
-            `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`)
-            .then((result) => {
-                console.log('SUCCESS!', result.text);
-                snackbarText.value = "Successfully send Values for AtlasNode: " + selectedAtlasNode.name
-                snackbar.value = true;
-            }).catch((res) => {
-            snackbarText.value = "Failed to send Values for AtlasNode: " + selectedAtlasNode.name + " \nPlease try again later"
-            snackbar.value = true;
-            console.log(res)
-        }).finally(() =>
-            loading.value = false
-        );
+        loading.value = true;
+        const link = `http://localhost:8080/atlasNodes/atlasNode`;
+
+        console.log(link)
+        const res = await axios.put(link, atlasNodeImproveDto);
+        console.log(res.data)
+        loading.value = false;
     }
 }
 </script>

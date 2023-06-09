@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer floating :width="400" class="bg-surface-variant mb-6" permanent absolute>
+    <v-navigation-drawer floating:true :width="400" class="bg-surface-variant mb-6" permanent:true absolute:true>
         <v-row no-gutters>
             <v-col>
                 <FilterToolbar/>
@@ -81,7 +81,6 @@ const filterStore = useFilterStore();
 const filterQueryStore = useFilterQueryStore();
 const route: RouteLocationNormalizedLoaded = useRoute();
 const router: Router = useRouter();
-
 
 onBeforeMount(() => {
     // We need to import the AtlasFilter composable, otherwise it won't trigger, even though it is subscribed to the FilterStore
