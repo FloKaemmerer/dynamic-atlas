@@ -4,6 +4,46 @@ import convertToAtlasNodeImproveDto from "@/composable/atlas-node-improve-dto-co
 import emailjs from "@emailjs/browser";
 import type {AtlasNodeImproveDto} from "@/model/dtos/atlasNodeImproveDto";
 
+async function send(atlasNodesToSend: AtlasNodeImproveDto[]) {
+    const templatePrams: Record<string, string> = {
+        atlasNode: JSON.stringify(atlasNodesToSend, null, '\t'),
+        atlasNodeName: atlasNodesToSend.map(value => value.name).toString()
+    }
+    let success = false;
+    await emailjs.send(`${import.meta.env.VITE_EMAILJS_SERVICE_ID}`,
+        `${import.meta.env.VITE_EMAILJS_TEMPLATE_ID}`,
+        templatePrams,
+        `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`)
+        .then(() => {
+            console.log("SUCCESS! ")
+            success = true
+        }).catch((res) => {
+            console.log("FAILURE! " + res)
+            success = false
+        });
+    return success;
+}
+
+function sliceNodesToSend(atlasNodesToSend: AtlasNodeImproveDto[]): Array<Array<AtlasNodeImproveDto>> {
+    const slicedNodes: Array<Array<AtlasNodeImproveDto>> = new Array<Array<AtlasNodeImproveDto>>()
+    const totalNumberOfAtlasNodesToSend = atlasNodesToSend.length;
+    const half = Number((totalNumberOfAtlasNodesToSend / 2).toFixed(0));
+    slicedNodes.push(atlasNodesToSend.slice(0, half))
+    slicedNodes.push(atlasNodesToSend.slice(half + 1, totalNumberOfAtlasNodesToSend))
+    slicedNodes.forEach(value => {
+        const sizeInKb = getSizeInKb(value);
+        if (sizeInKb >= 40) {
+            sliceNodesToSend(value).forEach(value1 => slicedNodes.push(value1))
+        }
+    })
+    return slicedNodes
+}
+
+function getSizeInKb(atlasNodesToSend: AtlasNodeImproveDto[]) {
+    const b = JSON.stringify(atlasNodesToSend, null, "\t").concat(atlasNodesToSend.map(value => value.name).toString()).length * 2;
+    return Number((b / 1024).toFixed(2));
+}
+
 export const sendAtlasNodes = async (atlasNodes: AtlasNode[]) => {
     const atlasNodesToSend: AtlasNodeImproveDto[] = []
     atlasNodes.forEach(atlasNode => {
@@ -20,21 +60,29 @@ export const sendAtlasNodes = async (atlasNodes: AtlasNode[]) => {
         const atlasNodeImproveDto = convertToAtlasNodeImproveDto(atlasNode, divinationCardImproveDtos, atlasNode.additionalTags);
         atlasNodesToSend.push(atlasNodeImproveDto)
     })
+    const kb = getSizeInKb(atlasNodesToSend);
 
-    const templatePrams: Record<string, string> = {
-        atlasNode: JSON.stringify(atlasNodesToSend, null, '\t'),
-        atlasNodeName: atlasNodesToSend.map(value => value.name).toString()
+    console.log(`Total Size of changed AtlasNodes: ${kb}KB`);
+    // If   bigger 40kb, recursively slice until every List is sub 40kb
+    let success = true;
+    if (kb > 40) {
+        console.log("Payload to large, slicing into multiple messages")
+        const slicedNodes: Array<Array<AtlasNodeImproveDto>> = sliceNodesToSend(atlasNodesToSend);
+        console.log("Total number of Messages to send: " + slicedNodes.length)
+        for (let i = 0; i < slicedNodes.length; i++) {
+            await send(slicedNodes[i])
+                .then((res) => success && res.valueOf())
+                .catch(() => success = false);
+        }
+        if (success) {
+            console.log("All messages successfully send!")
+        }
+    } else {
+        send(atlasNodesToSend)
+            .then((res) => success && res.valueOf())
+            .catch(() => success = false);
     }
-
-    return emailjs.send(`${import.meta.env.VITE_EMAILJS_SERVICE_ID}`,
-        `${import.meta.env.VITE_EMAILJS_TEMPLATE_ID}`,
-        templatePrams,
-        `${import.meta.env.VITE_EMAILJS_PUBLIC_KEY}`)
-        .then((result) => {
-            return result
-        }).catch((res) => {
-            return res
-        });
+    return success
 }
 
 function getDivinationCardNames(atlasNode: AtlasNode): string {
@@ -51,19 +99,6 @@ function getDivinationCardNames(atlasNode: AtlasNode): string {
     return divinationCardNames
 }
 
-function getAdditionalTags(atlasNode: AtlasNode): string {
-    let additionalTags = ""
-    let first = true
-    atlasNode.additionalTags.forEach(value => {
-        if (first) {
-            additionalTags = additionalTags.concat(value)
-            first = false;
-        } else {
-            additionalTags = additionalTags.concat(", " + value)
-        }
-    })
-    return additionalTags
-}
 
 export const sendAtlasNode = async (atlasNode: AtlasNode, additionalTags: string, divinationCardNames: string) => {
     if (atlasNode) {

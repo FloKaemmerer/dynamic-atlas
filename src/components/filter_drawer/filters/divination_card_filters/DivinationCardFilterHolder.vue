@@ -58,6 +58,7 @@ function clearActiveDivinationCardFilters() {
                                                                    @click="clearActiveDivinationCardFilters()"
                                                                    density="compact"
                                                                    v-bind="props"
+                                                                   variant="text"
                                                                    :disabled="activeDivinationCardFilters < 1"></v-btn>
                                                         </template>
                                                         <p>Clear Active Divination Card Filters</p>

@@ -9,9 +9,12 @@ const atlasNodeStore = useAtlasNodeStore();
 const atlasNodes = ref<AtlasNode[]>(atlasNodeStore.atlasNodes);
 const slicedAtlasNodes = ref<AtlasNode[]>([])
 const numberOfAtlasNodesToDisplay = ref(30)
+const numberOfAtlasNodesToDisplayItems = ref([10, 30, 50, 100])
 const pageMultiplier = ref<number>(1)
 const changedAtlasNodes = ref<AtlasNode[]>([])
 const tmpAtlasNodes = ref<AtlasNode[]>([])
+const currentStartIndex = ref(0)
+const currentEndIndex = ref(29)
 
 let loading = ref(false)
 
@@ -20,27 +23,34 @@ function pushAtlasNodes() {
     loading.value = true;
     findChangedAtlasNodes()
 
-    console.log("Pushing AtlasNodes: '" + changedAtlasNodes.value.map(value => value.name + "' to backend"))
-    sendAtlasNodes(changedAtlasNodes.value).then((result) => {
-        console.log('SUCCESS!', result.text);
-    }).catch((res) => {
-        console.log(res)
-    }).finally(() =>
-        loading.value = false
-    );
+    console.log("Pushing AtlasNodes: '" + changedAtlasNodes.value.map(value => value.name) + "' to backend")
+    sendAtlasNodes(changedAtlasNodes.value)
+        .then((result) => {
+            if (result.valueOf()) {
+                console.log('SUCCESS!');
+            } else {
+                console.log("FAILURE!")
+            }
+        })
+        .finally(() =>
+            loading.value = false
+        );
 }
 
 function updateSlicedAtlasNodes() {
     findChangedAtlasNodes()
-    let startIndex = numberOfAtlasNodesToDisplay.value * (pageMultiplier.value - 1)
-    let endIndex = (numberOfAtlasNodesToDisplay.value * pageMultiplier.value) < tmpAtlasNodes.value.length ? numberOfAtlasNodesToDisplay.value * pageMultiplier.value : tmpAtlasNodes.value.length
-    slicedAtlasNodes.value = tmpAtlasNodes.value.slice(startIndex, endIndex)
-    console.log("\nStartIndex: " + startIndex + "\nendIndex: " + endIndex)
+    currentStartIndex.value = numberOfAtlasNodesToDisplay.value * (pageMultiplier.value - 1)
+    currentEndIndex.value = (numberOfAtlasNodesToDisplay.value * pageMultiplier.value) < tmpAtlasNodes.value.length ? numberOfAtlasNodesToDisplay.value * pageMultiplier.value : tmpAtlasNodes.value.length
+    slicedAtlasNodes.value = tmpAtlasNodes.value.slice(currentStartIndex.value, currentEndIndex.value)
+    console.log("\nStartIndex: " + currentStartIndex.value + "\nendIndex: " + currentEndIndex.value)
 }
 
 function findChangedAtlasNodes() {
     slicedAtlasNodes.value.forEach(slicedNode => {
-        const matchingNode = atlasNodes.value.find(value => value.name == slicedNode.name);
+        let matchingNode = atlasNodes.value.find(value => value.name == slicedNode.name);
+        if (!matchingNode) {
+            matchingNode = atlasNodeStore.inactiveAtlasNodes.find(value => value.name == slicedNode.name)
+        }
         if (matchingNode && JSON.stringify(slicedNode) != JSON.stringify(matchingNode)) {
             console.log("AtlasNode " + slicedNode.name + " was changed.")
             const changedNodeIndex = changedAtlasNodes.value.findIndex(value => value.name == slicedNode.name);
@@ -92,6 +102,10 @@ onMounted(() => {
         let tmpAtlasNode = JSON.parse(JSON.stringify(value))
         tmpAtlasNodes.value.push(tmpAtlasNode)
     })
+    atlasNodeStore.inactiveAtlasNodes.forEach(value => {
+        let tmpAtlasNode = JSON.parse(JSON.stringify(value))
+        tmpAtlasNodes.value.push(tmpAtlasNode)
+    })
     tmpAtlasNodes.value.sort((a, b) => a.name.localeCompare(b.name))
     initSlicedAtlasNodes()
 })
@@ -102,20 +116,32 @@ onMounted(() => {
         <v-app class="app">
             <section class="view">
                 <v-card class="card-top">
-                    <v-row>
+                    <v-row no-gutters>
                         <v-col cols="2">
-                            <v-text-field type="number" v-model="numberOfAtlasNodesToDisplay" min="1"
-                                          :max="tmpAtlasNodes.length"></v-text-field>
+                            <v-select v-model="numberOfAtlasNodesToDisplay"
+                                      :items="numberOfAtlasNodesToDisplayItems"
+                                      class="fit"
+                                      density="compact">
+                                <template v-slot:prepend>
+                                    <v-label>show</v-label>
+                                </template>
+                                <template v-slot:append>
+                                    <v-label>entries</v-label>
+                                </template>
+                            </v-select>
                         </v-col>
-                        <v-col cols="2">
-                            <v-btn variant="text" @click="decreasePageMultiplier()">prev</v-btn>
+                        <v-col cols="1">
+                            <v-btn variant="text" @click="decreasePageMultiplier()" prepend-icon="mdi-chevron-left">
+                                prev
+                            </v-btn>
                         </v-col>
-                        <v-col cols="2">
-                            <v-text-field type="number" v-model="pageMultiplier" min="1"
-                                          :max="getMaxPageMultiplier()"></v-text-field>
+                        <v-col cols="2">showing Entries {{ currentStartIndex + 1 }} to {{ currentEndIndex }} of
+                            {{ tmpAtlasNodes.length }}
                         </v-col>
-                        <v-col cols="2">
-                            <v-btn variant="text" @click="increasePageMultiplier()">next</v-btn>
+                        <v-col cols="1">
+                            <v-btn variant="text" @click="increasePageMultiplier()" append-icon="mdi-chevron-right">
+                                next
+                            </v-btn>
                         </v-col>
                         <v-col cols="2">
                             <v-btn
@@ -124,9 +150,10 @@ onMounted(() => {
                                     class="text-none mb-4"
                                     color="indigo-darken-3"
                                     @click="pushAtlasNodes()">
-                                PUT
+                                Send Changed Nodes
                             </v-btn>
                         </v-col>
+                        <v-spacer cols="7"></v-spacer>
                     </v-row>
                 </v-card>
                 <v-card class="table-container">
@@ -314,7 +341,7 @@ onMounted(() => {
 }
 
 .card-top {
-    padding: 60px;
+    padding: 20px;
 }
 
 .table-container {
@@ -332,4 +359,9 @@ onMounted(() => {
 .flex-table > div {
     width: 80%;
 }
+
+.v-select.fit {
+    width: 200px;
+}
+
 </style>

@@ -57,6 +57,7 @@ function clearActiveBossFilters() {
                                                                    @click="clearActiveBossFilters()"
                                                                    density="compact"
                                                                    v-bind="props"
+                                                                   variant="text"
                                                                    :disabled="activeBossFilters < 1"></v-btn>
                                                         </template>
                                                         <p>Clear Active Boss Filters</p>
