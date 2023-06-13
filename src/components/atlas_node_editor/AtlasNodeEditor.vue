@@ -426,16 +426,16 @@
                             </v-col>
                             <v-col cols="1"></v-col>
                             <v-col cols="2">
-                                <v-btn
-                                        :disabled="loading"
-                                        :loading="loading"
-                                        class="text-none mb-4"
-                                        color="indigo-darken-3"
-                                        size="x-large"
-                                        variant="flat"
-                                        @click="putSelectedAtlasNode(selectedAtlasNode)">
-                                    PUT
-                                </v-btn>
+                                <!--                                <v-btn-->
+                                <!--                                        :disabled="loading"-->
+                                <!--                                        :loading="loading"-->
+                                <!--                                        class="text-none mb-4"-->
+                                <!--                                        color="indigo-darken-3"-->
+                                <!--                                        size="x-large"-->
+                                <!--                                        variant="flat"-->
+                                <!--                                        @click="putSelectedAtlasNode(selectedAtlasNode)">-->
+                                <!--                                    PUT-->
+                                <!--                                </v-btn>-->
                             </v-col>
                             <v-col cols="7"></v-col>
                         </v-row>
@@ -461,7 +461,7 @@
 
 <script setup lang="ts">
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
-import {computed, ref, watch} from "vue";
+import {computed, onMounted, ref, watch} from "vue";
 import type {AtlasNode} from "@/model/atlasNode";
 import convertToAtlasNodeImproveDto from "@/composable/atlas-node-improve-dto-converter";
 import type {DivinationCardImproveDto} from "@/model/dtos/divinationCardImproveDto";
@@ -478,6 +478,10 @@ let additionalTags = ref<string>()
 let loading = ref(false)
 let snackbar = ref(false)
 let snackbarText = ref<string>()
+
+onMounted(() => {
+    selectedAtlasNodeName.value = "Acton's Nightmare"
+})
 
 watch(selectedAtlasNodeName, () => {
     getAtlasNodeByName()
