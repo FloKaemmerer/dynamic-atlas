@@ -325,7 +325,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 8,
       "backtrackFactor": 1,
       "rushableBoss": true,
@@ -1120,7 +1120,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 2,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -1694,7 +1694,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 8,
       "backtrackFactor": 5,
       "rushableBoss": true,
@@ -4265,7 +4265,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 3,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -4779,7 +4779,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 5,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -5334,7 +5334,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 1,
       "traversability": 6,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -9242,7 +9242,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 1,
       "traversability": 3,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -9688,8 +9688,8 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
-      "skippablePhases": false,
+      "phased": true,
+      "skippablePhases": true,
       "spawned": true,
       "bossArena": false,
       "names": [
@@ -10137,7 +10137,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 6,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -10496,7 +10496,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 9,
       "backtrackFactor": 1,
       "rushableBoss": true,
@@ -10764,17 +10764,17 @@
       "numberOfBosses": 2,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 6,
       "backtrackFactor": 3,
-      "rushableBoss": false,
+      "rushableBoss": true,
       "notes": null,
       "baseMobCount": 0,
       "terrainSlots": 0,
@@ -11079,14 +11079,14 @@
       "numberOfBosses": 6,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 4,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -11363,7 +11363,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 1,
       "traversability": 5,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -11720,7 +11720,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 2,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -12403,16 +12403,16 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 6,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -12799,7 +12799,7 @@
     "boss": {
       "numberOfBosses": 1,
       "phased": false,
-      "skippablePhases": true,
+      "skippablePhases": false,
       "spawned": true,
       "bossArena": true,
       "names": [
@@ -12809,7 +12809,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 5,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -13920,7 +13920,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 10,
       "traversability": 8,
       "backtrackFactor": 0,
       "rushableBoss": false,
@@ -14268,14 +14268,14 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 3,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -14978,16 +14978,16 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
       "spawned": true,
       "bossArena": true,
       "names": [],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -15028,26 +15028,6 @@
     "uniqueMap": false,
     "divinationCards": [
       {
-        "name": "Brush, Paint and Palette",
-        "chaosValue": 5,
-        "exaltedValue": 0.28,
-        "divineValue": 0.02,
-        "bossOnly": true,
-        "stackSize": 5,
-        "flavourText": "\"Man may shape the world, but these? These shape the man.\" -Inquisitor Maligaro",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{The Artist}",
-            "optional": false
-          }
-        ],
-        "artFilename": "BrushPaintAndPalette",
-        "dropWeight": 606,
-        "dropRestricted": true,
-        "baseDropChance": 0.0023254743046601583,
-        "effectiveValue": 1.1627371523300793
-      },
-      {
         "name": "Doedre's Madness",
         "chaosValue": 4,
         "exaltedValue": 0.22,
@@ -15064,8 +15044,8 @@
         "artFilename": "DoedresMadness",
         "dropWeight": 11245,
         "dropRestricted": true,
-        "baseDropChance": 0.04315174679191994,
-        "effectiveValue": 17.260698716767976
+        "baseDropChance": 0.043252328971560006,
+        "effectiveValue": 17.300931588624003
       },
       {
         "name": "Her Mask",
@@ -15084,8 +15064,8 @@
         "artFilename": "HerMask",
         "dropWeight": 8083,
         "dropRestricted": true,
-        "baseDropChance": 0.031017836311168417,
-        "effectiveValue": 6.203567262233683
+        "baseDropChance": 0.031090135622687375,
+        "effectiveValue": 6.218027124537475
       },
       {
         "name": "Hope",
@@ -15104,8 +15084,8 @@
         "artFilename": "Hope",
         "dropWeight": 1681,
         "dropRestricted": true,
-        "baseDropChance": 0.006450696874808129,
-        "effectiveValue": 2.580278749923252
+        "baseDropChance": 0.006465732770226089,
+        "effectiveValue": 2.5862931080904357
       },
       {
         "name": "Lingering Remnants",
@@ -15124,8 +15104,8 @@
         "artFilename": "LingeringRemnants",
         "dropWeight": 1921,
         "dropRestricted": true,
-        "baseDropChance": 0.007371676797445816,
-        "effectiveValue": 0.7666543869343648
+        "baseDropChance": 0.007388859400121545,
+        "effectiveValue": 0.7684413776126406
       },
       {
         "name": "The Dragon's Heart",
@@ -15144,8 +15124,8 @@
         "artFilename": "TheDragonsHeart",
         "dropWeight": 36,
         "dropRestricted": true,
-        "baseDropChance": 0.00013814698839565296,
-        "effectiveValue": 0.5525879535826119
+        "baseDropChance": 0.0001384689944843184,
+        "effectiveValue": 0.5538759779372735
       },
       {
         "name": "The Encroaching Darkness",
@@ -15164,8 +15144,8 @@
         "artFilename": "TheEncroachingDarkness",
         "dropWeight": 776,
         "dropRestricted": true,
-        "baseDropChance": 0.0029778350831951863,
-        "effectiveValue": 0.8337938232946521
+        "baseDropChance": 0.002984776103328641,
+        "effectiveValue": 0.8357373089320195
       },
       {
         "name": "The Gambler",
@@ -15184,8 +15164,8 @@
         "artFilename": "TheGambler",
         "dropWeight": 4722,
         "dropRestricted": true,
-        "baseDropChance": 0.018120279977896482,
-        "effectiveValue": 1.8120279977896483
+        "baseDropChance": 0.018162516443193093,
+        "effectiveValue": 1.8162516443193093
       },
       {
         "name": "The Hunger",
@@ -15204,8 +15184,8 @@
         "artFilename": "TheHunger",
         "dropWeight": 443,
         "dropRestricted": true,
-        "baseDropChance": 0.0016999754405353964,
-        "effectiveValue": 0.8499877202676982
+        "baseDropChance": 0.0017039379043486957,
+        "effectiveValue": 0.8519689521743479
       },
       {
         "name": "The Oath",
@@ -15224,8 +15204,8 @@
         "artFilename": "TheOath",
         "dropWeight": 1830,
         "dropRestricted": true,
-        "baseDropChance": 0.007022471910112359,
-        "effectiveValue": 2.106741573033708
+        "baseDropChance": 0.007038840552952851,
+        "effectiveValue": 2.1116521658858556
       },
       {
         "name": "The Soul",
@@ -15244,8 +15224,8 @@
         "artFilename": "TheSoul",
         "dropWeight": 17,
         "dropRestricted": true,
-        "baseDropChance": 0.00006523607785350279,
-        "effectiveValue": 0.9407042426475101
+        "baseDropChance": 0.00006538813628426146,
+        "effectiveValue": 0.9428969252190502
       },
       {
         "name": "The Surveyor",
@@ -15264,8 +15244,8 @@
         "artFilename": "TheSurveyor",
         "dropWeight": 4396,
         "dropRestricted": true,
-        "baseDropChance": 0.01686928224964696,
-        "effectiveValue": 8.434641124823479
+        "baseDropChance": 0.016908602770918435,
+        "effectiveValue": 8.454301385459217
       },
       {
         "name": "The Tinkerer's Table",
@@ -15284,8 +15264,8 @@
         "artFilename": "TheTinkerersTable",
         "dropWeight": 193,
         "dropRestricted": true,
-        "baseDropChance": 0.0007406213544544729,
-        "effectiveValue": 0.3703106772272365
+        "baseDropChance": 0.0007423476648742625,
+        "effectiveValue": 0.37117383243713126
       },
       {
         "name": "The Trial",
@@ -15304,8 +15284,8 @@
         "artFilename": "TheTrial",
         "dropWeight": 5963,
         "dropRestricted": true,
-        "baseDropChance": 0.022882513661202187,
-        "effectiveValue": 4.576502732240438
+        "baseDropChance": 0.022935850391944183,
+        "effectiveValue": 4.587170078388836
       },
       {
         "name": "Vile Power",
@@ -15324,8 +15304,8 @@
         "artFilename": "VilePower",
         "dropWeight": 1330,
         "dropRestricted": true,
-        "baseDropChance": 0.005103763737950513,
-        "effectiveValue": 2.5518818689752565
+        "baseDropChance": 0.0051156600740039845,
+        "effectiveValue": 2.557830037001992
       }
     ],
     "filterTags": [],
@@ -15348,8 +15328,8 @@
       "artFilename": "TheSoul",
       "dropWeight": 17,
       "dropRestricted": true,
-      "baseDropChance": 0.00006523607785350279,
-      "effectiveValue": 0.9407042426475101
+      "baseDropChance": 0.00006538813628426146,
+      "effectiveValue": 0.9428969252190502
     },
     "boss": {
       "numberOfBosses": 1,
@@ -15364,7 +15344,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 10,
       "traversability": 4,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -15391,8 +15371,8 @@
       "artFilename": "TheSoul",
       "dropWeight": 17,
       "dropRestricted": true,
-      "baseDropChance": 0.00006523607785350279,
-      "effectiveValue": 0.9407042426475101
+      "baseDropChance": 0.00006538813628426146,
+      "effectiveValue": 0.9428969252190502
     }
   },
   {
@@ -15781,7 +15761,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 6,
       "traversability": 4,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -16056,7 +16036,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 7,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -16453,7 +16433,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 8,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -16770,7 +16750,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 4,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -17187,7 +17167,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 3,
       "backtrackFactor": 6,
       "rushableBoss": false,
@@ -17604,7 +17584,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 4,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -17959,7 +17939,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 7,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -18425,7 +18405,7 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": true,
       "spawned": true,
       "bossArena": true,
@@ -18433,10 +18413,10 @@
         "Lycius, Midnight's Howl"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 6,
       "backtrackFactor": 0,
       "rushableBoss": false,
@@ -18784,7 +18764,7 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [],
       "notes": null,
@@ -18794,7 +18774,7 @@
       "linearity": 0,
       "traversability": 0,
       "backtrackFactor": 8,
-      "rushableBoss": false,
+      "rushableBoss": true,
       "notes": null,
       "baseMobCount": 0,
       "terrainSlots": 0,
@@ -19268,7 +19248,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 4,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -19608,7 +19588,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 6,
       "traversability": 4,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -19926,7 +19906,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 3,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -20272,16 +20252,16 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 1,
       "traversability": 1,
       "backtrackFactor": 8,
       "rushableBoss": false,
@@ -20698,7 +20678,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 4,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -21035,7 +21015,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 7,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -21370,7 +21350,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 8,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -21747,7 +21727,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 7,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -22001,10 +21981,10 @@
         "Spinner of False Hope"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 4,
       "backtrackFactor": 6,
       "rushableBoss": false,
@@ -22281,7 +22261,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 4,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -22660,7 +22640,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 8,
       "backtrackFactor": 6,
       "rushableBoss": false,
@@ -22997,7 +22977,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 10,
       "traversability": 5,
       "backtrackFactor": 0,
       "rushableBoss": false,
@@ -23272,7 +23252,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 7,
       "backtrackFactor": 3,
       "rushableBoss": true,
@@ -23906,7 +23886,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 5,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -24283,7 +24263,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 4,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -24778,7 +24758,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 7,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -25166,17 +25146,17 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 6,
       "backtrackFactor": 2,
-      "rushableBoss": false,
+      "rushableBoss": true,
       "notes": null,
       "baseMobCount": 0,
       "terrainSlots": 0,
@@ -26147,7 +26127,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 1,
       "traversability": 6,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -26475,14 +26455,14 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 5,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -26920,7 +26900,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 3,
       "backtrackFactor": 6,
       "rushableBoss": false,
@@ -27317,7 +27297,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 5,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -27683,16 +27663,16 @@
     },
     "boss": {
       "numberOfBosses": 2,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 7,
       "backtrackFactor": 0,
       "rushableBoss": false,
@@ -27966,10 +27946,10 @@
         "Lord of the Grey"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 10,
       "traversability": 4,
       "backtrackFactor": 0,
       "rushableBoss": true,
@@ -28551,7 +28531,7 @@
     "boss": {
       "numberOfBosses": 3,
       "phased": false,
-      "skippablePhases": true,
+      "skippablePhases": false,
       "spawned": true,
       "bossArena": true,
       "names": [
@@ -28563,7 +28543,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -28881,7 +28861,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 8,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -29255,10 +29235,10 @@
         "Gorulis, Will-Thief"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 6,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -29595,7 +29575,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 5,
       "backtrackFactor": 6,
       "rushableBoss": true,
@@ -30670,7 +30650,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 3,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -31168,7 +31148,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 5,
       "backtrackFactor": 3,
       "rushableBoss": true,
@@ -31842,7 +31822,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 3,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -32159,7 +32139,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 1,
       "backtrackFactor": 9,
       "rushableBoss": false,
@@ -32771,7 +32751,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -33077,16 +33057,16 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 5,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -33503,7 +33483,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 8,
       "backtrackFactor": 0,
       "rushableBoss": false,
@@ -33780,7 +33760,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 6,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -34197,7 +34177,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 4,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -34551,10 +34531,10 @@
         "Queen of the Great Tangle"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 9,
       "backtrackFactor": 0,
       "rushableBoss": false,
@@ -35259,14 +35239,14 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 8,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -35723,7 +35703,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 1,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -36091,14 +36071,14 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -36455,7 +36435,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 4,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -36863,14 +36843,14 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 7,
       "backtrackFactor": 8,
       "rushableBoss": false,
@@ -37167,7 +37147,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 6,
       "traversability": 6,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -37564,7 +37544,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -37870,16 +37850,16 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 1,
       "traversability": 0,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -38288,7 +38268,7 @@
       "phased": false,
       "skippablePhases": false,
       "spawned": true,
-      "bossArena": false,
+      "bossArena": true,
       "names": [
         "Shavronne the Sickening"
       ],
@@ -38940,7 +38920,7 @@
     "boss": {
       "numberOfBosses": 1,
       "phased": true,
-      "skippablePhases": false,
+      "skippablePhases": true,
       "spawned": true,
       "bossArena": true,
       "names": [
@@ -38950,7 +38930,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 2,
       "backtrackFactor": 9,
       "rushableBoss": false,
@@ -39842,7 +39822,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -40159,7 +40139,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -40853,7 +40833,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 5,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -41160,7 +41140,7 @@
     "boss": {
       "numberOfBosses": 1,
       "phased": true,
-      "skippablePhases": true,
+      "skippablePhases": false,
       "spawned": true,
       "bossArena": true,
       "names": [
@@ -41170,7 +41150,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 0,
       "backtrackFactor": 8,
       "rushableBoss": false,
@@ -41974,15 +41954,15 @@
     "boss": {
       "numberOfBosses": 1,
       "phased": true,
-      "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "skippablePhases": true,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 6,
       "traversability": 8,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -42308,8 +42288,8 @@
     },
     "boss": {
       "numberOfBosses": 2,
-      "phased": false,
-      "skippablePhases": true,
+      "phased": true,
+      "skippablePhases": false,
       "spawned": true,
       "bossArena": true,
       "names": [
@@ -42320,7 +42300,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 7,
       "backtrackFactor": 0,
       "rushableBoss": false,
@@ -42628,14 +42608,14 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 2,
       "traversability": 5,
       "backtrackFactor": 5,
       "rushableBoss": false,
@@ -42973,7 +42953,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 3,
       "backtrackFactor": 4,
       "rushableBoss": false,
@@ -44008,7 +43988,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 6,
       "traversability": 7,
       "backtrackFactor": 2,
       "rushableBoss": true,
@@ -44416,11 +44396,11 @@
       "numberOfBosses": 3,
       "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
       "linearity": 0,
@@ -44680,7 +44660,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 6,
       "traversability": 3,
       "backtrackFactor": 9,
       "rushableBoss": false,
@@ -44969,7 +44949,7 @@
       "phased": false,
       "skippablePhases": false,
       "spawned": true,
-      "bossArena": false,
+      "bossArena": true,
       "names": [
         "The Goddess"
       ],
@@ -44977,10 +44957,10 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 1,
       "backtrackFactor": 7,
-      "rushableBoss": true,
+      "rushableBoss": false,
       "notes": null,
       "baseMobCount": 7,
       "terrainSlots": 0,
@@ -45283,16 +45263,16 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 6,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -45915,16 +45895,16 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
-      "skippablePhases": false,
-      "spawned": false,
+      "phased": true,
+      "skippablePhases": true,
+      "spawned": true,
       "bossArena": false,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 8,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -46401,7 +46381,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 7,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -47272,10 +47252,10 @@
         "The Steel Soul"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 3,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -47603,14 +47583,14 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 1,
       "traversability": 1,
       "backtrackFactor": 8,
       "rushableBoss": false,
@@ -48129,7 +48109,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 7,
       "traversability": 5,
       "backtrackFactor": 8,
       "rushableBoss": false,
@@ -48964,7 +48944,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 5,
       "traversability": 4,
       "backtrackFactor": 3,
       "rushableBoss": false,
@@ -49982,7 +49962,7 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": true,
       "spawned": true,
       "bossArena": true,
@@ -49990,10 +49970,10 @@
         "Captain Clayborne, The Accursed"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 9,
       "traversability": 4,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -50350,7 +50330,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 4,
       "backtrackFactor": 7,
       "rushableBoss": false,
@@ -50647,7 +50627,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 8,
       "backtrackFactor": 1,
       "rushableBoss": false,
@@ -51022,7 +51002,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 8,
       "traversability": 5,
       "backtrackFactor": 2,
       "rushableBoss": false,
@@ -51399,7 +51379,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 4,
       "traversability": 8,
       "backtrackFactor": 6,
       "rushableBoss": false,
@@ -51858,7 +51838,7 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
+      "linearity": 3,
       "traversability": 7,
       "backtrackFactor": 5,
       "rushableBoss": false,
