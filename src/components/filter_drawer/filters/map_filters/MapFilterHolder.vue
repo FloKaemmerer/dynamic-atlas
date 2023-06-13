@@ -59,6 +59,7 @@ function clearActiveMapFilters() {
                                                                    @click="clearActiveMapFilters()"
                                                                    density="compact"
                                                                    v-bind="props"
+                                                                   variant="text"
                                                                    :disabled="activeMapFilters < 1"></v-btn>
                                                         </template>
                                                         <p>Clear Active Map Filters</p>

@@ -8,6 +8,11 @@ const router = createRouter({
             path: '/',
             name: 'home',
             component: () => import('@/components/DynamicAtlas.vue')
+        },
+        {
+            path: '/atlasNodes/',
+            name: 'AtlasNodes',
+            component: () => import('@/components/atlas_node_editor/AtlasNodesEditorTableView.vue')
         }
     ]
 })
