@@ -1,7 +1,9 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import NotFound from "@/views/NotFound.vue";
+import AtlasNodesEditorTableView from "@/views/AtlasNodesEditorTableView.vue";
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
+    history: createWebHistory(),
     routes: [
 
         {
@@ -10,11 +12,16 @@ const router = createRouter({
             component: () => import('@/components/DynamicAtlas.vue')
         },
         {
-            path: '/atlasNodes/',
+            path: '/atlasNodes',
             name: 'AtlasNodes',
             alias: '/atlasNodes',
-            component: () => import('@/components/atlas_node_editor/AtlasNodesEditorTableView.vue')
-        }
+            component: AtlasNodesEditorTableView,
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: NotFound
+        },
     ]
 })
 
