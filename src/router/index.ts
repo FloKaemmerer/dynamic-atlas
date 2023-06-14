@@ -12,6 +12,7 @@ const router = createRouter({
         {
             path: '/atlasNodes/',
             name: 'AtlasNodes',
+            alias: '/atlasNodes',
             component: () => import('@/components/atlas_node_editor/AtlasNodesEditorTableView.vue')
         }
     ]
