@@ -38,6 +38,7 @@
                 <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
                     Changelog
                 </v-btn>
+                <router-link to="/atlasNodes">AtlasNodes</router-link>
             </v-col>
         </v-row>
     </v-navigation-drawer>
