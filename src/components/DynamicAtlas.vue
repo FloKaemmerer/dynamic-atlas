@@ -21,6 +21,7 @@ import getOverlayColor from "@/composable/overlay-color-utils";
 import type {StageState} from "@/model/stageState";
 import buildAtlasNodeTooltipText from "@/composable/atlas-node-tooltip-text-builder";
 import {useDivinationCardOverlayStore} from "@/store/DivinationCardOverlayStore";
+import calculateEffectiveMapTier from "@/composable/effective-map-tier-calculator";
 
 const coordinatesScaleFactor = 1.925
 const minHeight = 937
@@ -30,6 +31,11 @@ const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();
 const atlasNodeOverlayStore = useAtlasNodeOverlayStore();
 const divinationCardOverlayStore = useDivinationCardOverlayStore();
+
+let state: StageState
+
+let mapLayer = new Konva.Layer();
+let reactiveLayer = new Konva.Layer();
 
 const backgroundGroup = new Konva.Group();
 const linksGroup = new Konva.Group();
@@ -41,7 +47,7 @@ const overlayGroup = new Konva.Group();
 const filterHighlightGroup = new Konva.Group();
 const reactiveGroup = new Konva.Group();
 
-let state: StageState
+const drawnLinks: [string, string][] = [];
 
 //FIXME Refactor this abomination of a component
 
@@ -56,16 +62,7 @@ function getHandlerReactiveAreaClicked(atlasNode: AtlasNode) {
     };
 }
 
-const mounted = () => {
-    state = {
-        stage: undefined,
-        currentScale: 1,
-        height: minHeight,
-        width: minWidth,
-        offsetX: 175,
-        offsetY: 65,
-    }
-
+function initCanvasStructure(pos: any) {
     let stage = new Konva.Stage({
         container: 'atlas',
         id: 'atlas-stage',
@@ -76,60 +73,13 @@ const mounted = () => {
         offsetX: state.offsetX,
         offsetY: state.offsetY,
         draggable: true,
-        dragBoundFunc: dragBound.bind(this)
-
+        dragBoundFunc: dragBound.bind(pos)
     });
 
     state.stage = stage
 
-    createBackgroundImage();
-    let mapLayer = new Konva.Layer();
-    let reactiveLayer = new Konva.Layer();
-
     stage.add(mapLayer);
     stage.add(reactiveLayer)
-
-    let tooltipText = getTooltipBaseText();
-    let tooltipContainer = getTooltipContainer();
-
-    tooltipGroup.add(tooltipContainer);
-    tooltipGroup.add(tooltipText);
-
-    let drawnLinks: [string, string][] = [];
-    atlasNodeStore.atlasNodes.forEach((atlasNode: AtlasNode) => {
-        if (atlasNode.active) {
-            let locX = getScaledAtlasNodeLocX(atlasNode)
-            let locY = getScaledAtlasNodeLocY(atlasNode)
-            let mapNodeName = atlasNode.name.replace(/'|,|\s/g, '')
-
-            addLinkToGroup(linksGroup, atlasNode, drawnLinks, atlasNodeStore.atlasNodesMap)
-            if (atlasNode.uniqueMap) {
-                addImageToGroup(mapSymbolGroup, uniqueMapList.get(mapNodeName) || "", locX, locY)
-            } else {
-                addImageToGroup(mapBaseGroup, mapBase, locX, locY);
-                let mapNodeSource: string
-                if (isRedTier(atlasNode.mapTier)) {
-                    mapNodeSource = redTierMapList.get(mapNodeName) || ""
-                } else if (isYellowTier(atlasNode.mapTier)) {
-                    mapNodeSource = yellowTierMapList.get(mapNodeName) || ""
-                } else {
-                    // not red or yellow, has to be white
-                    mapNodeSource = whiteTierMapList.get(mapNodeName) || ""
-                }
-                addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY);
-            }
-            addMapNameToGroup(mapNameGroup, atlasNode.name, locX, locY);
-
-            let reactiveNodeArea = getHighlightArea(locX, locY);
-            reactiveNodeArea.on('click', getHandlerReactiveAreaClicked(atlasNode))
-            reactiveNodeArea.on('tap', getHandlerReactiveAreaClicked(atlasNode))
-            showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, atlasNode)
-
-            hideTooltip(reactiveNodeArea, tooltipText, tooltipContainer)
-
-            reactiveGroup.add(reactiveNodeArea)
-        }
-    });
 
     mapLayer.add(backgroundGroup)
     mapLayer.add(linksGroup)
@@ -141,7 +91,101 @@ const mounted = () => {
     mapLayer.add(tooltipGroup)
 
     reactiveLayer.add(reactiveGroup)
+}
 
+function initState() {
+    state = {
+        stage: undefined,
+        currentScale: 1,
+        height: minHeight,
+        width: minWidth,
+        offsetX: 175,
+        offsetY: 65,
+    }
+}
+
+function addDetailsDrawerCloseHandlerToImage(konvaImage: Konva.Image) {
+    konvaImage.on('click', function () {
+        handleToggleDrawer(false)
+    })
+    konvaImage.on('tap', function () {
+        handleToggleDrawer(false)
+    })
+}
+
+function initBackgroundImage() {
+    const backgroundImage = drawBackgroundImage();
+    addDetailsDrawerCloseHandlerToImage(backgroundImage);
+}
+
+function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
+    let locX = getScaledAtlasNodeLocX(atlasNode)
+    let locY = getScaledAtlasNodeLocY(atlasNode)
+    let reactiveNodeArea = getHighlightArea(locX, locY);
+    reactiveNodeArea.on('click', getHandlerReactiveAreaClicked(atlasNode))
+    reactiveNodeArea.on('tap', getHandlerReactiveAreaClicked(atlasNode))
+
+    tooltipText.text(buildAtlasNodeTooltipText(atlasNode))
+    showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, locX, locY)
+
+    hideTooltip(reactiveNodeArea, tooltipText, tooltipContainer)
+
+    reactiveGroup.add(reactiveNodeArea)
+}
+
+function drawNormalNode(locX: number, locY: number, effectiveMapTier: number, cleanNodeName: string) {
+    addImageToGroup(mapBaseGroup, mapBase, locX, locY);
+    let mapNodeSource: string
+    if (isRedTier(effectiveMapTier)) {
+        mapNodeSource = redTierMapList.get(cleanNodeName) || ""
+    } else if (isYellowTier(effectiveMapTier)) {
+        mapNodeSource = yellowTierMapList.get(cleanNodeName) || ""
+    } else {
+        // not red or yellow, has to be white
+        mapNodeSource = whiteTierMapList.get(cleanNodeName) || ""
+    }
+    addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY);
+}
+
+function drawUniqueNode(cleanNodeName: string, locX: number, locY: number) {
+    addImageToGroup(mapSymbolGroup, uniqueMapList.get(cleanNodeName) || "", locX, locY);
+}
+
+function initNodeImages(atlasNode: AtlasNode) {
+    const locX = getScaledAtlasNodeLocX(atlasNode)
+    const locY = getScaledAtlasNodeLocY(atlasNode)
+    const cleanNodeName = atlasNode.name.replace(/'|,|\s/g, '')
+    const effectiveMapTier = calculateEffectiveMapTier(atlasNode.mapTier);
+    if (atlasNode.uniqueMap) {
+        drawUniqueNode(cleanNodeName, locX, locY);
+    } else {
+        drawNormalNode(locX, locY, effectiveMapTier, cleanNodeName);
+    }
+}
+
+function initNodeLinksAndNames(atlasNode: AtlasNode) {
+    let locX = getScaledAtlasNodeLocX(atlasNode)
+    let locY = getScaledAtlasNodeLocY(atlasNode)
+    drawMapName(atlasNode.name, locX, locY);
+    drawLinksBetweenNodes(atlasNode, atlasNodeStore.atlasNodesMap)
+}
+
+const initAtlasCanvas = () => {
+    initState();
+    initCanvasStructure(this)
+    initBackgroundImage();
+
+    let tooltipText = getTooltipBaseText();
+    let tooltipContainer = getTooltipContainer();
+
+    tooltipGroup.add(tooltipContainer);
+    tooltipGroup.add(tooltipText);
+
+    atlasNodeStore.atlasNodes.forEach((atlasNode: AtlasNode) => {
+        initNodeLinksAndNames(atlasNode);
+        initNodeImages(atlasNode);
+        initReactiveArea(atlasNode, tooltipText, tooltipContainer);
+    })
     handleZoom(state)
 }
 
@@ -280,21 +324,22 @@ function getScaledAtlasNodeLocY(atlasNode: AtlasNode) {
     return Number(atlasNode.locY) * coordinatesScaleFactor
 }
 
-function createBackgroundImage() {
+function drawBackgroundImage(): Konva.Image {
     let atlasBackgroundImage = new Image();
     atlasBackgroundImage.src = atlasBackgroundSource;
     let atlasBackgroundKonvaImage = new Konva.Image({
+        id: "atlas-background",
         image: atlasBackgroundImage,
     });
     atlasBackgroundImage.onload = function () {
+        let image = backgroundGroup.findOne('#atlas-background')
+        if (image) {
+            image.destroy()
+        }
         backgroundGroup.add(atlasBackgroundKonvaImage);
     };
-    atlasBackgroundKonvaImage.on('click', function () {
-        handleToggleDrawer(false)
-    })
-    atlasBackgroundKonvaImage.on('tap', function () {
-        handleToggleDrawer(false)
-    })
+
+    return atlasBackgroundKonvaImage
 }
 
 function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, locY: number) {
@@ -314,7 +359,7 @@ function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, 
     }
 }
 
-function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, locY: number) {
+function drawMapName(mapName: string, locX: number, locY: number) {
     let mapNodeNameKonvaText = new Konva.Text({
         Text: mapName,
         x: locX,
@@ -329,15 +374,15 @@ function addMapNameToGroup(group: Konva.Group, mapName: string, locX: number, lo
         shadowOffset: {x: 1, y: 1},
         shadowOpacity: 1,
     })
-    group.add(mapNodeNameKonvaText)
+    mapNameGroup.add(mapNodeNameKonvaText)
 }
 
-function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [string, string][], atlasNodesMap: Map<string, AtlasNode>) {
+function drawLinksBetweenNodes(atlasNode: AtlasNode, atlasNodesMap: Map<string, AtlasNode>) {
     let linkedNodeIds = atlasNode.linked.split(',');
     linkedNodeIds.forEach(linkedNodeId => {
         let linkedNode = atlasNodesMap.get(linkedNodeId)
         let atlasNodeId = atlasNode.id
-        if (linkedNode && linkedNode.active) {
+        if (linkedNode) {
             let lineDrawn = false;
             let linkedNodeId = linkedNode.id
             drawnLinks.forEach(drawnLink => {
@@ -348,7 +393,7 @@ function addLinkToGroup(group: Konva.Group, atlasNode: AtlasNode, drawnLinks: [s
             });
             if (!lineDrawn) {
                 let line = getLinkLine(atlasNode, linkedNode)
-                group.add(line)
+                linksGroup.add(line)
                 drawnLinks.push([atlasNode.id, linkedNodeId])
             }
         }
@@ -374,9 +419,7 @@ function isRedTier(mapTier: number) {
     return mapTier > 10
 }
 
-function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, atlasNode: AtlasNode) {
-    let locX = getScaledAtlasNodeLocX(atlasNode)
-    let locY = getScaledAtlasNodeLocY(atlasNode)
+function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, locX: number, locY: number) {
     mapHighlightArea.on('mousemove', function () {
         tooltipText.position({
             x: locX + 50,
@@ -386,9 +429,7 @@ function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
             x: locX + 50,
             y: locY - 70
         })
-        tooltipText.text(buildAtlasNodeTooltipText(atlasNode))
         tooltipContainer.height(tooltipText.height())
-
 
         tooltipText.show()
         tooltipContainer.show()
@@ -458,6 +499,6 @@ function dragBound(pos: any) {
 }
 
 onMounted(() => {
-    mounted()
+    initAtlasCanvas()
 })
 </script>
