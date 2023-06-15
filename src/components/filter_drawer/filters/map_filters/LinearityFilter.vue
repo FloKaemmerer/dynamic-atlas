@@ -60,10 +60,10 @@ function debounceLinearityFilter(value: [number, number]) {
                     :disabled="!includeLinearity"
             >
                 <template v-slot:prepend>
-                    <v-label style="white-space: break-spaces">Linear</v-label>
+                    <v-label style="white-space: break-spaces">Not Linear</v-label>
                 </template>
                 <template v-slot:append>
-                    <v-label style="white-space: break-spaces">None Linear</v-label>
+                    <v-label style="white-space: break-spaces">Linear</v-label>
                 </template>
             </v-range-slider>
         </v-col>
