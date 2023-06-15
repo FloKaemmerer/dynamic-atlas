@@ -23,9 +23,9 @@ import buildAtlasNodeTooltipText from "@/composable/atlas-node-tooltip-text-buil
 import {useDivinationCardOverlayStore} from "@/store/DivinationCardOverlayStore";
 import calculateEffectiveMapTier from "@/composable/effective-map-tier-calculator";
 
-const coordinatesScaleFactor = 1.925
-const minHeight = 937
-const minWidth = 1920
+const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
+const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
+const minWidth = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_WIDTH}`)
 
 const atlasNodeStore = useAtlasNodeStore();
 const detailsDrawerStore = useDetailsDrawerStore();

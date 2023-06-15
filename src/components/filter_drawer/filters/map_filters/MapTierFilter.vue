@@ -54,12 +54,10 @@ function debounceMapTierFilter(value: [number, number]) {
                     :disabled="!includeMapTier"
             >
                 <template v-slot:prepend>
-                    <v-label style="white-space: break-spaces">{{ mapTier[0] }}
-                    </v-label>
+                    {{ mapTier[0] }}
                 </template>
                 <template v-slot:append>
-                    <v-label style="white-space: break-spaces">{{ mapTier[1] }}
-                    </v-label>
+                    {{ mapTier[1] }}
                 </template>
             </v-range-slider>
         </v-col>
