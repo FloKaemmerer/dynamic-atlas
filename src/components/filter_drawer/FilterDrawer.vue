@@ -38,6 +38,10 @@
                 <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
                     Changelog
                 </v-btn>
+                <v-label>|</v-label>
+                <v-btn variant="text" role="link" @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')">
+                    Raw Data
+                </v-btn>
             </v-col>
         </v-row>
     </v-navigation-drawer>
@@ -50,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import {onBeforeMount, ref} from "vue";
+import {onMounted, ref} from "vue";
 import {initFilter} from "@/composable/atlas-filter-handler";
 import DivinationCardFilterHolder
     from "@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue";
@@ -82,7 +86,7 @@ const filterQueryStore = useFilterQueryStore();
 const route: RouteLocationNormalizedLoaded = useRoute();
 const router: Router = useRouter();
 
-onBeforeMount(() => {
+onMounted(() => {
     // We need to import the AtlasFilter composable, otherwise it won't trigger, even though it is subscribed to the FilterStore
     initFilter()
     handleQueryParams()
@@ -163,5 +167,9 @@ filterStore.$subscribe((mutation, state) => {
 async function pushToRouter(queryFilters: LooseFilters) {
     await router.isReady();
     await router.push({query: queryFilters})
+}
+
+function openInNewTab(url: string) {
+    window.open(url, '_blank', 'noreferrer');
 }
 </script>

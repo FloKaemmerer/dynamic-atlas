@@ -1,8 +1,5 @@
 <template>
-    <FilterDrawer/>
-    <v-main style="width: 100%" id="atlas">
-    </v-main>
-    <DetailsDrawer :drawer="false"/>
+    <v-main style="width: 100%" id="atlas"></v-main>
 </template>
 
 
@@ -20,8 +17,6 @@ import {useDetailsDrawerStore} from '@/store/DetailsDrawerStore';
 import {useAtlasNodeOverlayStore} from "@/store/AtlasNodeOverlayStore";
 import type {AtlasNode} from "@/model/atlasNode";
 import {handleZoom} from "@/composable/stage-zoom";
-import DetailsDrawer from "@/components/details_drawer/DetailsDrawer.vue";
-import FilterDrawer from "@/components/filter_drawer/FilterDrawer.vue";
 import getOverlayColor from "@/composable/overlay-color-utils";
 import type {StageState} from "@/model/stageState";
 import buildAtlasNodeTooltipText from "@/composable/atlas-node-tooltip-text-builder";
