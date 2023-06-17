@@ -356,7 +356,7 @@ divinationCardOverlayStore.$subscribe((mutation, state) => {
   allOverlayText.forEach(value => value.destroy())
 
   //show all overlay on all AtlasNodes
-  state.overlayDivinationCardsMap.forEach((value: number, key: AtlasNode) => {
+  state.overlayDivinationCardsMap.forEach((value: string, key: AtlasNode) => {
     let overlayCircle = new Konva.Circle({
       id: key.id + "-circle",
       x: getScaledAtlasNodeLocX(key),
@@ -380,10 +380,10 @@ divinationCardOverlayStore.$subscribe((mutation, state) => {
     overlayGroup.add(overlayRect)
 
     let overlayText = new Konva.Text({
-      Text: (value * 100).toFixed(3) + "%",
+      Text: value,
       x: getScaledAtlasNodeLocX(key) - 3,
       y: getScaledAtlasNodeLocY(key) - 32,
-      offsetX: ((value * 100).toFixed(3) + "%").length * 3.75,
+      offsetX: value.length * 3.75,
       fontSize: 20,
       fontFamily: 'Arial',
       fontStyle: 'bold',
