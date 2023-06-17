@@ -55,15 +55,40 @@ const drawnLinks: [string, string][] = [];
 
 //FIXME Refactor this abomination of a component
 
-function handleToggleDrawer(e: boolean) {
-  detailsDrawerStore.SET_DRAWER(e)
+
+onMounted(() => {
+  initAtlasCanvas()
+})
+const initAtlasCanvas = () => {
+  initState();
+  initCanvasStructure(this)
+  initBackgroundImage();
+  initVoidstoneSockets();
+  initVoidstones()
+
+  let tooltipText = getTooltipBaseText();
+  let tooltipContainer = getTooltipContainer();
+
+  tooltipGroup.add(tooltipContainer);
+  tooltipGroup.add(tooltipText);
+
+  atlasNodeStore.atlasNodes.forEach((atlasNode: AtlasNode) => {
+    initNodeLinksAndNames(atlasNode);
+    initNodeImages(atlasNode);
+    initReactiveArea(atlasNode, tooltipText, tooltipContainer);
+  })
+  handleZoom(state)
 }
 
-function getHandlerReactiveAreaClicked(atlasNode: AtlasNode) {
-  return function () {
-    handleToggleDrawer(true)
-    atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
-  };
+function initState() {
+  state = {
+    stage: undefined,
+    currentScale: 1,
+    height: minHeight,
+    width: minWidth,
+    offsetX: 175,
+    offsetY: 65,
+  }
 }
 
 function initCanvasStructure(pos: any) {
@@ -97,29 +122,67 @@ function initCanvasStructure(pos: any) {
   reactiveLayer.add(reactiveGroup)
 }
 
-function initState() {
-  state = {
-    stage: undefined,
-    currentScale: 1,
-    height: minHeight,
-    width: minWidth,
-    offsetX: 175,
-    offsetY: 65,
-  }
-}
-
-function addDetailsDrawerCloseHandlerToImage(konvaImage: Konva.Image) {
-  konvaImage.on('click', function () {
-    handleToggleDrawer(false)
-  })
-  konvaImage.on('tap', function () {
-    handleToggleDrawer(false)
-  })
-}
-
 function initBackgroundImage() {
   const backgroundImage = drawBackgroundImage();
   addDetailsDrawerCloseHandlerToImage(backgroundImage);
+}
+
+function initVoidstoneSockets() {
+  const voidstoneSocketsSource = voidstoneList.get('voidstoneSockets');
+  if (voidstoneSocketsSource) {
+    let voidstoneSocketsImage = new Image();
+    voidstoneSocketsImage.src = voidstoneSocketsSource;
+    let voidstoneSocketsKonvaImage = new Konva.Image({
+      id: "voidstone-sockets",
+      image: voidstoneSocketsImage,
+      x: 508.95 * coordinatesScaleFactor,
+      y: 489.5 * coordinatesScaleFactor,
+      scaleX: 0.54,
+      scaleY: 0.54,
+    });
+    voidstoneSocketsImage.onload = function () {
+      let image = backgroundGroup.findOne('#voidstone-sockets')
+      if (image) {
+        image.destroy()
+      }
+      voidstoneSocketsKonvaImage.offsetX(voidstoneSocketsImage.width / 2)
+      voidstoneSocketsKonvaImage.offsetY(voidstoneSocketsImage.height / 2)
+      mapBaseGroup.add(voidstoneSocketsKonvaImage);
+    };
+    drawVoidstoneSocketsText();
+  }
+}
+
+function initVoidstones() {
+  voidStoneStore.voidstones.forEach(voidstone => {
+    drawVoidstone(voidstone)
+    let voidstoneReactiveZone = drawVoidstoneReactiveZone(voidstone.locX * coordinatesScaleFactor, voidstone.locY * coordinatesScaleFactor);
+
+    voidstoneReactiveZone.on('click', toggleVoidStone(voidstone))
+    voidstoneReactiveZone.on('tap', toggleVoidStone(voidstone))
+
+    reactiveGroup.add(voidstoneReactiveZone)
+  })
+}
+
+function initNodeLinksAndNames(atlasNode: AtlasNode) {
+  let locX = getScaledAtlasNodeLocX(atlasNode)
+  let locY = getScaledAtlasNodeLocY(atlasNode)
+  drawMapName(atlasNode.name, locX, locY);
+  drawLinksBetweenNodes(atlasNode, atlasNodeStore.atlasNodesMap)
+}
+
+function initNodeImages(atlasNode: AtlasNode) {
+  const locX = getScaledAtlasNodeLocX(atlasNode)
+  const locY = getScaledAtlasNodeLocY(atlasNode)
+  const cleanNodeName = atlasNode.name.replace(/'|,|\s/g, '')
+  const effectiveMapTier = calculateEffectiveMapTier(atlasNode.mapTier);
+  if (atlasNode.uniqueMap) {
+    drawUniqueNode(cleanNodeName, locX, locY);
+  } else {
+    addImageToGroup(mapBaseGroup, mapBase, locX, locY);
+    drawNormalNode(locX, locY, effectiveMapTier, cleanNodeName);
+  }
 }
 
 function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
@@ -136,42 +199,38 @@ function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltip
   reactiveGroup.add(reactiveNodeArea)
 }
 
-function drawNormalNode(locX: number, locY: number, effectiveMapTier: number, cleanNodeName: string) {
+function handleToggleDrawer(e: boolean) {
+  detailsDrawerStore.SET_DRAWER(e)
+}
 
-  let mapNodeSource: string
-  if (isRedTier(effectiveMapTier)) {
-    mapNodeSource = redTierMapList.get(cleanNodeName) || ""
-  } else if (isYellowTier(effectiveMapTier)) {
+function getHandlerReactiveAreaClicked(atlasNode: AtlasNode) {
+  return function () {
+    handleToggleDrawer(true)
+    atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
+  };
+}
+
+function addDetailsDrawerCloseHandlerToImage(konvaImage: Konva.Image) {
+  konvaImage.on('click', function () {
+    handleToggleDrawer(false)
+  })
+  konvaImage.on('tap', function () {
+    handleToggleDrawer(false)
+  })
+}
+
+function drawNormalNode(locX: number, locY: number, effectiveMapTier: number, cleanNodeName: string) {
+  let mapNodeSource = whiteTierMapList.get(cleanNodeName) || ""
+  if (isYellowTier(effectiveMapTier)) {
     mapNodeSource = yellowTierMapList.get(cleanNodeName) || ""
-  } else {
-    // not red or yellow, has to be white
-    mapNodeSource = whiteTierMapList.get(cleanNodeName) || ""
+  } else if (isRedTier(effectiveMapTier)) {
+    mapNodeSource = redTierMapList.get(cleanNodeName) || ""
   }
   addImageToGroup(mapSymbolGroup, mapNodeSource, locX, locY);
 }
 
 function drawUniqueNode(cleanNodeName: string, locX: number, locY: number) {
   addImageToGroup(mapSymbolGroup, uniqueMapList.get(cleanNodeName) || "", locX, locY);
-}
-
-function initNodeImages(atlasNode: AtlasNode) {
-  const locX = getScaledAtlasNodeLocX(atlasNode)
-  const locY = getScaledAtlasNodeLocY(atlasNode)
-  const cleanNodeName = atlasNode.name.replace(/'|,|\s/g, '')
-  const effectiveMapTier = calculateEffectiveMapTier(atlasNode.mapTier);
-  if (atlasNode.uniqueMap) {
-    drawUniqueNode(cleanNodeName, locX, locY);
-  } else {
-    addImageToGroup(mapBaseGroup, mapBase, locX, locY);
-    drawNormalNode(locX, locY, effectiveMapTier, cleanNodeName);
-  }
-}
-
-function initNodeLinksAndNames(atlasNode: AtlasNode) {
-  let locX = getScaledAtlasNodeLocX(atlasNode)
-  let locY = getScaledAtlasNodeLocY(atlasNode)
-  drawMapName(atlasNode.name, locX, locY);
-  drawLinksBetweenNodes(atlasNode, atlasNodeStore.atlasNodesMap)
 }
 
 function toggleVoidStone(voidstoneToToggle: Voidstone) {
@@ -205,32 +264,6 @@ function drawVoidstoneSocketsText() {
   mapNameGroup.add(voidstonesSocketsKonvaText)
 }
 
-function initVoidstoneSockets() {
-  const voidstoneSocketsSource = voidstoneList.get('voidstoneSockets');
-  if (voidstoneSocketsSource) {
-    let voidstoneSocketsImage = new Image();
-    voidstoneSocketsImage.src = voidstoneSocketsSource;
-    let voidstoneSocketsKonvaImage = new Konva.Image({
-      id: "voidstone-sockets",
-      image: voidstoneSocketsImage,
-      x: 508.95 * coordinatesScaleFactor,
-      y: 489.5 * coordinatesScaleFactor,
-      scaleX: 0.54,
-      scaleY: 0.54,
-    });
-    voidstoneSocketsImage.onload = function () {
-      let image = backgroundGroup.findOne('#voidstone-sockets')
-      if (image) {
-        image.destroy()
-      }
-      voidstoneSocketsKonvaImage.offsetX(voidstoneSocketsImage.width / 2)
-      voidstoneSocketsKonvaImage.offsetY(voidstoneSocketsImage.height / 2)
-      mapBaseGroup.add(voidstoneSocketsKonvaImage);
-    };
-    drawVoidstoneSocketsText();
-  }
-}
-
 function drawVoidstone(voidstone: Voidstone) {
   const voidstoneSource = voidstoneList.get(voidstone.sourceName) || "";
   let voidstoneImage = new Image();
@@ -260,39 +293,6 @@ function drawVoidstoneReactiveZone(locX: number, locY: number) {
     fill: 'red',
     opacity: 0
   });
-}
-
-function initVoidstones() {
-  voidStoneStore.voidstones.forEach(voidstone => {
-    drawVoidstone(voidstone)
-    let voidstoneReactiveZone = drawVoidstoneReactiveZone(voidstone.locX * coordinatesScaleFactor, voidstone.locY * coordinatesScaleFactor);
-
-    voidstoneReactiveZone.on('click', toggleVoidStone(voidstone))
-    voidstoneReactiveZone.on('tap', toggleVoidStone(voidstone))
-
-    reactiveGroup.add(voidstoneReactiveZone)
-  })
-}
-
-const initAtlasCanvas = () => {
-  initState();
-  initCanvasStructure(this)
-  initBackgroundImage();
-  initVoidstoneSockets();
-  initVoidstones()
-
-  let tooltipText = getTooltipBaseText();
-  let tooltipContainer = getTooltipContainer();
-
-  tooltipGroup.add(tooltipContainer);
-  tooltipGroup.add(tooltipText);
-
-  atlasNodeStore.atlasNodes.forEach((atlasNode: AtlasNode) => {
-    initNodeLinksAndNames(atlasNode);
-    initNodeImages(atlasNode);
-    initReactiveArea(atlasNode, tooltipText, tooltipContainer);
-  })
-  handleZoom(state)
 }
 
 atlasNodeOverlayStore.$subscribe((mutation, state) => {
@@ -648,7 +648,4 @@ function dragBound(pos: any) {
   }
 }
 
-onMounted(() => {
-  initAtlasCanvas()
-})
 </script>
