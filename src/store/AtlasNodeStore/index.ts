@@ -54,7 +54,6 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
                     }
                     atlasNode.filterTags = atlasNode.filterTags.concat(getMapTierFilterTags(atlasNode.mapTier))
                     this.atlasNodesMap.set(atlasNode.id, atlasNode)
-                    console.log("added: " + atlasNode.name + " using ID: " + atlasNode.id)
                     this.atlasNodes.push(atlasNode)
                     if (atlasNode.divinationCards) {
                         atlasNode.divinationCards = atlasNode.divinationCards.sort((a, b) => {

@@ -1,6 +1,7 @@
 import {useAtlasNodeOverlayStore} from "@/store/AtlasNodeOverlayStore";
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import type {AtlasNode} from "@/model/atlasNode";
+import {OverlayKeys} from "@/model/overlayKeys";
 
 
 const atlasNodeOverlayStore = useAtlasNodeOverlayStore();
@@ -69,27 +70,27 @@ function getBaseMobCountOverlayNodes() {
 export const handleAtlasNodeOverlay = (activeOverlay: string) => {
 
     switch (activeOverlay) {
-        case "opennessOverlay": {
+        case OverlayKeys.OPENNESS_OVERLAY: {
             atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getOpennessOverlayNodes())
             break;
         }
-        case "traversabilityOverlay": {
+        case OverlayKeys.TRAVERSABILITY_OVERLAY: {
             atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getTraversabilityOverlayNodes())
             break;
         }
-        case "linearityOverlay": {
+        case OverlayKeys.LINEARITY_OVERLAY: {
             atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getLinearityOverlayNodes())
             break;
         }
-        case "terrainSlotsOverlay": {
+        case OverlayKeys.TERRAIN_SLOTS_OVERLAY: {
             atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getTerrainSlotsOverlayNodes())
             break;
         }
-        case "backtrackFactorOverlay": {
+        case OverlayKeys.BACKTRACK_FACTOR_OVERLAY: {
             atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getBacktrackFactorOverlayNodes())
             break;
         }
-        case "baseMobCountOverlay": {
+        case OverlayKeys.BASE_MOB_COUNT_OVERLAY: {
             atlasNodeOverlayStore.SET_OVERLAY_ATLAS_NODES(getBaseMobCountOverlayNodes())
             break;
         }
