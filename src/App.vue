@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import {RouterView} from 'vue-router'
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
+import {useVoidStoneStore} from "@/store/voidStoneStore";
 
 const atlasNodeStore = useAtlasNodeStore()
+const voidstoneStore = useVoidStoneStore()
 
 atlasNodeStore.setupAtlasData()
+voidstoneStore.setupVoidstoneData()
 </script>
 
 <template>
