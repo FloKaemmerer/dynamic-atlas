@@ -66,8 +66,8 @@ const initAtlasCanvas = () => {
   initVoidstoneSockets();
   initVoidstones()
 
-  let tooltipText = getTooltipBaseText();
-  let tooltipContainer = getTooltipContainer();
+  let tooltipText = drawTooltipBaseText();
+  let tooltipContainer = drawTooltipContainer();
 
   tooltipGroup.add(tooltipContainer);
   tooltipGroup.add(tooltipText);
@@ -188,11 +188,11 @@ function initNodeImages(atlasNode: AtlasNode) {
 function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
   let locX = getScaledAtlasNodeLocX(atlasNode)
   let locY = getScaledAtlasNodeLocY(atlasNode)
-  let reactiveNodeArea = getHighlightArea(locX, locY);
+  let reactiveNodeArea = drawReactiveNodeArea(locX, locY);
   reactiveNodeArea.on('click', getHandlerReactiveAreaClicked(atlasNode))
   reactiveNodeArea.on('tap', getHandlerReactiveAreaClicked(atlasNode))
 
-  showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, locX, locY, atlasNode)
+  showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, atlasNode)
 
   hideTooltip(reactiveNodeArea, tooltipText, tooltipContainer)
 
@@ -471,23 +471,10 @@ function drawBackgroundImage(): Konva.Image {
   return atlasBackgroundKonvaImage
 }
 
-function getKonvaImageIdFromImageSource(imageSource: string) {
-  let konvaImageId = ''
-  const splitByBackSlash = imageSource.split('\\').pop();
-  let splitByForwardSlash
-  if (splitByBackSlash) {
-    splitByForwardSlash = splitByBackSlash.split('/').pop();
-  }
-  if (splitByForwardSlash) {
-    konvaImageId = splitByForwardSlash
-  }
-  return konvaImageId;
-}
-
 function addImageToGroup(group: Konva.Group, imageSource: string, locX: number, locY: number) {
   let image = new Image()
   image.src = imageSource
-  let konvaImageId = getKonvaImageIdFromImageSource(imageSource);
+  let konvaImageId = (imageSource.split('\\').pop() || '').split('/').pop() || '';
   let konvaImage = new Konva.Image({
     id: konvaImageId,
     image: image,
@@ -525,11 +512,11 @@ function drawMapName(mapName: string, locX: number, locY: number) {
   mapNameGroup.add(mapNodeNameKonvaText)
 }
 
-function drawLinksBetweenNodes(atlasNode: AtlasNode, atlasNodesMap: Map<string, AtlasNode>) {
-  let linkedNodeIds = atlasNode.linked.split(',');
+function drawLinksBetweenNodes(sourceAtlasNode: AtlasNode, candidateNodes: Map<string, AtlasNode>) {
+  let linkedNodeIds = sourceAtlasNode.linked.split(',');
   linkedNodeIds.forEach(linkedNodeId => {
-    let linkedNode = atlasNodesMap.get(linkedNodeId)
-    let atlasNodeId = atlasNode.id
+    let linkedNode = candidateNodes.get(linkedNodeId)
+    let atlasNodeId = sourceAtlasNode.id
     if (linkedNode) {
       let lineDrawn = false;
       let linkedNodeId = linkedNode.id
@@ -540,15 +527,15 @@ function drawLinksBetweenNodes(atlasNode: AtlasNode, atlasNodesMap: Map<string, 
         }
       });
       if (!lineDrawn) {
-        let line = getLinkLine(atlasNode, linkedNode)
+        let line = drawLinkLine(sourceAtlasNode, linkedNode)
         linksGroup.add(line)
-        drawnLinks.push([atlasNode.id, linkedNodeId])
+        drawnLinks.push([sourceAtlasNode.id, linkedNodeId])
       }
     }
   });
 }
 
-function getLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
+function drawLinkLine(sourceNode: AtlasNode, targetNode: AtlasNode) {
   return new Konva.Line({
     points: [getScaledAtlasNodeLocX(sourceNode), getScaledAtlasNodeLocY(sourceNode), getScaledAtlasNodeLocX(targetNode), getScaledAtlasNodeLocY(targetNode)],
     stroke: 'black',
@@ -567,7 +554,9 @@ function isRedTier(mapTier: number) {
   return mapTier > 10
 }
 
-function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, locX: number, locY: number, atlasNode: AtlasNode) {
+function showTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, tooltipContainer: Konva.Rect, atlasNode: AtlasNode) {
+  let locX = getScaledAtlasNodeLocX(atlasNode)
+  let locY = getScaledAtlasNodeLocY(atlasNode)
   mapHighlightArea.on('mousemove', function () {
     tooltipText.position({
       x: locX + 50,
@@ -593,7 +582,7 @@ function hideTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
   })
 }
 
-function getTooltipBaseText() {
+function drawTooltipBaseText() {
   return new Konva.Text({
     text: "",
     fontSize: 15,
@@ -606,13 +595,13 @@ function getTooltipBaseText() {
   })
 }
 
-function getTooltipContainer() {
+function drawTooltipContainer() {
   return new Konva.Rect({
     stroke: '#555',
     strokeWidth: 5,
     fill: '#ddd',
     width: 250,
-    height: getTooltipBaseText().height(),
+    height: drawTooltipBaseText().height(),
     shadowColor: 'black',
     shadowBlur: 10,
     shadowOffsetX: 10,
@@ -623,7 +612,7 @@ function getTooltipContainer() {
   })
 }
 
-function getHighlightArea(locX: number, locY: number) {
+function drawReactiveNodeArea(locX: number, locY: number) {
   return new Konva.Circle({
     x: locX,
     y: locY,
