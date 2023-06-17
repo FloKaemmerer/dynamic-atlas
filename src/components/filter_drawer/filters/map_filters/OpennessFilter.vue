@@ -60,10 +60,10 @@ function debounceOpennessFilter(value: [number, number]) {
                     :disabled="!includeOpenness"
             >
                 <template v-slot:prepend>
-                    <v-label style="white-space: break-spaces">Narrow</v-label>
+                    Narrow
                 </template>
                 <template v-slot:append>
-                    <v-label style="white-space: break-spaces">Open</v-label>
+                    Open
                 </template>
             </v-range-slider>
         </v-col>

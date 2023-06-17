@@ -60,10 +60,10 @@ function debounceTraversabilityFilter(value: [number, number]) {
                     :disabled="!includeTraversability"
             >
                 <template v-slot:prepend>
-                    <v-label style="white-space: break-spaces">Annoying</v-label>
+                    Annoying
                 </template>
                 <template v-slot:append>
-                    <v-label style="white-space: break-spaces">Easy</v-label>
+                    Easy
                 </template>
             </v-range-slider>
         </v-col>

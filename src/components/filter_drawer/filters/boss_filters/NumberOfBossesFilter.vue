@@ -55,16 +55,10 @@ function debounceNumberOfBossesFilter(value: [number, number]) {
                     :disabled="!includeNumberOfBosses"
             >
                 <template v-slot:prepend>
-                    <v-label style="white-space: break-spaces">{{
-                        numberOfBosses[0]
-                        }}
-                    </v-label>
+                    {{ numberOfBosses[0] }}
                 </template>
                 <template v-slot:append>
-                    <v-label style="white-space: break-spaces">{{
-                        numberOfBosses[1]
-                        }}
-                    </v-label>
+                    {{ numberOfBosses[1] }}
                 </template>
             </v-range-slider>
         </v-col>

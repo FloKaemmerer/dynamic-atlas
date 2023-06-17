@@ -1,0 +1,30 @@
+[
+  {
+    "id": "exarch",
+    "sourceName": "voidstoneExarch",
+    "locX": 508.9,
+    "locY": 497.7,
+    "active": false
+  },
+  {
+    "id": "eater",
+    "sourceName": "voidstoneEater",
+    "locX": 500,
+    "locY": 489.5,
+    "active": false
+  },
+  {
+    "id": "elder",
+    "sourceName": "voidstoneElder",
+    "locX": 518,
+    "locY": 489.5,
+    "active": false
+  },
+  {
+    "id": "shaper",
+    "sourceName": "voidstoneShaper",
+    "locX": 508.9,
+    "locY": 480,
+    "active": false
+  }
+]

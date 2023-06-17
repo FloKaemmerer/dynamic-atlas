@@ -60,12 +60,10 @@ function debounceBaseMobCountFilter(value: [number, number]) {
                     :disabled="!includeBaseMobCount"
             >
                 <template v-slot:prepend>
-                    <v-label style="white-space: break-spaces">Low
-                    </v-label>
+                    Low
                 </template>
                 <template v-slot:append>
-                    <v-label style="white-space: break-spaces">High
-                    </v-label>
+                    High
                 </template>
             </v-range-slider>
         </v-col>

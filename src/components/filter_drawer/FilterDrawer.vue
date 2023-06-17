@@ -22,23 +22,23 @@
                 <v-btn variant="text" @click="toggleAboutOverlay = !toggleAboutOverlay">
                     About
                 </v-btn>
-                <v-label>|</v-label>
+                |
                 <v-btn variant="text" @click="toggleImproveOverlay = !toggleImproveOverlay">
                     Improve
                 </v-btn>
-                <v-label>|</v-label>
+                |
                 <v-btn variant="text" @click="toggleContactOverlay = !toggleContactOverlay">
                     Contact
                 </v-btn>
-                <v-label>|</v-label>
+                |
                 <v-btn variant="text" @click="toggleGlossaryOverlay = !toggleGlossaryOverlay">
                     Glossary
                 </v-btn>
-                <v-label>|</v-label>
+                |
                 <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
                     Changelog
                 </v-btn>
-                <v-label>|</v-label>
+                |
                 <v-btn variant="text" role="link" @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')">
                     Raw Data
                 </v-btn>

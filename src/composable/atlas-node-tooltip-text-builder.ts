@@ -1,4 +1,5 @@
 import type {AtlasNode} from "@/model/atlasNode";
+import calculateEffectiveMapTier from "@/composable/effective-map-tier-calculator";
 
 const buildAtlasNodeTooltipText = (atlasNode: AtlasNode): string => {
 
@@ -19,6 +20,7 @@ const buildAtlasNodeTooltipText = (atlasNode: AtlasNode): string => {
     return atlasNode.name +
         "\n\n" +
         "Natural Tier: " + atlasNode.mapTier + "\n" +
+        "Effective Tier: " + calculateEffectiveMapTier(atlasNode.mapTier) + "\n" +
         "Openness: " + atlasNode.nodeLayout.openness + "\n" +
         "Traversability: " + atlasNode.nodeLayout.traversability + "\n" +
         "\n" +
