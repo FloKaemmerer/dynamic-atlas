@@ -32,7 +32,6 @@ export const handleDivinationCardOverlay = (activeDivinationCardOverlay: string,
 
 function getBaseDropChanceOverlayMap(divinationCardName: string) {
     const baseDropChanceOverlayMap = new Map<AtlasNode, string>();
-    //( divinationCard.baseDropChance * 100).toFixed(3) + "%"
     if (divinationCardName) {
         atlasNodeStore.atlasNodes.forEach(atlasNode => {
             atlasNode.divinationCards.filter(divinationCard => divinationCard.name == divinationCardName)
