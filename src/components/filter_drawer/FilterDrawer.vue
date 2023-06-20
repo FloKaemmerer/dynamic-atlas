@@ -1,55 +1,56 @@
 <template>
-    <v-navigation-drawer floating:true :width="400" class="bg-surface-variant mb-6" permanent:true absolute:true>
-        <v-row no-gutters>
-            <v-col>
-                <FilterToolbar/>
-                <TextFilterHolder/>
+  <v-navigation-drawer floating:true :width="400" class="bg-surface-variant mb-6" permanent:true absolute:true>
+    <v-row no-gutters>
+      <v-col>
+        <FilterToolbar/>
+        <TextFilterHolder/>
 
-                <MapFilterHolder/>
-                <BossFilterHolder/>
-                <DivinationCardFilterHolder/>
-                <AtlasOverlayHolder/>
+        <MapFilterHolder/>
+        <BossFilterHolder/>
+        <DivinationCardFilterHolder/>
+        <AtlasOverlayHolder/>
 
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col>
-                This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col>
-                <v-btn variant="text" @click="toggleAboutOverlay = !toggleAboutOverlay">
-                    About
-                </v-btn>
-                |
-                <v-btn variant="text" @click="toggleImproveOverlay = !toggleImproveOverlay">
-                    Improve
-                </v-btn>
-                |
-                <v-btn variant="text" @click="toggleContactOverlay = !toggleContactOverlay">
-                    Contact
-                </v-btn>
-                |
-                <v-btn variant="text" @click="toggleGlossaryOverlay = !toggleGlossaryOverlay">
-                    Glossary
-                </v-btn>
-                |
-                <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
-                    Changelog
-                </v-btn>
-                |
-                <v-btn variant="text" role="link" @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')">
-                    Raw Data
-                </v-btn>
-            </v-col>
-        </v-row>
-    </v-navigation-drawer>
-    <AboutOverlay :toggleOverlay="toggleAboutOverlay"></AboutOverlay>
-    <ImproveOverlay :toggleOverlay="toggleImproveOverlay"></ImproveOverlay>
-    <ContactOverlay :toggleOverlay="toggleContactOverlay"></ContactOverlay>
-    <GlossaryOverlay :toggle-overlay="toggleGlossaryOverlay"></GlossaryOverlay>
-    <ChangelogOverlay :toggle-overlay="toggleChangelogOverlay"></ChangelogOverlay>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <v-btn variant="text" @click="toggleAboutOverlay = !toggleAboutOverlay">
+          About
+        </v-btn>
+        |
+        <v-btn variant="text" @click="toggleImproveOverlay = !toggleImproveOverlay">
+          Improve
+        </v-btn>
+        |
+        <v-btn variant="text" @click="toggleContactOverlay = !toggleContactOverlay">
+          Contact
+        </v-btn>
+        |
+        <v-btn variant="text" @click="toggleGlossaryOverlay = !toggleGlossaryOverlay">
+          Glossary
+        </v-btn>
+        |
+        <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
+          Changelog
+        </v-btn>
+        |
+        <v-btn variant="text" role="link" @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')">
+          Raw Data
+        </v-btn>
+        <v-btn @click="applyAtlasMemory()">Apply AtlasMemory</v-btn>
+      </v-col>
+    </v-row>
+  </v-navigation-drawer>
+  <AboutOverlay :toggleOverlay="toggleAboutOverlay"></AboutOverlay>
+  <ImproveOverlay :toggleOverlay="toggleImproveOverlay"></ImproveOverlay>
+  <ContactOverlay :toggleOverlay="toggleContactOverlay"></ContactOverlay>
+  <GlossaryOverlay :toggle-overlay="toggleGlossaryOverlay"></GlossaryOverlay>
+  <ChangelogOverlay :toggle-overlay="toggleChangelogOverlay"></ChangelogOverlay>
 
 </template>
 
@@ -57,7 +58,7 @@
 import {onMounted, ref} from "vue";
 import {initFilter} from "@/composable/atlas-filter-handler";
 import DivinationCardFilterHolder
-    from "@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue";
+  from "@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue";
 import BossFilterHolder from "@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue";
 import MapFilterHolder from "@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue";
 import TextFilterHolder from "@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue";
@@ -74,6 +75,9 @@ import type {LooseFilters} from "@/model/looseFilters";
 import {useFilterQueryStore} from "@/store/FilterQueryStore";
 import handleUrlQueryFilters from "@/composable/url-query-filter-handler";
 import FilterToolbar from "@/components/filter_drawer/FilterToolbar.vue";
+import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
+import {calculatePathProbabilities} from "@/composable/atlas-memory-path-calculator";
+import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
@@ -85,91 +89,102 @@ const filterStore = useFilterStore();
 const filterQueryStore = useFilterQueryStore();
 const route: RouteLocationNormalizedLoaded = useRoute();
 const router: Router = useRouter();
+const atlasMemoryNodeStore = useAtlasMemoryNodeStore();
 
 onMounted(() => {
-    // We need to import the AtlasFilter composable, otherwise it won't trigger, even though it is subscribed to the FilterStore
-    initFilter()
-    handleQueryParams()
+  // We need to import the AtlasFilter composable, otherwise it won't trigger, even though it is subscribed to the FilterStore
+  initFilter()
+  handleQueryParams()
 })
 
 async function handleQueryParams() {
-    await router.isReady();
-    const queryParams: LocationQuery = route.query;
-    handleUrlQueryFilters(queryParams)
+  await router.isReady();
+  const queryParams: LocationQuery = route.query;
+  handleUrlQueryFilters(queryParams)
 }
 
 filterStore.$subscribe((mutation, state) => {
-    let queryFilters: LooseFilters = {}
-    // ----- Map Filters -----
-    if (state.filterText && state.filterText.length > 0) {
-        queryFilters.filterText = state.filterText
-    }
-    if (state.mapTier[0] >= 0 && state.includeMapTier) {
-        queryFilters.mapTier = String(state.mapTier)
-    }
-    if (state.openness[0] >= 0 && state.includeOpenness) {
-        queryFilters.openness = String(state.openness)
-    }
-    if (state.traversability[0] >= 0 && state.includeTraversability) {
-        queryFilters.traversability = String(state.traversability)
-    }
-    if (state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor) {
-        queryFilters.backtrackFactor = String(state.backtrackFactor)
-    }
-    if (state.linearity[0] >= 0 && state.includeLinearity) {
-        queryFilters.linearity = String(state.linearity)
-    }
-    if (state.terrainSlots[0] >= 0 && state.includeTerrainSlots) {
-        queryFilters.terrainSlots = String(state.terrainSlots)
-    }
-    if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount) {
-        queryFilters.baseMobCount = String(state.baseMobCount)
-    }
-    if (state.rushableBoss) {
-        queryFilters.rushableBoss = String(state.rushableBoss)
-    }
-    //--------------------------
+  let queryFilters: LooseFilters = {}
+  // ----- Map Filters -----
+  if (state.filterText && state.filterText.length > 0) {
+    queryFilters.filterText = state.filterText
+  }
+  if (state.mapTier[0] >= 0 && state.includeMapTier) {
+    queryFilters.mapTier = String(state.mapTier)
+  }
+  if (state.openness[0] >= 0 && state.includeOpenness) {
+    queryFilters.openness = String(state.openness)
+  }
+  if (state.traversability[0] >= 0 && state.includeTraversability) {
+    queryFilters.traversability = String(state.traversability)
+  }
+  if (state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor) {
+    queryFilters.backtrackFactor = String(state.backtrackFactor)
+  }
+  if (state.linearity[0] >= 0 && state.includeLinearity) {
+    queryFilters.linearity = String(state.linearity)
+  }
+  if (state.terrainSlots[0] >= 0 && state.includeTerrainSlots) {
+    queryFilters.terrainSlots = String(state.terrainSlots)
+  }
+  if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount) {
+    queryFilters.baseMobCount = String(state.baseMobCount)
+  }
+  if (state.rushableBoss) {
+    queryFilters.rushableBoss = String(state.rushableBoss)
+  }
+  //--------------------------
 
-    //------ Boss Filters ------
-    if (state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses) {
-        queryFilters.numberOfBosses = String(state.numberOfBosses)
-    }
-    if (state.excludePhasedBosses) {
-        queryFilters.excludePhasedBosses = String(state.excludePhasedBosses)
-    }
-    if (state.includeSkippablePhases) {
-        queryFilters.includeSkippablePhases = String(state.includeSkippablePhases)
-    }
-    if (state.includeSpawnIntro) {
-        queryFilters.includeSpawnIntro = String(state.includeSpawnIntro)
-    }
-    if (state.excludeSpawnedBosses) {
-        queryFilters.excludeSpawnedBosses = String(state.excludeSpawnedBosses)
-    }
-    //---------------------------
+  //------ Boss Filters ------
+  if (state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses) {
+    queryFilters.numberOfBosses = String(state.numberOfBosses)
+  }
+  if (state.excludePhasedBosses) {
+    queryFilters.excludePhasedBosses = String(state.excludePhasedBosses)
+  }
+  if (state.includeSkippablePhases) {
+    queryFilters.includeSkippablePhases = String(state.includeSkippablePhases)
+  }
+  if (state.includeSpawnIntro) {
+    queryFilters.includeSpawnIntro = String(state.includeSpawnIntro)
+  }
+  if (state.excludeSpawnedBosses) {
+    queryFilters.excludeSpawnedBosses = String(state.excludeSpawnedBosses)
+  }
+  //---------------------------
 
-    //- Divination Card Filters -
-    if (state.minDivinationCardPrice > 0) {
-        queryFilters.minDivinationCardPrice = state.minDivinationCardPrice
-    }
-    if (state.minEffectiveDivinationCardValue > 0) {
-        queryFilters.minEffectiveDivinationCardValue = state.minEffectiveDivinationCardValue
-    }
-    //---------------------------
+  //- Divination Card Filters -
+  if (state.minDivinationCardPrice > 0) {
+    queryFilters.minDivinationCardPrice = state.minDivinationCardPrice
+  }
+  if (state.minEffectiveDivinationCardValue > 0) {
+    queryFilters.minEffectiveDivinationCardValue = state.minEffectiveDivinationCardValue
+  }
+  //---------------------------
 
-    filterQueryStore.SET_FILTER_QUERY(queryFilters)
+  filterQueryStore.SET_FILTER_QUERY(queryFilters)
 
-    pushToRouter(queryFilters).then(() => {
-        console.log(route.query)
-    })
+  pushToRouter(queryFilters).then(() => {
+    console.log(route.query)
+  })
 })
 
 async function pushToRouter(queryFilters: LooseFilters) {
-    await router.isReady();
-    await router.push({query: queryFilters})
+  await router.isReady();
+  await router.push({query: queryFilters})
 }
 
 function openInNewTab(url: string) {
-    window.open(url, '_blank', 'noreferrer');
+  window.open(url, '_blank', 'noreferrer');
+}
+
+function applyAtlasMemory() {
+  const atlasNodeStore = useAtlasNodeStore()
+  const sourceNode = atlasNodeStore.atlasNodes.find(value => value.name == "Arsenal");
+  let candidates: Map<string, number> = new Map<string, number>()
+  if (sourceNode) {
+    calculatePathProbabilities(sourceNode, 5, 1, candidates)
+  }
+  atlasMemoryNodeStore.SET_ATLAS_MEMORY_NODES(candidates)
 }
 </script>
