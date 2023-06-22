@@ -4,6 +4,7 @@ import type {AtlasMemoryPath} from "@/model/atlasMemoryPath";
 interface State {
     atlasMemoryPaths: AtlasMemoryPath[],
     atlasMemoryModeEnabled: boolean,
+    numberOfMemorySteps: number
 }
 
 export const useAtlasMemoryNodeStore = defineStore("atlas-memory-nodes", {
@@ -11,6 +12,7 @@ export const useAtlasMemoryNodeStore = defineStore("atlas-memory-nodes", {
         return {
             atlasMemoryPaths: [],
             atlasMemoryModeEnabled: false,
+            numberOfMemorySteps: 3
         }
     },
 
@@ -21,6 +23,10 @@ export const useAtlasMemoryNodeStore = defineStore("atlas-memory-nodes", {
 
         SET_ATLAS_MEMORY_MODE_ENABLED(atlasMemoryModeEnabled: boolean) {
             this.atlasMemoryModeEnabled = atlasMemoryModeEnabled
+        },
+
+        SET_NUMBER_OF_MEMORY_STEPS(numberOfMemorySteps: number) {
+            this.numberOfMemorySteps = numberOfMemorySteps
         }
     }
 })

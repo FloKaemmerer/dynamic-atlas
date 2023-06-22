@@ -210,8 +210,8 @@ function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltip
 function initAtlasMemories() {
   let atlasMemoriesImage = new Image();
   atlasMemoriesImage.src = atlasMemorySource;
-  const locX = 508.95 * coordinatesScaleFactor;
-  const locY = 430.5 * coordinatesScaleFactor;
+  const locX = 506.95 * coordinatesScaleFactor;
+  const locY = 420.5 * coordinatesScaleFactor;
   let atlasMemoriesKonvaImage = new Konva.Image({
     id: "atlas-memories",
     image: atlasMemoriesImage,
@@ -231,7 +231,9 @@ function initAtlasMemories() {
   };
   const reactiveAtlasMemoriesArea = drawReactiveAtlasMemoriesArea(locX, locY);
   reactiveGroup.add(reactiveAtlasMemoriesArea)
-  reactiveAtlasMemoriesArea.on('click', toggleAtlasMemoryMode())
+  reactiveAtlasMemoriesArea.on('click tap', toggleAtlasMemoryMode())
+
+  drawAtlasMemoriesText(locX, locY)
 }
 
 function drawReactiveAtlasMemoriesArea(locX: number, locY: number) {
@@ -252,6 +254,120 @@ function toggleAtlasMemoryMode() {
   }
 }
 
+function increaseAtlasMemorySteps() {
+  return function () {
+    if (atlasMemoryNodeStore.numberOfMemorySteps < 6) {
+      atlasMemoryNodeStore.SET_NUMBER_OF_MEMORY_STEPS(atlasMemoryNodeStore.numberOfMemorySteps + 1)
+      if (atlasMemoryNodeStore.atlasMemoryModeEnabled && atlasNodeStore.selectedAtlasNode) {
+        calculateAtlasMemoryPaths(atlasNodeStore.selectedAtlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
+      }
+    }
+  }
+}
+
+function decreaseAtlasMemorySteps() {
+  return function () {
+    if (atlasMemoryNodeStore.numberOfMemorySteps > 3) {
+      atlasMemoryNodeStore.SET_NUMBER_OF_MEMORY_STEPS(atlasMemoryNodeStore.numberOfMemorySteps - 1)
+      if (atlasMemoryNodeStore.atlasMemoryModeEnabled && atlasNodeStore.selectedAtlasNode) {
+        calculateAtlasMemoryPaths(atlasNodeStore.selectedAtlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
+      }
+    }
+  }
+}
+
+function drawAtlasMemoriesText(locX: number, locY: number) {
+  const titleTextId = "atlas-memory-number-text";
+  const oldTitleText = mapNameGroup.findOne('#' + titleTextId);
+  if (oldTitleText) {
+    oldTitleText.destroy()
+  }
+  const numberTextId = "atlas-memory-number-text";
+  const oldNumberText = mapNameGroup.findOne('#' + numberTextId);
+  if (oldNumberText) {
+    oldNumberText.destroy()
+  }
+  const atlasMemoryTitleText = "Steps:";
+  let atlasMemoryTitleKonvaText = new Konva.Text({
+    id: titleTextId,
+    Text: atlasMemoryTitleText,
+    x: locX,
+    y: locY + 25,
+    offsetX: atlasMemoryTitleText.length * 3,
+    fontSize: 12,
+    fontFamily: 'Arial',
+    fill: 'black',
+    fontStyle: 'bold',
+    shadowColor: 'white',
+    shadowBlur: 10,
+    shadowOffset: {x: 1, y: 1},
+    shadowOpacity: 1,
+  })
+  const atlasMemoryNumberText = atlasMemoryNodeStore.numberOfMemorySteps + "";
+  let atlasMemoryNumberKonvaText = new Konva.Text({
+    id: numberTextId,
+    Text: atlasMemoryNumberText,
+    x: locX - 10,
+    y: locY + 40,
+    offsetX: atlasMemoryNumberText.length * 2,
+    fontSize: 16,
+    fontFamily: 'Arial',
+    fill: 'black',
+    fontStyle: 'bold',
+    shadowColor: 'white',
+    shadowBlur: 10,
+    shadowOffset: {x: 1, y: 1},
+    shadowOpacity: 1,
+  })
+  mapNameGroup.add(atlasMemoryTitleKonvaText)
+  mapNameGroup.add(atlasMemoryNumberKonvaText)
+
+  let triangleUp = new Konva.RegularPolygon({
+    x: locX + 5,
+    y: locY + 43,
+    sides: 3,
+    radius: 4,
+    fill: 'black',
+    stroke: 'white',
+    strokeWidth: 2,
+    lineJoin: 'round'
+  });
+  let triangleDown = new Konva.RegularPolygon({
+    x: locX + 5,
+    y: locY + 50,
+    sides: 3,
+    radius: 4,
+    rotation: 180,
+    fill: 'black',
+    stroke: 'white',
+    strokeWidth: 2,
+    lineJoin: 'round'
+  });
+  mapNameGroup.add(triangleDown)
+  mapNameGroup.add(triangleUp)
+
+  let atlasMemoryStepNumberUpReactiveArea = new Konva.Rect({
+    x: locX,
+    y: locY + 37,
+    fill: 'red',
+    width: 10,
+    height: 10,
+    opacity: 0
+  })
+  let atlasMemoryStepNumberDownReactiveArea = new Konva.Rect({
+    x: locX,
+    y: locY + 47,
+    fill: 'blue',
+    width: 10,
+    height: 10,
+    opacity: 0
+  })
+  atlasMemoryStepNumberUpReactiveArea.on('click tap', increaseAtlasMemorySteps())
+  atlasMemoryStepNumberDownReactiveArea.on('click tap', decreaseAtlasMemorySteps())
+  reactiveGroup.add(atlasMemoryStepNumberUpReactiveArea)
+  reactiveGroup.add(atlasMemoryStepNumberDownReactiveArea)
+}
+
 function handleToggleDrawer(e: boolean) {
   detailsDrawerStore.SET_DRAWER(e)
 }
@@ -259,11 +375,11 @@ function handleToggleDrawer(e: boolean) {
 function getHandlerReactiveAreaClicked(atlasNode: AtlasNode) {
   return function () {
     if (atlasMemoryNodeStore.atlasMemoryModeEnabled) {
-      calculateAtlasMemoryPaths(atlasNode, 6)
+      calculateAtlasMemoryPaths(atlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
     } else {
       handleToggleDrawer(true)
-      atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
     }
+    atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
   };
 }
 
@@ -520,13 +636,13 @@ atlasMemoryNodeStore.$subscribe((mutation, state) => {
   allOverlayText.forEach(value => value.destroy())
   let allOverlayLines = overlayGroup.find("Line") as Konva.Line[];
   allOverlayLines.forEach(value => value.destroy())
-
+  drawAtlasMemoriesText(506.95 * coordinatesScaleFactor, 420.5 * coordinatesScaleFactor)
   if (state.atlasMemoryModeEnabled) {
     //Highlighting the AtlasMemories "Button"
     let atlasMemoriesHighlightArea = new Konva.Circle({
       id: "atlas-memories-circle",
-      x: 508.95 * coordinatesScaleFactor,
-      y: 430.5 * coordinatesScaleFactor,
+      x: 506.95 * coordinatesScaleFactor,
+      y: 420.5 * coordinatesScaleFactor,
       stroke: 'black',
       strokeWidth: 3,
       fill: 'yellow',
