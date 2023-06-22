@@ -187,7 +187,7 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
 function filterBySpawnedBosses(excludeSpawnedBosses: boolean, result: AtlasNode[]) {
     if (excludeSpawnedBosses) {
         result = result.filter(atlasNode => {
-            return !atlasNode.boss.spawned
+            return !atlasNode.boss.spawned && !atlasNode.uniqueMap
         })
         activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.EXCLUDE_SPAWNED_BOSSES)
     } else {
