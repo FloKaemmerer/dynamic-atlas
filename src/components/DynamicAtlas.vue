@@ -5,6 +5,7 @@
 
 <script setup lang="ts">
 import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
+import atlasMemorySource from '@/assets/atlas/memories/KiracMemoryItem.png'
 import mapBase from '@/assets/atlas/maps/Base.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
 import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
@@ -25,6 +26,9 @@ import {useDivinationCardOverlayStore} from "@/store/DivinationCardOverlayStore"
 import calculateEffectiveMapTier from "@/composable/effective-map-tier-calculator";
 import {useVoidStoneStore} from "@/store/voidStoneStore";
 import type {Voidstone} from "@/model/voidstone";
+import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
+import {calculateAtlasMemoryPaths} from "@/composable/atlas-memory-path-calculator";
+import {calculateAtlasMemoryLineCoordinates} from "@/composable/atlas-memory-line-coordinates-calculator";
 
 const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
 const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
@@ -35,6 +39,7 @@ const detailsDrawerStore = useDetailsDrawerStore();
 const atlasNodeOverlayStore = useAtlasNodeOverlayStore();
 const divinationCardOverlayStore = useDivinationCardOverlayStore();
 const voidStoneStore = useVoidStoneStore();
+const atlasMemoryNodeStore = useAtlasMemoryNodeStore();
 
 let state: StageState
 
@@ -59,12 +64,15 @@ const drawnLinks: [string, string][] = [];
 onMounted(() => {
   initAtlasCanvas()
 })
+
+
 const initAtlasCanvas = () => {
   initState();
   initCanvasStructure(this)
   initBackgroundImage();
   initVoidstoneSockets();
   initVoidstones()
+  initAtlasMemories()
 
   let tooltipText = drawTooltipBaseText();
   let tooltipContainer = drawTooltipContainer();
@@ -169,7 +177,7 @@ function initNodeLinksAndNames(atlasNode: AtlasNode) {
   let locX = getScaledAtlasNodeLocX(atlasNode)
   let locY = getScaledAtlasNodeLocY(atlasNode)
   drawMapName(atlasNode.name, locX, locY);
-  drawLinksBetweenNodes(atlasNode, atlasNodeStore.atlasNodesMap)
+  drawLinksBetweenNodes(atlasNode)
 }
 
 function initNodeImages(atlasNode: AtlasNode) {
@@ -199,13 +207,178 @@ function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltip
   reactiveGroup.add(reactiveNodeArea)
 }
 
+function initAtlasMemories() {
+  let atlasMemoriesImage = new Image();
+  atlasMemoriesImage.src = atlasMemorySource;
+  const locX = 506.95 * coordinatesScaleFactor;
+  const locY = 420.5 * coordinatesScaleFactor;
+  let atlasMemoriesKonvaImage = new Konva.Image({
+    id: "atlas-memories",
+    image: atlasMemoriesImage,
+    x: locX,
+    y: locY,
+    scaleX: 0.54,
+    scaleY: 0.54,
+  });
+  atlasMemoriesImage.onload = function () {
+    let image = backgroundGroup.findOne('#atlas-memories')
+    if (image) {
+      image.destroy()
+    }
+    atlasMemoriesKonvaImage.offsetX(atlasMemoriesImage.width / 2)
+    atlasMemoriesKonvaImage.offsetY(atlasMemoriesImage.height / 2)
+    mapBaseGroup.add(atlasMemoriesKonvaImage);
+  };
+  const reactiveAtlasMemoriesArea = drawReactiveAtlasMemoriesArea(locX, locY);
+  reactiveGroup.add(reactiveAtlasMemoriesArea)
+  reactiveAtlasMemoriesArea.on('click tap', toggleAtlasMemoryMode())
+
+  drawAtlasMemoriesText(locX, locY)
+}
+
+function drawReactiveAtlasMemoriesArea(locX: number, locY: number) {
+  return new Konva.Circle({
+    x: locX,
+    y: locY - 3,
+    stroke: 'black',
+    strokeWidth: 4,
+    radius: 30,
+    opacity: 0
+  })
+}
+
+function toggleAtlasMemoryMode() {
+  return function () {
+    atlasMemoryNodeStore.SET_ATLAS_MEMORY_PATHS([])
+    atlasMemoryNodeStore.SET_ATLAS_MEMORY_MODE_ENABLED(!atlasMemoryNodeStore.atlasMemoryModeEnabled)
+  }
+}
+
+function increaseAtlasMemorySteps() {
+  return function () {
+    if (atlasMemoryNodeStore.numberOfMemorySteps < 6) {
+      atlasMemoryNodeStore.SET_NUMBER_OF_MEMORY_STEPS(atlasMemoryNodeStore.numberOfMemorySteps + 1)
+      if (atlasMemoryNodeStore.atlasMemoryModeEnabled && atlasNodeStore.selectedAtlasNode) {
+        calculateAtlasMemoryPaths(atlasNodeStore.selectedAtlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
+      }
+    }
+  }
+}
+
+function decreaseAtlasMemorySteps() {
+  return function () {
+    if (atlasMemoryNodeStore.numberOfMemorySteps > 3) {
+      atlasMemoryNodeStore.SET_NUMBER_OF_MEMORY_STEPS(atlasMemoryNodeStore.numberOfMemorySteps - 1)
+      if (atlasMemoryNodeStore.atlasMemoryModeEnabled && atlasNodeStore.selectedAtlasNode) {
+        calculateAtlasMemoryPaths(atlasNodeStore.selectedAtlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
+      }
+    }
+  }
+}
+
+function drawAtlasMemoriesText(locX: number, locY: number) {
+  const titleTextId = "atlas-memory-number-text";
+  const oldTitleText = mapNameGroup.findOne('#' + titleTextId);
+  if (oldTitleText) {
+    oldTitleText.destroy()
+  }
+  const numberTextId = "atlas-memory-number-text";
+  const oldNumberText = mapNameGroup.findOne('#' + numberTextId);
+  if (oldNumberText) {
+    oldNumberText.destroy()
+  }
+  const atlasMemoryTitleText = "Steps:";
+  let atlasMemoryTitleKonvaText = new Konva.Text({
+    id: titleTextId,
+    Text: atlasMemoryTitleText,
+    x: locX,
+    y: locY + 25,
+    offsetX: atlasMemoryTitleText.length * 3,
+    fontSize: 12,
+    fontFamily: 'Arial',
+    fill: 'black',
+    fontStyle: 'bold',
+    shadowColor: 'white',
+    shadowBlur: 10,
+    shadowOffset: {x: 1, y: 1},
+    shadowOpacity: 1,
+  })
+  const atlasMemoryNumberText = atlasMemoryNodeStore.numberOfMemorySteps + "";
+  let atlasMemoryNumberKonvaText = new Konva.Text({
+    id: numberTextId,
+    Text: atlasMemoryNumberText,
+    x: locX - 10,
+    y: locY + 40,
+    offsetX: atlasMemoryNumberText.length * 2,
+    fontSize: 16,
+    fontFamily: 'Arial',
+    fill: 'black',
+    fontStyle: 'bold',
+    shadowColor: 'white',
+    shadowBlur: 10,
+    shadowOffset: {x: 1, y: 1},
+    shadowOpacity: 1,
+  })
+  mapNameGroup.add(atlasMemoryTitleKonvaText)
+  mapNameGroup.add(atlasMemoryNumberKonvaText)
+
+  let triangleUp = new Konva.RegularPolygon({
+    x: locX + 5,
+    y: locY + 43,
+    sides: 3,
+    radius: 4,
+    fill: 'black',
+    stroke: 'white',
+    strokeWidth: 2,
+    lineJoin: 'round'
+  });
+  let triangleDown = new Konva.RegularPolygon({
+    x: locX + 5,
+    y: locY + 50,
+    sides: 3,
+    radius: 4,
+    rotation: 180,
+    fill: 'black',
+    stroke: 'white',
+    strokeWidth: 2,
+    lineJoin: 'round'
+  });
+  mapNameGroup.add(triangleDown)
+  mapNameGroup.add(triangleUp)
+
+  let atlasMemoryStepNumberUpReactiveArea = new Konva.Rect({
+    x: locX,
+    y: locY + 37,
+    fill: 'red',
+    width: 10,
+    height: 10,
+    opacity: 0
+  })
+  let atlasMemoryStepNumberDownReactiveArea = new Konva.Rect({
+    x: locX,
+    y: locY + 47,
+    fill: 'blue',
+    width: 10,
+    height: 10,
+    opacity: 0
+  })
+  atlasMemoryStepNumberUpReactiveArea.on('click tap', increaseAtlasMemorySteps())
+  atlasMemoryStepNumberDownReactiveArea.on('click tap', decreaseAtlasMemorySteps())
+  reactiveGroup.add(atlasMemoryStepNumberUpReactiveArea)
+  reactiveGroup.add(atlasMemoryStepNumberDownReactiveArea)
+}
+
 function handleToggleDrawer(e: boolean) {
   detailsDrawerStore.SET_DRAWER(e)
 }
 
 function getHandlerReactiveAreaClicked(atlasNode: AtlasNode) {
   return function () {
-    handleToggleDrawer(true)
+    if (atlasMemoryNodeStore.atlasMemoryModeEnabled) {
+      calculateAtlasMemoryPaths(atlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
+    } else {
+      handleToggleDrawer(true)
+    }
     atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
   };
 }
@@ -445,6 +618,144 @@ voidStoneStore.$subscribe((mutation, state) => {
   drawVoidstoneSocketsText()
 })
 
+function getRandomColor(): string {
+  const letters = '0123456789ABCDEF'.split('');
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+atlasMemoryNodeStore.$subscribe((mutation, state) => {
+  let allOverlayCircles = overlayGroup.find("Circle") as Konva.Circle[];
+  allOverlayCircles.forEach(value => value.destroy())
+  let allOverlayRects = overlayGroup.find("Rect") as Konva.Rect[];
+  allOverlayRects.forEach(value => value.destroy())
+  let allOverlayText = overlayGroup.find("Text") as Konva.Text[];
+  allOverlayText.forEach(value => value.destroy())
+  let allOverlayLines = overlayGroup.find("Line") as Konva.Line[];
+  allOverlayLines.forEach(value => value.destroy())
+  drawAtlasMemoriesText(506.95 * coordinatesScaleFactor, 420.5 * coordinatesScaleFactor)
+  if (state.atlasMemoryModeEnabled) {
+    //Highlighting the AtlasMemories "Button"
+    let atlasMemoriesHighlightArea = new Konva.Circle({
+      id: "atlas-memories-circle",
+      x: 506.95 * coordinatesScaleFactor,
+      y: 420.5 * coordinatesScaleFactor,
+      stroke: 'black',
+      strokeWidth: 3,
+      fill: 'yellow',
+      blurRadius: 5,
+      radius: 30,
+      opacity: 1,
+    })
+    atlasMemoriesHighlightArea.cache()
+    atlasMemoriesHighlightArea.filters([Konva.Filters.Blur]);
+    overlayGroup.add(atlasMemoriesHighlightArea)
+
+    const atlasMemoryPaths = state.atlasMemoryPaths;
+    if (atlasMemoryPaths.length > 0) {
+      // draw AtlasMemoryPaths in different colors
+      const sourceAtlasMemoryNode = atlasMemoryPaths[0].atlasMemorySteps[0].sourceAtlasMemoryNode;
+      const sourceNode = atlasNodeStore.atlasNodesMap.get(sourceAtlasMemoryNode.nodeId);
+      const currentTargetAppearance = new Map<string, number>()
+      for (let i = 0; i < atlasMemoryPaths.length; i++) {
+        const atlasMemoryPath = atlasMemoryPaths[i];
+        const pathColor = getRandomColor();
+        for (let y = 0; y < atlasMemoryPath.atlasMemorySteps.length; y++) {
+          let atlasMemoryStep = atlasMemoryPath.atlasMemorySteps[y];
+          const sourceNode = atlasNodeStore.atlasNodesMap.get(atlasMemoryStep.sourceAtlasMemoryNode.nodeId);
+          const targetNode = atlasNodeStore.atlasNodesMap.get(atlasMemoryStep.targetAtlasMemoryNode.nodeId);
+
+          const key = atlasMemoryStep.sourceAtlasMemoryNode.nodeId + "-" + atlasMemoryStep.targetAtlasMemoryNode.nodeId;
+          const previousNumberOfAppearance = currentTargetAppearance.get(key) || 0
+          const currentNumberOfAppearance = previousNumberOfAppearance + 1;
+          currentTargetAppearance.set(key, currentNumberOfAppearance)
+
+          let moduloOffset = currentNumberOfAppearance % 2 === 0 ? -1 : 1
+          let offset = (2 + currentNumberOfAppearance) * moduloOffset;
+          if (sourceNode && targetNode) {
+            let {
+              xSource,
+              ySource,
+              xTarget,
+              yTarget
+            } = calculateAtlasMemoryLineCoordinates(sourceNode, targetNode, offset);
+
+            let overlayCircle = new Konva.Circle({
+              id: targetNode.id + "-circle",
+              x: getScaledAtlasNodeLocX(targetNode),
+              y: getScaledAtlasNodeLocY(targetNode),
+              fill: '#f6a676',
+              radius: 20,
+              opacity: 1,
+            })
+            overlayGroup.add(overlayCircle)
+
+            let overlayRect = new Konva.Rect({
+              id: targetNode.id + "-rect",
+              x: getScaledAtlasNodeLocX(targetNode) - 13,
+              y: getScaledAtlasNodeLocY(targetNode) - 38,
+              fill: '#f6a676',
+              width: 25,
+              height: 25,
+              cornerRadius: 5,
+              opacity: 1,
+            })
+            overlayGroup.add(overlayRect)
+
+            const text = (atlasMemoryStep.targetAtlasMemoryNode.probability * 100).toFixed(2) + "%";
+            let overlayText = new Konva.Text({
+              Text: text,
+              x: getScaledAtlasNodeLocX(targetNode) - 3,
+              y: getScaledAtlasNodeLocY(targetNode) - 32,
+              offsetX: text.length * 3.75,
+              fontSize: 14,
+              fontFamily: 'Arial',
+              fontStyle: 'bold',
+              fill: 'white',
+              shadowColor: 'black',
+              shadowBlur: 10,
+              shadowOffset: {x: 1, y: 1},
+              shadowOpacity: 1,
+            })
+            overlayGroup.add(overlayText)
+
+            let line = new Konva.Line({
+              points: [xSource, ySource, xTarget, yTarget],
+              id: targetNode.id + "-Line",
+              stroke: pathColor,
+              strokeWidth: 2,
+              lineJoin: 'round',
+              dash: [10, 5],
+              lineCap: 'round',
+            });
+            overlayGroup.add(line)
+          }
+        }
+      }
+
+      if (sourceNode) {
+        let atlasMemoriesSourceHighlightArea = new Konva.Circle({
+          id: sourceNode.id + "-circle",
+          x: getScaledAtlasNodeLocX(sourceNode),
+          y: getScaledAtlasNodeLocY(sourceNode),
+          radius: 20,
+          stroke: 'black',
+          strokeWidth: 3,
+          fill: 'yellow',
+          blurRadius: 5,
+          opacity: 1,
+        })
+        atlasMemoriesSourceHighlightArea.cache()
+        atlasMemoriesSourceHighlightArea.filters([Konva.Filters.Blur]);
+        overlayGroup.add(atlasMemoriesSourceHighlightArea)
+      }
+    }
+  }
+})
+
 function getScaledAtlasNodeLocX(atlasNode: AtlasNode) {
   return Number(atlasNode.locX) * coordinatesScaleFactor
 }
@@ -512,7 +823,8 @@ function drawMapName(mapName: string, locX: number, locY: number) {
   mapNameGroup.add(mapNodeNameKonvaText)
 }
 
-function drawLinksBetweenNodes(sourceAtlasNode: AtlasNode, candidateNodes: Map<string, AtlasNode>) {
+function drawLinksBetweenNodes(sourceAtlasNode: AtlasNode) {
+  let candidateNodes = atlasNodeStore.atlasNodesMap
   let linkedNodeIds = sourceAtlasNode.linked.split(',');
   linkedNodeIds.forEach(linkedNodeId => {
     let linkedNode = candidateNodes.get(linkedNodeId)
