@@ -24,31 +24,13 @@ function mergeProbabilities(atlasMemoryPaths: AtlasMemoryPath[], tmpProbabilitie
     })
 }
 
-function countNodeAppearances(atlasMemoryPaths: AtlasMemoryPath[]) {
-    const numberOfPathsNodeIsIncludedIn = new Map<string, number>
-    if (atlasMemoryPaths && atlasMemoryPaths.length > 0) {
-        // The very first source Node is included in every Path, all other can be determined by looking at their appearance as targetNodes
-        numberOfPathsNodeIsIncludedIn.set(atlasMemoryPaths[0].atlasMemorySteps[0].sourceAtlasMemoryNode.nodeId, atlasMemoryPaths.length)
-        for (let i = 0; i < atlasMemoryPaths.length; i++) {
-            const atlasMemoryPath = atlasMemoryPaths[i]
-            for (let j = 0; j < atlasMemoryPath.atlasMemorySteps.length; j++) {
-                const atlasMemoryStep = atlasMemoryPath.atlasMemorySteps[j]
-                const nodeId = atlasMemoryStep.targetAtlasMemoryNode.nodeId;
-                const numberOfAppearance = numberOfPathsNodeIsIncludedIn.get(nodeId) || 0
-                const value = numberOfAppearance + 1;
-                numberOfPathsNodeIsIncludedIn.set(nodeId, value)
-            }
-        }
-        atlasMemoryNodeStore.SET_NUMBER_OF_PATHS_NODE_IS_INCLUDED_IN(numberOfPathsNodeIsIncludedIn)
-    }
-}
 
 export function calculateAtlasMemoryPaths(sourceAtlasNode: AtlasNode, numberOfSteps: number) {
     const atlasMemoryPaths: AtlasMemoryPath[] = []
     const tmpProbabilities = new Map<string, number>();
     calculatePathProbabilities(sourceAtlasNode, numberOfSteps, 1, tmpProbabilities, atlasMemoryPaths, null)
     mergeProbabilities(atlasMemoryPaths, tmpProbabilities);
-    countNodeAppearances(atlasMemoryPaths)
+    console.log("Got " + atlasMemoryPaths.length + " possible Memory paths")
     atlasMemoryNodeStore.SET_ATLAS_MEMORY_PATHS(atlasMemoryPaths)
 }
 
@@ -68,7 +50,7 @@ function currentPathContainsNode(currentPath: AtlasMemoryPath | null, nodeId: st
     }
     let containedInPath = false
     currentPath.atlasMemorySteps.forEach(value => {
-        containedInPath = value.sourceAtlasMemoryNode.nodeId == nodeId || value.targetAtlasMemoryNode.nodeId == nodeId
+        containedInPath = containedInPath || value.sourceAtlasMemoryNode.nodeId == nodeId || value.targetAtlasMemoryNode.nodeId == nodeId
     })
     return containedInPath;
 }

@@ -9,7 +9,6 @@
         <BossFilterHolder/>
         <DivinationCardFilterHolder/>
         <AtlasOverlayHolder/>
-
       </v-col>
     </v-row>
     <v-row>
@@ -42,7 +41,6 @@
         <v-btn variant="text" role="link" @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')">
           Raw Data
         </v-btn>
-        <v-btn @click="applyAtlasMemory()">Apply AtlasMemory</v-btn>
       </v-col>
     </v-row>
   </v-navigation-drawer>
@@ -62,12 +60,12 @@ import DivinationCardFilterHolder
 import BossFilterHolder from "@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue";
 import MapFilterHolder from "@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue";
 import TextFilterHolder from "@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue";
-import AtlasOverlayHolder from "@/components/overlays/atlas_overlays/overlayHolder.vue";
-import AboutOverlay from "@/components/overlays/AboutOverlay.vue";
-import ImproveOverlay from "@/components/overlays/ImproveOverlay.vue";
-import ContactOverlay from "@/components/overlays/ContactOverlay.vue";
-import GlossaryOverlay from "@/components/overlays/GlossaryOverlay.vue";
-import ChangelogOverlay from "@/components/overlays/ChangelogOverlay.vue";
+import AtlasOverlayHolder from "@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue";
+import AboutOverlay from "@/components/filter_drawer/overlays/AboutOverlay.vue";
+import ImproveOverlay from "@/components/filter_drawer/overlays/ImproveOverlay.vue";
+import ContactOverlay from "@/components/filter_drawer/overlays/ContactOverlay.vue";
+import GlossaryOverlay from "@/components/filter_drawer/overlays/GlossaryOverlay.vue";
+import ChangelogOverlay from "@/components/filter_drawer/overlays/ChangelogOverlay.vue";
 import type {LocationQuery, RouteLocationNormalizedLoaded, Router} from "vue-router";
 import {useRoute, useRouter} from "vue-router";
 import {useFilterStore} from "@/store/FilterStore";
@@ -75,9 +73,6 @@ import type {LooseFilters} from "@/model/looseFilters";
 import {useFilterQueryStore} from "@/store/FilterQueryStore";
 import handleUrlQueryFilters from "@/composable/url-query-filter-handler";
 import FilterToolbar from "@/components/filter_drawer/FilterToolbar.vue";
-import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
-import {calculateAtlasMemoryPaths} from "@/composable/atlas-memory-path-calculator";
-import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
@@ -89,7 +84,6 @@ const filterStore = useFilterStore();
 const filterQueryStore = useFilterQueryStore();
 const route: RouteLocationNormalizedLoaded = useRoute();
 const router: Router = useRouter();
-const atlasMemoryNodeStore = useAtlasMemoryNodeStore();
 
 onMounted(() => {
   // We need to import the AtlasFilter composable, otherwise it won't trigger, even though it is subscribed to the FilterStore
@@ -178,11 +172,4 @@ function openInNewTab(url: string) {
   window.open(url, '_blank', 'noreferrer');
 }
 
-function applyAtlasMemory() {
-  const atlasNodeStore = useAtlasNodeStore()
-  const sourceNode = atlasNodeStore.atlasNodes.find(value => value.name == "Wasteland");
-  if (sourceNode) {
-    calculateAtlasMemoryPaths(sourceNode, 6)
-  }
-}
 </script>
