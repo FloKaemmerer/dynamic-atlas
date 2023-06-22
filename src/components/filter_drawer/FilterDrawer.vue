@@ -76,9 +76,8 @@ import {useFilterQueryStore} from "@/store/FilterQueryStore";
 import handleUrlQueryFilters from "@/composable/url-query-filter-handler";
 import FilterToolbar from "@/components/filter_drawer/FilterToolbar.vue";
 import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
-import {calculatePathProbabilities} from "@/composable/atlas-memory-path-calculator";
+import {calculateAtlasMemoryPaths} from "@/composable/atlas-memory-path-calculator";
 import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
-import type {AtlasMemoryPath} from "@/model/atlasMemoryPath";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
@@ -181,14 +180,9 @@ function openInNewTab(url: string) {
 
 function applyAtlasMemory() {
   const atlasNodeStore = useAtlasNodeStore()
-  const sourceNode = atlasNodeStore.atlasNodes.find(value => value.name == "Arsenal");
-  let candidates: Map<string, number> = new Map<string, number>()
-  let atlasMemoryPaths: AtlasMemoryPath[] = []
+  const sourceNode = atlasNodeStore.atlasNodes.find(value => value.name == "Wasteland");
   if (sourceNode) {
-    calculatePathProbabilities(sourceNode, 3, 1, candidates, atlasMemoryPaths, null)
+    calculateAtlasMemoryPaths(sourceNode, 6)
   }
-  atlasMemoryNodeStore.SET_ATLAS_MEMORY_NODES(candidates)
-  atlasMemoryNodeStore.SET_ATLAS_MEMORY_PATHS(atlasMemoryPaths)
-  console.log(JSON.stringify(atlasMemoryPaths))
 }
 </script>

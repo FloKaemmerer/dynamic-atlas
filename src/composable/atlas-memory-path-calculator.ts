@@ -3,10 +3,56 @@ import {useAtlasNodeStore} from "@/store/AtlasNodeStore";
 import type {AtlasMemoryPath} from "@/model/atlasMemoryPath";
 import type {AtlasMemoryNode} from "@/model/atlasMemoryNode";
 import type {AtlasMemoryStep} from "@/model/atlasMemoryStep";
+import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
 
 const atlasNodeStore = useAtlasNodeStore()
+const atlasMemoryNodeStore = useAtlasMemoryNodeStore()
 
-function addCandidate(candidates: Map<string, number>, atlasMemoryNodeId: string, probability: number) {
+function mergeProbabilities(atlasMemoryPaths: AtlasMemoryPath[], tmpProbabilities: Map<string, number>) {
+    atlasMemoryPaths.forEach(atlasMemoryPath => {
+        atlasMemoryPath.atlasMemorySteps.forEach(atlasMemoryStep => {
+            const totalTargetNodeProbability = tmpProbabilities.get(atlasMemoryStep.targetAtlasMemoryNode.nodeId);
+            if (totalTargetNodeProbability && totalTargetNodeProbability > atlasMemoryStep.targetAtlasMemoryNode.probability) {
+                atlasMemoryStep.targetAtlasMemoryNode.probability = totalTargetNodeProbability
+            }
+
+            const totalSourceNodeProbability = tmpProbabilities.get(atlasMemoryStep.sourceAtlasMemoryNode.nodeId);
+            if (totalSourceNodeProbability && totalSourceNodeProbability > atlasMemoryStep.sourceAtlasMemoryNode.probability) {
+                atlasMemoryStep.sourceAtlasMemoryNode.probability = totalSourceNodeProbability
+            }
+        })
+    })
+}
+
+function countNodeAppearances(atlasMemoryPaths: AtlasMemoryPath[]) {
+    const numberOfPathsNodeIsIncludedIn = new Map<string, number>
+    if (atlasMemoryPaths && atlasMemoryPaths.length > 0) {
+        // The very first source Node is included in every Path, all other can be determined by looking at their appearance as targetNodes
+        numberOfPathsNodeIsIncludedIn.set(atlasMemoryPaths[0].atlasMemorySteps[0].sourceAtlasMemoryNode.nodeId, atlasMemoryPaths.length)
+        for (let i = 0; i < atlasMemoryPaths.length; i++) {
+            const atlasMemoryPath = atlasMemoryPaths[i]
+            for (let j = 0; j < atlasMemoryPath.atlasMemorySteps.length; j++) {
+                const atlasMemoryStep = atlasMemoryPath.atlasMemorySteps[j]
+                const nodeId = atlasMemoryStep.targetAtlasMemoryNode.nodeId;
+                const numberOfAppearance = numberOfPathsNodeIsIncludedIn.get(nodeId) || 0
+                const value = numberOfAppearance + 1;
+                numberOfPathsNodeIsIncludedIn.set(nodeId, value)
+            }
+        }
+        atlasMemoryNodeStore.SET_NUMBER_OF_PATHS_NODE_IS_INCLUDED_IN(numberOfPathsNodeIsIncludedIn)
+    }
+}
+
+export function calculateAtlasMemoryPaths(sourceAtlasNode: AtlasNode, numberOfSteps: number) {
+    const atlasMemoryPaths: AtlasMemoryPath[] = []
+    const tmpProbabilities = new Map<string, number>();
+    calculatePathProbabilities(sourceAtlasNode, numberOfSteps, 1, tmpProbabilities, atlasMemoryPaths, null)
+    mergeProbabilities(atlasMemoryPaths, tmpProbabilities);
+    countNodeAppearances(atlasMemoryPaths)
+    atlasMemoryNodeStore.SET_ATLAS_MEMORY_PATHS(atlasMemoryPaths)
+}
+
+function addTotalProbability(candidates: Map<string, number>, atlasMemoryNodeId: string, probability: number) {
     if (candidates.has(atlasMemoryNodeId)) {
         const oldProbability = candidates.get(atlasMemoryNodeId) || 0;
         const probabilitySum = oldProbability + probability;
@@ -35,9 +81,8 @@ function isViableHigherTierNode(value: AtlasNode, sourceAtlasNode: AtlasNode, cu
     return value.active && !value.uniqueMap && value.mapTier > sourceAtlasNode.mapTier && !currentPathContainsNode(currentPath, value.id);
 }
 
-export const calculatePathProbabilities = (sourceAtlasNode: AtlasNode, numberOfSteps: number, currentProbability: number, candidates: Map<string, number>, atlasMemoryPaths: AtlasMemoryPath[], currentPath: AtlasMemoryPath | null) => {
+const calculatePathProbabilities = (sourceAtlasNode: AtlasNode, numberOfSteps: number, currentProbability: number, totalProbabilities: Map<string, number>, atlasMemoryPaths: AtlasMemoryPath[], currentPath: AtlasMemoryPath | null) => {
     if (numberOfSteps > 0) {
-        console.log("Current source: " + sourceAtlasNode.name + " current Path: " + JSON.stringify(currentPath))
         const sourceAtlasMemoryNode: AtlasMemoryNode = {
             nodeId: sourceAtlasNode.id,
             name: sourceAtlasNode.name,
@@ -60,7 +105,6 @@ export const calculatePathProbabilities = (sourceAtlasNode: AtlasNode, numberOfS
         linkedNodes.filter(value => isViableHigherTierNode(value, sourceAtlasNode, currentPath)).map(value => higherTierNodes.push(value))
 
         const numberOfHigherTierNodes = higherTierNodes.length;
-        console.log("Number of higher Tier Nodes: " + numberOfHigherTierNodes + " on source: " + sourceAtlasNode.name)
         if (numberOfHigherTierNodes > 0) {
             const stepProbability = 1 / numberOfHigherTierNodes;
             const tmpPath = JSON.parse(JSON.stringify(currentPath))
@@ -83,16 +127,16 @@ export const calculatePathProbabilities = (sourceAtlasNode: AtlasNode, numberOfS
                 }
                 if (currentPath) {
                     currentPath.atlasMemorySteps.push(atlasMemoryStep)
-                    addCandidate(candidates, higherTierNode.id, probability);
-                    calculatePathProbabilities(higherTierNode, numberOfSteps - 1, probability, candidates, atlasMemoryPaths, currentPath)
+                    addTotalProbability(totalProbabilities, higherTierNode.id, probability);
+                    calculatePathProbabilities(higherTierNode, numberOfSteps - 1, probability, totalProbabilities, atlasMemoryPaths, currentPath)
                     if (i > 0) {
                         atlasMemoryPaths.push(currentPath)
                     }
                 } else {
                     const newPath = {atlasMemorySteps: [atlasMemoryStep]};
                     atlasMemoryPaths.push(newPath)
-                    addCandidate(candidates, higherTierNode.id, probability);
-                    calculatePathProbabilities(higherTierNode, numberOfSteps - 1, probability, candidates, atlasMemoryPaths, newPath)
+                    addTotalProbability(totalProbabilities, higherTierNode.id, probability);
+                    calculatePathProbabilities(higherTierNode, numberOfSteps - 1, probability, totalProbabilities, atlasMemoryPaths, newPath)
                 }
             }
         } else {
@@ -121,16 +165,16 @@ export const calculatePathProbabilities = (sourceAtlasNode: AtlasNode, numberOfS
                     }
                     if (currentPath) {
                         currentPath.atlasMemorySteps.push(atlasMemoryStep)
-                        addCandidate(candidates, lowerTierNode.id, probability);
-                        calculatePathProbabilities(lowerTierNode, numberOfSteps - 1, probability, candidates, atlasMemoryPaths, currentPath)
+                        addTotalProbability(totalProbabilities, lowerTierNode.id, probability);
+                        calculatePathProbabilities(lowerTierNode, numberOfSteps - 1, probability, totalProbabilities, atlasMemoryPaths, currentPath)
                         if (i > 0) {
                             atlasMemoryPaths.push(currentPath)
                         }
                     } else {
                         const newPath = {atlasMemorySteps: [atlasMemoryStep]};
                         atlasMemoryPaths.push(newPath)
-                        addCandidate(candidates, lowerTierNode.id, probability);
-                        calculatePathProbabilities(lowerTierNode, numberOfSteps - 1, probability, candidates, atlasMemoryPaths, newPath)
+                        addTotalProbability(totalProbabilities, lowerTierNode.id, probability);
+                        calculatePathProbabilities(lowerTierNode, numberOfSteps - 1, probability, totalProbabilities, atlasMemoryPaths, newPath)
                     }
                 }
             }

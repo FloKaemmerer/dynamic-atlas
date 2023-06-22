@@ -447,59 +447,212 @@ voidStoneStore.$subscribe((mutation, state) => {
   drawVoidstoneSocketsText()
 })
 
+function getRandomColor(): string {
+  var letters = '0123456789ABCDEF'.split('');
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function calculateAtlasMemoryLineCoordinates(sourceNode: AtlasNode, targetNode: AtlasNode, offset: number) {
+  console.log("Source: " + sourceNode.name + " [" + getScaledAtlasNodeLocX(sourceNode).toFixed(3) + "," + getScaledAtlasNodeLocY(sourceNode).toFixed(3) + "] Target: " + targetNode.name + " [" + getScaledAtlasNodeLocX(targetNode).toFixed(3) + "," + getScaledAtlasNodeLocY(targetNode).toFixed(3) + "]")
+  let x1 = getScaledAtlasNodeLocX(sourceNode)
+  let y1 = getScaledAtlasNodeLocY(sourceNode)
+  let x2 = getScaledAtlasNodeLocX(targetNode)
+  let y2 = getScaledAtlasNodeLocY(targetNode)
+  let m1 = (y2 - y1) / (x2 - x1)
+  let c1 = y2 - m1 * x2
+  console.log("y=" + m1.toFixed(3) + "x+" + c1.toFixed(3))
+  const c1o = c1 + offset;
+  console.log("parallel: y=" + m1.toFixed(3) + "x+" + c1o.toFixed(3))
+  let m2 = (-1) / m1
+  let c2 = y1 - (m2 * x1)
+  console.log("Orto Source: y=" + m2.toFixed(3) + "x+" + c2.toFixed(3))
+  let m3 = (-1) / m1
+  let c3 = y2 - (m3 * x2)
+  console.log("Orto Target: y=" + m3.toFixed(3) + "x+" + c3.toFixed(3))
+  let x3Source = (c1o - c2) / (m2 - m1)
+  let y3Source = m1 * ((c1o - c2) / (m2 - m1)) + c1o
+  console.log("Source [" + x3Source.toFixed(3) + "," + y3Source.toFixed(3) + "]")
+
+  let x4Target = (c1o - c3) / (m3 - m1)
+  let y4target = m1 * ((c1o - c3) / (m3 - m1)) + c1o
+  console.log("Target: [" + x4Target.toFixed(3) + "," + y4target.toFixed(3) + "]")
+  return {xSource: x3Source, ySource: y3Source, xTarget: x4Target, yTarget: y4target};
+}
+
 atlasMemoryNodesStore.$subscribe((mutation, state) => {
-  // destroy previous overlay
   let allOverlayCircles = overlayGroup.find("Circle") as Konva.Circle[];
   allOverlayCircles.forEach(value => value.destroy())
   let allOverlayRects = overlayGroup.find("Rect") as Konva.Rect[];
   allOverlayRects.forEach(value => value.destroy())
   let allOverlayText = overlayGroup.find("Text") as Konva.Text[];
   allOverlayText.forEach(value => value.destroy())
+  let allOverlayLines = overlayGroup.find("Line") as Konva.Line[];
+  allOverlayLines.forEach(value => value.destroy())
+  let allOverlayWedges = overlayGroup.find("Wedge") as Konva.Wedge[];
+  allOverlayWedges.forEach(value => value.destroy())
+  // draw AtlasMemoryPaths in different colors
+  const numberOfPathsNodeIsIncludedIn = state.numberOfPathsNodeIsIncludedIn;
+  const atlasMemoryPaths = state.atlasMemoryPaths;
+  // We have to treat the Node the Memory is applied to separately
+  const sourceAtlasMemoryNode = atlasMemoryPaths[0].atlasMemorySteps[0].sourceAtlasMemoryNode;
+  const sourceNode = atlasNodeStore.atlasNodesMap.get(sourceAtlasMemoryNode.nodeId);
+  const numberOfPathSourceNodeAppearedIn = numberOfPathsNodeIsIncludedIn.get(sourceAtlasMemoryNode.nodeId) || 0
+  const currentTargetAppearance = new Map<string, number>()
+  for (let i = 0; i < atlasMemoryPaths.length; i++) {
+    const atlasMemoryPath = atlasMemoryPaths[i];
+    const pathColor = getRandomColor();
+    for (let y = 0; y < atlasMemoryPath.atlasMemorySteps.length; y++) {
+      let atlasMemoryStep = atlasMemoryPath.atlasMemorySteps[y];
+      const sourceNode = atlasNodeStore.atlasNodesMap.get(atlasMemoryStep.sourceAtlasMemoryNode.nodeId);
+      const targetNode = atlasNodeStore.atlasNodesMap.get(atlasMemoryStep.targetAtlasMemoryNode.nodeId);
+
+      const key = atlasMemoryStep.sourceAtlasMemoryNode.nodeId + "-" + atlasMemoryStep.targetAtlasMemoryNode.nodeId;
+      const previousNumberOfAppearance = currentTargetAppearance.get(key) || 0
+      const currentNumberOfAppearance = previousNumberOfAppearance + 1;
+      currentTargetAppearance.set(key, currentNumberOfAppearance)
+
+      const numberOfPathTargetNodeAppearedIn = numberOfPathsNodeIsIncludedIn.get(atlasMemoryStep.targetAtlasMemoryNode.nodeId) || 0
+      let moduloOffset = currentNumberOfAppearance % 2 === 0 ? -1 : 1
+      console.log("y: " + currentNumberOfAppearance + " Modulo: " + moduloOffset)
+      let offset = (2 + currentNumberOfAppearance) * moduloOffset;
+      console.log("offset: " + offset)
+      if (sourceNode && targetNode) {
+        let {xSource, ySource, xTarget, yTarget} = calculateAtlasMemoryLineCoordinates(sourceNode, targetNode, offset);
+
+        const angle = Number((360 / numberOfPathTargetNodeAppearedIn).toFixed(0));
+        const rotation = (360 / numberOfPathTargetNodeAppearedIn) * currentNumberOfAppearance;
+        if (targetNode.name == 'Terrace') {
+          console.log("Got Angle: " + angle + " for number of appearances: " + numberOfPathTargetNodeAppearedIn)
+          console.log("i: " + i)
+          console.log("Got Rotation: " + rotation)
+        }
+        // let targetWedge = new Konva.Wedge({
+        //   id: targetNode.id + "-wedge",
+        //   x: getScaledAtlasNodeLocX(targetNode),
+        //   y: getScaledAtlasNodeLocY(targetNode),
+        //   radius: 20,
+        //   angle: angle,
+        //   fill: pathColor,
+        //   rotation: rotation,
+        // })
+
+        let overlayCircle = new Konva.Circle({
+          id: targetNode.id + "-circle",
+          x: getScaledAtlasNodeLocX(targetNode),
+          y: getScaledAtlasNodeLocY(targetNode),
+          fill: '#f6a676',
+          radius: 20,
+          opacity: 1,
+        })
+        overlayGroup.add(overlayCircle)
+
+        let overlayRect = new Konva.Rect({
+          id: targetNode.id + "-rect",
+          x: getScaledAtlasNodeLocX(targetNode) - 13,
+          y: getScaledAtlasNodeLocY(targetNode) - 38,
+          fill: '#f6a676',
+          width: 25,
+          height: 25,
+          cornerRadius: 5,
+          opacity: 1,
+        })
+        overlayGroup.add(overlayRect)
+
+        const text = atlasMemoryStep.targetAtlasMemoryNode.probability * 100 + "%";
+        let overlayText = new Konva.Text({
+          Text: text,
+          x: getScaledAtlasNodeLocX(targetNode) - 3,
+          y: getScaledAtlasNodeLocY(targetNode) - 32,
+          offsetX: text.length * 3.75,
+          fontSize: 14,
+          fontFamily: 'Arial',
+          fontStyle: 'bold',
+          fill: 'white',
+          shadowColor: 'black',
+          shadowBlur: 10,
+          shadowOffset: {x: 1, y: 1},
+          shadowOpacity: 1,
+        })
+        overlayGroup.add(overlayText)
+
+        let line = new Konva.Line({
+          points: [xSource, ySource, xTarget, yTarget],
+          id: targetNode.id + "-Line",
+          stroke: pathColor,
+          strokeWidth: 2,
+          lineJoin: 'round',
+          dash: [10, 5],
+          lineCap: 'round',
+        });
+        overlayGroup.add(line)
+        // overlayGroup.add(targetWedge)
+      }
+    }
+  }
+
+  if (sourceNode) {
+    for (let i = 0; i < numberOfPathSourceNodeAppearedIn; i++) {
+      let targetWedge = new Konva.Wedge({
+        id: sourceNode.id + "-wedge",
+        x: getScaledAtlasNodeLocX(sourceNode),
+        y: getScaledAtlasNodeLocY(sourceNode),
+        radius: 20,
+        angle: (360 / numberOfPathSourceNodeAppearedIn),
+        fill: getRandomColor(),
+        rotation: (360 / numberOfPathSourceNodeAppearedIn) * i,
+      })
+      overlayGroup.add(targetWedge)
+    }
+  }
 
   //show all overlay on all AtlasNodes
-  state.atlasMemoryNodes.forEach((value, key) => console.log(atlasNodeStore.atlasNodesMap.get(key).name + " - " + value))
-  state.atlasMemoryNodes.forEach((value, key) => {
-    const atlasNode = atlasNodeStore.atlasNodesMap.get(key);
-    if (atlasNode) {
-      let overlayCircle = new Konva.Circle({
-        id: atlasNode.id + "-circle",
-        x: getScaledAtlasNodeLocX(atlasNode),
-        y: getScaledAtlasNodeLocY(atlasNode),
-        fill: '#f6a676',
-        radius: 20,
-        opacity: 1,
-      })
-      overlayGroup.add(overlayCircle)
-
-      let overlayRect = new Konva.Rect({
-        id: atlasNode.id + "-rect",
-        x: getScaledAtlasNodeLocX(atlasNode) - 13,
-        y: getScaledAtlasNodeLocY(atlasNode) - 38,
-        fill: '#f6a676',
-        width: 25,
-        height: 25,
-        cornerRadius: 5,
-        opacity: 1,
-      })
-      overlayGroup.add(overlayRect)
-
-      let overlayText = new Konva.Text({
-        Text: value,
-        x: getScaledAtlasNodeLocX(atlasNode) - 3,
-        y: getScaledAtlasNodeLocY(atlasNode) - 32,
-        offsetX: ("" + value).length * 3.75,
-        fontSize: 20,
-        fontFamily: 'Arial',
-        fontStyle: 'bold',
-        fill: 'white',
-        shadowColor: 'black',
-        shadowBlur: 10,
-        shadowOffset: {x: 1, y: 1},
-        shadowOpacity: 1,
-      })
-      overlayGroup.add(overlayText)
-    }
-  });
+  // state.atlasMemoryNodes.forEach((value, key) => console.log(atlasNodeStore.atlasNodesMap.get(key).name + " - " + value))
+  // state.atlasMemoryNodes.forEach((value, key) => {
+  //   const atlasNode = atlasNodeStore.atlasNodesMap.get(key);
+  //   if (atlasNode) {
+  //     let overlayCircle = new Konva.Circle({
+  //       id: atlasNode.id + "-circle",
+  //       x: getScaledAtlasNodeLocX(atlasNode),
+  //       y: getScaledAtlasNodeLocY(atlasNode),
+  //       fill: '#f6a676',
+  //       radius: 20,
+  //       opacity: 1,
+  //     })
+  //     overlayGroup.add(overlayCircle)
+  //
+  //     let overlayRect = new Konva.Rect({
+  //       id: atlasNode.id + "-rect",
+  //       x: getScaledAtlasNodeLocX(atlasNode) - 13,
+  //       y: getScaledAtlasNodeLocY(atlasNode) - 38,
+  //       fill: '#f6a676',
+  //       width: 25,
+  //       height: 25,
+  //       cornerRadius: 5,
+  //       opacity: 1,
+  //     })
+  //     overlayGroup.add(overlayRect)
+  //
+  //     let overlayText = new Konva.Text({
+  //       Text: value,
+  //       x: getScaledAtlasNodeLocX(atlasNode) - 3,
+  //       y: getScaledAtlasNodeLocY(atlasNode) - 32,
+  //       offsetX: ("" + value).length * 3.75,
+  //       fontSize: 20,
+  //       fontFamily: 'Arial',
+  //       fontStyle: 'bold',
+  //       fill: 'white',
+  //       shadowColor: 'black',
+  //       shadowBlur: 10,
+  //       shadowOffset: {x: 1, y: 1},
+  //       shadowOpacity: 1,
+  //     })
+  //     overlayGroup.add(overlayText)
+  //   }
+  // });
 })
 
 function getScaledAtlasNodeLocX(atlasNode: AtlasNode) {
