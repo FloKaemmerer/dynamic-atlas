@@ -29,8 +29,8 @@ import type {Voidstone} from "@/model/voidstone";
 import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
 import {calculateAtlasMemoryPaths} from "@/composable/atlas-memory-path-calculator";
 import {calculateAtlasMemoryLineCoordinates} from "@/composable/atlas-memory-line-coordinates-calculator";
-import {drawTooltipContainer} from "@/model/shapes/tooltipContainer";
-import {drawTooltipBaseText} from "@/model/shapes/tooltipText";
+import {getTooltipContainer} from "@/composable/shapes/tooltipContainer";
+import {getTooltipBaseText} from "@/composable/shapes/tooltipText";
 
 const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
 const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
@@ -76,8 +76,8 @@ const initAtlasCanvas = () => {
   initVoidstones()
   initAtlasMemories()
 
-  let tooltipText = drawTooltipBaseText();
-  let tooltipContainer = drawTooltipContainer(tooltipText);
+  let tooltipText = getTooltipBaseText();
+  let tooltipContainer = getTooltipContainer(tooltipText.height());
 
   tooltipGroup.add(tooltipContainer);
   tooltipGroup.add(tooltipText);
@@ -203,8 +203,7 @@ function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltip
   let locX = getScaledAtlasNodeLocX(atlasNode)
   let locY = getScaledAtlasNodeLocY(atlasNode)
   let reactiveNodeArea = drawReactiveNodeArea(locX, locY);
-  reactiveNodeArea.on('click', getHandlerReactiveAreaClicked(atlasNode))
-  reactiveNodeArea.on('tap', getHandlerReactiveAreaClicked(atlasNode))
+  reactiveNodeArea.on('click tap', getHandlerReactiveAreaClicked(atlasNode))
 
   showTooltip(reactiveNodeArea, tooltipText, tooltipContainer, atlasNode)
 

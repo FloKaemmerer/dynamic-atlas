@@ -1,12 +1,12 @@
 import Konva from "konva";
 
-export function drawTooltipContainer(baseText: Konva.Text) {
+export function getTooltipContainer(height: number) {
     return new Konva.Rect({
         stroke: '#555',
         strokeWidth: 5,
         fill: '#ddd',
         width: 250,
-        height: baseText.height(),
+        height: height,
         shadowColor: 'black',
         shadowBlur: 10,
         shadowOffsetX: 10,

@@ -1,6 +1,6 @@
 import Konva from "konva";
 
-export function drawTooltipBaseText() {
+export function getTooltipBaseText() {
     return new Konva.Text({
         text: "",
         fontSize: 15,
