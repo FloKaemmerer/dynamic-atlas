@@ -29,7 +29,8 @@ import type {Voidstone} from "@/model/voidstone";
 import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
 import {calculateAtlasMemoryPaths} from "@/composable/atlas-memory-path-calculator";
 import {calculateAtlasMemoryLineCoordinates} from "@/composable/atlas-memory-line-coordinates-calculator";
-import {handleMobileStageZoom} from "@/composable/mobile-stage-zoom";
+import {drawTooltipContainer} from "@/model/shapes/tooltipContainer";
+import {drawTooltipBaseText} from "@/model/shapes/tooltipText";
 
 const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
 const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
@@ -76,7 +77,7 @@ const initAtlasCanvas = () => {
   initAtlasMemories()
 
   let tooltipText = drawTooltipBaseText();
-  let tooltipContainer = drawTooltipContainer();
+  let tooltipContainer = drawTooltipContainer(tooltipText);
 
   tooltipGroup.add(tooltipContainer);
   tooltipGroup.add(tooltipText);
@@ -133,15 +134,6 @@ function initCanvasStructure(pos: any) {
   mapLayer.add(tooltipGroup)
 
   reactiveLayer.add(reactiveGroup)
-
-  stage.on('touchmove', function (e) {
-    handleMobileStageZoom(e, state);
-  });
-
-  stage.on('touchend', function () {
-    state.lastDist = 0;
-    state.lastCenter = undefined;
-  });
 }
 
 function initBackgroundImage() {
@@ -905,36 +897,6 @@ function hideTooltip(mapHighlightArea: Konva.Circle, tooltipText: Konva.Text, to
   mapHighlightArea.on('mouseout', function () {
     tooltipText.hide()
     tooltipContainer.hide()
-  })
-}
-
-function drawTooltipBaseText() {
-  return new Konva.Text({
-    text: "",
-    fontSize: 15,
-    fontFamily: 'Calibri',
-    fill: '#555',
-    width: 250,
-    padding: 20,
-    align: 'left',
-    visible: false,
-  })
-}
-
-function drawTooltipContainer() {
-  return new Konva.Rect({
-    stroke: '#555',
-    strokeWidth: 5,
-    fill: '#ddd',
-    width: 250,
-    height: drawTooltipBaseText().height(),
-    shadowColor: 'black',
-    shadowBlur: 10,
-    shadowOffsetX: 10,
-    shadowOffsetY: 10,
-    shadowOpacity: 0.2,
-    cornerRadius: 10,
-    visible: false,
   })
 }
 
