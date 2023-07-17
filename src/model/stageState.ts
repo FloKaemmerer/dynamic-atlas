@@ -1,5 +1,5 @@
 import type {Stage} from "konva/lib/Stage";
-import type {Point} from "@/model/Point";
+import type {Point} from "@/model/point";
 
 export interface StageState {
     stage?: Stage
