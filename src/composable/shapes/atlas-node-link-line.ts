@@ -1,10 +1,9 @@
 import type {Point} from "@/model/point";
 import Konva from "konva";
 
-const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
 export function drawLinkLine(sourcePoint: Point, targetPoint: Point) {
     return new Konva.Line({
-        points: [sourcePoint.x * coordinatesScaleFactor, sourcePoint.y * coordinatesScaleFactor, targetPoint.x * coordinatesScaleFactor, targetPoint.y * coordinatesScaleFactor],
+        points: [sourcePoint.x , sourcePoint.y , targetPoint.x , targetPoint.y ],
         stroke: 'black',
         strokeWidth: 1,
         lineJoin: 'round',

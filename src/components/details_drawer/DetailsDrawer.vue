@@ -1,16 +1,19 @@
 <template>
-    <v-navigation-drawer v-if="atlasNode" :model-value="drawer" absolute location="right" :width="350">
-        <v-container>
-            <v-label class="text-h4">{{ atlasNode.name }}</v-label>
-            <v-label class="text-h5">Natural Tier: {{ atlasNode.mapTier }}</v-label>
-            <v-label class="text-h5">Effective Tier: {{ calculateEffectiveMapTier(atlasNode.mapTier) }}</v-label>
+  <v-navigation-drawer v-if="atlasNode" :model-value="drawer" absolute location="right" :width="350">
+    <v-container>
+      <v-label class="text-h4">{{ atlasNode.name }}</v-label>
+      <br>
+      <v-label class="text-h5">Natural Tier: {{ atlasNode.mapTier }}</v-label>
+      <br>
+      <v-label class="text-h5">Effective Tier: {{ calculateEffectiveMapTier(atlasNode.mapTier) }}</v-label>
+      <br>
 
-            <AdditionalTagsDetails :atlas-node="atlasNode"/>
-            <LayoutDetails :atlas-node="atlasNode"/>
-            <BossDetails :atlas-node="atlasNode"/>
-            <DivinationCardDetails :atlas-node="atlasNode"/>
-        </v-container>
-    </v-navigation-drawer>
+      <AdditionalTagsDetails :atlas-node="atlasNode"/>
+      <LayoutDetails :atlas-node="atlasNode"/>
+      <BossDetails :atlas-node="atlasNode"/>
+      <DivinationCardDetails :atlas-node="atlasNode"/>
+    </v-container>
+  </v-navigation-drawer>
 </template>
 
 <script setup lang="ts">
