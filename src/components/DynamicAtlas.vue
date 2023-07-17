@@ -26,7 +26,6 @@ import calculateEffectiveMapTier from "@/composable/effective-map-tier-calculato
 import {useVoidStoneStore} from "@/store/voidStoneStore";
 import type {Voidstone} from "@/model/voidstone";
 import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
-import {calculateAtlasMemoryPaths} from "@/composable/atlasMemories/atlas-memory-path-calculator";
 import {calculateAtlasMemoryLineCoordinates} from "@/composable/atlasMemories/atlas-memory-line-coordinates-calculator";
 import {getTooltipContainer} from "@/composable/shapes/tooltip-container";
 import {getTooltipBaseText} from "@/composable/shapes/tooltip-text";
@@ -351,17 +350,6 @@ function drawAtlasMemoriesText(atlasMemoriesPoint: Point) {
 
 function handleToggleDrawer(e: boolean) {
   detailsDrawerStore.SET_DRAWER(e)
-}
-
-function getHandlerReactiveAreaClicked(atlasNode: AtlasNode) {
-  return function () {
-    if (atlasMemoryNodeStore.atlasMemoryModeEnabled) {
-      calculateAtlasMemoryPaths(atlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
-    } else {
-      handleToggleDrawer(true)
-    }
-    atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
-  };
 }
 
 function addDetailsDrawerCloseHandlerToImage(konvaImage: Konva.Image) {
