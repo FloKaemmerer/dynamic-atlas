@@ -42,6 +42,16 @@ import {getReactiveAtlasMemoriesArea} from "@/composable/atlasMemories/atlas-mem
 import {toggleAtlasMemoryMode} from "@/composable/atlasMemories/atlas-memories-mode-handler";
 import {getReactiveNodeArea} from "@/composable/shapes/atlas-node-reactive-area";
 import {handleAtlasNodeClicked} from "@/composable/atlas-node-click-handler";
+import {
+  getAtlasMemoryStepsDownReactiveArea,
+  getAtlasMemoryStepsDownShape,
+  getAtlasMemoryStepsUpReactiveArea,
+  getAtlasMemoryStepsUpShape,
+  getAtlasMemoryTitleText
+} from "@/composable/atlasMemories/atlas-memories-steps-number-shapes";
+import {atlasMemoriesCanvasPoint} from "@/composable/atlasMemories/atlas-memories-canvas-point";
+import {voidstoneCanvasPoint} from "@/composable/voidstones/voidstone-canvas-point";
+import {getNumberOfActiveVoidstonesText} from "@/composable/voidstones/voidstone-shapes";
 
 const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
 const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
@@ -160,8 +170,8 @@ function initVoidstoneSockets() {
     let voidstoneSocketsKonvaImage = new Konva.Image({
       id: "voidstone-sockets",
       image: voidstoneSocketsImage,
-      x: 508.95 * coordinatesScaleFactor,
-      y: 489.5 * coordinatesScaleFactor,
+      x: voidstoneCanvasPoint.x,
+      y: voidstoneCanvasPoint.y,
       scaleX: 0.54,
       scaleY: 0.54,
     });
@@ -174,7 +184,7 @@ function initVoidstoneSockets() {
       voidstoneSocketsKonvaImage.offsetY(voidstoneSocketsImage.height / 2)
       mapBaseGroup.add(voidstoneSocketsKonvaImage);
     };
-    drawVoidstoneSocketsText();
+    drawVoidstoneSocketsText(voidstoneCanvasPoint);
   }
 }
 
@@ -231,12 +241,11 @@ function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltip
 function initAtlasMemories() {
   let atlasMemoriesImage = new Image();
   atlasMemoriesImage.src = atlasMemorySource;
-  const atlasMemoriesPoint = {x: 506.95 * coordinatesScaleFactor, y: 420.5 * coordinatesScaleFactor}
   let atlasMemoriesKonvaImage = new Konva.Image({
     id: "atlas-memories",
     image: atlasMemoriesImage,
-    x: atlasMemoriesPoint.x,
-    y: atlasMemoriesPoint.y,
+    x: atlasMemoriesCanvasPoint.x,
+    y: atlasMemoriesCanvasPoint.y,
     scaleX: 0.54,
     scaleY: 0.54,
   });
@@ -249,103 +258,33 @@ function initAtlasMemories() {
     atlasMemoriesKonvaImage.offsetY(atlasMemoriesImage.height / 2)
     mapBaseGroup.add(atlasMemoriesKonvaImage);
   };
-  const reactiveAtlasMemoriesArea = getReactiveAtlasMemoriesArea(atlasMemoriesPoint);
+  const reactiveAtlasMemoriesArea = getReactiveAtlasMemoriesArea(atlasMemoriesCanvasPoint);
   reactiveGroup.add(reactiveAtlasMemoriesArea)
   reactiveAtlasMemoriesArea.on('click tap', toggleAtlasMemoryMode())
 
-  drawAtlasMemoriesText(atlasMemoriesPoint)
-}
-
-function drawAtlasMemoriesText(atlasMemoriesPoint: Point) {
-  const titleTextId = "atlas-memory-number-text";
-  const oldTitleText = mapNameGroup.findOne('#' + titleTextId);
-  if (oldTitleText) {
-    oldTitleText.destroy()
-  }
-  const numberTextId = "atlas-memory-number-text";
-  const oldNumberText = mapNameGroup.findOne('#' + numberTextId);
-  if (oldNumberText) {
-    oldNumberText.destroy()
-  }
-  const atlasMemoryTitleText = "Steps:";
-  let atlasMemoryTitleKonvaText = new Konva.Text({
-    id: titleTextId,
-    Text: atlasMemoryTitleText,
-    x: atlasMemoriesPoint.x,
-    y: atlasMemoriesPoint.y + 25,
-    offsetX: atlasMemoryTitleText.length * 3,
-    fontSize: 12,
-    fontFamily: 'Arial',
-    fill: 'black',
-    fontStyle: 'bold',
-    shadowColor: 'white',
-    shadowBlur: 10,
-    shadowOffset: {x: 1, y: 1},
-    shadowOpacity: 1,
-  })
-  const atlasMemoryNumberText = atlasMemoryNodeStore.numberOfMemorySteps + "";
-  let atlasMemoryNumberKonvaText = new Konva.Text({
-    id: numberTextId,
-    Text: atlasMemoryNumberText,
-    x: atlasMemoriesPoint.x - 10,
-    y: atlasMemoriesPoint.y + 40,
-    offsetX: atlasMemoryNumberText.length * 2,
-    fontSize: 16,
-    fontFamily: 'Arial',
-    fill: 'black',
-    fontStyle: 'bold',
-    shadowColor: 'white',
-    shadowBlur: 10,
-    shadowOffset: {x: 1, y: 1},
-    shadowOpacity: 1,
-  })
-  mapNameGroup.add(atlasMemoryTitleKonvaText)
-  mapNameGroup.add(atlasMemoryNumberKonvaText)
-
-  let triangleUp = new Konva.RegularPolygon({
-    x: atlasMemoriesPoint.x + 5,
-    y: atlasMemoriesPoint.y + 43,
-    sides: 3,
-    radius: 4,
-    fill: 'black',
-    stroke: 'white',
-    strokeWidth: 2,
-    lineJoin: 'round'
-  });
-  let triangleDown = new Konva.RegularPolygon({
-    x: atlasMemoriesPoint.x + 5,
-    y: atlasMemoriesPoint.y + 50,
-    sides: 3,
-    radius: 4,
-    rotation: 180,
-    fill: 'black',
-    stroke: 'white',
-    strokeWidth: 2,
-    lineJoin: 'round'
-  });
+  let triangleUp = getAtlasMemoryStepsUpShape(atlasMemoriesCanvasPoint);
+  let triangleDown = getAtlasMemoryStepsDownShape(atlasMemoriesCanvasPoint);
   mapNameGroup.add(triangleDown)
   mapNameGroup.add(triangleUp)
 
-  let atlasMemoryStepNumberUpReactiveArea = new Konva.Rect({
-    x: atlasMemoriesPoint.x,
-    y: atlasMemoriesPoint.y + 37,
-    fill: 'red',
-    width: 10,
-    height: 10,
-    opacity: 0
-  })
-  let atlasMemoryStepNumberDownReactiveArea = new Konva.Rect({
-    x: atlasMemoriesPoint.x,
-    y: atlasMemoriesPoint.y + 47,
-    fill: 'blue',
-    width: 10,
-    height: 10,
-    opacity: 0
-  })
+  let atlasMemoryStepNumberUpReactiveArea = getAtlasMemoryStepsUpReactiveArea(atlasMemoriesCanvasPoint);
+  let atlasMemoryStepNumberDownReactiveArea = getAtlasMemoryStepsDownReactiveArea(atlasMemoriesCanvasPoint);
   atlasMemoryStepNumberUpReactiveArea.on('click tap', increaseAtlasMemorySteps())
   atlasMemoryStepNumberDownReactiveArea.on('click tap', decreaseAtlasMemorySteps())
   reactiveGroup.add(atlasMemoryStepNumberUpReactiveArea)
   reactiveGroup.add(atlasMemoryStepNumberDownReactiveArea)
+
+  drawAtlasMemoriesNumberOfStepsText(atlasMemoriesCanvasPoint)
+}
+
+function drawAtlasMemoriesNumberOfStepsText(atlasMemoriesPoint: Point) {
+  let atlasMemoryTitleKonvaText = getAtlasMemoryTitleText(atlasMemoriesPoint);
+  const oldTitleText = mapNameGroup.findOne('#' + atlasMemoryTitleKonvaText.getAttr("id"));
+  if (oldTitleText) {
+    oldTitleText.destroy()
+  }
+
+  mapNameGroup.add(atlasMemoryTitleKonvaText)
 }
 
 function handleToggleDrawer(e: boolean) {
@@ -378,28 +317,13 @@ function toggleVoidStone(voidstoneToToggle: Voidstone) {
   }
 }
 
-function drawVoidstoneSocketsText() {
-  const id = "voidstone-sockets-text";
-  const oldText = mapNameGroup.findOne('#' + id);
+
+function drawVoidstoneSocketsText(voidstoneCanvasPoint: Point) {
+  let voidstonesSocketsKonvaText = getNumberOfActiveVoidstonesText(voidstoneCanvasPoint);
+  const oldText = mapNameGroup.findOne('#' + voidstonesSocketsKonvaText.getAttr("id"));
   if (oldText) {
     oldText.destroy()
   }
-  const voidstoneSocketsText = "Active Voidstones: " + voidStoneStore.numberOfSocketedVoidStones + "/4";
-  let voidstonesSocketsKonvaText = new Konva.Text({
-    id: id,
-    Text: voidstoneSocketsText,
-    x: 508.95 * coordinatesScaleFactor,
-    y: (489.5 - 35) * coordinatesScaleFactor,
-    offsetX: voidstoneSocketsText.length * 3,
-    fontSize: 12,
-    fontFamily: 'Arial',
-    fill: 'black',
-    fontStyle: 'bold',
-    shadowColor: 'white',
-    shadowBlur: 10,
-    shadowOffset: {x: 1, y: 1},
-    shadowOpacity: 1,
-  })
   mapNameGroup.add(voidstonesSocketsKonvaText)
 }
 
@@ -571,7 +495,7 @@ voidStoneStore.$subscribe((mutation, state) => {
     }
   })
 
-  drawVoidstoneSocketsText()
+  drawVoidstoneSocketsText(voidstoneCanvasPoint)
 })
 
 atlasMemoryNodeStore.$subscribe((mutation, state) => {
@@ -583,14 +507,13 @@ atlasMemoryNodeStore.$subscribe((mutation, state) => {
   allOverlayText.forEach(value => value.destroy())
   let allOverlayLines = overlayGroup.find("Line") as Konva.Line[];
   allOverlayLines.forEach(value => value.destroy())
-  let atlasMemoriesPoint = {x: 506.95 * coordinatesScaleFactor, y: 420.5 * coordinatesScaleFactor};
-  drawAtlasMemoriesText(atlasMemoriesPoint)
+  drawAtlasMemoriesNumberOfStepsText(atlasMemoriesCanvasPoint)
   if (state.atlasMemoryModeEnabled) {
     //Highlighting the AtlasMemories "Button"
     let atlasMemoriesHighlightArea = new Konva.Circle({
       id: "atlas-memories-circle",
-      x: atlasMemoriesPoint.x,
-      y: atlasMemoriesPoint.y,
+      x: atlasMemoriesCanvasPoint.x,
+      y: atlasMemoriesCanvasPoint.y,
       stroke: 'black',
       strokeWidth: 3,
       fill: 'yellow',

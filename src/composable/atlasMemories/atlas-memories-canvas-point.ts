@@ -1,0 +1,2 @@
+const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
+export const atlasMemoriesCanvasPoint = {x: 506.95 * coordinatesScaleFactor, y: 420.5 * coordinatesScaleFactor}
