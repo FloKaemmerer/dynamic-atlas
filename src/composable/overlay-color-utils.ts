@@ -33,6 +33,9 @@ const getOverlayColor = (value: number) => {
         case 10: {
             return '#59873a';
         }
+        case 11: {
+            return '#f6a676';
+        }
         default: {
             return '#ff0904';
         }

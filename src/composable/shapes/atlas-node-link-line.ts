@@ -1,9 +1,9 @@
 import type {Point} from "@/model/point";
 import Konva from "konva";
 
-export function drawLinkLine(sourcePoint: Point, targetPoint: Point) {
+export function getLinkLine(sourcePoint: Point, targetPoint: Point) {
     return new Konva.Line({
-        points: [sourcePoint.x , sourcePoint.y , targetPoint.x , targetPoint.y ],
+        points: [sourcePoint.x, sourcePoint.y, targetPoint.x, targetPoint.y],
         stroke: 'black',
         strokeWidth: 1,
         lineJoin: 'round',
