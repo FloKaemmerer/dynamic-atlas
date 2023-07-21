@@ -57,8 +57,13 @@ import {getLinkLine} from "@/composable/shapes/atlas-node-link-line";
 import {getAtlasNodeImage} from "@/composable/shapes/atlas-node-image";
 import {getAtlasMemoriesButtonHighlightArea} from "@/composable/atlasMemories/atlas-memories-button-highlight-area";
 import {getAtlasMemoriesOverlayText} from "@/composable/atlasMemories/atlas-memories-overlay-text";
+import {getVoidStoneSocketKonvaImage} from "@/composable/voidstones/voidstone-socket-area";
+import {atlasNodeToPoint, locsToPoint} from "@/composable/atlas-node-utils";
+import {getAtlasMemoriesKonvaImage} from "@/composable/atlasMemories/atlas-memories-gutton-image";
+import {getVoiodStoneKonvaImage} from "@/composable/voidstones/voidstone-image";
+import {getAtlasMemoriesSourceHighlightArea} from "@/composable/atlasMemories/atlas-memories-source-highlight-area";
+import {getAtlasMemoryLine} from "@/composable/atlasMemories/atlas-memory-line";
 
-const coordinatesScaleFactor = Number(`${import.meta.env.VITE_ATLAS_COORDINATES_SCALE_FACTOR}`)
 const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
 const minWidth = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_WIDTH}`)
 
@@ -131,7 +136,7 @@ function initState() {
 function initCanvasStructure(pos: any) {
   Konva.hitOnDragEnabled = true;
 
-  let stage = new Konva.Stage({
+  state.stage = new Konva.Stage({
     container: 'atlas',
     id: 'atlas-stage',
     width: state.width,
@@ -144,10 +149,9 @@ function initCanvasStructure(pos: any) {
     dragBoundFunc: dragBound.bind(pos)
   });
 
-  state.stage = stage
 
-  stage.add(mapLayer);
-  stage.add(reactiveLayer)
+  state.stage.add(mapLayer);
+  state.stage.add(reactiveLayer)
 
   mapLayer.add(backgroundGroup)
   mapLayer.add(linksGroup)
@@ -171,14 +175,7 @@ function initVoidstoneSockets() {
   if (voidstoneSocketsSource) {
     let voidstoneSocketsImage = new Image();
     voidstoneSocketsImage.src = voidstoneSocketsSource;
-    let voidstoneSocketsKonvaImage = new Konva.Image({
-      id: "voidstone-sockets",
-      image: voidstoneSocketsImage,
-      x: voidstoneCanvasPoint.x,
-      y: voidstoneCanvasPoint.y,
-      scaleX: 0.54,
-      scaleY: 0.54,
-    });
+    let voidstoneSocketsKonvaImage = getVoidStoneSocketKonvaImage(voidstoneSocketsImage);
     voidstoneSocketsImage.onload = function () {
       let image = backgroundGroup.findOne('#voidstone-sockets')
       if (image) {
@@ -195,7 +192,7 @@ function initVoidstoneSockets() {
 function initVoidstones() {
   voidStoneStore.voidstones.forEach(voidstone => {
     drawVoidstone(voidstone)
-    let voidstoneReactiveZone = drawVoidstoneReactiveArea(voidstone.locX * coordinatesScaleFactor, voidstone.locY * coordinatesScaleFactor);
+    let voidstoneReactiveZone = drawVoidstoneReactiveArea(locsToPoint(voidstone.locX, voidstone.locY, true));
 
     voidstoneReactiveZone.on('click tap', toggleVoidStone(voidstone))
 
@@ -208,12 +205,11 @@ function initNodeLinks(atlasNode: AtlasNode) {
 }
 
 function initAtlasNodeNames(atlasNode: AtlasNode) {
-  const atlasNodePoint = toPoint(atlasNode)
-  drawMapName(atlasNode.name, atlasNodePoint);
+  drawMapName(atlasNode.name, atlasNodeToPoint(atlasNode, true));
 }
 
 function initNodeImages(atlasNode: AtlasNode) {
-  const atlasNodePoint = toPoint(atlasNode)
+  const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
   const cleanNodeName = atlasNode.name.replace(/'|,|\s/g, '')
   const effectiveMapTier = calculateEffectiveMapTier(atlasNode.mapTier);
   if (atlasNode.uniqueMap) {
@@ -224,12 +220,8 @@ function initNodeImages(atlasNode: AtlasNode) {
   }
 }
 
-function toPoint(atlasNode: AtlasNode) {
-  return {x: getScaledAtlasNodeLocX(atlasNode), y: getScaledAtlasNodeLocY(atlasNode)}
-}
-
 function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
-  const atlasNodePoint = toPoint(atlasNode);
+  const atlasNodePoint = atlasNodeToPoint(atlasNode, true);
   let reactiveNodeArea = getReactiveNodeArea(atlasNodePoint);
   reactiveNodeArea.on('click tap', function () {
     handleAtlasNodeClicked(atlasNode)
@@ -248,14 +240,7 @@ function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltip
 function initAtlasMemories() {
   let atlasMemoriesImage = new Image();
   atlasMemoriesImage.src = atlasMemorySource;
-  let atlasMemoriesKonvaImage = new Konva.Image({
-    id: "atlas-memories",
-    image: atlasMemoriesImage,
-    x: atlasMemoriesCanvasPoint.x,
-    y: atlasMemoriesCanvasPoint.y,
-    scaleX: 0.54,
-    scaleY: 0.54,
-  });
+  let atlasMemoriesKonvaImage = getAtlasMemoriesKonvaImage(atlasMemoriesImage);
   atlasMemoriesImage.onload = function () {
     let image = backgroundGroup.findOne('#atlas-memories')
     if (image) {
@@ -338,15 +323,7 @@ function drawVoidstone(voidstone: Voidstone) {
   const voidstoneSource = voidstoneList.get(voidstone.sourceName) || "";
   let voidstoneImage = new Image();
   voidstoneImage.src = voidstoneSource;
-  let voidstoneKonvaImage = new Konva.Image({
-    id: voidstone.id,
-    image: voidstoneImage,
-    x: voidstone.locX * coordinatesScaleFactor,
-    y: voidstone.locY * coordinatesScaleFactor,
-    scaleX: 0.20,
-    scaleY: 0.20,
-    opacity: 0
-  });
+  let voidstoneKonvaImage = getVoiodStoneKonvaImage(voidstone.id, locsToPoint(voidstone.locX, voidstone.locY, true), voidstoneImage);
   voidstoneImage.onload = function () {
     voidstoneKonvaImage.offsetX(voidstoneImage.width / 2)
     voidstoneKonvaImage.offsetY(voidstoneImage.height / 2)
@@ -371,7 +348,7 @@ atlasNodeOverlayStore.$subscribe((mutation, state) => {
 
   //show all overlay on all AtlasNodes
   state.overlayAtlasNodesMap.forEach((value: number, key: AtlasNode) => {
-    const atlasNodePoint = toPoint(key)
+    const atlasNodePoint = atlasNodeToPoint(key, true)
     let id = key.id;
     let overlayCircle = getOverlayCircle(id, atlasNodePoint, value);
     let overlayRect = getOverlayRect(id, atlasNodePoint, value);
@@ -389,7 +366,7 @@ divinationCardOverlayStore.$subscribe((mutation, state) => {
 
   //show all overlay on all AtlasNodes
   state.overlayDivinationCardsMap.forEach((value: string, key: AtlasNode) => {
-    const atlasNodePoint = toPoint(key)
+    const atlasNodePoint = atlasNodeToPoint(key, true)
     const divinationCardOverlayColorValue = 11
     let id = key.id;
 
@@ -410,7 +387,7 @@ atlasNodeStore.$subscribe((mutation, state) => {
 
   //show all filtered AtlasNodes
   state.filteredAtlasNodes.forEach(value => {
-    const atlasNodePoint = toPoint(value)
+    const atlasNodePoint = atlasNodeToPoint(value, true)
     let filterHighlight = getFilterHighlight(value.id, atlasNodePoint);
     filterHighlight.cache()
     filterHighlight.filters([Konva.Filters.Blur]);
@@ -429,7 +406,7 @@ voidStoneStore.$subscribe((mutation, state) => {
   })
 
   atlasNodeStore.atlasNodes.forEach(atlasNode => {
-    const atlasNodePoint = toPoint(atlasNode)
+    const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
     const cleanNodeName = atlasNode.name.replace(/'|,|\s/g, '')
     const effectiveMapTier = calculateEffectiveMapTier(atlasNode.mapTier);
     if (!atlasNode.uniqueMap) {
@@ -470,51 +447,27 @@ atlasMemoryNodeStore.$subscribe((mutation, state) => {
           let moduloOffset = currentNumberOfAppearance % 2 === 0 ? -1 : 1
           let offset = (2 + currentNumberOfAppearance) * moduloOffset;
           if (sourceNode && targetNode) {
-            const targetPoint = toPoint(targetNode)
-            let {
-              xSource,
-              ySource,
-              xTarget,
-              yTarget
-            } = calculateAtlasMemoryLineCoordinates(sourceNode, targetNode, offset);
+            const targetPoint = atlasNodeToPoint(targetNode, true)
+            let atlasMemoryLineCoordinates = calculateAtlasMemoryLineCoordinates(sourceNode, targetNode, offset);
 
             let overlayCircle = getOverlayCircle(targetNode.id + "-circle", targetPoint, 11)
-            overlayGroup.add(overlayCircle)
-
             let overlayRect = getOverlayRect(targetNode.id + "-rect", targetPoint, 11)
-            overlayGroup.add(overlayRect)
 
             const text = (atlasMemoryStep.targetAtlasMemoryNode.probability * 100).toFixed(2) + "%";
-            let overlayText = getAtlasMemoriesOverlayText(text, targetPoint);
-            overlayGroup.add(overlayText)
 
-            let line = new Konva.Line({
-              points: [xSource, ySource, xTarget, yTarget],
-              id: targetNode.id + "-Line",
-              stroke: pathColor,
-              strokeWidth: 2,
-              lineJoin: 'round',
-              dash: [10, 5],
-              lineCap: 'round',
-            });
+            let overlayText = getAtlasMemoriesOverlayText(text, targetPoint);
+            let line = getAtlasMemoryLine(atlasMemoryLineCoordinates, targetNode.id, pathColor);
+            overlayGroup.add(overlayCircle)
+            overlayGroup.add(overlayRect)
+            overlayGroup.add(overlayText)
             overlayGroup.add(line)
           }
         }
       }
 
       if (sourceNode) {
-        const sourcePoint = toPoint(sourceNode)
-        let atlasMemoriesSourceHighlightArea = new Konva.Circle({
-          id: sourceNode.id + "-circle",
-          x: sourcePoint.x,
-          y: sourcePoint.y,
-          radius: 20,
-          stroke: 'black',
-          strokeWidth: 3,
-          fill: 'yellow',
-          blurRadius: 5,
-          opacity: 1,
-        })
+        const sourcePoint = atlasNodeToPoint(sourceNode, true)
+        let atlasMemoriesSourceHighlightArea = getAtlasMemoriesSourceHighlightArea(sourceNode.id, sourcePoint);
         atlasMemoriesSourceHighlightArea.cache()
         atlasMemoriesSourceHighlightArea.filters([Konva.Filters.Blur]);
         overlayGroup.add(atlasMemoriesSourceHighlightArea)
@@ -522,14 +475,6 @@ atlasMemoryNodeStore.$subscribe((mutation, state) => {
     }
   }
 })
-
-function getScaledAtlasNodeLocX(atlasNode: AtlasNode) {
-  return Number(atlasNode.locX) * coordinatesScaleFactor
-}
-
-function getScaledAtlasNodeLocY(atlasNode: AtlasNode) {
-  return Number(atlasNode.locY) * coordinatesScaleFactor
-}
 
 function drawBackgroundImage(): Konva.Image {
   let atlasBackgroundImage = new Image();
@@ -593,8 +538,8 @@ function getLinks(sourceAtlasNode: AtlasNode) {
       });
       if (!lineDrawn) {
         const line = getLinkLine(
-            toPoint(sourceAtlasNode),
-            toPoint(linkedNode))
+            atlasNodeToPoint(sourceAtlasNode, true),
+            atlasNodeToPoint(linkedNode, true))
         links.push(line)
         drawnLinks.push([sourceAtlasNode.id, linkedNodeId])
       }
