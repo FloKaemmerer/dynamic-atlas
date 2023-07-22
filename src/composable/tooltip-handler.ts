@@ -1,10 +1,10 @@
 import buildAtlasNodeTooltipText from "@/composable/atlas-node-tooltip-text-builder";
-import {toPoint} from "@/composable/atlas-node-point-converter";
 import type {AtlasNode} from "@/model/atlasNode";
 import type Konva from "konva";
+import {atlasNodeToPoint} from "@/composable/atlas-node-utils";
 
 export function showTooltip(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
-    const atlasNodePoint = toPoint(atlasNode)
+    const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
     tooltipText.position({
         x: atlasNodePoint.x + 50,
         y: atlasNodePoint.y - 70
@@ -22,6 +22,6 @@ export function showTooltip(atlasNode: AtlasNode, tooltipText: Konva.Text, toolt
 }
 
 export function hideTooltip(tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
-        tooltipText.hide()
-        tooltipContainer.hide()
+    tooltipText.hide()
+    tooltipContainer.hide()
 }
