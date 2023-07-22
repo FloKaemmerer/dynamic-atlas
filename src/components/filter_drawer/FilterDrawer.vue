@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer floating:true :width="400" class="bg-surface-variant mb-6" permanent:true absolute:true>
     <v-row no-gutters>
-      <v-col>
+      <v-col cols="12">
         <FilterToolbar/>
         <TextFilterHolder/>
 
@@ -12,12 +12,12 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col>
+      <v-col cols="12">
         This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
       </v-col>
     </v-row>
     <v-row>
-      <v-col>
+      <v-col cols="12">
         <v-btn variant="text" @click="toggleAboutOverlay = !toggleAboutOverlay">
           About
         </v-btn>
@@ -41,6 +41,15 @@
         <v-btn variant="text" role="link" @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')">
           Raw Data
         </v-btn>
+        |
+        <v-btn variant="text" role="link" @click="openInNewTab('https://github.com/FloKaemmerer/dynamic-atlas')">
+          Github
+        </v-btn>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col cols="12">
+        © 2023 PoeAtlas.app. All Rights Reserved.
       </v-col>
     </v-row>
   </v-navigation-drawer>
