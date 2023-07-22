@@ -1,4 +1,5 @@
 import type {Stage} from "konva/lib/Stage";
+import type {Point} from "@/model/point";
 
 export interface StageState {
     stage?: Stage
@@ -7,4 +8,6 @@ export interface StageState {
     height: number
     offsetX: number
     offsetY: number
+    lastCenter?: Point
+    lastDist: number
 }
