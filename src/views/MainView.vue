@@ -28,9 +28,9 @@ function toggleFilterDrawer() {
       <p>Show Filters</p>
     </v-tooltip>
     <v-spacer/>
-    <v-btn variant="text" color="grey-lighten-4">
-      About
-    </v-btn>
+    <!--    <v-btn variant="text" color="grey-lighten-4">-->
+    <!--      About-->
+    <!--    </v-btn>-->
 
   </v-app-bar>
   <DetailsDrawer :drawer="false"/>
