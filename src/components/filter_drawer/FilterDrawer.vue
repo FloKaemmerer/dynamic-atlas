@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer floating:true :width="400" class="bg-surface-variant mb-6" permanent:true absolute:true>
+  <v-navigation-drawer :model-value="drawer" floating:true :width="400" class="bg-surface-variant mb-6" elevation="1">
     <v-row no-gutters>
       <v-col cols="12">
         <FilterToolbar/>
@@ -62,7 +62,7 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 import {initFilter} from "@/composable/atlas-filter-handler";
 import DivinationCardFilterHolder
   from "@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue";
@@ -82,6 +82,7 @@ import type {LooseFilters} from "@/model/looseFilters";
 import {useFilterQueryStore} from "@/store/FilterQueryStore";
 import handleUrlQueryFilters from "@/composable/url-query-filter-handler";
 import FilterToolbar from "@/components/filter_drawer/FilterToolbar.vue";
+import {useFilterDrawerStore} from "@/store/FilterDrawerStore";
 
 let toggleAboutOverlay = ref(false)
 let toggleImproveOverlay = ref(false)
@@ -91,8 +92,11 @@ let toggleChangelogOverlay = ref(false)
 
 const filterStore = useFilterStore();
 const filterQueryStore = useFilterQueryStore();
+const filterDrawerStore = useFilterDrawerStore();
 const route: RouteLocationNormalizedLoaded = useRoute();
 const router: Router = useRouter();
+
+const drawer = computed<boolean>(() => filterDrawerStore.drawer)
 
 onMounted(() => {
   // We need to import the AtlasFilter composable, otherwise it won't trigger, even though it is subscribed to the FilterStore
