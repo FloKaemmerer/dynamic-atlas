@@ -37,14 +37,6 @@
         <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
           Changelog
         </v-btn>
-        |
-        <v-btn variant="text" role="link" @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')">
-          Raw Data
-        </v-btn>
-        |
-        <v-btn variant="text" role="link" @click="openInNewTab('https://github.com/FloKaemmerer/dynamic-atlas')">
-          Github
-        </v-btn>
       </v-col>
     </v-row>
     <v-row>
@@ -180,9 +172,4 @@ async function pushToRouter(queryFilters: LooseFilters) {
   await router.isReady();
   await router.push({query: queryFilters})
 }
-
-function openInNewTab(url: string) {
-  window.open(url, '_blank', 'noreferrer');
-}
-
 </script>
