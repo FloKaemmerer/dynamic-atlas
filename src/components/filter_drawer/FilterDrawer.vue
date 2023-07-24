@@ -1,5 +1,12 @@
 <template>
-  <v-navigation-drawer :model-value="drawer" floating:true :width="400" class="bg-surface-variant mb-6" elevation="1">
+  <v-navigation-drawer
+      :model-value="drawer"
+      floating:true
+      :width="400"
+      class="bg-surface-variant mb-6"
+      elevation="1"
+      disable-resize-watcher:true
+      permanent:true>
     <v-row no-gutters>
       <v-col cols="12">
         <FilterToolbar/>
