@@ -3,7 +3,7 @@
       :model-value="drawer"
       floating:true
       :width="400"
-      class="bg-surface-variant mb-6"
+      class="bg-surface-variant"
       elevation="1"
       disable-resize-watcher:true
       permanent:true>
