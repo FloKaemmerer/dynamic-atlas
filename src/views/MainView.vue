@@ -3,6 +3,7 @@
 import DynamicAtlas from "@/components/DynamicAtlas.vue";
 import FilterDrawer from "@/components/filter_drawer/FilterDrawer.vue";
 import DetailsDrawer from "@/components/details_drawer/DetailsDrawer.vue";
+import MainFooter from "@/components/MainFooter.vue";
 import {useFilterDrawerStore} from "@/store/FilterDrawerStore";
 
 const filterDrawerStore = useFilterDrawerStore();
@@ -39,8 +40,9 @@ function openInNewTab(url: string) {
       Github
     </v-btn>
   </v-app-bar>
-  <DetailsDrawer :drawer="false"/>
   <DynamicAtlas></DynamicAtlas>
+  <DetailsDrawer :drawer="false"/>
+  <MainFooter></MainFooter>
 </template>
 
 <style scoped>

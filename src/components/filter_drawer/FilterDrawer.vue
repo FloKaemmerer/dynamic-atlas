@@ -18,45 +18,7 @@
         <AtlasOverlayHolder/>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col cols="12">
-        This product isn't affiliated with or endorsed by Grinding Gear Games in any way.
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12">
-        <v-btn variant="text" @click="toggleAboutOverlay = !toggleAboutOverlay">
-          About
-        </v-btn>
-        |
-        <v-btn variant="text" @click="toggleImproveOverlay = !toggleImproveOverlay">
-          Improve
-        </v-btn>
-        |
-        <v-btn variant="text" @click="toggleContactOverlay = !toggleContactOverlay">
-          Contact
-        </v-btn>
-        |
-        <v-btn variant="text" @click="toggleGlossaryOverlay = !toggleGlossaryOverlay">
-          Glossary
-        </v-btn>
-        |
-        <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
-          Changelog
-        </v-btn>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col cols="12">
-        © 2023 PoeAtlas.app. All Rights Reserved.
-      </v-col>
-    </v-row>
   </v-navigation-drawer>
-  <AboutOverlay :toggleOverlay="toggleAboutOverlay"></AboutOverlay>
-  <ImproveOverlay :toggleOverlay="toggleImproveOverlay"></ImproveOverlay>
-  <ContactOverlay :toggleOverlay="toggleContactOverlay"></ContactOverlay>
-  <GlossaryOverlay :toggle-overlay="toggleGlossaryOverlay"></GlossaryOverlay>
-  <ChangelogOverlay :toggle-overlay="toggleChangelogOverlay"></ChangelogOverlay>
 
 </template>
 
@@ -69,11 +31,6 @@ import BossFilterHolder from "@/components/filter_drawer/filters/boss_filters/Bo
 import MapFilterHolder from "@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue";
 import TextFilterHolder from "@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue";
 import AtlasOverlayHolder from "@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue";
-import AboutOverlay from "@/components/filter_drawer/overlays/AboutOverlay.vue";
-import ImproveOverlay from "@/components/filter_drawer/overlays/ImproveOverlay.vue";
-import ContactOverlay from "@/components/filter_drawer/overlays/ContactOverlay.vue";
-import GlossaryOverlay from "@/components/filter_drawer/overlays/GlossaryOverlay.vue";
-import ChangelogOverlay from "@/components/filter_drawer/overlays/ChangelogOverlay.vue";
 import type {LocationQuery, RouteLocationNormalizedLoaded, Router} from "vue-router";
 import {useRoute, useRouter} from "vue-router";
 import {useFilterStore} from "@/store/FilterStore";
@@ -82,12 +39,6 @@ import {useFilterQueryStore} from "@/store/FilterQueryStore";
 import handleUrlQueryFilters from "@/composable/url-query-filter-handler";
 import FilterToolbar from "@/components/filter_drawer/FilterToolbar.vue";
 import {useFilterDrawerStore} from "@/store/FilterDrawerStore";
-
-let toggleAboutOverlay = ref(false)
-let toggleImproveOverlay = ref(false)
-let toggleContactOverlay = ref(false)
-let toggleGlossaryOverlay = ref(false)
-let toggleChangelogOverlay = ref(false)
 
 const filterStore = useFilterStore();
 const filterQueryStore = useFilterQueryStore();
