@@ -123,11 +123,11 @@ const initAtlasCanvas = () => {
 function initState() {
   state = {
     stage: undefined,
-    currentScale: 0.9,
+    currentScale: 0.85,
     height: minHeight,
     width: minWidth,
-    offsetX: 175,
-    offsetY: 70,
+    offsetX: 125,
+    offsetY: 90,
     lastCenter: undefined,
     lastDist: 0,
   }
