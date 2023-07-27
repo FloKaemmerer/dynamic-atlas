@@ -1,84 +1,68 @@
 <script setup lang="ts">
-
+import { ref } from 'vue'
 import MinimumDivinationCardPriceFilter
-    from "@/components/filter_drawer/filters/divination_card_filters/MinimumDivinationCardPriceFilter.vue";
+  from '@/components/filter_drawer/filters/divination_card_filters/MinimumDivinationCardPriceFilter.vue'
 import MinimumEffectiveCardValueFilter
-    from "@/components/filter_drawer/filters/divination_card_filters/MinimumEffectiveCardValueFilter.vue";
-import {ref} from "vue";
-import {useActiveFiltersStore} from "@/store/activeFiltersStore";
-import {useFilterStore} from "@/store/FilterStore";
+  from '@/components/filter_drawer/filters/divination_card_filters/MinimumEffectiveCardValueFilter.vue'
+import { useActiveFiltersStore } from '@/store/activeFiltersStore'
+import { useFilterStore } from '@/store/FilterStore'
 
-const activeFiltersStore = useActiveFiltersStore();
-const filterStore = useFilterStore();
+const activeFiltersStore = useActiveFiltersStore()
+const filterStore = useFilterStore()
 
-let activeDivinationCardFilters = ref(activeFiltersStore.activeDivinationCardFilters.length)
-let panel = ref()
-
+const activeDivinationCardFilters = ref(activeFiltersStore.activeDivinationCardFilters.length)
+const panel = ref()
 
 activeFiltersStore.$subscribe((mutation, state) => {
-    if (state.activeDivinationCardFilters.length != activeDivinationCardFilters.value) {
-        activeDivinationCardFilters.value = state.activeDivinationCardFilters.length
-    }
+  if (state.activeDivinationCardFilters.length !== activeDivinationCardFilters.value)
+    activeDivinationCardFilters.value = state.activeDivinationCardFilters.length
 })
 
-
 function clearActiveDivinationCardFilters() {
-    filterStore.CLEAR_DIVINATION_CARD_FILTERS()
+  filterStore.CLEAR_DIVINATION_CARD_FILTERS()
+  panel.value = []
+  setTimeout(() => {
     panel.value = []
-    setTimeout(() => {
-        panel.value = []
-    }, 10);
-
+  }, 10)
 }
 </script>
 
 <template>
-    <v-card>
-        <v-card-text>
-            <v-row>
-                <v-expansion-panels v-model="panel">
-                    <v-expansion-panel value="DivinationCardPanel">
-                        <v-expansion-panel-title>
-                            <v-row no-gutters>
-                                <v-col cols="6" class="d-flex justify-start">
-                                    <strong>Divination Card Filters</strong>
-                                </v-col>
-                                <v-col cols="6" class="text--secondary">
-                                    <v-fade-transition leave-absolute>
-                                        <span v-if=" activeDivinationCardFilters > 0"
-                                              key="0">
-                                            <v-row no-gutters>
-                                                <v-col cols="10">
-                                                Active: {{ activeDivinationCardFilters }}
-                                                </v-col>
-                                                <v-col cols="2">
-                                                    <v-tooltip>
-                                                        <template v-slot:activator="{ props }">
-                                                            <v-btn icon="mdi-close-circle"
-                                                                   @click="clearActiveDivinationCardFilters()"
-                                                                   density="compact"
-                                                                   v-bind="props"
-                                                                   variant="text"
-                                                                   :disabled="activeDivinationCardFilters < 1"></v-btn>
-                                                        </template>
-                                                        <p>Clear Active Divination Card Filters</p>
-                                                    </v-tooltip>
-                                                </v-col>
-                                        </v-row>
-                                        </span>
-                                    </v-fade-transition>
-                                </v-col>
-                            </v-row>
-                        </v-expansion-panel-title>
-                        <v-expansion-panel-text>
-                            <MinimumDivinationCardPriceFilter/>
-                            <MinimumEffectiveCardValueFilter/>
-                        </v-expansion-panel-text>
-                    </v-expansion-panel>
-                </v-expansion-panels>
-            </v-row>
-        </v-card-text>
-    </v-card>
+  <v-expansion-panel value="DivinationCardPanel">
+    <v-expansion-panel-title>
+      <v-row no-gutters>
+        <v-col class="d-inline-flex align-center" cols="7">
+          <p class="text-subtitle-1">
+            Divination Card Filters
+          </p>
+        </v-col>
+        <v-fade-transition leave-absolute>
+          <v-col v-if="activeDivinationCardFilters > 0" class="d-inline-flex align-center justify-end text-overline pr-2" cols="5">
+            Active: {{ activeDivinationCardFilters }}
+            <v-tooltip>
+              <template #activator="{ props }">
+                <v-btn
+                  icon="mdi-close-circle"
+                  density="compact"
+                  size="x-small"
+                  v-bind="props"
+                  class="ml-2"
+                  variant="text"
+                  :disabled="activeDivinationCardFilters < 1"
+                  @click="clearActiveDivinationCardFilters()"
+                />
+              </template>
+              <p>Clear Active Divination Card Filters</p>
+            </v-tooltip>
+          </v-col>
+        </v-fade-transition>
+      </v-row>
+    </v-expansion-panel-title>
+    <v-expansion-panel-text>
+      <MinimumDivinationCardPriceFilter />
+      <MinimumEffectiveCardValueFilter />
+    </v-expansion-panel-text>
+  </v-expansion-panel>
 </template>
 
 <style scoped>

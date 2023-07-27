@@ -1,35 +1,34 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useFilterStore } from '@/store/FilterStore'
 
-import {useFilterStore} from "@/store/FilterStore";
-import {ref} from "vue";
-
-const filterStore = useFilterStore();
-let filterText = ref();
+const filterStore = useFilterStore()
+const filterText = ref()
 
 function handleTextFilter(value: string) {
-    filterStore.SET_FILTER_TEXT(value);
+  filterStore.SET_FILTER_TEXT(value)
 }
 
 filterStore.$subscribe((mutation, state) => {
-    if (state.filterText != filterText.value) {
-        filterText.value = state.filterText
-    }
+  if (state.filterText !== filterText.value)
+    filterText.value = state.filterText
 })
 </script>
 
 <template>
-    <v-text-field
-            v-model="filterText"
-            @update:model-value="val => handleTextFilter(val)"
-            density="compact"
-            variant="underlined"
-            label="Filter... (eg: Doctor|Nurse|Patient)"
-            prepend-inner-icon="mdi-magnify"
-            single-line
-            class="mx-2"
-            color="#198754"
-            :hide-details="true"
-            clearable/>
+  <v-text-field
+    v-model="filterText"
+    density="compact"
+    variant="underlined"
+    label="Filter... (eg: Doctor|Nurse|Patient)"
+    prepend-inner-icon="mdi-magnify"
+    single-line
+    class="mx-2 mb-4"
+    color="#198754"
+    :hide-details="true"
+    clearable
+    @update:model-value="val => handleTextFilter(val)"
+  />
 </template>
 
 <style scoped>
