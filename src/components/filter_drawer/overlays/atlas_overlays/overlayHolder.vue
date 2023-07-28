@@ -13,19 +13,19 @@ import DivinationCardOverlayPicker
     </v-toolbar>
     <v-card-text>
       <v-expansion-panels>
-        <v-expansion-panel>
-          <v-expansion-panel-title class="text-subtitle-1">
+        <v-expansion-panel bg-color="black" rounded="0">
+          <v-expansion-panel-title class="text-subtitle-1 text-amber-lighten-5">
             Map Overlays
           </v-expansion-panel-title>
-          <v-expansion-panel-text>
+          <v-expansion-panel-text class="text-amber-lighten-5">
             <AtlasNodeOverlayPicker />
           </v-expansion-panel-text>
         </v-expansion-panel>
-        <v-expansion-panel>
-          <v-expansion-panel-title class="text-subtitle-1">
+        <v-expansion-panel bg-color="black" rounded="0">
+          <v-expansion-panel-title class="text-subtitle-1 text-amber-lighten-5">
             Divination Card Overlays
           </v-expansion-panel-title>
-          <v-expansion-panel-text>
+          <v-expansion-panel-text class="text-amber-lighten-5">
             <DivinationCardOverlayPicker />
           </v-expansion-panel-text>
         </v-expansion-panel>

@@ -29,13 +29,11 @@ function clearActiveDivinationCardFilters() {
 </script>
 
 <template>
-  <v-expansion-panel value="DivinationCardPanel">
-    <v-expansion-panel-title>
+  <v-expansion-panel rounded="0" bg-color="black" color="amber-lighten-5" value="DivinationCardPanel">
+    <v-expansion-panel-title class="text-subtitle-1 text-amber-lighten-5">
       <v-row no-gutters>
         <v-col class="d-inline-flex align-center" cols="7">
-          <p class="text-subtitle-1">
-            Divination Card Filters
-          </p>
+          Divination Card Filters
         </v-col>
         <v-fade-transition leave-absolute>
           <v-col v-if="activeDivinationCardFilters > 0" class="d-inline-flex align-center justify-end text-overline pr-2" cols="5">
@@ -59,7 +57,7 @@ function clearActiveDivinationCardFilters() {
         </v-fade-transition>
       </v-row>
     </v-expansion-panel-title>
-    <v-expansion-panel-text>
+    <v-expansion-panel-text class="text-amber-lighten-5">
       <MinimumDivinationCardPriceFilter />
       <MinimumEffectiveCardValueFilter />
     </v-expansion-panel-text>

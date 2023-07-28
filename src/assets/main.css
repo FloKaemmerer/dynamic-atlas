@@ -7,6 +7,18 @@ a,
   transition: 0.4s;
 }
 
+.cursor-help {
+  cursor: help;
+}
+.v-checkbox-btn{
+    border-bottom-style: solid;
+    border-bottom-width: 0.666667px;
+    border-bottom-color: rgb(70, 82, 96);
+}
+.v-checkbox-btn .v-label {
+    opacity:1;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);

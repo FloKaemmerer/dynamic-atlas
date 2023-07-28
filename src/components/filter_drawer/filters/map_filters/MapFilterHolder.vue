@@ -33,13 +33,11 @@ function clearActiveMapFilters() {
 </script>
 
 <template>
-  <v-expansion-panel value="mapPanel">
-    <v-expansion-panel-title>
+  <v-expansion-panel rounded="0" bg-color="black" color="amber-lighten-5" value="mapPanel">
+    <v-expansion-panel-title class="text-subtitle-1 text-amber-lighten-5">
       <v-row no-gutters>
         <v-col class="d-inline-flex align-center" cols="7">
-          <p class="text-subtitle-1">
-            Map Filters
-          </p>
+          Map Filters
         </v-col>
         <v-fade-transition leave-absolute>
           <v-col v-if="activeMapFilters > 0" class="d-inline-flex align-center justify-end text-overline pr-2" cols="5">
@@ -63,7 +61,7 @@ function clearActiveMapFilters() {
         </v-fade-transition>
       </v-row>
     </v-expansion-panel-title>
-    <v-expansion-panel-text>
+    <v-expansion-panel-text class="text-amber-lighten-5">
       <MapTierFilter />
       <OpennessFilter />
       <TraversabilityFilter />
