@@ -15,7 +15,7 @@ const toggleChangelogOverlay = ref(false)
 </script>
 
 <template>
-  <v-footer border app="true" color="grey-darken-4" class="text-grey-lighten-3">
+  <v-footer border app color="grey-darken-4" class="text-grey-lighten-3">
     <v-row justify="center" no-gutters>
       <v-col class="text-center" cols="12">
         <v-btn variant="text" @click="toggleAboutOverlay = !toggleAboutOverlay">

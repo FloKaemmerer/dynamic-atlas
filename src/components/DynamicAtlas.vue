@@ -94,7 +94,7 @@ onMounted(() => {
 
 function initAtlasCanvas() {
   initState()
-  initCanvasStructure(this)
+  initCanvasStructure()
   initBackgroundImage()
   initVoidstoneSockets()
   initVoidstones()
@@ -129,10 +129,10 @@ function initState() {
   }
 }
 
-function initCanvasStructure(pos: any) {
+function initCanvasStructure() {
   Konva.hitOnDragEnabled = true
 
-  state.stage = new Konva.Stage({
+  const stage = new Konva.Stage({
     container: 'atlas',
     id: 'atlas-stage',
     width: state.width,
@@ -142,8 +142,15 @@ function initCanvasStructure(pos: any) {
     offsetX: state.offsetX,
     offsetY: state.offsetY,
     draggable: true,
-    dragBoundFunc: dragBound.bind(pos),
   })
+  stage.on('dragmove', () => {
+    const pos = stage.absolutePosition()
+    if (state.stage) {
+      stage.x(Math.max(Math.min(pos.x, 800), -state.width * state.currentScale * 1.5 + window.innerWidth))
+      stage.y(Math.max(Math.min(pos.y, 500), -state.height * state.currentScale * 1.5 + window.innerHeight))
+    }
+  })
+  state.stage = stage
 
   state.stage.add(mapLayer)
   state.stage.add(reactiveLayer)
@@ -558,20 +565,6 @@ function isYellowTier(mapTier: number) {
 
 function isRedTier(mapTier: number) {
   return mapTier > 10
-}
-
-function dragBound(pos: any) {
-  let x = minWidth
-  let y = minHeight
-  if (state.stage) {
-    x = Math.max(Math.min(pos.x, 800), -state.width * state.currentScale * 1.5 + window.innerWidth)
-    y = Math.max(Math.min(pos.y, 500), -state.height * state.currentScale * 1.5 + window.innerHeight)
-  }
-
-  return {
-    x,
-    y,
-  }
 }
 </script>
 
