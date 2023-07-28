@@ -1,23 +1,22 @@
-
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue'
 
-import AboutOverlay from "@/components/filter_drawer/overlays/AboutOverlay.vue";
-import ImproveOverlay from "@/components/filter_drawer/overlays/ImproveOverlay.vue";
-import ContactOverlay from "@/components/filter_drawer/overlays/ContactOverlay.vue";
-import GlossaryOverlay from "@/components/filter_drawer/overlays/GlossaryOverlay.vue";
-import ChangelogOverlay from "@/components/filter_drawer/overlays/ChangelogOverlay.vue";
+import AboutOverlay from '@/components/filter_drawer/overlays/AboutOverlay.vue'
+import ImproveOverlay from '@/components/filter_drawer/overlays/ImproveOverlay.vue'
+import ContactOverlay from '@/components/filter_drawer/overlays/ContactOverlay.vue'
+import GlossaryOverlay from '@/components/filter_drawer/overlays/GlossaryOverlay.vue'
+import ChangelogOverlay from '@/components/filter_drawer/overlays/ChangelogOverlay.vue'
 
-
-let toggleAboutOverlay = ref(false)
-let toggleImproveOverlay = ref(false)
-let toggleContactOverlay = ref(false)
-let toggleGlossaryOverlay = ref(false)
-let toggleChangelogOverlay = ref(false)
+const toggleAboutOverlay = ref(false)
+const toggleImproveOverlay = ref(false)
+const toggleContactOverlay = ref(false)
+const toggleGlossaryOverlay = ref(false)
+const toggleChangelogOverlay = ref(false)
 </script>
+
 <template>
-<v-footer border app color='grey-darken-4' class="text-grey-lighten-3" >
-    <v-row justify="center" no-gutters> 
+  <v-footer border app="true" color="grey-darken-4" class="text-grey-lighten-3">
+    <v-row justify="center" no-gutters>
       <v-col class="text-center" cols="12">
         <v-btn variant="text" @click="toggleAboutOverlay = !toggleAboutOverlay">
           About
@@ -47,10 +46,10 @@ let toggleChangelogOverlay = ref(false)
       </v-col>
     </v-row>
   </v-footer>
-  
-  <AboutOverlay :toggleOverlay="toggleAboutOverlay"></AboutOverlay>
-  <ImproveOverlay :toggleOverlay="toggleImproveOverlay"></ImproveOverlay>
-  <ContactOverlay :toggleOverlay="toggleContactOverlay"></ContactOverlay>
-  <GlossaryOverlay :toggle-overlay="toggleGlossaryOverlay"></GlossaryOverlay>
-  <ChangelogOverlay :toggle-overlay="toggleChangelogOverlay"></ChangelogOverlay>
+
+  <AboutOverlay :toggle-overlay="toggleAboutOverlay" />
+  <ImproveOverlay :toggle-overlay="toggleImproveOverlay" />
+  <ContactOverlay :toggle-overlay="toggleContactOverlay" />
+  <GlossaryOverlay :toggle-overlay="toggleGlossaryOverlay" />
+  <ChangelogOverlay :toggle-overlay="toggleChangelogOverlay" />
 </template>

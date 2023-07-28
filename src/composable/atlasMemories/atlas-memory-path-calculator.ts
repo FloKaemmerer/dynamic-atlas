@@ -125,7 +125,7 @@ function isViableLowerTierNode(value: AtlasNode, sourceAtlasNode: AtlasNode, cur
         && !value.uniqueMap
         && value.mapTier < sourceAtlasNode.mapTier
         && !currentPathContainsNode(currentPath, value.id)
-        && (viableStepIds.length == 0 || viableStepIds.includes(`${sourceAtlasNode.id}-${value.id}`))
+        && (viableStepIds.length === 0 || viableStepIds.includes(`${sourceAtlasNode.id}-${value.id}`))
 }
 
 function isViableHigherTierNode(value: AtlasNode, sourceAtlasNode: AtlasNode, currentPath: AtlasMemoryPath | null, viableStepIds: string[]) {
@@ -133,7 +133,7 @@ function isViableHigherTierNode(value: AtlasNode, sourceAtlasNode: AtlasNode, cu
         && !value.uniqueMap
         && value.mapTier > sourceAtlasNode.mapTier
         && !currentPathContainsNode(currentPath, value.id)
-        && (viableStepIds.length == 0 || viableStepIds.includes(`${sourceAtlasNode.id}-${value.id}`))
+        && (viableStepIds.length === 0 || viableStepIds.includes(`${sourceAtlasNode.id}-${value.id}`))
 }
 
 function getLinkedNodes(sourceAtlasNode: AtlasNode) {
@@ -143,7 +143,7 @@ function getLinkedNodes(sourceAtlasNode: AtlasNode) {
   const linkedNodes: AtlasNode[] = []
   linkedNodeIds.forEach((linkedNodeId) => {
     const atlasNode = candidateNodes.get(linkedNodeId)
-    if (atlasNode && atlasNode.id != sourceAtlasNode.id) {
+    if (atlasNode && atlasNode.id !== sourceAtlasNode.id) {
       linkedNodes.push(atlasNode)
     }
   })
