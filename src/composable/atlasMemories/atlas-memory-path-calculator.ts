@@ -8,6 +8,36 @@ import {useAtlasMemoryNodeStore} from "@/store/AtlasMemoryNodeStores";
 const atlasNodeStore = useAtlasNodeStore()
 const atlasMemoryNodeStore = useAtlasMemoryNodeStore()
 
+export function calculateAtlasMemoryPaths(sourceAtlasNode: AtlasNode, numberOfSteps: number) {
+    // dry run to get viable node Ids
+    const tmpAtlasMemoryPaths: AtlasMemoryPath[] = []
+    const initialProbabilities = new Map<string, number>();
+    calculatePathProbabilities(sourceAtlasNode, numberOfSteps, 1, initialProbabilities, tmpAtlasMemoryPaths, null, [])
+    const viableAtlasMemoryPaths = removePathsTerminatingEarly(tmpAtlasMemoryPaths, numberOfSteps);
+    if (tmpAtlasMemoryPaths.length === viableAtlasMemoryPaths.length) {
+        // If no Paths have been removed we can return the initial Paths
+        mergeProbabilities(viableAtlasMemoryPaths, initialProbabilities);
+        console.log("Got " + viableAtlasMemoryPaths.length + " possible Memory paths")
+        for (let i = 0; i < viableAtlasMemoryPaths.length; i++) {
+            console.log("Viable Path: " + getPrintablePath(viableAtlasMemoryPaths[i]))
+        }
+        atlasMemoryNodeStore.SET_ATLAS_MEMORY_PATHS(viableAtlasMemoryPaths)
+    } else {
+        //if some paths terminate early we must rerun the calculation with viable node ids as filter...
+        const viableStepIds: string[] = determineViableStepIds(viableAtlasMemoryPaths)
+        console.log("ViableStepIds: " + viableStepIds)
+        const tmpProbabilities = new Map<string, number>();
+        const atlasMemoryPaths: AtlasMemoryPath[] = []
+        calculatePathProbabilities(sourceAtlasNode, numberOfSteps, 1, tmpProbabilities, atlasMemoryPaths, null, viableStepIds)
+        mergeProbabilities(atlasMemoryPaths, tmpProbabilities);
+        console.log("Got " + atlasMemoryPaths.length + " possible Memory paths:")
+        for (let i = 0; i < viableAtlasMemoryPaths.length; i++) {
+            console.log("Viable Path: " + getPrintablePath(viableAtlasMemoryPaths[i]))
+        }
+        atlasMemoryNodeStore.SET_ATLAS_MEMORY_PATHS(atlasMemoryPaths)
+    }
+}
+
 function mergeProbabilities(atlasMemoryPaths: AtlasMemoryPath[], tmpProbabilities: Map<string, number>) {
     atlasMemoryPaths.forEach(atlasMemoryPath => {
         atlasMemoryPath.atlasMemorySteps.forEach(atlasMemoryStep => {
@@ -24,12 +54,32 @@ function mergeProbabilities(atlasMemoryPaths: AtlasMemoryPath[], tmpProbabilitie
     })
 }
 
+function getPrintablePath(atlasMemoryPath: AtlasMemoryPath) {
+    const atlasMemorySteps = atlasMemoryPath.atlasMemorySteps;
+    let path = ''
+    for (let j = 0; j < atlasMemorySteps.length; j++) {
+        if (j === 0) {
+            path = path.concat(atlasMemorySteps[j].sourceAtlasMemoryNode.name + "-" + atlasMemorySteps[j].targetAtlasMemoryNode.name)
+        } else {
+            path = path.concat("-" + atlasMemorySteps[j].targetAtlasMemoryNode.name)
+        }
+    }
+    return path
+}
+
 function removePathsTerminatingEarly(atlasMemoryPaths: AtlasMemoryPath[], numberOfSteps: number) {
+    const removedPaths: AtlasMemoryPath[] = []
     for (let i = atlasMemoryPaths.length - 1; i >= 0; i--) {
         const atlasMemorySteps = atlasMemoryPaths[i].atlasMemorySteps;
         if (atlasMemorySteps.length < numberOfSteps) {
+            removedPaths.push(atlasMemoryPaths[i])
             atlasMemoryPaths.splice(i, 1)
         }
+    }
+    console.log("Removed " + removedPaths.length + " Paths terminating early")
+    for (let i = 0; i < removedPaths.length; i++) {
+        const atlasMemoryPath = removedPaths[i];
+        console.log("Removed Path: " + getPrintablePath(atlasMemoryPath));
     }
     return atlasMemoryPaths
 }
@@ -44,21 +94,6 @@ function determineViableStepIds(atlasMemoryPaths: AtlasMemoryPath[]) {
         })
     })
     return viableStepId;
-}
-
-export function calculateAtlasMemoryPaths(sourceAtlasNode: AtlasNode, numberOfSteps: number) {
-    // dry run to get viable node Ids
-    const tmpAtlasMemoryPaths: AtlasMemoryPath[] = []
-    calculatePathProbabilities(sourceAtlasNode, numberOfSteps, 1, new Map<string, number>(), tmpAtlasMemoryPaths, null, [])
-    const viableStepIds: string[] = determineViableStepIds(removePathsTerminatingEarly(tmpAtlasMemoryPaths, numberOfSteps))
-
-    //rerun calculation with viable node ids as filter...
-    const tmpProbabilities = new Map<string, number>();
-    const atlasMemoryPaths: AtlasMemoryPath[] = []
-    calculatePathProbabilities(sourceAtlasNode, numberOfSteps, 1, tmpProbabilities, atlasMemoryPaths, null, viableStepIds)
-    mergeProbabilities(atlasMemoryPaths, tmpProbabilities);
-    console.log("Got " + atlasMemoryPaths.length + " possible Memory paths")
-    atlasMemoryNodeStore.SET_ATLAS_MEMORY_PATHS(atlasMemoryPaths)
 }
 
 function addTotalProbability(candidates: Map<string, number>, atlasMemoryNodeId: string, probability: number) {
@@ -135,8 +170,14 @@ const calculatePathProbabilities = (sourceAtlasNode: AtlasNode,
 
         const numberOfHigherTierNodes = viableHigherTierNodes.length;
         if (numberOfHigherTierNodes > 0) {
+            // We need to create separate clones for each Linked Node
+            // if we reuse a variable it will leak into the recursive runs.
+            const tmpPaths: AtlasMemoryPath[] = []
+            for (let i = 0; i < numberOfHigherTierNodes; i++) {
+                tmpPaths.push(JSON.parse(JSON.stringify(currentPath)))
+            }
+
             const stepProbability = 1 / numberOfHigherTierNodes;
-            const tmpPath = JSON.parse(JSON.stringify(currentPath))
             for (let i = 0; i < viableHigherTierNodes.length; i++) {
                 const higherTierNode = viableHigherTierNodes[i]
                 const probability = stepProbability * currentProbability;
@@ -154,7 +195,7 @@ const calculatePathProbabilities = (sourceAtlasNode: AtlasNode,
                     stepId: sourceAtlasMemoryNode.nodeId + "-" + targetAtlasMemoryNode.nodeId
                 }
                 if (i > 0 && currentPath) {
-                    currentPath = tmpPath
+                    currentPath = tmpPaths[i]
                 }
                 if (currentPath) {
                     currentPath.atlasMemorySteps.push(atlasMemoryStep)
