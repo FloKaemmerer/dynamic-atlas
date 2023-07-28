@@ -1,0 +1,10 @@
+/* eslint-env node */
+
+{
+  "extends": "@antfu",
+  "rules": {
+    "curly": [
+        2, "all"
+    ]
+  }
+}
