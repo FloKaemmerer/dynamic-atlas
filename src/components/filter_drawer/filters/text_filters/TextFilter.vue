@@ -18,6 +18,7 @@ filterStore.$subscribe((mutation, state) => {
 
 <template>
   <v-text-field
+    id="mapTextFilter"
     v-model="filterText"
     density="compact"
     variant="underlined"
