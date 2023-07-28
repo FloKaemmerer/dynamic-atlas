@@ -1,30 +1,29 @@
-import "@mdi/font/css/materialdesignicons.css";
+import '@mdi/font/css/materialdesignicons.css'
 import './assets/main.css'
 
-import {createApp} from 'vue'
-import {createPinia} from 'pinia'
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 
-import App from './App.vue'
-import router from './router'
 import axios from 'axios'
 
 import 'vuetify/styles'
-import {createVuetify} from 'vuetify'
+import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
-import VueKonva from 'vue-konva';
+import VueKonva from 'vue-konva'
+import router from './router'
+import App from './App.vue'
 
 const vuetify = createVuetify({
-    components,
-    directives,
+  components,
+  directives,
 })
 const app = createApp(App)
 app.use(createPinia())
-app.use(vuetify);
+app.use(vuetify)
 app.use(router)
-app.use(VueKonva, {prefix: 'k'});
+app.use(VueKonva, { prefix: 'k' })
 app.config.globalProperties.axios = axios
-
 
 app.mount('#app')
