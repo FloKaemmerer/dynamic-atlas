@@ -18,8 +18,9 @@ const activeMapFilters = ref(activeFiltersStore.activeMapFilters.length)
 const panel = ref()
 
 activeFiltersStore.$subscribe((mutation, state) => {
-  if (state.activeMapFilters.length !== activeMapFilters.value)
+  if (state.activeMapFilters.length !== activeMapFilters.value) {
     activeMapFilters.value = state.activeMapFilters.length
+  }
 })
 
 function clearActiveMapFilters() {
@@ -53,7 +54,7 @@ function clearActiveMapFilters() {
                   class="ml-2"
                   variant="text"
                   :disabled="activeMapFilters < 1"
-                  @click="clearActiveBossFilters()"
+                  @click="clearActiveMapFilters()"
                 />
               </template>
               <p>Clear Active Map Filters</p>

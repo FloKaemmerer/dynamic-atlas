@@ -15,8 +15,9 @@ const activeBossFilters = ref(activeFiltersStore.activeBossFilters.length)
 const panel = ref()
 
 activeFiltersStore.$subscribe((mutation, state) => {
-  if (state.activeBossFilters.length !== activeBossFilters.value)
+  if (state.activeBossFilters.length !== activeBossFilters.value) {
     activeBossFilters.value = state.activeBossFilters.length
+  }
 })
 
 function clearActiveBossFilters() {

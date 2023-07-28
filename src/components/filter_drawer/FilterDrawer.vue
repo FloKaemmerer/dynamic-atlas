@@ -39,59 +39,75 @@ async function handleQueryParams() {
 filterStore.$subscribe((mutation, state) => {
   const queryFilters: LooseFilters = {}
   // ----- Map Filters -----
-  if (state.filterText && state.filterText.length > 0)
+  if (state.filterText && state.filterText.length > 0) {
     queryFilters.filterText = state.filterText
+  }
 
-  if (state.mapTier[0] >= 0 && state.includeMapTier)
+  if (state.mapTier[0] >= 0 && state.includeMapTier) {
     queryFilters.mapTier = String(state.mapTier)
+  }
 
-  if (state.openness[0] >= 0 && state.includeOpenness)
+  if (state.openness[0] >= 0 && state.includeOpenness) {
     queryFilters.openness = String(state.openness)
+  }
 
-  if (state.traversability[0] >= 0 && state.includeTraversability)
+  if (state.traversability[0] >= 0 && state.includeTraversability) {
     queryFilters.traversability = String(state.traversability)
+  }
 
-  if (state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor)
+  if (state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor) {
     queryFilters.backtrackFactor = String(state.backtrackFactor)
+  }
 
-  if (state.linearity[0] >= 0 && state.includeLinearity)
+  if (state.linearity[0] >= 0 && state.includeLinearity) {
     queryFilters.linearity = String(state.linearity)
+  }
 
-  if (state.terrainSlots[0] >= 0 && state.includeTerrainSlots)
+  if (state.terrainSlots[0] >= 0 && state.includeTerrainSlots) {
     queryFilters.terrainSlots = String(state.terrainSlots)
+  }
 
-  if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount)
+  if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount) {
     queryFilters.baseMobCount = String(state.baseMobCount)
+  }
 
-  if (state.rushableBoss)
+  if (state.rushableBoss) {
     queryFilters.rushableBoss = String(state.rushableBoss)
+  }
 
   // --------------------------
 
   // ------ Boss Filters ------
-  if (state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses)
+  if (state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses) {
     queryFilters.numberOfBosses = String(state.numberOfBosses)
+  }
 
-  if (state.excludePhasedBosses)
+  if (state.excludePhasedBosses) {
     queryFilters.excludePhasedBosses = String(state.excludePhasedBosses)
+  }
 
-  if (state.includeSkippablePhases)
+  if (state.includeSkippablePhases) {
     queryFilters.includeSkippablePhases = String(state.includeSkippablePhases)
+  }
 
-  if (state.includeSpawnIntro)
+  if (state.includeSpawnIntro) {
     queryFilters.includeSpawnIntro = String(state.includeSpawnIntro)
+  }
 
-  if (state.excludeSpawnedBosses)
+  if (state.excludeSpawnedBosses) {
     queryFilters.excludeSpawnedBosses = String(state.excludeSpawnedBosses)
+  }
 
   // ---------------------------
 
   // - Divination Card Filters -
-  if (state.minDivinationCardPrice > 0)
+  if (state.minDivinationCardPrice > 0) {
     queryFilters.minDivinationCardPrice = state.minDivinationCardPrice
+  }
 
-  if (state.minEffectiveDivinationCardValue > 0)
+  if (state.minEffectiveDivinationCardValue > 0) {
     queryFilters.minEffectiveDivinationCardValue = state.minEffectiveDivinationCardValue
+  }
 
   // ---------------------------
 

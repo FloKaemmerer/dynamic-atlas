@@ -10,8 +10,9 @@ function handleTextFilter(value: string) {
 }
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.filterText !== filterText.value)
+  if (state.filterText !== filterText.value) {
     filterText.value = state.filterText
+  }
 })
 </script>
 

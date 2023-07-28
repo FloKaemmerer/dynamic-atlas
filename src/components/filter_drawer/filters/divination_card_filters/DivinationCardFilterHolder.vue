@@ -14,8 +14,9 @@ const activeDivinationCardFilters = ref(activeFiltersStore.activeDivinationCardF
 const panel = ref()
 
 activeFiltersStore.$subscribe((mutation, state) => {
-  if (state.activeDivinationCardFilters.length !== activeDivinationCardFilters.value)
+  if (state.activeDivinationCardFilters.length !== activeDivinationCardFilters.value) {
     activeDivinationCardFilters.value = state.activeDivinationCardFilters.length
+  }
 })
 
 function clearActiveDivinationCardFilters() {
