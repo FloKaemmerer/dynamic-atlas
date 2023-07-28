@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
-import type { LocationQuery, RouteLocationNormalizedLoaded, Router } from 'vue-router'
+import { computed } from 'vue'
+import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
 import { initFilter } from '@/composable/atlas-filter-handler'
 import DivinationCardFilterHolder
@@ -24,100 +24,53 @@ const router: Router = useRouter()
 
 const drawer = computed<boolean>(() => filterDrawerStore.drawer)
 
-onMounted(() => {
-  // We need to import the AtlasFilter composable, otherwise it won't trigger, even though it is subscribed to the FilterStore
+function queryFilters() {
+  const queryFilters: LooseFilters = {}
+  return {
+    query: queryFilters,
+    add: (condition: boolean, key: string, value: any): void => {
+      if (condition) {
+        queryFilters[key] = String(value)
+      }
+    },
+  }
+}
+router.isReady().then(() => {
   initFilter()
-  handleQueryParams()
+  handleUrlQueryFilters(route.query)
 })
 
-async function handleQueryParams() {
-  await router.isReady()
-  const queryParams: LocationQuery = route.query
-  handleUrlQueryFilters(queryParams)
-}
+filterStore.$subscribe((_mutation, state) => {
+  const filters = queryFilters()
 
-filterStore.$subscribe((mutation, state) => {
-  const queryFilters: LooseFilters = {}
   // ----- Map Filters -----
-  if (state.filterText && state.filterText.length > 0) {
-    queryFilters.filterText = state.filterText
-  }
-
-  if (state.mapTier[0] >= 0 && state.includeMapTier) {
-    queryFilters.mapTier = String(state.mapTier)
-  }
-
-  if (state.openness[0] >= 0 && state.includeOpenness) {
-    queryFilters.openness = String(state.openness)
-  }
-
-  if (state.traversability[0] >= 0 && state.includeTraversability) {
-    queryFilters.traversability = String(state.traversability)
-  }
-
-  if (state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor) {
-    queryFilters.backtrackFactor = String(state.backtrackFactor)
-  }
-
-  if (state.linearity[0] >= 0 && state.includeLinearity) {
-    queryFilters.linearity = String(state.linearity)
-  }
-
-  if (state.terrainSlots[0] >= 0 && state.includeTerrainSlots) {
-    queryFilters.terrainSlots = String(state.terrainSlots)
-  }
-
-  if (state.baseMobCount[0] >= 0 && state.includeBaseMobCount) {
-    queryFilters.baseMobCount = String(state.baseMobCount)
-  }
-
-  if (state.rushableBoss) {
-    queryFilters.rushableBoss = String(state.rushableBoss)
-  }
-
+  filters.add(Boolean(state.filterText && state.filterText.length > 0), 'filterText', state.filterText)
+  filters.add(state.mapTier[0] >= 0 && state.includeMapTier, 'mapTier', state.mapTier)
+  filters.add(state.openness[0] >= 0 && state.includeOpenness, 'openness', state.openness)
+  filters.add(state.traversability[0] >= 0 && state.includeTraversability, 'traversability', state.traversability)
+  filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
+  filters.add(state.linearity[0] >= 0 && state.includeLinearity, 'linearity', state.linearity)
+  filters.add(state.terrainSlots[0] >= 0 && state.includeTerrainSlots, 'terrainSlots', state.terrainSlots)
+  filters.add(state.baseMobCount[0] >= 0 && state.includeBaseMobCount, 'baseMobCount', state.baseMobCount)
+  filters.add(state.rushableBoss, 'rushableBoss', state.rushableBoss)
   // --------------------------
 
   // ------ Boss Filters ------
-  if (state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses) {
-    queryFilters.numberOfBosses = String(state.numberOfBosses)
-  }
-
-  if (state.excludePhasedBosses) {
-    queryFilters.excludePhasedBosses = String(state.excludePhasedBosses)
-  }
-
-  if (state.includeSkippablePhases) {
-    queryFilters.includeSkippablePhases = String(state.includeSkippablePhases)
-  }
-
-  if (state.includeSpawnIntro) {
-    queryFilters.includeSpawnIntro = String(state.includeSpawnIntro)
-  }
-
-  if (state.excludeSpawnedBosses) {
-    queryFilters.excludeSpawnedBosses = String(state.excludeSpawnedBosses)
-  }
-
+  filters.add(state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses, 'numberOfBosses', state.numberOfBosses)
+  filters.add(state.excludePhasedBosses, 'excludePhasedBosses', state.excludePhasedBosses)
+  filters.add(state.includeSkippablePhases, 'includeSkippablePhases', state.includeSkippablePhases)
+  filters.add(state.includeSpawnIntro, 'includeSpawnIntro', state.includeSpawnIntro)
+  filters.add(state.excludeSpawnedBosses, 'excludeSpawnedBosses', state.excludeSpawnedBosses)
   // ---------------------------
 
   // - Divination Card Filters -
-  if (state.minDivinationCardPrice > 0) {
-    queryFilters.minDivinationCardPrice = state.minDivinationCardPrice
-  }
-
-  if (state.minEffectiveDivinationCardValue > 0) {
-    queryFilters.minEffectiveDivinationCardValue = state.minEffectiveDivinationCardValue
-  }
-
+  filters.add(state.minDivinationCardPrice > 0, 'minDivinationCardPrice', state.minDivinationCardPrice)
+  filters.add(state.minEffectiveDivinationCardValue > 0, 'minEffectiveDivinationCardValue', state.minEffectiveDivinationCardValue)
   // ---------------------------
 
-  filterQueryStore.SET_FILTER_QUERY(queryFilters)
+  router.push(filters)
+  filterQueryStore.SET_FILTER_QUERY(filters.query)
 })
-
-async function pushToRouter(queryFilters: LooseFilters) {
-  await router.isReady()
-  await router.push({ query: queryFilters })
-}
 </script>
 
 <template>
