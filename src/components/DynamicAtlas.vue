@@ -114,6 +114,7 @@ const initAtlasCanvas = () => {
   atlasNodeStore.atlasNodes.forEach((atlasNode: AtlasNode) => {
     initAtlasNodeNames(atlasNode);
     initNodeLinks(atlasNode);
+    initNodeHighlight(atlasNode)
     initNodeImages(atlasNode);
     initReactiveArea(atlasNode, tooltipText, tooltipContainer);
   })
@@ -206,6 +207,14 @@ function initNodeLinks(atlasNode: AtlasNode) {
 
 function initAtlasNodeNames(atlasNode: AtlasNode) {
   drawMapName(atlasNode.name, atlasNodeToPoint(atlasNode, true));
+}
+
+function initNodeHighlight(atlasNode: AtlasNode) {
+  const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
+  let filterHighlight = getFilterHighlight(atlasNode.id, atlasNodePoint);
+  filterHighlight.cache()
+  filterHighlight.filters([Konva.Filters.Blur]);
+  filterHighlightGroup.add(filterHighlight)
 }
 
 function initNodeImages(atlasNode: AtlasNode) {
@@ -383,15 +392,14 @@ divinationCardOverlayStore.$subscribe((mutation, state) => {
 atlasNodeStore.$subscribe((mutation, state) => {
   // destroy previous Highlights
   let allHighlights = filterHighlightGroup.find("Circle") as Konva.Circle[];
-  allHighlights.forEach(value => value.destroy())
+  allHighlights.forEach(value => value.opacity(0))
 
   //show all filtered AtlasNodes
   state.filteredAtlasNodes.forEach(value => {
-    const atlasNodePoint = atlasNodeToPoint(value, true)
-    let filterHighlight = getFilterHighlight(value.id, atlasNodePoint);
-    filterHighlight.cache()
-    filterHighlight.filters([Konva.Filters.Blur]);
-    filterHighlightGroup.add(filterHighlight)
+    const nodeHighlight = filterHighlightGroup.findOne("#" + value.id);
+    if (nodeHighlight) {
+      nodeHighlight.opacity(1)
+    }
   })
 })
 
