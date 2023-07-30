@@ -11,7 +11,6 @@ const atlasNodeStore = useAtlasNodeStore()
 const activeFiltersStore = useActiveFiltersStore()
 filterStore.$subscribe((mutation, state) => {
   handleFilter(state.filterText,
-    state.includeMapTier ? state.mapTier : [-1, -1],
     state.excludePhasedBosses,
     state.includeNumberOfBosses ? state.numberOfBosses : [-1, -1],
     state.minDivinationCardPrice,
@@ -26,7 +25,7 @@ filterStore.$subscribe((mutation, state) => {
     state.includeSkippablePhases,
     state.excludeSpawnedBosses,
     state.includeSpawnIntro,
-    state.filters)
+    state.filters[state.currentSelectedFilterIndex])
 })
 
 export function initFilter() {
@@ -37,8 +36,11 @@ export function initFilter() {
   })
 }
 
+function hasToFilterByMapTier(filter: Filter) {
+  return filter.includeMapTier && filter.mapTier !== undefined && filter.mapTier.length === 2
+}
+
 export function handleFilter(filterText: string,
-  mapTier: number[],
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
   minDivinationCardPrice: number,
@@ -53,11 +55,11 @@ export function handleFilter(filterText: string,
   includeSkippablePhases: boolean,
   excludeSpawnedBosses: boolean,
   spawnIntro: boolean,
-  filters: Filter[]) {
+  filter: Filter) {
   let result = [] as AtlasNode[]
   const needToFilter
         = (filterText && filterText.length) > 0
-        || mapTier[0] > -1
+        || hasToFilterByMapTier(filter)
         || numberOfBosses[0] > -1
         || excludePhasedBosses
         || minDivinationCardPrice > 0
@@ -80,7 +82,7 @@ export function handleFilter(filterText: string,
     result = filterByText(filterText, result)
 
     // Filter by MapTier
-    result = filterByMapTier(mapTier, result)
+    result = filterByMapTier(filter, result)
 
     // Filter by Number of Bosses
     result = filterByNumberOfBosses(numberOfBosses, result)
@@ -124,10 +126,11 @@ export function handleFilter(filterText: string,
   atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
 }
 
-function filterByMapTier(mapTier: number[], result: AtlasNode[]) {
-  if (mapTier[0] > -1) {
+function filterByMapTier(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterByMapTier(filter)) {
     result = result.filter((atlasNode) => {
-      return mapTier[0] <= atlasNode.mapTier && atlasNode.mapTier <= mapTier[1]
+      // @ts-expect-error within 'hasToFilterByMapTier' we check for length == 2
+      return filter.mapTier[0] <= atlasNode.mapTier && atlasNode.mapTier <= filter.mapTier[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.MAP_TIER)
   }

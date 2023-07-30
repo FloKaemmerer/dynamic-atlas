@@ -49,7 +49,7 @@ function debounceMapTierFilter(value: [number, number]) {
       <v-range-slider
         id="mapTierFilter"
         v-model="mapTier"
-        strict="true"
+        :strict="true"
         direction="horizontal"
         step="1"
         show-ticks="always"

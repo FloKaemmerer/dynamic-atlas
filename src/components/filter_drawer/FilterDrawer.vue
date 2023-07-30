@@ -83,15 +83,15 @@ filterStore.$subscribe((_mutation, state) => {
 <template>
   <v-navigation-drawer
     :model-value="drawer"
-    floating="true"
+    :floating="true"
     :width="400"
 
     class="bg-surface-variant"
     elevation="1"
     disable-resize-watcher
-    permanent="true"
+    :permanent="true"
   >
-    <v-card color="grey-darken-3" flat="true">
+    <v-card color="grey-darken-3" :flat="true">
       <FilterToolbar />
       <v-card-text>
         <TextFilterHolder />
