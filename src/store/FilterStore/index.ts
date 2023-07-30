@@ -27,6 +27,7 @@ interface State {
   minDivinationCardPrice: number
   minEffectiveDivinationCardValue: number
   filters: Filter[]
+  currentSelectedFilterIndex: number
 }
 
 export const useFilterStore = defineStore('filter', {
@@ -57,6 +58,7 @@ export const useFilterStore = defineStore('filter', {
       minDivinationCardPrice: 0,
       minEffectiveDivinationCardValue: 0,
       filters: [],
+      currentSelectedFilterIndex: 0,
     }
   },
 
@@ -162,6 +164,10 @@ export const useFilterStore = defineStore('filter', {
 
     ADD_FILTER(filter: Filter) {
       this.filters.push(filter)
+    },
+
+    GET_SELECTED_FILTER() {
+      return this.filters[this.currentSelectedFilterIndex]
     },
 
     CLEAR_MAP_FILTERS() {

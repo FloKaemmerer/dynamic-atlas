@@ -18,11 +18,13 @@ filterStore.$subscribe((mutation, state) => {
 
 function handleIncludeMapTierFilter() {
   filterStore.SET_INCLUDE_MAP_TIER(!includeMapTier.value)
+  filterStore.GET_SELECTED_FILTER().includeMapTier = !includeMapTier.value
 }
 
 function debounceMapTierFilter(value: [number, number]) {
   if (!(value[0] === filterStore.mapTier[0] && value[1] === filterStore.mapTier[1])) {
     filterStore.SET_MAP_TIER(value)
+    filterStore.GET_SELECTED_FILTER().mapTier = value
   }
 }
 </script>
@@ -57,10 +59,10 @@ function debounceMapTierFilter(value: [number, number]) {
         @update:model-value="value => debounceMapTierFilter(value)"
       >
         <template #prepend>
-          {{ mapTier[0] }}
+          1
         </template>
         <template #append>
-          {{ mapTier[1] }}
+          16
         </template>
       </v-range-slider>
     </v-col>
