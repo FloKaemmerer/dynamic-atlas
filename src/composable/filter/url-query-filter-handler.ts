@@ -6,6 +6,7 @@ import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 const filterStore = useFilterStore()
 const activeFiltersStore = useActiveFiltersStore()
 function handleUrlQueryFilters(queryParams: LocationQuery) {
+  console.log(JSON.stringify(queryParams))
   if (queryParams) {
     // ------ Text Filters -------
     if (FilterKeys.FILTER_TEXT in queryParams && queryParams.filterText && String(queryParams.filterText).length > 0) {
@@ -100,6 +101,10 @@ function handleUrlQueryFilters(queryParams: LocationQuery) {
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_DIVINATION_CARD_FILTERS(FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE)
     }
     // ---------------------------
+    if ('filters' in queryParams && queryParams.filters) {
+      console.log(queryParams.filters)
+      filterStore.SET_FILTERS(JSON.parse(String(queryParams.filters)))
+    }
   }
 }
 

@@ -47,12 +47,17 @@ function hasToAddMapTier(state: any) {
       && state.filters[state.currentSelectedFilterIndex].includeMapTier
 }
 
+function hasActiveFilter(state: any) {
+  return (state.filters[state.currentSelectedFilterIndex].mapTier !== undefined && state.filters[state.currentSelectedFilterIndex].includeMapTier !== undefined && state.filters[state.currentSelectedFilterIndex].includeMapTier)
+  || (state.filters[state.currentSelectedFilterIndex].filterText !== undefined)
+}
+
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
   // ----- Map Filters -----
   filters.add(Boolean(state.filterText && state.filterText.length > 0), 'filterText', state.filterText)
-  filters.add(hasToAddMapTier(state), 'mapTier', state.mapTier)
+  // filters.add(hasToAddMapTier(state), 'mapTier', state.mapTier)
   filters.add(state.openness[0] >= 0 && state.includeOpenness, 'openness', state.openness)
   filters.add(state.traversability[0] >= 0 && state.includeTraversability, 'traversability', state.traversability)
   filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
@@ -75,6 +80,7 @@ filterStore.$subscribe((_mutation, state) => {
   filters.add(state.minEffectiveDivinationCardValue > 0, 'minEffectiveDivinationCardValue', state.minEffectiveDivinationCardValue)
   // ---------------------------
 
+  filters.add(hasActiveFilter(state), 'filters', JSON.stringify(state.filters))
   router.push(filters)
   filterQueryStore.SET_FILTER_QUERY(filters.query)
 })

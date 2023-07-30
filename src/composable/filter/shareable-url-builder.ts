@@ -2,81 +2,120 @@ import { FilterKeys } from '@/model/filterKeys'
 import type { LooseFilters } from '@/model/looseFilters'
 
 function buildShareableUrl(queryParams: LooseFilters): string {
-  let shareableUrl = `${import.meta.env.VITE_BASE_URL}`
+  let baseUrl = `${import.meta.env.VITE_BASE_URL}`
+  let filterParams = ''
+  if (JSON.stringify(queryParams).includes(':')) {
+    filterParams = filterParams.concat(`${queryParams.filters}`)
 
-  // ----- Map Filters -----
-  if (FilterKeys.FILTER_TEXT in queryParams && queryParams.filterText && String(queryParams.filterText).length > 0) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.FILTER_TEXT}=${queryParams.filterText}`)
-  }
+    // ----- Map Filters -----
+    if (FilterKeys.FILTER_TEXT in queryParams && queryParams.filterText && String(queryParams.filterText).length > 0) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.FILTER_TEXT}=${queryParams.filterText}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.FILTER_TEXT}=${queryParams.filterText}`)
+    }
 
-  if (FilterKeys.MAP_TIER in queryParams && queryParams.mapTier) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.MAP_TIER}=${queryParams.mapTier}`)
-  }
-  if (FilterKeys.OPENNESS in queryParams && queryParams.openness) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.OPENNESS}=${queryParams.openness}`)
-  }
-  if (FilterKeys.TRAVERSABILITY in queryParams && queryParams.traversability) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.TRAVERSABILITY}=${queryParams.traversability}`)
-  }
-  if (FilterKeys.BACKTRACK_FACTOR in queryParams && queryParams.backtrackFactor) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.BACKTRACK_FACTOR}=${queryParams.backtrackFactor}`)
-  }
-  if (FilterKeys.LINEARITY in queryParams && queryParams.linearity) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.LINEARITY}=${queryParams.linearity}`)
-  }
-  if (FilterKeys.TERRAIN_SLOTS in queryParams && queryParams.terrainSlots) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.TERRAIN_SLOTS}=${queryParams.terrainSlots}`)
-  }
-  if (FilterKeys.BASE_MOB_COUNT in queryParams && queryParams.baseMobCount) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.BASE_MOB_COUNT}=${queryParams.baseMobCount}`)
-  }
-  if (FilterKeys.RUSHABLE_BOSS in queryParams && queryParams.rushableBoss) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.RUSHABLE_BOSS}=${queryParams.rushableBoss}`)
-  }
-  // --------------------------
+    // if (FilterKeys.MAP_TIER in queryParams && queryParams.mapTier) {
+    //   baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+    //   baseUrl = baseUrl.concat(`${FilterKeys.MAP_TIER}=${queryParams.mapTier}`)
+    //   filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+    //   filterParams = filterParams.concat(`${FilterKeys.MAP_TIER}=${queryParams.mapTier}`)
+    // }
+    if (FilterKeys.OPENNESS in queryParams && queryParams.openness) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.OPENNESS}=${queryParams.openness}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.OPENNESS}=${queryParams.openness}`)
+    }
+    if (FilterKeys.TRAVERSABILITY in queryParams && queryParams.traversability) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.TRAVERSABILITY}=${queryParams.traversability}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.TRAVERSABILITY}=${queryParams.traversability}`)
+    }
+    if (FilterKeys.BACKTRACK_FACTOR in queryParams && queryParams.backtrackFactor) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.BACKTRACK_FACTOR}=${queryParams.backtrackFactor}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.BACKTRACK_FACTOR}=${queryParams.backtrackFactor}`)
+    }
+    if (FilterKeys.LINEARITY in queryParams && queryParams.linearity) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.LINEARITY}=${queryParams.linearity}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.LINEARITY}=${queryParams.linearity}`)
+    }
+    if (FilterKeys.TERRAIN_SLOTS in queryParams && queryParams.terrainSlots) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.TERRAIN_SLOTS}=${queryParams.terrainSlots}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.TERRAIN_SLOTS}=${queryParams.terrainSlots}`)
+    }
+    if (FilterKeys.BASE_MOB_COUNT in queryParams && queryParams.baseMobCount) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.BASE_MOB_COUNT}=${queryParams.baseMobCount}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.BASE_MOB_COUNT}=${queryParams.baseMobCount}`)
+    }
+    if (FilterKeys.RUSHABLE_BOSS in queryParams && queryParams.rushableBoss) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.RUSHABLE_BOSS}=${queryParams.rushableBoss}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.RUSHABLE_BOSS}=${queryParams.rushableBoss}`)
+    }
+    // --------------------------
 
-  // ------ Boss Filters ------
-  if (FilterKeys.NUMBER_OF_BOSSES in queryParams && queryParams.numberOfBosses) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.NUMBER_OF_BOSSES}=${queryParams.numberOfBosses}`)
-  }
-  if (FilterKeys.EXCLUDE_PHASED_BOSSES in queryParams && queryParams.excludePhasedBosses) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.EXCLUDE_PHASED_BOSSES}=${queryParams.excludePhasedBosses}`)
-  }
-  if (FilterKeys.INCLUDE_SKIPPABLE_PHASES in queryParams && queryParams.includeSkippablePhases) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.INCLUDE_SKIPPABLE_PHASES}=${queryParams.includeSkippablePhases}`)
-  }
-  if (FilterKeys.INCLUDE_SPAWN_INTRO in queryParams && queryParams.includeSpawnIntro) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.INCLUDE_SPAWN_INTRO}=${queryParams.includeSpawnIntro}`)
-  }
-  if (FilterKeys.EXCLUDE_SPAWNED_BOSSES in queryParams && queryParams.excludeSpawnedBosses) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.EXCLUDE_SPAWNED_BOSSES}=${queryParams.excludeSpawnedBosses}`)
-  }
-  // ---------------------------
+    // ------ Boss Filters ------
+    if (FilterKeys.NUMBER_OF_BOSSES in queryParams && queryParams.numberOfBosses) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.NUMBER_OF_BOSSES}=${queryParams.numberOfBosses}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.NUMBER_OF_BOSSES}=${queryParams.numberOfBosses}`)
+    }
+    if (FilterKeys.EXCLUDE_PHASED_BOSSES in queryParams && queryParams.excludePhasedBosses) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.EXCLUDE_PHASED_BOSSES}=${queryParams.excludePhasedBosses}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.EXCLUDE_PHASED_BOSSES}=${queryParams.excludePhasedBosses}`)
+    }
+    if (FilterKeys.INCLUDE_SKIPPABLE_PHASES in queryParams && queryParams.includeSkippablePhases) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.INCLUDE_SKIPPABLE_PHASES}=${queryParams.includeSkippablePhases}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.INCLUDE_SKIPPABLE_PHASES}=${queryParams.includeSkippablePhases}`)
+    }
+    if (FilterKeys.INCLUDE_SPAWN_INTRO in queryParams && queryParams.includeSpawnIntro) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.INCLUDE_SPAWN_INTRO}=${queryParams.includeSpawnIntro}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.INCLUDE_SPAWN_INTRO}=${queryParams.includeSpawnIntro}`)
+    }
+    if (FilterKeys.EXCLUDE_SPAWNED_BOSSES in queryParams && queryParams.excludeSpawnedBosses) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.EXCLUDE_SPAWNED_BOSSES}=${queryParams.excludeSpawnedBosses}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.EXCLUDE_SPAWNED_BOSSES}=${queryParams.excludeSpawnedBosses}`)
+    }
+    // ---------------------------
 
-  // - Divination Card Filters -
-  if (FilterKeys.MIN_DIVINATION_CARD_PRICE in queryParams && queryParams.minDivinationCardPrice) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.MIN_DIVINATION_CARD_PRICE}=${queryParams.minDivinationCardPrice}`)
+    // - Divination Card Filters -
+    if (FilterKeys.MIN_DIVINATION_CARD_PRICE in queryParams && queryParams.minDivinationCardPrice) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.MIN_DIVINATION_CARD_PRICE}=${queryParams.minDivinationCardPrice}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.MIN_DIVINATION_CARD_PRICE}=${queryParams.minDivinationCardPrice}`)
+    }
+    if (FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE in queryParams && queryParams.minEffectiveDivinationCardValue) {
+      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
+      baseUrl = baseUrl.concat(`${FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE}=${queryParams.minEffectiveDivinationCardValue}`)
+      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
+      filterParams = filterParams.concat(`${FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE}=${queryParams.minEffectiveDivinationCardValue}`)
+    }
+    console.log(filterParams)
+    baseUrl = baseUrl.concat(`&filters=${filterParams}`)
   }
-  if (FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE in queryParams && queryParams.minEffectiveDivinationCardValue) {
-    shareableUrl = shareableUrl.concat(shareableUrl.includes('?') ? '&' : '?')
-    shareableUrl = shareableUrl.concat(`${FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE}=${queryParams.minEffectiveDivinationCardValue}`)
-  }
-  return shareableUrl
+  console.log(baseUrl)
+  return baseUrl
 }
 
 export default buildShareableUrl

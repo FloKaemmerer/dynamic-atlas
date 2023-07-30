@@ -21,6 +21,9 @@ filterStore.$subscribe((mutation, state) => {
 function handleIncludeMapTierFilter() {
   filterStore.SET_INCLUDE_MAP_TIER(!includeMapTier.value)
   filterStore.GET_SELECTED_FILTER().includeMapTier = !includeMapTier.value
+  if (filterStore.GET_SELECTED_FILTER().includeMapTier && filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
+    filterStore.GET_SELECTED_FILTER().mapTier = [1, 16]
+  }
 }
 
 function debounceMapTierFilter(value: [number, number]) {
