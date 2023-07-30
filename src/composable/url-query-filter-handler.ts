@@ -17,7 +17,10 @@ function handleUrlQueryFilters(queryParams: LocationQuery) {
     if (FilterKeys.MAP_TIER in queryParams && queryParams.mapTier) {
       filterStore.SET_INCLUDE_MAP_TIER(true)
       const split = queryParams.mapTier.toString().split(',')
-      filterStore.SET_MAP_TIER([Number(split[0]), Number(split[1])])
+      const mapTier = [Number(split[0]), Number(split[1])]
+      filterStore.SET_MAP_TIER(mapTier)
+      filterStore.GET_SELECTED_FILTER().mapTier = mapTier
+      filterStore.GET_SELECTED_FILTER().includeMapTier = true
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.MAP_TIER)
     }
     if (FilterKeys.OPENNESS in queryParams && queryParams.openness) {
