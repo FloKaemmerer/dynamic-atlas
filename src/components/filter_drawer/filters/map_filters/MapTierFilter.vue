@@ -4,14 +4,16 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const includeMapTier = ref(filterStore.includeMapTier)
-const mapTier = ref(filterStore.mapTier)
+const includeMapTier = ref(filterStore.GET_SELECTED_FILTER().includeMapTier)
+const mapTier = ref(filterStore.GET_SELECTED_FILTER().mapTier)
 
 filterStore.$subscribe((mutation, state) => {
   if (state.includeMapTier !== includeMapTier.value) {
+    includeMapTier.value = state.filters[state.currentSelectedFilterIndex].includeMapTier
     includeMapTier.value = state.includeMapTier
   }
   if (state.mapTier !== mapTier.value) {
+    mapTier.value = state.filters[state.currentSelectedFilterIndex].mapTier
     mapTier.value = state.mapTier
   }
 })
@@ -47,7 +49,7 @@ function debounceMapTierFilter(value: [number, number]) {
       <v-range-slider
         id="mapTierFilter"
         v-model="mapTier"
-        strict
+        strict="true"
         direction="horizontal"
         step="1"
         show-ticks="always"

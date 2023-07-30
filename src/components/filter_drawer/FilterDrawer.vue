@@ -40,12 +40,19 @@ router.isReady().then(() => {
   handleUrlQueryFilters(route.query)
 })
 
+function hasToAddMapTier(state: any) {
+  return state.filters[state.currentSelectedFilterIndex].mapTier !== undefined
+      && state.filters[state.currentSelectedFilterIndex].mapTier[0] >= 0
+      && state.filters[state.currentSelectedFilterIndex].includeMapTier !== undefined
+      && state.filters[state.currentSelectedFilterIndex].includeMapTier
+}
+
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
   // ----- Map Filters -----
   filters.add(Boolean(state.filterText && state.filterText.length > 0), 'filterText', state.filterText)
-  filters.add(state.mapTier[0] >= 0 && state.includeMapTier, 'mapTier', state.mapTier)
+  filters.add(hasToAddMapTier(state), 'mapTier', state.mapTier)
   filters.add(state.openness[0] >= 0 && state.includeOpenness, 'openness', state.openness)
   filters.add(state.traversability[0] >= 0 && state.includeTraversability, 'traversability', state.traversability)
   filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
