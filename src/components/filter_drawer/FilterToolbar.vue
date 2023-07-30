@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import buildShareableUrl from '@/composable/shareable-url-builder'
+import buildShareableUrl from '@/composable/filter/shareable-url-builder'
 import copyToClipBoard from '@/composable/copy-utils'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import { useFilterStore } from '@/store/FilterStore'

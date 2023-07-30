@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
-import { initFilter } from '@/composable/atlas-filter-handler'
+import { initFilter } from '@/composable/filter/atlas-filter-handler'
 import DivinationCardFilterHolder
   from '@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue'
 import BossFilterHolder from '@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue'
@@ -12,7 +12,7 @@ import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overla
 import { useFilterStore } from '@/store/FilterStore'
 import type { LooseFilters } from '@/model/looseFilters'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
-import handleUrlQueryFilters from '@/composable/url-query-filter-handler'
+import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 
