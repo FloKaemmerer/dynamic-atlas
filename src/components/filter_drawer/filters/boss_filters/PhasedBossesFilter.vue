@@ -4,16 +4,24 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const excludePhasedBosses = ref(filterStore.excludePhasedBosses)
+const excludePhasedBosses = ref(filterStore.GET_SELECTED_FILTER().excludePhasedBosses)
 
 filterStore.$subscribe((mutation, state) => {
+  if (state.filters[state.currentSelectedFilterIndex].excludePhasedBosses !== excludePhasedBosses.value) {
+    excludePhasedBosses.value = state.filters[state.currentSelectedFilterIndex].excludePhasedBosses
+  }
   if (state.excludePhasedBosses !== excludePhasedBosses.value) {
     excludePhasedBosses.value = state.excludePhasedBosses
   }
 })
 
 function handleExcludePhasedBossesFilter() {
-  filterStore.SET_EXCLUDE_PHASED_BOSSES(!excludePhasedBosses.value)
+  if (!excludePhasedBosses.value) {
+    filterStore.GET_SELECTED_FILTER().excludePhasedBosses = true
+  }
+  else {
+    filterStore.GET_SELECTED_FILTER().excludePhasedBosses = undefined
+  }
 }
 </script>
 
