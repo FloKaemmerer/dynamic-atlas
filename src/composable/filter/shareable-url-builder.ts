@@ -7,15 +7,6 @@ function buildShareableUrl(queryParams: LooseFilters): string {
   if (JSON.stringify(queryParams).includes(':')) {
     filterParams = filterParams.concat(`${queryParams.filters}`)
 
-    // ------ Boss Filters ------
-    if (FilterKeys.EXCLUDE_SPAWNED_BOSSES in queryParams && queryParams.excludeSpawnedBosses) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.EXCLUDE_SPAWNED_BOSSES}=${queryParams.excludeSpawnedBosses}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.EXCLUDE_SPAWNED_BOSSES}=${queryParams.excludeSpawnedBosses}`)
-    }
-    // ---------------------------
-
     // - Divination Card Filters -
     if (FilterKeys.MIN_DIVINATION_CARD_PRICE in queryParams && queryParams.minDivinationCardPrice) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')

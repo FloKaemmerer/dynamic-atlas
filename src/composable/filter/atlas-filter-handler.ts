@@ -88,6 +88,10 @@ function hasToFilterBySpawnIntro(filter: Filter) {
   return filter.includeSpawnIntro !== undefined && filter.includeSpawnIntro
 }
 
+function hasToFilterBySpawnedBosses(filter: Filter) {
+  return filter.excludeSpawnedBosses !== undefined && filter.excludeSpawnedBosses
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -119,7 +123,7 @@ export function handleFilter(filterText: string,
   || hasToFilterByExcludePhasedBosses(filter)
    || hasToFilterBySkippablePhases(filter)
    || hasToFilterBySpawnIntro(filter)
-   || excludeSpawnedBosses
+   || hasToFilterBySpawnedBosses(filter)
   || minDivinationCardPrice > 0
   || minEffectiveDivinationCardValue > 0
 
@@ -160,7 +164,7 @@ export function handleFilter(filterText: string,
     result = filterByPhasedBosses(filter, result)
 
     // Filter by Spawned Bosses
-    result = filterBySpawnedBosses(excludeSpawnedBosses, result)
+    result = filterBySpawnedBosses(filter, result)
 
     // Filter by minimum Divination Card Price
     result = filterByMinimumDivinationCardPrice(minDivinationCardPrice, result)
@@ -246,8 +250,8 @@ function filterByPhasedBosses(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterBySpawnedBosses(excludeSpawnedBosses: boolean, result: AtlasNode[]) {
-  if (excludeSpawnedBosses) {
+function filterBySpawnedBosses(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterBySpawnedBosses(filter)) {
     result = result.filter((atlasNode) => {
       return !atlasNode.boss.spawned && !atlasNode.uniqueMap
     })
