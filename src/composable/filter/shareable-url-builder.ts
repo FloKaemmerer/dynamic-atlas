@@ -8,12 +8,6 @@ function buildShareableUrl(queryParams: LooseFilters): string {
     filterParams = filterParams.concat(`${queryParams.filters}`)
 
     // - Divination Card Filters -
-    if (FilterKeys.MIN_DIVINATION_CARD_PRICE in queryParams && queryParams.minDivinationCardPrice) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.MIN_DIVINATION_CARD_PRICE}=${queryParams.minDivinationCardPrice}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.MIN_DIVINATION_CARD_PRICE}=${queryParams.minDivinationCardPrice}`)
-    }
     if (FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE in queryParams && queryParams.minEffectiveDivinationCardValue) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
       baseUrl = baseUrl.concat(`${FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE}=${queryParams.minEffectiveDivinationCardValue}`)

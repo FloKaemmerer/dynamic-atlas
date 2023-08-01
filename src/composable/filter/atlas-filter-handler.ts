@@ -92,6 +92,10 @@ function hasToFilterBySpawnedBosses(filter: Filter) {
   return filter.excludeSpawnedBosses !== undefined && filter.excludeSpawnedBosses
 }
 
+function hasToFilterByMinimumDivinationCardPrice(filter: Filter) {
+  return filter.minDivinationCardPrice !== undefined && filter.minDivinationCardPrice > 0
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -124,7 +128,7 @@ export function handleFilter(filterText: string,
    || hasToFilterBySkippablePhases(filter)
    || hasToFilterBySpawnIntro(filter)
    || hasToFilterBySpawnedBosses(filter)
-  || minDivinationCardPrice > 0
+  || hasToFilterByMinimumDivinationCardPrice(filter)
   || minEffectiveDivinationCardValue > 0
 
   if (needToFilter) {
@@ -167,7 +171,7 @@ export function handleFilter(filterText: string,
     result = filterBySpawnedBosses(filter, result)
 
     // Filter by minimum Divination Card Price
-    result = filterByMinimumDivinationCardPrice(minDivinationCardPrice, result)
+    result = filterByMinimumDivinationCardPrice(filter, result)
 
     // Filter by minimum effective Divination Card Value
     result = filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue, result)
@@ -276,10 +280,11 @@ function filterByRushableBoss(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterByMinimumDivinationCardPrice(minDivinationCardPrice: number, result: AtlasNode[]) {
-  if (minDivinationCardPrice > 0) {
+function filterByMinimumDivinationCardPrice(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterByMinimumDivinationCardPrice(filter)) {
     result = result.filter((atlasNode) => {
-      return atlasNode.highestValueDivinationCard.chaosValue && atlasNode.highestValueDivinationCard.chaosValue >= minDivinationCardPrice
+      // @ts-expect-error within 'hasToFilterByMinimumDivinationCardPrice' we check for !== undefined
+      return atlasNode.highestValueDivinationCard.chaosValue && atlasNode.highestValueDivinationCard.chaosValue >= filter.minDivinationCardPrice
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_DIVINATION_CARD_FILTERS(FilterKeys.MIN_DIVINATION_CARD_PRICE)
   }
