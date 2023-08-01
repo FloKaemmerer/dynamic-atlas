@@ -8,24 +8,6 @@ function buildShareableUrl(queryParams: LooseFilters): string {
     filterParams = filterParams.concat(`${queryParams.filters}`)
 
     // ----- Map Filters -----
-    if (FilterKeys.TRAVERSABILITY in queryParams && queryParams.traversability) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.TRAVERSABILITY}=${queryParams.traversability}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.TRAVERSABILITY}=${queryParams.traversability}`)
-    }
-    if (FilterKeys.BACKTRACK_FACTOR in queryParams && queryParams.backtrackFactor) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.BACKTRACK_FACTOR}=${queryParams.backtrackFactor}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.BACKTRACK_FACTOR}=${queryParams.backtrackFactor}`)
-    }
-    if (FilterKeys.LINEARITY in queryParams && queryParams.linearity) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.LINEARITY}=${queryParams.linearity}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.LINEARITY}=${queryParams.linearity}`)
-    }
     if (FilterKeys.TERRAIN_SLOTS in queryParams && queryParams.terrainSlots) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
       baseUrl = baseUrl.concat(`${FilterKeys.TERRAIN_SLOTS}=${queryParams.terrainSlots}`)

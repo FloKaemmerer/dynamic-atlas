@@ -4,25 +4,32 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const includeLinearity = ref(filterStore.includeLinearity)
-const linearity = ref(filterStore.linearity)
+const includeLinearity = ref(filterStore.GET_SELECTED_FILTER().includeLinearity)
+const linearity = ref(filterStore.GET_SELECTED_FILTER().linearity)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeLinearity !== includeLinearity.value) {
-    includeLinearity.value = state.includeLinearity
+  if (state.filters[state.currentSelectedFilterIndex].includeLinearity !== includeLinearity.value) {
+    includeLinearity.value = state.filters[state.currentSelectedFilterIndex].includeLinearity
   }
-  if (state.linearity !== linearity.value) {
-    linearity.value = state.linearity
+  if (state.filters[state.currentSelectedFilterIndex].linearity !== linearity.value) {
+    linearity.value = state.filters[state.currentSelectedFilterIndex].linearity
   }
 })
 
 function handleIncludeLinearityFilter() {
-  filterStore.SET_INCLUDE_LINEARITY(!includeLinearity.value)
+  filterStore.GET_SELECTED_FILTER().includeLinearity = !includeLinearity.value
+  if (filterStore.GET_SELECTED_FILTER().includeLinearity && filterStore.GET_SELECTED_FILTER().linearity === undefined) {
+    filterStore.GET_SELECTED_FILTER().linearity = [0, 10]
+  }
 }
 
 function debounceLinearityFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.linearity[0] && value[1] === filterStore.linearity[1])) {
-    filterStore.SET_LINEARITY(value)
+  if (filterStore.GET_SELECTED_FILTER().linearity === undefined) {
+    filterStore.GET_SELECTED_FILTER().linearity = value
+  }
+  // @ts-expect-error within 'debounceLinearityFilter' mapTier can't be undefined here
+  else if (value[0] !== filterStore.GET_SELECTED_FILTER().linearity[0] || value[1] !== filterStore.GET_SELECTED_FILTER().linearity[1]) {
+    filterStore.GET_SELECTED_FILTER().linearity = value
   }
 }
 </script>

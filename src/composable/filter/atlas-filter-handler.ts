@@ -60,6 +60,10 @@ function hasToFilterByBacktrackFactor(filter: Filter) {
   return filter.includeBacktrackFactor && filter.backtrackFactor !== undefined && filter.backtrackFactor.length === 2
 }
 
+function hasToFilterByLinearity(filter: Filter) {
+  return filter.includeLinearity && filter.linearity !== undefined && filter.linearity.length === 2
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -83,7 +87,7 @@ export function handleFilter(filterText: string,
   || hasToFilterByOpenness(filter)
   || hasToFilterByTraversability(filter)
   || hasToFilterByBacktrackFactor(filter)
-  || linearity[0] > -1
+  || hasToFilterByLinearity(filter)
   || terrainSlots[0] > -1
   || baseMobCount[0] > -1
   || hasToFilterByRushableBoss(filter)
@@ -114,7 +118,7 @@ export function handleFilter(filterText: string,
     result = filterByBacktrackFactor(filter, result)
 
     // Filter by Linearity
-    result = filterByLinearity(linearity, result)
+    result = filterByLinearity(filter, linearity, result)
 
     // Filter by TerrainSlots
     result = filterByTerrainSlots(terrainSlots, result)
@@ -331,10 +335,11 @@ function filterByBaseMobCount(baseMobCount: number[], result: AtlasNode[]) {
   return result
 }
 
-function filterByLinearity(linearity: number[], result: AtlasNode[]) {
-  if (linearity[0] > -1) {
+function filterByLinearity(filter: Filter, linearity: number[], result: AtlasNode[]) {
+  if (hasToFilterByLinearity(filter)) {
     result = result.filter((atlasNode) => {
-      return linearity[0] <= atlasNode.nodeLayout.linearity && atlasNode.nodeLayout.linearity <= linearity[1]
+      // @ts-expect-error within 'hasToFilterByLinearity' we checked for length == 2
+      return filter.linearity[0] <= atlasNode.nodeLayout.linearity && atlasNode.nodeLayout.linearity <= filter.linearity[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.LINEARITY)
   }
