@@ -58,7 +58,7 @@ function debounceBaseMobCountFilter(value: [number, number]) {
     <v-col>
       <v-range-slider
         v-model="baseMobCount"
-        strict
+        :strict="true"
         direction="horizontal"
         step="1"
         show-ticks="always"
