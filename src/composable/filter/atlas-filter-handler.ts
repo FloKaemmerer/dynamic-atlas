@@ -68,6 +68,10 @@ function hasToFilterByTerrainSlots(filter: Filter) {
   return filter.includeTerrainSlots && filter.terrainSlots !== undefined && filter.terrainSlots.length === 2
 }
 
+function hasToFilterByBaseMobCount(filter: Filter) {
+  return filter.includeBaseMobCount && filter.baseMobCount !== undefined && filter.baseMobCount.length === 2
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -93,7 +97,7 @@ export function handleFilter(filterText: string,
   || hasToFilterByBacktrackFactor(filter)
   || hasToFilterByLinearity(filter)
   || hasToFilterByTerrainSlots(filter)
-  || baseMobCount[0] > -1
+  || hasToFilterByBaseMobCount(filter)
   || hasToFilterByRushableBoss(filter)
   || numberOfBosses[0] > -1
   || excludePhasedBosses
@@ -128,7 +132,7 @@ export function handleFilter(filterText: string,
     result = filterByTerrainSlots(filter, result)
 
     // Filter by BaseMobCount
-    result = filterByBaseMobCount(baseMobCount, result)
+    result = filterByBaseMobCount(filter, baseMobCount, result)
 
     // Filter by Rushable Boss
     result = filterByRushableBoss(filter, includeRushableBoss, result)
@@ -326,10 +330,11 @@ function filterByBacktrackFactor(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterByBaseMobCount(baseMobCount: number[], result: AtlasNode[]) {
-  if (baseMobCount[0] > -1) {
+function filterByBaseMobCount(filter: Filter, baseMobCount: number[], result: AtlasNode[]) {
+  if (hasToFilterByBaseMobCount(filter)) {
     result = result.filter((atlasNode) => {
-      return baseMobCount[0] <= atlasNode.nodeLayout.baseMobCount && atlasNode.nodeLayout.baseMobCount <= baseMobCount[1]
+      // @ts-expect-error within 'hasToFilterByBaseMobCount' we checked for length == 2
+      return filter.baseMobCount[0] <= atlasNode.nodeLayout.baseMobCount && atlasNode.nodeLayout.baseMobCount <= filter.baseMobCount[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.BASE_MOB_COUNT)
   }

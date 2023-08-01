@@ -8,12 +8,6 @@ function buildShareableUrl(queryParams: LooseFilters): string {
     filterParams = filterParams.concat(`${queryParams.filters}`)
 
     // ----- Map Filters -----
-    if (FilterKeys.BASE_MOB_COUNT in queryParams && queryParams.baseMobCount) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.BASE_MOB_COUNT}=${queryParams.baseMobCount}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.BASE_MOB_COUNT}=${queryParams.baseMobCount}`)
-    }
     if (FilterKeys.RUSHABLE_BOSS in queryParams && queryParams.rushableBoss) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
       baseUrl = baseUrl.concat(`${FilterKeys.RUSHABLE_BOSS}=${queryParams.rushableBoss}`)

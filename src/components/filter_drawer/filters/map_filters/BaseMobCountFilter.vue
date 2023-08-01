@@ -4,25 +4,32 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const includeBaseMobCount = ref(filterStore.includeBaseMobCount)
-const baseMobCount = ref(filterStore.baseMobCount)
+const includeBaseMobCount = ref(filterStore.GET_SELECTED_FILTER().includeBaseMobCount)
+const baseMobCount = ref(filterStore.GET_SELECTED_FILTER().baseMobCount)
 
 filterStore.$subscribe((mutation, state) => {
   if (state.includeBaseMobCount !== includeBaseMobCount.value) {
-    includeBaseMobCount.value = state.includeBaseMobCount
+    includeBaseMobCount.value = state.filters[state.currentSelectedFilterIndex].includeBaseMobCount
   }
   if (state.baseMobCount !== baseMobCount.value) {
-    baseMobCount.value = state.baseMobCount
+    baseMobCount.value = state.filters[state.currentSelectedFilterIndex].baseMobCount
   }
 })
 
 function handleIncludeBaseMobCountFilter() {
-  filterStore.SET_INCLUDE_BASE_MOB_COUNT(!includeBaseMobCount.value)
+  filterStore.GET_SELECTED_FILTER().includeBaseMobCount = !includeBaseMobCount.value
+  if (filterStore.GET_SELECTED_FILTER().includeBaseMobCount && filterStore.GET_SELECTED_FILTER().baseMobCount === undefined) {
+    filterStore.GET_SELECTED_FILTER().baseMobCount = [0, 10]
+  }
 }
 
 function debounceBaseMobCountFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.baseMobCount[0] && value[1] === filterStore.baseMobCount[1])) {
-    filterStore.SET_BASE_MOB_COUNT(value)
+  if (filterStore.GET_SELECTED_FILTER().baseMobCount === undefined) {
+    filterStore.GET_SELECTED_FILTER().baseMobCount = value
+  }
+  // @ts-expect-error within 'debounceBaseMobCountFilter' baseMobCount can't be undefined here
+  else if (value[0] !== filterStore.GET_SELECTED_FILTER().baseMobCount[0] || value[1] !== filterStore.GET_SELECTED_FILTER().baseMobCount[1]) {
+    filterStore.GET_SELECTED_FILTER().baseMobCount = value
   }
 }
 </script>
