@@ -4,25 +4,32 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const includeTraversability = ref(filterStore.includeTraversability)
-const traversability = ref(filterStore.traversability)
+const includeTraversability = ref(filterStore.GET_SELECTED_FILTER().includeTraversability)
+const traversability = ref(filterStore.GET_SELECTED_FILTER().traversability)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeTraversability !== includeTraversability.value) {
-    includeTraversability.value = state.includeTraversability
+  if (state.filters[state.currentSelectedFilterIndex].includeTraversability !== includeTraversability.value) {
+    includeTraversability.value = state.filters[state.currentSelectedFilterIndex].includeTraversability
   }
-  if (state.traversability !== traversability.value) {
-    traversability.value = state.traversability
+  if (state.filters[state.currentSelectedFilterIndex].traversability !== traversability.value) {
+    traversability.value = state.filters[state.currentSelectedFilterIndex].traversability
   }
 })
 
 function handleIncludeTraversabilityFilter() {
-  filterStore.SET_INCLUDE_TRAVERSABILITY(!includeTraversability.value)
+  filterStore.GET_SELECTED_FILTER().includeTraversability = !includeTraversability.value
+  if (filterStore.GET_SELECTED_FILTER().includeTraversability && filterStore.GET_SELECTED_FILTER().traversability === undefined) {
+    filterStore.GET_SELECTED_FILTER().traversability = [0, 10]
+  }
 }
 
 function debounceTraversabilityFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.traversability[0] && value[1] === filterStore.traversability[1])) {
-    filterStore.SET_TRAVERSABILITY(value)
+  if (filterStore.GET_SELECTED_FILTER().traversability === undefined) {
+    filterStore.GET_SELECTED_FILTER().traversability = value
+  }
+  // @ts-expect-error within 'debounceMapTierFilter' mapTier can't be undefined here
+  else if (value[0] !== filterStore.GET_SELECTED_FILTER().traversability[0] || value[1] !== filterStore.GET_SELECTED_FILTER().traversability[1]) {
+    filterStore.GET_SELECTED_FILTER().traversability = value
   }
 }
 </script>

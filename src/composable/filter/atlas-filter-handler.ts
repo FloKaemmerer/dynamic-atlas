@@ -52,6 +52,10 @@ function hasToFilterByRushableBoss(filter: Filter) {
   return filter.rushableBoss !== undefined && filter.rushableBoss
 }
 
+function hasToFilterByTraversability(filter: Filter) {
+  return filter.includeTraversability && filter.traversability !== undefined && filter.traversability.length === 2
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -73,7 +77,7 @@ export function handleFilter(filterText: string,
   = hasToFilterByFilterText(filter)
   || hasToFilterByMapTier(filter)
   || hasToFilterByOpenness(filter)
-  || traversability[0] > -1
+  || hasToFilterByTraversability(filter)
   || backtrackFactor[0] > -1
   || linearity[0] > -1
   || terrainSlots[0] > -1
@@ -100,7 +104,7 @@ export function handleFilter(filterText: string,
     result = filterByOpenness(filter, result)
 
     // Filter by Traversability
-    result = filterByTraversability(traversability, result)
+    result = filterByTraversability(filter, traversability, result)
 
     // Filter by BacktrackFactor
     result = filterByBacktrackFactor(backtrackFactor, result)
@@ -271,7 +275,7 @@ function filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardV
 function filterByOpenness(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByOpenness(filter)) {
     result = result.filter((atlasNode) => {
-      // @ts-expect-error within 'hasToFilterByMapTier' we checked for length == 2
+      // @ts-expect-error within 'hasToFilterByOpenness' we checked for length == 2
       return filter.openness[0] <= atlasNode.nodeLayout.openness && atlasNode.nodeLayout.openness <= filter.openness[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.OPENNESS)
@@ -282,10 +286,11 @@ function filterByOpenness(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterByTraversability(traversability: number[], result: AtlasNode[]) {
-  if (traversability[0] > -1) {
+function filterByTraversability(filter: Filter, traversability: number[], result: AtlasNode[]) {
+  if (hasToFilterByTraversability(filter)) {
     result = result.filter((atlasNode) => {
-      return traversability[0] <= atlasNode.nodeLayout.traversability && atlasNode.nodeLayout.traversability <= traversability[1]
+      // @ts-expect-error within 'hasToFilterByTraversability' we checked for length == 2
+      return filter.traversability[0] <= atlasNode.nodeLayout.traversability && atlasNode.nodeLayout.traversability <= filter.traversability[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.TRAVERSABILITY)
   }

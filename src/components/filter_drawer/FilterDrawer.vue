@@ -64,7 +64,6 @@ filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
   // ----- Map Filters -----
-  filters.add(state.traversability[0] >= 0 && state.includeTraversability, 'traversability', state.traversability)
   filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
   filters.add(state.linearity[0] >= 0 && state.includeLinearity, 'linearity', state.linearity)
   filters.add(state.terrainSlots[0] >= 0 && state.includeTerrainSlots, 'terrainSlots', state.terrainSlots)

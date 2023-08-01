@@ -8,19 +8,6 @@ function buildShareableUrl(queryParams: LooseFilters): string {
     filterParams = filterParams.concat(`${queryParams.filters}`)
 
     // ----- Map Filters -----
-    if (FilterKeys.FILTER_TEXT in queryParams && queryParams.filterText && String(queryParams.filterText).length > 0) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.FILTER_TEXT}=${queryParams.filterText}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.FILTER_TEXT}=${queryParams.filterText}`)
-    }
-
-    if (FilterKeys.OPENNESS in queryParams && queryParams.openness) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.OPENNESS}=${queryParams.openness}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.OPENNESS}=${queryParams.openness}`)
-    }
     if (FilterKeys.TRAVERSABILITY in queryParams && queryParams.traversability) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
       baseUrl = baseUrl.concat(`${FilterKeys.TRAVERSABILITY}=${queryParams.traversability}`)
