@@ -56,6 +56,10 @@ function hasToFilterByTraversability(filter: Filter) {
   return filter.includeTraversability && filter.traversability !== undefined && filter.traversability.length === 2
 }
 
+function hasToFilterByBacktrackFactor(filter: Filter) {
+  return filter.includeBacktrackFactor && filter.backtrackFactor !== undefined && filter.backtrackFactor.length === 2
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -78,7 +82,7 @@ export function handleFilter(filterText: string,
   || hasToFilterByMapTier(filter)
   || hasToFilterByOpenness(filter)
   || hasToFilterByTraversability(filter)
-  || backtrackFactor[0] > -1
+  || hasToFilterByBacktrackFactor(filter)
   || linearity[0] > -1
   || terrainSlots[0] > -1
   || baseMobCount[0] > -1
@@ -104,10 +108,10 @@ export function handleFilter(filterText: string,
     result = filterByOpenness(filter, result)
 
     // Filter by Traversability
-    result = filterByTraversability(filter, traversability, result)
+    result = filterByTraversability(filter, result)
 
     // Filter by BacktrackFactor
-    result = filterByBacktrackFactor(backtrackFactor, result)
+    result = filterByBacktrackFactor(filter, result)
 
     // Filter by Linearity
     result = filterByLinearity(linearity, result)
@@ -286,7 +290,7 @@ function filterByOpenness(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterByTraversability(filter: Filter, traversability: number[], result: AtlasNode[]) {
+function filterByTraversability(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByTraversability(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByTraversability' we checked for length == 2
@@ -300,10 +304,11 @@ function filterByTraversability(filter: Filter, traversability: number[], result
   return result
 }
 
-function filterByBacktrackFactor(backtrackFactor: number[], result: AtlasNode[]) {
-  if (backtrackFactor[0] > -1) {
+function filterByBacktrackFactor(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterByBacktrackFactor(filter)) {
     result = result.filter((atlasNode) => {
-      return backtrackFactor[0] <= atlasNode.nodeLayout.backtrackFactor && atlasNode.nodeLayout.backtrackFactor <= backtrackFactor[1]
+      // @ts-expect-error within 'hasToFilterByBacktrackFactor' we checked for length == 2
+      return filter.backtrackFactor[0] <= atlasNode.nodeLayout.backtrackFactor && atlasNode.nodeLayout.backtrackFactor <= filter.backtrackFactor[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.BACKTRACK_FACTOR)
   }

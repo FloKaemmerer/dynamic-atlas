@@ -27,7 +27,7 @@ function debounceTraversabilityFilter(value: [number, number]) {
   if (filterStore.GET_SELECTED_FILTER().traversability === undefined) {
     filterStore.GET_SELECTED_FILTER().traversability = value
   }
-  // @ts-expect-error within 'debounceMapTierFilter' mapTier can't be undefined here
+  // @ts-expect-error within 'debounceTraversabilityFilter' mapTier can't be undefined here
   else if (value[0] !== filterStore.GET_SELECTED_FILTER().traversability[0] || value[1] !== filterStore.GET_SELECTED_FILTER().traversability[1]) {
     filterStore.GET_SELECTED_FILTER().traversability = value
   }

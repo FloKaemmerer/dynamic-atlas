@@ -4,26 +4,33 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const includeBacktrackFactor = ref(filterStore.includeBacktrackFactor)
+const includeBacktrackFactor = ref(filterStore.GET_SELECTED_FILTER().includeBacktrackFactor)
 
-const backtrackFactor = ref(filterStore.backtrackFactor)
+const backtrackFactor = ref(filterStore.GET_SELECTED_FILTER().backtrackFactor)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeBacktrackFactor !== includeBacktrackFactor.value) {
-    includeBacktrackFactor.value = state.includeBacktrackFactor
+  if (state.filters[state.currentSelectedFilterIndex].includeBacktrackFactor !== includeBacktrackFactor.value) {
+    includeBacktrackFactor.value = state.filters[state.currentSelectedFilterIndex].includeBacktrackFactor
   }
-  if (state.backtrackFactor !== backtrackFactor.value) {
-    backtrackFactor.value = state.backtrackFactor
+  if (state.filters[state.currentSelectedFilterIndex].backtrackFactor !== backtrackFactor.value) {
+    backtrackFactor.value = state.filters[state.currentSelectedFilterIndex].backtrackFactor
   }
 })
 
 function handleIncludeBacktrackFactorFilter() {
-  filterStore.SET_INCLUDE_BACKTRACK_FACTOR(!includeBacktrackFactor.value)
+  filterStore.GET_SELECTED_FILTER().includeBacktrackFactor = !includeBacktrackFactor.value
+  if (filterStore.GET_SELECTED_FILTER().includeBacktrackFactor && filterStore.GET_SELECTED_FILTER().backtrackFactor === undefined) {
+    filterStore.GET_SELECTED_FILTER().backtrackFactor = [0, 10]
+  }
 }
 
 function debounceBacktrackFactorFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.backtrackFactor[0] && value[1] === filterStore.backtrackFactor[1])) {
-    filterStore.SET_BACKTRACK_FACTOR(value)
+  if (filterStore.GET_SELECTED_FILTER().backtrackFactor === undefined) {
+    filterStore.GET_SELECTED_FILTER().backtrackFactor = value
+  }
+  // @ts-expect-error within 'debounceBacktrackFactorFilter' mapTier can't be undefined here
+  else if (value[0] !== filterStore.GET_SELECTED_FILTER().backtrackFactor[0] || value[1] !== filterStore.GET_SELECTED_FILTER().backtrackFactor[1]) {
+    filterStore.GET_SELECTED_FILTER().backtrackFactor = value
   }
 }
 </script>
