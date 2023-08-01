@@ -8,12 +8,6 @@ function buildShareableUrl(queryParams: LooseFilters): string {
     filterParams = filterParams.concat(`${queryParams.filters}`)
 
     // ------ Boss Filters ------
-    if (FilterKeys.INCLUDE_SKIPPABLE_PHASES in queryParams && queryParams.includeSkippablePhases) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.INCLUDE_SKIPPABLE_PHASES}=${queryParams.includeSkippablePhases}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.INCLUDE_SKIPPABLE_PHASES}=${queryParams.includeSkippablePhases}`)
-    }
     if (FilterKeys.INCLUDE_SPAWN_INTRO in queryParams && queryParams.includeSpawnIntro) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
       baseUrl = baseUrl.concat(`${FilterKeys.INCLUDE_SPAWN_INTRO}=${queryParams.includeSpawnIntro}`)
