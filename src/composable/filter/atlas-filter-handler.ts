@@ -5,7 +5,16 @@ import { useFilterStore } from '@/store/FilterStore'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import { FilterKeys } from '@/model/filterKeys'
 import type { Filter } from '@/model/filter'
-import { hasActiveFilters } from '@/composable/filter/filter-utils'
+import {
+  hasActiveFilters, hasToFilterByBacktrackFactor, hasToFilterByBaseMobCount,
+  hasToFilterByExcludePhasedBosses, hasToFilterByFilterText,
+  hasToFilterByLinearity, hasToFilterByMapTier, hasToFilterByMinimumDivinationCardPrice,
+  hasToFilterByMinimumEffectiveDivinationCardValue, hasToFilterByNumberOfBosses,
+  hasToFilterByOpenness,
+  hasToFilterByRushableBoss,
+  hasToFilterBySkippablePhases,
+  hasToFilterBySpawnIntro, hasToFilterBySpawnedBosses, hasToFilterByTerrainSlots, hasToFilterByTraversability,
+} from '@/composable/filter/filter-utils'
 
 const filterStore = useFilterStore()
 const atlasNodeStore = useAtlasNodeStore()
@@ -74,69 +83,6 @@ export function handleFilter(filter: Filter) {
     activeFiltersStore.$reset()
   }
   atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
-}
-function hasToFilterByMapTier(filter: Filter) {
-  return filter.includeMapTier && filter.mapTier !== undefined && filter.mapTier.length === 2
-}
-
-function hasToFilterByFilterText(filter: Filter) {
-  return (filter.filterText !== undefined && filter.filterText.length) > 0
-}
-
-function hasToFilterByOpenness(filter: Filter) {
-  return filter.includeOpenness && filter.openness !== undefined && filter.openness.length === 2
-}
-
-function hasToFilterByRushableBoss(filter: Filter) {
-  return filter.rushableBoss !== undefined && filter.rushableBoss
-}
-
-function hasToFilterByTraversability(filter: Filter) {
-  return filter.includeTraversability && filter.traversability !== undefined && filter.traversability.length === 2
-}
-
-function hasToFilterByBacktrackFactor(filter: Filter) {
-  return filter.includeBacktrackFactor && filter.backtrackFactor !== undefined && filter.backtrackFactor.length === 2
-}
-
-function hasToFilterByLinearity(filter: Filter) {
-  return filter.includeLinearity && filter.linearity !== undefined && filter.linearity.length === 2
-}
-
-function hasToFilterByTerrainSlots(filter: Filter) {
-  return filter.includeTerrainSlots && filter.terrainSlots !== undefined && filter.terrainSlots.length === 2
-}
-
-function hasToFilterByBaseMobCount(filter: Filter) {
-  return filter.includeBaseMobCount && filter.baseMobCount !== undefined && filter.baseMobCount.length === 2
-}
-
-function hasToFilterByNumberOfBosses(filter: Filter) {
-  return filter.includeNumberOfBosses && filter.numberOfBosses !== undefined && filter.numberOfBosses.length === 2
-}
-
-function hasToFilterByExcludePhasedBosses(filter: Filter) {
-  return filter.excludePhasedBosses !== undefined && filter.excludePhasedBosses
-}
-
-function hasToFilterBySkippablePhases(filter: Filter) {
-  return filter.includeSkippablePhases !== undefined && filter.includeSkippablePhases
-}
-
-function hasToFilterBySpawnIntro(filter: Filter) {
-  return filter.includeSpawnIntro !== undefined && filter.includeSpawnIntro
-}
-
-function hasToFilterBySpawnedBosses(filter: Filter) {
-  return filter.excludeSpawnedBosses !== undefined && filter.excludeSpawnedBosses
-}
-
-function hasToFilterByMinimumDivinationCardPrice(filter: Filter) {
-  return filter.minDivinationCardPrice !== undefined && filter.minDivinationCardPrice > 0
-}
-
-function hasToFilterByMinimumEffectiveDivinationCardValue(filter: Filter) {
-  return filter.minEffectiveDivinationCardValue !== undefined && filter.minEffectiveDivinationCardValue > 0
 }
 
 function filterByMapTier(filter: Filter, result: AtlasNode[]) {
