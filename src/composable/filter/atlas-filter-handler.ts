@@ -64,6 +64,10 @@ function hasToFilterByLinearity(filter: Filter) {
   return filter.includeLinearity && filter.linearity !== undefined && filter.linearity.length === 2
 }
 
+function hasToFilterByTerrainSlots(filter: Filter) {
+  return filter.includeTerrainSlots && filter.terrainSlots !== undefined && filter.terrainSlots.length === 2
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -88,7 +92,7 @@ export function handleFilter(filterText: string,
   || hasToFilterByTraversability(filter)
   || hasToFilterByBacktrackFactor(filter)
   || hasToFilterByLinearity(filter)
-  || terrainSlots[0] > -1
+  || hasToFilterByTerrainSlots(filter)
   || baseMobCount[0] > -1
   || hasToFilterByRushableBoss(filter)
   || numberOfBosses[0] > -1
@@ -118,10 +122,10 @@ export function handleFilter(filterText: string,
     result = filterByBacktrackFactor(filter, result)
 
     // Filter by Linearity
-    result = filterByLinearity(filter, linearity, result)
+    result = filterByLinearity(filter, result)
 
     // Filter by TerrainSlots
-    result = filterByTerrainSlots(terrainSlots, result)
+    result = filterByTerrainSlots(filter, result)
 
     // Filter by BaseMobCount
     result = filterByBaseMobCount(baseMobCount, result)
@@ -335,7 +339,7 @@ function filterByBaseMobCount(baseMobCount: number[], result: AtlasNode[]) {
   return result
 }
 
-function filterByLinearity(filter: Filter, linearity: number[], result: AtlasNode[]) {
+function filterByLinearity(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByLinearity(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByLinearity' we checked for length == 2
@@ -349,10 +353,11 @@ function filterByLinearity(filter: Filter, linearity: number[], result: AtlasNod
   return result
 }
 
-function filterByTerrainSlots(terrainSlots: number[], result: AtlasNode[]) {
-  if (terrainSlots[0] > -1) {
+function filterByTerrainSlots(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterByTerrainSlots(filter)) {
     result = result.filter((atlasNode) => {
-      return terrainSlots[0] <= atlasNode.nodeLayout.terrainSlots && atlasNode.nodeLayout.terrainSlots <= terrainSlots[1]
+      // @ts-expect-error within 'hasToFilterByTerrainSlots' we checked for length == 2
+      return filter.terrainSlots[0] <= atlasNode.nodeLayout.terrainSlots && atlasNode.nodeLayout.terrainSlots <= filter.terrainSlots[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.TERRAIN_SLOTS)
   }
