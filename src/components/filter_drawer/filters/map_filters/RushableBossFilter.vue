@@ -13,7 +13,6 @@ filterStore.$subscribe((mutation, state) => {
 })
 
 function handleRushableBossFilter() {
-  console.log(!rushableBoss.value)
   if (!rushableBoss.value) {
     filterStore.GET_SELECTED_FILTER().rushableBoss = true
   }
