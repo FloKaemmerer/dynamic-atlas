@@ -8,10 +8,10 @@ const includeOpenness = ref(filterStore.GET_SELECTED_FILTER().includeOpenness)
 const openness = ref(filterStore.GET_SELECTED_FILTER().openness)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeOpenness !== includeOpenness.value) {
+  if (state.filters[state.currentSelectedFilterIndex].includeOpenness !== includeOpenness.value) {
     includeOpenness.value = state.filters[state.currentSelectedFilterIndex].includeOpenness
   }
-  if (state.openness !== openness.value) {
+  if (state.filters[state.currentSelectedFilterIndex].openness !== openness.value) {
     openness.value = state.filters[state.currentSelectedFilterIndex].openness
   }
 })

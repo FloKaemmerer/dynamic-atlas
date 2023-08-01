@@ -12,7 +12,7 @@ const activeFiltersStore = useActiveFiltersStore()
 const filterDrawerStore = useFilterDrawerStore()
 
 function clearAllFilters() {
-  filterStore.$reset()
+  filterStore.CLEAR_FILTER()
   activeFiltersStore.$reset()
 }
 

@@ -8,10 +8,10 @@ const includeBaseMobCount = ref(filterStore.GET_SELECTED_FILTER().includeBaseMob
 const baseMobCount = ref(filterStore.GET_SELECTED_FILTER().baseMobCount)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeBaseMobCount !== includeBaseMobCount.value) {
+  if (state.filters[state.currentSelectedFilterIndex].includeBaseMobCount !== includeBaseMobCount.value) {
     includeBaseMobCount.value = state.filters[state.currentSelectedFilterIndex].includeBaseMobCount
   }
-  if (state.baseMobCount !== baseMobCount.value) {
+  if (state.filters[state.currentSelectedFilterIndex].baseMobCount !== baseMobCount.value) {
     baseMobCount.value = state.filters[state.currentSelectedFilterIndex].baseMobCount
   }
 })

@@ -5,27 +5,13 @@ import { useFilterStore } from '@/store/FilterStore'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import { FilterKeys } from '@/model/filterKeys'
 import type { Filter } from '@/model/filter'
+import { hasActiveFilters } from '@/composable/filter/filter-utils'
 
 const filterStore = useFilterStore()
 const atlasNodeStore = useAtlasNodeStore()
 const activeFiltersStore = useActiveFiltersStore()
 filterStore.$subscribe((mutation, state) => {
-  handleFilter(state.filterText,
-    state.excludePhasedBosses,
-    state.includeNumberOfBosses ? state.numberOfBosses : [-1, -1],
-    state.minDivinationCardPrice,
-    state.minEffectiveDivinationCardValue,
-    state.includeOpenness ? state.openness : [-1, -1],
-    state.includeTraversability ? state.traversability : [-1, -1],
-    state.includeBacktrackFactor ? state.backtrackFactor : [-1, -1],
-    state.includeLinearity ? state.linearity : [-1, -1],
-    state.includeTerrainSlots ? state.terrainSlots : [-1, -1],
-    state.includeBaseMobCount ? state.baseMobCount : [-1, -1],
-    state.rushableBoss,
-    state.includeSkippablePhases,
-    state.excludeSpawnedBosses,
-    state.includeSpawnIntro,
-    state.filters[state.currentSelectedFilterIndex])
+  handleFilter(state.filters[state.currentSelectedFilterIndex])
 })
 
 export function initFilter() {
@@ -36,6 +22,59 @@ export function initFilter() {
   })
 }
 
+export function handleFilter(filter: Filter) {
+  let result = [] as AtlasNode[]
+
+  if (filter && hasActiveFilters(filter)) {
+    result = atlasNodeStore.atlasNodes.filter(value => value.active)
+
+    // Filter by Text
+    result = filterByText(filter, result)
+
+    // Filter by MapTier
+    result = filterByMapTier(filter, result)
+
+    // Filter by Openness
+    result = filterByOpenness(filter, result)
+
+    // Filter by Traversability
+    result = filterByTraversability(filter, result)
+
+    // Filter by BacktrackFactor
+    result = filterByBacktrackFactor(filter, result)
+
+    // Filter by Linearity
+    result = filterByLinearity(filter, result)
+
+    // Filter by TerrainSlots
+    result = filterByTerrainSlots(filter, result)
+
+    // Filter by BaseMobCount
+    result = filterByBaseMobCount(filter, result)
+
+    // Filter by Rushable Boss
+    result = filterByRushableBoss(filter, result)
+
+    // Filter by Number of Bosses
+    result = filterByNumberOfBosses(filter, result)
+
+    // Filter by phased Bosses
+    result = filterByPhasedBosses(filter, result)
+
+    // Filter by Spawned Bosses
+    result = filterBySpawnedBosses(filter, result)
+
+    // Filter by minimum Divination Card Price
+    result = filterByMinimumDivinationCardPrice(filter, result)
+
+    // Filter by minimum effective Divination Card Value
+    result = filterByMinimumEffectiveDivinationCardValue(filter, result)
+  }
+  else {
+    activeFiltersStore.$reset()
+  }
+  atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
+}
 function hasToFilterByMapTier(filter: Filter) {
   return filter.includeMapTier && filter.mapTier !== undefined && filter.mapTier.length === 2
 }
@@ -98,92 +137,6 @@ function hasToFilterByMinimumDivinationCardPrice(filter: Filter) {
 
 function hasToFilterByMinimumEffectiveDivinationCardValue(filter: Filter) {
   return filter.minEffectiveDivinationCardValue !== undefined && filter.minEffectiveDivinationCardValue > 0
-}
-
-export function handleFilter(filterText: string,
-  excludePhasedBosses: boolean,
-  numberOfBosses: number[],
-  minDivinationCardPrice: number,
-  minEffectiveDivinationCardValue: number,
-  openness: number[],
-  traversability: number[],
-  backtrackFactor: number[],
-  linearity: number[],
-  terrainSlots: number[],
-  baseMobCount: number[],
-  includeRushableBoss: boolean,
-  includeSkippablePhases: boolean,
-  excludeSpawnedBosses: boolean,
-  spawnIntro: boolean,
-  filter: Filter) {
-  let result = [] as AtlasNode[]
-  const needToFilter
-  = hasToFilterByFilterText(filter)
-  || hasToFilterByMapTier(filter)
-  || hasToFilterByOpenness(filter)
-  || hasToFilterByTraversability(filter)
-  || hasToFilterByBacktrackFactor(filter)
-  || hasToFilterByLinearity(filter)
-  || hasToFilterByTerrainSlots(filter)
-  || hasToFilterByBaseMobCount(filter)
-  || hasToFilterByRushableBoss(filter)
-  || hasToFilterByNumberOfBosses(filter)
-  || hasToFilterByExcludePhasedBosses(filter)
-   || hasToFilterBySkippablePhases(filter)
-   || hasToFilterBySpawnIntro(filter)
-   || hasToFilterBySpawnedBosses(filter)
-  || hasToFilterByMinimumDivinationCardPrice(filter)
-  || hasToFilterByMinimumEffectiveDivinationCardValue(filter)
-
-  if (needToFilter) {
-    result = atlasNodeStore.atlasNodes.filter(value => value.active)
-
-    // Filter by Text
-    result = filterByText(filter, result)
-
-    // Filter by MapTier
-    result = filterByMapTier(filter, result)
-
-    // Filter by Openness
-    result = filterByOpenness(filter, result)
-
-    // Filter by Traversability
-    result = filterByTraversability(filter, result)
-
-    // Filter by BacktrackFactor
-    result = filterByBacktrackFactor(filter, result)
-
-    // Filter by Linearity
-    result = filterByLinearity(filter, result)
-
-    // Filter by TerrainSlots
-    result = filterByTerrainSlots(filter, result)
-
-    // Filter by BaseMobCount
-    result = filterByBaseMobCount(filter, result)
-
-    // Filter by Rushable Boss
-    result = filterByRushableBoss(filter, result)
-
-    // Filter by Number of Bosses
-    result = filterByNumberOfBosses(filter, result)
-
-    // Filter by phased Bosses
-    result = filterByPhasedBosses(filter, result)
-
-    // Filter by Spawned Bosses
-    result = filterBySpawnedBosses(filter, result)
-
-    // Filter by minimum Divination Card Price
-    result = filterByMinimumDivinationCardPrice(filter, result)
-
-    // Filter by minimum effective Divination Card Value
-    result = filterByMinimumEffectiveDivinationCardValue(filter, result)
-  }
-  else {
-    activeFiltersStore.$reset()
-  }
-  atlasNodeStore.SET_FILTERED_ATLAS_NODE_IDS(result)
 }
 
 function filterByMapTier(filter: Filter, result: AtlasNode[]) {
@@ -404,7 +357,8 @@ function filterByTerrainSlots(filter: Filter, result: AtlasNode[]) {
 }
 
 function filterByText(filter: Filter, result: AtlasNode[]) {
-  if (filter.filterText) {
+  if (hasToFilterByFilterText(filter)) {
+    // @ts-expect-error within 'hasToFilterByFilterText' we checked !== undefined
     const regExp = new RegExp(filter.filterText.toLowerCase())
 
     result = result.filter(atlasNode =>

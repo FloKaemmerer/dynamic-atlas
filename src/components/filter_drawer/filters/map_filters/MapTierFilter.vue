@@ -8,10 +8,10 @@ const includeMapTier = ref(filterStore.GET_SELECTED_FILTER().includeMapTier)
 const mapTier = ref(filterStore.GET_SELECTED_FILTER().mapTier)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeMapTier !== includeMapTier.value) {
+  if (state.filters[state.currentSelectedFilterIndex].includeMapTier !== includeMapTier.value) {
     includeMapTier.value = state.filters[state.currentSelectedFilterIndex].includeMapTier
   }
-  if (state.mapTier !== mapTier.value) {
+  if (state.filters[state.currentSelectedFilterIndex].mapTier !== mapTier.value) {
     mapTier.value = state.filters[state.currentSelectedFilterIndex].mapTier
   }
 })

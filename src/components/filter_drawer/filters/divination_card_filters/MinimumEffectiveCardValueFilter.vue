@@ -21,7 +21,6 @@ function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
       filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue = minEffectiveDivinationCardValue
     }
   }
-  filterStore.SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(Number.parseInt(value))
 }
 </script>
 

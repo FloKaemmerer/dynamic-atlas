@@ -15,7 +15,7 @@ import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
-import type { Filter } from '@/model/filter'
+import { hasActiveFilters } from '@/composable/filter/filter-utils'
 
 const filterStore = useFilterStore()
 const filterQueryStore = useFilterQueryStore()
@@ -40,25 +40,6 @@ router.isReady().then(() => {
   initFilter()
   handleUrlQueryFilters(route.query)
 })
-
-function hasActiveFilters(filter: Filter) {
-  return (filter.filterText !== undefined)
-      || (filter.mapTier !== undefined)
-      || (filter.openness !== undefined)
-      || (filter.traversability !== undefined)
-      || (filter.backtrackFactor !== undefined)
-      || (filter.linearity !== undefined)
-      || (filter.terrainSlots !== undefined)
-      || (filter.baseMobCount !== undefined)
-      || (filter.rushableBoss !== undefined)
-      || (filter.numberOfBosses !== undefined)
-      || (filter.excludePhasedBosses !== undefined)
-      || (filter.includeSkippablePhases !== undefined)
-      || (filter.includeSpawnIntro !== undefined)
-      || (filter.excludeSpawnedBosses !== undefined)
-      || (filter.minDivinationCardPrice !== undefined)
-      || (filter.minEffectiveDivinationCardValue !== undefined)
-}
 
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
