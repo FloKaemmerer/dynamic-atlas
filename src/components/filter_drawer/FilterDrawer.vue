@@ -15,6 +15,7 @@ import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
+import type { Filter } from '@/model/filter'
 
 const filterStore = useFilterStore()
 const filterQueryStore = useFilterQueryStore()
@@ -40,38 +41,34 @@ router.isReady().then(() => {
   handleUrlQueryFilters(route.query)
 })
 
-function hasActiveFilter(state: any) {
-  return (state.filters[state.currentSelectedFilterIndex].filterText !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].mapTier !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].openness !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].traversability !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].backtrackFactor !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].linearity !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].terrainSlots !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].baseMobCount !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].rushableBoss !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].numberOfBosses !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].excludePhasedBosses !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].includeSkippablePhases !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].includeSpawnIntro !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].excludeSpawnedBosses !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].minDivinationCardPrice !== undefined)
-      || (state.filters[state.currentSelectedFilterIndex].minEffectiveDivinationCardValue !== undefined)
+function hasActiveFilters(filter: Filter) {
+  return (filter.filterText !== undefined)
+      || (filter.mapTier !== undefined)
+      || (filter.openness !== undefined)
+      || (filter.traversability !== undefined)
+      || (filter.backtrackFactor !== undefined)
+      || (filter.linearity !== undefined)
+      || (filter.terrainSlots !== undefined)
+      || (filter.baseMobCount !== undefined)
+      || (filter.rushableBoss !== undefined)
+      || (filter.numberOfBosses !== undefined)
+      || (filter.excludePhasedBosses !== undefined)
+      || (filter.includeSkippablePhases !== undefined)
+      || (filter.includeSpawnIntro !== undefined)
+      || (filter.excludeSpawnedBosses !== undefined)
+      || (filter.minDivinationCardPrice !== undefined)
+      || (filter.minEffectiveDivinationCardValue !== undefined)
 }
 
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
   // ----- Map Filters -----
-  // filters.add(Boolean(state.filterText && state.filterText.length > 0), 'filterText', state.filterText)
-  // filters.add(hasToAddMapTier(state), 'mapTier', state.mapTier)
-  // filters.add(state.openness[0] >= 0 && state.includeOpenness, 'openness', state.openness)
   filters.add(state.traversability[0] >= 0 && state.includeTraversability, 'traversability', state.traversability)
   filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
   filters.add(state.linearity[0] >= 0 && state.includeLinearity, 'linearity', state.linearity)
   filters.add(state.terrainSlots[0] >= 0 && state.includeTerrainSlots, 'terrainSlots', state.terrainSlots)
   filters.add(state.baseMobCount[0] >= 0 && state.includeBaseMobCount, 'baseMobCount', state.baseMobCount)
-  filters.add(state.rushableBoss, 'rushableBoss', state.rushableBoss)
   // --------------------------
 
   // ------ Boss Filters ------
@@ -87,7 +84,11 @@ filterStore.$subscribe((_mutation, state) => {
   filters.add(state.minEffectiveDivinationCardValue > 0, 'minEffectiveDivinationCardValue', state.minEffectiveDivinationCardValue)
   // ---------------------------
 
-  filters.add(hasActiveFilter(state), 'filters', JSON.stringify(state.filters))
+  const activeFilters = state.filters.filter(value => hasActiveFilters(value))
+
+  if (activeFilters.length > 0) {
+    filters.add(true, 'filters', JSON.stringify(activeFilters))
+  }
   router.push(filters)
   filterQueryStore.SET_FILTER_QUERY(filters.query)
 })
