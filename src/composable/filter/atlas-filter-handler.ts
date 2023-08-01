@@ -84,6 +84,10 @@ function hasToFilterBySkippablePhases(filter: Filter) {
   return filter.includeSkippablePhases !== undefined && filter.includeSkippablePhases
 }
 
+function hasToFilterBySpawnIntro(filter: Filter) {
+  return filter.includeSpawnIntro !== undefined && filter.includeSpawnIntro
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -114,8 +118,8 @@ export function handleFilter(filterText: string,
   || hasToFilterByNumberOfBosses(filter)
   || hasToFilterByExcludePhasedBosses(filter)
    || hasToFilterBySkippablePhases(filter)
+   || hasToFilterBySpawnIntro(filter)
    || excludeSpawnedBosses
-   || spawnIntro
   || minDivinationCardPrice > 0
   || minEffectiveDivinationCardValue > 0
 
@@ -153,7 +157,7 @@ export function handleFilter(filterText: string,
     result = filterByNumberOfBosses(filter, result)
 
     // Filter by phased Bosses
-    result = filterByPhasedBosses(filter, spawnIntro, result)
+    result = filterByPhasedBosses(filter, result)
 
     // Filter by Spawned Bosses
     result = filterBySpawnedBosses(excludeSpawnedBosses, result)
@@ -198,10 +202,10 @@ function filterByNumberOfBosses(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterByPhasedBosses(filter: Filter, includeSpawnIntro: boolean, result: AtlasNode[]) {
+function filterByPhasedBosses(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByExcludePhasedBosses(filter)) {
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.EXCLUDE_PHASED_BOSSES)
-    if (filter.includeSkippablePhases && includeSpawnIntro) {
+    if (hasToFilterBySkippablePhases(filter) && hasToFilterBySpawnIntro(filter)) {
       result = result.filter((atlasNode) => {
         return !atlasNode.boss.phased
      || (atlasNode.boss.phased && atlasNode.boss.skippablePhases)
@@ -210,7 +214,7 @@ function filterByPhasedBosses(filter: Filter, includeSpawnIntro: boolean, result
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
     }
-    else if (filter.includeSkippablePhases && !includeSpawnIntro) {
+    else if (hasToFilterBySkippablePhases(filter) && !hasToFilterBySpawnIntro(filter)) {
       result = result.filter((atlasNode) => {
         return !atlasNode.boss.phased
      || (atlasNode.boss.phased && atlasNode.boss.skippablePhases)
@@ -218,7 +222,7 @@ function filterByPhasedBosses(filter: Filter, includeSpawnIntro: boolean, result
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
       activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
     }
-    else if (!filter.includeSkippablePhases && includeSpawnIntro) {
+    else if (!hasToFilterBySkippablePhases(filter) && hasToFilterBySpawnIntro(filter)) {
       result = result.filter((atlasNode) => {
         return !atlasNode.boss.phased
      || (atlasNode.boss.phased && atlasNode.boss.introPhase)

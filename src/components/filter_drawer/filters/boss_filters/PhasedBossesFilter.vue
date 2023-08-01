@@ -10,9 +10,6 @@ filterStore.$subscribe((mutation, state) => {
   if (state.filters[state.currentSelectedFilterIndex].excludePhasedBosses !== excludePhasedBosses.value) {
     excludePhasedBosses.value = state.filters[state.currentSelectedFilterIndex].excludePhasedBosses
   }
-  if (state.excludePhasedBosses !== excludePhasedBosses.value) {
-    excludePhasedBosses.value = state.excludePhasedBosses
-  }
 })
 
 function handleExcludePhasedBossesFilter() {
@@ -21,6 +18,8 @@ function handleExcludePhasedBossesFilter() {
   }
   else {
     filterStore.GET_SELECTED_FILTER().excludePhasedBosses = undefined
+    filterStore.GET_SELECTED_FILTER().includeSkippablePhases = undefined
+    filterStore.GET_SELECTED_FILTER().includeSpawnIntro = undefined
   }
 }
 </script>

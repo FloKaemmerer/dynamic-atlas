@@ -3,16 +3,22 @@ import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-const includeSpawnIntro = ref(filterStore.includeSpawnIntro)
+
+const includeSpawnIntro = ref(filterStore.GET_SELECTED_FILTER().includeSpawnIntro)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeSpawnIntro !== includeSpawnIntro.value) {
-    includeSpawnIntro.value = state.includeSpawnIntro
+  if (state.filters[state.currentSelectedFilterIndex].includeSpawnIntro !== includeSpawnIntro.value) {
+    includeSpawnIntro.value = state.filters[state.currentSelectedFilterIndex].includeSpawnIntro
   }
 })
 
 function handleIncludeSpawnIntroFilter() {
-  filterStore.SET_INCLUDE_SPAWN_INTRO(!includeSpawnIntro.value)
+  if (!includeSpawnIntro.value) {
+    filterStore.GET_SELECTED_FILTER().includeSpawnIntro = true
+  }
+  else {
+    filterStore.GET_SELECTED_FILTER().includeSpawnIntro = undefined
+  }
 }
 </script>
 
@@ -21,7 +27,7 @@ function handleIncludeSpawnIntroFilter() {
     v-model="includeSpawnIntro"
     label="Include Bosses With Spawn-Intro"
     density="compact"
-    :disabled="!filterStore.excludePhasedBosses"
+    :disabled="!filterStore.GET_SELECTED_FILTER().excludePhasedBosses"
     @click="handleIncludeSpawnIntroFilter()"
   />
 </template>

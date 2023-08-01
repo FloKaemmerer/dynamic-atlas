@@ -3,14 +3,12 @@ import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
+
 const includeSkippablePhases = ref(filterStore.GET_SELECTED_FILTER().includeSkippablePhases)
 
 filterStore.$subscribe((mutation, state) => {
   if (state.filters[state.currentSelectedFilterIndex].includeSkippablePhases !== includeSkippablePhases.value) {
     includeSkippablePhases.value = state.filters[state.currentSelectedFilterIndex].includeSkippablePhases
-  }
-  if (state.includeSkippablePhases !== includeSkippablePhases.value) {
-    includeSkippablePhases.value = state.includeSkippablePhases
   }
 })
 
