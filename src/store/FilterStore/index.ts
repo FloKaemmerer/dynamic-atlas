@@ -187,6 +187,23 @@ export const useFilterStore = defineStore('filter', {
       this.baseMobCount = [0, 10]
       this.rushableBoss = false
       this.includeNumberOfBosses = false
+
+      this.filters[this.currentSelectedFilterIndex].includeMapTier = undefined
+      this.filters[this.currentSelectedFilterIndex].mapTier = undefined
+      this.filters[this.currentSelectedFilterIndex].includeOpenness = undefined
+      this.filters[this.currentSelectedFilterIndex].openness = undefined
+      this.filters[this.currentSelectedFilterIndex].includeTraversability = undefined
+      this.filters[this.currentSelectedFilterIndex].traversability = undefined
+      this.filters[this.currentSelectedFilterIndex].includeBacktrackFactor = undefined
+      this.filters[this.currentSelectedFilterIndex].backtrackFactor = undefined
+      this.filters[this.currentSelectedFilterIndex].includeLinearity = undefined
+      this.filters[this.currentSelectedFilterIndex].linearity = undefined
+      this.filters[this.currentSelectedFilterIndex].includeTerrainSlots = undefined
+      this.filters[this.currentSelectedFilterIndex].terrainSlots = undefined
+      this.filters[this.currentSelectedFilterIndex].includeBaseMobCount = undefined
+      this.filters[this.currentSelectedFilterIndex].baseMobCount = undefined
+      this.filters[this.currentSelectedFilterIndex].rushableBoss = undefined
+      this.filters[this.currentSelectedFilterIndex].includeNumberOfBosses = undefined
     },
 
     CLEAR_BOSS_FILTERS() {
@@ -196,11 +213,21 @@ export const useFilterStore = defineStore('filter', {
       this.includeSkippablePhases = false
       this.includeSpawnIntro = false
       this.excludeSpawnedBosses = false
+
+      this.filters[this.currentSelectedFilterIndex].includeNumberOfBosses = undefined
+      this.filters[this.currentSelectedFilterIndex].numberOfBosses = undefined
+      this.filters[this.currentSelectedFilterIndex].excludePhasedBosses = undefined
+      this.filters[this.currentSelectedFilterIndex].includeSkippablePhases = undefined
+      this.filters[this.currentSelectedFilterIndex].includeSpawnIntro = undefined
+      this.filters[this.currentSelectedFilterIndex].excludeSpawnedBosses = undefined
     },
 
     CLEAR_DIVINATION_CARD_FILTERS() {
       this.minDivinationCardPrice = 0
       this.minEffectiveDivinationCardValue = 0
+
+      this.filters[this.currentSelectedFilterIndex].minDivinationCardPrice = undefined
+      this.filters[this.currentSelectedFilterIndex].minEffectiveDivinationCardValue = undefined
     },
   },
 })

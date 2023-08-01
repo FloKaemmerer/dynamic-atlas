@@ -40,6 +40,10 @@ function hasToFilterByMapTier(filter: Filter) {
   return filter.includeMapTier && filter.mapTier !== undefined && filter.mapTier.length === 2
 }
 
+function hasToFilterByFilterText(filter: Filter) {
+  return (filter.filterText !== undefined && filter.filterText.length) > 0
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -58,7 +62,7 @@ export function handleFilter(filterText: string,
   filter: Filter) {
   let result = [] as AtlasNode[]
   const needToFilter
-        = (filterText && filterText.length) > 0
+        = hasToFilterByFilterText(filter)
         || hasToFilterByMapTier(filter)
         || numberOfBosses[0] > -1
         || excludePhasedBosses
@@ -79,7 +83,7 @@ export function handleFilter(filterText: string,
     result = atlasNodeStore.atlasNodes.filter(value => value.active)
 
     // Filter by Text
-    result = filterByText(filterText, result)
+    result = filterByText(filter, result)
 
     // Filter by MapTier
     result = filterByMapTier(filter, result)
@@ -334,9 +338,9 @@ function filterByTerrainSlots(terrainSlots: number[], result: AtlasNode[]) {
   return result
 }
 
-function filterByText(filterText: string, result: AtlasNode[]) {
-  if (filterText) {
-    const regExp = new RegExp(filterText.toLowerCase())
+function filterByText(filter: Filter, result: AtlasNode[]) {
+  if (filter.filterText) {
+    const regExp = new RegExp(filter.filterText.toLowerCase())
 
     result = result.filter(atlasNode =>
       atlasNode.filterTags.some(e => regExp.test(e)))

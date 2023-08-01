@@ -10,16 +10,13 @@ const mapTier = ref(filterStore.GET_SELECTED_FILTER().mapTier)
 filterStore.$subscribe((mutation, state) => {
   if (state.includeMapTier !== includeMapTier.value) {
     includeMapTier.value = state.filters[state.currentSelectedFilterIndex].includeMapTier
-    includeMapTier.value = state.includeMapTier
   }
   if (state.mapTier !== mapTier.value) {
     mapTier.value = state.filters[state.currentSelectedFilterIndex].mapTier
-    mapTier.value = state.mapTier
   }
 })
 
 function handleIncludeMapTierFilter() {
-  filterStore.SET_INCLUDE_MAP_TIER(!includeMapTier.value)
   filterStore.GET_SELECTED_FILTER().includeMapTier = !includeMapTier.value
   if (filterStore.GET_SELECTED_FILTER().includeMapTier && filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
     filterStore.GET_SELECTED_FILTER().mapTier = [1, 16]
@@ -27,8 +24,11 @@ function handleIncludeMapTierFilter() {
 }
 
 function debounceMapTierFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.mapTier[0] && value[1] === filterStore.mapTier[1])) {
-    filterStore.SET_MAP_TIER(value)
+  if (filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
+    filterStore.GET_SELECTED_FILTER().mapTier = value
+  }
+  // @ts-expect-error within 'debounceMapTierFilter' mapTier can't be undefined here
+  else if (value[0] !== filterStore.GET_SELECTED_FILTER().mapTier[0] || value[1] !== filterStore.GET_SELECTED_FILTER().mapTier[1]) {
     filterStore.GET_SELECTED_FILTER().mapTier = value
   }
 }
