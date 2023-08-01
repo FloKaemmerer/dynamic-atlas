@@ -8,10 +8,10 @@ const includeLinearity = ref(filterStore.includeLinearity)
 const linearity = ref(filterStore.linearity)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.includeLinearity != includeLinearity.value) {
+  if (state.includeLinearity !== includeLinearity.value) {
     includeLinearity.value = state.includeLinearity
   }
-  if (state.linearity != linearity.value) {
+  if (state.linearity !== linearity.value) {
     linearity.value = state.linearity
   }
 })
@@ -21,7 +21,7 @@ function handleIncludeLinearityFilter() {
 }
 
 function debounceLinearityFilter(value: [number, number]) {
-  if (!(value[0] == filterStore.linearity[0] && value[1] == filterStore.linearity[1])) {
+  if (!(value[0] === filterStore.linearity[0] && value[1] === filterStore.linearity[1])) {
     filterStore.SET_LINEARITY(value)
   }
 }
@@ -51,7 +51,7 @@ function debounceLinearityFilter(value: [number, number]) {
     <v-col>
       <v-range-slider
         v-model="linearity"
-        strict
+        :strict="true"
         direction="horizontal"
         step="1"
         show-ticks="always"
