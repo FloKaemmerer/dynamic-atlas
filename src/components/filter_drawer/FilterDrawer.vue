@@ -40,25 +40,32 @@ router.isReady().then(() => {
   handleUrlQueryFilters(route.query)
 })
 
-function hasToAddMapTier(state: any) {
-  return state.filters[state.currentSelectedFilterIndex].mapTier !== undefined
-      && state.filters[state.currentSelectedFilterIndex].mapTier[0] >= 0
-      && state.filters[state.currentSelectedFilterIndex].includeMapTier !== undefined
-      && state.filters[state.currentSelectedFilterIndex].includeMapTier
-}
-
 function hasActiveFilter(state: any) {
-  return (state.filters[state.currentSelectedFilterIndex].mapTier !== undefined && state.filters[state.currentSelectedFilterIndex].includeMapTier !== undefined && state.filters[state.currentSelectedFilterIndex].includeMapTier)
-  || (state.filters[state.currentSelectedFilterIndex].filterText !== undefined)
+  return (state.filters[state.currentSelectedFilterIndex].filterText !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].mapTier !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].openness !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].traversability !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].backtrackFactor !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].linearity !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].terrainSlots !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].baseMobCount !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].rushableBoss !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].numberOfBosses !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].excludePhasedBosses !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].includeSkippablePhases !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].includeSpawnIntro !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].excludeSpawnedBosses !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].minDivinationCardPrice !== undefined)
+      || (state.filters[state.currentSelectedFilterIndex].minEffectiveDivinationCardValue !== undefined)
 }
 
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
   // ----- Map Filters -----
-  filters.add(Boolean(state.filterText && state.filterText.length > 0), 'filterText', state.filterText)
+  // filters.add(Boolean(state.filterText && state.filterText.length > 0), 'filterText', state.filterText)
   // filters.add(hasToAddMapTier(state), 'mapTier', state.mapTier)
-  filters.add(state.openness[0] >= 0 && state.includeOpenness, 'openness', state.openness)
+  // filters.add(state.openness[0] >= 0 && state.includeOpenness, 'openness', state.openness)
   filters.add(state.traversability[0] >= 0 && state.includeTraversability, 'traversability', state.traversability)
   filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
   filters.add(state.linearity[0] >= 0 && state.includeLinearity, 'linearity', state.linearity)

@@ -44,6 +44,10 @@ function hasToFilterByFilterText(filter: Filter) {
   return (filter.filterText !== undefined && filter.filterText.length) > 0
 }
 
+function hasToFilterByOpenness(filter: Filter) {
+  return filter.includeOpenness && filter.openness !== undefined && filter.openness.length === 2
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -62,22 +66,22 @@ export function handleFilter(filterText: string,
   filter: Filter) {
   let result = [] as AtlasNode[]
   const needToFilter
-        = hasToFilterByFilterText(filter)
-        || hasToFilterByMapTier(filter)
-        || numberOfBosses[0] > -1
-        || excludePhasedBosses
-        || minDivinationCardPrice > 0
-        || minEffectiveDivinationCardValue > 0
-        || openness[0] > -1
-        || traversability[0] > -1
-        || backtrackFactor[0] > -1
-        || linearity[0] > -1
-        || terrainSlots[0] > -1
-        || baseMobCount[0] > -1
-        || includeRushableBoss
-        || includeSkippablePhases
-        || excludeSpawnedBosses
-        || spawnIntro
+  = hasToFilterByFilterText(filter)
+  || hasToFilterByMapTier(filter)
+  || hasToFilterByOpenness(filter)
+  || numberOfBosses[0] > -1
+  || excludePhasedBosses
+  || minDivinationCardPrice > 0
+  || minEffectiveDivinationCardValue > 0
+  || traversability[0] > -1
+  || backtrackFactor[0] > -1
+  || linearity[0] > -1
+  || terrainSlots[0] > -1
+  || baseMobCount[0] > -1
+  || includeRushableBoss
+  || includeSkippablePhases
+  || excludeSpawnedBosses
+  || spawnIntro
 
   if (needToFilter) {
     result = atlasNodeStore.atlasNodes.filter(value => value.active)
@@ -87,6 +91,9 @@ export function handleFilter(filterText: string,
 
     // Filter by MapTier
     result = filterByMapTier(filter, result)
+
+    // Filter by Openness
+    result = filterByOpenness(filter, result)
 
     // Filter by Number of Bosses
     result = filterByNumberOfBosses(numberOfBosses, result)
@@ -105,9 +112,6 @@ export function handleFilter(filterText: string,
 
     // Filter by minimum effective Divination Card Value
     result = filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue, result)
-
-    // Filter by Openness
-    result = filterByOpenness(openness, result)
 
     // Filter by Traversability
     result = filterByTraversability(traversability, result)
@@ -163,8 +167,8 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
     if (includeSkippablePhases && includeSpawnIntro) {
       result = result.filter((atlasNode) => {
         return !atlasNode.boss.phased
-                    || (atlasNode.boss.phased && atlasNode.boss.skippablePhases)
-                    || (atlasNode.boss.phased && atlasNode.boss.introPhase)
+     || (atlasNode.boss.phased && atlasNode.boss.skippablePhases)
+     || (atlasNode.boss.phased && atlasNode.boss.introPhase)
       })
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
@@ -172,7 +176,7 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
     else if (includeSkippablePhases && !includeSpawnIntro) {
       result = result.filter((atlasNode) => {
         return !atlasNode.boss.phased
-                    || (atlasNode.boss.phased && atlasNode.boss.skippablePhases)
+     || (atlasNode.boss.phased && atlasNode.boss.skippablePhases)
       })
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
       activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
@@ -180,7 +184,7 @@ function filterByPhasedBosses(excludePhasedBosses: boolean, includeSkippablePhas
     else if (!includeSkippablePhases && includeSpawnIntro) {
       result = result.filter((atlasNode) => {
         return !atlasNode.boss.phased
-                    || (atlasNode.boss.phased && atlasNode.boss.introPhase)
+     || (atlasNode.boss.phased && atlasNode.boss.introPhase)
       })
       activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SPAWN_INTRO)
       activeFiltersStore.REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(FilterKeys.INCLUDE_SKIPPABLE_PHASES)
@@ -260,10 +264,11 @@ function filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardV
   return result
 }
 
-function filterByOpenness(layout: number[], result: AtlasNode[]) {
-  if (layout[0] > -1) {
+function filterByOpenness(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterByOpenness(filter)) {
     result = result.filter((atlasNode) => {
-      return layout[0] <= atlasNode.nodeLayout.openness && atlasNode.nodeLayout.openness <= layout[1]
+      // @ts-expect-error within 'hasToFilterByMapTier' we checked for length == 2
+      return filter.openness[0] <= atlasNode.nodeLayout.openness && atlasNode.nodeLayout.openness <= filter.openness[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_MAP_FILTERS(FilterKeys.OPENNESS)
   }

@@ -15,12 +15,6 @@ function buildShareableUrl(queryParams: LooseFilters): string {
       filterParams = filterParams.concat(`${FilterKeys.FILTER_TEXT}=${queryParams.filterText}`)
     }
 
-    // if (FilterKeys.MAP_TIER in queryParams && queryParams.mapTier) {
-    //   baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-    //   baseUrl = baseUrl.concat(`${FilterKeys.MAP_TIER}=${queryParams.mapTier}`)
-    //   filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-    //   filterParams = filterParams.concat(`${FilterKeys.MAP_TIER}=${queryParams.mapTier}`)
-    // }
     if (FilterKeys.OPENNESS in queryParams && queryParams.openness) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
       baseUrl = baseUrl.concat(`${FilterKeys.OPENNESS}=${queryParams.openness}`)

@@ -4,25 +4,32 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const includeOpenness = ref(filterStore.includeOpenness)
-const openness = ref(filterStore.openness)
+const includeOpenness = ref(filterStore.GET_SELECTED_FILTER().includeOpenness)
+const openness = ref(filterStore.GET_SELECTED_FILTER().openness)
 
 filterStore.$subscribe((mutation, state) => {
   if (state.includeOpenness !== includeOpenness.value) {
-    includeOpenness.value = state.includeOpenness
+    includeOpenness.value = state.filters[state.currentSelectedFilterIndex].includeOpenness
   }
   if (state.openness !== openness.value) {
-    openness.value = state.openness
+    openness.value = state.filters[state.currentSelectedFilterIndex].openness
   }
 })
 
 function handleIncludeOpennessFilter() {
-  filterStore.SET_INCLUDE_OPENNESS(!includeOpenness.value)
+  filterStore.GET_SELECTED_FILTER().includeOpenness = !includeOpenness.value
+  if (filterStore.GET_SELECTED_FILTER().includeOpenness && filterStore.GET_SELECTED_FILTER().openness === undefined) {
+    filterStore.GET_SELECTED_FILTER().openness = [0, 10]
+  }
 }
 
 function debounceOpennessFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.openness[0] && value[1] === filterStore.openness[1])) {
-    filterStore.SET_OPENNESS(value)
+  if (filterStore.GET_SELECTED_FILTER().openness === undefined) {
+    filterStore.GET_SELECTED_FILTER().openness = value
+  }
+  // @ts-expect-error within 'debounceOpennessFilter' openness can't be undefined here
+  else if (value[0] !== filterStore.GET_SELECTED_FILTER().openness[0] || value[1] !== filterStore.GET_SELECTED_FILTER().openness[1]) {
+    filterStore.GET_SELECTED_FILTER().openness = value
   }
 }
 </script>
