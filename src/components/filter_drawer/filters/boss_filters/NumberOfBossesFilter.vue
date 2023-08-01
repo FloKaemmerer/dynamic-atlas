@@ -4,25 +4,32 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const includeNumberOfBosses = ref(filterStore.includeNumberOfBosses)
-const numberOfBosses = ref(filterStore.numberOfBosses)
+const includeNumberOfBosses = ref(filterStore.GET_SELECTED_FILTER().includeNumberOfBosses)
+const numberOfBosses = ref(filterStore.GET_SELECTED_FILTER().numberOfBosses)
 
 filterStore.$subscribe((mutation, state) => {
   if (state.includeNumberOfBosses !== includeNumberOfBosses.value) {
-    includeNumberOfBosses.value = state.includeNumberOfBosses
+    includeNumberOfBosses.value = state.filters[state.currentSelectedFilterIndex].includeNumberOfBosses
   }
   if (state.numberOfBosses !== numberOfBosses.value) {
-    numberOfBosses.value = state.numberOfBosses
+    numberOfBosses.value = state.filters[state.currentSelectedFilterIndex].numberOfBosses
   }
 })
 
 function handleIncludeNumberOfBossesFilter() {
-  filterStore.SET_INCLUDE_NUMBER_OF_BOSSES(!includeNumberOfBosses.value)
+  filterStore.GET_SELECTED_FILTER().includeNumberOfBosses = !includeNumberOfBosses.value
+  if (filterStore.GET_SELECTED_FILTER().includeNumberOfBosses && filterStore.GET_SELECTED_FILTER().numberOfBosses === undefined) {
+    filterStore.GET_SELECTED_FILTER().numberOfBosses = [0, 10]
+  }
 }
 
 function debounceNumberOfBossesFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.numberOfBosses[0] && value[1] === filterStore.numberOfBosses[1])) {
-    filterStore.SET_NUMBER_OF_BOSSES(value)
+  if (filterStore.GET_SELECTED_FILTER().numberOfBosses === undefined) {
+    filterStore.GET_SELECTED_FILTER().numberOfBosses = value
+  }
+  // @ts-expect-error within 'debounceNumberOfBossesFilter' numberOfBosses can't be undefined here
+  else if (value[0] !== filterStore.GET_SELECTED_FILTER().numberOfBosses[0] || value[1] !== filterStore.GET_SELECTED_FILTER().numberOfBosses[1]) {
+    filterStore.GET_SELECTED_FILTER().numberOfBosses = value
   }
 }
 </script>
@@ -56,10 +63,10 @@ function debounceNumberOfBossesFilter(value: [number, number]) {
         @update:model-value="value => debounceNumberOfBossesFilter(value)"
       >
         <template #prepend>
-          {{ numberOfBosses[0] }}
+          0
         </template>
         <template #append>
-          {{ numberOfBosses[1] }}
+          4
         </template>
       </v-range-slider>
     </v-col>

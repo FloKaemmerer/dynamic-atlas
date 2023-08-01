@@ -72,6 +72,10 @@ function hasToFilterByBaseMobCount(filter: Filter) {
   return filter.includeBaseMobCount && filter.baseMobCount !== undefined && filter.baseMobCount.length === 2
 }
 
+function hasToFilterByNumberOfBosses(filter: Filter) {
+  return filter.includeNumberOfBosses && filter.numberOfBosses !== undefined && filter.numberOfBosses.length === 2
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -99,7 +103,7 @@ export function handleFilter(filterText: string,
   || hasToFilterByTerrainSlots(filter)
   || hasToFilterByBaseMobCount(filter)
   || hasToFilterByRushableBoss(filter)
-  || numberOfBosses[0] > -1
+  || hasToFilterByNumberOfBosses(filter)
   || excludePhasedBosses
   || minDivinationCardPrice > 0
   || minEffectiveDivinationCardValue > 0
@@ -132,13 +136,13 @@ export function handleFilter(filterText: string,
     result = filterByTerrainSlots(filter, result)
 
     // Filter by BaseMobCount
-    result = filterByBaseMobCount(filter, baseMobCount, result)
+    result = filterByBaseMobCount(filter, result)
 
     // Filter by Rushable Boss
-    result = filterByRushableBoss(filter, includeRushableBoss, result)
+    result = filterByRushableBoss(filter, result)
 
     // Filter by Number of Bosses
-    result = filterByNumberOfBosses(numberOfBosses, result)
+    result = filterByNumberOfBosses(filter, result)
 
     // Filter by phased Bosses
     result = filterByPhasedBosses(excludePhasedBosses, includeSkippablePhases, spawnIntro, result)
@@ -172,10 +176,11 @@ function filterByMapTier(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterByNumberOfBosses(numberOfBosses: number[], result: AtlasNode[]) {
-  if (numberOfBosses[0] > -1) {
+function filterByNumberOfBosses(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterByNumberOfBosses(filter)) {
     result = result.filter((atlasNode) => {
-      return numberOfBosses[0] <= atlasNode.boss.numberOfBosses && atlasNode.boss.numberOfBosses <= numberOfBosses[1]
+      // @ts-expect-error within 'hasToFilterByNumberOfBosses' we check for length == 2
+      return filter.numberOfBosses[0] <= atlasNode.boss.numberOfBosses && atlasNode.boss.numberOfBosses <= filter.numberOfBosses[1]
     })
     activeFiltersStore.ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(FilterKeys.NUMBER_OF_BOSSES)
   }
@@ -242,7 +247,7 @@ function filterBySpawnedBosses(excludeSpawnedBosses: boolean, result: AtlasNode[
   return result
 }
 
-function filterByRushableBoss(filter: Filter, includeRushableBoss: boolean, result: AtlasNode[]) {
+function filterByRushableBoss(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByRushableBoss(filter)) {
     result = result.filter((atlasNode) => {
       return atlasNode.nodeLayout.rushableBoss
@@ -330,7 +335,7 @@ function filterByBacktrackFactor(filter: Filter, result: AtlasNode[]) {
   return result
 }
 
-function filterByBaseMobCount(filter: Filter, baseMobCount: number[], result: AtlasNode[]) {
+function filterByBaseMobCount(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByBaseMobCount(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByBaseMobCount' we checked for length == 2

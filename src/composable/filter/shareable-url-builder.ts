@@ -7,22 +7,7 @@ function buildShareableUrl(queryParams: LooseFilters): string {
   if (JSON.stringify(queryParams).includes(':')) {
     filterParams = filterParams.concat(`${queryParams.filters}`)
 
-    // ----- Map Filters -----
-    if (FilterKeys.RUSHABLE_BOSS in queryParams && queryParams.rushableBoss) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.RUSHABLE_BOSS}=${queryParams.rushableBoss}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.RUSHABLE_BOSS}=${queryParams.rushableBoss}`)
-    }
-    // --------------------------
-
     // ------ Boss Filters ------
-    if (FilterKeys.NUMBER_OF_BOSSES in queryParams && queryParams.numberOfBosses) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.NUMBER_OF_BOSSES}=${queryParams.numberOfBosses}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.NUMBER_OF_BOSSES}=${queryParams.numberOfBosses}`)
-    }
     if (FilterKeys.EXCLUDE_PHASED_BOSSES in queryParams && queryParams.excludePhasedBosses) {
       baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
       baseUrl = baseUrl.concat(`${FilterKeys.EXCLUDE_PHASED_BOSSES}=${queryParams.excludePhasedBosses}`)
