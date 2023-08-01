@@ -4,16 +4,22 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 
-const rushableBoss = ref(filterStore.rushableBoss)
+const rushableBoss = ref(filterStore.GET_SELECTED_FILTER().rushableBoss)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.rushableBoss !== rushableBoss.value) {
-    rushableBoss.value = state.rushableBoss
+  if (state.filters[state.currentSelectedFilterIndex].rushableBoss !== rushableBoss.value) {
+    rushableBoss.value = state.filters[state.currentSelectedFilterIndex].rushableBoss
   }
 })
 
 function handleRushableBossFilter() {
-  filterStore.SET_RUSHABLE_BOSS(!rushableBoss.value)
+  console.log(!rushableBoss.value)
+  if (!rushableBoss.value) {
+    filterStore.GET_SELECTED_FILTER().rushableBoss = true
+  }
+  else {
+    filterStore.GET_SELECTED_FILTER().rushableBoss = undefined
+  }
 }
 </script>
 

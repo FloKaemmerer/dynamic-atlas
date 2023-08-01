@@ -48,6 +48,10 @@ function hasToFilterByOpenness(filter: Filter) {
   return filter.includeOpenness && filter.openness !== undefined && filter.openness.length === 2
 }
 
+function hasToFilterByRushableBoss(filter: Filter) {
+  return filter.rushableBoss !== undefined && filter.rushableBoss
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -69,16 +73,16 @@ export function handleFilter(filterText: string,
   = hasToFilterByFilterText(filter)
   || hasToFilterByMapTier(filter)
   || hasToFilterByOpenness(filter)
-  || numberOfBosses[0] > -1
-  || excludePhasedBosses
-  || minDivinationCardPrice > 0
-  || minEffectiveDivinationCardValue > 0
   || traversability[0] > -1
   || backtrackFactor[0] > -1
   || linearity[0] > -1
   || terrainSlots[0] > -1
   || baseMobCount[0] > -1
-  || includeRushableBoss
+  || hasToFilterByRushableBoss(filter)
+  || numberOfBosses[0] > -1
+  || excludePhasedBosses
+  || minDivinationCardPrice > 0
+  || minEffectiveDivinationCardValue > 0
   || includeSkippablePhases
   || excludeSpawnedBosses
   || spawnIntro
@@ -95,24 +99,6 @@ export function handleFilter(filterText: string,
     // Filter by Openness
     result = filterByOpenness(filter, result)
 
-    // Filter by Number of Bosses
-    result = filterByNumberOfBosses(numberOfBosses, result)
-
-    // Filter by phased Bosses
-    result = filterByPhasedBosses(excludePhasedBosses, includeSkippablePhases, spawnIntro, result)
-
-    // Filter by Spawned Bosses
-    result = filterBySpawnedBosses(excludeSpawnedBosses, result)
-
-    // Filter by Rushable Boss
-    result = filterByRushableBoss(includeRushableBoss, result)
-
-    // Filter by minimum Divination Card Price
-    result = filterByMinimumDivinationCardPrice(minDivinationCardPrice, result)
-
-    // Filter by minimum effective Divination Card Value
-    result = filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue, result)
-
     // Filter by Traversability
     result = filterByTraversability(traversability, result)
 
@@ -127,6 +113,24 @@ export function handleFilter(filterText: string,
 
     // Filter by BaseMobCount
     result = filterByBaseMobCount(baseMobCount, result)
+
+    // Filter by Rushable Boss
+    result = filterByRushableBoss(filter, includeRushableBoss, result)
+
+    // Filter by Number of Bosses
+    result = filterByNumberOfBosses(numberOfBosses, result)
+
+    // Filter by phased Bosses
+    result = filterByPhasedBosses(excludePhasedBosses, includeSkippablePhases, spawnIntro, result)
+
+    // Filter by Spawned Bosses
+    result = filterBySpawnedBosses(excludeSpawnedBosses, result)
+
+    // Filter by minimum Divination Card Price
+    result = filterByMinimumDivinationCardPrice(minDivinationCardPrice, result)
+
+    // Filter by minimum effective Divination Card Value
+    result = filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue, result)
   }
   else {
     activeFiltersStore.$reset()
@@ -218,8 +222,8 @@ function filterBySpawnedBosses(excludeSpawnedBosses: boolean, result: AtlasNode[
   return result
 }
 
-function filterByRushableBoss(includeRushableBoss: boolean, result: AtlasNode[]) {
-  if (includeRushableBoss) {
+function filterByRushableBoss(filter: Filter, includeRushableBoss: boolean, result: AtlasNode[]) {
+  if (hasToFilterByRushableBoss(filter)) {
     result = result.filter((atlasNode) => {
       return atlasNode.nodeLayout.rushableBoss
     })
