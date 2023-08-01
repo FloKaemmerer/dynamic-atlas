@@ -1,4 +1,3 @@
-import { FilterKeys } from '@/model/filterKeys'
 import type { LooseFilters } from '@/model/looseFilters'
 
 function buildShareableUrl(queryParams: LooseFilters): string {
@@ -6,18 +5,8 @@ function buildShareableUrl(queryParams: LooseFilters): string {
   let filterParams = ''
   if (JSON.stringify(queryParams).includes(':')) {
     filterParams = filterParams.concat(`${queryParams.filters}`)
-
-    // - Divination Card Filters -
-    if (FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE in queryParams && queryParams.minEffectiveDivinationCardValue) {
-      baseUrl = baseUrl.concat(baseUrl.includes('?') ? '&' : '?')
-      baseUrl = baseUrl.concat(`${FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE}=${queryParams.minEffectiveDivinationCardValue}`)
-      filterParams = filterParams.concat(filterParams.includes('=') ? ',' : '')
-      filterParams = filterParams.concat(`${FilterKeys.MIN_EFFECTIVE_DIVINATION_CARD_VALUE}=${queryParams.minEffectiveDivinationCardValue}`)
-    }
-    console.log(filterParams)
     baseUrl = baseUrl.concat(`&filters=${filterParams}`)
   }
-  console.log(baseUrl)
   return baseUrl
 }
 

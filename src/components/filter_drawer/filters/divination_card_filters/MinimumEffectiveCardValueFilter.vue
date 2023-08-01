@@ -3,15 +3,24 @@ import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-const minEffectiveDivinationCardValue = ref(filterStore.minEffectiveDivinationCardValue)
+const minEffectiveDivinationCardValue = ref(filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.minEffectiveDivinationCardValue !== minEffectiveDivinationCardValue.value) {
-    minEffectiveDivinationCardValue.value = state.minEffectiveDivinationCardValue
+  if (state.filters[state.currentSelectedFilterIndex].minEffectiveDivinationCardValue !== minEffectiveDivinationCardValue.value) {
+    minEffectiveDivinationCardValue.value = state.filters[state.currentSelectedFilterIndex].minEffectiveDivinationCardValue
   }
 })
 
 function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
+  if (!value || value.length < 1) {
+    filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue = undefined
+  }
+  else {
+    const minEffectiveDivinationCardValue = Number.parseInt(value)
+    if (minEffectiveDivinationCardValue && minEffectiveDivinationCardValue > 0) {
+      filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue = minEffectiveDivinationCardValue
+    }
+  }
   filterStore.SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(Number.parseInt(value))
 }
 </script>

@@ -63,26 +63,6 @@ function hasActiveFilters(filter: Filter) {
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
-  // ----- Map Filters -----
-  filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
-  filters.add(state.linearity[0] >= 0 && state.includeLinearity, 'linearity', state.linearity)
-  filters.add(state.terrainSlots[0] >= 0 && state.includeTerrainSlots, 'terrainSlots', state.terrainSlots)
-  filters.add(state.baseMobCount[0] >= 0 && state.includeBaseMobCount, 'baseMobCount', state.baseMobCount)
-  // --------------------------
-
-  // ------ Boss Filters ------
-  filters.add(state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses, 'numberOfBosses', state.numberOfBosses)
-  filters.add(state.excludePhasedBosses, 'excludePhasedBosses', state.excludePhasedBosses)
-  filters.add(state.includeSkippablePhases, 'includeSkippablePhases', state.includeSkippablePhases)
-  filters.add(state.includeSpawnIntro, 'includeSpawnIntro', state.includeSpawnIntro)
-  filters.add(state.excludeSpawnedBosses, 'excludeSpawnedBosses', state.excludeSpawnedBosses)
-  // ---------------------------
-
-  // - Divination Card Filters -
-  filters.add(state.minDivinationCardPrice > 0, 'minDivinationCardPrice', state.minDivinationCardPrice)
-  filters.add(state.minEffectiveDivinationCardValue > 0, 'minEffectiveDivinationCardValue', state.minEffectiveDivinationCardValue)
-  // ---------------------------
-
   const activeFilters = state.filters.filter(value => hasActiveFilters(value))
 
   if (activeFilters.length > 0) {

@@ -96,6 +96,10 @@ function hasToFilterByMinimumDivinationCardPrice(filter: Filter) {
   return filter.minDivinationCardPrice !== undefined && filter.minDivinationCardPrice > 0
 }
 
+function hasToFilterByMinimumEffectiveDivinationCardValue(filter: Filter) {
+  return filter.minEffectiveDivinationCardValue !== undefined && filter.minEffectiveDivinationCardValue > 0
+}
+
 export function handleFilter(filterText: string,
   excludePhasedBosses: boolean,
   numberOfBosses: number[],
@@ -129,7 +133,7 @@ export function handleFilter(filterText: string,
    || hasToFilterBySpawnIntro(filter)
    || hasToFilterBySpawnedBosses(filter)
   || hasToFilterByMinimumDivinationCardPrice(filter)
-  || minEffectiveDivinationCardValue > 0
+  || hasToFilterByMinimumEffectiveDivinationCardValue(filter)
 
   if (needToFilter) {
     result = atlasNodeStore.atlasNodes.filter(value => value.active)
@@ -174,7 +178,7 @@ export function handleFilter(filterText: string,
     result = filterByMinimumDivinationCardPrice(filter, result)
 
     // Filter by minimum effective Divination Card Value
-    result = filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue, result)
+    result = filterByMinimumEffectiveDivinationCardValue(filter, result)
   }
   else {
     activeFiltersStore.$reset()
@@ -294,13 +298,14 @@ function filterByMinimumDivinationCardPrice(filter: Filter, result: AtlasNode[])
   return result
 }
 
-function filterByMinimumEffectiveDivinationCardValue(minEffectiveDivinationCardValue: number, result: AtlasNode[]) {
-  if (minEffectiveDivinationCardValue > 0) {
+function filterByMinimumEffectiveDivinationCardValue(filter: Filter, result: AtlasNode[]) {
+  if (hasToFilterByMinimumEffectiveDivinationCardValue(filter)) {
     result = result.filter((atlasNode) => {
       const highestEffectiveValueDivinationCard = atlasNode.highestEffectiveValueDivinationCard
       const effectiveValue = highestEffectiveValueDivinationCard.effectiveValue
       if (effectiveValue) {
-        return effectiveValue >= minEffectiveDivinationCardValue
+        // @ts-expect-error within 'hasToFilterByMinimumEffectiveDivinationCardValue' we check for !== undefined
+        return effectiveValue >= filter.minEffectiveDivinationCardValue
       }
       else {
         return false
