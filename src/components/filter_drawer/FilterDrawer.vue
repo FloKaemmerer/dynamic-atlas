@@ -1,28 +1,24 @@
 <script setup lang="ts">
-import { computed, onBeforeMount } from 'vue'
+import { computed, onBeforeMount, ref } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
 import { initFilter } from '@/composable/filter/atlas-filter-handler'
-import DivinationCardFilterHolder
-  from '@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue'
-import BossFilterHolder from '@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue'
-import MapFilterHolder from '@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue'
-import TextFilterHolder from '@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue'
 import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue'
 import { useFilterStore } from '@/store/FilterStore'
 import type { LooseFilters } from '@/model/looseFilters'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
-import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 import { hasActiveFilters } from '@/composable/filter/filter-utils'
-import FilterPropertiesHolder from '@/components/filter_drawer/FilterPropertiesHolder.vue'
+import FilterHolder from '@/components/filter_drawer/FilterHolder.vue'
 
 const filterStore = useFilterStore()
 const filterQueryStore = useFilterQueryStore()
 const filterDrawerStore = useFilterDrawerStore()
 const route: RouteLocationNormalizedLoaded = useRoute()
 const router: Router = useRouter()
+
+const tab = ref()
 
 const drawer = computed<boolean>(() => filterDrawerStore.drawer)
 
@@ -67,16 +63,32 @@ filterStore.$subscribe((_mutation, state) => {
     :permanent="true"
   >
     <v-card color="grey-darken-3" :flat="true">
-      <FilterToolbar />
-      <v-card-text>
-        <FilterPropertiesHolder />
-        <TextFilterHolder />
-        <v-expansion-panels>
-          <MapFilterHolder />
-          <BossFilterHolder />
-          <DivinationCardFilterHolder />
-        </v-expansion-panels>
-      </v-card-text>
+      <v-row>
+        <v-tabs
+          v-model="tab"
+          align-tabs="title"
+          next-icon="mdi-arrow-right-bold-box-outline"
+          prev-icon="mdi-arrow-left-bold-box-outline"
+          show-arrows
+        >
+          <v-tab
+            v-for="item in filterStore.filters"
+            :key="item.filterName"
+            :value="item.filterName"
+          >
+            {{ item.filterName }}
+          </v-tab>
+        </v-tabs>
+      </v-row>
+      <v-window v-model="tab">
+        <v-window-item
+          v-for="item in filterStore.filters"
+          :key="item.filterName"
+          :value="item.filterName"
+        >
+          <FilterHolder />
+        </v-window-item>
+      </v-window>
     </v-card>
     <AtlasOverlayHolder />
   </v-navigation-drawer>
