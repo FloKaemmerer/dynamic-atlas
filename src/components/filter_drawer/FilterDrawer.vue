@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
 import { initFilter } from '@/composable/filter/atlas-filter-handler'
@@ -16,6 +16,7 @@ import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 import { hasActiveFilters } from '@/composable/filter/filter-utils'
+import FilterPropertiesHolder from '@/components/filter_drawer/FilterPropertiesHolder.vue'
 
 const filterStore = useFilterStore()
 const filterQueryStore = useFilterQueryStore()
@@ -25,6 +26,7 @@ const router: Router = useRouter()
 
 const drawer = computed<boolean>(() => filterDrawerStore.drawer)
 
+onBeforeMount(() => initFilter())
 function queryFilters() {
   const queryFilters: LooseFilters = {}
   return {
@@ -37,7 +39,6 @@ function queryFilters() {
   }
 }
 router.isReady().then(() => {
-  initFilter()
   handleUrlQueryFilters(route.query)
 })
 
@@ -68,6 +69,7 @@ filterStore.$subscribe((_mutation, state) => {
     <v-card color="grey-darken-3" :flat="true">
       <FilterToolbar />
       <v-card-text>
+        <FilterPropertiesHolder />
         <TextFilterHolder />
         <v-expansion-panels>
           <MapFilterHolder />

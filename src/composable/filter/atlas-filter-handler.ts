@@ -27,7 +27,7 @@ export function initFilter() {
   console.log('Init Atlas Filter')
   filterStore.ADD_FILTER({
     filterName: 'default',
-    filterColor: 'red',
+    filterColor: '#ff0000',
   })
 }
 
