@@ -7,7 +7,8 @@ function handleUrlQueryFilters(queryParams: LocationQuery) {
   console.log(JSON.stringify(queryParams))
   if (queryParams && FilterKeys.FILTERS in queryParams && queryParams.filters) {
     console.log(queryParams.filters)
-    filterStore.SET_FILTERS(JSON.parse(String(queryParams.filters)))
+    const filters = JSON.parse(String(queryParams.filters))
+    filterStore.SET_FILTERS(filters)
   }
 }
 

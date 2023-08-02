@@ -213,7 +213,7 @@ function initAtlasNodeNames(atlasNode: AtlasNode) {
 function initNodeHighlight(atlasNode: AtlasNode) {
   const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
   const filterHighlight = getFilterHighlight(atlasNode.id, atlasNodePoint)
-  filterHighlight.cache()
+  // filterHighlight.cache()
   filterHighlight.filters([Konva.Filters.Blur])
   filterHighlightGroup.add(filterHighlight)
 }
@@ -397,10 +397,14 @@ atlasNodeStore.$subscribe((mutation, state) => {
   allHighlights.forEach(value => value.opacity(0))
 
   // show all filtered AtlasNodes
-  state.filteredAtlasNodes.forEach((value) => {
-    const nodeHighlight = filterHighlightGroup.findOne(`#${value.id}`)
-    if (nodeHighlight) {
-      nodeHighlight.opacity(1)
+  state.filteredAtlasNodesPerFilter.forEach((atlasNodeIds, filter) => {
+    for (let i = 0; i < atlasNodeIds.length; i++) {
+      const atlasNodeId = atlasNodeIds[i]
+      const nodeHighlight = filterHighlightGroup.findOne(`#${atlasNodeId}`) as Konva.Circle
+      if (nodeHighlight) {
+        nodeHighlight.fill(filter.filterColor)
+        nodeHighlight.opacity(1)
+      }
     }
   })
 })
