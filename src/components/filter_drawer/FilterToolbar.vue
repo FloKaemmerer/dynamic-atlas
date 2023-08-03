@@ -29,12 +29,12 @@ function toggleFilterDrawer() {
 </script>
 
 <template>
-  <v-toolbar color="grey-darken-4" density="compact">
+  <v-toolbar density="compact">
     <v-toolbar-title class="text-h6">
       Filters
     </v-toolbar-title>
     <template #append>
-      <v-tooltip>
+      <!-- <v-tooltip>
         <template #activator="{ props }">
           <v-btn
             icon="mdi-content-copy" v-bind="props"
@@ -52,16 +52,53 @@ function toggleFilterDrawer() {
           />
         </template>
         <p>Clear all Filters</p>
-      </v-tooltip>
+      </v-tooltip> -->
+      <v-menu>
+        <template #activator="{ props }">
+          <v-btn rounded="0" v-bind="props" size="small" icon="mdi-cog" />
+        </template>
+        <v-list
+          density="compact"
+          rounded="0"
+          bg-color="grey-darken-4"
+        >
+          <v-list-item
+            key="cog-item-1"
+            value="copy"
+            @click="copyShareableLinkToClipboard()"
+          >
+            <template #prepend>
+              <v-icon icon="mdi-content-copy" />
+            </template>
+            <v-list-item-action>
+              Share
+            </v-list-item-action>
+          </v-list-item>
+          <v-list-item
+            key="cog-item-2"
+            value="clear"
+            @click="clearAllFilters()"
+          >
+            <template #prepend>
+              <v-icon icon="mdi-close-circle" />
+            </template>
+            <v-list-item-action>
+              Clear
+            </v-list-item-action>
+          </v-list-item>
+        </v-list>
+      </v-menu>
 
       <v-tooltip>
         <template #activator="{ props }">
           <v-btn
-            icon="mdi-chevron-left" v-bind="props"
+            rounded="0"
+            icon="mdi-chevron-left"
+            v-bind="props"
             @click="toggleFilterDrawer()"
           />
         </template>
-        <p>Hide Filter</p>
+        <p>Hide Filters</p>
       </v-tooltip>
     </template>
   </v-toolbar>

@@ -11,7 +11,7 @@ voidstoneStore.setupVoidstoneData()
 </script>
 
 <template>
-  <v-app :style="{ background: '#282828' }">
+  <v-app>
     <v-layout>
       <RouterView />
     </v-layout>

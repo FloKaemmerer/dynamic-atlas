@@ -1,74 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-
-const includeOpenness = ref(filterStore.includeOpenness)
-const openness = ref(filterStore.openness)
-
-filterStore.$subscribe((mutation, state) => {
-  if (state.includeOpenness !== includeOpenness.value) {
-    includeOpenness.value = state.includeOpenness
-  }
-  if (state.openness !== openness.value) {
-    openness.value = state.openness
-  }
-})
-
-function handleIncludeOpennessFilter() {
-  filterStore.SET_INCLUDE_OPENNESS(!includeOpenness.value)
-}
-
-function debounceOpennessFilter(value: [number, number]) {
-  if (!(value[0] === filterStore.openness[0] && value[1] === filterStore.openness[1])) {
-    filterStore.SET_OPENNESS(value)
-  }
-}
 </script>
 
 <template>
-  <v-checkbox
-    id="openness"
-    v-model="includeOpenness"
-    density="compact"
+  <GenericFilter
+    v-model:checkbox="filterStore.includeOpenness"
+    v-model:rangeSlider="filterStore.openness"
+    tooltip="How open the map is ex. Tower is very narrow, while Dunes is very open"
+    :range-slider-max="10"
+    range-slider-label-prepend="Narrow"
+    range-slider-label-append="Open"
     name="openness"
-    hide-details
-    @click="handleIncludeOpennessFilter()"
-  >
-    <template #label>
-      Openness
-      <v-tooltip
-        text="Openness = Narrow = Toxic Sewers; Openness = Open = Dunes"
-      >
-        <template #activator="{ props }">
-          <span class="text-grey cursor-help" v-bind="props">
-            (?)
-          </span>
-          <!-- <v-icon icon="mdi-information-outline" v-bind="props" /> -->
-        </template>
-      </v-tooltip>
-    </template>
-  </v-checkbox>
-  <v-range-slider
-    v-model="openness"
-    strict
-    direction="horizontal"
-    step="1"
-    show-ticks="always"
-    tick-size="4"
-    thumb-label
-    :max="10"
-    :disabled="!includeOpenness"
-    @update:model-value="value => debounceOpennessFilter(value)"
-  >
-    <template #prepend>
-      Narrow
-    </template>
-    <template #append>
-      Open
-    </template>
-  </v-range-slider>
+    checkbox-label="Openness"
+  />
 </template>
 
 <style scoped>

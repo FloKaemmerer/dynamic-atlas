@@ -76,19 +76,20 @@ filterStore.$subscribe((_mutation, state) => {
 <template>
   <v-navigation-drawer
     :model-value="drawer"
+    image="https://poe.ninja/images/bg.jpg"
     floating
-    :width="400"
-
-    class="bg-surface-variant"
-    elevation="1"
+    :width="416"
+    class="sidebar-filters"
+    elevation="0"
+    border="right"
     disable-resize-watcher
     permanent
   >
-    <v-card color="grey-darken-3" flat>
+    <v-card color="transparent" rounded="0" flat>
       <FilterToolbar />
-      <v-card-text>
+      <v-card-text class="pl-3 pr-0" style="max-width:400px;">
         <TextFilterHolder />
-        <v-expansion-panels>
+        <v-expansion-panels multiple>
           <MapFilterHolder />
           <BossFilterHolder />
           <DivinationCardFilterHolder />
