@@ -21,7 +21,7 @@ const internalRangeSlider = toRef(rangeSlider)
 
 const debouncedFn = useDebounceFn(() => {
   emit('update:rangeSlider', internalRangeSlider.value)
-}, 300)
+}, 100)
 
 watch(internalRangeSlider, () => {
   debouncedFn()
