@@ -53,7 +53,7 @@ const mapFiltersCount = computed(() => activeFiltersStore.activeMapFilters.lengt
         <v-icon :icon="expanded ? 'mdi-menu-up' : 'mdi-menu-down'" />
       </template>
     </v-expansion-panel-title>
-    <v-expansion-panel-text class="">
+    <v-expansion-panel-text>
       <MapTierFilter />
       <OpennessFilter />
       <TraversabilityFilter />
