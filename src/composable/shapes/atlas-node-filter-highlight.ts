@@ -10,6 +10,6 @@ export function getFilterHighlight(id: string, atlasNodePoint: { x: number; y: n
         fill: 'red',
         blurRadius: 5,
         radius: 25,
-        opacity: 1,
+        opacity: 0,
     })
 }
