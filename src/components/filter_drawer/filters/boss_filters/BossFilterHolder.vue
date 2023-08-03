@@ -42,7 +42,7 @@ const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.len
                   <!-- <v-icon icon="mdi-window-close" /> -->
                 </v-btn>
               </template>
-              <p>Clear all map filters</p>
+              <p>Clear all boss filters</p>
             </v-tooltip>
           </v-col>
         </v-fade-transition>
