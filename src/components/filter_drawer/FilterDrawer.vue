@@ -2,7 +2,13 @@
 import { computed, onBeforeMount, ref } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
-import { initFilter } from '@/composable/filter/atlas-filter-handler'
+import bgImage from '@/assets/images/bg.jpg'
+import { initFilter } from '@/composable/atlas-filter-handler'
+import DivinationCardFilterHolder
+  from '@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue'
+import BossFilterHolder from '@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue'
+import MapFilterHolder from '@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue'
+import TextFilterHolder from '@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue'
 import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue'
 import { useFilterStore } from '@/store/FilterStore'
 import type { LooseFilters } from '@/model/looseFilters'
@@ -63,15 +69,16 @@ filterStore.$subscribe((_mutation, state) => {
 <template>
   <v-navigation-drawer
     :model-value="drawer"
-    :floating="true"
-    :width="400"
-
-    class="bg-surface-variant"
-    elevation="1"
+    :image="bgImage"
+    floating
+    :width="416"
+    class="sidebar-filters"
+    elevation="0"
+    border="right"
     disable-resize-watcher
     :permanent="true"
   >
-    <v-card color="grey-darken-3" :flat="true">
+    <v-card color="transparent" rounded="0" flat>
       <v-row no-gutters>
         <v-col cols="10">
           <v-tabs

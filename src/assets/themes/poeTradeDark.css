@@ -1,0 +1,90 @@
+:root{
+    --v-theme-border-xs: 0.666667px;
+    --v-theme-border-md: 4px;
+}
+/* ________________ Custom Helper Classes ________________ */
+.v-theme--poeTradeThemeDark .border-custom-left{
+    border-left-style: solid !important;
+    border-left-color: rgb(var(--v-theme-accent)) !important;
+    border-left-width: var(--v-theme-border-xs) !important;
+}
+.v-theme--poeTradeThemeDark .cursor-help {
+  cursor: help;
+}
+
+
+
+/* ---------------- Button ---------------- */
+.v-theme--poeTradeThemeDark.v-btn.v-btn--flat{
+    color: rgb(var(--v-theme-offwhite))!important;
+}
+
+/* ---------------- Checkboxes ---------------- */
+.v-theme--poeTradeThemeDark .v-selection-control__input{
+    margin-right: 12px;
+}
+.v-theme--poeTradeThemeDark .v-checkbox-btn .v-label.v-label--clickable{
+    border-bottom-style: solid;
+    border-bottom-color: rgb(var(--v-theme-blue-gray));
+    border-bottom-width: var(--v-theme-border-xs);
+}
+.v-theme--poeTradeThemeDark .v-checkbox-btn .v-label {
+    opacity:1;
+}
+
+/* ________________ Expansion Panels ________________ */
+.v-theme--poeTradeThemeDark .v-expansion-panel,
+.v-theme--poeTradeThemeDark .bg-black{
+    color: rgb(var(--v-theme-offwhite))!important;
+}
+.v-theme--poeTradeThemeDark .v-expansion-panel-title{
+    border-bottom-style: solid;
+    border-bottom-color: rgb(var(--v-theme-accent));
+    border-bottom-width: var(--v-theme-border-xs);
+}
+.v-theme--poeTradeThemeDark .v-expansion-panel--active > .v-expansion-panel-title{
+    color: rgb(var(--v-theme-accent-light))!important;
+    background-color: rgb(var(--v-theme-accent))!important;
+    min-height:54px;
+}
+.v-theme--poeTradeThemeDark .v-expansion-panel-title--active .v-expansion-panel-title__overlay,
+.v-theme--poeTradeThemeDark .v-expansion-panel-title--active:hover .v-expansion-panel-title__overlay{
+    opacity:0;
+}
+.v-theme--poeTradeThemeDark .v-expansion-panel-text__wrapper{
+    padding: 8px;
+}
+
+/* ---------------- Range Sliders ---------------- */
+.v-theme--poeTradeThemeDark .v-range-slider{
+    background-color: rgb(var(--v-theme-gray));
+}
+
+.v-theme--poeTradeThemeDark .v-range-slider .custom-extras{
+    color: rgb(var(--v-theme-offwhite));
+    background-color: rgb(var(--v-theme-gray-darkest));
+    text-align: center;
+    min-width: 43px;
+    padding: 8px;
+    border-style: solid;
+    border-color: rgb(var(--v-theme-black));
+    border-left-width: var(--v-theme-border-md);
+    border-right-width: var(--v-theme-border-md);
+    border-top-width: 0px;
+    border-bottom-width: 0px;
+}
+.v-theme--poeTradeThemeDark .v-slider-thumb__label{
+    color: rgb(var(--v-theme-offwhite));
+    background-color: rgb(var(--v-theme-gray));
+    border-radius: 0px;
+}
+.v-theme--poeTradeThemeDark .v-slider-thumb__label::before{
+    color: rgb(var(--v-theme-gray));
+}
+
+/* ---------------- Tooltip ---------------- */
+.v-tooltip > .v-overlay__content{
+    color: rgb(var(--v-theme-offwhite));
+    background-color: rgb(var(--v-theme-gray));
+    border-radius: 0px;
+}

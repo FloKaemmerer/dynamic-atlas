@@ -1,77 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-
-const includeMapTier = ref(filterStore.GET_SELECTED_FILTER().includeMapTier)
-const mapTier = ref(filterStore.GET_SELECTED_FILTER().mapTier)
-
-filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].includeMapTier !== includeMapTier.value) {
-    includeMapTier.value = state.filters[state.currentSelectedFilterIndex].includeMapTier
-  }
-  if (state.filters[state.currentSelectedFilterIndex].mapTier !== mapTier.value) {
-    mapTier.value = state.filters[state.currentSelectedFilterIndex].mapTier
-  }
-})
-
-function handleIncludeMapTierFilter() {
-  filterStore.GET_SELECTED_FILTER().includeMapTier = !includeMapTier.value
-  if (filterStore.GET_SELECTED_FILTER().includeMapTier && filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
-    filterStore.GET_SELECTED_FILTER().mapTier = [1, 16]
-  }
-}
-
-function debounceMapTierFilter(value: [number, number]) {
-  if (filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
-    filterStore.GET_SELECTED_FILTER().mapTier = value
-  }
-  // @ts-expect-error within 'debounceMapTierFilter' mapTier can't be undefined here
-  else if (value[0] !== filterStore.GET_SELECTED_FILTER().mapTier[0] || value[1] !== filterStore.GET_SELECTED_FILTER().mapTier[1]) {
-    filterStore.GET_SELECTED_FILTER().mapTier = value
-  }
-}
 </script>
 
 <template>
-  <v-row no-gutters>
-    <v-col>
-      Map Tier
-    </v-col>
-  </v-row>
-  <v-row no-gutters>
-    <v-col cols="1">
-      <v-checkbox
-        v-model="includeMapTier"
-        density="compact"
-        @click="handleIncludeMapTierFilter()"
-      />
-    </v-col>
-    <v-col>
-      <v-range-slider
-        id="mapTierFilter"
-        v-model="mapTier"
-        :strict="true"
-        direction="horizontal"
-        step="1"
-        show-ticks="always"
-        tick-size="4"
-        thumb-label
-        :max="16"
-        :min="1"
-        :disabled="!includeMapTier"
-        @update:model-value="value => debounceMapTierFilter(value)"
-      >
-        <template #prepend>
-          1
-        </template>
-        <template #append>
-          16
-        </template>
-      </v-range-slider>
-    </v-col>
-  </v-row>
+  <GenericFilter
+    v-model:checkbox="filterStore.includeMapTier"
+    v-model:rangeSlider="filterStore.mapTier"
+    :range-slider-min="1"
+    :range-slider-max="16"
+    :range-slider-label-prepend="`T${filterStore.mapTier[0]}`"
+    :range-slider-label-append="`T${filterStore.mapTier[1]}`"
+    name="maptier"
+    checkbox-label="Map Tier"
+  />
 </template>
 
 <style scoped>

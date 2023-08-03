@@ -1,40 +1,33 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-const filterText = ref()
+// const filterText = ref()
 
-function handleTextFilter(value: string) {
-  if (value && value.length > 0) {
-    filterStore.GET_SELECTED_FILTER().filterText = value
-  }
-  else {
-    filterStore.GET_SELECTED_FILTER().filterText = undefined
-  }
-}
+// function handleTextFilter(value: string) {
+//   filterStore.SET_FILTER_TEXT(value)
+// }
 
-filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].filterText !== filterText.value) {
-    filterText.value = state.filters[state.currentSelectedFilterIndex].filterText
-  }
-})
+// filterStore.$subscribe((mutation, state) => {
+//   if (state.filterText !== filterText.value) {
+//     filterText.value = state.filterText
+//   }
+// })
 </script>
 
 <template>
   <v-text-field
     id="mapTextFilter"
-    v-model="filterText"
+    v-model="filterStore.filterText"
     density="compact"
-    variant="underlined"
     label="Filter... (eg: Doctor|Nurse|Patient)"
     prepend-inner-icon="mdi-magnify"
     single-line
-    class="mx-2 mb-4"
-    color="#198754"
+    class="mb-4"
+    color="#FFF8E1"
+    bg-color="grey-darken-4"
     :hide-details="true"
-    :clearable="true"
-    @update:model-value="val => handleTextFilter(val)"
+    clearable
   />
 </template>
 
