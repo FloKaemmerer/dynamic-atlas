@@ -2,13 +2,13 @@
 import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
-const { includeTerrainSlots, terrainSlots } = useFilterStore()
+const filterStore = useFilterStore()
 </script>
 
 <template>
   <GenericFilter
-    v-model:checkbox="includeTerrainSlots"
-    v-model:rangeSlider="terrainSlots"
+    v-model:checkbox="filterStore.includeTerrainSlots"
+    v-model:rangeSlider="filterStore.terrainSlots"
     tooltip="The number of slots within the map terrain, which can spawn a league mechanic, aka the juiceability of a map."
     :range-slider-min="0"
     :range-slider-max="10"
