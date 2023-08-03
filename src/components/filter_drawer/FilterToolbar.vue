@@ -34,25 +34,6 @@ function toggleFilterDrawer() {
       Filters
     </v-toolbar-title>
     <template #append>
-      <!-- <v-tooltip>
-        <template #activator="{ props }">
-          <v-btn
-            icon="mdi-content-copy" v-bind="props"
-            @click="copyShareableLinkToClipboard()"
-          />
-        </template>
-        <p>Copy Shareable Link to Clipboard</p>
-      </v-tooltip>
-
-      <v-tooltip>
-        <template #activator="{ props }">
-          <v-btn
-            icon="mdi-close-circle" v-bind="props"
-            @click="clearAllFilters()"
-          />
-        </template>
-        <p>Clear all Filters</p>
-      </v-tooltip> -->
       <v-menu>
         <template #activator="{ props }">
           <v-btn rounded="0" v-bind="props" size="small" icon="mdi-cog" />

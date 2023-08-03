@@ -50,6 +50,9 @@ export const PoeTradeTheme: Blueprint = {
       thumbLabel: true,
       thumbSize: 12,
     },
+    VToolbar: {
+      color: 'black',
+    },
   },
   theme: {
     defaultTheme: 'poeTradeThemeDark',

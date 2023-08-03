@@ -19,7 +19,7 @@ const mapFiltersCount = computed(() => activeFiltersStore.activeMapFilters.lengt
 
 <template>
   <v-expansion-panel value="mapPanel">
-    <v-expansion-panel-title class="text-subtitle-1">
+    <v-expansion-panel-title id="mapPanel" class="text-subtitle-1">
       <v-row no-gutters>
         <v-col class="d-inline-flex align-center" cols="7">
           Map Filters

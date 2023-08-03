@@ -13,7 +13,7 @@ const filterStore = useFilterStore()
     :range-slider-max="16"
     :range-slider-label-prepend="`T${filterStore.mapTier[0]}`"
     :range-slider-label-append="`T${filterStore.mapTier[1]}`"
-    name="mapTier"
+    name="maptier"
     checkbox-label="Map Tier"
   />
 </template>
