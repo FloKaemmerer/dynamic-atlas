@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
+import bgImage from '@/assets/images/bg.jpg'
 import { initFilter } from '@/composable/atlas-filter-handler'
 import DivinationCardFilterHolder
   from '@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue'
@@ -76,7 +77,7 @@ filterStore.$subscribe((_mutation, state) => {
 <template>
   <v-navigation-drawer
     :model-value="drawer"
-    image="https://poe.ninja/images/bg.jpg"
+    :image="bgImage"
     floating
     :width="416"
     class="sidebar-filters"
