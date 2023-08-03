@@ -16,7 +16,7 @@ const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.len
 
 <template>
   <v-expansion-panel value="bossPanel">
-    <v-expansion-panel-title class="text-subtitle-1 ">
+    <v-expansion-panel-title id="bossPanel" class="text-subtitle-1 ">
       <v-row no-gutters>
         <v-col class="d-inline-flex align-center" cols="7">
           Boss Filters
