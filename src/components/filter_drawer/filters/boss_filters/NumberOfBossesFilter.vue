@@ -1,68 +1,21 @@
 <script setup lang="ts">
+import GenericFilter from '@/components/generics/GenericFilter.vue'
+import { useFilterStore } from '@/store/FilterStore'
 
-import {ref} from "vue";
-import {useFilterStore} from "@/store/FilterStore";
-
-const filterStore = useFilterStore();
-
-let includeNumberOfBosses = ref(filterStore.includeNumberOfBosses)
-let numberOfBosses = ref(filterStore.numberOfBosses)
-
-filterStore.$subscribe((mutation, state) => {
-    if (state.includeNumberOfBosses != includeNumberOfBosses.value) {
-        includeNumberOfBosses.value = state.includeNumberOfBosses
-    }
-    if (state.numberOfBosses != numberOfBosses.value) {
-        numberOfBosses.value = state.numberOfBosses
-    }
-})
-
-function handleIncludeNumberOfBossesFilter() {
-    filterStore.SET_INCLUDE_NUMBER_OF_BOSSES(!includeNumberOfBosses.value)
-}
-
-function debounceNumberOfBossesFilter(value: [number, number]) {
-    if (!(value[0] == filterStore.numberOfBosses[0] && value[1] == filterStore.numberOfBosses[1])) {
-        filterStore.SET_NUMBER_OF_BOSSES(value)
-    }
-}
+const filterStore = useFilterStore()
 </script>
 
 <template>
-    <v-row no-gutters>
-        <v-col>
-            Number of Bosses
-        </v-col>
-    </v-row>
-    <v-row no-gutters>
-        <v-col cols="1">
-            <v-checkbox v-model="includeNumberOfBosses"
-                        @click="handleIncludeNumberOfBossesFilter()"
-                        density="compact"></v-checkbox>
-        </v-col>
-        <v-col>
-            <v-range-slider
-                    v-model="numberOfBosses"
-                    @update:model-value="value => debounceNumberOfBossesFilter(value)"
-                    strict
-                    direction="horizontal"
-                    step="1"
-                    show-ticks="always"
-                    tick-size="4"
-                    thumb-label
-                    :max="4"
-                    :min="0"
-                    :disabled="!includeNumberOfBosses"
-            >
-                <template v-slot:prepend>
-                    {{ numberOfBosses[0] }}
-                </template>
-                <template v-slot:append>
-                    {{ numberOfBosses[1] }}
-                </template>
-            </v-range-slider>
-        </v-col>
-    </v-row>
+  <GenericFilter
+    v-model:checkbox="filterStore.includeNumberOfBosses"
+    v-model:rangeSlider="filterStore.numberOfBosses"
+    :range-slider-min="0"
+    :range-slider-max="4"
+    :range-slider-label-prepend="filterStore.numberOfBosses[0]"
+    :range-slider-label-append="filterStore.numberOfBosses[1]"
+    name="numberofbosses"
+    checkbox-label="Number of Bosses"
+  />
 </template>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import MapTierFilter from '@/components/filter_drawer/filters/map_filters/MapTierFilter.vue'
 import OpennessFilter from '@/components/filter_drawer/filters/map_filters/OpennessFilter.vue'
 import TraversabilityFilter from '@/components/filter_drawer/filters/map_filters/TraversabilityFilter.vue'
@@ -14,56 +14,46 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const activeMapFilters = ref(activeFiltersStore.activeMapFilters.length)
-const panel = ref()
-
-activeFiltersStore.$subscribe((mutation, state) => {
-  if (state.activeMapFilters.length !== activeMapFilters.value) {
-    activeMapFilters.value = state.activeMapFilters.length
-  }
-})
-
-function clearActiveMapFilters() {
-  filterStore.CLEAR_MAP_FILTERS()
-  panel.value = []
-  setTimeout(() => {
-    panel.value = []
-  }, 10)
-}
+const mapFiltersCount = computed(() => activeFiltersStore.activeMapFilters.length)
 </script>
 
 <template>
   <v-expansion-panel value="mapPanel">
-    <v-expansion-panel-title>
+    <v-expansion-panel-title id="mapPanel" class="text-subtitle-1">
       <v-row no-gutters>
         <v-col class="d-inline-flex align-center" cols="7">
-          <p class="text-subtitle-1">
-            Map Filters
-          </p>
+          Map Filters
+          <v-fade-transition leave-absolute>
+            <span v-if="mapFiltersCount > 0" class="ml-1">({{ mapFiltersCount }})</span>
+          </v-fade-transition>
         </v-col>
         <v-fade-transition leave-absolute>
-          <v-col v-if="activeMapFilters > 0" class="d-inline-flex align-center justify-end text-overline pr-2" cols="5">
-            Active: {{ activeMapFilters }}
+          <v-col v-if="mapFiltersCount > 0" class="d-inline-flex justify-end align-center" cols="5">
             <v-tooltip>
               <template #activator="{ props }">
                 <v-btn
-                  icon="mdi-close-circle"
-                  density="compact"
                   size="x-small"
+                  class="px-3"
+                  color="info"
                   v-bind="props"
-                  class="ml-2"
-                  variant="text"
-                  :disabled="activeMapFilters < 1"
-                  @click="clearActiveMapFilters()"
-                />
+                  flat
+                  :disabled="mapFiltersCount < 1"
+                  @click.stop.prevent="filterStore.CLEAR_MAP_FILTERS()"
+                >
+                  Clear
+                  <!-- <v-icon icon="mdi-window-close" /> -->
+                </v-btn>
               </template>
-              <p>Clear Active Map Filters</p>
+              <p>Clear all map filters</p>
             </v-tooltip>
           </v-col>
         </v-fade-transition>
       </v-row>
+      <template #actions="{ expanded }">
+        <v-icon :icon="expanded ? 'mdi-menu-up' : 'mdi-menu-down'" />
+      </template>
     </v-expansion-panel-title>
-    <v-expansion-panel-text>
+    <v-expansion-panel-text class="">
       <MapTierFilter />
       <OpennessFilter />
       <TraversabilityFilter />
