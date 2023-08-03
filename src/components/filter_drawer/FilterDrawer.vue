@@ -9,7 +9,8 @@ import type { LooseFilters } from '@/model/looseFilters'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
-import { hasActiveFilters } from '@/composable/filter/filter-utils'
+import { getFilterName, hasActiveFilters } from '@/composable/filter/filter-utils'
+import { getRandomColor } from '@/composable/random-color'
 import FilterHolder from '@/components/filter_drawer/FilterHolder.vue'
 
 const filterStore = useFilterStore()
@@ -18,11 +19,19 @@ const filterDrawerStore = useFilterDrawerStore()
 const route: RouteLocationNormalizedLoaded = useRoute()
 const router: Router = useRouter()
 
-const tab = ref()
+const tab = ref(0)
 
 const drawer = computed<boolean>(() => filterDrawerStore.drawer)
 
 onBeforeMount(() => initFilter())
+
+function addNewFilter() {
+  const numberOfFilters = filterStore.filters.length
+  filterStore.ADD_FILTER({
+    filterColor: getRandomColor(),
+    filterName: getFilterName(numberOfFilters),
+  })
+}
 function queryFilters() {
   const queryFilters: LooseFilters = {}
   return {
@@ -63,22 +72,39 @@ filterStore.$subscribe((_mutation, state) => {
     :permanent="true"
   >
     <v-card color="grey-darken-3" :flat="true">
-      <v-row>
-        <v-tabs
-          v-model="tab"
-          align-tabs="title"
-          next-icon="mdi-arrow-right-bold-box-outline"
-          prev-icon="mdi-arrow-left-bold-box-outline"
-          show-arrows
-        >
-          <v-tab
-            v-for="item in filterStore.filters"
-            :key="item.filterName"
-            :value="item.filterName"
+      <v-row no-gutters>
+        <v-col cols="10">
+          <v-tabs
+            v-model="tab"
+            align-tabs="title"
+            show-arrows
           >
-            {{ item.filterName }}
-          </v-tab>
-        </v-tabs>
+            <v-tab
+              v-for="(item, filterIndex) in filterStore.filters"
+              :key="item.filterName"
+              :value="item.filterName"
+              @click="filterStore.SET_CURRENT_SELECTED_FILTER_INDEX(filterIndex)"
+            >
+              <v-card :color="item.filterColor">
+                <v-card-text>
+                  <div class="font-weight-bold h-0 w-0" />
+                </v-card-text>
+              </v-card>
+            </v-tab>
+          </v-tabs>
+        </v-col>
+        <v-col align-self="end" cols="2">
+          <v-tooltip>
+            <template #activator="{ props }">
+              <v-btn
+                icon="mdi-filter-plus-outline"
+                v-bind="props"
+                @click="addNewFilter()"
+              />
+            </template>
+            <p>Add new Filter</p>
+          </v-tooltip>
+        </v-col>
       </v-row>
       <v-window v-model="tab">
         <v-window-item

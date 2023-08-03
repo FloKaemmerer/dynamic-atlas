@@ -25,10 +25,6 @@ filterStore.$subscribe((mutation, state) => {
 
 export function initFilter() {
   console.log('Init Atlas Filter')
-  filterStore.ADD_FILTER({
-    filterName: 'default',
-    filterColor: '#ff0000',
-  })
 }
 
 export function handleFilter(filters: Filter[]) {

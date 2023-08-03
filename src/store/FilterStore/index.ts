@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Filter } from '@/model/filter'
+import { getFilterName } from '@/composable/filter/filter-utils'
 
 interface State {
   filters: Filter[]
@@ -9,7 +10,7 @@ interface State {
 export const useFilterStore = defineStore('filter', {
   state: (): State => {
     return {
-      filters: [],
+      filters: [{ filterColor: '#ff0000', filterName: getFilterName(0) }],
       currentSelectedFilterIndex: 0,
     }
   },
@@ -23,11 +24,17 @@ export const useFilterStore = defineStore('filter', {
       this.filters.push(filter)
     },
 
+    SET_CURRENT_SELECTED_FILTER_INDEX(currentSelectedFilterIndex: number) {
+      console.log(`current Selected Filter Index: ${currentSelectedFilterIndex}`)
+      this.currentSelectedFilterIndex = currentSelectedFilterIndex
+    },
+
     GET_SELECTED_FILTER() {
+      console.log(`Selected Filter: ${this.currentSelectedFilterIndex}`)
       return this.filters[this.currentSelectedFilterIndex]
     },
 
-    CLEAR_FILTER() {
+    CLEAR_CURRENT_FILTER() {
       this.CLEAR_TEXT_FILTER()
       this.CLEAR_MAP_FILTERS()
       this.CLEAR_BOSS_FILTERS()

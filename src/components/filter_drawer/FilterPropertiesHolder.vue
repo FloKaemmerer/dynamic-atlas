@@ -28,18 +28,14 @@ filterStore.$subscribe((mutation, state) => {
 <template>
   <v-row>
     <v-col cols="5">
-      <v-text-field
-        v-model="filterName"
-        density="compact"
-        @update:model-value="val => filterNameChange(val)"
-      />
+      <div class="text-h5" />
     </v-col>
     <v-spacer />
-    <v-col cols="4">
-      <v-btn @click="toggleOverlay()">
-        Color
+    <v-col cols="5">
+      <v-btn class="text-h5" @click="toggleOverlay()">
+        {{ filterName }}
         <template #append>
-          <v-card :color="getFilterColor()">
+          <v-card :color="filterStore.GET_SELECTED_FILTER().filterColor">
             <v-card-text>
               <div class="font-weight-bold h-0 w-0" />
             </v-card-text>

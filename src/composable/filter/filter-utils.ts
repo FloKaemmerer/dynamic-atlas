@@ -1,5 +1,31 @@
 import type { Filter } from '@/model/filter'
 
+const names: string[] = [
+  'Alpha',
+  'Beta',
+  'Gamma',
+  'Delta',
+  'Epsilo',
+  'Zeta',
+  'Eta',
+  'Theta',
+  'Iota',
+  'Kappa',
+  'Lambda',
+  'Mu',
+  'Nu',
+  'Xi',
+  'Omicron',
+  'Pi',
+  'Rho',
+  'Sigma',
+  'Tau',
+  'Upsilon',
+  'Phi',
+  'Chi',
+  'Psi',
+  'Omega']
+
 export function hasActiveFilters(filter: Filter) {
   return (filter.filterText !== undefined)
   || (filter.mapTier !== undefined)
@@ -81,4 +107,18 @@ export function hasToFilterByMinimumDivinationCardPrice(filter: Filter) {
 
 export function hasToFilterByMinimumEffectiveDivinationCardValue(filter: Filter) {
   return filter.minEffectiveDivinationCardValue !== undefined && filter.minEffectiveDivinationCardValue > 0
+}
+
+export function getRandomFilterName() {
+  const nameIndex = Math.floor(Math.random() * 24)
+  return names[nameIndex]
+}
+
+export function getFilterName(nameIndex: number) {
+  if (nameIndex < names.length) {
+    return names[nameIndex]
+  }
+  else {
+    return getRandomFilterName()
+  }
 }
