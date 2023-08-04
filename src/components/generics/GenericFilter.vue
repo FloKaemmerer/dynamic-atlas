@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { toRef, watch } from 'vue'
-import { useDebounceFn } from '@vueuse/core'
+import { ref, watchEffect } from 'vue'
+import { watchDebounced } from '@vueuse/core'
 
 export interface Props {
   checkbox?: boolean
@@ -15,17 +15,25 @@ export interface Props {
   rangeSliderLabelAppend?: number | string
 }
 
-const { rangeSliderValues } = defineProps<Props>()
-const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSliderValues'])
+const props = withDefaults(defineProps<Props>(), {
+  rangeSliderMin: 0,
+  rangeSliderMax: 10,
+})
+const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSlider'])
 
-const internalRangeSlider = toRef(rangeSliderValues)
+const internalRangeSlider = ref(props.rangeSlider)
 
-const debouncedFn = useDebounceFn(() => {
-  emit('update:rangeSliderValues', internalRangeSlider.value)
-}, 100)
+watchEffect(() => {
+  if (!props.checkbox) {
+    internalRangeSlider.value = [props.rangeSliderMin, props.rangeSliderMax]
+  }
+  else {
+    internalRangeSlider.value = props.rangeSlider
+  }
+})
 
-watch(internalRangeSlider, () => {
-  debouncedFn()
+watchDebounced(internalRangeSlider, (val) => {
+  emit('update:rangeSlider', val)
 })
 </script>
 
