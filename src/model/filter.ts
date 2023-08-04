@@ -1,4 +1,5 @@
 export interface Filter {
+  filterId: number
   filterName: string
   filterColor: string
 

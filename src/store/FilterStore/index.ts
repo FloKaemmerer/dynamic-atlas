@@ -10,7 +10,7 @@ interface State {
 export const useFilterStore = defineStore('filter', {
   state: (): State => {
     return {
-      filters: [{ filterColor: '#ff0000', filterName: getFilterName(0) }],
+      filters: [{ filterId: Date.now(), filterColor: '#ff0000', filterName: getFilterName(0) }],
       currentSelectedFilterIndex: 0,
     }
   },

@@ -29,6 +29,7 @@ onBeforeMount(() => initFilter())
 function addNewFilter() {
   const numberOfFilters = filterStore.filters.length
   filterStore.ADD_FILTER({
+    filterId: Date.now(),
     filterColor: getRandomColor(),
     filterName: getFilterName(numberOfFilters),
   })
@@ -66,7 +67,7 @@ filterStore.$subscribe((_mutation, state) => {
   <v-navigation-drawer
     :model-value="drawer"
     :image="bgImage"
-    floating
+    :floating="true"
     :width="416"
     class="sidebar-filters"
     elevation="0"
@@ -74,7 +75,7 @@ filterStore.$subscribe((_mutation, state) => {
     disable-resize-watcher
     :permanent="true"
   >
-    <v-card color="transparent" rounded="0" flat>
+    <v-card color="transparent" rounded="0" :flat="true">
       <v-row no-gutters>
         <v-col cols="10">
           <v-tabs
@@ -84,13 +85,13 @@ filterStore.$subscribe((_mutation, state) => {
           >
             <v-tab
               v-for="(item, filterIndex) in filterStore.filters"
-              :key="item.filterName"
+              :key="item.filterId"
               :value="item.filterName"
               @click="filterStore.SET_CURRENT_SELECTED_FILTER_INDEX(filterIndex)"
             >
               <v-card :color="item.filterColor">
                 <v-card-text>
-                  <div class="font-weight-bold h-0 w-0" />
+                  <div class="h-0 w-0" />
                 </v-card-text>
               </v-card>
             </v-tab>

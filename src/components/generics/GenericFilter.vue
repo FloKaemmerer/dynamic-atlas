@@ -55,7 +55,7 @@ watch(internalRangeSlider, () => {
     </template>
   </v-checkbox>
   <v-range-slider
-    v-if="rangeSlider"
+    v-if="rangeSlider || rangeSliderValues"
     v-model="internalRangeSlider"
     class="ml-7 mr-0 my-1"
     :max="rangeSliderMax"
