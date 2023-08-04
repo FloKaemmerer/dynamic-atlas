@@ -3,11 +3,18 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
+const rangeSlider = true
+function handleCheckBoxUpdate(active: boolean) {
+  if (active && filterStore.GET_SELECTED_FILTER().traversability === undefined) {
+    filterStore.GET_SELECTED_FILTER().traversability = [0, 10]
+  }
+}
 </script>
 
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeTraversability"
+    v-model:rangeSlider="rangeSlider"
     v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().traversability"
     tooltip="Traversability is the factor how easy it is to traverse the map using a skill like Shield Charge"
     :range-slider-max="10"
@@ -15,6 +22,7 @@ const filterStore = useFilterStore()
     range-slider-label-append="Easy"
     name="traversability"
     checkbox-label="Traversability"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 

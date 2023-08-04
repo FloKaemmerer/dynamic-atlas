@@ -3,11 +3,18 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
+const rangeSlider = true
+function handleCheckBoxUpdate(active: boolean) {
+  if (active && filterStore.GET_SELECTED_FILTER().terrainSlots === undefined) {
+    filterStore.GET_SELECTED_FILTER().terrainSlots = [0, 10]
+  }
+}
 </script>
 
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeTerrainSlots"
+    v-model:rangeSlider="rangeSlider"
     v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().terrainSlots"
     tooltip="The number of slots within the map terrain, which can spawn a league mechanic, aka the juiceability of a map."
     :range-slider-min="0"
@@ -16,6 +23,7 @@ const filterStore = useFilterStore()
     range-slider-label-append="High"
     name="terrainslots"
     checkbox-label="Terrain Slots"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 
