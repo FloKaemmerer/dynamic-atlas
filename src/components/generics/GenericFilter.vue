@@ -19,21 +19,21 @@ const props = withDefaults(defineProps<Props>(), {
   rangeSliderMin: 0,
   rangeSliderMax: 10,
 })
-const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSlider'])
+const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSliderValues'])
 
-const internalRangeSlider = ref(props.rangeSlider)
+const internalRangeSlider = ref(props.rangeSliderValues)
 
 watchEffect(() => {
   if (!props.checkbox) {
     internalRangeSlider.value = [props.rangeSliderMin, props.rangeSliderMax]
   }
   else {
-    internalRangeSlider.value = props.rangeSlider
+    internalRangeSlider.value = props.rangeSliderValues
   }
 })
 
 watchDebounced(internalRangeSlider, (val) => {
-  emit('update:rangeSlider', val)
+  emit('update:rangeSliderValues', val)
 })
 </script>
 
