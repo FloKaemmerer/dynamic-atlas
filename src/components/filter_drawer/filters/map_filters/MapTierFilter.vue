@@ -4,12 +4,9 @@ import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
 const rangeSlider = true
-function handleCheckBoxUpdate(args: any) {
-  if (args && filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
+function handleCheckBoxUpdate(active: boolean) {
+  if (active && filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
     filterStore.GET_SELECTED_FILTER().mapTier = [1, 16]
-  }
-  else {
-    filterStore.GET_SELECTED_FILTER().mapTier = undefined
   }
 }
 </script>
@@ -25,7 +22,7 @@ function handleCheckBoxUpdate(args: any) {
     range-slider-label-append="T16"
     name="maptier"
     checkbox-label="Map Tier"
-    @update:checkbox="args => handleCheckBoxUpdate(args)"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 
