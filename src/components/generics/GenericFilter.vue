@@ -3,24 +3,25 @@ import { toRef, watch } from 'vue'
 import { useDebounceFn } from '@vueuse/core'
 
 export interface Props {
-  checkbox: boolean
+  checkbox?: boolean
   name: string
   tooltip?: string
   checkboxLabel: string
-  rangeSlider?: number[]
+  rangeSlider?: boolean
+  rangeSliderValues?: number[]
   rangeSliderMin?: number
   rangeSliderMax?: number
   rangeSliderLabelPrepend?: number | string
   rangeSliderLabelAppend?: number | string
 }
 
-const { rangeSlider } = defineProps<Props>()
-const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSlider'])
+const { rangeSliderValues } = defineProps<Props>()
+const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSliderValues'])
 
-const internalRangeSlider = toRef(rangeSlider)
+const internalRangeSlider = toRef(rangeSliderValues)
 
 const debouncedFn = useDebounceFn(() => {
-  emit('update:rangeSlider', internalRangeSlider.value)
+  emit('update:rangeSliderValues', internalRangeSlider.value)
 }, 100)
 
 watch(internalRangeSlider, () => {

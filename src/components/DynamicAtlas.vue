@@ -402,6 +402,7 @@ atlasNodeStore.$subscribe((mutation, state) => {
       const atlasNodeId = atlasNodeIds[i]
       const nodeHighlight = filterHighlightGroup.findOne(`#${atlasNodeId}`) as Konva.Circle
       if (nodeHighlight) {
+        console.log('showing nodeHighlight')
         nodeHighlight.fill(filter.filterColor)
         nodeHighlight.opacity(1)
       }

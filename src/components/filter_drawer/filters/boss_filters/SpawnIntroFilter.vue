@@ -7,7 +7,7 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.includeSpawnIntro"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeSpawnIntro"
     name="spawnintroboss"
     checkbox-label="Include bosses with spawn-intro"
   />

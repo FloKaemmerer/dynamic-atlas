@@ -7,8 +7,8 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.includeLinearity"
-    v-model:rangeSlider="filterStore.linearity"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeLinearity"
+    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().linearity"
     tooltip="High linearity is a map with a single more or less narrow path to be followed ex. Alleyways or Malformation"
     :range-slider-max="10"
     range-slider-label-prepend="Non-linear"

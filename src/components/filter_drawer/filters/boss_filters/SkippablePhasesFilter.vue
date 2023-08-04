@@ -7,7 +7,7 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.includeSkippablePhases"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeSkippablePhases"
     name="skippablephasesboss"
     checkbox-label="Bosses with skippable phases"
   />

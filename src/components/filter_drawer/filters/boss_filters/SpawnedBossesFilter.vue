@@ -7,7 +7,7 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.excludeSpawnedBosses"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().excludeSpawnedBosses"
     name="excludespanedbosses"
     checkbox-label="Exclude Spawned Bosses"
   />

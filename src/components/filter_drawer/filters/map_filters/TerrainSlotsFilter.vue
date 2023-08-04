@@ -7,8 +7,8 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.includeTerrainSlots"
-    v-model:rangeSlider="filterStore.terrainSlots"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeTerrainSlots"
+    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().terrainSlots"
     tooltip="The number of slots within the map terrain, which can spawn a league mechanic, aka the juiceability of a map."
     :range-slider-min="0"
     :range-slider-max="10"

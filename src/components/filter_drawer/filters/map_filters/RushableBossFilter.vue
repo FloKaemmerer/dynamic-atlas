@@ -7,7 +7,7 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.rushableBoss"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().rushableBoss"
     tooltip="A Boss is considered rushable, if it is easy and/or predictable to reach eg. Mesa or Dunes"
     name="rushableboss"
     checkbox-label="Rushable Boss"

@@ -7,12 +7,12 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.includeNumberOfBosses"
-    v-model:rangeSlider="filterStore.numberOfBosses"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeNumberOfBosses"
+    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().numberOfBosses"
     :range-slider-min="0"
     :range-slider-max="4"
-    :range-slider-label-prepend="filterStore.numberOfBosses[0]"
-    :range-slider-label-append="filterStore.numberOfBosses[1]"
+    :range-slider-label-prepend="0"
+    :range-slider-label-append="4"
     name="numberofbosses"
     checkbox-label="Number of Bosses"
   />

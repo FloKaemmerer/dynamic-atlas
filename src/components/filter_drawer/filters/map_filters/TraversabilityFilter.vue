@@ -7,8 +7,8 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.includeTraversability"
-    v-model:rangeSlider="filterStore.traversability"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeTraversability"
+    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().traversability"
     tooltip="Traversability is the factor how easy it is to traverse the map using a skill like Shield Charge"
     :range-slider-max="10"
     range-slider-label-prepend="Difficult"

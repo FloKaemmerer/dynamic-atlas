@@ -7,7 +7,7 @@ const filterStore = useFilterStore()
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.excludePhasedBosses"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().excludePhasedBosses"
     name="excludephaseboss"
     checkbox-label="Exclude Phased Bosses"
   />

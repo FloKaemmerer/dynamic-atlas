@@ -18,7 +18,7 @@ const filterStore = useFilterStore()
 <template>
   <v-text-field
     id="mapTextFilter"
-    v-model="filterStore.filterText"
+    v-model="filterStore.GET_SELECTED_FILTER().filterText"
     density="compact"
     label="Filter... (eg: Doctor|Nurse|Patient)"
     prepend-inner-icon="mdi-magnify"

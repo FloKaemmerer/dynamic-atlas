@@ -3,12 +3,7 @@ import { computed, onBeforeMount, ref } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
 import bgImage from '@/assets/images/bg.jpg'
-import { initFilter } from '@/composable/atlas-filter-handler'
-import DivinationCardFilterHolder
-  from '@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue'
-import BossFilterHolder from '@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue'
-import MapFilterHolder from '@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue'
-import TextFilterHolder from '@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue'
+import { initFilter } from '@/composable/filter/atlas-filter-handler'
 import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue'
 import { useFilterStore } from '@/store/FilterStore'
 import type { LooseFilters } from '@/model/looseFilters'
@@ -58,6 +53,7 @@ filterStore.$subscribe((_mutation, state) => {
 
   const activeFilters = state.filters.filter(value => hasActiveFilters(value))
 
+  // extract active Filters from filters to push to Query
   if (activeFilters.length > 0) {
     filters.add(true, 'filters', JSON.stringify(activeFilters))
   }

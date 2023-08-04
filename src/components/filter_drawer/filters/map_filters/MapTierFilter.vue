@@ -3,18 +3,29 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
+const rangeSlider = true
+function handleCheckBoxUpdate(args: any) {
+  if (args && filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
+    filterStore.GET_SELECTED_FILTER().mapTier = [1, 16]
+  }
+  else {
+    filterStore.GET_SELECTED_FILTER().mapTier = undefined
+  }
+}
 </script>
 
 <template>
   <GenericFilter
-    v-model:checkbox="filterStore.includeMapTier"
-    v-model:rangeSlider="filterStore.mapTier"
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeMapTier"
+    v-model:rangeSlider="rangeSlider"
+    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().mapTier"
     :range-slider-min="1"
     :range-slider-max="16"
-    :range-slider-label-prepend="`T${filterStore.mapTier[0]}`"
-    :range-slider-label-append="`T${filterStore.mapTier[1]}`"
+    range-slider-label-prepend="T1"
+    range-slider-label-append="T16"
     name="maptier"
     checkbox-label="Map Tier"
+    @update:checkbox="args => handleCheckBoxUpdate(args)"
   />
 </template>
 
