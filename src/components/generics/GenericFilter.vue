@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { ref, watch, watchEffect } from 'vue'
-import { useDebounceFn } from '@vueuse/core'
+import { ref, watchEffect } from 'vue'
+import { watchDebounced } from '@vueuse/core'
 
 export interface Props {
   checkbox: boolean
@@ -21,23 +21,18 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSlider'])
 
 const internalRangeSlider = ref(props.rangeSlider)
+
 watchEffect(() => {
-  // Back to default if checkbox is unchecked
   if (!props.checkbox) {
     internalRangeSlider.value = [props.rangeSliderMin, props.rangeSliderMax]
   }
-  // Update internal value if props change not required since resetting filters unchecks the box but added incase of future changes
   else {
     internalRangeSlider.value = props.rangeSlider
   }
 })
 
-const debouncedFn = useDebounceFn(() => {
-  emit('update:rangeSlider', internalRangeSlider.value)
-}, 100)
-
-watch(internalRangeSlider, () => {
-  debouncedFn()
+watchDebounced(internalRangeSlider, (val) => {
+  emit('update:rangeSlider', val)
 })
 </script>
 
