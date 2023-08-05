@@ -3,16 +3,24 @@ import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-const minDivinationCardPrice = ref(filterStore.minDivinationCardPrice)
+const minDivinationCardPrice = ref(filterStore.GET_SELECTED_FILTER().minDivinationCardPrice)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.minDivinationCardPrice != minDivinationCardPrice.value) {
-    minDivinationCardPrice.value = state.minDivinationCardPrice
+  if (state.filters[state.currentSelectedFilterIndex].minDivinationCardPrice !== minDivinationCardPrice.value) {
+    minDivinationCardPrice.value = state.filters[state.currentSelectedFilterIndex].minDivinationCardPrice
   }
 })
 
 function handleMinimumDivinationCardPriceFilter(value: string) {
-  filterStore.SET_MINIMUM_DIVINATION_CARD_PRICE(Number.parseInt(value))
+  if (!value || value.length < 1) {
+    filterStore.GET_SELECTED_FILTER().minDivinationCardPrice = undefined
+  }
+  else {
+    const minimumDivinationCardPrice = Number.parseInt(value)
+    if (minimumDivinationCardPrice && minimumDivinationCardPrice > 0) {
+      filterStore.GET_SELECTED_FILTER().minDivinationCardPrice = minimumDivinationCardPrice
+    }
+  }
 }
 </script>
 

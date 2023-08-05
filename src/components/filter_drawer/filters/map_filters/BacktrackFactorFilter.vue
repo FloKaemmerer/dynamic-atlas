@@ -16,7 +16,7 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeBacktrackFactor"
-    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().backtrackFactor"
+    v-model:rangeSlider="filterStore.GET_SELECTED_FILTER().backtrackFactor"
     tooltip="A low Backtrack factor means, that a map can be cleared without the need to backtrack"
     :range-slider-max="10"
     range-slider-label-prepend="None"

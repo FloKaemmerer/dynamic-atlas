@@ -16,7 +16,7 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeOpenness"
-    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().openness"
+    v-model:rangeSlider="filterStore.GET_SELECTED_FILTER().openness"
     tooltip="How open the map is ex. Tower is very narrow, while Dunes is very open"
     :range-slider-max="10"
     range-slider-label-prepend="Narrow"

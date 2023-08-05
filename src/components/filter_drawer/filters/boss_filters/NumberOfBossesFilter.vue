@@ -16,7 +16,7 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeNumberOfBosses"
-    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().numberOfBosses"
+    v-model:rangeSlider="filterStore.GET_SELECTED_FILTER().numberOfBosses"
     :range-slider-min="0"
     :range-slider-max="4"
     :range-slider-label-prepend="0"

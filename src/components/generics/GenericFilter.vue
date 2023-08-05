@@ -7,8 +7,7 @@ export interface Props {
   name: string
   tooltip?: string
   checkboxLabel: string
-  rangeSlider?: boolean
-  rangeSliderValues?: number[]
+  rangeSlider?: number[]
   rangeSliderMin?: number
   rangeSliderMax?: number
   rangeSliderLabelPrepend?: number | string
@@ -19,21 +18,21 @@ const props = withDefaults(defineProps<Props>(), {
   rangeSliderMin: 0,
   rangeSliderMax: 10,
 })
-const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSliderValues'])
+const emit = defineEmits(['update:checkbox', 'clickedCheckbox', 'update:rangeSlider'])
 
-const internalRangeSlider = ref(props.rangeSliderValues)
+const internalRangeSlider = ref(props.rangeSlider)
 
 watchEffect(() => {
   if (!props.checkbox) {
     internalRangeSlider.value = undefined
   }
   else {
-    internalRangeSlider.value = props.rangeSliderValues
+    internalRangeSlider.value = props.rangeSlider
   }
 })
 
 watchDebounced(internalRangeSlider, (val) => {
-  emit('update:rangeSliderValues', val)
+  emit('update:rangeSlider', val)
 })
 </script>
 
@@ -63,7 +62,7 @@ watchDebounced(internalRangeSlider, (val) => {
     </template>
   </v-checkbox>
   <v-range-slider
-    v-if="rangeSlider || rangeSliderValues"
+    v-if=" rangeSlider"
     v-model="internalRangeSlider"
     class="ml-7 mr-0 my-1"
     :max="rangeSliderMax"

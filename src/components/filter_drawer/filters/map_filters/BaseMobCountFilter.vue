@@ -16,7 +16,7 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeBaseMobCount"
-    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().baseMobCount"
+    v-model:rangeSlider="filterStore.GET_SELECTED_FILTER().baseMobCount"
     tooltip="The base mob count of monsters present in the normal version of the map."
     :range-slider-min="1"
     :range-slider-max="10"

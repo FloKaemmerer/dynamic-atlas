@@ -16,7 +16,7 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeTraversability"
-    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().traversability"
+    v-model:rangeSlider="filterStore.GET_SELECTED_FILTER().traversability"
     tooltip="Traversability is the factor how easy it is to traverse the map using a skill like Shield Charge"
     :range-slider-max="10"
     range-slider-label-prepend="Difficult"

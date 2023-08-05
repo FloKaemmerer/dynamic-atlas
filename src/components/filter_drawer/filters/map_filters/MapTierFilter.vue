@@ -16,7 +16,7 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeMapTier"
-    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().mapTier"
+    v-model:rangeSlider="filterStore.GET_SELECTED_FILTER().mapTier"
     :range-slider-min="1"
     :range-slider-max="16"
     range-slider-label-prepend="T1"
