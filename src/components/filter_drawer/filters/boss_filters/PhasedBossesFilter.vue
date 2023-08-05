@@ -1,29 +1,16 @@
 <script setup lang="ts">
+import GenericFilter from '@/components/generics/GenericFilter.vue'
+import { useFilterStore } from '@/store/FilterStore'
 
-import {useFilterStore} from "@/store/FilterStore";
-import {ref} from "vue";
-
-const filterStore = useFilterStore();
-
-let excludePhasedBosses = ref(filterStore.excludePhasedBosses)
-
-filterStore.$subscribe((mutation, state) => {
-    if (state.excludePhasedBosses != excludePhasedBosses.value) {
-        excludePhasedBosses.value = state.excludePhasedBosses
-    }
-})
-
-function handleExcludePhasedBossesFilter() {
-    filterStore.SET_EXCLUDE_PHASED_BOSSES(!excludePhasedBosses.value)
-}
-
+const filterStore = useFilterStore()
 </script>
 
 <template>
-    <v-checkbox label="Exclude Phased Bosses"
-                v-model="excludePhasedBosses"
-                @click="handleExcludePhasedBossesFilter()"
-                density="compact"></v-checkbox>
+  <GenericFilter
+    v-model:checkbox="filterStore.excludePhasedBosses"
+    name="excludephaseboss"
+    checkbox-label="Exclude Phased Bosses"
+  />
 </template>
 
 <style scoped>
