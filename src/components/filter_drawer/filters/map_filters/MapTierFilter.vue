@@ -7,6 +7,9 @@ function handleCheckBoxUpdate(active: boolean) {
   if (active && filterStore.GET_SELECTED_FILTER().mapTier === undefined) {
     filterStore.GET_SELECTED_FILTER().mapTier = [1, 16]
   }
+  else {
+    filterStore.GET_SELECTED_FILTER().includeMapTier = undefined
+  }
 }
 </script>
 

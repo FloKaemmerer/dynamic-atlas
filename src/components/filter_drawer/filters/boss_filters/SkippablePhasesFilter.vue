@@ -3,6 +3,11 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
+function handleCheckBoxUpdate(active: boolean) {
+  if (!active) {
+    filterStore.GET_SELECTED_FILTER().includeSkippablePhases = undefined
+  }
+}
 </script>
 
 <template>
@@ -10,6 +15,7 @@ const filterStore = useFilterStore()
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeSkippablePhases"
     name="skippablephasesboss"
     checkbox-label="Bosses with skippable phases"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 

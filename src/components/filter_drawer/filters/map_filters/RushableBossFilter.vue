@@ -3,6 +3,12 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
+
+function handleCheckBoxUpdate(active: boolean) {
+  if (!active) {
+    filterStore.GET_SELECTED_FILTER().rushableBoss = undefined
+  }
+}
 </script>
 
 <template>
@@ -11,6 +17,7 @@ const filterStore = useFilterStore()
     tooltip="A Boss is considered rushable, if it is easy and/or predictable to reach eg. Mesa or Dunes"
     name="rushableboss"
     checkbox-label="Rushable Boss"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 

@@ -3,10 +3,12 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-const rangeSlider = true
 function handleCheckBoxUpdate(active: boolean) {
   if (active && filterStore.GET_SELECTED_FILTER().openness === undefined) {
     filterStore.GET_SELECTED_FILTER().openness = [0, 10]
+  }
+  else {
+    filterStore.GET_SELECTED_FILTER().includeOpenness = undefined
   }
 }
 </script>
@@ -14,7 +16,6 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeOpenness"
-    v-model:rangeSlider="rangeSlider"
     v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().openness"
     tooltip="How open the map is ex. Tower is very narrow, while Dunes is very open"
     :range-slider-max="10"

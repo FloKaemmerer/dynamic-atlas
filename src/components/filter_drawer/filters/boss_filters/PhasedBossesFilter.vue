@@ -3,6 +3,11 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
+function handleCheckBoxUpdate(active: boolean) {
+  if (!active) {
+    filterStore.GET_SELECTED_FILTER().excludePhasedBosses = undefined
+  }
+}
 </script>
 
 <template>
@@ -10,6 +15,7 @@ const filterStore = useFilterStore()
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().excludePhasedBosses"
     name="excludephaseboss"
     checkbox-label="Exclude Phased Bosses"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 

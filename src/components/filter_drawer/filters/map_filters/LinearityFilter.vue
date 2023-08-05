@@ -3,10 +3,12 @@ import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-const rangeSlider = true
 function handleCheckBoxUpdate(active: boolean) {
   if (active && filterStore.GET_SELECTED_FILTER().linearity === undefined) {
     filterStore.GET_SELECTED_FILTER().linearity = [0, 10]
+  }
+  else {
+    filterStore.GET_SELECTED_FILTER().includeLinearity = undefined
   }
 }
 </script>
@@ -14,7 +16,6 @@ function handleCheckBoxUpdate(active: boolean) {
 <template>
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeLinearity"
-    v-model:rangeSlider="rangeSlider"
     v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().linearity"
     tooltip="High linearity is a map with a single more or less narrow path to be followed ex. Alleyways or Malformation"
     :range-slider-max="10"

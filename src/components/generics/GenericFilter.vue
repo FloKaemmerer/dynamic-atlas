@@ -25,7 +25,7 @@ const internalRangeSlider = ref(props.rangeSliderValues)
 
 watchEffect(() => {
   if (!props.checkbox) {
-    internalRangeSlider.value = [props.rangeSliderMin, props.rangeSliderMax]
+    internalRangeSlider.value = undefined
   }
   else {
     internalRangeSlider.value = props.rangeSliderValues
