@@ -11,10 +11,10 @@ import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 <template>
   <v-card>
     <FilterToolbar />
-    <v-card-text>
+    <v-card-text class="pl-3 pr-0" style="max-width:400px;">
       <FilterPropertiesHolder />
       <TextFilterHolder />
-      <v-expansion-panels>
+      <v-expansion-panels multiple>
         <MapFilterHolder />
         <BossFilterHolder />
         <DivinationCardFilterHolder />

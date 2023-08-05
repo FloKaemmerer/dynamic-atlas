@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import NumberOfBossesFilter from '@/components/filter_drawer/filters/boss_filters/NumberOfBossesFilter.vue'
 import PhasedBossesFilter from '@/components/filter_drawer/filters/boss_filters/PhasedBossesFilter.vue'
 import SkippablePhasesFilter from '@/components/filter_drawer/filters/boss_filters/SkippablePhasesFilter.vue'
@@ -11,54 +11,45 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const activeBossFilters = ref(activeFiltersStore.activeBossFilters.length)
-const panel = ref()
-
-activeFiltersStore.$subscribe((mutation, state) => {
-  if (state.activeBossFilters.length !== activeBossFilters.value) {
-    activeBossFilters.value = state.activeBossFilters.length
-  }
-})
-
-function clearActiveBossFilters() {
-  filterStore.CLEAR_BOSS_FILTERS()
-  panel.value = []
-  setTimeout(() => {
-    panel.value = []
-  }, 50)
-}
+const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.length)
 </script>
 
 <template>
   <v-expansion-panel value="bossPanel">
-    <v-expansion-panel-title>
+    <v-expansion-panel-title id="bossPanel" class="text-subtitle-1 ">
       <v-row no-gutters>
         <v-col class="d-inline-flex align-center" cols="7">
-          <p class="text-subtitle-1">
-            Boss Filters
-          </p>
+          Boss Filters
+          <v-fade-transition leave-absolute>
+            <span v-if="bossFiltersCount > 0" class="ml-1">({{ bossFiltersCount }})</span>
+          </v-fade-transition>
         </v-col>
         <v-fade-transition leave-absolute>
-          <v-col v-if="activeBossFilters > 0" class="d-inline-flex align-center justify-end text-overline pr-2" cols="5">
-            Active: {{ activeBossFilters }}
+          <v-col v-if="bossFiltersCount > 0" class="d-inline-flex align-center justify-end text-overline pr-2" cols="5">
             <v-tooltip>
               <template #activator="{ props }">
                 <v-btn
-                  icon="mdi-close-circle"
-                  density="compact"
                   size="x-small"
+                  class="px-3"
+                  color="info"
                   v-bind="props"
-                  class="ml-2"
-                  variant="text"
-                  :disabled="activeBossFilters < 1"
-                  @click="clearActiveBossFilters()"
-                />
+                  flat
+
+                  :disabled="bossFiltersCount < 1"
+                  @click="filterStore.CLEAR_BOSS_FILTERS()"
+                >
+                  Clear
+                  <!-- <v-icon icon="mdi-window-close" /> -->
+                </v-btn>
               </template>
-              <p>Clear Active Boss Filters</p>
+              <p>Clear all boss filters</p>
             </v-tooltip>
           </v-col>
         </v-fade-transition>
       </v-row>
+      <template #actions="{ expanded }">
+        <v-icon :icon="expanded ? 'mdi-menu-up' : 'mdi-menu-down'" />
+      </template>
     </v-expansion-panel-title>
     <v-expansion-panel-text>
       <NumberOfBossesFilter />

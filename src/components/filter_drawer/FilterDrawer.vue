@@ -2,6 +2,7 @@
 import { computed, onBeforeMount, ref } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
+import bgImage from '@/assets/images/bg.jpg'
 import { initFilter } from '@/composable/filter/atlas-filter-handler'
 import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue'
 import { useFilterStore } from '@/store/FilterStore'
@@ -28,6 +29,7 @@ onBeforeMount(() => initFilter())
 function addNewFilter() {
   const numberOfFilters = filterStore.filters.length
   filterStore.ADD_FILTER({
+    filterId: Date.now(),
     filterColor: getRandomColor(),
     filterName: getFilterName(numberOfFilters),
   })
@@ -52,6 +54,7 @@ filterStore.$subscribe((_mutation, state) => {
 
   const activeFilters = state.filters.filter(value => hasActiveFilters(value))
 
+  // extract active Filters from filters to push to Query
   if (activeFilters.length > 0) {
     filters.add(true, 'filters', JSON.stringify(activeFilters))
   }
@@ -63,15 +66,16 @@ filterStore.$subscribe((_mutation, state) => {
 <template>
   <v-navigation-drawer
     :model-value="drawer"
+    :image="bgImage"
     :floating="true"
-    :width="400"
-
-    class="bg-surface-variant"
-    elevation="1"
+    :width="416"
+    class="sidebar-filters"
+    elevation="0"
+    border="right"
     disable-resize-watcher
     :permanent="true"
   >
-    <v-card color="grey-darken-3" :flat="true">
+    <v-card color="transparent" rounded="0" :flat="true">
       <v-row no-gutters>
         <v-col cols="10">
           <v-tabs
@@ -81,13 +85,13 @@ filterStore.$subscribe((_mutation, state) => {
           >
             <v-tab
               v-for="(item, filterIndex) in filterStore.filters"
-              :key="item.filterName"
+              :key="item.filterId"
               :value="item.filterName"
               @click="filterStore.SET_CURRENT_SELECTED_FILTER_INDEX(filterIndex)"
             >
               <v-card :color="item.filterColor">
                 <v-card-text>
-                  <div class="font-weight-bold h-0 w-0" />
+                  <div class="h-0 w-0" />
                 </v-card-text>
               </v-card>
             </v-tab>

@@ -1,34 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-
-const includeSpawnIntro = ref(filterStore.GET_SELECTED_FILTER().includeSpawnIntro)
-
-filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].includeSpawnIntro !== includeSpawnIntro.value) {
-    includeSpawnIntro.value = state.filters[state.currentSelectedFilterIndex].includeSpawnIntro
-  }
-})
-
-function handleIncludeSpawnIntroFilter() {
-  if (!includeSpawnIntro.value) {
-    filterStore.GET_SELECTED_FILTER().includeSpawnIntro = true
-  }
-  else {
+function handleCheckBoxUpdate(active: boolean) {
+  if (!active) {
     filterStore.GET_SELECTED_FILTER().includeSpawnIntro = undefined
   }
 }
 </script>
 
 <template>
-  <v-checkbox
-    v-model="includeSpawnIntro"
-    label="Include Bosses With Spawn-Intro"
-    density="compact"
-    :disabled="!filterStore.GET_SELECTED_FILTER().excludePhasedBosses"
-    @click="handleIncludeSpawnIntroFilter()"
+  <GenericFilter
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeSpawnIntro"
+    name="spawnintroboss"
+    checkbox-label="Include bosses with spawn-intro"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 

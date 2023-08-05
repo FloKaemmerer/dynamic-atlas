@@ -28,8 +28,8 @@ export function initFilter() {
 }
 
 export function handleFilter(filters: Filter[]) {
-  let result = [] as AtlasNode[]
   for (let i = 0; i < filters.length; i++) {
+    let result = [] as AtlasNode[]
     const filter = filters[i]
     if (hasActiveFilters(filter)) {
       result = atlasNodeStore.atlasNodes.filter(value => value.active)

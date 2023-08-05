@@ -1,84 +1,30 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-
-const includeBacktrackFactor = ref(filterStore.GET_SELECTED_FILTER().includeBacktrackFactor)
-
-const backtrackFactor = ref(filterStore.GET_SELECTED_FILTER().backtrackFactor)
-
-filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].includeBacktrackFactor !== includeBacktrackFactor.value) {
-    includeBacktrackFactor.value = state.filters[state.currentSelectedFilterIndex].includeBacktrackFactor
-  }
-  if (state.filters[state.currentSelectedFilterIndex].backtrackFactor !== backtrackFactor.value) {
-    backtrackFactor.value = state.filters[state.currentSelectedFilterIndex].backtrackFactor
-  }
-})
-
-function handleIncludeBacktrackFactorFilter() {
-  filterStore.GET_SELECTED_FILTER().includeBacktrackFactor = !includeBacktrackFactor.value
-  if (filterStore.GET_SELECTED_FILTER().includeBacktrackFactor && filterStore.GET_SELECTED_FILTER().backtrackFactor === undefined) {
+function handleCheckBoxUpdate(active: boolean) {
+  if (active && filterStore.GET_SELECTED_FILTER().backtrackFactor === undefined) {
     filterStore.GET_SELECTED_FILTER().backtrackFactor = [0, 10]
   }
-}
-
-function debounceBacktrackFactorFilter(value: [number, number]) {
-  if (filterStore.GET_SELECTED_FILTER().backtrackFactor === undefined) {
-    filterStore.GET_SELECTED_FILTER().backtrackFactor = value
-  }
-  // @ts-expect-error within 'debounceBacktrackFactorFilter' mapTier can't be undefined here
-  else if (value[0] !== filterStore.GET_SELECTED_FILTER().backtrackFactor[0] || value[1] !== filterStore.GET_SELECTED_FILTER().backtrackFactor[1]) {
-    filterStore.GET_SELECTED_FILTER().backtrackFactor = value
+  else {
+    filterStore.GET_SELECTED_FILTER().includeBacktrackFactor = undefined
   }
 }
 </script>
 
 <template>
-  <v-row no-gutters>
-    <v-col>
-      Backtrack Factor
-      <v-tooltip
-        text="A low Backtrack Factor means, that a map can be cleared without the need to Backtrack"
-      >
-        <template #activator="{ props }">
-          <v-icon icon="mdi-information-outline" v-bind="props" />
-        </template>
-      </v-tooltip>
-    </v-col>
-  </v-row>
-  <v-row no-gutters>
-    <v-col cols="1">
-      <v-checkbox
-        v-model="includeBacktrackFactor"
-        density="compact"
-        @click="handleIncludeBacktrackFactorFilter()"
-      />
-    </v-col>
-    <v-col>
-      <v-range-slider
-        v-model="backtrackFactor"
-        :strict="true"
-        direction="horizontal"
-        step="1"
-        show-ticks="always"
-        tick-size="4"
-        thumb-label
-        :max="10"
-        :min="0"
-        :disabled="!includeBacktrackFactor"
-        @update:model-value="value => debounceBacktrackFactorFilter(value)"
-      >
-        <template #prepend>
-          None
-        </template>
-        <template #append>
-          Alot
-        </template>
-      </v-range-slider>
-    </v-col>
-  </v-row>
+  <GenericFilter
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeBacktrackFactor"
+    v-model:rangeSliderValues="filterStore.GET_SELECTED_FILTER().backtrackFactor"
+    tooltip="A low Backtrack factor means, that a map can be cleared without the need to backtrack"
+    :range-slider-max="10"
+    range-slider-label-prepend="None"
+    range-slider-label-append="A lot"
+    name="backtrack"
+    checkbox-label="Backtrack Factor"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
+  />
 </template>
 
 <style scoped>

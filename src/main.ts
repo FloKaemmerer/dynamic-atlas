@@ -12,10 +12,12 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 
 import VueKonva from 'vue-konva'
+import { PoeTradeTheme } from './blueprints/PoeTradeTheme'
 import router from './router'
 import App from './App.vue'
 
 const vuetify = createVuetify({
+  blueprint: PoeTradeTheme,
   components,
   directives,
 })

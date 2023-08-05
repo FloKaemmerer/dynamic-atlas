@@ -1,32 +1,21 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import GenericFilter from '@/components/generics/GenericFilter.vue'
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-const excludeSpawnedBosses = ref(filterStore.GET_SELECTED_FILTER().excludeSpawnedBosses)
-
-filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].excludeSpawnedBosses !== excludeSpawnedBosses.value) {
-    excludeSpawnedBosses.value = state.filters[state.currentSelectedFilterIndex].excludeSpawnedBosses
-  }
-})
-
-function handleExcludeSpawnedBossesFilter() {
-  if (!excludeSpawnedBosses.value) {
-    filterStore.GET_SELECTED_FILTER().excludeSpawnedBosses = true
-  }
-  else {
+function handleCheckBoxUpdate(active: boolean) {
+  if (!active) {
     filterStore.GET_SELECTED_FILTER().excludeSpawnedBosses = undefined
   }
 }
 </script>
 
 <template>
-  <v-checkbox
-    v-model="excludeSpawnedBosses"
-    label="Exclude Spawned Bosses"
-    density="compact"
-    @click="handleExcludeSpawnedBossesFilter()"
+  <GenericFilter
+    v-model:checkbox="filterStore.GET_SELECTED_FILTER().excludeSpawnedBosses"
+    name="excludespanedbosses"
+    checkbox-label="Exclude Spawned Bosses"
+    @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
 
