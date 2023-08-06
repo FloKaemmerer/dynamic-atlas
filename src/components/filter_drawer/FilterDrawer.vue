@@ -6,15 +6,17 @@ import bgImage from '@/assets/images/bg.jpg'
 import { initFilter } from '@/composable/filter/atlas-filter-handler'
 import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue'
 import { useFilterStore } from '@/store/FilterStore'
-import type { LooseFilters } from '@/model/looseFilters'
+import type { LooseFilters } from '@/model/filter/looseFilters'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 import { getFilterName, hasActiveFilters } from '@/composable/filter/filter-utils'
 import { getRandomColor } from '@/composable/random-color'
 import FilterHolder from '@/components/filter_drawer/FilterHolder.vue'
+import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 
 const filterStore = useFilterStore()
+const activeFiltersStore = useActiveFiltersStore()
 const filterQueryStore = useFilterQueryStore()
 const filterDrawerStore = useFilterDrawerStore()
 const route: RouteLocationNormalizedLoaded = useRoute()
@@ -33,6 +35,17 @@ function addNewFilter() {
     filterColor: getRandomColor(),
     filterName: getFilterName(numberOfFilters),
   })
+  activeFiltersStore.ADD_ACTIVE_FILTERS({
+    filterId: Date.now(),
+    activeMapFilters: [],
+    activeBossFilters: [],
+    activeDivinationCardFilters: [],
+  })
+}
+
+function setCurrentSelectedIndex(filterIndex: number) {
+  filterStore.SET_CURRENT_SELECTED_FILTER_INDEX(filterIndex)
+  activeFiltersStore.SET_CURRENT_SELECTED_ACTIVE_FILTER_INDEX(filterIndex)
 }
 function queryFilters() {
   const queryFilters: LooseFilters = {}
@@ -87,7 +100,7 @@ filterStore.$subscribe((_mutation, state) => {
               v-for="(item, filterIndex) in filterStore.filters"
               :key="item.filterId"
               :value="item.filterName"
-              @click="filterStore.SET_CURRENT_SELECTED_FILTER_INDEX(filterIndex)"
+              @click="setCurrentSelectedIndex(filterIndex)"
             >
               <v-card :color="item.filterColor">
                 <v-card-text>

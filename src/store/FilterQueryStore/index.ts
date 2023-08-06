@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { LooseFilters } from '@/model/looseFilters'
+import type { LooseFilters } from '@/model/filter/looseFilters'
 
 interface State {
   filterQuery: LooseFilters

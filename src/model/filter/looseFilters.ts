@@ -1,3 +1,3 @@
 export interface LooseFilters {
-    [key: string]: any
+  [key: string]: any
 }

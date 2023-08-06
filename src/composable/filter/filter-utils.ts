@@ -1,4 +1,4 @@
-import type { Filter } from '@/model/filter'
+import type { Filter } from '@/model/filter/filter'
 
 const names: string[] = [
   'Alpha',

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import type { AtlasNode } from '@/model/atlasNode'
 
 import atlasNodes from '@/assets/atlas/atlasNodes.json'
-import type { Filter } from '@/model/filter'
+import type { Filter } from '@/model/filter/filter'
 
 interface State {
   selectedAtlasNode: AtlasNode | null

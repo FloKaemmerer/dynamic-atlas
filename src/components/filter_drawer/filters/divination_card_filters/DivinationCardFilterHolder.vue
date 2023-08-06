@@ -10,7 +10,7 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const divinationCardFiltersCount = computed(() => activeFiltersStore.activeDivinationCardFilters.length)
+const divinationCardFiltersCount = computed(() => activeFiltersStore.activeFilterList[activeFiltersStore.currentSelectedActiveFiltersIndex].activeDivinationCardFilters.length)
 </script>
 
 <template>

@@ -9,7 +9,7 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.length)
+const bossFiltersCount = computed(() => activeFiltersStore.activeFilterList[activeFiltersStore.currentSelectedActiveFiltersIndex].activeBossFilters.length)
 </script>
 
 <template>
@@ -51,7 +51,6 @@ const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.len
     <v-expansion-panel-text>
       <NumberOfBossesFilter />
       <PhasedBossesFilter />
-
       <SpawnedBossesFilter />
     </v-expansion-panel-text>
   </v-expansion-panel>

@@ -1,6 +1,6 @@
 import type { LocationQuery } from 'vue-router'
 import { useFilterStore } from '@/store/FilterStore'
-import { FilterKeys } from '@/model/filterKeys'
+import { FilterKeys } from '@/model/filter/filterKeys'
 
 const filterStore = useFilterStore()
 function handleUrlQueryFilters(queryParams: LocationQuery) {

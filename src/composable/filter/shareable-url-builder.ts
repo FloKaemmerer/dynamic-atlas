@@ -1,4 +1,4 @@
-import type { LooseFilters } from '@/model/looseFilters'
+import type { LooseFilters } from '@/model/filter/looseFilters'
 
 function buildShareableUrl(queryParams: LooseFilters): string {
   let baseUrl = `${import.meta.env.VITE_BASE_URL}`

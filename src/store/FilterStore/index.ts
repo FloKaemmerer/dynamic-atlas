@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { Filter } from '@/model/filter'
+import type { Filter } from '@/model/filter/filter'
 import { getFilterName } from '@/composable/filter/filter-utils'
 
 interface State {
@@ -23,20 +23,22 @@ export const useFilterStore = defineStore('filter', {
     ADD_FILTER(filter: Filter) {
       this.filters.push(filter)
     },
+
     SET_CURRENT_SELECTED_FILTER_INDEX(currentSelectedFilterIndex: number) {
-      console.log(`current Selected Filter Index: ${currentSelectedFilterIndex}`)
       this.currentSelectedFilterIndex = currentSelectedFilterIndex
     },
+
     GET_SELECTED_FILTER() {
-      console.log(`Selected Filter: ${this.currentSelectedFilterIndex}`)
       return this.filters[this.currentSelectedFilterIndex]
     },
+
     CLEAR_CURRENT_FILTER() {
       this.CLEAR_TEXT_FILTER()
       this.CLEAR_MAP_FILTERS()
       this.CLEAR_BOSS_FILTERS()
       this.CLEAR_DIVINATION_CARD_FILTERS()
     },
+
     CLEAR_TEXT_FILTER() {
       this.filters[this.currentSelectedFilterIndex].filterText = undefined
     },
