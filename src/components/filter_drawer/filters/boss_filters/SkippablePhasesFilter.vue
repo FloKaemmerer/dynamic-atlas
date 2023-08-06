@@ -14,7 +14,7 @@ function handleCheckBoxUpdate(active: boolean) {
   <GenericFilter
     v-model:checkbox="filterStore.GET_SELECTED_FILTER().includeSkippablePhases"
     name="skippablephasesboss"
-    checkbox-label="Bosses with skippable phases"
+    checkbox-label="Include Bosses with skippable phases"
     @update:checkbox="active => handleCheckBoxUpdate(active)"
   />
 </template>
