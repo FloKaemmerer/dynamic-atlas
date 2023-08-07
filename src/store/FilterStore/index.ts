@@ -1,189 +1,87 @@
 import { defineStore } from 'pinia'
+import type { Filter } from '@/model/filter/filter'
+import { getFilterName } from '@/composable/filter/filter-utils'
 
 interface State {
-  filterText: string
-  includeMapTier: boolean
-  mapTier: number[]
-  includeOpenness: boolean
-  openness: number[]
-  includeTraversability: boolean
-  traversability: number[]
-  includeBacktrackFactor: boolean
-  backtrackFactor: number[]
-  includeLinearity: boolean
-  linearity: number[]
-  includeTerrainSlots: boolean
-  terrainSlots: number[]
-  includeBaseMobCount: boolean
-  baseMobCount: number[]
-  rushableBoss: boolean
-  includeNumberOfBosses: boolean
-  numberOfBosses: number[]
-  excludePhasedBosses: boolean
-  includeSkippablePhases: boolean
-  includeSpawnIntro: boolean
-  excludeSpawnedBosses: boolean
-  minDivinationCardPrice: number
-  minEffectiveDivinationCardValue: number
+  filters: Filter[]
+  currentSelectedFilterIndex: number
 }
 
 export const useFilterStore = defineStore('filter', {
   state: (): State => {
     return {
-      filterText: '',
-      includeMapTier: false,
-      mapTier: [1, 16],
-      includeOpenness: false,
-      openness: [0, 10],
-      includeTraversability: false,
-      traversability: [0, 10],
-      includeBacktrackFactor: false,
-      backtrackFactor: [0, 10],
-      includeLinearity: false,
-      linearity: [0, 10],
-      includeTerrainSlots: false,
-      terrainSlots: [0, 10],
-      includeBaseMobCount: false,
-      baseMobCount: [0, 10],
-      rushableBoss: false,
-      includeNumberOfBosses: false,
-      numberOfBosses: [0, 4],
-      excludePhasedBosses: false,
-      includeSkippablePhases: false,
-      includeSpawnIntro: false,
-      excludeSpawnedBosses: false,
-      minDivinationCardPrice: 0,
-      minEffectiveDivinationCardValue: 0,
+      filters: [{ filterId: Date.now(), filterColor: '#ff0000', filterName: getFilterName(0) }],
+      currentSelectedFilterIndex: 0,
     }
   },
 
   actions: {
-    SET_FILTER_TEXT(filterText: string) {
-      this.filterText = filterText
+    SET_FILTERS(filters: Filter[]) {
+      this.filters = filters
     },
 
-    SET_INCLUDE_MAP_TIER(includeMapTier: boolean) {
-      this.includeMapTier = includeMapTier
+    ADD_FILTER(filter: Filter) {
+      this.filters.push(filter)
     },
 
-    SET_MAP_TIER(mapTier: number[]) {
-      this.mapTier = mapTier
+    SET_CURRENT_SELECTED_FILTER_INDEX(currentSelectedFilterIndex: number) {
+      this.currentSelectedFilterIndex = currentSelectedFilterIndex
     },
 
-    SET_INCLUDE_OPENNESS(includeOpenness: boolean) {
-      this.includeOpenness = includeOpenness
+    GET_SELECTED_FILTER() {
+      return this.filters[this.currentSelectedFilterIndex]
     },
 
-    SET_OPENNESS(openness: number[]) {
-      this.openness = openness
+    DELETE_CURRENT_FILTER() {
+      const tmpIndex = this.currentSelectedFilterIndex
+      if (this.currentSelectedFilterIndex === this.filters.length - 1) {
+        this.currentSelectedFilterIndex = this.currentSelectedFilterIndex - 1
+      }
+      this.filters.splice(tmpIndex, 1)
     },
 
-    SET_INCLUDE_TRAVERSABILITY(includeTraversability: boolean) {
-      this.includeTraversability = includeTraversability
+    CLEAR_CURRENT_FILTER() {
+      this.CLEAR_TEXT_FILTER()
+      this.CLEAR_MAP_FILTERS()
+      this.CLEAR_BOSS_FILTERS()
+      this.CLEAR_DIVINATION_CARD_FILTERS()
     },
 
-    SET_TRAVERSABILITY(traversability: number[]) {
-      this.traversability = traversability
-    },
-
-    SET_INCLUDE_BACKTRACK_FACTOR(includeBacktrackFactor: boolean) {
-      this.includeBacktrackFactor = includeBacktrackFactor
-    },
-
-    SET_BACKTRACK_FACTOR(backtrackFactor: number[]) {
-      this.backtrackFactor = backtrackFactor
-    },
-
-    SET_INCLUDE_LINEARITY(includeLinearity: boolean) {
-      this.includeLinearity = includeLinearity
-    },
-
-    SET_LINEARITY(linearity: number[]) {
-      this.linearity = linearity
-    },
-
-    SET_INCLUDE_TERRAIN_SLOTS(includeTerrainSlots: boolean) {
-      this.includeTerrainSlots = includeTerrainSlots
-    },
-
-    SET_TERRAIN_SLOTS(terrainSlots: number[]) {
-      this.terrainSlots = terrainSlots
-    },
-
-    SET_INCLUDE_BASE_MOB_COUNT(includeBaseMobCount: boolean) {
-      this.includeBaseMobCount = includeBaseMobCount
-    },
-
-    SET_BASE_MOB_COUNT(baseMobCount: number[]) {
-      this.baseMobCount = baseMobCount
-    },
-
-    SET_RUSHABLE_BOSS(rushableBoss: boolean) {
-      this.rushableBoss = rushableBoss
-    },
-
-    SET_INCLUDE_NUMBER_OF_BOSSES(includeNumberOfBosses: boolean) {
-      this.includeNumberOfBosses = includeNumberOfBosses
-    },
-
-    SET_NUMBER_OF_BOSSES(numberOfBosses: number[]) {
-      this.numberOfBosses = numberOfBosses
-    },
-
-    SET_EXCLUDE_PHASED_BOSSES(excludePhasedBosses: boolean) {
-      this.excludePhasedBosses = excludePhasedBosses
-    },
-
-    SET_INCLUDE_SKIPPABLE_PHASES(includeSkippablePhases: boolean) {
-      this.includeSkippablePhases = includeSkippablePhases
-    },
-
-    SET_INCLUDE_SPAWN_INTRO(includeSpawnIntro: boolean) {
-      this.includeSpawnIntro = includeSpawnIntro
-    },
-
-    SET_EXCLUDE_SPAWNED_BOSSES(excludeSpawnedBosses: boolean) {
-      this.excludeSpawnedBosses = excludeSpawnedBosses
-    },
-
-    SET_MINIMUM_DIVINATION_CARD_PRICE(minDivinationCardPrice: number) {
-      this.minDivinationCardPrice = minDivinationCardPrice
-    },
-    SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(minEffectiveDivinationCardValue: number) {
-      this.minEffectiveDivinationCardValue = minEffectiveDivinationCardValue
+    CLEAR_TEXT_FILTER() {
+      this.filters[this.currentSelectedFilterIndex].filterText = undefined
     },
 
     CLEAR_MAP_FILTERS() {
-      this.includeMapTier = false
-      this.mapTier = [1, 16]
-      this.includeOpenness = false
-      this.openness = [0, 10]
-      this.includeTraversability = false
-      this.traversability = [0, 10]
-      this.includeBacktrackFactor = false
-      this.backtrackFactor = [0, 10]
-      this.includeLinearity = false
-      this.linearity = [0, 10]
-      this.includeTerrainSlots = false
-      this.terrainSlots = [0, 10]
-      this.includeBaseMobCount = false
-      this.baseMobCount = [0, 10]
-      this.rushableBoss = false
-      this.includeNumberOfBosses = false
+      this.filters[this.currentSelectedFilterIndex].includeMapTier = undefined
+      this.filters[this.currentSelectedFilterIndex].mapTier = undefined
+      this.filters[this.currentSelectedFilterIndex].includeOpenness = undefined
+      this.filters[this.currentSelectedFilterIndex].openness = undefined
+      this.filters[this.currentSelectedFilterIndex].includeTraversability = undefined
+      this.filters[this.currentSelectedFilterIndex].traversability = undefined
+      this.filters[this.currentSelectedFilterIndex].includeBacktrackFactor = undefined
+      this.filters[this.currentSelectedFilterIndex].backtrackFactor = undefined
+      this.filters[this.currentSelectedFilterIndex].includeLinearity = undefined
+      this.filters[this.currentSelectedFilterIndex].linearity = undefined
+      this.filters[this.currentSelectedFilterIndex].includeTerrainSlots = undefined
+      this.filters[this.currentSelectedFilterIndex].terrainSlots = undefined
+      this.filters[this.currentSelectedFilterIndex].includeBaseMobCount = undefined
+      this.filters[this.currentSelectedFilterIndex].baseMobCount = undefined
+      this.filters[this.currentSelectedFilterIndex].rushableBoss = undefined
+      this.filters[this.currentSelectedFilterIndex].includeNumberOfBosses = undefined
     },
 
     CLEAR_BOSS_FILTERS() {
-      this.includeNumberOfBosses = false
-      this.numberOfBosses = [0, 4]
-      this.excludePhasedBosses = false
-      this.includeSkippablePhases = false
-      this.includeSpawnIntro = false
-      this.excludeSpawnedBosses = false
+      this.filters[this.currentSelectedFilterIndex].includeNumberOfBosses = undefined
+      this.filters[this.currentSelectedFilterIndex].numberOfBosses = undefined
+      this.filters[this.currentSelectedFilterIndex].excludePhasedBosses = undefined
+      this.filters[this.currentSelectedFilterIndex].includeSkippablePhases = undefined
+      this.filters[this.currentSelectedFilterIndex].includeSpawnIntro = undefined
+      this.filters[this.currentSelectedFilterIndex].excludeSpawnedBosses = undefined
     },
 
     CLEAR_DIVINATION_CARD_FILTERS() {
-      this.minDivinationCardPrice = 0
-      this.minEffectiveDivinationCardValue = 0
+      this.filters[this.currentSelectedFilterIndex].minDivinationCardPrice = undefined
+      this.filters[this.currentSelectedFilterIndex].minEffectiveDivinationCardValue = undefined
     },
   },
 })

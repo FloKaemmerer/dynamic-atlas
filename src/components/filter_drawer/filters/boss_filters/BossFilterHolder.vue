@@ -2,8 +2,6 @@
 import { computed } from 'vue'
 import NumberOfBossesFilter from '@/components/filter_drawer/filters/boss_filters/NumberOfBossesFilter.vue'
 import PhasedBossesFilter from '@/components/filter_drawer/filters/boss_filters/PhasedBossesFilter.vue'
-import SkippablePhasesFilter from '@/components/filter_drawer/filters/boss_filters/SkippablePhasesFilter.vue'
-import SpawnIntroFilter from '@/components/filter_drawer/filters/boss_filters/SpawnIntroFilter.vue'
 import SpawnedBossesFilter from '@/components/filter_drawer/filters/boss_filters/SpawnedBossesFilter.vue'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import { useFilterStore } from '@/store/FilterStore'
@@ -11,7 +9,7 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.length)
+const bossFiltersCount = computed(() => activeFiltersStore.activeFilterList[activeFiltersStore.currentSelectedActiveFiltersIndex].activeBossFilters.length)
 </script>
 
 <template>
@@ -33,13 +31,12 @@ const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.len
                   class="px-3"
                   color="info"
                   v-bind="props"
-                  flat
+                  :flat="true"
 
                   :disabled="bossFiltersCount < 1"
                   @click="filterStore.CLEAR_BOSS_FILTERS()"
                 >
                   Clear
-                  <!-- <v-icon icon="mdi-window-close" /> -->
                 </v-btn>
               </template>
               <p>Clear all boss filters</p>
@@ -54,8 +51,6 @@ const bossFiltersCount = computed(() => activeFiltersStore.activeBossFilters.len
     <v-expansion-panel-text>
       <NumberOfBossesFilter />
       <PhasedBossesFilter />
-      <SkippablePhasesFilter />
-      <SpawnIntroFilter />
       <SpawnedBossesFilter />
     </v-expansion-panel-text>
   </v-expansion-panel>
