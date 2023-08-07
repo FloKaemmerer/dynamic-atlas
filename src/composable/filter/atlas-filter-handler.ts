@@ -28,6 +28,7 @@ export function initFilter() {
 }
 
 export function handleFilter(filters: Filter[]) {
+  atlasNodeStore.filteredAtlasNodesPerFilter = new Map<Filter, Array<string>>()
   for (let i = 0; i < filters.length; i++) {
     let result = [] as AtlasNode[]
     const filter = filters[i]

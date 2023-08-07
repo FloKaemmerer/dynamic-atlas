@@ -94,6 +94,7 @@ filterStore.$subscribe((_mutation, state) => {
             v-model="tab"
             align-tabs="title"
             show-arrows
+            :grow="true"
           >
             <v-tab
               v-for="(item, filterIndex) in filterStore.filters"
