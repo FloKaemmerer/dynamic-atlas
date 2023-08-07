@@ -8,7 +8,7 @@ function handleCheckBoxUpdate(active: boolean) {
     filterStore.GET_SELECTED_FILTER().numberOfBosses = [0, 4]
   }
   else {
-    filterStore.GET_SELECTED_FILTER().includeOpenness = undefined
+    filterStore.GET_SELECTED_FILTER().includeNumberOfBosses = undefined
   }
 }
 </script>
