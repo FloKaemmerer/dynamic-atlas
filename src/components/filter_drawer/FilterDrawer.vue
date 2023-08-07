@@ -99,7 +99,7 @@ filterStore.$subscribe((_mutation, state) => {
             <v-tab
               v-for="(item, filterIndex) in filterStore.filters"
               :key="item.filterId"
-              :value="item.filterName"
+              :value="item.filterId"
               @click="setCurrentSelectedIndex(filterIndex)"
             >
               <v-card :color="item.filterColor">
@@ -126,8 +126,8 @@ filterStore.$subscribe((_mutation, state) => {
       <v-window v-model="tab">
         <v-window-item
           v-for="item in filterStore.filters"
-          :key="item.filterName"
-          :value="item.filterName"
+          :key="item.filterId"
+          :value="item.filterId"
         >
           <FilterHolder />
         </v-window-item>

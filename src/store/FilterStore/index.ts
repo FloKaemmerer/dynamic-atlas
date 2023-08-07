@@ -32,6 +32,14 @@ export const useFilterStore = defineStore('filter', {
       return this.filters[this.currentSelectedFilterIndex]
     },
 
+    DELETE_CURRENT_FILTER() {
+      const tmpIndex = this.currentSelectedFilterIndex
+      if (this.currentSelectedFilterIndex === this.filters.length - 1) {
+        this.currentSelectedFilterIndex = this.currentSelectedFilterIndex - 1
+      }
+      this.filters.splice(tmpIndex, 1)
+    },
+
     CLEAR_CURRENT_FILTER() {
       this.CLEAR_TEXT_FILTER()
       this.CLEAR_MAP_FILTERS()
