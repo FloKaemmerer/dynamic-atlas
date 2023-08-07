@@ -20,17 +20,13 @@ const filterStore = useFilterStore()
               <v-color-picker v-model="filterStore.GET_SELECTED_FILTER().filterColor" />
             </v-col>
           </v-row>
+          <v-row>
+            <v-col>
+              <v-text-field v-model="filterStore.GET_SELECTED_FILTER().filterName" />
+            </v-col>
+          </v-row>
         </v-container>
       </v-card-text>
-      <v-card-actions>
-        <v-spacer />
-        <!--        <v-btn -->
-        <!--          color="blue-darken-1" variant="text" -->
-        <!--          @click="showOverlay = !showOverlay" -->
-        <!--        > -->
-        <!--          Close -->
-        <!--        </v-btn> -->
-      </v-card-actions>
     </v-card>
   </v-dialog>
 </template>
