@@ -14,7 +14,7 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const mapFiltersCount = computed(() => activeFiltersStore.activeMapFilters.length)
+const mapFiltersCount = computed(() => activeFiltersStore.activeFilterList[activeFiltersStore.currentSelectedActiveFiltersIndex].activeMapFilters.length)
 </script>
 
 <template>
@@ -36,7 +36,7 @@ const mapFiltersCount = computed(() => activeFiltersStore.activeMapFilters.lengt
                   class="px-3"
                   color="info"
                   v-bind="props"
-                  flat
+                  :flat="true"
                   :disabled="mapFiltersCount < 1"
                   @click.stop.prevent="filterStore.CLEAR_MAP_FILTERS()"
                 >
@@ -53,7 +53,7 @@ const mapFiltersCount = computed(() => activeFiltersStore.activeMapFilters.lengt
         <v-icon :icon="expanded ? 'mdi-menu-up' : 'mdi-menu-down'" />
       </template>
     </v-expansion-panel-title>
-    <v-expansion-panel-text class="">
+    <v-expansion-panel-text>
       <MapTierFilter />
       <OpennessFilter />
       <TraversabilityFilter />

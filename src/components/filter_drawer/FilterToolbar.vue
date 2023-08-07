@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import buildShareableUrl from '@/composable/shareable-url-builder'
+import buildShareableUrl from '@/composable/filter/shareable-url-builder'
 import copyToClipBoard from '@/composable/copy-utils'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import { useFilterStore } from '@/store/FilterStore'
@@ -12,8 +12,8 @@ const activeFiltersStore = useActiveFiltersStore()
 const filterDrawerStore = useFilterDrawerStore()
 
 function clearAllFilters() {
-  filterStore.$reset()
-  activeFiltersStore.$reset()
+  filterStore.CLEAR_CURRENT_FILTER()
+  activeFiltersStore.CLEAR_ACTIVE_FILTERS(activeFiltersStore.currentSelectedActiveFiltersIndex)
 }
 
 function copyShareableLinkToClipboard() {

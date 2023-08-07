@@ -10,7 +10,7 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const divinationCardFiltersCount = computed(() => activeFiltersStore.activeDivinationCardFilters.length)
+const divinationCardFiltersCount = computed(() => activeFiltersStore.activeFilterList[activeFiltersStore.currentSelectedActiveFiltersIndex].activeDivinationCardFilters.length)
 </script>
 
 <template>
@@ -45,7 +45,7 @@ const divinationCardFiltersCount = computed(() => activeFiltersStore.activeDivin
         <v-icon :icon="expanded ? 'mdi-menu-up' : 'mdi-menu-down'" />
       </template>
     </v-expansion-panel-title>
-    <v-expansion-panel-text class="">
+    <v-expansion-panel-text>
       <MinimumDivinationCardPriceFilter />
       <MinimumEffectiveCardValueFilter />
     </v-expansion-panel-text>
