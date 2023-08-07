@@ -67,7 +67,6 @@ filterStore.$subscribe((_mutation, state) => {
 
   const activeFilters = state.filters.filter(value => hasActiveFilters(value))
 
-  // extract active Filters from filters to push to Query
   if (activeFilters.length > 0) {
     filters.add(true, 'filters', JSON.stringify(activeFilters))
   }

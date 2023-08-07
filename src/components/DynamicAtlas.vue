@@ -213,8 +213,6 @@ function initAtlasNodeNames(atlasNode: AtlasNode) {
 function initNodeHighlight(atlasNode: AtlasNode) {
   const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
   const filterHighlight = getFilterHighlight(atlasNode.id, atlasNodePoint)
-  // filterHighlight.cache()
-  filterHighlight.filters([Konva.Filters.Blur])
   filterHighlightGroup.add(filterHighlight)
 }
 
@@ -402,7 +400,6 @@ atlasNodeStore.$subscribe((mutation, state) => {
       const atlasNodeId = atlasNodeIds[i]
       const nodeHighlight = filterHighlightGroup.findOne(`#${atlasNodeId}`) as Konva.Circle
       if (nodeHighlight) {
-        console.log('showing nodeHighlight')
         nodeHighlight.fill(filter.filterColor)
         nodeHighlight.opacity(1)
       }
