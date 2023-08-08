@@ -68,6 +68,8 @@ filterStore.$subscribe((_mutation, state) => {
 
   const activeFilters = state.filters.filter(value => hasActiveFilters(value))
 
+  tab.value = state.currentSelectedFilterIndex
+
   if (activeFilters.length > 0) {
     filters.add(true, 'filters', JSON.stringify(activeFilters))
   }
@@ -99,6 +101,7 @@ filterStore.$subscribe((_mutation, state) => {
           v-for="(item, filterIndex) in filterStore.filters"
           :key="item.filterId"
           :value="item.filterId"
+          class="text-offwhite"
           @click="setCurrentSelectedIndex(filterIndex)"
         >
           <v-icon :color="item.filterColor" class="mr-1" icon="mdi-checkbox-blank-circle" />
@@ -110,6 +113,7 @@ filterStore.$subscribe((_mutation, state) => {
         <template #activator="{ props }">
           <v-btn
             icon="mdi-filter-plus-outline"
+            class="text-offwhite"
             v-bind="props"
             @click="addNewFilter()"
           />
