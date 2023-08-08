@@ -6,12 +6,13 @@ interface PropsInterface {
 }
 
 defineProps<PropsInterface>()
+const emit = defineEmits(['update:toggle'])
 
 const filterStore = useFilterStore()
 </script>
 
 <template>
-  <v-dialog :model-value="toggle" width="375">
+  <v-dialog :model-value="toggle" width="375" @update:modelValue="emit('update:toggle', $event)">
     <v-card>
       <v-card-text>
         <v-container>

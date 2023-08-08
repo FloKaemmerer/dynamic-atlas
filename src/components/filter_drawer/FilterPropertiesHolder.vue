@@ -36,6 +36,6 @@ function deleteFilter() {
     <v-spacer />
     <v-btn variant="text" class="text-offwhite" icon="mdi-trash-can-outline" :disabled="filterStore.filters.length <= 1" @click="deleteFilter()" />
 
-    <ColorPickerOverlay :toggle="showOverlay" />
+    <ColorPickerOverlay v-model:toggle="showOverlay" />
   </div>
 </template>
