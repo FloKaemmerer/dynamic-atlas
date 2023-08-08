@@ -5,12 +5,10 @@ import BossFilterHolder from '@/components/filter_drawer/filters/boss_filters/Bo
 import MapFilterHolder from '@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue'
 import TextFilterHolder from '@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue'
 import FilterPropertiesHolder from '@/components/filter_drawer/FilterPropertiesHolder.vue'
-import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 </script>
 
 <template>
-  <v-card>
-    <FilterToolbar />
+  <v-card color="transparent">
     <v-card-text class="pl-3 pr-0" style="max-width:400px;">
       <FilterPropertiesHolder />
       <TextFilterHolder />

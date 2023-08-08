@@ -4,6 +4,7 @@ import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
 import bgImage from '@/assets/images/bg.jpg'
 import { initFilter } from '@/composable/filter/atlas-filter-handler'
+import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
 import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue'
 import { useFilterStore } from '@/store/FilterStore'
 import type { LooseFilters } from '@/model/filter/looseFilters'
@@ -87,52 +88,45 @@ filterStore.$subscribe((_mutation, state) => {
     disable-resize-watcher
     :permanent="true"
   >
-    <v-card color="transparent" rounded="0" :flat="true">
-      <v-row no-gutters>
-        <v-col cols="10">
-          <v-tabs
-            v-model="tab"
-            align-tabs="title"
-            show-arrows
-            :grow="true"
-          >
-            <v-tab
-              v-for="(item, filterIndex) in filterStore.filters"
-              :key="item.filterId"
-              :value="item.filterId"
-              @click="setCurrentSelectedIndex(filterIndex)"
-            >
-              <v-card :color="item.filterColor">
-                <v-card-text>
-                  <div class="h-0 w-0" />
-                </v-card-text>
-              </v-card>
-            </v-tab>
-          </v-tabs>
-        </v-col>
-        <v-col align-self="end" cols="2">
-          <v-tooltip>
-            <template #activator="{ props }">
-              <v-btn
-                icon="mdi-filter-plus-outline"
-                v-bind="props"
-                @click="addNewFilter()"
-              />
-            </template>
-            <p>Add new Filter</p>
-          </v-tooltip>
-        </v-col>
-      </v-row>
-      <v-window v-model="tab">
-        <v-window-item
-          v-for="item in filterStore.filters"
+    <FilterToolbar />
+    <v-toolbar color="gray">
+      <v-tabs
+        v-model="tab"
+        show-arrows
+        bg-color="gray"
+      >
+        <v-tab
+          v-for="(item, filterIndex) in filterStore.filters"
           :key="item.filterId"
           :value="item.filterId"
+          @click="setCurrentSelectedIndex(filterIndex)"
         >
-          <FilterHolder />
-        </v-window-item>
-      </v-window>
-    </v-card>
+          <v-icon :color="item.filterColor" class="mr-1" icon="mdi-checkbox-blank-circle" />
+          {{ item.filterName }}
+        </v-tab>
+      </v-tabs>
+      <v-spacer />
+      <v-tooltip>
+        <template #activator="{ props }">
+          <v-btn
+            icon="mdi-filter-plus-outline"
+            v-bind="props"
+            @click="addNewFilter()"
+          />
+        </template>
+        <p>Add new Filter</p>
+      </v-tooltip>
+    </v-toolbar>
+
+    <v-window v-model="tab">
+      <v-window-item
+        v-for="item in filterStore.filters"
+        :key="item.filterId"
+        :value="item.filterId"
+      >
+        <FilterHolder />
+      </v-window-item>
+    </v-window>
     <AtlasOverlayHolder />
   </v-navigation-drawer>
 </template>
