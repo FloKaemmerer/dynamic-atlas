@@ -38,6 +38,7 @@ export const useFilterStore = defineStore('filter', {
         this.currentSelectedFilterIndex = this.currentSelectedFilterIndex - 1
       }
       this.filters.splice(tmpIndex, 1)
+      this.currentSelectedFilterIndex = 0
     },
 
     CLEAR_CURRENT_FILTER() {
