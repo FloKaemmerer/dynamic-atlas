@@ -37,18 +37,18 @@ function openInNewTab(url: string) {
     >
       <v-tab
         v-for="(item) in filterStore.filters"
-        :key="item.filterId"
-        :value="item.filterId"
+        :key="item.id"
+        :value="item.id"
         class="text-offwhite"
       >
-        <v-icon :color="item.filterColor" class="mr-1" icon="mdi-checkbox-blank-circle" />
-        {{ item.filterName }}
+        <v-icon :color="item.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+        {{ item.name }}
         <!--        <v-icon -->
         <!--          icon="mdi-pencil-outline" -->
         <!--          @click="showOverlay = !showOverlay" -->
         <!--        /> -->
-        <v-icon v-if="item.filterActive" icon="mdi-eye-outline" @click="item.filterActive = !item.filterActive" />
-        <v-icon v-else icon="mdi-eye-off-outline" @click="item.filterActive = !item.filterActive" />
+        <v-icon v-if="item.active" icon="mdi-eye-outline" @click="item.active = !item.active" />
+        <v-icon v-else icon="mdi-eye-off-outline" @click="item.active = !item.active" />
       </v-tab>
     </v-tabs>
     <v-spacer />

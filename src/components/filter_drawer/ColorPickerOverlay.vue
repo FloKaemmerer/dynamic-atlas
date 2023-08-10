@@ -18,12 +18,12 @@ const filterStore = useFilterStore()
         <v-container>
           <v-row>
             <v-col cols="12" sm="6" md="4">
-              <v-color-picker v-model="filterStore.GET_SELECTED_FILTER().filterColor" />
+              <v-color-picker v-model="filterStore.GET_SELECTED_FILTER().color" />
             </v-col>
           </v-row>
           <v-row>
             <v-col>
-              <v-text-field v-model="filterStore.GET_SELECTED_FILTER().filterName" />
+              <v-text-field v-model="filterStore.GET_SELECTED_FILTER().name" />
             </v-col>
           </v-row>
         </v-container>

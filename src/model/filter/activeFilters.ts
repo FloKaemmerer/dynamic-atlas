@@ -1,5 +1,5 @@
 export interface ActiveFilters {
-  filterId: number
+  id: number
   activeMapFilters: string[]
   activeBossFilters: string[]
   activeDivinationCardFilters: string[]

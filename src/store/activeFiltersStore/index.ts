@@ -3,19 +3,27 @@ import type { ActiveFilters } from '@/model/filter/activeFilters'
 
 interface State {
   activeFilterList: ActiveFilters[]
+  activeFiltersMap: Map<number, ActiveFilters>
   currentSelectedActiveFiltersIndex: number
 }
 
 export const useActiveFiltersStore = defineStore('active-filters', {
-  state: (): State => ({
-    activeFilterList: [{
-      filterId: Date.now(),
+  state: (): State => {
+    const id = Date.now()
+    const activeFilter = {
+      id,
       activeMapFilters: [],
       activeBossFilters: [],
       activeDivinationCardFilters: [],
-    }],
-    currentSelectedActiveFiltersIndex: 0,
-  }),
+    }
+    const activeFiltersMap = new Map()
+    activeFiltersMap.set(id, activeFilter)
+    return {
+      activeFilterList: [activeFilter],
+      activeFiltersMap,
+      currentSelectedActiveFiltersIndex: 0,
+    }
+  },
 
   actions: {
     ADD_ACTIVE_FILTERS(activeFilters: ActiveFilters) {

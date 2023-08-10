@@ -5,11 +5,11 @@ import ColorPickerOverlay from '@/components/filter_drawer/ColorPickerOverlay.vu
 
 const filterStore = useFilterStore()
 const showOverlay = ref(false)
-const filterName = ref(filterStore.GET_SELECTED_FILTER().filterName)
+const filterName = ref(filterStore.GET_SELECTED_FILTER().name)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].filterName !== filterName.value) {
-    filterName.value = state.filters[state.currentSelectedFilterIndex].filterName
+  if (state.filters[state.currentSelectedFilterIndex].name !== filterName.value) {
+    filterName.value = state.filters[state.currentSelectedFilterIndex].name
   }
 })
 
@@ -30,7 +30,7 @@ function deleteFilter() {
         <v-icon icon="mdi-pencil-outline" />
       </template>
       <template #prepend>
-        <v-icon :color="filterStore.GET_SELECTED_FILTER().filterColor" class="mr-1" icon="mdi-checkbox-blank-circle" />
+        <v-icon :color="filterStore.GET_SELECTED_FILTER().color" class="mr-1" icon="mdi-checkbox-blank-circle" />
       </template>
     </v-btn>
     <v-spacer />

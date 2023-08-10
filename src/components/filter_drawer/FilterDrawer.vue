@@ -32,13 +32,13 @@ onBeforeMount(() => initFilter())
 function addNewFilter() {
   const numberOfFilters = filterStore.filters.length
   filterStore.ADD_FILTER({
-    filterId: Date.now(),
-    filterColor: getRandomColor(),
-    filterName: getFilterName(numberOfFilters),
-    filterActive: true,
+    id: Date.now(),
+    color: getRandomColor(),
+    name: getFilterName(numberOfFilters),
+    active: true,
   })
   activeFiltersStore.ADD_ACTIVE_FILTERS({
-    filterId: Date.now(),
+    id: Date.now(),
     activeMapFilters: [],
     activeBossFilters: [],
     activeDivinationCardFilters: [],
@@ -100,13 +100,13 @@ filterStore.$subscribe((_mutation, state) => {
       >
         <v-tab
           v-for="(item, filterIndex) in filterStore.filters"
-          :key="item.filterId"
-          :value="item.filterId"
+          :key="item.id"
+          :value="item.id"
           class="text-offwhite"
           @click="setCurrentSelectedIndex(filterIndex)"
         >
-          <v-icon :color="item.filterColor" class="mr-1" icon="mdi-checkbox-blank-circle" />
-          {{ item.filterName }}
+          <v-icon :color="item.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+          {{ item.name }}
         </v-tab>
       </v-tabs>
       <v-spacer />
@@ -126,8 +126,8 @@ filterStore.$subscribe((_mutation, state) => {
     <v-window v-model="tab">
       <v-window-item
         v-for="item in filterStore.filters"
-        :key="item.filterId"
-        :value="item.filterId"
+        :key="item.id"
+        :value="item.id"
       >
         <FilterHolder />
       </v-window-item>

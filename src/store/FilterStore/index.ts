@@ -4,13 +4,19 @@ import { getFilterName } from '@/composable/filter/filter-utils'
 
 interface State {
   filters: Filter[]
+  filtersMap: Map<number, Filter>
   currentSelectedFilterIndex: number
 }
 
 export const useFilterStore = defineStore('filter', {
   state: (): State => {
+    const id = Date.now()
+    const filtersMap = new Map()
+    const filter = { id, color: '#ff0000', name: getFilterName(0), active: true }
+    filtersMap.set(id, filter)
     return {
-      filters: [{ filterId: Date.now(), filterColor: '#ff0000', filterName: getFilterName(0), filterActive: true }],
+      filters: [filter],
+      filtersMap,
       currentSelectedFilterIndex: 0,
     }
   },

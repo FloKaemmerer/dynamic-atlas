@@ -1,8 +1,8 @@
 export interface Filter {
-  filterId: number
-  filterName: string
-  filterColor: string
-  filterActive: boolean
+  id: number
+  name: string
+  color: string
+  active: boolean
 
   filterText?: string
   includeMapTier?: boolean
