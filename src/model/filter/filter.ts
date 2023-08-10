@@ -2,6 +2,7 @@ export interface Filter {
   filterId: number
   filterName: string
   filterColor: string
+  filterActive: boolean
 
   filterText?: string
   includeMapTier?: boolean

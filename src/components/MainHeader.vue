@@ -1,8 +1,13 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
+import { useFilterStore } from '@/store/FilterStore'
 
 const filterDrawerStore = useFilterDrawerStore()
+const filterStore = useFilterStore()
+const tab = ref(0)
 
+const showOverlay = ref(false)
 function toggleFilterDrawer() {
   filterDrawerStore.SET_DRAWER(!filterDrawerStore.drawer)
 }
@@ -25,6 +30,27 @@ function openInNewTab(url: string) {
       </template>
       <p>Toggle Filters</p>
     </v-tooltip>
+    <v-tabs
+      v-model="tab"
+      show-arrows
+      bg-color="gray"
+    >
+      <v-tab
+        v-for="(item) in filterStore.filters"
+        :key="item.filterId"
+        :value="item.filterId"
+        class="text-offwhite"
+      >
+        <v-icon :color="item.filterColor" class="mr-1" icon="mdi-checkbox-blank-circle" />
+        {{ item.filterName }}
+        <!--        <v-icon -->
+        <!--          icon="mdi-pencil-outline" -->
+        <!--          @click="showOverlay = !showOverlay" -->
+        <!--        /> -->
+        <v-icon v-if="item.filterActive" icon="mdi-eye-outline" @click="item.filterActive = !item.filterActive" />
+        <v-icon v-else icon="mdi-eye-off-outline" @click="item.filterActive = !item.filterActive" />
+      </v-tab>
+    </v-tabs>
     <v-spacer />
     <v-btn
       variant="text" color="grey-lighten-4" role="link"
@@ -40,4 +66,5 @@ function openInNewTab(url: string) {
       Github
     </v-btn>
   </v-app-bar>
+<!--  <ColorPickerOverlay v-model:toggle="showOverlay" /> -->
 </template>

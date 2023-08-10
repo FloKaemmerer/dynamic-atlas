@@ -32,7 +32,7 @@ export function handleFilter(filters: Filter[]) {
   for (let i = 0; i < filters.length; i++) {
     let result = [] as AtlasNode[]
     const filter = filters[i]
-    if (hasActiveFilters(filter)) {
+    if (filter.filterActive && hasActiveFilters(filter)) {
       result = atlasNodeStore.atlasNodes.filter(value => value.active)
       // Filter by Text
       result = filterByText(filter, result)

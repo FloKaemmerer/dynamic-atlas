@@ -35,6 +35,7 @@ function addNewFilter() {
     filterId: Date.now(),
     filterColor: getRandomColor(),
     filterName: getFilterName(numberOfFilters),
+    filterActive: true,
   })
   activeFiltersStore.ADD_ACTIVE_FILTERS({
     filterId: Date.now(),
