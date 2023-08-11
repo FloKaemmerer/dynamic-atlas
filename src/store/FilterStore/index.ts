@@ -29,6 +29,36 @@ export const useFilterStore = defineStore('filter', {
       this.selectedFilter = this.filtersMap.values().next().value
     },
 
+    CLEAR_FILTER(filterId: number) {
+      const filter = this.filtersMap.get(filterId)
+      if (filter) {
+        filter.filterText = undefined
+        filter.includeMapTier = undefined
+        filter.mapTier = undefined
+        filter.includeOpenness = undefined
+        filter.openness = undefined
+        filter.includeTraversability = undefined
+        filter.traversability = undefined
+        filter.includeBacktrackFactor = undefined
+        filter.backtrackFactor = undefined
+        filter.includeLinearity = undefined
+        filter.linearity = undefined
+        filter.includeTerrainSlots = undefined
+        filter.terrainSlots = undefined
+        filter.includeBaseMobCount = undefined
+        filter.baseMobCount = undefined
+        filter.rushableBoss = undefined
+        filter.includeNumberOfBosses = undefined
+        filter.numberOfBosses = undefined
+        filter.excludePhasedBosses = undefined
+        filter.includeSkippablePhases = undefined
+        filter.includeSpawnIntro = undefined
+        filter.excludeSpawnedBosses = undefined
+        filter.minDivinationCardPrice = undefined
+        filter.minEffectiveDivinationCardValue = undefined
+      }
+    },
+
     CLEAR_CURRENT_FILTER() {
       this.CLEAR_TEXT_FILTER()
       this.CLEAR_MAP_FILTERS()
@@ -56,7 +86,6 @@ export const useFilterStore = defineStore('filter', {
       this.selectedFilter.includeBaseMobCount = undefined
       this.selectedFilter.baseMobCount = undefined
       this.selectedFilter.rushableBoss = undefined
-      this.selectedFilter.includeNumberOfBosses = undefined
     },
 
     CLEAR_BOSS_FILTERS() {

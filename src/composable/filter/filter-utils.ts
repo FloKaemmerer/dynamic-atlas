@@ -50,7 +50,7 @@ export function hasToFilterByMapTier(filter: Filter) {
 }
 
 export function hasToFilterByFilterText(filter: Filter) {
-  return (filter.filterText !== undefined && filter.filterText.length) > 0
+  return (filter.filterText !== undefined && filter.filterText !== null && filter.filterText.length) > 0
 }
 
 export function hasToFilterByOpenness(filter: Filter) {

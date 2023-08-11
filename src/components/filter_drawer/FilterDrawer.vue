@@ -104,50 +104,21 @@ filterStore.$subscribe((_mutation, state) => {
   >
     <FilterToolbar />
     <v-toolbar color="gray">
-      <v-menu>
-        <template #activator="{ props }">
-          <v-btn
-            color="primary"
-            v-bind="props"
-          >
-            Select Filter
-          </v-btn>
-        </template>
-        <v-list>
-          <v-list-item
-            v-for="[id, filter] in filterStore.filtersMap"
-            :key="id"
-            :value="filter.name"
-          >
-            <v-list-item-title>
-              <v-btn variant="text">
-                <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
-                {{ filter.name }}
-              </v-btn>
-              <v-btn variant="text" class="text-offwhite" icon="mdi-trash-can-outline" :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)" />
-            </v-list-item-title>
-          </v-list-item>
-          <v-list-item>
-            <v-btn @click="addNewFilter()">
-              <v-icon
-                icon="mdi-filter-plus-outline"
-                class="text-offwhite"
-              />
-              Add new Filter
-            </v-btn>
-          </v-list-item>
-
-          <v-list-item>
-            <v-btn @click="addPresetFilter()">
-              <v-icon
-                icon="mdi-filter-plus-outline"
-                class="text-offwhite"
-              />
-              Add preset Filter
-            </v-btn>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+      <v-btn @click="addNewFilter()">
+        <v-icon
+          icon="mdi-filter-plus-outline"
+          class="text-offwhite"
+        />
+        Add new
+      </v-btn>
+      <v-spacer />
+      <v-btn @click="addPresetFilter()">
+        <v-icon
+          icon="mdi-filter-plus-outline"
+          class="text-offwhite"
+        />
+        Add preset
+      </v-btn>
     </v-toolbar>
 
     <v-window v-model="selectedFilter">

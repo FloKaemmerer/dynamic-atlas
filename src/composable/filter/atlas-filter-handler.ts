@@ -27,6 +27,7 @@ export function initFilter() {
   console.log('Init Atlas Filter')
   activeFiltersStore.ADD_ACTIVE_FILTERS({
     id: filterStore.selectedFilter.id,
+    activeTextFilters: [],
     activeMapFilters: [],
     activeBossFilters: [],
     activeDivinationCardFilters: [],
@@ -313,6 +314,10 @@ function filterByText(filter: Filter, result: AtlasNode[]) {
 
     result = result.filter(atlasNode =>
       atlasNode.filterTags.some(e => regExp.test(e)))
+    activeFiltersStore.ADD_ACTIVE_TEXT_FILTER(FilterKeys.FILTER_TEXT, filter.id)
+  }
+  else {
+    activeFiltersStore.REMOVE_ACTIVE_TEXT_FILTER(FilterKeys.FILTER_TEXT, filter.id)
   }
   return result
 }

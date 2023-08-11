@@ -16,6 +16,7 @@ function handleUrlQueryFilters(queryParams: LocationQuery) {
     filters.map(filter => activeFiltersStore.activeFiltersMap.set(filter.id, {
       id: filter.id,
       activeMapFilters: [],
+      activeTextFilters: [],
       activeBossFilters: [],
       activeDivinationCardFilters: [],
     }))

@@ -3,9 +3,11 @@ import { ref } from 'vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 import { useFilterStore } from '@/store/FilterStore'
 import ColorPickerOverlay from '@/components/filter_drawer/ColorPickerOverlay.vue'
+import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 
 const filterDrawerStore = useFilterDrawerStore()
 const filterStore = useFilterStore()
+const activeFiltersStore = useActiveFiltersStore()
 const tab = ref(0)
 
 const showOverlay = ref(false)
@@ -18,6 +20,26 @@ function toggleOverlay(filterId: number) {
   selectedFilterId.value = filterId
   showOverlay.value = !showOverlay.value
 }
+
+function deleteFilter(filterId: number) {
+  filterStore.filtersMap.delete(filterId)
+  filterStore.selectedFilter = filterStore.filtersMap.values().next().value
+}
+function clearAllFiltersFromFilter(filterId: number) {
+  filterStore.CLEAR_FILTER(filterId)
+  activeFiltersStore.CLEAR_ACTIVE_FILTERS(filterId)
+}
+function getNumberOfActiveFilters(filterId: number) {
+  const activeFilters = activeFiltersStore.activeFiltersMap.get(filterId)
+  if (activeFilters) {
+    const numberOfActiveFilters = activeFilters.activeMapFilters.length + activeFilters.activeBossFilters.length + activeFilters.activeDivinationCardFilters.length + activeFilters.activeTextFilters.length
+    if (numberOfActiveFilters > 0) {
+      return numberOfActiveFilters
+    }
+  }
+  return ''
+}
+
 function openInNewTab(url: string) {
   window.open(url, '_blank', 'noreferrer')
 }
@@ -46,15 +68,50 @@ function openInNewTab(url: string) {
         :key="id"
         :value="filter.name"
         class="text-offwhite"
+        @click="filterStore.selectedFilter = filter"
       >
-        <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
-        {{ filter.name }}
-        <v-icon
-          icon="mdi-pencil-outline"
-          @click="toggleOverlay(filter.id)"
-        />
-        <v-icon v-if="filter.active" icon="mdi-eye-outline" @click="filter.active = !filter.active" />
-        <v-icon v-else icon="mdi-eye-off-outline" @click="filter.active = !filter.active" />
+        <v-btn variant="text">
+          <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+          {{ filter.name }}
+          {{ getNumberOfActiveFilters(id) }}
+        </v-btn>
+        <v-menu>
+          <template #activator="{ props }">
+            <v-btn
+              color="primary"
+              v-bind="props"
+              variant="text"
+              icon="mdi-cog"
+            />
+          </template>
+          <v-list>
+            <v-list-item>
+              <v-btn
+                v-if="filter.active"
+                variant="text"
+                icon="mdi-eye-outline" @click="filter.active = !filter.active"
+              />
+              <v-btn
+                v-else
+                variant="text" icon="mdi-eye-off-outline" @click="filter.active = !filter.active"
+              />
+            </v-list-item>
+            <v-list-item>
+              <v-btn variant="text" icon="mdi-close-circle" @click="clearAllFiltersFromFilter(id)" />
+            </v-list-item>
+
+            <v-list-item>
+              <v-btn
+                variant="text" icon="mdi-pencil-outline"
+                @click="toggleOverlay(id)"
+              />
+            </v-list-item>
+
+            <v-list-item>
+              <v-btn variant="text" class="text-offwhite" icon="mdi-trash-can-outline" :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)" />
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-tab>
     </v-tabs>
     <v-spacer />

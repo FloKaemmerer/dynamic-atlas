@@ -10,6 +10,7 @@ export const useActiveFiltersStore = defineStore('active-filters', {
     const id = Date.now()
     const activeFilter = {
       id,
+      activeTextFilters: [],
       activeMapFilters: [],
       activeBossFilters: [],
       activeDivinationCardFilters: [],
@@ -31,6 +32,7 @@ export const useActiveFiltersStore = defineStore('active-filters', {
       if (activeFilters) {
         activeFilters.activeBossFilters = []
         activeFilters.activeMapFilters = []
+        activeFilters.activeTextFilters = []
         activeFilters.activeDivinationCardFilters = []
       }
     },
@@ -76,6 +78,18 @@ export const useActiveFiltersStore = defineStore('active-filters', {
         activeFilters.activeDivinationCardFilters.splice(activeFilters.activeDivinationCardFilters.indexOf(filterKey), 1)
       }
     },
+    ADD_ACTIVE_TEXT_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeTextFilters.includes(filterKey)) {
+        activeFilters.activeTextFilters.push(filterKey)
+      }
+    },
 
+    REMOVE_ACTIVE_TEXT_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeTextFilters.includes(filterKey)) {
+        activeFilters.activeTextFilters.splice(activeFilters.activeTextFilters.indexOf(filterKey), 1)
+      }
+    },
   },
 })
