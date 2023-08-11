@@ -44,43 +44,43 @@ export function handleFilter(filters: Filter[]) {
       result = filterByText(filter, result)
 
       // Filter by MapTier
-      result = filterByMapTier(filter, i, result)
+      result = filterByMapTier(filter, result)
 
       // Filter by Openness
-      result = filterByOpenness(filter, i, result)
+      result = filterByOpenness(filter, result)
 
       // Filter by Traversability
-      result = filterByTraversability(filter, i, result)
+      result = filterByTraversability(filter, result)
 
       // Filter by BacktrackFactor
-      result = filterByBacktrackFactor(filter, i, result)
+      result = filterByBacktrackFactor(filter, result)
 
       // Filter by Linearity
-      result = filterByLinearity(filter, i, result)
+      result = filterByLinearity(filter, result)
 
       // Filter by TerrainSlots
-      result = filterByTerrainSlots(filter, i, result)
+      result = filterByTerrainSlots(filter, result)
 
       // Filter by BaseMobCount
-      result = filterByBaseMobCount(filter, i, result)
+      result = filterByBaseMobCount(filter, result)
 
       // Filter by Rushable Boss
-      result = filterByRushableBoss(filter, i, result)
+      result = filterByRushableBoss(filter, result)
 
       // Filter by Number of Bosses
-      result = filterByNumberOfBosses(filter, i, result)
+      result = filterByNumberOfBosses(filter, result)
 
       // Filter by phased Bosses
-      result = filterByPhasedBosses(filter, i, result)
+      result = filterByPhasedBosses(filter, result)
 
       // Filter by Spawned Bosses
-      result = filterBySpawnedBosses(filter, i, result)
+      result = filterBySpawnedBosses(filter, result)
 
       // Filter by minimum Divination Card Price
-      result = filterByMinimumDivinationCardPrice(filter, i, result)
+      result = filterByMinimumDivinationCardPrice(filter, result)
 
       // Filter by minimum effective Divination Card Value
-      result = filterByMinimumEffectiveDivinationCardValue(filter, i, result)
+      result = filterByMinimumEffectiveDivinationCardValue(filter, result)
     }
     else {
       activeFiltersStore.CLEAR_ACTIVE_FILTERS(filter.id)
@@ -89,7 +89,7 @@ export function handleFilter(filters: Filter[]) {
   }
 }
 
-function filterByMapTier(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByMapTier(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByMapTier(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByMapTier' we check for length == 2
@@ -103,7 +103,7 @@ function filterByMapTier(filter: Filter, index: number, result: AtlasNode[]) {
   return result
 }
 
-function filterByNumberOfBosses(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByNumberOfBosses(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByNumberOfBosses(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByNumberOfBosses' we check for length == 2
@@ -117,7 +117,7 @@ function filterByNumberOfBosses(filter: Filter, index: number, result: AtlasNode
   return result
 }
 
-function filterByPhasedBosses(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByPhasedBosses(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByExcludePhasedBosses(filter)) {
     activeFiltersStore.ADD_ACTIVE_BOSS_FILTER(FilterKeys.EXCLUDE_PHASED_BOSSES, filter.id)
     if (hasToFilterBySkippablePhases(filter) && hasToFilterBySpawnIntro(filter)) {
@@ -161,7 +161,7 @@ function filterByPhasedBosses(filter: Filter, index: number, result: AtlasNode[]
   return result
 }
 
-function filterBySpawnedBosses(filter: Filter, index: number, result: AtlasNode[]) {
+function filterBySpawnedBosses(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterBySpawnedBosses(filter)) {
     result = result.filter((atlasNode) => {
       return !atlasNode.boss.spawned && !atlasNode.uniqueMap
@@ -174,7 +174,7 @@ function filterBySpawnedBosses(filter: Filter, index: number, result: AtlasNode[
   return result
 }
 
-function filterByRushableBoss(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByRushableBoss(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByRushableBoss(filter)) {
     result = result.filter((atlasNode) => {
       return atlasNode.nodeLayout.rushableBoss
@@ -187,7 +187,7 @@ function filterByRushableBoss(filter: Filter, index: number, result: AtlasNode[]
   return result
 }
 
-function filterByMinimumDivinationCardPrice(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByMinimumDivinationCardPrice(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByMinimumDivinationCardPrice(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByMinimumDivinationCardPrice' we check for !== undefined
@@ -201,7 +201,7 @@ function filterByMinimumDivinationCardPrice(filter: Filter, index: number, resul
   return result
 }
 
-function filterByMinimumEffectiveDivinationCardValue(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByMinimumEffectiveDivinationCardValue(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByMinimumEffectiveDivinationCardValue(filter)) {
     result = result.filter((atlasNode) => {
       const highestEffectiveValueDivinationCard = atlasNode.highestEffectiveValueDivinationCard
@@ -222,7 +222,7 @@ function filterByMinimumEffectiveDivinationCardValue(filter: Filter, index: numb
   return result
 }
 
-function filterByOpenness(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByOpenness(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByOpenness(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByOpenness' we checked for length == 2
@@ -236,7 +236,7 @@ function filterByOpenness(filter: Filter, index: number, result: AtlasNode[]) {
   return result
 }
 
-function filterByTraversability(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByTraversability(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByTraversability(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByTraversability' we checked for length == 2
@@ -250,7 +250,7 @@ function filterByTraversability(filter: Filter, index: number, result: AtlasNode
   return result
 }
 
-function filterByBacktrackFactor(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByBacktrackFactor(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByBacktrackFactor(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByBacktrackFactor' we checked for length == 2
@@ -264,7 +264,7 @@ function filterByBacktrackFactor(filter: Filter, index: number, result: AtlasNod
   return result
 }
 
-function filterByBaseMobCount(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByBaseMobCount(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByBaseMobCount(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByBaseMobCount' we checked for length == 2
@@ -278,7 +278,7 @@ function filterByBaseMobCount(filter: Filter, index: number, result: AtlasNode[]
   return result
 }
 
-function filterByLinearity(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByLinearity(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByLinearity(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByLinearity' we checked for length == 2
@@ -292,7 +292,7 @@ function filterByLinearity(filter: Filter, index: number, result: AtlasNode[]) {
   return result
 }
 
-function filterByTerrainSlots(filter: Filter, index: number, result: AtlasNode[]) {
+function filterByTerrainSlots(filter: Filter, result: AtlasNode[]) {
   if (hasToFilterByTerrainSlots(filter)) {
     result = result.filter((atlasNode) => {
       // @ts-expect-error within 'hasToFilterByTerrainSlots' we checked for length == 2
