@@ -63,8 +63,9 @@ function queryFilters() {
   }
 }
 
-function deleteFilter() {
-  filterStore.DELETE_CURRENT_FILTER()
+function deleteFilter(filterId: number) {
+  filterStore.filtersMap.delete(filterId)
+  filterStore.selectedFilter = filterStore.filtersMap.values().next().value
 }
 
 router.isReady().then(() => {
@@ -118,11 +119,12 @@ filterStore.$subscribe((_mutation, state) => {
             :key="id"
             :value="filter.name"
           >
-            <v-list-item-title @click="filterStore.selectedFilter = filter">
-              <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
-              {{ filter.name }}
-
-              <!--              <v-icon icon="mdi-trash-can-outline" @click="deleteFilter" /> -->
+            <v-list-item-title>
+              <v-btn variant="text">
+                <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+                {{ filter.name }}
+              </v-btn>
+              <v-btn variant="text" class="text-offwhite" icon="mdi-trash-can-outline" :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)" />
             </v-list-item-title>
           </v-list-item>
           <v-list-item>
