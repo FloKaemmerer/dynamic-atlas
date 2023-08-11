@@ -8,8 +8,8 @@ const showOverlay = ref(false)
 const filterName = ref(filterStore.GET_SELECTED_FILTER().name)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].name !== filterName.value) {
-    filterName.value = state.filters[state.currentSelectedFilterIndex].name
+  if (state.selectedFilter.name !== filterName.value) {
+    filterName.value = state.selectedFilter.name
   }
 })
 
@@ -30,12 +30,12 @@ function deleteFilter() {
         <v-icon icon="mdi-pencil-outline" />
       </template>
       <template #prepend>
-        <v-icon :color="filterStore.GET_SELECTED_FILTER().color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+        <v-icon :color="filterStore.selectedFilter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
       </template>
     </v-btn>
     <v-spacer />
-    <v-btn variant="text" class="text-offwhite" icon="mdi-trash-can-outline" :disabled="filterStore.filters.length <= 1" @click="deleteFilter()" />
+    <v-btn variant="text" class="text-offwhite" icon="mdi-trash-can-outline" :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter()" />
 
-    <ColorPickerOverlay v-model:toggle="showOverlay" />
+    <ColorPickerOverlay v-model:toggle="showOverlay" v-model:filter-id="filterStore.selectedFilter.id" />
   </div>
 </template>

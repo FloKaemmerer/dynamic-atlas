@@ -6,8 +6,8 @@ const filterStore = useFilterStore()
 const minEffectiveDivinationCardValue = ref(filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].minEffectiveDivinationCardValue !== minEffectiveDivinationCardValue.value) {
-    minEffectiveDivinationCardValue.value = state.filters[state.currentSelectedFilterIndex].minEffectiveDivinationCardValue
+  if (state.selectedFilter.minEffectiveDivinationCardValue !== minEffectiveDivinationCardValue.value) {
+    minEffectiveDivinationCardValue.value = state.selectedFilter.minEffectiveDivinationCardValue
   }
 })
 

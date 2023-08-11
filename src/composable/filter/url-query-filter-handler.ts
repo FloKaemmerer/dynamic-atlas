@@ -12,31 +12,17 @@ function handleUrlQueryFilters(queryParams: LocationQuery) {
     console.log(queryParams.filters)
     const filters: Filter[] = JSON.parse(String(queryParams.filters))
 
-    activeFiltersStore.activeFilterList = []
-    filters.map(filter => activeFiltersStore.activeFilterList.push({
+    activeFiltersStore.activeFiltersMap = new Map()
+    filters.map(filter => activeFiltersStore.activeFiltersMap.set(filter.id, {
       id: filter.id,
       activeMapFilters: [],
       activeBossFilters: [],
       activeDivinationCardFilters: [],
     }))
 
-    filterStore.SET_FILTERS(filters)
     filterStore.filtersMap = new Map<number, Filter>()
-
     filters.map(filter => filterStore.filtersMap.set(filter.id, filter))
-
-    if (filters.length > 1) {
-      for (let i = 1; i < filters.length; i++) {
-        activeFiltersStore.ADD_ACTIVE_FILTERS({
-          id: Date.now(),
-          activeMapFilters: [],
-          activeBossFilters: [],
-          activeDivinationCardFilters: [],
-        })
-        // forcing a short wait to make sure we get a different ID
-        setTimeout(() => {}, 1)
-      }
-    }
+    filterStore.selectedFilter = filters[0]
   }
 }
 

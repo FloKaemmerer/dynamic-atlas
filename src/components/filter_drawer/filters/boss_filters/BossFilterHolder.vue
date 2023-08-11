@@ -9,7 +9,13 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const bossFiltersCount = computed(() => activeFiltersStore.activeFilterList[activeFiltersStore.currentSelectedActiveFiltersIndex].activeBossFilters.length)
+const bossFiltersCount = computed(() => {
+  const activeFilters = activeFiltersStore.activeFiltersMap.get(filterStore.selectedFilter.id)
+  if (activeFilters) {
+    return activeFilters.activeBossFilters.length
+  }
+  return 0
+})
 </script>
 
 <template>

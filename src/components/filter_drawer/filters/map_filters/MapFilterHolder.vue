@@ -14,7 +14,13 @@ import { useFilterStore } from '@/store/FilterStore'
 const activeFiltersStore = useActiveFiltersStore()
 const filterStore = useFilterStore()
 
-const mapFiltersCount = computed(() => activeFiltersStore.activeFilterList[activeFiltersStore.currentSelectedActiveFiltersIndex].activeMapFilters.length)
+const mapFiltersCount = computed(() => {
+  const activeFilters = activeFiltersStore.activeFiltersMap.get(filterStore.selectedFilter.id)
+  if (activeFilters) {
+    return activeFilters.activeMapFilters.length
+  }
+  return 0
+})
 </script>
 
 <template>

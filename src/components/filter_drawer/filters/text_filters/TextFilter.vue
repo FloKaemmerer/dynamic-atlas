@@ -2,17 +2,6 @@
 import { useFilterStore } from '@/store/FilterStore'
 
 const filterStore = useFilterStore()
-// const filterText = ref()
-
-// function handleTextFilter(value: string) {
-//   filterStore.SET_FILTER_TEXT(value)
-// }
-
-// filterStore.$subscribe((mutation, state) => {
-//   if (state.filterText !== filterText.value) {
-//     filterText.value = state.filterText
-//   }
-// })
 </script>
 
 <template>

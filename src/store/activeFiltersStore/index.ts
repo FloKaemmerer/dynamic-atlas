@@ -2,9 +2,7 @@ import { defineStore } from 'pinia'
 import type { ActiveFilters } from '@/model/filter/activeFilters'
 
 interface State {
-  activeFilterList: ActiveFilters[]
   activeFiltersMap: Map<number, ActiveFilters>
-  currentSelectedActiveFiltersIndex: number
 }
 
 export const useActiveFiltersStore = defineStore('active-filters', {
@@ -19,61 +17,63 @@ export const useActiveFiltersStore = defineStore('active-filters', {
     const activeFiltersMap = new Map()
     activeFiltersMap.set(id, activeFilter)
     return {
-      activeFilterList: [activeFilter],
-      activeFiltersMap,
-      currentSelectedActiveFiltersIndex: 0,
+      activeFiltersMap: new Map(),
     }
   },
 
   actions: {
     ADD_ACTIVE_FILTERS(activeFilters: ActiveFilters) {
-      this.activeFilterList.push(activeFilters)
+      this.activeFiltersMap.set(activeFilters.id, activeFilters)
     },
 
-    SET_CURRENT_SELECTED_ACTIVE_FILTER_INDEX(currentSelectedActiveFiltersIndex: number) {
-      this.currentSelectedActiveFiltersIndex = currentSelectedActiveFiltersIndex
-    },
-
-    CLEAR_ACTIVE_FILTERS(currentSelectedActiveFiltersIndex: number) {
-      this.activeFilterList[currentSelectedActiveFiltersIndex].activeBossFilters = []
-      this.activeFilterList[currentSelectedActiveFiltersIndex].activeMapFilters = []
-      this.activeFilterList[currentSelectedActiveFiltersIndex].activeDivinationCardFilters = []
-    },
-
-    ADD_ACTIVE_MAP_FILTER(filterKey: string, currentSelectedActiveFiltersIndex: number) {
-      const selectedActiveFilterList = this.activeFilterList[currentSelectedActiveFiltersIndex]
-      if (!selectedActiveFilterList.activeMapFilters.includes(filterKey)) {
-        selectedActiveFilterList.activeMapFilters.push(filterKey)
+    CLEAR_ACTIVE_FILTERS(filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters) {
+        activeFilters.activeBossFilters = []
+        activeFilters.activeMapFilters = []
+        activeFilters.activeDivinationCardFilters = []
       }
     },
 
-    REMOVE_ACTIVE_MAP_FILTER(filterKey: string, currentSelectedActiveFiltersIndex: number) {
-      if (this.activeFilterList[currentSelectedActiveFiltersIndex].activeMapFilters.includes(filterKey)) {
-        this.activeFilterList[currentSelectedActiveFiltersIndex].activeMapFilters.splice(this.activeFilterList[currentSelectedActiveFiltersIndex].activeMapFilters.indexOf(filterKey), 1)
+    ADD_ACTIVE_MAP_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeMapFilters.includes(filterKey)) {
+        activeFilters.activeMapFilters.push(filterKey)
       }
     },
 
-    ADD_ACTIVE_BOSS_FILTER(filterKey: string, currentSelectedActiveFiltersIndex: number) {
-      if (!this.activeFilterList[currentSelectedActiveFiltersIndex].activeBossFilters.includes(filterKey)) {
-        this.activeFilterList[currentSelectedActiveFiltersIndex].activeBossFilters.push(filterKey)
+    REMOVE_ACTIVE_MAP_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeMapFilters.includes(filterKey)) {
+        activeFilters.activeMapFilters.splice(activeFilters.activeMapFilters.indexOf(filterKey), 1)
       }
     },
 
-    REMOVE_ACTIVE_BOSS_FILTER(filterKey: string, currentSelectedActiveFiltersIndex: number) {
-      if (this.activeFilterList[currentSelectedActiveFiltersIndex].activeBossFilters.includes(filterKey)) {
-        this.activeFilterList[currentSelectedActiveFiltersIndex].activeBossFilters.splice(this.activeFilterList[currentSelectedActiveFiltersIndex].activeBossFilters.indexOf(filterKey), 1)
+    ADD_ACTIVE_BOSS_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeBossFilters.includes(filterKey)) {
+        activeFilters.activeBossFilters.push(filterKey)
       }
     },
 
-    ADD_ACTIVE_DIVINATION_CARD_FILTER(filterKey: string, currentSelectedActiveFiltersIndex: number) {
-      if (!this.activeFilterList[currentSelectedActiveFiltersIndex].activeDivinationCardFilters.includes(filterKey)) {
-        this.activeFilterList[currentSelectedActiveFiltersIndex].activeDivinationCardFilters.push(filterKey)
+    REMOVE_ACTIVE_BOSS_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeBossFilters.includes(filterKey)) {
+        activeFilters.activeBossFilters.splice(activeFilters.activeBossFilters.indexOf(filterKey), 1)
       }
     },
 
-    REMOVE_ACTIVE_DIVINATION_CARD_FILTER(filterKey: string, currentSelectedActiveFiltersIndex: number) {
-      if (this.activeFilterList[currentSelectedActiveFiltersIndex].activeDivinationCardFilters.includes(filterKey)) {
-        this.activeFilterList[currentSelectedActiveFiltersIndex].activeDivinationCardFilters.splice(this.activeFilterList[currentSelectedActiveFiltersIndex].activeDivinationCardFilters.indexOf(filterKey), 1)
+    ADD_ACTIVE_DIVINATION_CARD_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeDivinationCardFilters.includes(filterKey)) {
+        activeFilters.activeDivinationCardFilters.push(filterKey)
+      }
+    },
+
+    REMOVE_ACTIVE_DIVINATION_CARD_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeDivinationCardFilters.includes(filterKey)) {
+        activeFilters.activeDivinationCardFilters.splice(activeFilters.activeDivinationCardFilters.indexOf(filterKey), 1)
       }
     },
 

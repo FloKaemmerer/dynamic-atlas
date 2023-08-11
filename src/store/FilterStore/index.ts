@@ -3,9 +3,8 @@ import type { Filter } from '@/model/filter/filter'
 import { getFilterName } from '@/composable/filter/filter-utils'
 
 interface State {
-  filters: Filter[]
   filtersMap: Map<number, Filter>
-  currentSelectedFilterIndex: number
+  selectedFilter: Filter
 }
 
 export const useFilterStore = defineStore('filter', {
@@ -15,36 +14,19 @@ export const useFilterStore = defineStore('filter', {
     const filter = { id, color: '#ff0000', name: getFilterName(0), active: true }
     filtersMap.set(id, filter)
     return {
-      filters: [filter],
       filtersMap,
-      currentSelectedFilterIndex: 0,
+      selectedFilter: filter,
     }
   },
 
   actions: {
-    SET_FILTERS(filters: Filter[]) {
-      this.filters = filters
-    },
-
-    ADD_FILTER(filter: Filter) {
-      this.filters.push(filter)
-    },
-
-    SET_CURRENT_SELECTED_FILTER_INDEX(currentSelectedFilterIndex: number) {
-      this.currentSelectedFilterIndex = currentSelectedFilterIndex
-    },
-
     GET_SELECTED_FILTER() {
-      return this.filters[this.currentSelectedFilterIndex]
+      return this.selectedFilter
     },
 
     DELETE_CURRENT_FILTER() {
-      const tmpIndex = this.currentSelectedFilterIndex
-      if (this.currentSelectedFilterIndex === this.filters.length - 1) {
-        this.currentSelectedFilterIndex = this.currentSelectedFilterIndex - 1
-      }
-      this.filters.splice(tmpIndex, 1)
-      this.currentSelectedFilterIndex = 0
+      this.filtersMap.delete(this.selectedFilter.id)
+      this.selectedFilter = this.filtersMap.values().next().value
     },
 
     CLEAR_CURRENT_FILTER() {
@@ -55,40 +37,40 @@ export const useFilterStore = defineStore('filter', {
     },
 
     CLEAR_TEXT_FILTER() {
-      this.filters[this.currentSelectedFilterIndex].filterText = undefined
+      this.selectedFilter.filterText = undefined
     },
 
     CLEAR_MAP_FILTERS() {
-      this.filters[this.currentSelectedFilterIndex].includeMapTier = undefined
-      this.filters[this.currentSelectedFilterIndex].mapTier = undefined
-      this.filters[this.currentSelectedFilterIndex].includeOpenness = undefined
-      this.filters[this.currentSelectedFilterIndex].openness = undefined
-      this.filters[this.currentSelectedFilterIndex].includeTraversability = undefined
-      this.filters[this.currentSelectedFilterIndex].traversability = undefined
-      this.filters[this.currentSelectedFilterIndex].includeBacktrackFactor = undefined
-      this.filters[this.currentSelectedFilterIndex].backtrackFactor = undefined
-      this.filters[this.currentSelectedFilterIndex].includeLinearity = undefined
-      this.filters[this.currentSelectedFilterIndex].linearity = undefined
-      this.filters[this.currentSelectedFilterIndex].includeTerrainSlots = undefined
-      this.filters[this.currentSelectedFilterIndex].terrainSlots = undefined
-      this.filters[this.currentSelectedFilterIndex].includeBaseMobCount = undefined
-      this.filters[this.currentSelectedFilterIndex].baseMobCount = undefined
-      this.filters[this.currentSelectedFilterIndex].rushableBoss = undefined
-      this.filters[this.currentSelectedFilterIndex].includeNumberOfBosses = undefined
+      this.selectedFilter.includeMapTier = undefined
+      this.selectedFilter.mapTier = undefined
+      this.selectedFilter.includeOpenness = undefined
+      this.selectedFilter.openness = undefined
+      this.selectedFilter.includeTraversability = undefined
+      this.selectedFilter.traversability = undefined
+      this.selectedFilter.includeBacktrackFactor = undefined
+      this.selectedFilter.backtrackFactor = undefined
+      this.selectedFilter.includeLinearity = undefined
+      this.selectedFilter.linearity = undefined
+      this.selectedFilter.includeTerrainSlots = undefined
+      this.selectedFilter.terrainSlots = undefined
+      this.selectedFilter.includeBaseMobCount = undefined
+      this.selectedFilter.baseMobCount = undefined
+      this.selectedFilter.rushableBoss = undefined
+      this.selectedFilter.includeNumberOfBosses = undefined
     },
 
     CLEAR_BOSS_FILTERS() {
-      this.filters[this.currentSelectedFilterIndex].includeNumberOfBosses = undefined
-      this.filters[this.currentSelectedFilterIndex].numberOfBosses = undefined
-      this.filters[this.currentSelectedFilterIndex].excludePhasedBosses = undefined
-      this.filters[this.currentSelectedFilterIndex].includeSkippablePhases = undefined
-      this.filters[this.currentSelectedFilterIndex].includeSpawnIntro = undefined
-      this.filters[this.currentSelectedFilterIndex].excludeSpawnedBosses = undefined
+      this.selectedFilter.includeNumberOfBosses = undefined
+      this.selectedFilter.numberOfBosses = undefined
+      this.selectedFilter.excludePhasedBosses = undefined
+      this.selectedFilter.includeSkippablePhases = undefined
+      this.selectedFilter.includeSpawnIntro = undefined
+      this.selectedFilter.excludeSpawnedBosses = undefined
     },
 
     CLEAR_DIVINATION_CARD_FILTERS() {
-      this.filters[this.currentSelectedFilterIndex].minDivinationCardPrice = undefined
-      this.filters[this.currentSelectedFilterIndex].minEffectiveDivinationCardValue = undefined
+      this.selectedFilter.minDivinationCardPrice = undefined
+      this.selectedFilter.minEffectiveDivinationCardValue = undefined
     },
   },
 })

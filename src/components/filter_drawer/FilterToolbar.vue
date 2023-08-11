@@ -13,7 +13,7 @@ const filterDrawerStore = useFilterDrawerStore()
 
 function clearAllFilters() {
   filterStore.CLEAR_CURRENT_FILTER()
-  activeFiltersStore.CLEAR_ACTIVE_FILTERS(activeFiltersStore.currentSelectedActiveFiltersIndex)
+  activeFiltersStore.CLEAR_ACTIVE_FILTERS(filterStore.selectedFilter.id)
 }
 
 function copyShareableLinkToClipboard() {

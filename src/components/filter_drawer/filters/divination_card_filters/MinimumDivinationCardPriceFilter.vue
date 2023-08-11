@@ -6,8 +6,8 @@ const filterStore = useFilterStore()
 const minDivinationCardPrice = ref(filterStore.GET_SELECTED_FILTER().minDivinationCardPrice)
 
 filterStore.$subscribe((mutation, state) => {
-  if (state.filters[state.currentSelectedFilterIndex].minDivinationCardPrice !== minDivinationCardPrice.value) {
-    minDivinationCardPrice.value = state.filters[state.currentSelectedFilterIndex].minDivinationCardPrice
+  if (state.selectedFilter.minDivinationCardPrice !== minDivinationCardPrice.value) {
+    minDivinationCardPrice.value = state.selectedFilter.minDivinationCardPrice
   }
 })
 

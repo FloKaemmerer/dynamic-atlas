@@ -15,6 +15,7 @@ import { getFilterName, hasActiveFilters } from '@/composable/filter/filter-util
 import { getRandomColor } from '@/composable/random-color'
 import FilterHolder from '@/components/filter_drawer/FilterHolder.vue'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
+import type { Filter } from '@/model/filter/filter'
 
 const filterStore = useFilterStore()
 const activeFiltersStore = useActiveFiltersStore()
@@ -23,32 +24,33 @@ const filterDrawerStore = useFilterDrawerStore()
 const route: RouteLocationNormalizedLoaded = useRoute()
 const router: Router = useRouter()
 
-const tab = ref(0)
-
+const selectedFilter = ref(filterStore.selectedFilter)
 const drawer = computed<boolean>(() => filterDrawerStore.drawer)
 
 onBeforeMount(() => initFilter())
 
 function addNewFilter() {
-  const numberOfFilters = filterStore.filters.length
-  filterStore.ADD_FILTER({
+  const numberOfFilters = filterStore.filtersMap.size
+  const filter = {
     id: Date.now(),
     color: getRandomColor(),
     name: getFilterName(numberOfFilters),
     active: true,
-  })
+  }
+  filterStore.filtersMap.set(filter.id, filter)
   activeFiltersStore.ADD_ACTIVE_FILTERS({
-    id: Date.now(),
+    id: filter.id,
     activeMapFilters: [],
     activeBossFilters: [],
     activeDivinationCardFilters: [],
   })
+  filterStore.selectedFilter = filter
 }
 
-function setCurrentSelectedIndex(filterIndex: number) {
-  filterStore.SET_CURRENT_SELECTED_FILTER_INDEX(filterIndex)
-  activeFiltersStore.SET_CURRENT_SELECTED_ACTIVE_FILTER_INDEX(filterIndex)
+function addPresetFilter() {
+
 }
+
 function queryFilters() {
   const queryFilters: LooseFilters = {}
   return {
@@ -60,6 +62,11 @@ function queryFilters() {
     },
   }
 }
+
+function deleteFilter() {
+  filterStore.DELETE_CURRENT_FILTER()
+}
+
 router.isReady().then(() => {
   handleUrlQueryFilters(route.query)
 })
@@ -67,9 +74,12 @@ router.isReady().then(() => {
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
-  const activeFilters = state.filters.filter(value => hasActiveFilters(value))
-
-  tab.value = state.currentSelectedFilterIndex
+  const activeFilters: Filter[] = []
+  state.filtersMap.forEach((value) => {
+    if (hasActiveFilters(value)) {
+      activeFilters.push(value)
+    }
+  })
 
   if (activeFilters.length > 0) {
     filters.add(true, 'filters', JSON.stringify(activeFilters))
@@ -93,42 +103,53 @@ filterStore.$subscribe((_mutation, state) => {
   >
     <FilterToolbar />
     <v-toolbar color="gray">
-      <v-tabs
-        v-model="tab"
-        show-arrows
-        bg-color="gray"
-      >
-        <v-tab
-          v-for="(item, filterIndex) in filterStore.filters"
-          :key="item.id"
-          :value="item.id"
-          class="text-offwhite"
-          @click="setCurrentSelectedIndex(filterIndex)"
-        >
-          <v-icon :color="item.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
-          {{ item.name }}
-        </v-tab>
-      </v-tabs>
-      <v-spacer />
-      <v-tooltip>
+      <v-menu>
         <template #activator="{ props }">
           <v-btn
-            icon="mdi-filter-plus-outline"
-            class="text-offwhite"
+            color="primary"
             v-bind="props"
-            @click="addNewFilter()"
-          />
+          >
+            Select Filter
+          </v-btn>
         </template>
-        <p>Add new Filter</p>
-      </v-tooltip>
+        <v-list>
+          <v-list-item
+            v-for="[id, filter] in filterStore.filtersMap"
+            :key="id"
+            :value="filter.name"
+          >
+            <v-list-item-title @click="filterStore.selectedFilter = filter">
+              <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+              {{ filter.name }}
+
+              <!--              <v-icon icon="mdi-trash-can-outline" @click="deleteFilter" /> -->
+            </v-list-item-title>
+          </v-list-item>
+          <v-list-item>
+            <v-btn @click="addNewFilter()">
+              <v-icon
+                icon="mdi-filter-plus-outline"
+                class="text-offwhite"
+              />
+              Add new Filter
+            </v-btn>
+          </v-list-item>
+
+          <v-list-item>
+            <v-btn @click="addPresetFilter()">
+              <v-icon
+                icon="mdi-filter-plus-outline"
+                class="text-offwhite"
+              />
+              Add preset Filter
+            </v-btn>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-toolbar>
 
-    <v-window v-model="tab">
-      <v-window-item
-        v-for="item in filterStore.filters"
-        :key="item.id"
-        :value="item.id"
-      >
+    <v-window v-model="selectedFilter">
+      <v-window-item>
         <FilterHolder />
       </v-window-item>
     </v-window>
