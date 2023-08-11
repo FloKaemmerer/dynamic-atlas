@@ -41,6 +41,7 @@ function addNewFilter() {
   activeFiltersStore.ADD_ACTIVE_FILTERS({
     id: filter.id,
     activeMapFilters: [],
+    activeTextFilters: [],
     activeBossFilters: [],
     activeDivinationCardFilters: [],
   })
@@ -61,11 +62,6 @@ function queryFilters() {
       }
     },
   }
-}
-
-function deleteFilter(filterId: number) {
-  filterStore.filtersMap.delete(filterId)
-  filterStore.selectedFilter = filterStore.filtersMap.values().next().value
 }
 
 router.isReady().then(() => {
