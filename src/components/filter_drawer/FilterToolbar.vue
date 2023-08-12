@@ -3,18 +3,9 @@ import buildShareableUrl from '@/composable/filter/shareable-url-builder'
 import copyToClipBoard from '@/composable/copy-utils'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import { useFilterStore } from '@/store/FilterStore'
-import { useActiveFiltersStore } from '@/store/activeFiltersStore'
-import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 
 const filterQueryStore = useFilterQueryStore()
 const filterStore = useFilterStore()
-const activeFiltersStore = useActiveFiltersStore()
-const filterDrawerStore = useFilterDrawerStore()
-
-function clearAllFilters() {
-  filterStore.CLEAR_CURRENT_FILTER()
-  activeFiltersStore.CLEAR_ACTIVE_FILTERS(filterStore.selectedFilter.id)
-}
 
 function copyShareableLinkToClipboard() {
   const queryParams = filterQueryStore.filterQuery
@@ -22,64 +13,25 @@ function copyShareableLinkToClipboard() {
   const shareableUrl = buildShareableUrl(queryParams)
   copyToClipBoard(shareableUrl)
 }
-
-function toggleFilterDrawer() {
-  filterDrawerStore.SET_DRAWER(false)
-}
 </script>
 
 <template>
   <v-toolbar density="compact">
     <v-toolbar-title class="text-h6">
-      Filters
+      <v-icon :color="filterStore.selectedFilter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+      {{ filterStore.GET_SELECTED_FILTER().name }}
     </v-toolbar-title>
     <template #append>
-      <v-menu>
-        <template #activator="{ props }">
-          <v-btn rounded="0" v-bind="props" size="small" icon="mdi-cog" />
-        </template>
-        <v-list
-          density="compact"
-          rounded="0"
-          bg-color="grey-darken-4"
-        >
-          <v-list-item
-            key="cog-item-1"
-            value="copy"
-            @click="copyShareableLinkToClipboard()"
-          >
-            <template #prepend>
-              <v-icon icon="mdi-content-copy" />
-            </template>
-            <v-list-item-action>
-              Share
-            </v-list-item-action>
-          </v-list-item>
-          <v-list-item
-            key="cog-item-2"
-            value="clear"
-            @click="clearAllFilters()"
-          >
-            <template #prepend>
-              <v-icon icon="mdi-close-circle" />
-            </template>
-            <v-list-item-action>
-              Clear
-            </v-list-item-action>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-
+      <v-spacer />
       <v-tooltip>
         <template #activator="{ props }">
           <v-btn
-            rounded="0"
-            icon="mdi-chevron-left"
+            icon="mdi-content-copy" class="text-offwhite"
             v-bind="props"
-            @click="toggleFilterDrawer()"
+            @click="copyShareableLinkToClipboard()"
           />
         </template>
-        <p>Hide Filters</p>
+        <p>Share Selected Filter</p>
       </v-tooltip>
     </template>
   </v-toolbar>

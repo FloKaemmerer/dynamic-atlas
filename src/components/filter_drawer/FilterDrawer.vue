@@ -11,14 +11,11 @@ import type { LooseFilters } from '@/model/filter/looseFilters'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
-import { getFilterName, hasActiveFilters } from '@/composable/filter/filter-utils'
-import { getRandomColor } from '@/composable/random-color'
+import { hasActiveFilters } from '@/composable/filter/filter-utils'
 import FilterHolder from '@/components/filter_drawer/FilterHolder.vue'
-import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import type { Filter } from '@/model/filter/filter'
 
 const filterStore = useFilterStore()
-const activeFiltersStore = useActiveFiltersStore()
 const filterQueryStore = useFilterQueryStore()
 const filterDrawerStore = useFilterDrawerStore()
 const route: RouteLocationNormalizedLoaded = useRoute()
@@ -28,29 +25,6 @@ const selectedFilter = ref(filterStore.selectedFilter)
 const drawer = computed<boolean>(() => filterDrawerStore.drawer)
 
 onBeforeMount(() => initFilter())
-
-function addNewFilter() {
-  const numberOfFilters = filterStore.filtersMap.size
-  const filter = {
-    id: Date.now(),
-    color: getRandomColor(),
-    name: getFilterName(numberOfFilters),
-    active: true,
-  }
-  filterStore.filtersMap.set(filter.id, filter)
-  activeFiltersStore.ADD_ACTIVE_FILTERS({
-    id: filter.id,
-    activeMapFilters: [],
-    activeTextFilters: [],
-    activeBossFilters: [],
-    activeDivinationCardFilters: [],
-  })
-  filterStore.selectedFilter = filter
-}
-
-function addPresetFilter() {
-
-}
 
 function queryFilters() {
   const queryFilters: LooseFilters = {}
@@ -99,24 +73,6 @@ filterStore.$subscribe((_mutation, state) => {
     :permanent="true"
   >
     <FilterToolbar />
-    <v-toolbar color="gray">
-      <v-btn @click="addNewFilter()">
-        <v-icon
-          icon="mdi-filter-plus-outline"
-          class="text-offwhite"
-        />
-        Add new
-      </v-btn>
-      <v-spacer />
-      <v-btn @click="addPresetFilter()">
-        <v-icon
-          icon="mdi-filter-plus-outline"
-          class="text-offwhite"
-        />
-        Add preset
-      </v-btn>
-    </v-toolbar>
-
     <v-window v-model="selectedFilter">
       <v-window-item>
         <FilterHolder />
