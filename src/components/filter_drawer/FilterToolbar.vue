@@ -1,17 +1,11 @@
 <script setup lang="ts">
-import buildShareableUrl from '@/composable/filter/shareable-url-builder'
 import copyToClipBoard from '@/composable/copy-utils'
-import { useFilterQueryStore } from '@/store/FilterQueryStore'
 import { useFilterStore } from '@/store/FilterStore'
 
-const filterQueryStore = useFilterQueryStore()
 const filterStore = useFilterStore()
 
-function copyShareableLinkToClipboard() {
-  const queryParams = filterQueryStore.filterQuery
-
-  const shareableUrl = buildShareableUrl(queryParams)
-  copyToClipBoard(shareableUrl)
+function copyFilterPresetToClipboard() {
+  copyToClipBoard(JSON.stringify(filterStore.selectedFilter))
 }
 </script>
 
@@ -28,7 +22,7 @@ function copyShareableLinkToClipboard() {
           <v-btn
             icon="mdi-content-copy" class="text-offwhite"
             v-bind="props"
-            @click="copyShareableLinkToClipboard()"
+            @click="copyFilterPresetToClipboard()"
           />
         </template>
         <p>Share Selected Filter</p>

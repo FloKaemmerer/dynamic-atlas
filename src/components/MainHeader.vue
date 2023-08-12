@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 import { useFilterStore } from '@/store/FilterStore'
-import ColorPickerOverlay from '@/components/filter_drawer/ColorPickerOverlay.vue'
+import ColorPickerOverlay from '@/components/filter_drawer/overlays/ColorPickerOverlay.vue'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import buildShareableUrl from '@/composable/filter/shareable-url-builder'
 import copyToClipBoard from '@/composable/copy-utils'
@@ -166,6 +166,26 @@ function openInNewTab(url: string) {
         @click="filterStore.selectedFilter = filter"
       >
         <v-btn variant="text">
+          <v-tooltip>
+            <template #activator="{ props }">
+              <v-icon
+                v-if="filter.active"
+                icon="mdi-eye-outline"
+                class="text-offwhite"
+                v-bind="props"
+                @click="filter.active = !filter.active"
+              />
+              <v-icon
+                v-else
+                variant="text"
+                icon="mdi-eye-off-outline"
+                class="text-offwhite"
+                v-bind="props"
+                @click="filter.active = !filter.active"
+              />
+            </template>
+            <p>Show/Hide Filter</p>
+          </v-tooltip>
           <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
           {{ filter.name }}
           {{ getNumberOfActiveFilters(id) }}
@@ -183,51 +203,51 @@ function openInNewTab(url: string) {
           </template>
           <v-list>
             <v-list-item>
-              <v-btn
-                v-if="filter.active"
-                variant="text"
-                size="small"
-                icon="mdi-eye-outline"
-                class="text-offwhite"
-                @click="filter.active = !filter.active"
-              />
-              <v-btn
-                v-else
-                variant="text"
-                size="small"
-                icon="mdi-eye-off-outline"
-                class="text-offwhite"
-                @click="filter.active = !filter.active"
-              />
-            </v-list-item>
-            <v-list-item>
-              <v-btn
-                variant="text"
-                size="small"
-                icon="mdi-close-circle"
-                class="text-offwhite"
-                @click="clearAllFiltersFromFilter(id)"
-              />
+              <v-tooltip>
+                <template #activator="{ props }">
+                  <v-btn
+                    variant="text"
+                    size="small"
+                    icon="mdi-close-circle"
+                    v-bind="props"
+                    class="text-offwhite"
+                    @click="clearAllFiltersFromFilter(id)"
+                  />
+                </template>
+                <p>Clear Filter</p>
+              </v-tooltip>
             </v-list-item>
 
             <v-list-item>
-              <v-btn
-                variant="text"
-                size="small"
-                class="text-offwhite"
-                icon="mdi-pencil-outline"
-                @click="toggleOverlay(id)"
-              />
+              <v-tooltip>
+                <template #activator="{ props }">
+                  <v-btn
+                    variant="text"
+                    size="small"
+                    class="text-offwhite"
+                    icon="mdi-pencil-outline"
+                    v-bind="props"
+                    @click="toggleOverlay(id)"
+                  />
+                </template>
+                <p>Edit Filter Settings</p>
+              </v-tooltip>
             </v-list-item>
 
             <v-list-item>
-              <v-btn
-                variant="text"
-                size="small"
-                class="text-offwhite"
-                icon="mdi-trash-can-outline"
-                :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)"
-              />
+              <v-tooltip>
+                <template #activator="{ props }">
+                  <v-btn
+                    variant="text"
+                    size="small"
+                    class="text-offwhite"
+                    icon="mdi-trash-can-outline"
+                    v-bind="props"
+                    :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)"
+                  />
+                </template>
+                <p>Delete Filter</p>
+              </v-tooltip>
             </v-list-item>
           </v-list>
         </v-menu>
