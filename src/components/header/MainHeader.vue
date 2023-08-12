@@ -1,26 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
 import { useFilterStore } from '@/store/FilterStore'
-import ColorPickerOverlay from '@/components/filter_drawer/overlays/ColorPickerOverlay.vue'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
-import buildShareableUrl from '@/composable/filter/shareable-url-builder'
-import copyToClipBoard from '@/composable/copy-utils'
-import { useFilterQueryStore } from '@/store/FilterQueryStore'
-import { getRandomColor } from '@/composable/random-color'
-import { getFilterName } from '@/composable/filter/filter-utils'
+import FilterPresetImportOverlay from '@/components/filter_drawer/overlays/FilterPresetImportOverlay.vue'
+import FilterSharingOverlay from '@/components/filter_drawer/overlays/FilterSharingOverlay.vue'
+import MainFilterMenu from '@/components/header/MainFilterMenu.vue'
+import FilterDrawerToggle from '@/components/header/FilterDrawerToggle.vue'
+import ColorPickerOverlay from '@/components/filter_drawer/overlays/ColorPickerOverlay.vue'
 
-const filterDrawerStore = useFilterDrawerStore()
 const filterStore = useFilterStore()
 const activeFiltersStore = useActiveFiltersStore()
-const filterQueryStore = useFilterQueryStore()
-const tab = ref(0)
+const selectedTab = ref(0)
 
 const showOverlay = ref(false)
 const selectedFilterId = ref(filterStore.selectedFilter.id)
-function toggleFilterDrawer() {
-  filterDrawerStore.SET_DRAWER(!filterDrawerStore.drawer)
-}
+const showFilterPresetImportOverly = ref(false)
+const showFilterShareOverly = ref(false)
 
 function toggleOverlay(filterId: number) {
   selectedFilterId.value = filterId
@@ -46,37 +41,6 @@ function getNumberOfActiveFilters(filterId: number) {
   return ''
 }
 
-function copyShareableLinkToClipboard() {
-  const queryParams = filterQueryStore.filterQuery
-
-  const shareableUrl = buildShareableUrl(queryParams)
-  copyToClipBoard(shareableUrl)
-}
-
-function addNewFilter() {
-  const numberOfFilters = filterStore.filtersMap.size
-  const filter = {
-    id: Date.now(),
-    color: getRandomColor(),
-    name: getFilterName(numberOfFilters),
-    active: true,
-  }
-  filterStore.filtersMap.set(filter.id, filter)
-  activeFiltersStore.ADD_ACTIVE_FILTERS({
-    id: filter.id,
-    activeMapFilters: [],
-    activeTextFilters: [],
-    activeBossFilters: [],
-    activeDivinationCardFilters: [],
-  })
-  filterStore.selectedFilter = filter
-  tab.value = filterStore.filtersMap.size - 1
-}
-
-function addPresetFilter() {
-  // TODO
-}
-
 function openInNewTab(url: string) {
   window.open(url, '_blank', 'noreferrer')
 }
@@ -84,77 +48,10 @@ function openInNewTab(url: string) {
 
 <template>
   <v-app-bar density="compact" color="#282828" elevation="0">
-    <v-tooltip>
-      <template #activator="{ props }">
-        <v-btn
-          v-if="filterDrawerStore.drawer"
-          icon="mdi-chevron-left" color="grey-lighten-4"
-          v-bind="props"
-
-          @click.stop="toggleFilterDrawer"
-        />
-        <v-btn
-          v-else
-          icon="mdi-chevron-right" color="grey-lighten-4"
-          v-bind="props"
-
-          @click.stop="toggleFilterDrawer"
-        />
-      </template>
-      <p>Toggle Filter</p>
-    </v-tooltip>
-    <v-menu>
-      <template #activator="{ props }">
-        <v-btn rounded="0" v-bind="props" size="small" icon="mdi-menu" />
-      </template>
-      <v-list
-        density="compact"
-        rounded="0"
-        bg-color="grey-darken-4"
-      >
-        <v-list-item
-          key="cog-item-1"
-          value="copy"
-          class="text-offwhite"
-          @click="copyShareableLinkToClipboard()"
-        >
-          <template #prepend>
-            <v-icon icon="mdi-content-copy" />
-          </template>
-          <v-list-item-action>
-            Share
-          </v-list-item-action>
-        </v-list-item>
-        <v-list-item
-          key="cog-item-2"
-          value="addNew"
-          class="text-offwhite"
-          @click="addNewFilter()"
-        >
-          <template #prepend>
-            <v-icon icon="mdi-filter-plus-outline" />
-          </template>
-          <v-list-item-action>
-            Add New
-          </v-list-item-action>
-        </v-list-item>
-        <v-list-item
-          key="cog-item-2"
-          value="addPreset"
-          class="text-offwhite"
-          @click="addPresetFilter()"
-        >
-          <template #prepend>
-            <v-icon icon="mdi-calendar-filter-outline" class="text-offwhite" />
-          </template>
-          <v-list-item-action>
-            Add Preset
-          </v-list-item-action>
-        </v-list-item>
-      </v-list>
-    </v-menu>
+    <FilterDrawerToggle />
+    <MainFilterMenu @update:selected-tab="value => selectedTab = value" />
     <v-tabs
-      v-model="tab"
+      v-model="selectedTab"
       show-arrows
       bg-color="gray"
     >
@@ -254,6 +151,18 @@ function openInNewTab(url: string) {
       </v-tab>
     </v-tabs>
     <v-spacer />
+    <v-tooltip>
+      <template #activator="{ props }">
+        <v-btn
+          variant="text"
+          icon="mdi-share-variant-outline"
+          v-bind="props"
+          @click="showFilterShareOverly = !showFilterShareOverly"
+        />
+      </template>
+      <p>Share Filters</p>
+    </v-tooltip>
+    |
     <v-btn
       variant="text" color="grey-lighten-4" role="link"
       @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')"
@@ -269,4 +178,6 @@ function openInNewTab(url: string) {
     </v-btn>
   </v-app-bar>
   <ColorPickerOverlay v-model:toggle="showOverlay" v-model:filter-id="selectedFilterId" />
+  <FilterPresetImportOverlay v-model:toggle="showFilterPresetImportOverly" />
+  <FilterSharingOverlay v-model:toggle="showFilterShareOverly" />
 </template>
