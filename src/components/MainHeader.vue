@@ -174,9 +174,11 @@ function openInNewTab(url: string) {
           <template #activator="{ props }">
             <v-btn
               color="primary"
+              size="small"
               v-bind="props"
               variant="text"
               icon="mdi-cog"
+              class="text-offwhite"
             />
           </template>
           <v-list>
@@ -184,26 +186,48 @@ function openInNewTab(url: string) {
               <v-btn
                 v-if="filter.active"
                 variant="text"
-                icon="mdi-eye-outline" @click="filter.active = !filter.active"
+                size="small"
+                icon="mdi-eye-outline"
+                class="text-offwhite"
+                @click="filter.active = !filter.active"
               />
               <v-btn
                 v-else
-                variant="text" icon="mdi-eye-off-outline" @click="filter.active = !filter.active"
+                variant="text"
+                size="small"
+                icon="mdi-eye-off-outline"
+                class="text-offwhite"
+                @click="filter.active = !filter.active"
               />
             </v-list-item>
             <v-list-item>
-              <v-btn variant="text" icon="mdi-close-circle" @click="clearAllFiltersFromFilter(id)" />
+              <v-btn
+                variant="text"
+                size="small"
+                icon="mdi-close-circle"
+                class="text-offwhite"
+                @click="clearAllFiltersFromFilter(id)"
+              />
             </v-list-item>
 
             <v-list-item>
               <v-btn
-                variant="text" icon="mdi-pencil-outline"
+                variant="text"
+                size="small"
+                class="text-offwhite"
+                icon="mdi-pencil-outline"
                 @click="toggleOverlay(id)"
               />
             </v-list-item>
 
             <v-list-item>
-              <v-btn variant="text" class="text-offwhite" icon="mdi-trash-can-outline" :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)" />
+              <v-btn
+                variant="text"
+                size="small"
+                class="text-offwhite"
+                icon="mdi-trash-can-outline"
+                :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)"
+              />
             </v-list-item>
           </v-list>
         </v-menu>
