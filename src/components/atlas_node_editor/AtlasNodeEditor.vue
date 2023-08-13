@@ -39,7 +39,7 @@ watch(selectedAtlasNodeName, () => {
 })
 
 function getAtlasNodeByName(): AtlasNode | undefined {
-  const filterElement = tmpAtlasNodes.value?.filter(value => value.name == selectedAtlasNodeName.value)[0] as AtlasNode
+  const filterElement = tmpAtlasNodes.value?.filter(value => value.name === selectedAtlasNodeName.value)[0] as AtlasNode
   selectedAtlasNode.value = filterElement
   divinationCardNames.value = getDivinationCardNames(filterElement)
   additionalTags.value = getAdditionalTags(filterElement)
