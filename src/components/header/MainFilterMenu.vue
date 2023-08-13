@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import buildShareableUrl from '@/composable/filter/shareable-url-builder'
+import { buildShareableUrl } from '@/composable/filter/shareable-url-builder'
 import copyToClipBoard from '@/composable/copy-utils'
 import { getRandomColor } from '@/composable/random-color'
 import { getFilterName } from '@/composable/filter/filter-utils'

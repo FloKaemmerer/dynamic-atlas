@@ -1,4 +1,7 @@
 import type { Filter } from '@/model/filter/filter'
+import { useActiveFiltersStore } from '@/store/activeFiltersStore'
+
+const activeFiltersStore = useActiveFiltersStore()
 
 const names: string[] = [
   'Alpha',
@@ -121,4 +124,15 @@ export function getFilterName(nameIndex: number) {
   else {
     return getRandomFilterName()
   }
+}
+
+export function getNumberOfActiveFilters(filterId: number) {
+  const activeFilters = activeFiltersStore.activeFiltersMap.get(filterId)
+  if (activeFilters) {
+    const numberOfActiveFilters = activeFilters.activeMapFilters.length + activeFilters.activeBossFilters.length + activeFilters.activeDivinationCardFilters.length + activeFilters.activeTextFilters.length
+    if (numberOfActiveFilters > 0) {
+      return numberOfActiveFilters
+    }
+  }
+  return ''
 }

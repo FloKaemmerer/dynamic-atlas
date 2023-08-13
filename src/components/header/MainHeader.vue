@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { getNumberOfActiveFilters } from '../../composable/filter/filter-utils'
 import { useFilterStore } from '@/store/FilterStore'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import FilterPresetImportOverlay from '@/components/overlays/FilterPresetImportOverlay.vue'
@@ -29,16 +30,6 @@ function deleteFilter(filterId: number) {
 function clearAllFiltersFromFilter(filterId: number) {
   filterStore.CLEAR_FILTER(filterId)
   activeFiltersStore.CLEAR_ACTIVE_FILTERS(filterId)
-}
-function getNumberOfActiveFilters(filterId: number) {
-  const activeFilters = activeFiltersStore.activeFiltersMap.get(filterId)
-  if (activeFilters) {
-    const numberOfActiveFilters = activeFilters.activeMapFilters.length + activeFilters.activeBossFilters.length + activeFilters.activeDivinationCardFilters.length + activeFilters.activeTextFilters.length
-    if (numberOfActiveFilters > 0) {
-      return numberOfActiveFilters
-    }
-  }
-  return ''
 }
 
 function openInNewTab(url: string) {
