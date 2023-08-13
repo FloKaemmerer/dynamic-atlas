@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import axios from 'axios'
 import { useAtlasNodeStore } from '@/store/AtlasNodeStore'
 import type { AtlasNode } from '@/model/atlasNode'
@@ -8,10 +8,11 @@ import type { DivinationCardImproveDto } from '@/model/dtos/divinationCardImprov
 import { sendAtlasNode } from '@/composable/atlas-node-email-sender'
 
 const atlasNodeStore = useAtlasNodeStore()
-const atlasNodes = computed<AtlasNode[] | null>(() => atlasNodeStore.atlasNodes)
+const atlasNodes = ref<AtlasNode[]>(atlasNodeStore.atlasNodes)
 const selectedAtlasNodeName = ref()
 
 const selectedAtlasNode = ref<AtlasNode>()
+const tmpAtlasNodes = ref<AtlasNode[]>([])
 const divinationCardNames = ref<string>()
 const additionalTags = ref<string>()
 const loading = ref(false)
@@ -20,6 +21,16 @@ const snackbarText = ref<string>()
 
 onMounted(() => {
   selectedAtlasNodeName.value = 'Acton\'s Nightmare'
+
+  atlasNodes.value.forEach((value) => {
+    const tmpAtlasNode = JSON.parse(JSON.stringify(value))
+    tmpAtlasNodes.value.push(tmpAtlasNode)
+  })
+  atlasNodeStore.inactiveAtlasNodes.forEach((value) => {
+    const tmpAtlasNode = JSON.parse(JSON.stringify(value))
+    tmpAtlasNodes.value.push(tmpAtlasNode)
+  })
+  tmpAtlasNodes.value.sort((a, b) => a.name.localeCompare(b.name))
 })
 
 watch(selectedAtlasNodeName, () => {
@@ -28,7 +39,7 @@ watch(selectedAtlasNodeName, () => {
 })
 
 function getAtlasNodeByName(): AtlasNode | undefined {
-  const filterElement = atlasNodes.value?.filter(value => value.name == selectedAtlasNodeName.value)[0] as AtlasNode
+  const filterElement = tmpAtlasNodes.value?.filter(value => value.name == selectedAtlasNodeName.value)[0] as AtlasNode
   selectedAtlasNode.value = filterElement
   divinationCardNames.value = getDivinationCardNames(filterElement)
   additionalTags.value = getAdditionalTags(filterElement)
@@ -37,7 +48,7 @@ function getAtlasNodeByName(): AtlasNode | undefined {
 
 function atlasNodeNames(): string[] {
   const atlasNodeNames: string[] = []
-  atlasNodes.value?.forEach(value => atlasNodeNames.push(value.name))
+  tmpAtlasNodes.value?.forEach(value => atlasNodeNames.push(value.name))
   atlasNodeNames.sort((a, b) => a.localeCompare(b))
   return atlasNodeNames
 }
