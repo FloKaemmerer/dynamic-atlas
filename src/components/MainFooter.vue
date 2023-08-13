@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-import AboutOverlay from '@/components/filter_drawer/overlays/AboutOverlay.vue'
-import ImproveOverlay from '@/components/filter_drawer/overlays/ImproveOverlay.vue'
-import ContactOverlay from '@/components/filter_drawer/overlays/ContactOverlay.vue'
-import GlossaryOverlay from '@/components/filter_drawer/overlays/GlossaryOverlay.vue'
-import ChangelogOverlay from '@/components/filter_drawer/overlays/ChangelogOverlay.vue'
+import AboutOverlay from '@/components/overlays/AboutOverlay.vue'
+import ImproveOverlay from '@/components/overlays/ImproveOverlay.vue'
+import ContactOverlay from '@/components/overlays/ContactOverlay.vue'
+import GlossaryOverlay from '@/components/overlays/GlossaryOverlay.vue'
+import ChangelogOverlay from '@/components/overlays/ChangelogOverlay.vue'
 
 const toggleAboutOverlay = ref(false)
 const toggleImproveOverlay = ref(false)

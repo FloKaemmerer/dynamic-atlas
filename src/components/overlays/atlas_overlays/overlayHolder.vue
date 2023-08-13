@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import AtlasNodeOverlayPicker from '@/components/filter_drawer/overlays/atlas_overlays/atlasNodeOverlayPicker.vue'
+import AtlasNodeOverlayPicker from '@/components/overlays/atlas_overlays/atlasNodeOverlayPicker.vue'
 import DivinationCardOverlayPicker
-  from '@/components/filter_drawer/overlays/atlas_overlays/divinationCardOverlayPicker.vue'
+  from '@/components/overlays/atlas_overlays/divinationCardOverlayPicker.vue'
 </script>
 
 <template>

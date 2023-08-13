@@ -2,11 +2,11 @@
 import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
-import FilterPresetImportOverlay from '@/components/filter_drawer/overlays/FilterPresetImportOverlay.vue'
-import FilterSharingOverlay from '@/components/filter_drawer/overlays/FilterSharingOverlay.vue'
+import FilterPresetImportOverlay from '@/components/overlays/FilterPresetImportOverlay.vue'
+import FilterSharingOverlay from '@/components/overlays/FilterSharingOverlay.vue'
 import MainFilterMenu from '@/components/header/MainFilterMenu.vue'
 import FilterDrawerToggle from '@/components/header/FilterDrawerToggle.vue'
-import ColorPickerOverlay from '@/components/filter_drawer/overlays/ColorPickerOverlay.vue'
+import ColorPickerOverlay from '@/components/overlays/ColorPickerOverlay.vue'
 
 const filterStore = useFilterStore()
 const activeFiltersStore = useActiveFiltersStore()
