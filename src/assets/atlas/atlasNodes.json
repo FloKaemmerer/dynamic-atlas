@@ -11726,24 +11726,24 @@
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 38.00,
-      "exaltedValue": 2.16,
-      "divineValue": 0.18,
+      "name": "The Last One Standing",
+      "chaosValue": 45.00,
+      "exaltedValue": 2.55,
+      "divineValue": 0.21,
       "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "stackSize": 10,
+      "flavourText": "The strongest emerge from suffering. The toughest bear the most scars. The sole survivor claims the greatest of rewards.",
       "explicitModifiers": [
         {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "text": "<uniqueitem>{Atziri's Disfavour}",
           "optional": false
         }
       ],
-      "artFilename": "TheDragonsHeart",
-      "dropWeight": 36,
+      "artFilename": "TheLastOneStanding",
+      "dropWeight": 11,
       "dropRestricted": true,
-      "baseDropChance": 1.1480470444166645E-4,
-      "effectiveValue": 0.4362578768783325
+      "baseDropChance": 3.507921524606475E-5,
+      "effectiveValue": 0.15785646860729138
     },
     "boss": {
       "numberOfBosses": 1,
@@ -17179,24 +17179,24 @@
     "additionalTags": [],
     "active": true,
     "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 38.00,
-      "exaltedValue": 2.16,
-      "divineValue": 0.18,
+      "name": "The Last One Standing",
+      "chaosValue": 45.00,
+      "exaltedValue": 2.55,
+      "divineValue": 0.21,
       "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "stackSize": 10,
+      "flavourText": "The strongest emerge from suffering. The toughest bear the most scars. The sole survivor claims the greatest of rewards.",
       "explicitModifiers": [
         {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "text": "<uniqueitem>{Atziri's Disfavour}",
           "optional": false
         }
       ],
-      "artFilename": "TheDragonsHeart",
-      "dropWeight": 36,
+      "artFilename": "TheLastOneStanding",
+      "dropWeight": 11,
       "dropRestricted": true,
-      "baseDropChance": 1.10805029317164E-4,
-      "effectiveValue": 0.42105911140522323
+      "baseDropChance": 3.385709229135567E-5,
+      "effectiveValue": 0.1523569153111005
     },
     "boss": {
       "numberOfBosses": 1,
@@ -51955,46 +51955,415 @@
     "locY": "1000.000",
     "name": "Arena",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.024867785096557644,
+        "effectiveValue": 2.4867785096557644
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.00517168708985691,
+        "effectiveValue": 1.551506126957073
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.005910060023566403,
+        "effectiveValue": 0.5910060023566404
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 8.091336731899865E-4,
+        "effectiveValue": 0.3236534692759946
+      },
+      {
+        "name": "The Deceiver",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Beware the combatant who shows no confidence, yet still enters the ring, for they are surely hiding something.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Belt of the Deceiver}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDeceiver",
+        "dropWeight": 1657,
+        "dropRestricted": true,
+        "baseDropChance": 0.00509784979648596,
+        "effectiveValue": 1.5293549389457881
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.10755940056424E-4,
+        "effectiveValue": 0.4208725722144112
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0023874058189940284,
+        "effectiveValue": 0.4774811637988057
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.014527487470734282,
+        "effectiveValue": 1.4527487470734282
+      },
+      {
+        "name": "The Gladiator",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "The thumb turns down\nand the crowd roars, \nthey want death \nand the blood is yours.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Nightmare Bascinet}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGladiator",
+        "dropWeight": 6022,
+        "dropRestricted": true,
+        "baseDropChance": 0.01852700752832737,
+        "effectiveValue": 3.705401505665474
+      },
+      {
+        "name": "The King's Blade",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:25>{\"To know for what you fight. To get up again when you've been struck down. To outmanoeuvre someone faster, trick someone smarter, crush someone stronger. That's what it takes to claim the crown.\"\n- Daresso, the King of Swords}",
+        "explicitModifiers": [
+          {
+            "text": "<size:31>{<magicitem>{Bloodthirsty Eternal Sword}\n<default>{Item Level:} <normal>{66}}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheKingsBlade",
+        "dropWeight": 41367,
+        "dropRestricted": true,
+        "baseDropChance": 0.12726780478650254,
+        "effectiveValue": 12.726780478650253
+      },
+      {
+        "name": "The Last One Standing",
+        "chaosValue": 45.00,
+        "exaltedValue": 2.55,
+        "divineValue": 0.21,
+        "bossOnly": false,
+        "stackSize": 10,
+        "flavourText": "The strongest emerge from suffering. The toughest bear the most scars. The sole survivor claims the greatest of rewards.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Atziri's Disfavour}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheLastOneStanding",
+        "dropWeight": 11,
+        "dropRestricted": true,
+        "baseDropChance": 3.384209279501845E-5,
+        "effectiveValue": 0.15228941757758302
+      },
+      {
+        "name": "The Sword King's Salute",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "<size:26>{Many were slain by the sword king \nTheir blood decorating his ring \nThose who retreated were slaughtered \nThose who fought bravely were honoured}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Daresso's Salute}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheSwordKingsSalute",
+        "dropWeight": 14197,
+        "dropRestricted": true,
+        "baseDropChance": 0.04367783558280699,
+        "effectiveValue": 8.735567116561398
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 5.937749008580508E-4,
+        "effectiveValue": 0.11875498017161017
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.018345490848790454,
+        "effectiveValue": 1.8345490848790453
+      },
+      {
+        "name": "The Visionary",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "Lioneye looked to the heights of glorious victory. And thus he missed the defeat right under his nose.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Lioneye's Vision}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheVisionary",
+        "dropWeight": 9180,
+        "dropRestricted": true,
+        "baseDropChance": 0.028242764714388118,
+        "effectiveValue": 5.6485529428776236
+      },
+      {
+        "name": "Three Voices",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "The village elders had a curious rule: If you hear three voices scream for aid, flee as fast as you can.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{3x Essence}",
+            "optional": false
+          }
+        ],
+        "artFilename": "ThreeVoices",
+        "dropWeight": 11508,
+        "dropRestricted": true,
+        "baseDropChance": 0.035404982171370204,
+        "effectiveValue": 7.080996434274041
+      },
+      {
+        "name": "Unchained",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Mold the world with your bare hands. Be careful, for what is your doing might become your undoing.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Facebreaker}\n<corrupted>{Two-Implicit}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Unchained",
+        "dropWeight": 372,
+        "dropRestricted": true,
+        "baseDropChance": 0.0011444780472497145,
+        "effectiveValue": 0.3433434141749144
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Last One Standing",
+      "chaosValue": 45.00,
+      "exaltedValue": 2.55,
+      "divineValue": 0.21,
+      "bossOnly": false,
+      "stackSize": 10,
+      "flavourText": "The strongest emerge from suffering. The toughest bear the most scars. The sole survivor claims the greatest of rewards.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Atziri's Disfavour}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheLastOneStanding",
+      "dropWeight": 11,
+      "dropRestricted": true,
+      "baseDropChance": 3.384209279501845E-5,
+      "effectiveValue": 0.15228941757758302
+    },
     "boss": {
       "numberOfBosses": 0,
       "phased": false,
       "skippablePhases": false,
       "spawned": false,
-      "bossArena": false,
-      "names": [],
+      "bossArena": true,
+      "names": [
+        "Avatar of the Forge",
+        "Avatar of the Skies",
+        "Avatar of the Huntress"
+      ],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 5,
+      "traversability": 7,
+      "backtrackFactor": 2,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 6
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.10755940056424E-4,
+      "effectiveValue": 0.4208725722144112
     }
   },
   {
@@ -52005,46 +52374,413 @@
     "locY": "1000.000",
     "name": "Basilica",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "Demigod's Wager",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "Sometimes you need to make your own luck.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{Orb of Annulment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "DemigodsWagergives",
+        "dropWeight": 508,
+        "dropRestricted": false,
+        "baseDropChance": 0.0019791719425105094,
+        "effectiveValue": 0.9895859712552546
+      },
+      {
+        "name": "Desperate Crusade",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "Through despondent hardships, those strong of spirit shall claim the prize.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prism Guardian}",
+            "optional": false
+          }
+        ],
+        "artFilename": "DesperateCrusade",
+        "dropWeight": 157,
+        "dropRestricted": true,
+        "baseDropChance": 6.116732184530512E-4,
+        "effectiveValue": 0.3058366092265256
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.03149143073093002,
+        "effectiveValue": 3.149143073093002
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006549189045984579,
+        "effectiveValue": 1.9647567137953736
+      },
+      {
+        "name": "Lachrymal Necrosis",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "Without the ability to weep, the heart hardens against both the pure and the corrupt.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Jewel}\n<enchanted>{Implicit Modifier:} \n<magicitem>{Corrupted Blood cannot be inflicted on you}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LachrymalNecrosis",
+        "dropWeight": 365,
+        "dropRestricted": true,
+        "baseDropChance": 0.0014220428327093228,
+        "effectiveValue": 0.7110214163546614
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.00748423090858797,
+        "effectiveValue": 0.748423090858797
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 0.001024650041102882,
+        "effectiveValue": 0.4098600164411528
+      },
+      {
+        "name": "The Bear Woman",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 6,
+        "flavourText": "<size:24>{For the blessed bear in the cave,\nA hundred days pass in silence and darkness,\nuntil moon begins its fourth passage,\nthe bear sheds her beastly fur,\nand is reborn, human and whole.}",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Fecund Ursine Pelt}\n<default>{Warlord Item}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheBearWoman",
+        "dropWeight": 763,
+        "dropRestricted": true,
+        "baseDropChance": 0.0029726539215266115,
+        "effectiveValue": 1.1890615686106447
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.4025627939050854E-4,
+        "effectiveValue": 0.5329738616839325
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.003023302022417629,
+        "effectiveValue": 0.6046604044835258
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.018396948646721704,
+        "effectiveValue": 1.8396948646721705
+      },
+      {
+        "name": "The Golden Era",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "Before gemlings, before thaumaturgy, a simple court magician could enthrall the masses.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Flaring Eclipse Staff}\n<default>{Item Level:} <normal>{100}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGoldenEra",
+        "dropWeight": 1366,
+        "dropRestricted": true,
+        "baseDropChance": 0.0053219466013176295,
+        "effectiveValue": 2.6609733006588145
+      },
+      {
+        "name": "The Innocent",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 10,
+        "flavourText": "His brother would not atone, so he took his brother's life, and with it, his sins.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{40x Orb of Regret}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheInnocent",
+        "dropWeight": 1038,
+        "dropRestricted": true,
+        "baseDropChance": 0.004044056055759663,
+        "effectiveValue": 1.6176224223038653
+      },
+      {
+        "name": "The Lord of Celebration",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Though they were a pack of elite combatants, the Emperor's royal guards were not ready to face one of his notorious parties.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Sceptre of Celebration}\n<default>{Shaper Item}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheLordofCelebration",
+        "dropWeight": 647,
+        "dropRestricted": true,
+        "baseDropChance": 0.0025207170212683066,
+        "effectiveValue": 1.2603585106341533
+      },
+      {
+        "name": "The Opulent",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Wealth can, in fact, buy happiness.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Ring}\n<default>{Item Level:} <normal>{100}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheOpulecent",
+        "dropWeight": 11612,
+        "dropRestricted": true,
+        "baseDropChance": 0.0452404421189607,
+        "effectiveValue": 4.52404421189607
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.519294978435597E-4,
+        "effectiveValue": 0.15038589956871193
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.0232318942779334,
+        "effectiveValue": 2.32318942779334
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.4025627939050854E-4,
+      "effectiveValue": 0.5329738616839325
+    },
     "boss": {
-      "numberOfBosses": 0,
-      "phased": false,
+      "numberOfBosses": 1,
+      "phased": true,
       "skippablePhases": false,
       "spawned": false,
-      "bossArena": false,
-      "names": [],
+      "bossArena": true,
+      "names": [
+        "Konley, the Unrepentant"
+      ],
       "notes": null,
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
-      "rushableBoss": false,
+      "linearity": 6,
+      "traversability": 8,
+      "backtrackFactor": 4,
+      "rushableBoss": true,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 6
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.4025627939050854E-4,
+      "effectiveValue": 0.5329738616839325
     }
   },
   {
@@ -52055,18 +52791,300 @@
     "locY": "1000.000",
     "name": "Glacier",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "A Chilling Wind",
+        "chaosValue": 8.00,
+        "exaltedValue": 0.45,
+        "divineValue": 0.04,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "<size:26>{All things slow under winter's \nonslaught - even life itself.}",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Vaal Cold Snap}\n<default>{Quality:} <augmented>{+20%}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AChillingWind",
+        "dropWeight": 100,
+        "dropRestricted": true,
+        "baseDropChance": 3.9481528566859996E-4,
+        "effectiveValue": 0.31585222853488
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.031912919540592936,
+        "effectiveValue": 3.1912919540592934
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006636844952089165,
+        "effectiveValue": 1.9910534856267494
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.007584401637693805,
+        "effectiveValue": 0.7584401637693805
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 0.0010383642013084178,
+        "effectiveValue": 0.4153456805233671
+      },
+      {
+        "name": "Mitts",
+        "chaosValue": 1.30,
+        "exaltedValue": 0.07,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Those whose hands are their livelihood know the importance of keeping them safe and warm.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Gloves}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Mitts",
+        "dropWeight": 5821,
+        "dropRestricted": true,
+        "baseDropChance": 0.0229821977787692,
+        "effectiveValue": 2.9876857112399966
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.42133502840696E-4,
+        "effectiveValue": 0.5401073107946448
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0030637666167883356,
+        "effectiveValue": 0.6127533233576671
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.01864317778927129,
+        "effectiveValue": 1.864317778927129
+      },
+      {
+        "name": "The Mountain",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "<size:28>{Charmed by beautiful stones \nConsumed with the \npursuit of perfection \nEver deeper into the waiting dark}",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Jewel of Potency}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheMountain",
+        "dropWeight": 5427,
+        "dropRestricted": true,
+        "baseDropChance": 0.021426625553234917,
+        "effectiveValue": 4.285325110646983
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.619935013403979E-4,
+        "effectiveValue": 0.15239870026807958
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.023542835484418614,
+        "effectiveValue": 2.3542835484418614
+      },
+      {
+        "name": "The Wolverine",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Claw them from the bottom, you'll be glad that you have got 'em, claw them from the top, you'll never want to stop.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Claw}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheWolverine",
+        "dropWeight": 1210,
+        "dropRestricted": true,
+        "baseDropChance": 0.00477726495659006,
+        "effectiveValue": 1.9109059826360237
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.42133502840696E-4,
+      "effectiveValue": 0.5401073107946448
+    },
     "boss": {
-      "numberOfBosses": 0,
+      "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Rek'tar, the Breaker"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52082,19 +53100,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.42133502840696E-4,
+      "effectiveValue": 0.5401073107946448
     }
   },
   {
@@ -52105,18 +53128,300 @@
     "locY": "1000.000",
     "name": "Lava Chamber",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "Burning Blood",
+        "chaosValue": 8.80,
+        "exaltedValue": 0.50,
+        "divineValue": 0.04,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "<size:28>{There's a place where up is down, \nwhere right is wrong, \nwhere pleasure is agony, \nand where the living wish only for death.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Xoph's Blood}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "BurningBlood",
+        "dropWeight": 91,
+        "dropRestricted": false,
+        "baseDropChance": 3.6805746549966836E-4,
+        "effectiveValue": 0.3238905696397082
+      },
+      {
+        "name": "Divine Beauty",
+        "chaosValue": 113.20,
+        "exaltedValue": 6.42,
+        "divineValue": 0.52,
+        "bossOnly": true,
+        "stackSize": 12,
+        "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{7x Divine Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "DivineBeauty",
+        "dropWeight": 460,
+        "dropRestricted": true,
+        "baseDropChance": 0.0018605102651631587,
+        "effectiveValue": 21.06097620164696
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.032692401028943066,
+        "effectiveValue": 3.2692401028943068
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006798951642911456,
+        "effectiveValue": 2.0396854928734367
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.007769652650822669,
+        "effectiveValue": 0.7769652650822669
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 0.0010637265211693712,
+        "effectiveValue": 0.4254906084677485
+      },
+      {
+        "name": "The Avenger",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 12,
+        "flavourText": "Justice comes swift \nEqual to the crime \nRevenge is a gift \nLife for a life \nEye for an eye",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Mjölner}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheAvenger",
+        "dropWeight": 167,
+        "dropRestricted": true,
+        "baseDropChance": 6.754461180048858E-4,
+        "effectiveValue": 0.27017844720195433
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.4560515118668197E-4,
+        "effectiveValue": 0.5532995745093915
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0031385999255795893,
+        "effectiveValue": 0.6277199851159179
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.01909854233065312,
+        "effectiveValue": 1.9098542330653119
+      },
+      {
+        "name": "The Standoff",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "Sometimes your greatest enemy is the only one keeping you breathing.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Rustic Sash}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheStandOff",
+        "dropWeight": 5892,
+        "dropRestricted": true,
+        "baseDropChance": 0.023830709744220285,
+        "effectiveValue": 2.3830709744220284
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.806053938619339E-4,
+        "effectiveValue": 0.1561210787723868
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.024117875459060686,
+        "effectiveValue": 2.4117875459060687
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "Divine Beauty",
+      "chaosValue": 113.20,
+      "exaltedValue": 6.42,
+      "divineValue": 0.52,
+      "bossOnly": true,
+      "stackSize": 12,
+      "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{7x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "DivineBeauty",
+      "dropWeight": 460,
+      "dropRestricted": true,
+      "baseDropChance": 0.0018605102651631587,
+      "effectiveValue": 21.06097620164696
+    },
     "boss": {
-      "numberOfBosses": 0,
+      "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Fire and Fury"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52132,19 +53437,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
-      "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "name": "Divine Beauty",
+      "chaosValue": 113.20,
+      "exaltedValue": 6.42,
+      "divineValue": 0.52,
+      "bossOnly": true,
+      "stackSize": 12,
+      "flavourText": "<size:30>{In a land far away lived \na maiden most fair.\nHer smile melted the coldest\nof hearts, her song made\nmen and beast cry, \nher beauty unparalleled;\nDivine.}",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{7x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "DivineBeauty",
+      "dropWeight": 460,
+      "dropRestricted": true,
+      "baseDropChance": 0.0018605102651631587,
+      "effectiveValue": 21.06097620164696
     }
   },
   {
@@ -52155,18 +53465,260 @@
     "locY": "1000.000",
     "name": "Mud Geyser",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "Death",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "<size:31>{The end of the old,\nthe beginning of the new.\nA unique opportunity for transformation,\nfor those with the power\nto grasp it.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Mon'tregul's Grasp}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Death",
+        "dropWeight": 949,
+        "dropRestricted": true,
+        "baseDropChance": 0.0038276161090608427,
+        "effectiveValue": 0.7655232218121686
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.03260128662754351,
+        "effectiveValue": 3.260128662754351
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006780002823320628,
+        "effectiveValue": 2.0340008469961885
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.007747998467340231,
+        "effectiveValue": 0.774799846734023
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 0.0010607618932381472,
+        "effectiveValue": 0.4243047572952589
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.451993466029403E-4,
+        "effectiveValue": 0.5517575170911732
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.003129852582330046,
+        "effectiveValue": 0.6259705164660092
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.019045314296085667,
+        "effectiveValue": 1.9045314296085667
+      },
+      {
+        "name": "The Inoculated",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Chaos spread, wreaking havoc and death. They said none would be spared, and yet here I stand.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Seraphim's Armour}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheInoculated",
+        "dropWeight": 6261,
+        "dropRestricted": true,
+        "baseDropChance": 0.025252586363361366,
+        "effectiveValue": 5.050517272672273
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.784298303990966E-4,
+        "effectiveValue": 0.15568596607981933
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.024050658438703694,
+        "effectiveValue": 2.4050658438703696
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.451993466029403E-4,
+      "effectiveValue": 0.5517575170911732
+    },
     "boss": {
-      "numberOfBosses": 0,
+      "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Tunneltrap"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52182,19 +53734,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.451993466029403E-4,
+      "effectiveValue": 0.5517575170911732
     }
   },
   {
@@ -52205,18 +53762,380 @@
     "locY": "1000.000",
     "name": "Palace",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "A Modest Request",
+        "chaosValue": 10.00,
+        "exaltedValue": 0.57,
+        "divineValue": 0.05,
+        "bossOnly": true,
+        "stackSize": 3,
+        "flavourText": "<size:25>{Cede all power and wealth to me and serve me in perpetuity.\nA minor inconvenience I assure you.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Megalomaniac}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AModestRequest",
+        "dropWeight": 99,
+        "dropRestricted": true,
+        "baseDropChance": 3.8461389038892623E-4,
+        "effectiveValue": 0.38461389038892624
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.03140236440417869,
+        "effectiveValue": 3.140236440417869
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006530666159028131,
+        "effectiveValue": 1.9591998477084391
+      },
+      {
+        "name": "Light and Truth",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 2,
+        "flavourText": "Time and change\nshall naught avail,\nTo dim the Light\nof Truth's fair grail.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Crystal Sceptre}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LigthAndTruth",
+        "dropWeight": 608,
+        "dropRestricted": true,
+        "baseDropChance": 0.00236207318541886,
+        "effectiveValue": 1.18103659270943
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.007463063469061892,
+        "effectiveValue": 0.7463063469061891
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 0.0010217520522453293,
+        "effectiveValue": 0.4087008208981317
+      },
+      {
+        "name": "The Conduit",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 9,
+        "flavourText": "The path to godhood is guided by the hand of sacrifice.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Doryani's Fist}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheConduit",
+        "dropWeight": 491,
+        "dropRestricted": true,
+        "baseDropChance": 0.0019075294967774018,
+        "effectiveValue": 0.7630117987109607
+      },
+      {
+        "name": "The Dapper Prodigy",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "\"Many believe murder is a grisly, grim, and grotesque crime. Then there are those who simply make art of it.\"",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Six-Link Body Armour}\n<default>{Item Level:} <normal>{100}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDapperProdigy",
+        "dropWeight": 2638,
+        "dropRestricted": true,
+        "baseDropChance": 0.010248600432787752,
+        "effectiveValue": 3.0745801298363253
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.3985959650506408E-4,
+        "effectiveValue": 0.5314664667192435
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0030147513024424925,
+        "effectiveValue": 0.6029502604884985
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.01834491707491424,
+        "effectiveValue": 1.834491707491424
+      },
+      {
+        "name": "The Lord of Celebration",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Though they were a pack of elite combatants, the Emperor's royal guards were not ready to face one of his notorious parties.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Sceptre of Celebration}\n<default>{Shaper Item}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheLordofCelebration",
+        "dropWeight": 647,
+        "dropRestricted": true,
+        "baseDropChance": 0.002513587748299346,
+        "effectiveValue": 1.256793874149673
+      },
+      {
+        "name": "The Opulent",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Wealth can, in fact, buy happiness.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Ring}\n<default>{Item Level:} <normal>{100}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheOpulecent",
+        "dropWeight": 11612,
+        "dropRestricted": true,
+        "baseDropChance": 0.04511248985046678,
+        "effectiveValue": 4.511248985046678
+      },
+      {
+        "name": "The Sephirot",
+        "chaosValue": 190.00,
+        "exaltedValue": 10.78,
+        "divineValue": 0.88,
+        "bossOnly": true,
+        "stackSize": 11,
+        "flavourText": "If the path to divinity were simple, we'd all be gods.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Divine Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheSephirot",
+        "dropWeight": 227,
+        "dropRestricted": true,
+        "baseDropChance": 8.818924557402652E-4,
+        "effectiveValue": 16.75595665906504
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.498028368188158E-4,
+        "effectiveValue": 0.14996056736376315
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.023166188165547143,
+        "effectiveValue": 2.316618816554714
+      },
+      {
+        "name": "The Unexpected Prize",
+        "chaosValue": 9.00,
+        "exaltedValue": 0.51,
+        "divineValue": 0.04,
+        "bossOnly": false,
+        "stackSize": 2,
+        "flavourText": "<size:26>{They came from far and wide under a common banner.\nThey sought companionship and competition,\nbut found a treasure none had foreseen.}",
+        "explicitModifiers": [
+          {
+            "text": "<size:29>{<uniqueitem>{Attribute Transforming Jewel}}\n<size:29>{<corrupted>{Corrupted}}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheUnexpectedPrize",
+        "dropWeight": 354,
+        "dropRestricted": true,
+        "baseDropChance": 0.0013752860322997968,
+        "effectiveValue": 1.237757429069817
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Sephirot",
+      "chaosValue": 190.00,
+      "exaltedValue": 10.78,
+      "divineValue": 0.88,
+      "bossOnly": true,
+      "stackSize": 11,
+      "flavourText": "If the path to divinity were simple, we'd all be gods.",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{10x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSephirot",
+      "dropWeight": 227,
+      "dropRestricted": true,
+      "baseDropChance": 8.818924557402652E-4,
+      "effectiveValue": 16.75595665906504
+    },
     "boss": {
-      "numberOfBosses": 0,
-      "phased": false,
+      "numberOfBosses": 1,
+      "phased": true,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "God's Chosen"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52232,19 +54151,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
-      "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "name": "The Sephirot",
+      "chaosValue": 190.00,
+      "exaltedValue": 10.78,
+      "divineValue": 0.88,
+      "bossOnly": true,
+      "stackSize": 11,
+      "flavourText": "If the path to divinity were simple, we'd all be gods.",
+      "explicitModifiers": [
+        {
+          "text": "<currencyitem>{10x Divine Orb}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheSephirot",
+      "dropWeight": 227,
+      "dropRestricted": true,
+      "baseDropChance": 8.818924557402652E-4,
+      "effectiveValue": 16.75595665906504
     }
   },
   {
@@ -52255,18 +54179,320 @@
     "locY": "1000.000",
     "name": "Pen",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.030214337512428885,
+        "effectiveValue": 3.0214337512428884
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006283595367857597,
+        "effectiveValue": 1.885078610357279
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.007180717847504131,
+        "effectiveValue": 0.7180717847504131
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 9.830967172793266E-4,
+        "effectiveValue": 0.39323868691173064
+      },
+      {
+        "name": "The Chains that Bind",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "Scarier than any criminal is an innocent man in chains, for when he breaks free, his revenge will be justified.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Six-Link Body Armour}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheChainsThatBind",
+        "dropWeight": 9468,
+        "dropRestricted": true,
+        "baseDropChance": 0.03539148182205576,
+        "effectiveValue": 3.539148182205576
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.3456837194698005E-4,
+        "effectiveValue": 0.5113598133985242
+      },
+      {
+        "name": "The Dungeon Master",
+        "chaosValue": 6.00,
+        "exaltedValue": 0.34,
+        "divineValue": 0.03,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "\"So desperate was I for control, I turned my entire world into a prison. Now you will share in my agony.\"",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Belt}\n<default>{Double-Influenced Item}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDungeonMaster",
+        "dropWeight": 395,
+        "dropRestricted": true,
+        "baseDropChance": 0.0014765140810849202,
+        "effectiveValue": 0.8859084486509522
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0029006960175237922,
+        "effectiveValue": 0.5801392035047584
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.017650884787045552,
+        "effectiveValue": 1.7650884787045553
+      },
+      {
+        "name": "The Master",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "In a world filled with chaos, he could always seek comfort in the hands of his master.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Bisco's Collar}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheMaster",
+        "dropWeight": 1294,
+        "dropRestricted": true,
+        "baseDropChance": 0.004836985369427561,
+        "effectiveValue": 1.9347941477710244
+      },
+      {
+        "name": "The Penitent",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:28>{First, I gave my wealth, and we went hungry. Next, I gave my land, and we were homeless. Then, I gave my family, and I was alone. Last, I gave my eyes, and all I could dream was mine.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Unset Ring}",
+            "optional": false
+          }
+        ],
+        "artFilename": "ThePenitent",
+        "dropWeight": 5880,
+        "dropRestricted": true,
+        "baseDropChance": 0.021979500751340076,
+        "effectiveValue": 4.395900150268015
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.214359940490876E-4,
+        "effectiveValue": 0.14428719880981752
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.022289755608884503,
+        "effectiveValue": 2.2289755608884505
+      },
+      {
+        "name": "The Warden",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "<size:31>{Brutus' first innovation as Lord Incarcerator was a weighted chain around every neck so that his prisoners would forever bow to him.}",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Amulet}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheWarden",
+        "dropWeight": 9760,
+        "dropRestricted": true,
+        "baseDropChance": 0.03648298083895904,
+        "effectiveValue": 3.648298083895904
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.3456837194698005E-4,
+      "effectiveValue": 0.5113598133985242
+    },
     "boss": {
-      "numberOfBosses": 0,
-      "phased": false,
+      "numberOfBosses": 1,
+      "phased": true,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Arwyn, The Houndmaster"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52282,19 +54508,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dungeon Master",
+      "chaosValue": 6.00,
+      "exaltedValue": 0.34,
+      "divineValue": 0.03,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 7,
+      "flavourText": "\"So desperate was I for control, I turned my entire world into a prison. Now you will share in my agony.\"",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Belt}\n<default>{Double-Influenced Item}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDungeonMaster",
+      "dropWeight": 395,
+      "dropRestricted": true,
+      "baseDropChance": 0.0014765140810849202,
+      "effectiveValue": 0.8859084486509522
     }
   },
   {
@@ -52305,18 +54536,440 @@
     "locY": "1000.000",
     "name": "Reef",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "Ambitious Obsession",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": true,
+        "stackSize": 4,
+        "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{Skittering Delirium Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AmbitiousObsession",
+        "dropWeight": 119,
+        "dropRestricted": true,
+        "baseDropChance": 4.3583198127753706E-4,
+        "effectiveValue": 0.13074959438326111
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.02960361264425489,
+        "effectiveValue": 2.960361264425489
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006156584542248234,
+        "effectiveValue": 1.8469753626744703
+      },
+      {
+        "name": "Lantador's Lost Love",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "<smaller>{They fought the storm together as one, \nUntil the longest of days was done. \nTheir love grew stronger\nwith every breath, \nUntil it was broken apart in death.}",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Two-Stone Ring}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LantadorsLostLove",
+        "dropWeight": 15301,
+        "dropRestricted": true,
+        "baseDropChance": 0.05603920290359323,
+        "effectiveValue": 5.603920290359323
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.0070355734120516695,
+        "effectiveValue": 0.703557341205167
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 9.632253031595987E-4,
+        "effectiveValue": 0.3852901212638395
+      },
+      {
+        "name": "More is Never Enough",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 7,
+        "flavourText": "Greed is a hunger that only grows as you feed it",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Gilded Scarab}",
+            "optional": false
+          }
+        ],
+        "artFilename": "MoreIsNeverEnough",
+        "dropWeight": 755,
+        "dropRestricted": true,
+        "baseDropChance": 0.002765152486256643,
+        "effectiveValue": 1.1060609945026572
+      },
+      {
+        "name": "Prosperity",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 10,
+        "flavourText": "Accumulating wealth has its own costs.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Perandus' Gold Ring}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Prosperity",
+        "dropWeight": 12193,
+        "dropRestricted": true,
+        "baseDropChance": 0.044656297039638734,
+        "effectiveValue": 4.465629703963874
+      },
+      {
+        "name": "Scholar of the Seas",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "I've never come upon a ship I could not command. I have however met sailors that were not willing to be led.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Mao Kun}",
+            "optional": false
+          }
+        ],
+        "artFilename": "ScholarOfTheSeas",
+        "dropWeight": 2094,
+        "dropRestricted": true,
+        "baseDropChance": 0.00766917788903498,
+        "effectiveValue": 2.3007533667104942
+      },
+      {
+        "name": "The Cacophony",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 8,
+        "flavourText": "Nothing can be heard above the din or seen amongst the turmoil. The senses are shattered. All is left to fate.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{3x Deafening Essence}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheCacophony",
+        "dropWeight": 177,
+        "dropRestricted": true,
+        "baseDropChance": 6.482542914800341E-4,
+        "effectiveValue": 0.2593017165920137
+      },
+      {
+        "name": "The Deep Ones",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:28>{\"The Seas Call, the Mad Answer\"}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Tidebreaker}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDeepOnes",
+        "dropWeight": 114,
+        "dropRestricted": true,
+        "baseDropChance": 4.1751971315663215E-4,
+        "effectiveValue": 0.16700788526265287
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.3184833047051543E-4,
+        "effectiveValue": 0.5010236557879587
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0028420640123644433,
+        "effectiveValue": 0.5684128024728886
+      },
+      {
+        "name": "The Formless Sea",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "Formless might,\nWild beauty tamed,\nThe brine of gods,\nThe seas restrained.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Varunastra}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheFormlessSea",
+        "dropWeight": 354,
+        "dropRestricted": true,
+        "baseDropChance": 0.0012965085829600683,
+        "effectiveValue": 0.5186034331840274
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.017294106013382604,
+        "effectiveValue": 1.7294106013382604
+      },
+      {
+        "name": "The Journey",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "Oh the places you will go, the sights you will see, the things you will meet.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{Harbinger's Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheJourney",
+        "dropWeight": 716,
+        "dropRestricted": true,
+        "baseDropChance": 0.0026223167949135846,
+        "effectiveValue": 0.7866950384740754
+      },
+      {
+        "name": "The Mad King",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "Fear the man who lusts for power, for he will do anything to get it.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Ultimatum Aspect}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheMadKing",
+        "dropWeight": 482,
+        "dropRestricted": true,
+        "baseDropChance": 0.0017653026468552342,
+        "effectiveValue": 0.7061210587420936
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.068535494669299E-4,
+        "effectiveValue": 0.141370709893386
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.021839210960991208,
+        "effectiveValue": 2.183921096099121
+      },
+      {
+        "name": "The Vast",
+        "chaosValue": 12.00,
+        "exaltedValue": 0.68,
+        "divineValue": 0.06,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "<size:30>{Can you hear the siren's calls,\nJust beyond the sea?\nA voice which hearts\nof men enthralls,\nI too am hooked to thee.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Song of the Sirens}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheVast",
+        "dropWeight": 11,
+        "dropRestricted": true,
+        "baseDropChance": 4.0286989865990824E-5,
+        "effectiveValue": 0.04834438783918899
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.3184833047051543E-4,
+      "effectiveValue": 0.5010236557879587
+    },
     "boss": {
-      "numberOfBosses": 0,
-      "phased": false,
+      "numberOfBosses": 1,
+      "phased": true,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Nassar, Lion of the Seas"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52332,19 +54985,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.3184833047051543E-4,
+      "effectiveValue": 0.5010236557879587
     }
   },
   {
@@ -52355,18 +55013,380 @@
     "locY": "1000.000",
     "name": "Summit",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "A Chilling Wind",
+        "chaosValue": 8.00,
+        "exaltedValue": 0.45,
+        "divineValue": 0.04,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "<size:26>{All things slow under winter's \nonslaught - even life itself.}",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Vaal Cold Snap}\n<default>{Quality:} <augmented>{+20%}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AChillingWind",
+        "dropWeight": 100,
+        "dropRestricted": true,
+        "baseDropChance": 3.888705255585153E-4,
+        "effectiveValue": 0.31109642044681224
+      },
+      {
+        "name": "Ambitious Obsession",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": true,
+        "stackSize": 4,
+        "flavourText": "The most pathetic person in the world is someone who has sight, but no vision.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{Skittering Delirium Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AmbitiousObsession",
+        "dropWeight": 119,
+        "dropRestricted": true,
+        "baseDropChance": 4.627559254146332E-4,
+        "effectiveValue": 0.13882677762438997
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.03143240458089479,
+        "effectiveValue": 3.143240458089479
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.0065369135346386425,
+        "effectiveValue": 1.9610740603915926
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.007470202795979079,
+        "effectiveValue": 0.747020279597908
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 0.0010227294822188952,
+        "effectiveValue": 0.4090917928875581
+      },
+      {
+        "name": "Mitts",
+        "chaosValue": 1.30,
+        "exaltedValue": 0.07,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Those whose hands are their livelihood know the importance of keeping them safe and warm.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Gloves}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Mitts",
+        "dropWeight": 5821,
+        "dropRestricted": true,
+        "baseDropChance": 0.022636153292761176,
+        "effectiveValue": 2.942699928058953
+      },
+      {
+        "name": "More is Never Enough",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 7,
+        "flavourText": "Greed is a hunger that only grows as you feed it",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Gilded Scarab}",
+            "optional": false
+          }
+        ],
+        "artFilename": "MoreIsNeverEnough",
+        "dropWeight": 755,
+        "dropRestricted": true,
+        "baseDropChance": 0.0029359724679667906,
+        "effectiveValue": 1.1743889871867161
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.399933892010655E-4,
+        "effectiveValue": 0.5319748789640489
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0030176352783340787,
+        "effectiveValue": 0.6035270556668157
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.018362466216873093,
+        "effectiveValue": 1.8362466216873092
+      },
+      {
+        "name": "The Mountain",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "<size:28>{Charmed by beautiful stones \nConsumed with the \npursuit of perfection \nEver deeper into the waiting dark}",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Jewel of Potency}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheMountain",
+        "dropWeight": 5427,
+        "dropRestricted": true,
+        "baseDropChance": 0.021104003422060626,
+        "effectiveValue": 4.220800684412125
+      },
+      {
+        "name": "The Ruthless Ceinture",
+        "chaosValue": 2.40,
+        "exaltedValue": 0.14,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "In combat, a warrior must first be resourceful,\nand second, decisive.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Meginord's Girdle}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheRuthlessCeinture",
+        "dropWeight": 2576,
+        "dropRestricted": true,
+        "baseDropChance": 0.010017304738387354,
+        "effectiveValue": 2.404153137212965
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.505201143279346E-4,
+        "effectiveValue": 0.1501040228655869
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.023188349439054266,
+        "effectiveValue": 2.3188349439054265
+      },
+      {
+        "name": "The Wind",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "<size:33>{Weaving through the cracks, searching for weaknesses, silent, indiscriminate, leaving sorrow in its wake.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Windripper}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheWind",
+        "dropWeight": 422,
+        "dropRestricted": true,
+        "baseDropChance": 0.0016410336178569345,
+        "effectiveValue": 0.6564134471427738
+      },
+      {
+        "name": "The Wolverine",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Claw them from the bottom, you'll be glad that you have got 'em, claw them from the top, you'll never want to stop.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Claw}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheWolverine",
+        "dropWeight": 1210,
+        "dropRestricted": true,
+        "baseDropChance": 0.004705333359258035,
+        "effectiveValue": 1.882133343703214
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.399933892010655E-4,
+      "effectiveValue": 0.5319748789640489
+    },
     "boss": {
-      "numberOfBosses": 0,
+      "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Mephod, the Earth Scorcher"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52382,19 +55402,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.399933892010655E-4,
+      "effectiveValue": 0.5319748789640489
     }
   },
   {
@@ -52405,18 +55430,420 @@
     "locY": "1000.000",
     "name": "Vault",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "A Stone Perfected",
+        "chaosValue": 8.00,
+        "exaltedValue": 0.45,
+        "divineValue": 0.04,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:28>{They gave the stone life. Over eons spent bathed in Corruption, that life evolved.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Jewel}\n<magicitem>{Primordial}\n<corrupted>{1-2 Implicit}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AStonePerfected",
+        "dropWeight": 159,
+        "dropRestricted": true,
+        "baseDropChance": 5.97811783283829E-4,
+        "effectiveValue": 0.4782494266270632
+      },
+      {
+        "name": "Further Invention",
+        "chaosValue": 9.00,
+        "exaltedValue": 0.51,
+        "divineValue": 0.04,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Why not both?",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Helmet}\n<default>{Double-Influenced Item}\n<default>{Item Level:} <normal>{100}",
+            "optional": false
+          }
+        ],
+        "artFilename": "FurtherInvention",
+        "dropWeight": 2,
+        "dropRestricted": true,
+        "baseDropChance": 7.519645072752566E-6,
+        "effectiveValue": 0.006767680565477309
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.030390645561529497,
+        "effectiveValue": 3.0390645561529497
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006320261683648532,
+        "effectiveValue": 1.8960785050945597
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.007222619092378839,
+        "effectiveValue": 0.7222619092378839
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 9.888333270669624E-4,
+        "effectiveValue": 0.395533330826785
+      },
+      {
+        "name": "More is Never Enough",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 7,
+        "flavourText": "Greed is a hunger that only grows as you feed it",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Gilded Scarab}",
+            "optional": false
+          }
+        ],
+        "artFilename": "MoreIsNeverEnough",
+        "dropWeight": 755,
+        "dropRestricted": true,
+        "baseDropChance": 0.002838666014964094,
+        "effectiveValue": 1.1354664059856376
+      },
+      {
+        "name": "Terrible Secret of Space",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 8,
+        "flavourText": "They said they were here to protect us.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Golem Gem}\n<default>{Any Quality Type:} <augmented>{+23%}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TerribleSecretOfSpace",
+        "dropWeight": 211,
+        "dropRestricted": true,
+        "baseDropChance": 7.933225551753957E-4,
+        "effectiveValue": 0.3173290220701583
+      },
+      {
+        "name": "The Cache",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 6,
+        "flavourText": "<size:23>{Vintage or crafted, Glittering and shiny\nDusty or glittering, huge or tiny\nSecured within a chest \nor unearthed from your mining\nFind jewellery everywhere, \nno need for divining!\nSo why is it so hard \nto figure out which one to wear?\nThis one makes me stronger, \nbut does it match my hair?}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Jewellery}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheCache",
+        "dropWeight": 6166,
+        "dropRestricted": true,
+        "baseDropChance": 0.02318306575929616,
+        "effectiveValue": 2.318306575929616
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.353536113095462E-4,
+        "effectiveValue": 0.5143437229762755
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.0029176222882279956,
+        "effectiveValue": 0.5835244576455991
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.017753882016768807,
+        "effectiveValue": 1.7753882016768807
+      },
+      {
+        "name": "The Hoarder",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 12,
+        "flavourText": "\"More! I want more!\" - Faendris, the Insatiable",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{Exalted Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheHoarder",
+        "dropWeight": 2812,
+        "dropRestricted": true,
+        "baseDropChance": 0.010572620972290107,
+        "effectiveValue": 2.1145241944580215
+      },
+      {
+        "name": "The Lord of Celebration",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "Though they were a pack of elite combatants, the Emperor's royal guards were not ready to face one of his notorious parties.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Sceptre of Celebration}\n<default>{Shaper Item}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheLordofCelebration",
+        "dropWeight": 647,
+        "dropRestricted": true,
+        "baseDropChance": 0.0024326051810354553,
+        "effectiveValue": 1.2163025905177276
+      },
+      {
+        "name": "The Opulent",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Wealth can, in fact, buy happiness.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Ring}\n<default>{Item Level:} <normal>{100}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheOpulecent",
+        "dropWeight": 11612,
+        "dropRestricted": true,
+        "baseDropChance": 0.0436590592924014,
+        "effectiveValue": 4.3659059292401405
+      },
+      {
+        "name": "The Primordial",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "We play at God with our necromancy, \nbut forces far more potent \nsleep within these stones.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Jewel}\n<magicitem>{Primordial}",
+            "optional": false
+          }
+        ],
+        "artFilename": "ThePrimordial",
+        "dropWeight": 689,
+        "dropRestricted": true,
+        "baseDropChance": 0.002590517727563259,
+        "effectiveValue": 1.2952588637816294
+      },
+      {
+        "name": "The Rite of Elements",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:29>{A mind as quick as lightning, \nfists as hard as stone, \na heart that burns with fury, \nand eyes that chill to the bone.}",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Golem Gem}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheRiteofElements",
+        "dropWeight": 2192,
+        "dropRestricted": true,
+        "baseDropChance": 0.008241530999736813,
+        "effectiveValue": 3.296612399894725
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.256457495206227E-4,
+        "effectiveValue": 0.14512914990412454
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.022419821784411775,
+        "effectiveValue": 2.2419821784411775
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.353536113095462E-4,
+      "effectiveValue": 0.5143437229762755
+    },
     "boss": {
-      "numberOfBosses": 0,
+      "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Guardian of the Vault"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52432,19 +55859,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.353536113095462E-4,
+      "effectiveValue": 0.5143437229762755
     }
   },
   {
@@ -52455,18 +55887,320 @@
     "locY": "1000.000",
     "name": "Waterways",
     "uniqueMap": false,
-    "divinationCards": [],
+    "divinationCards": [
+      {
+        "name": "A Stone Perfected",
+        "chaosValue": 8.00,
+        "exaltedValue": 0.45,
+        "divineValue": 0.04,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:28>{They gave the stone life. Over eons spent bathed in Corruption, that life evolved.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Jewel}\n<magicitem>{Primordial}\n<corrupted>{1-2 Implicit}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AStonePerfected",
+        "dropWeight": 159,
+        "dropRestricted": true,
+        "baseDropChance": 6.387953685326991E-4,
+        "effectiveValue": 0.5110362948261593
+      },
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 8083,
+        "dropRestricted": true,
+        "baseDropChance": 0.03247410669087929,
+        "effectiveValue": 3.2474106690879285
+      },
+      {
+        "name": "Hope",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.17,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:31>{The others succumbed to madness and depravity, but Lori fought on. Alone in the darkness, she could still see the dull light of hope's distant dawn.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Prismatic Ring}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Hope",
+        "dropWeight": 1681,
+        "dropRestricted": true,
+        "baseDropChance": 0.006753553550336271,
+        "effectiveValue": 2.0260660651008813
+      },
+      {
+        "name": "Humility",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Tabula Rasa}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Humility",
+        "dropWeight": 4930,
+        "dropRestricted": true,
+        "baseDropChance": 0.01980667400544784,
+        "effectiveValue": 3.961334801089568
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1921,
+        "dropRestricted": true,
+        "baseDropChance": 0.0077177729745365724,
+        "effectiveValue": 0.7717772974536572
+      },
+      {
+        "name": "Lucky Deck",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "When the outcome is the same, does it matter if it is fortune or trickery?",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Stacked Deck}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LuckyDeck",
+        "dropWeight": 263,
+        "dropRestricted": false,
+        "baseDropChance": 0.0010566237856861626,
+        "effectiveValue": 0.42264951427446507
+      },
+      {
+        "name": "Terrible Secret of Space",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 8,
+        "flavourText": "They said they were here to protect us.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Golem Gem}\n<default>{Any Quality Type:} <augmented>{+23%}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TerribleSecretOfSpace",
+        "dropWeight": 211,
+        "dropRestricted": true,
+        "baseDropChance": 8.477095771094309E-4,
+        "effectiveValue": 0.33908383084377236
+      },
+      {
+        "name": "The Dragon's Heart",
+        "chaosValue": 38.00,
+        "exaltedValue": 2.16,
+        "divineValue": 0.18,
+        "bossOnly": false,
+        "stackSize": 11,
+        "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDragonsHeart",
+        "dropWeight": 36,
+        "dropRestricted": true,
+        "baseDropChance": 1.4463291363004508E-4,
+        "effectiveValue": 0.5496050717941713
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 776,
+        "dropRestricted": true,
+        "baseDropChance": 0.003117642804914305,
+        "effectiveValue": 0.6235285609828609
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 4722,
+        "dropRestricted": true,
+        "baseDropChance": 0.018971017171140914,
+        "effectiveValue": 1.8971017171140914
+      },
+      {
+        "name": "The Primordial",
+        "chaosValue": 5.00,
+        "exaltedValue": 0.28,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "We play at God with our necromancy, \nbut forces far more potent \nsleep within these stones.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Jewel}\n<magicitem>{Primordial}",
+            "optional": false
+          }
+        ],
+        "artFilename": "ThePrimordial",
+        "dropWeight": 689,
+        "dropRestricted": true,
+        "baseDropChance": 0.002768113263641696,
+        "effectiveValue": 1.384056631820848
+      },
+      {
+        "name": "The Rite of Elements",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "<size:29>{A mind as quick as lightning, \nfists as hard as stone, \na heart that burns with fury, \nand eyes that chill to the bone.}",
+        "explicitModifiers": [
+          {
+            "text": "<gemitem>{Level 21 Golem Gem}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheRiteofElements",
+        "dropWeight": 2192,
+        "dropRestricted": true,
+        "baseDropChance": 0.008806537407696078,
+        "effectiveValue": 3.522614963078431
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.11,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 193,
+        "dropRestricted": true,
+        "baseDropChance": 7.753931202944083E-4,
+        "effectiveValue": 0.15507862405888168
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.06,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 5963,
+        "dropRestricted": true,
+        "baseDropChance": 0.0239568351104433,
+        "effectiveValue": 2.39568351104433
+      }
+    ],
     "filterTags": [],
     "additionalTags": [],
     "active": false,
-    "highestValueDivinationCard": null,
+    "highestValueDivinationCard": {
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
+      "bossOnly": false,
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.4463291363004508E-4,
+      "effectiveValue": 0.5496050717941713
+    },
     "boss": {
-      "numberOfBosses": 0,
+      "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
       "spawned": false,
       "bossArena": false,
-      "names": [],
+      "names": [
+        "Fragment of Winter"
+      ],
       "notes": null,
       "introPhase": false
     },
@@ -52482,19 +56216,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
+      "name": "The Dragon's Heart",
+      "chaosValue": 38.00,
+      "exaltedValue": 2.16,
+      "divineValue": 0.18,
       "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
+      "stackSize": 11,
+      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "explicitModifiers": [
+        {
+          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheDragonsHeart",
+      "dropWeight": 36,
+      "dropRestricted": true,
+      "baseDropChance": 1.4463291363004508E-4,
+      "effectiveValue": 0.5496050717941713
     }
   }
 ]
