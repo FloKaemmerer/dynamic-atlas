@@ -14563,8 +14563,8 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
-      "skippablePhases": false,
+      "phased": true,
+      "skippablePhases": true,
       "spawned": true,
       "bossArena": false,
       "names": [
@@ -28287,8 +28287,8 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [],
       "notes": null,
       "introPhase": false
@@ -53080,8 +53080,8 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [
         "Rek'tar, the Breaker"
       ],
@@ -53089,14 +53089,14 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 7,
+      "traversability": 9,
+      "backtrackFactor": 2,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 6
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -53417,8 +53417,8 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [
         "Fire and Fury"
       ],
@@ -53426,14 +53426,14 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 6,
+      "traversability": 2,
+      "backtrackFactor": 1,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 2
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -53714,7 +53714,7 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [
         "Tunneltrap"
@@ -53723,14 +53723,14 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
-      "rushableBoss": false,
+      "linearity": 6,
+      "traversability": 9,
+      "backtrackFactor": 1,
+      "rushableBoss": true,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 9
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -54131,23 +54131,23 @@
       "numberOfBosses": 1,
       "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [
         "God's Chosen"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 3,
+      "traversability": 5,
+      "backtrackFactor": 8,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 4
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -54488,23 +54488,23 @@
       "numberOfBosses": 1,
       "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [
         "Arwyn, The Houndmaster"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 9,
+      "traversability": 4,
+      "backtrackFactor": 1,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 1
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -54965,23 +54965,23 @@
       "numberOfBosses": 1,
       "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [
         "Nassar, Lion of the Seas"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 2,
+      "traversability": 8,
+      "backtrackFactor": 5,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 8
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -55380,25 +55380,25 @@
     },
     "boss": {
       "numberOfBosses": 1,
-      "phased": false,
+      "phased": true,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [
         "Mephod, the Earth Scorcher"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 1,
+      "traversability": 7,
+      "backtrackFactor": 6,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 7
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -55839,23 +55839,23 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
-      "bossArena": false,
+      "spawned": true,
+      "bossArena": true,
       "names": [
         "Guardian of the Vault"
       ],
       "notes": null,
-      "introPhase": false
+      "introPhase": true
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 8,
+      "traversability": 7,
+      "backtrackFactor": 2,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 4
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
@@ -56196,7 +56196,7 @@
       "numberOfBosses": 1,
       "phased": false,
       "skippablePhases": false,
-      "spawned": false,
+      "spawned": true,
       "bossArena": false,
       "names": [
         "Fragment of Winter"
@@ -56205,14 +56205,14 @@
       "introPhase": false
     },
     "nodeLayout": {
-      "linearity": 0,
-      "traversability": 0,
-      "backtrackFactor": 0,
+      "linearity": 9,
+      "traversability": 8,
+      "backtrackFactor": 2,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 5,
       "terrainSlots": 0,
-      "openness": 0
+      "openness": 1
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
