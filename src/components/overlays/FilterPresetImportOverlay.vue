@@ -2,15 +2,17 @@
 import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
 import type { Filter } from '@/model/filter/filter'
+import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 
 interface PropsInterface {
   toggle: boolean
 }
 
-const props = defineProps<PropsInterface>()
+defineProps<PropsInterface>()
 
 const emit = defineEmits(['update:toggle'])
 const filterStore = useFilterStore()
+const activeFiltersStore = useActiveFiltersStore()
 
 const filterPreset = ref<string>('')
 
@@ -21,11 +23,27 @@ function addPresetToFilters() {
       if (preset.startsWith('[') && preset.endsWith(']')) {
         const filters: Filter[] = JSON.parse(preset)
         console.log(filters)
-        filters.forEach(filter => filterStore.filtersMap.set(filter.id, filter))
+        filters.map(filter => filterStore.filtersMap.set(filter.id, filter))
+
+        activeFiltersStore.activeFiltersMap = new Map()
+        filters.map(filter => activeFiltersStore.activeFiltersMap.set(filter.id, {
+          id: filter.id,
+          activeMapFilters: [],
+          activeTextFilters: [],
+          activeBossFilters: [],
+          activeDivinationCardFilters: [],
+        }))
       }
       else {
         const filter: Filter = JSON.parse(preset)
         filterStore.filtersMap.set(filter.id, filter)
+        activeFiltersStore.activeFiltersMap.set(filter.id, {
+          id: filter.id,
+          activeMapFilters: [],
+          activeTextFilters: [],
+          activeBossFilters: [],
+          activeDivinationCardFilters: [],
+        })
         console.log(filter)
       }
     }

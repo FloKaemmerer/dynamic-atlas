@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { getNumberOfActiveFilters } from '../../composable/filter/filter-utils'
+import { getNumberOfActiveFilters } from '@/composable/filter/filter-utils'
 import { useFilterStore } from '@/store/FilterStore'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import FilterSharingOverlay from '@/components/overlays/FilterSharingOverlay.vue'
@@ -14,7 +14,6 @@ const selectedTab = ref(0)
 
 const showOverlay = ref(false)
 const selectedFilterId = ref(filterStore.selectedFilter.id)
-const showFilterPresetImportOverly = ref(false)
 const showFilterShareOverly = ref(false)
 
 function toggleOverlay(filterId: number) {
@@ -48,7 +47,7 @@ function openInNewTab(url: string) {
       <v-tab
         v-for="[id, filter] in filterStore.filtersMap"
         :key="id"
-        :value="filter.name"
+        :value="id"
         class="text-offwhite"
         @click="filterStore.selectedFilter = filter"
       >
