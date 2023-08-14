@@ -3,7 +3,6 @@ import { ref } from 'vue'
 import { getNumberOfActiveFilters } from '../../composable/filter/filter-utils'
 import { useFilterStore } from '@/store/FilterStore'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
-import FilterPresetImportOverlay from '@/components/overlays/FilterPresetImportOverlay.vue'
 import FilterSharingOverlay from '@/components/overlays/FilterSharingOverlay.vue'
 import MainFilterMenu from '@/components/header/MainFilterMenu.vue'
 import FilterDrawerToggle from '@/components/header/FilterDrawerToggle.vue'
@@ -169,6 +168,5 @@ function openInNewTab(url: string) {
     </v-btn>
   </v-app-bar>
   <ColorPickerOverlay v-model:toggle="showOverlay" v-model:filter-id="selectedFilterId" />
-  <FilterPresetImportOverlay v-model:toggle="showFilterPresetImportOverly" />
   <FilterSharingOverlay v-model:toggle="showFilterShareOverly" />
 </template>

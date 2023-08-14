@@ -41,10 +41,12 @@ function getUrl() {
 
 function copyPreset() {
   copyToClipBoard(getFilterPreset())
+  // TODO show Toast that Preset was copied to clipboard
 }
 
 function copyUrl() {
   copyToClipBoard(getFilterPreset())
+  // TODO show Toast that URL was copied to clipboard
 }
 </script>
 

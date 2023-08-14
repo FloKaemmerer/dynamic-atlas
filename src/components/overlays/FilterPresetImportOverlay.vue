@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
+import type { Filter } from '@/model/filter/filter'
 
 interface PropsInterface {
   toggle: boolean
@@ -9,6 +11,30 @@ const props = defineProps<PropsInterface>()
 
 const emit = defineEmits(['update:toggle'])
 const filterStore = useFilterStore()
+
+const filterPreset = ref<string>('')
+
+function addPresetToFilters() {
+  try {
+    const preset = filterPreset.value
+    if (preset) {
+      if (preset.startsWith('[') && preset.endsWith(']')) {
+        const filters: Filter[] = JSON.parse(preset)
+        console.log(filters)
+        filters.forEach(filter => filterStore.filtersMap.set(filter.id, filter))
+      }
+      else {
+        const filter: Filter = JSON.parse(preset)
+        filterStore.filtersMap.set(filter.id, filter)
+        console.log(filter)
+      }
+    }
+  }
+  catch (e) {
+    console.log(e)
+    // TODO show Toast that adding failed
+  }
+}
 </script>
 
 <template>
@@ -17,8 +43,10 @@ const filterStore = useFilterStore()
       <v-card-text>
         <v-container>
           <h1>Paste Filter Preset(s)</h1>
-          <v-textarea />
-          <v-btn>Add</v-btn>
+          <v-textarea v-model="filterPreset" />
+          <v-btn @click="addPresetToFilters()">
+            Add
+          </v-btn>
         </v-container>
       </v-card-text>
     </v-card>
