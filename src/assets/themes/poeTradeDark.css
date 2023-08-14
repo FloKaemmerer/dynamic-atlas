@@ -9,10 +9,30 @@
     border-left-width: var(--v-theme-border-xs) !important;
 }
 .v-theme--poeTradeThemeDark .cursor-help {
-  cursor: help;
+    cursor: help;
+}
+.v-theme--poeTradeThemeDark .valuable-card {
+    padding: 0px 8px;
+    background-color: #fff;
+    border-style: solid;
+    border-width: var(--v-theme-border-xs);
+    border-color: rgb(var(--v-theme-error));
+    color: rgb(var(--v-theme-error));
+}
+.v-theme--poeTradeThemeDark .normal-card {
+    padding: 0px 8px;
+    background-color: rgb(180, 76, 58);
+    border-style: solid;
+    border-width: var(--v-theme-border-xs);
+    border-color: #000;
+    color: #000;
 }
 
-
+/* ---------------- Typography ---------------- */
+.v-theme--poeTradeThemeDark .text-overline {
+  letter-spacing: 0.05em !important;
+  font-size:0.85rem !important;
+}
 
 /* ---------------- Button ---------------- */
 .v-theme--poeTradeThemeDark.v-btn.v-btn--flat{
@@ -86,5 +106,11 @@
 .v-tooltip > .v-overlay__content{
     color: rgb(var(--v-theme-offwhite));
     background-color: rgb(var(--v-theme-gray));
+    border-radius: 0px;
+}
+.v-tooltip.divination-card > .v-overlay__content{
+    padding:0px;
+    color: rgb(var(--v-theme-offwhite));
+    background-color: rgba(0,0,0,0.9);
     border-radius: 0px;
 }
