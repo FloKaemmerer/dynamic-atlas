@@ -9,7 +9,6 @@ const detailsDrawerStore = useDetailsDrawerStore();
 const atlasNodeStore = useAtlasNodeStore();
 
 export function handleAtlasNodeClicked(atlasNode: AtlasNode) {
-    console.log(atlasNode)
     if (atlasMemoryNodeStore.atlasMemoryModeEnabled) {
         calculateAtlasMemoryPaths(atlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
     } else {
