@@ -6,5 +6,5 @@ export interface Boss {
   spawned: boolean
   bossArena: boolean
   names: string[]
-  notes: string
+  notes: any
 }

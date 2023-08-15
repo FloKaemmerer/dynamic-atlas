@@ -18,5 +18,5 @@ export interface AtlasNode {
   highestEffectiveValueDivinationCard: DivinationCard
   boss: Boss
   nodeLayout: Layout
-  notes: string
+  notes: any
 }
