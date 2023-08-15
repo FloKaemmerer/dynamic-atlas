@@ -12,13 +12,13 @@ const filterStore = useFilterStore()
 const activeFiltersStore = useActiveFiltersStore()
 const selectedTab = ref(0)
 
-const showOverlay = ref(false)
 const selectedFilterId = ref(filterStore.selectedFilter.id)
+const showColorPickerOverlay = ref(false)
 const showFilterShareOverly = ref(false)
 
-function toggleOverlay(filterId: number) {
+function toggleColorPickerOverlay(filterId: number) {
   selectedFilterId.value = filterId
-  showOverlay.value = !showOverlay.value
+  showColorPickerOverlay.value = !showColorPickerOverlay.value
 }
 
 function deleteFilter(filterId: number) {
@@ -113,7 +113,7 @@ function openInNewTab(url: string) {
                     class="text-offwhite"
                     icon="mdi-pencil-outline"
                     v-bind="props"
-                    @click="toggleOverlay(id)"
+                    @click="toggleColorPickerOverlay(id)"
                   />
                 </template>
                 <p>Edit Filter Settings</p>
@@ -166,6 +166,6 @@ function openInNewTab(url: string) {
       Github
     </v-btn>
   </v-app-bar>
-  <ColorPickerOverlay v-model:toggle="showOverlay" v-model:filter-id="selectedFilterId" />
+  <ColorPickerOverlay v-model:toggle="showColorPickerOverlay" v-model:filter-id="selectedFilterId" />
   <FilterSharingOverlay v-model:toggle="showFilterShareOverly" />
 </template>
