@@ -43,7 +43,8 @@ defineProps<PropsInterface>()
                   Backtrack Factor:
                 </v-col>
                 <v-col>
-                  tbd
+                  The Backtrack Factor describes the "how much" Backtracking you have to do to full clear a map.<br>
+                  A low Backtrack factor (eg. Strand) means, that a map can be cleared without the need to backtrack
                 </v-col>
               </v-row>
               <v-row>
@@ -51,7 +52,8 @@ defineProps<PropsInterface>()
                   Linearity:
                 </v-col>
                 <v-col>
-                  tbd
+                  The Linearity describes if a Map can be clear in a Linear, predictable way with low deviation.
+                  High linearity is a map with a single more or less narrow path to be followed ex. Alleyways or Malformation
                 </v-col>
               </v-row>
               <v-row>
@@ -59,7 +61,9 @@ defineProps<PropsInterface>()
                   Terrain Slots:
                 </v-col>
                 <v-col>
-                  tbd
+                  A Terrain Slot is a possible Spawn Location for a League mechanic<br>
+                  Depending on the Tileset and generated Layout, a map can only hold a certain amount of mechanics that occupy a Terrain Slot.<br>
+                  Some Maps tend to have a larger amount of possible Terrain Slots than others.
                 </v-col>
               </v-row>
               <v-row>
@@ -67,7 +71,7 @@ defineProps<PropsInterface>()
                   Rushable Boss:
                 </v-col>
                 <v-col>
-                  tbd
+                  A Boss is Rushable if it can be quickly, easily and predictably be reached, eg. Mesa, Dunes
                 </v-col>
               </v-row>
               <v-row>
@@ -75,7 +79,7 @@ defineProps<PropsInterface>()
                   Phased Boss:
                 </v-col>
                 <v-col>
-                  tbd
+                  Some Map Bosses have Phases during which they can't be damaged, those Bosses are considered as "Phased Bosses"
                 </v-col>
               </v-row>
               <v-row>
@@ -83,7 +87,7 @@ defineProps<PropsInterface>()
                   Skippable Phases:
                 </v-col>
                 <v-col>
-                  tbd
+                  If a Boss has Phase during which it can't be damage, but this phase can be skipped/prevented (eg if you kill them fast enough), the phases are considered skippable
                 </v-col>
               </v-row>
               <v-row>
@@ -91,13 +95,10 @@ defineProps<PropsInterface>()
                   Spawn Intro Phase:
                 </v-col>
                 <v-col>
-                  tbd
+                  Some Bosses have an animation at the start of the fight during which they can't be damaged (eg. The Bosses from Tower, Waste Pool)
                 </v-col>
               </v-row>
             </v-col>
-            <!--                        <v-col> -->
-
-            <!--                        </v-col> -->
             <v-col>
               <v-row>
                 <v-col cols="3">
