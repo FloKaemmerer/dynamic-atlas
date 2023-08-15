@@ -36,19 +36,20 @@ function openInNewTab(url: string) {
 </script>
 
 <template>
-  <v-app-bar density="compact" color="#282828" elevation="0">
+  <v-app-bar density="compact" color="black" elevation="0">
     <FilterDrawerToggle />
     <MainFilterMenu @update:selected-tab="value => selectedTab = value" />
     <v-tabs
       v-model="selectedTab"
       show-arrows
-      bg-color="grey-darken-5"
+      bg-color="black"
     >
       <v-tab
         v-for="[id, filter] in filterStore.filtersMap"
         :key="id"
         :value="id"
         class="text-offwhite"
+        :class="{ 'bg-accent text-accent-light': filterStore.selectedFilter === filter }"
         :slider-color="filter.color"
         @click="filterStore.selectedFilter = filter"
       >
@@ -89,9 +90,11 @@ function openInNewTab(url: string) {
               class="text-offwhite"
             />
           </template>
-          <v-list>
-            <v-list-item>
-              <v-tooltip>
+          <v-list class="text-offwhite" bg-color="black" density="compact">
+            <v-list-item @click="clearAllFiltersFromFilter(id)">
+              <v-icon icon="mdi-close-circle" class="mr-1" />
+              Clear
+              <!-- <v-tooltip>
                 <template #activator="{ props }">
                   <v-btn
                     variant="text"
@@ -103,11 +106,13 @@ function openInNewTab(url: string) {
                   />
                 </template>
                 <p>Clear Filter</p>
-              </v-tooltip>
+              </v-tooltip> -->
             </v-list-item>
 
-            <v-list-item>
-              <v-tooltip>
+            <v-list-item @click="toggleColorPickerOverlay(id)">
+              <v-icon icon="mdi-pencil-outline" class="mr-1" />
+              Edit
+              <!-- <v-tooltip>
                 <template #activator="{ props }">
                   <v-btn
                     variant="text"
@@ -119,11 +124,13 @@ function openInNewTab(url: string) {
                   />
                 </template>
                 <p>Edit Filter Settings</p>
-              </v-tooltip>
+              </v-tooltip> -->
             </v-list-item>
 
-            <v-list-item>
-              <v-tooltip>
+            <v-list-item :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)">
+              <v-icon icon="mdi-trash-can-outline" class="mr-1" />
+              Delete
+              <!-- <v-tooltip>
                 <template #activator="{ props }">
                   <v-btn
                     variant="text"
@@ -135,7 +142,7 @@ function openInNewTab(url: string) {
                   />
                 </template>
                 <p>Delete Filter</p>
-              </v-tooltip>
+              </v-tooltip> -->
             </v-list-item>
           </v-list>
         </v-menu>
@@ -155,14 +162,14 @@ function openInNewTab(url: string) {
     </v-tooltip>
     |
     <v-btn
-      variant="text" color="grey-lighten-4" role="link"
+      variant="plain" color="offwhite" role="link"
       @click="openInNewTab('https://poeAtlas.app/atlasNodes.json')"
     >
       Raw Data
     </v-btn>
     |
     <v-btn
-      variant="text" color="grey-lighten-4" role="link"
+      variant="plain" color="offwhite" role="link"
       @click="openInNewTab('https://github.com/FloKaemmerer/dynamic-atlas')"
     >
       Github
