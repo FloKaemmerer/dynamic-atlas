@@ -16,7 +16,7 @@ const filterStore = useFilterStore()
     color="#FFF8E1"
     bg-color="grey-darken-4"
     :hide-details="true"
-    clearable
+    :clearable="true"
   />
 </template>
 
