@@ -34,9 +34,9 @@ const toggleChangelogOverlay = ref(false)
           Glossary
         </v-btn>
         |
-        <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
-          Changelog
-        </v-btn>
+        <!--        <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay"> -->
+        <!--          Changelog -->
+        <!--        </v-btn> -->
       </v-col>
       <v-col cols="6">
         <small>© {{ new Date().getFullYear() }} PoeAtlas.app. All Rights Reserved.</small>
