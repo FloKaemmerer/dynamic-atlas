@@ -58,6 +58,7 @@ import { getAtlasMemoriesKonvaImage } from '@/composable/atlasMemories/atlas-mem
 import { getVoiodStoneKonvaImage } from '@/composable/voidstones/voidstone-image'
 import { getAtlasMemoriesSourceHighlightArea } from '@/composable/atlasMemories/atlas-memories-source-highlight-area'
 import { getAtlasMemoryLine } from '@/composable/atlasMemories/atlas-memory-line'
+import { getFilterHighlightWedge } from '@/composable/shapes/atlas-node-filter-highlight-Wedge'
 
 const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
 const minWidth = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_WIDTH}`)
@@ -423,16 +424,7 @@ atlasNodeStore.$subscribe((mutation, state) => {
       if (atlasNode) {
         for (let i = 0; i < value.length; i++) {
           const point = atlasNodeToPoint(atlasNode, true)
-          const wedge = new Konva.Wedge({
-            x: point.x,
-            y: point.y,
-            radius: 20,
-            angle: 360 / value.length,
-            fill: value[i],
-            stroke: 'black',
-            strokeWidth: 1,
-            rotation: 360 / value.length * i,
-          })
+          const wedge = getFilterHighlightWedge(point, value.length, i, value[i])
           filterHighlightGroup.add(wedge)
         }
       }
