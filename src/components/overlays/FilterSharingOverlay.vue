@@ -39,57 +39,72 @@ function getUrl() {
   }
 }
 
+const presetSnackbar = ref(false)
 function copyPreset() {
   copyToClipBoard(getFilterPreset())
-  // TODO show Toast that Preset was copied to clipboard
+  presetSnackbar.value = true
 }
 
+const urlSnackbar = ref(false)
 function copyUrl() {
   copyToClipBoard(getFilterPreset())
-  // TODO show Toast that URL was copied to clipboard
+  urlSnackbar.value = true
 }
 </script>
 
 <template>
-  <v-dialog :model-value="toggle" width="700" @update:modelValue="emit('update:toggle', $event)">
-    <v-card>
+  <v-dialog :model-value="toggle" width="500" @update:modelValue="emit('update:toggle', $event)">
+    <v-card color="black" class="text-offwhite pb-8 pt-2">
+      <v-card-title>
+        Select Filters to include
+      </v-card-title>
       <v-card-text>
-        <v-container :fluid="true">
-          <h1>Select Filters to Include</h1>
-          <li v-for="[id, filter] in filterStore.filtersMap" :key="id">
-            <v-checkbox
-              v-model="filtersToInclude"
-              :value="filter.id"
+        <div v-for="[id, filter] in filterStore.filtersMap" :key="id">
+          <v-checkbox
+            v-model="filtersToInclude"
+            :value="filter.id"
+          >
+            <template #label>
+              <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
+              {{ filter.name }}
+            </template>
+          </v-checkbox>
+        </div>
+        <v-expand-transition>
+          <div v-if="filtersToInclude.length" class="mt-8">
+            <v-text-field
+              id="filter-preset"
+              :model-value="getFilterPreset()"
+              :contenteditable="false"
+              :readonly="true"
+              label="Filter Preset"
+              append-icon="mdi-content-copy"
+              @click:append="copyPreset"
+            />
+            <v-snackbar
+              v-model="presetSnackbar"
+              color="accent"
+              :timeout="2500"
             >
-              <template #label>
-                <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
-                {{ filter.name }}
-              </template>
-            </v-checkbox>
-          </li>
-          <h1>Filter Preset</h1>
-          <v-text-field
-            :model-value="getFilterPreset()"
-            :contenteditable="false"
-            :readonly="true"
-            class="mx-1"
-            label="Preset"
-            variant="outlined"
-            append-icon="mdi-content-copy"
-            @click:append="copyPreset"
-          />
-          <h1>URL</h1>
-          <v-text-field
-            :model-value="getUrl()"
-            :contenteditable="false"
-            :readonly="true"
-            class="mx-1"
-            label="URL"
-            variant="outlined"
-            append-icon="mdi-content-copy"
-            @click:append="copyUrl"
-          />
-        </v-container>
+              Preset copied to clipboard
+            </v-snackbar>
+            <v-text-field
+              :model-value="getUrl()"
+              :contenteditable="false"
+              :readonly="true"
+              label="URL"
+              append-icon="mdi-content-copy"
+              @click:append="copyUrl"
+            />
+            <v-snackbar
+              v-model="urlSnackbar"
+              color="accent"
+              :timeout="2500"
+            >
+              URL copied to clipboard
+            </v-snackbar>
+          </div>
+        </v-expand-transition>
       </v-card-text>
     </v-card>
   </v-dialog>
