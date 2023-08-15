@@ -9,13 +9,14 @@ const detailsDrawerStore = useDetailsDrawerStore();
 const atlasNodeStore = useAtlasNodeStore();
 
 export function handleAtlasNodeClicked(atlasNode: AtlasNode) {
+    console.log(atlasNode)
     if (atlasMemoryNodeStore.atlasMemoryModeEnabled) {
         calculateAtlasMemoryPaths(atlasNode, atlasMemoryNodeStore.numberOfMemorySteps)
     } else {
         detailsDrawerStore.SET_DRAWER(true)
     }
     if (atlasNodeStore.selectedAtlasNode == atlasNode) {
-        atlasNodeStore.SET_SELECTED_ATLAS_NODE(null)
+        atlasNodeStore.RESET_SELECTED_ATLAS_NODE()
     } else {
         atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
     }
