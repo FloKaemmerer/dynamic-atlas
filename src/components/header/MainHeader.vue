@@ -51,34 +51,34 @@ function openInNewTab(url: string) {
         class="text-offwhite"
         @click="filterStore.selectedFilter = filter"
       >
-        <v-btn variant="text">
-          <v-tooltip>
-            <template #activator="{ props }">
-              <v-icon
-                v-if="filter.active"
-                icon="mdi-eye-outline"
-                class="text-offwhite"
-                v-bind="props"
-                @click="filter.active = !filter.active"
-              />
-              <v-icon
-                v-else
-                variant="text"
-                icon="mdi-eye-off-outline"
-                class="text-offwhite"
-                v-bind="props"
-                @click="filter.active = !filter.active"
-              />
-            </template>
-            <p>Show/Hide Filter</p>
-          </v-tooltip>
+        <v-tooltip>
+          <template #activator="{ props }">
+            <v-icon
+              v-if="filter.active"
+              icon="mdi-eye-outline"
+              class="text-offwhite"
+              v-bind="props"
+              @click="filter.active = !filter.active"
+            />
+            <v-icon
+              v-else
+              variant="text"
+              icon="mdi-eye-off-outline"
+              class="text-offwhite"
+              v-bind="props"
+              @click="filter.active = !filter.active"
+            />
+          </template>
+          <p>Show/Hide Filter</p>
+        </v-tooltip>
+        <span class="mx-2">
           <v-icon :color="filter.color" class="mr-1" icon="mdi-checkbox-blank-circle" />
           {{ filter.name }}
           {{ getNumberOfActiveFilters(id) }}
-        </v-btn>
+        </span>
         <v-menu>
           <template #activator="{ props }">
-            <v-btn
+            <v-icon
               color="primary"
               size="small"
               v-bind="props"
