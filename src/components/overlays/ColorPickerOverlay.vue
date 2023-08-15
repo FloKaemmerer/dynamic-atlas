@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { useFilterStore } from '@/store/FilterStore'
+import type { Filter } from '@/model/filter/filter'
 
 interface PropsInterface {
   toggle: boolean
@@ -11,7 +12,7 @@ const props = defineProps<PropsInterface>()
 
 const emit = defineEmits(['update:toggle'])
 const filterStore = useFilterStore()
-const filter = ref(filterStore.filtersMap.get(props.filterId))
+const filter = computed<Filter | undefined>(() => filterStore.filtersMap.get(props.filterId))
 </script>
 
 <template>
