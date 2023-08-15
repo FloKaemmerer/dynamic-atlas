@@ -42,13 +42,14 @@ function openInNewTab(url: string) {
     <v-tabs
       v-model="selectedTab"
       show-arrows
-      bg-color="gray"
+      bg-color="grey-darken-5"
     >
       <v-tab
         v-for="[id, filter] in filterStore.filtersMap"
         :key="id"
         :value="id"
         class="text-offwhite"
+        :slider-color="filter.color"
         @click="filterStore.selectedFilter = filter"
       >
         <v-tooltip>
