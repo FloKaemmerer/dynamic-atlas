@@ -1,23 +1,26 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import type { Boss } from '@/model/boss'
+import type { Layout } from '@/model/layout'
 
-interface Specifications {
-  [key: string]: string | number | boolean | string[] | null
-}
+export type GenericMapSpecifications = Boss | Layout | { [key: string]: string | number | boolean | string[] | null }
+
 interface PropsInterface {
-  specifications: Specifications
-  specificationsOrder: (keyof Specifications)[]
+  specifications: GenericMapSpecifications
+  specificationsOrder: string[]
 }
 const props = defineProps<PropsInterface>()
 
+type SpecificationsKeys = keyof GenericMapSpecifications
+
 const reorderedSpecifications = computed(() => props.specificationsOrder.reduce((acc, curr) => {
   const specification = `${curr}`.replace(/([A-Z])/g, ' $1').trim()
-  const field = props.specifications[curr]
+  const field = props.specifications[curr as SpecificationsKeys]
   if (typeof field === 'boolean') {
     acc[specification] = field ? 'Yes' : 'No'
   }
   else {
-    acc[specification] = props.specifications[curr]
+    acc[specification] = props.specifications[curr as SpecificationsKeys]
   }
   return acc
 }, {} as Record<string, string | number | boolean | string[] | null>))

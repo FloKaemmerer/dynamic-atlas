@@ -7,5 +7,4 @@ export interface Layout {
   openness: number
   baseMobCount: number
   terrainSlots: number
-  [propName: string]: number | boolean | string
 }
