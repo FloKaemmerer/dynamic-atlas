@@ -9,7 +9,7 @@ const filterStore = useFilterStore()
   <GenericFilter
     v-model:checkbox="filterStore.includeNumberOfBosses"
     v-model:rangeSlider="filterStore.numberOfBosses"
-    :range-slider-min="1"
+    :range-slider-min="0"
     :range-slider-max="4"
     :range-slider-label-prepend="filterStore.numberOfBosses[0]"
     :range-slider-label-append="filterStore.numberOfBosses[1]"
