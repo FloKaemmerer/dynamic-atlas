@@ -11,6 +11,9 @@
 .v-theme--poeTradeThemeDark .cursor-help {
   cursor: help;
 }
+.v-theme--poeTradeThemeDark .hover:accent-light:hover {
+  color: rgb(var(--v-theme-accent-light))!important;
+}
 
 
 

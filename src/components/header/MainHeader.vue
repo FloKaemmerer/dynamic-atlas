@@ -53,16 +53,17 @@ function openInNewTab(url: string) {
       >
         <v-tooltip>
           <template #activator="{ props }">
-            <v-icon
+            <v-btn
               v-if="filter.active"
+              variant="plain"
               icon="mdi-eye-outline"
               class="text-offwhite"
               v-bind="props"
               @click="filter.active = !filter.active"
             />
-            <v-icon
+            <v-btn
               v-else
-              variant="text"
+              variant="plain"
               icon="mdi-eye-off-outline"
               class="text-offwhite"
               v-bind="props"
@@ -78,11 +79,11 @@ function openInNewTab(url: string) {
         </span>
         <v-menu>
           <template #activator="{ props }">
-            <v-icon
+            <v-btn
               color="primary"
               size="small"
               v-bind="props"
-              variant="text"
+              variant="plain"
               icon="mdi-cog"
               class="text-offwhite"
             />
