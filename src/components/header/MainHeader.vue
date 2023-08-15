@@ -94,55 +94,16 @@ function openInNewTab(url: string) {
             <v-list-item @click="clearAllFiltersFromFilter(id)">
               <v-icon icon="mdi-close-circle" class="mr-1" />
               Clear
-              <!-- <v-tooltip>
-                <template #activator="{ props }">
-                  <v-btn
-                    variant="text"
-                    size="small"
-                    icon="mdi-close-circle"
-                    v-bind="props"
-                    class="text-offwhite"
-                    @click="clearAllFiltersFromFilter(id)"
-                  />
-                </template>
-                <p>Clear Filter</p>
-              </v-tooltip> -->
             </v-list-item>
 
             <v-list-item @click="toggleColorPickerOverlay(id)">
               <v-icon icon="mdi-pencil-outline" class="mr-1" />
               Edit
-              <!-- <v-tooltip>
-                <template #activator="{ props }">
-                  <v-btn
-                    variant="text"
-                    size="small"
-                    class="text-offwhite"
-                    icon="mdi-pencil-outline"
-                    v-bind="props"
-                    @click="toggleColorPickerOverlay(id)"
-                  />
-                </template>
-                <p>Edit Filter Settings</p>
-              </v-tooltip> -->
             </v-list-item>
 
             <v-list-item :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)">
               <v-icon icon="mdi-trash-can-outline" class="mr-1" />
               Delete
-              <!-- <v-tooltip>
-                <template #activator="{ props }">
-                  <v-btn
-                    variant="text"
-                    size="small"
-                    class="text-offwhite"
-                    icon="mdi-trash-can-outline"
-                    v-bind="props"
-                    :disabled="filterStore.filtersMap.size <= 1" @click="deleteFilter(id)"
-                  />
-                </template>
-                <p>Delete Filter</p>
-              </v-tooltip> -->
             </v-list-item>
           </v-list>
         </v-menu>
