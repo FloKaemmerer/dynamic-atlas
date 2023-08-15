@@ -393,15 +393,48 @@ atlasNodeStore.$subscribe((mutation, state) => {
   // destroy previous Highlights
   const allHighlights = filterHighlightGroup.find('Circle') as Konva.Circle[]
   allHighlights.forEach(value => value.opacity(0))
-
+  // destroy previous Highlights
+  const multiFilterHitHighlights = filterHighlightGroup.find('Wedge') as Konva.Circle[]
+  multiFilterHitHighlights.forEach(value => value.destroy())
+  const multiFilteredNodeIds = new Map<string, string[]>()
   // show all filtered AtlasNodes
   state.filteredAtlasNodesPerFilter.forEach((atlasNodeIds, filter) => {
     for (let i = 0; i < atlasNodeIds.length; i++) {
       const atlasNodeId = atlasNodeIds[i]
+      if (multiFilteredNodeIds.has(atlasNodeId)) {
+        const colors = multiFilteredNodeIds.get(atlasNodeId)
+        if (colors && !colors.includes(filter.color)) {
+          colors.push(filter.color)
+        }
+      }
+      else {
+        multiFilteredNodeIds.set(atlasNodeId, [filter.color])
+      }
       const nodeHighlight = filterHighlightGroup.findOne(`#${atlasNodeId}`) as Konva.Circle
       if (nodeHighlight) {
         nodeHighlight.fill(filter.color)
         nodeHighlight.opacity(1)
+      }
+    }
+  })
+  multiFilteredNodeIds.forEach((value, key) => {
+    if (value.length > 1) {
+      const atlasNode = atlasNodeStore.atlasNodesMap.get(key)
+      if (atlasNode) {
+        for (let i = 0; i < value.length; i++) {
+          const point = atlasNodeToPoint(atlasNode, true)
+          const wedge = new Konva.Wedge({
+            x: point.x,
+            y: point.y,
+            radius: 20,
+            angle: 360 / value.length,
+            fill: value[i],
+            stroke: 'black',
+            strokeWidth: 1,
+            rotation: 360 / value.length * i,
+          })
+          filterHighlightGroup.add(wedge)
+        }
       }
     }
   })
