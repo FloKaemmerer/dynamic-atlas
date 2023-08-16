@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import Konva from 'konva'
-import { onMounted } from 'vue'
-import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
+import { onMounted, reactive, ref } from 'vue'
+import { useMouseInElement } from '@vueuse/core'
+import atlasBackgroundSource from '@/assets/atlas/maps/Atlas.webp'
 import atlasMemorySource from '@/assets/atlas/memories/KiracMemoryItem.png'
 import mapBase from '@/assets/atlas/maps/Base.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
@@ -30,7 +31,6 @@ import {
 import { drawVoidstoneReactiveArea } from '@/composable/voidstones/voidstone-reactive-area'
 import { getRandomColor } from '@/composable/random-color'
 import type { Point } from '@/model/point'
-import { hideTooltip, showTooltip } from '@/composable/tooltip-handler'
 import { getReactiveAtlasMemoriesArea } from '@/composable/atlasMemories/atlas-memories-reactive-area'
 import { toggleAtlasMemoryMode } from '@/composable/atlasMemories/atlas-memories-mode-handler'
 import { getReactiveNodeArea } from '@/composable/shapes/atlas-node-reactive-area'
@@ -58,6 +58,7 @@ import { getAtlasMemoriesKonvaImage } from '@/composable/atlasMemories/atlas-mem
 import { getVoiodStoneKonvaImage } from '@/composable/voidstones/voidstone-image'
 import { getAtlasMemoriesSourceHighlightArea } from '@/composable/atlasMemories/atlas-memories-source-highlight-area'
 import { getAtlasMemoryLine } from '@/composable/atlasMemories/atlas-memory-line'
+import MapToolTip from '@/components/atlas/MapToolTip.vue'
 
 const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
 const minWidth = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_WIDTH}`)
@@ -85,6 +86,16 @@ const filterHighlightGroup = new Konva.Group()
 const reactiveGroup = new Konva.Group()
 
 const drawnLinks: [string, string][] = []
+const mapToolTip = reactive({
+  show: false,
+  x: 0,
+  y: 0,
+  node: {} as AtlasNode,
+  currentScale: 0,
+})
+// Required since tooltip is relative to the map canvas
+const mainwindow = ref<HTMLElement | null>(null)
+const { elementX: x, elementY: y } = useMouseInElement(mainwindow)
 
 // FIXME Refactor this abomination of a component
 
@@ -111,19 +122,23 @@ function initAtlasCanvas() {
     initNodeLinks(atlasNode)
     initNodeHighlight(atlasNode)
     initNodeImages(atlasNode)
-    initReactiveArea(atlasNode, tooltipText, tooltipContainer)
+    initReactiveArea(atlasNode)
   })
   handleZoom(state)
 }
-
+const offsetX = 0 // 125
+const offsetY = 0 // 90
+const height = window.innerHeight - 48 - 78 // minus navbar and footer
+const width = window.innerWidth // minus filter drawer
+const currentScaleY = height / window.screen.height // Scaling things according to height
 function initState() {
   state = {
     stage: undefined,
-    currentScale: 0.85,
-    height: minHeight,
-    width: minWidth,
-    offsetX: 125,
-    offsetY: 90,
+    currentScale: currentScaleY,
+    height,
+    width,
+    offsetX,
+    offsetY,
     lastCenter: undefined,
     lastDist: 0,
   }
@@ -142,13 +157,6 @@ function initCanvasStructure() {
     offsetX: state.offsetX,
     offsetY: state.offsetY,
     draggable: true,
-  })
-  stage.on('dragmove', () => {
-    const pos = stage.absolutePosition()
-    if (state.stage) {
-      stage.x(Math.max(Math.min(pos.x, 800), -state.width * state.currentScale * 1.5 + window.innerWidth))
-      stage.y(Math.max(Math.min(pos.y, 500), -state.height * state.currentScale * 1.5 + window.innerHeight))
-    }
   })
   state.stage = stage
 
@@ -231,7 +239,7 @@ function initNodeImages(atlasNode: AtlasNode) {
   }
 }
 
-function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltipContainer: Konva.Rect) {
+function initReactiveArea(atlasNode: AtlasNode) {
   const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
   const reactiveNodeArea = getReactiveNodeArea(atlasNodePoint)
   reactiveNodeArea.on('click tap', () => {
@@ -239,10 +247,14 @@ function initReactiveArea(atlasNode: AtlasNode, tooltipText: Konva.Text, tooltip
   })
 
   reactiveNodeArea.on('mousemove', () => {
-    showTooltip(atlasNode, tooltipText, tooltipContainer)
+    mapToolTip.show = true
+    mapToolTip.x = x.value
+    mapToolTip.y = y.value
+    mapToolTip.node = atlasNode
+    mapToolTip.currentScale = state.currentScale
   })
   reactiveNodeArea.on('mouseout', () => {
-    hideTooltip(tooltipText, tooltipContainer)
+    mapToolTip.show = false
   })
 
   reactiveGroup.add(reactiveNodeArea)
@@ -490,6 +502,8 @@ atlasMemoryNodeStore.$subscribe((mutation, state) => {
 function drawBackgroundImage(): Konva.Image {
   const atlasBackgroundImage = new Image()
   atlasBackgroundImage.src = atlasBackgroundSource
+  atlasBackgroundImage.width = window.screen.width * (1 / state.currentScale)
+  atlasBackgroundImage.height = window.screen.height * (1 / state.currentScale)
   const atlasBackgroundKonvaImage = new Konva.Image({
     id: 'atlas-background',
     image: atlasBackgroundImage,
@@ -569,5 +583,10 @@ function isRedTier(mapTier: number) {
 </script>
 
 <template>
-  <v-main id="atlas" style="width: 100%" />
+  <v-main>
+    <div ref="mainwindow" style="position:relative;">
+      <div id="atlas" style="width: 100%;" />
+      <MapToolTip :tool-tip-data="mapToolTip" />
+    </div>
+  </v-main>
 </template>
