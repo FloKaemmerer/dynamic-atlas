@@ -14,5 +14,9 @@ export function handleAtlasNodeClicked(atlasNode: AtlasNode) {
     } else {
         detailsDrawerStore.SET_DRAWER(true)
     }
-    atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
+    if (atlasNodeStore.selectedAtlasNode == atlasNode) {
+        atlasNodeStore.RESET_SELECTED_ATLAS_NODE()
+    } else {
+        atlasNodeStore.SET_SELECTED_ATLAS_NODE(atlasNode)
+    }
 }

@@ -32,6 +32,10 @@ export const useAtlasNodeStore = defineStore("atlas-node", {
             this.selectedAtlasNode = selectedAtlasNode;
         },
 
+        RESET_SELECTED_ATLAS_NODE() {
+            this.selectedAtlasNode = null;
+        },
+
         SET_FILTERED_ATLAS_NODE_IDS(filteredAtlasNodeIds: Array<AtlasNode>) {
             this.filteredAtlasNodes = filteredAtlasNodeIds
         },
