@@ -2,7 +2,7 @@
 import Konva from 'konva'
 import { onMounted, reactive, ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
-import atlasBackgroundSource from '@/assets/atlas/maps/Atlas.webp'
+import atlasBackgroundSource from '@/assets/atlas/maps/AtlasBackground.png'
 import atlasMemorySource from '@/assets/atlas/memories/KiracMemoryItem.png'
 import mapBase from '@/assets/atlas/maps/Base.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
@@ -130,6 +130,7 @@ const offsetX = 0 // 125
 const offsetY = 0 // 90
 const height = window.innerHeight - 48 - 78 // minus navbar and footer
 const width = window.innerWidth // minus filter drawer
+const currentScaleX = width / window.screen.width // Scaling things according to height
 const currentScaleY = height / window.screen.height // Scaling things according to height
 function initState() {
   state = {
@@ -502,8 +503,8 @@ atlasMemoryNodeStore.$subscribe((mutation, state) => {
 function drawBackgroundImage(): Konva.Image {
   const atlasBackgroundImage = new Image()
   atlasBackgroundImage.src = atlasBackgroundSource
-  atlasBackgroundImage.width = window.screen.width * (1 / state.currentScale)
-  atlasBackgroundImage.height = window.screen.height * (1 / state.currentScale)
+  //   atlasBackgroundImage.width = window.screen.width * (1 / currentScaleX)
+  //   atlasBackgroundImage.height = window.screen.height * (1 / currentScaleY)
   const atlasBackgroundKonvaImage = new Konva.Image({
     id: 'atlas-background',
     image: atlasBackgroundImage,
