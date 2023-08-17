@@ -1,10 +1,9 @@
-import {useClipboard} from "@vueuse/core";
+import { useClipboard } from '@vueuse/core'
 
-const {copy} = useClipboard({
-    legacy: true
+const { copy } = useClipboard({
+  legacy: true,
 })
-const copyToClipBoard = async (value: string) => {
-    await copy(value)
-};
-
-export default copyToClipBoard;
+async function copyToClipBoard(value: string) {
+  await copy(value)
+}
+export default copyToClipBoard

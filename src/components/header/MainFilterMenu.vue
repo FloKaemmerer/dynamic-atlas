@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import buildShareableUrl from '@/composable/filter/shareable-url-builder'
+import { buildShareableUrl } from '@/composable/filter/shareable-url-builder'
 import copyToClipBoard from '@/composable/copy-utils'
 import { getRandomColor } from '@/composable/random-color'
 import { getFilterName } from '@/composable/filter/filter-utils'
 import { useFilterStore } from '@/store/FilterStore'
 import { useActiveFiltersStore } from '@/store/activeFiltersStore'
 import { useFilterQueryStore } from '@/store/FilterQueryStore'
+import FilterPresetImportOverlay from '@/components/overlays/FilterPresetImportOverlay.vue'
 
 const emit = defineEmits(['update:selectedTab'])
 const filterStore = useFilterStore()
@@ -98,4 +99,5 @@ function addPresetFilter() {
       </v-list-item>
     </v-list>
   </v-menu>
+  <FilterPresetImportOverlay v-model:toggle="showFilterPresetImportOverly" />
 </template>

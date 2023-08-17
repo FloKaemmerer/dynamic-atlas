@@ -1,4 +1,7 @@
 import type { Filter } from '@/model/filter/filter'
+import { useActiveFiltersStore } from '@/store/activeFiltersStore'
+
+const activeFiltersStore = useActiveFiltersStore()
 
 const names: string[] = [
   'Alpha',
@@ -27,7 +30,7 @@ const names: string[] = [
   'Omega']
 
 export function hasActiveFilters(filter: Filter) {
-  return (filter.filterText !== undefined)
+  return (filter.filterText !== undefined && filter.filterText !== null && filter.filterText.length > 0)
   || (filter.includeMapTier && filter.mapTier !== undefined)
   || (filter.includeOpenness && filter.openness !== undefined)
   || (filter.includeTraversability && filter.traversability !== undefined)
@@ -50,7 +53,7 @@ export function hasToFilterByMapTier(filter: Filter) {
 }
 
 export function hasToFilterByFilterText(filter: Filter) {
-  return (filter.filterText !== undefined && filter.filterText !== null && filter.filterText.length) > 0
+  return (filter.filterText !== undefined && filter.filterText !== null && filter.filterText.length > 0)
 }
 
 export function hasToFilterByOpenness(filter: Filter) {
@@ -121,4 +124,15 @@ export function getFilterName(nameIndex: number) {
   else {
     return getRandomFilterName()
   }
+}
+
+export function getNumberOfActiveFilters(filterId: number) {
+  const activeFilters = activeFiltersStore.activeFiltersMap.get(filterId)
+  if (activeFilters) {
+    const numberOfActiveFilters = activeFilters.activeMapFilters.length + activeFilters.activeBossFilters.length + activeFilters.activeDivinationCardFilters.length + activeFilters.activeTextFilters.length
+    if (numberOfActiveFilters > 0) {
+      return numberOfActiveFilters
+    }
+  }
+  return ''
 }

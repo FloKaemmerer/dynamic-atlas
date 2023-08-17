@@ -10,6 +10,7 @@ const colors = {
   'accent': '#634928',
   'blue': '#243c61',
   'blue-gray': '#495260',
+  'gray-light': '#7f7f7f',
   'gray': '#1f2124',
   'gray-dark': '#0e0f10',
   'gray-darkest': '#0e0f10',
@@ -29,6 +30,12 @@ export const PoeTradeTheme: Blueprint = {
     global: {
       rounded: 0,
     },
+    VTextFeild: {
+      color: 'offwhite',
+      density: 'compact',
+      hideDetails: true,
+    },
+
     VCheckbox: {
       density: 'compact',
       hideDetails: true,

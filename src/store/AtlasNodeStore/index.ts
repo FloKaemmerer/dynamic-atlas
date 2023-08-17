@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 import type { AtlasNode } from '@/model/atlasNode'
 
-import atlasNodes from '@/assets/atlas/atlasNodes.json'
+// @ts-expect-error atlasNodes.json can be imported
+import atlasNodes from '/src/assets/atlas/atlasNodes.json'
 import type { Filter } from '@/model/filter/filter'
 
 interface State {
@@ -39,7 +40,7 @@ export const useAtlasNodeStore = defineStore('atlas-node', {
     async setupAtlasData() {
       console.log('setting up Atlas Data')
 
-      atlasNodes.forEach((atlasNodeElement) => {
+      atlasNodes.forEach((atlasNodeElement: AtlasNode) => {
         const atlasNode = atlasNodeElement as AtlasNode
         if (atlasNode.active) {
           atlasNode.filterTags = [atlasNode.name.toLowerCase()]

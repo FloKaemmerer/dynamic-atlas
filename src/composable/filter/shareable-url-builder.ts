@@ -1,11 +1,14 @@
 import type { LooseFilters } from '@/model/filter/looseFilters'
 
-function buildShareableUrl(queryParams: LooseFilters): string {
-  let baseUrl = `${import.meta.env.VITE_BASE_URL}`
+const baseUrl = `${import.meta.env.VITE_BASE_URL}`
+export function buildShareableUrl(queryParams: LooseFilters): string {
+  let shareableUrl = ''
   if (JSON.stringify(queryParams).includes(':')) {
-    baseUrl = baseUrl.concat(`&filters=${queryParams.filters}`)
+    shareableUrl = baseUrl.concat(`&filters=${queryParams.filters}`)
   }
-  return baseUrl
+  return shareableUrl
 }
 
-export default buildShareableUrl
+export function buildShareableUrlFromPreset(preset: string): string {
+  return baseUrl.concat(`&filters=${preset}`)
+}
