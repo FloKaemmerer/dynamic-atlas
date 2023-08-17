@@ -64,13 +64,12 @@ filterStore.$subscribe((_mutation, state) => {
   <v-navigation-drawer
     :model-value="drawer"
     :image="bgImage"
-    :floating="true"
     :width="416"
     class="sidebar-filters"
     elevation="0"
     border="right"
+    permanent
     disable-resize-watcher
-    :permanent="true"
   >
     <FilterToolbar />
     <v-window v-model="selectedFilter">

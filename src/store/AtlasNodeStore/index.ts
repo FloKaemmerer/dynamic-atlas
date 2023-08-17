@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 import type { AtlasNode } from '@/model/atlasNode'
 
-import atlasNodes from '@/assets/atlas/atlasNodes.json'
+// @ts-expect-error atlasNodes.json can be imported
+import atlasNodes from '/src/assets/atlas/atlasNodes.json'
 import type { Filter } from '@/model/filter/filter'
 
 interface State {
