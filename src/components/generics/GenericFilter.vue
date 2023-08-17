@@ -3,7 +3,7 @@ import { ref, watchEffect } from 'vue'
 import { watchDebounced } from '@vueuse/core'
 
 export interface Props {
-  checkbox: boolean
+  checkbox?: boolean
   name: string
   tooltip?: string
   checkboxLabel: string
@@ -24,7 +24,7 @@ const internalRangeSlider = ref(props.rangeSlider)
 
 watchEffect(() => {
   if (!props.checkbox) {
-    internalRangeSlider.value = [props.rangeSliderMin, props.rangeSliderMax]
+    internalRangeSlider.value = undefined
   }
   else {
     internalRangeSlider.value = props.rangeSlider

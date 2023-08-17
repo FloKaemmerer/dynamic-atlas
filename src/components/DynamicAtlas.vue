@@ -59,9 +59,7 @@ import { getVoiodStoneKonvaImage } from '@/composable/voidstones/voidstone-image
 import { getAtlasMemoriesSourceHighlightArea } from '@/composable/atlasMemories/atlas-memories-source-highlight-area'
 import { getAtlasMemoryLine } from '@/composable/atlasMemories/atlas-memory-line'
 import MapToolTip from '@/components/atlas/MapToolTip.vue'
-
-const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
-const minWidth = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_WIDTH}`)
+import { getFilterHighlightWedge } from '@/composable/shapes/atlas-node-filter-highlight-Wedge'
 
 const atlasNodeStore = useAtlasNodeStore()
 const detailsDrawerStore = useDetailsDrawerStore()
@@ -148,7 +146,7 @@ function initState() {
 function initCanvasStructure() {
   Konva.hitOnDragEnabled = true
 
-  const stage = new Konva.Stage({
+  state.stage = new Konva.Stage({
     container: 'atlas',
     id: 'atlas-stage',
     width: state.width,
@@ -159,7 +157,6 @@ function initCanvasStructure() {
     offsetY: state.offsetY,
     draggable: true,
   })
-  state.stage = stage
 
   state.stage.add(mapLayer)
   state.stage.add(reactiveLayer)
@@ -222,8 +219,6 @@ function initAtlasNodeNames(atlasNode: AtlasNode) {
 function initNodeHighlight(atlasNode: AtlasNode) {
   const atlasNodePoint = atlasNodeToPoint(atlasNode, true)
   const filterHighlight = getFilterHighlight(atlasNode.id, atlasNodePoint)
-  filterHighlight.cache()
-  filterHighlight.filters([Konva.Filters.Blur])
   filterHighlightGroup.add(filterHighlight)
 }
 
@@ -408,12 +403,40 @@ atlasNodeStore.$subscribe((mutation, state) => {
   // destroy previous Highlights
   const allHighlights = filterHighlightGroup.find('Circle') as Konva.Circle[]
   allHighlights.forEach(value => value.opacity(0))
-
+  // destroy previous Highlights
+  const multiFilterHitHighlights = filterHighlightGroup.find('Wedge') as Konva.Circle[]
+  multiFilterHitHighlights.forEach(value => value.destroy())
+  const multiFilteredNodeIds = new Map<string, string[]>()
   // show all filtered AtlasNodes
-  state.filteredAtlasNodes.forEach((value) => {
-    const nodeHighlight = filterHighlightGroup.findOne(`#${value.id}`)
-    if (nodeHighlight) {
-      nodeHighlight.opacity(1)
+  state.filteredAtlasNodesPerFilter.forEach((atlasNodeIds, filter) => {
+    for (let i = 0; i < atlasNodeIds.length; i++) {
+      const atlasNodeId = atlasNodeIds[i]
+      if (multiFilteredNodeIds.has(atlasNodeId)) {
+        const colors = multiFilteredNodeIds.get(atlasNodeId)
+        if (colors && !colors.includes(filter.color)) {
+          colors.push(filter.color)
+        }
+      }
+      else {
+        multiFilteredNodeIds.set(atlasNodeId, [filter.color])
+      }
+      const nodeHighlight = filterHighlightGroup.findOne(`#${atlasNodeId}`) as Konva.Circle
+      if (nodeHighlight) {
+        nodeHighlight.fill(filter.color)
+        nodeHighlight.opacity(1)
+      }
+    }
+  })
+  multiFilteredNodeIds.forEach((value, key) => {
+    if (value.length > 1) {
+      const atlasNode = atlasNodeStore.atlasNodesMap.get(key)
+      if (atlasNode) {
+        for (let i = 0; i < value.length; i++) {
+          const point = atlasNodeToPoint(atlasNode, true)
+          const wedge = getFilterHighlightWedge(point, value.length, i, value[i])
+          filterHighlightGroup.add(wedge)
+        }
+      }
     }
   })
 })

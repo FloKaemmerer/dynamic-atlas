@@ -3,6 +3,7 @@ import type { AtlasNode } from '@/model/atlasNode'
 
 // @ts-expect-error atlasNodes.json can be imported
 import atlasNodes from '/src/assets/atlas/atlasNodes.json'
+import type { Filter } from '@/model/filter/filter'
 
 interface State {
   selectedAtlasNode: AtlasNode | null
@@ -10,7 +11,7 @@ interface State {
   inactiveAtlasNodes: Array<AtlasNode>
 
   atlasNodesMap: Map<string, AtlasNode>
-  filteredAtlasNodes: Array<AtlasNode>
+  filteredAtlasNodesPerFilter: Map<Filter, Array<string>>
 
   dropRestrictedDivinationCardNames: Array<string>
 }
@@ -22,7 +23,7 @@ export const useAtlasNodeStore = defineStore('atlas-node', {
       atlasNodes: [],
       inactiveAtlasNodes: [],
       atlasNodesMap: new Map(),
-      filteredAtlasNodes: [],
+      filteredAtlasNodesPerFilter: new Map(),
       dropRestrictedDivinationCardNames: [],
     }
   },
@@ -32,8 +33,8 @@ export const useAtlasNodeStore = defineStore('atlas-node', {
       this.selectedAtlasNode = selectedAtlasNode
     },
 
-    SET_FILTERED_ATLAS_NODE_IDS(filteredAtlasNodeIds: Array<AtlasNode>) {
-      this.filteredAtlasNodes = filteredAtlasNodeIds
+    ADD_FILTERED_ATLAS_NODE_IDS(filter: Filter, filteredAtlasNodeIds: Array<string>) {
+      this.filteredAtlasNodesPerFilter.set(filter, filteredAtlasNodeIds)
     },
 
     async setupAtlasData() {

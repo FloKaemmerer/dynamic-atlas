@@ -27,6 +27,9 @@
     border-color: #000;
     color: #000;
 }
+.v-theme--poeTradeThemeDark .hover:accent-light:hover {
+  color: rgb(var(--v-theme-accent-light))!important;
+}
 
 /* ---------------- Typography ---------------- */
 .v-theme--poeTradeThemeDark .text-overline {

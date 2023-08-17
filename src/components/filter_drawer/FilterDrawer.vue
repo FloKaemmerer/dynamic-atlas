@@ -1,21 +1,19 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onBeforeMount, ref } from 'vue'
 import type { RouteLocationNormalizedLoaded, Router } from 'vue-router'
 import { useRoute, useRouter } from 'vue-router'
 import bgImage from '@/assets/images/bg.jpg'
-import { initFilter } from '@/composable/atlas-filter-handler'
-import DivinationCardFilterHolder
-  from '@/components/filter_drawer/filters/divination_card_filters/DivinationCardFilterHolder.vue'
-import BossFilterHolder from '@/components/filter_drawer/filters/boss_filters/BossFilterHolder.vue'
-import MapFilterHolder from '@/components/filter_drawer/filters/map_filters/MapFilterHolder.vue'
-import TextFilterHolder from '@/components/filter_drawer/filters/text_filters/TextFilterHolder.vue'
-import AtlasOverlayHolder from '@/components/filter_drawer/overlays/atlas_overlays/overlayHolder.vue'
-import { useFilterStore } from '@/store/FilterStore'
-import type { LooseFilters } from '@/model/looseFilters'
-import { useFilterQueryStore } from '@/store/FilterQueryStore'
-import handleUrlQueryFilters from '@/composable/url-query-filter-handler'
+import { initFilter } from '@/composable/filter/atlas-filter-handler'
 import FilterToolbar from '@/components/filter_drawer/FilterToolbar.vue'
+import AtlasOverlayHolder from '@/components/overlays/atlas_overlays/overlayHolder.vue'
+import { useFilterStore } from '@/store/FilterStore'
+import type { LooseFilters } from '@/model/filter/looseFilters'
+import { useFilterQueryStore } from '@/store/FilterQueryStore'
+import handleUrlQueryFilters from '@/composable/filter/url-query-filter-handler'
 import { useFilterDrawerStore } from '@/store/FilterDrawerStore'
+import { hasActiveFilters } from '@/composable/filter/filter-utils'
+import FilterHolder from '@/components/filter_drawer/FilterHolder.vue'
+import type { Filter } from '@/model/filter/filter'
 
 const filterStore = useFilterStore()
 const filterQueryStore = useFilterQueryStore()
@@ -23,7 +21,10 @@ const filterDrawerStore = useFilterDrawerStore()
 const route: RouteLocationNormalizedLoaded = useRoute()
 const router: Router = useRouter()
 
+const selectedFilter = ref(filterStore.selectedFilter)
 const drawer = computed<boolean>(() => filterDrawerStore.drawer)
+
+onBeforeMount(() => initFilter())
 
 function queryFilters() {
   const queryFilters: LooseFilters = {}
@@ -36,39 +37,24 @@ function queryFilters() {
     },
   }
 }
+
 router.isReady().then(() => {
-  initFilter()
   handleUrlQueryFilters(route.query)
 })
 
 filterStore.$subscribe((_mutation, state) => {
   const filters = queryFilters()
 
-  // ----- Map Filters -----
-  filters.add(Boolean(state.filterText && state.filterText.length > 0), 'filterText', state.filterText)
-  filters.add(state.mapTier[0] >= 0 && state.includeMapTier, 'mapTier', state.mapTier)
-  filters.add(state.openness[0] >= 0 && state.includeOpenness, 'openness', state.openness)
-  filters.add(state.traversability[0] >= 0 && state.includeTraversability, 'traversability', state.traversability)
-  filters.add(state.backtrackFactor[0] >= 0 && state.includeBacktrackFactor, 'backtrackFactor', state.backtrackFactor)
-  filters.add(state.linearity[0] >= 0 && state.includeLinearity, 'linearity', state.linearity)
-  filters.add(state.terrainSlots[0] >= 0 && state.includeTerrainSlots, 'terrainSlots', state.terrainSlots)
-  filters.add(state.baseMobCount[0] >= 0 && state.includeBaseMobCount, 'baseMobCount', state.baseMobCount)
-  filters.add(state.rushableBoss, 'rushableBoss', state.rushableBoss)
-  // --------------------------
+  const activeFilters: Filter[] = []
+  state.filtersMap.forEach((value) => {
+    if (hasActiveFilters(value)) {
+      activeFilters.push(value)
+    }
+  })
 
-  // ------ Boss Filters ------
-  filters.add(state.numberOfBosses[0] >= 0 && state.includeNumberOfBosses, 'numberOfBosses', state.numberOfBosses)
-  filters.add(state.excludePhasedBosses, 'excludePhasedBosses', state.excludePhasedBosses)
-  filters.add(state.includeSkippablePhases, 'includeSkippablePhases', state.includeSkippablePhases)
-  filters.add(state.includeSpawnIntro, 'includeSpawnIntro', state.includeSpawnIntro)
-  filters.add(state.excludeSpawnedBosses, 'excludeSpawnedBosses', state.excludeSpawnedBosses)
-  // ---------------------------
-
-  // - Divination Card Filters -
-  filters.add(state.minDivinationCardPrice > 0, 'minDivinationCardPrice', state.minDivinationCardPrice)
-  filters.add(state.minEffectiveDivinationCardValue > 0, 'minEffectiveDivinationCardValue', state.minEffectiveDivinationCardValue)
-  // ---------------------------
-
+  if (activeFilters.length > 0) {
+    filters.add(true, 'filters', JSON.stringify(activeFilters))
+  }
   router.push(filters)
   filterQueryStore.SET_FILTER_QUERY(filters.query)
 })
@@ -85,17 +71,12 @@ filterStore.$subscribe((_mutation, state) => {
     permanent
     disable-resize-watcher
   >
-    <v-card color="transparent" rounded="0" flat>
-      <FilterToolbar />
-      <v-card-text class="pl-3 pr-0" style="max-width:400px;">
-        <TextFilterHolder />
-        <v-expansion-panels multiple>
-          <MapFilterHolder />
-          <BossFilterHolder />
-          <DivinationCardFilterHolder />
-        </v-expansion-panels>
-      </v-card-text>
-    </v-card>
+    <FilterToolbar />
+    <v-window v-model="selectedFilter">
+      <v-window-item>
+        <FilterHolder />
+      </v-window-item>
+    </v-window>
     <AtlasOverlayHolder />
   </v-navigation-drawer>
 </template>

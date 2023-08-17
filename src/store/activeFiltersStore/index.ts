@@ -1,47 +1,95 @@
-import {defineStore} from "pinia";
+import { defineStore } from 'pinia'
+import type { ActiveFilters } from '@/model/filter/activeFilters'
 
 interface State {
-    activeMapFilters: string[],
-    activeBossFilters: string[],
-    activeDivinationCardFilters: string[],
+  activeFiltersMap: Map<number, ActiveFilters>
 }
 
-export const useActiveFiltersStore = defineStore("active-filters", {
-    state: (): State => ({
-        activeMapFilters: [],
-        activeBossFilters: [],
-        activeDivinationCardFilters: [],
-    }),
-    actions: {
-        ADD_FILTER_TO_ACTIVE_MAP_FILTERS(filterKey: string) {
-            if (!this.activeMapFilters.includes(filterKey)) {
-                this.activeMapFilters.push(filterKey)
-            }
-        },
-        REMOVE_FILTER_FROM_ACTIVE_MAP_FILTERS(filterKey: string) {
-            if (this.activeMapFilters.includes(filterKey)) {
-                this.activeMapFilters.splice(this.activeMapFilters.indexOf(filterKey), 1)
-            }
-        },
-        ADD_FILTER_TO_ACTIVE_BOSS_FILTERS(filterKey: string) {
-            if (!this.activeBossFilters.includes(filterKey)) {
-                this.activeBossFilters.push(filterKey)
-            }
-        },
-        REMOVE_FILTER_FROM_ACTIVE_BOSS_FILTERS(filterKey: string) {
-            if (this.activeBossFilters.includes(filterKey)) {
-                this.activeBossFilters.splice(this.activeBossFilters.indexOf(filterKey), 1)
-            }
-        },
-        ADD_FILTER_TO_ACTIVE_DIVINATION_CARD_FILTERS(filterKey: string) {
-            if (!this.activeDivinationCardFilters.includes(filterKey)) {
-                this.activeDivinationCardFilters.push(filterKey)
-            }
-        },
-        REMOVE_FILTER_FROM_ACTIVE_DIVINATION_CARD_FILTERS(filterKey: string) {
-            if (this.activeDivinationCardFilters.includes(filterKey)) {
-                this.activeDivinationCardFilters.splice(this.activeDivinationCardFilters.indexOf(filterKey), 1)
-            }
-        },
+export const useActiveFiltersStore = defineStore('active-filters', {
+  state: (): State => {
+    const id = Date.now()
+    const activeFilter = {
+      id,
+      activeTextFilters: [],
+      activeMapFilters: [],
+      activeBossFilters: [],
+      activeDivinationCardFilters: [],
     }
-});
+    const activeFiltersMap = new Map()
+    activeFiltersMap.set(id, activeFilter)
+    return {
+      activeFiltersMap: new Map(),
+    }
+  },
+
+  actions: {
+    ADD_ACTIVE_FILTERS(activeFilters: ActiveFilters) {
+      this.activeFiltersMap.set(activeFilters.id, activeFilters)
+    },
+
+    CLEAR_ACTIVE_FILTERS(filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters) {
+        activeFilters.activeBossFilters = []
+        activeFilters.activeMapFilters = []
+        activeFilters.activeTextFilters = []
+        activeFilters.activeDivinationCardFilters = []
+      }
+    },
+
+    ADD_ACTIVE_MAP_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeMapFilters.includes(filterKey)) {
+        activeFilters.activeMapFilters.push(filterKey)
+      }
+    },
+
+    REMOVE_ACTIVE_MAP_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeMapFilters.includes(filterKey)) {
+        activeFilters.activeMapFilters.splice(activeFilters.activeMapFilters.indexOf(filterKey), 1)
+      }
+    },
+
+    ADD_ACTIVE_BOSS_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeBossFilters.includes(filterKey)) {
+        activeFilters.activeBossFilters.push(filterKey)
+      }
+    },
+
+    REMOVE_ACTIVE_BOSS_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeBossFilters.includes(filterKey)) {
+        activeFilters.activeBossFilters.splice(activeFilters.activeBossFilters.indexOf(filterKey), 1)
+      }
+    },
+
+    ADD_ACTIVE_DIVINATION_CARD_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeDivinationCardFilters.includes(filterKey)) {
+        activeFilters.activeDivinationCardFilters.push(filterKey)
+      }
+    },
+
+    REMOVE_ACTIVE_DIVINATION_CARD_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeDivinationCardFilters.includes(filterKey)) {
+        activeFilters.activeDivinationCardFilters.splice(activeFilters.activeDivinationCardFilters.indexOf(filterKey), 1)
+      }
+    },
+    ADD_ACTIVE_TEXT_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && !activeFilters.activeTextFilters.includes(filterKey)) {
+        activeFilters.activeTextFilters.push(filterKey)
+      }
+    },
+
+    REMOVE_ACTIVE_TEXT_FILTER(filterKey: string, filterId: number) {
+      const activeFilters = this.activeFiltersMap.get(filterId)
+      if (activeFilters && activeFilters.activeTextFilters.includes(filterKey)) {
+        activeFilters.activeTextFilters.splice(activeFilters.activeTextFilters.indexOf(filterKey), 1)
+      }
+    },
+  },
+})

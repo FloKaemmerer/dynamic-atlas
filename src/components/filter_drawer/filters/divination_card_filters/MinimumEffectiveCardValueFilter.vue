@@ -1,47 +1,56 @@
 <script setup lang="ts">
-import {useFilterStore} from "@/store/FilterStore";
-import {ref} from "vue";
+import { ref } from 'vue'
+import { useFilterStore } from '@/store/FilterStore'
 
-const filterStore = useFilterStore();
-let minEffectiveDivinationCardValue = ref(filterStore.minEffectiveDivinationCardValue)
+const filterStore = useFilterStore()
+const minEffectiveDivinationCardValue = ref(filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue)
 
 filterStore.$subscribe((mutation, state) => {
-    if (state.minEffectiveDivinationCardValue != minEffectiveDivinationCardValue.value) {
-        minEffectiveDivinationCardValue.value = state.minEffectiveDivinationCardValue
-    }
+  if (state.selectedFilter.minEffectiveDivinationCardValue !== minEffectiveDivinationCardValue.value) {
+    minEffectiveDivinationCardValue.value = state.selectedFilter.minEffectiveDivinationCardValue
+  }
 })
 
 function handleMinimumEffectiveDivinationCardValueFilter(value: string) {
-    filterStore.SET_MINIMUM_EFFECTIVE_DIVINATION_CARD_VALUE(Number.parseInt(value))
+  if (!value || value.length < 1) {
+    filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue = undefined
+  }
+  else {
+    const minEffectiveDivinationCardValue = Number.parseInt(value)
+    if (minEffectiveDivinationCardValue && minEffectiveDivinationCardValue > 0) {
+      filterStore.GET_SELECTED_FILTER().minEffectiveDivinationCardValue = minEffectiveDivinationCardValue
+    }
+  }
 }
 </script>
 
 <template>
-    <v-label>
-        Minimal Effective Value in Chaos Orbs
-    </v-label>
-    <v-text-field
-            v-model="minEffectiveDivinationCardValue"
-            @update:model-value="val => handleMinimumEffectiveDivinationCardValueFilter(val)"
-            hide-details
-            single-line
-            label="Minimal Effective Value in Chaos Orbs"
-            type="number"
-            variant="outlined"
-            style="width: 100%"
-            density="compact"
-            min="0">
-        <template v-slot:append>
-            <v-tooltip>
-                <template v-slot:activator="{ props }">
-                    <v-icon icon="mdi-information-outline" v-bind="props"></v-icon>
-                </template>
-                <p>Filter based on the minimal required Effective Value of a Divination Card that drops in a Map.</p>
-                <p>The Effective Value is determined by 'Card sell Price * Base Drop Chance * 100'</p>
-                <p>The Filter only takes Cards into account with a price >= 5 Chaos</p>
-            </v-tooltip>
+  <v-label>
+    Minimal Effective Value in Chaos Orbs
+  </v-label>
+  <v-text-field
+    v-model="minEffectiveDivinationCardValue"
+    hide-details
+    single-line
+    label="Minimal Effective Value in Chaos Orbs"
+    type="number"
+    variant="outlined"
+    style="width: 100%"
+    density="compact"
+    min="0"
+    @update:model-value="val => handleMinimumEffectiveDivinationCardValueFilter(val)"
+  >
+    <template #append>
+      <v-tooltip>
+        <template #activator="{ props }">
+          <v-icon icon="mdi-information-outline" v-bind="props" />
         </template>
-    </v-text-field>
+        <p>Filter based on the minimal required Effective Value of a Divination Card that drops in a Map.</p>
+        <p>The Effective Value is determined by 'Card sell Price * Base Drop Chance * 100'</p>
+        <p>The Filter only takes Cards into account with a price >= 5 Chaos</p>
+      </v-tooltip>
+    </template>
+  </v-text-field>
 </template>
 
 <style scoped>
