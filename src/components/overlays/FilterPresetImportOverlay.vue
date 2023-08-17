@@ -16,13 +16,14 @@ const activeFiltersStore = useActiveFiltersStore()
 
 const filterPreset = ref<string>('')
 
+const presetSuccessSnackbar = ref(false)
+const presetFailureSnackbar = ref(false)
 function addPresetToFilters() {
   try {
     const preset = filterPreset.value
     if (preset) {
       if (preset.startsWith('[') && preset.endsWith(']')) {
         const filters: Filter[] = JSON.parse(preset)
-        console.log(filters)
         filters.map(filter => filterStore.filtersMap.set(filter.id, filter))
 
         activeFiltersStore.activeFiltersMap = new Map()
@@ -44,13 +45,13 @@ function addPresetToFilters() {
           activeBossFilters: [],
           activeDivinationCardFilters: [],
         })
-        console.log(filter)
       }
     }
+    presetSuccessSnackbar.value = true
   }
   catch (e) {
     console.log(e)
-    // TODO show Toast that adding failed
+    presetFailureSnackbar.value = true
   }
 }
 </script>
@@ -65,6 +66,20 @@ function addPresetToFilters() {
           <v-btn @click="addPresetToFilters()">
             Add
           </v-btn>
+          <v-snackbar
+            v-model="presetSuccessSnackbar"
+            color="accent"
+            :timeout="2500"
+          >
+            Filter Preset(s) successfully added.
+          </v-snackbar>
+          <v-snackbar
+            v-model="presetFailureSnackbar"
+            color="accent"
+            :timeout="2500"
+          >
+            Failed to Add Filter Preset(s)
+          </v-snackbar>
         </v-container>
       </v-card-text>
     </v-card>
