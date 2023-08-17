@@ -20368,8 +20368,8 @@
         "artFilename": "BoonofJustice",
         "dropWeight": 7399,
         "dropRestricted": true,
-        "baseDropChance": 0.023808910884717118,
-        "effectiveValue": 7.1426732654151355
+        "baseDropChance": 0.022542051177372034,
+        "effectiveValue": 6.76261535321161
       },
       {
         "name": "Brotherhood in Exile",
@@ -20388,8 +20388,8 @@
         "artFilename": "BrotherhoodInExile",
         "dropWeight": 154,
         "dropRestricted": true,
-        "baseDropChance": 4.95549706209817E-4,
-        "effectiveValue": 0.2477748531049085
+        "baseDropChance": 4.691817652811587E-4,
+        "effectiveValue": 0.23459088264057934
       },
       {
         "name": "Emperor's Luck",
@@ -20408,8 +20408,8 @@
         "artFilename": "EmperorsLuck",
         "dropWeight": 43683,
         "dropRestricted": true,
-        "baseDropChance": 0.14056557023612623,
-        "effectiveValue": 14.056557023612623
+        "baseDropChance": 0.1330861496933562,
+        "effectiveValue": 13.308614969335618
       },
       {
         "name": "Her Mask",
@@ -20428,8 +20428,8 @@
         "artFilename": "HerMask",
         "dropWeight": 8083,
         "dropRestricted": true,
-        "baseDropChance": 0.026009923865545136,
-        "effectiveValue": 2.6009923865545135
+        "baseDropChance": 0.024625949407581855,
+        "effectiveValue": 2.4625949407581853
       },
       {
         "name": "Hope",
@@ -20448,8 +20448,8 @@
         "artFilename": "Hope",
         "dropWeight": 1681,
         "dropRestricted": true,
-        "baseDropChance": 0.0054092146502513145,
-        "effectiveValue": 1.6227643950753945
+        "baseDropChance": 0.005121393165179401,
+        "effectiveValue": 1.5364179495538204
       },
       {
         "name": "Lingering Remnants",
@@ -20468,8 +20468,8 @@
         "artFilename": "LingeringRemnants",
         "dropWeight": 1921,
         "dropRestricted": true,
-        "baseDropChance": 0.006181499906682198,
-        "effectiveValue": 0.6181499906682199
+        "baseDropChance": 0.005852585526656531,
+        "effectiveValue": 0.5852585526656531
       },
       {
         "name": "Peaceful Moments",
@@ -20488,8 +20488,8 @@
         "artFilename": "PeacefulMoments",
         "dropWeight": 231,
         "dropRestricted": true,
-        "baseDropChance": 7.433245593147256E-4,
-        "effectiveValue": 0.5203271915203079
+        "baseDropChance": 7.03772647921738E-4,
+        "effectiveValue": 0.49264085354521664
       },
       {
         "name": "Rain Tempter",
@@ -20508,8 +20508,8 @@
         "artFilename": "RainTempter",
         "dropWeight": 12374,
         "dropRestricted": true,
-        "baseDropChance": 0.03981774067948231,
-        "effectiveValue": 11.945322203844693
+        "baseDropChance": 0.03769905950382505,
+        "effectiveValue": 11.309717851147516
       },
       {
         "name": "The Dragon's Heart",
@@ -20528,8 +20528,8 @@
         "artFilename": "TheDragonsHeart",
         "dropWeight": 36,
         "dropRestricted": true,
-        "baseDropChance": 1.1584278846463255E-4,
-        "effectiveValue": 0.44020259616560375
+        "baseDropChance": 1.0967885422156957E-4,
+        "effectiveValue": 0.4167796460419644
       },
       {
         "name": "The Easy Stroll",
@@ -20548,8 +20548,8 @@
         "artFilename": "TheEasyStroll",
         "dropWeight": 1535,
         "dropRestricted": true,
-        "baseDropChance": 0.0049394077859225265,
-        "effectiveValue": 1.9757631143690106
+        "baseDropChance": 0.004676584478614147,
+        "effectiveValue": 1.8706337914456588
       },
       {
         "name": "The Encroaching Darkness",
@@ -20568,8 +20568,8 @@
         "artFilename": "TheEncroachingDarkness",
         "dropWeight": 776,
         "dropRestricted": true,
-        "baseDropChance": 0.002497055662459857,
-        "effectiveValue": 0.49941113249197144
+        "baseDropChance": 0.0023641886354427216,
+        "effectiveValue": 0.4728377270885443
       },
       {
         "name": "The Fox in the Brambles",
@@ -20588,8 +20588,8 @@
         "artFilename": "TheFoxInTheBrambles",
         "dropWeight": 716,
         "dropRestricted": true,
-        "baseDropChance": 0.0023039843483521364,
-        "effectiveValue": 0.6911953045056409
+        "baseDropChance": 0.002181390545073439,
+        "effectiveValue": 0.6544171635220317
       },
       {
         "name": "The Gambler",
@@ -20608,8 +20608,8 @@
         "artFilename": "TheGambler",
         "dropWeight": 4722,
         "dropRestricted": true,
-        "baseDropChance": 0.015194712420277636,
-        "effectiveValue": 1.5194712420277636
+        "baseDropChance": 0.014386209712062541,
+        "effectiveValue": 1.438620971206254
       },
       {
         "name": "The Porcupine",
@@ -20628,8 +20628,8 @@
         "artFilename": "ThePorcupine",
         "dropWeight": 3700,
         "dropRestricted": true,
-        "baseDropChance": 0.011906064369976124,
-        "effectiveValue": 3.690879954692598
+        "baseDropChance": 0.01127254890610576,
+        "effectiveValue": 3.494490160892786
       },
       {
         "name": "The Road to Power",
@@ -20648,8 +20648,28 @@
         "artFilename": "TheRoadToPower",
         "dropWeight": 249,
         "dropRestricted": true,
-        "baseDropChance": 8.012459535470418E-4,
-        "effectiveValue": 0.4006229767735209
+        "baseDropChance": 7.586120750325228E-4,
+        "effectiveValue": 0.3793060375162614
+      },
+      {
+        "name": "The Scarred Meadow",
+        "chaosValue": 1.20,
+        "exaltedValue": 0.07,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "The earth offers nourishment, growth and healing. Unless, of course, the sky has other plans.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Wake of Destruction}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheScarredMeadow",
+        "dropWeight": 17454,
+        "dropRestricted": true,
+        "baseDropChance": 0.053175964488424314,
+        "effectiveValue": 6.381115738610918
       },
       {
         "name": "The Tinkerer's Table",
@@ -20668,8 +20688,8 @@
         "artFilename": "TheTinkerersTable",
         "dropWeight": 193,
         "dropRestricted": true,
-        "baseDropChance": 6.210460603798357E-4,
-        "effectiveValue": 0.12420921207596713
+        "baseDropChance": 5.880005240211924E-4,
+        "effectiveValue": 0.11760010480423848
       },
       {
         "name": "The Trial",
@@ -20688,8 +20708,28 @@
         "artFilename": "TheTrial",
         "dropWeight": 5963,
         "dropRestricted": true,
-        "baseDropChance": 0.01918807076707233,
-        "effectiveValue": 1.9188070767072332
+        "baseDropChance": 0.018167083547867204,
+        "effectiveValue": 1.8167083547867204
+      },
+      {
+        "name": "Tranquillity",
+        "chaosValue": 10.00,
+        "exaltedValue": 0.57,
+        "divineValue": 0.05,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "Beware the sudden calm, for it is a sure sign of a storm on the horizon.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Voltaxic Rift}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Tranquillity",
+        "dropWeight": 11,
+        "dropRestricted": true,
+        "baseDropChance": 3.3512983234368476E-5,
+        "effectiveValue": 0.03351298323436847
       }
     ],
     "filterTags": [],
@@ -20712,8 +20752,8 @@
       "artFilename": "TheDragonsHeart",
       "dropWeight": 36,
       "dropRestricted": true,
-      "baseDropChance": 1.1584278846463255E-4,
-      "effectiveValue": 0.44020259616560375
+      "baseDropChance": 1.0967885422156957E-4,
+      "effectiveValue": 0.4167796460419644
     },
     "boss": {
       "numberOfBosses": 1,
@@ -20755,8 +20795,8 @@
       "artFilename": "PeacefulMoments",
       "dropWeight": 231,
       "dropRestricted": true,
-      "baseDropChance": 7.433245593147256E-4,
-      "effectiveValue": 0.5203271915203079
+      "baseDropChance": 7.03772647921738E-4,
+      "effectiveValue": 0.49264085354521664
     }
   },
   {
@@ -45734,8 +45774,8 @@
         "artFilename": "HerMask",
         "dropWeight": 8083,
         "dropRestricted": true,
-        "baseDropChance": 0.02973276195030439,
-        "effectiveValue": 2.973276195030439
+        "baseDropChance": 0.02969147752109406,
+        "effectiveValue": 2.9691477521094063
       },
       {
         "name": "Hope",
@@ -45754,8 +45794,8 @@
         "artFilename": "Hope",
         "dropWeight": 1681,
         "dropRestricted": true,
-        "baseDropChance": 0.006183443379742878,
-        "effectiveValue": 1.8550330139228632
+        "baseDropChance": 0.006174857566863679,
+        "effectiveValue": 1.8524572700591035
       },
       {
         "name": "Humility",
@@ -45774,8 +45814,8 @@
         "artFilename": "Humility",
         "dropWeight": 4930,
         "dropRestricted": true,
-        "baseDropChance": 0.018134667377830094,
-        "effectiveValue": 3.6269334755660187
+        "baseDropChance": 0.018109487093776286,
+        "effectiveValue": 3.6218974187552573
       },
       {
         "name": "Lingering Remnants",
@@ -45794,8 +45834,8 @@
         "artFilename": "LingeringRemnants",
         "dropWeight": 1921,
         "dropRestricted": true,
-        "baseDropChance": 0.007066266943775174,
-        "effectiveValue": 0.7066266943775175
+        "baseDropChance": 0.00705645531585076,
+        "effectiveValue": 0.705645531585076
       },
       {
         "name": "Parasitic Passengers",
@@ -45814,8 +45854,8 @@
         "artFilename": "ParasiticPassengers",
         "dropWeight": 543,
         "dropRestricted": true,
-        "baseDropChance": 0.001997388313623071,
-        "effectiveValue": 0.9986941568115356
+        "baseDropChance": 0.0019946149070832705,
+        "effectiveValue": 0.9973074535416352
       },
       {
         "name": "The Carrion Crow",
@@ -45834,8 +45874,8 @@
         "artFilename": "TheCarrionCrow",
         "dropWeight": 25657,
         "dropRestricted": true,
-        "baseDropChance": 0.09437751742656932,
-        "effectiveValue": 9.437751742656932
+        "baseDropChance": 0.09424647269067306,
+        "effectiveValue": 9.424647269067306
       },
       {
         "name": "The Dragon's Heart",
@@ -45854,8 +45894,8 @@
         "artFilename": "TheDragonsHeart",
         "dropWeight": 36,
         "dropRestricted": true,
-        "baseDropChance": 1.324235346048445E-4,
-        "effectiveValue": 0.5032094314984091
+        "baseDropChance": 1.3223966234806214E-4,
+        "effectiveValue": 0.5025107169226362
       },
       {
         "name": "The Encroaching Darkness",
@@ -45874,8 +45914,8 @@
         "artFilename": "TheEncroachingDarkness",
         "dropWeight": 776,
         "dropRestricted": true,
-        "baseDropChance": 0.0028544628570377592,
-        "effectiveValue": 0.5708925714075519
+        "baseDropChance": 0.002850499388391562,
+        "effectiveValue": 0.5700998776783124
       },
       {
         "name": "The Gambler",
@@ -45894,8 +45934,8 @@
         "artFilename": "TheGambler",
         "dropWeight": 4722,
         "dropRestricted": true,
-        "baseDropChance": 0.017369553622335436,
-        "effectiveValue": 1.7369553622335436
+        "baseDropChance": 0.017345435711320818,
+        "effectiveValue": 1.7345435711320818
       },
       {
         "name": "The Tinkerer's Table",
@@ -45914,8 +45954,8 @@
         "artFilename": "TheTinkerersTable",
         "dropWeight": 193,
         "dropRestricted": true,
-        "baseDropChance": 7.099372827426385E-4,
-        "effectiveValue": 0.1419874565485277
+        "baseDropChance": 7.089515231437775E-4,
+        "effectiveValue": 0.1417903046287555
       },
       {
         "name": "The Trial",
@@ -45934,8 +45974,28 @@
         "artFilename": "TheTrial",
         "dropWeight": 5963,
         "dropRestricted": true,
-        "baseDropChance": 0.02193448713468577,
-        "effectiveValue": 2.1934487134685767
+        "baseDropChance": 0.02190403073837485,
+        "effectiveValue": 2.190403073837485
+      },
+      {
+        "name": "The Whiteout",
+        "chaosValue": 4.00,
+        "exaltedValue": 0.23,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 8,
+        "flavourText": "<size:25>{They thought winter had come early,\nthat snow blanketed the land,\nbut in truth, all their chickens\nhad come home to roost.}",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Cospri's Malice}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheWhiteout",
+        "dropWeight": 378,
+        "dropRestricted": true,
+        "baseDropChance": 0.0013885164546546525,
+        "effectiveValue": 0.555406581861861
       }
     ],
     "filterTags": [],
@@ -45958,8 +46018,8 @@
       "artFilename": "TheDragonsHeart",
       "dropWeight": 36,
       "dropRestricted": true,
-      "baseDropChance": 1.324235346048445E-4,
-      "effectiveValue": 0.5032094314984091
+      "baseDropChance": 1.3223966234806214E-4,
+      "effectiveValue": 0.5025107169226362
     },
     "boss": {
       "numberOfBosses": 1,
@@ -45999,8 +46059,8 @@
       "artFilename": "TheDragonsHeart",
       "dropWeight": 36,
       "dropRestricted": true,
-      "baseDropChance": 1.324235346048445E-4,
-      "effectiveValue": 0.5032094314984091
+      "baseDropChance": 1.3223966234806214E-4,
+      "effectiveValue": 0.5025107169226362
     }
   },
   {
