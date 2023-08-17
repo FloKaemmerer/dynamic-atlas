@@ -61,9 +61,6 @@ import { getAtlasMemoryLine } from '@/composable/atlasMemories/atlas-memory-line
 import MapToolTip from '@/components/atlas/MapToolTip.vue'
 import { getFilterHighlightWedge } from '@/composable/shapes/atlas-node-filter-highlight-Wedge'
 
-const minHeight = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_HEIGHT}`)
-const minWidth = Number(`${import.meta.env.VITE_MIN_ATLAS_CANVAS_WIDTH}`)
-
 const atlasNodeStore = useAtlasNodeStore()
 const detailsDrawerStore = useDetailsDrawerStore()
 const atlasNodeOverlayStore = useAtlasNodeOverlayStore()
@@ -149,7 +146,7 @@ function initState() {
 function initCanvasStructure() {
   Konva.hitOnDragEnabled = true
 
-  const stage = new Konva.Stage({
+  state.stage = new Konva.Stage({
     container: 'atlas',
     id: 'atlas-stage',
     width: state.width,
@@ -160,7 +157,6 @@ function initCanvasStructure() {
     offsetY: state.offsetY,
     draggable: true,
   })
-  state.stage = stage
 
   state.stage.add(mapLayer)
   state.stage.add(reactiveLayer)

@@ -40,7 +40,7 @@ export const useAtlasNodeStore = defineStore('atlas-node', {
     async setupAtlasData() {
       console.log('setting up Atlas Data')
 
-      atlasNodes.forEach((atlasNodeElement) => {
+      atlasNodes.forEach((atlasNodeElement: AtlasNode) => {
         const atlasNode = atlasNodeElement as AtlasNode
         if (atlasNode.active) {
           atlasNode.filterTags = [atlasNode.name.toLowerCase()]
