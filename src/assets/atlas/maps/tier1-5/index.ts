@@ -138,8 +138,7 @@ import summit from './Summit.png'
 import basilica from './Basilica.png'
 import vault from './Vault.png'
 import waterways from './Waterways.png'
-import pen from './pen.png'
-
+import pen from './Pen.png'
 import lavaChamber from './lavaChamber.png'
 
 const normalMapList = new Map<string, string>([
