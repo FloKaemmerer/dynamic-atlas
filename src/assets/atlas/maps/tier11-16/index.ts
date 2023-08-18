@@ -140,8 +140,10 @@ import vault from './Vault.png'
 import waterways from './Waterways.png'
 import pen from './Pen.png'
 import lavaChamber from './LavaChamber.png'
+import arena from './Arena.png'
 
 const normalMapList = new Map<string, string>([
+  ['Arena', arena],
   ['LavaChamber', lavaChamber],
   ['Pen', pen],
   ['Waterways', waterways],
