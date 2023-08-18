@@ -30,17 +30,20 @@ export const PoeTradeTheme: Blueprint = {
     global: {
       rounded: 0,
     },
-    VTextFeild: {
+    VTextField: {
       color: 'offwhite',
       density: 'compact',
       hideDetails: true,
     },
-
     VCheckbox: {
       density: 'compact',
       hideDetails: true,
       falseIcon: CheckboxFalse,
       trueIcon: CheckboxTrue,
+    },
+    VCombobox: {
+      density: 'compact',
+      hideDetails: true,
     },
     VExpansionPanel: {
       bgColor: 'black',
