@@ -9,7 +9,6 @@ const activeDivinationCardOverlay = ref('none')
 const selectedDivinationCardName = ref()
 
 watch([activeDivinationCardOverlay, selectedDivinationCardName], () => {
-  console.log(`Selected Divination Card Name: ${selectedDivinationCardName.value}`)
   handleDivinationCardOverlay(activeDivinationCardOverlay.value, selectedDivinationCardName.value)
 })
 </script>
@@ -22,16 +21,14 @@ watch([activeDivinationCardOverlay, selectedDivinationCardName], () => {
     />
     <v-radio
       :value="OverlayKeys.BASE_DROP_CHANCE"
-      density="comfortable"
     >
       <template #label>
-        <v-select
+        <v-combobox
           v-model="selectedDivinationCardName"
-          label="Base Drop Chance"
+          placeholder="Base Drop Chance"
           :items="atlasNodeStore.dropRestrictedDivinationCardNames"
-          variant="outlined"
           :clearable="true"
-          density="compact"
+          no-data-text="No Divination Cards found"
         >
           <template #append>
             <v-tooltip>
@@ -43,18 +40,16 @@ watch([activeDivinationCardOverlay, selectedDivinationCardName], () => {
               <p>The Value is determined by 'Card drop Weight / Total Div Card Droppool size'</p>
             </v-tooltip>
           </template>
-        </v-select>
+        </v-combobox>
       </template>
     </v-radio>
     <v-radio
       label="Highest Card Price"
       :value="OverlayKeys.HIGHEST_CARD_PRICE_OVERLAY"
-      density="compact"
     />
     <v-radio
       label="Highest effective Value"
       :value="OverlayKeys.HIGHEST_EFFECTIVE_VALUE_OVERLAY"
-      density="compact"
     />
   </v-radio-group>
 </template>
