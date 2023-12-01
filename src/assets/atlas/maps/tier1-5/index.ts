@@ -141,6 +141,8 @@ import waterways from './Waterways.png'
 import pen from './Pen.png'
 import lavaChamber from './LavaChamber.png'
 import arena from './Arena.png'
+import brambleValley from './BrambleValley.png'
+import park from './Park.png'
 
 const normalMapList = new Map<string, string>([
   ['Arena', arena],
@@ -287,6 +289,8 @@ const normalMapList = new Map<string, string>([
   ['Sepulchre', sepulchre],
   ['Plateau', plateau],
   ['FrozenCabins', frozenCabins],
+  ['BrambleValley', brambleValley],
+  ['Park', park],
 
 ])
 
