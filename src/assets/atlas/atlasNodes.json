@@ -6041,7 +6041,6 @@
     "filterTags": [],
     "additionalTags": [
       "Delirium (Mirror)",
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -6084,7 +6083,7 @@
       "backtrackFactor": 0,
       "rushableBoss": false,
       "notes": null,
-      "baseMobCount": 0,
+      "baseMobCount": 1,
       "terrainSlots": 0,
       "openness": 7
     },
@@ -7493,7 +7492,6 @@
     ],
     "filterTags": [],
     "additionalTags": [
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -8467,7 +8465,6 @@
     ],
     "filterTags": [],
     "additionalTags": [
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -9224,7 +9221,6 @@
     ],
     "filterTags": [],
     "additionalTags": [
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -10124,7 +10120,6 @@
     "filterTags": [],
     "additionalTags": [
       "Delirium (Mirror)",
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -13285,7 +13280,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -13763,7 +13758,6 @@
     "filterTags": [],
     "additionalTags": [
       "Expedition",
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -14144,7 +14138,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Apothecary",
       "chaosValue": 12519.00,
@@ -15289,7 +15283,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -15586,7 +15580,6 @@
     ],
     "filterTags": [],
     "additionalTags": [
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -15613,7 +15606,7 @@
     "boss": {
       "numberOfBosses": 3,
       "phased": false,
-      "skippablePhases": true,
+      "skippablePhases": false,
       "spawned": true,
       "bossArena": true,
       "names": [
@@ -16265,7 +16258,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -16580,7 +16573,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -16857,7 +16850,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -17214,7 +17207,7 @@
     "additionalTags": [
       "Delirium (Mirror)"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Soul",
       "chaosValue": 140.00,
@@ -17305,8 +17298,28 @@
         "artFilename": "AssassinsFavor",
         "dropWeight": 8293,
         "dropRestricted": true,
-        "baseDropChance": 0.028100338505223282,
-        "effectiveValue": 2.8100338505223283
+        "baseDropChance": 0.023804398058447505,
+        "effectiveValue": 2.3804398058447505
+      },
+      {
+        "name": "Azure Rage",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.04,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "<size:28>{The mask hides his identity\nbut also makes it hard to read...}",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Punishing Map}\n<default>{Map Tier:} <normal>{16}",
+            "optional": false
+          }
+        ],
+        "artFilename": "AzureRage",
+        "dropWeight": 2496,
+        "dropRestricted": true,
+        "baseDropChance": 0.007164569824416372,
+        "effectiveValue": 0.7164569824416372
       },
       {
         "name": "Dying Anguish",
@@ -17325,8 +17338,8 @@
         "artFilename": "DyingAnguish",
         "dropWeight": 1578,
         "dropRestricted": true,
-        "baseDropChance": 0.005346959382761647,
-        "effectiveValue": 1.604087814828494
+        "baseDropChance": 0.004529523711109389,
+        "effectiveValue": 1.3588571133328167
       },
       {
         "name": "Her Mask",
@@ -17345,8 +17358,8 @@
         "artFilename": "HerMask",
         "dropWeight": 8083,
         "dropRestricted": true,
-        "baseDropChance": 0.027388765963791122,
-        "effectiveValue": 2.738876596379112
+        "baseDropChance": 0.02320160973187401,
+        "effectiveValue": 2.320160973187401
       },
       {
         "name": "Hope",
@@ -17365,8 +17378,8 @@
         "artFilename": "Hope",
         "dropWeight": 1681,
         "dropRestricted": true,
-        "baseDropChance": 0.0056959687721307535,
-        "effectiveValue": 0.5695968772130754
+        "baseDropChance": 0.004825177033190673,
+        "effectiveValue": 0.48251770331906735
       },
       {
         "name": "Jack in the Box",
@@ -17385,8 +17398,8 @@
         "artFilename": "JackInTheBox",
         "dropWeight": 4276,
         "dropRestricted": true,
-        "baseDropChance": 0.014488972319828139,
-        "effectiveValue": 1.448897231982814
+        "baseDropChance": 0.012273918497277407,
+        "effectiveValue": 1.2273918497277407
       },
       {
         "name": "Lantador's Lost Love",
@@ -17405,8 +17418,8 @@
         "artFilename": "LantadorsLostLove",
         "dropWeight": 15301,
         "dropRestricted": true,
-        "baseDropChance": 0.05184653074501645,
-        "effectiveValue": 5.184653074501646
+        "baseDropChance": 0.043920305642385776,
+        "effectiveValue": 4.392030564238578
       },
       {
         "name": "Lingering Remnants",
@@ -17425,8 +17438,8 @@
         "artFilename": "LingeringRemnants",
         "dropWeight": 1921,
         "dropRestricted": true,
-        "baseDropChance": 0.006509194533767505,
-        "effectiveValue": 0.6509194533767505
+        "baseDropChance": 0.005514077977846094,
+        "effectiveValue": 0.5514077977846094
       },
       {
         "name": "Lucky Connections",
@@ -17445,8 +17458,8 @@
         "artFilename": "LuckyConnections",
         "dropWeight": 7212,
         "dropRestricted": true,
-        "baseDropChance": 0.02443743413718441,
-        "effectiveValue": 2.4437434137184413
+        "baseDropChance": 0.020701473386895382,
+        "effectiveValue": 2.070147338689538
       },
       {
         "name": "Prosperity",
@@ -17465,8 +17478,28 @@
         "artFilename": "Prosperity",
         "dropWeight": 12193,
         "dropRestricted": true,
-        "baseDropChance": 0.04131525713182051,
-        "effectiveValue": 4.131525713182051
+        "baseDropChance": 0.034999038409098085,
+        "effectiveValue": 3.4999038409098087
+      },
+      {
+        "name": "Rats",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.04,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "Whoever said 'more is always better' has obviously never met a rat.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Rat's Nest}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Rats",
+        "dropWeight": 15252,
+        "dropRestricted": true,
+        "baseDropChance": 0.043779655032851965,
+        "effectiveValue": 4.377965503285196
       },
       {
         "name": "The Dragon's Heart",
@@ -17485,8 +17518,8 @@
         "artFilename": "TheDragonsHeart",
         "dropWeight": 36,
         "dropRestricted": true,
-        "baseDropChance": 1.2198386424551286E-4,
-        "effectiveValue": 0.3659515927365386
+        "baseDropChance": 1.0333514169831305E-4,
+        "effectiveValue": 0.31000542509493917
       },
       {
         "name": "The Encroaching Darkness",
@@ -17505,8 +17538,8 @@
         "artFilename": "TheEncroachingDarkness",
         "dropWeight": 776,
         "dropRestricted": true,
-        "baseDropChance": 0.0026294299626254992,
-        "effectiveValue": 0.2629429962625499
+        "baseDropChance": 0.0022274463877191924,
+        "effectiveValue": 0.22274463877191925
       },
       {
         "name": "The Gambler",
@@ -17525,8 +17558,8 @@
         "artFilename": "TheGambler",
         "dropWeight": 4722,
         "dropRestricted": true,
-        "baseDropChance": 0.016000216860203104,
-        "effectiveValue": 1.4560197342784824
+        "baseDropChance": 0.013554126086095396,
+        "effectiveValue": 1.233425473834681
       },
       {
         "name": "The Journey",
@@ -17545,8 +17578,8 @@
         "artFilename": "TheJourney",
         "dropWeight": 716,
         "dropRestricted": true,
-        "baseDropChance": 0.002426123522216311,
-        "effectiveValue": 0.2037943758661701
+        "baseDropChance": 0.0020552211515553376,
+        "effectiveValue": 0.17263857673064836
       },
       {
         "name": "The Messenger",
@@ -17565,8 +17598,8 @@
         "artFilename": "TheMessenger",
         "dropWeight": 1196,
         "dropRestricted": true,
-        "baseDropChance": 0.004052575045489816,
-        "effectiveValue": 0.8105150090979631
+        "baseDropChance": 0.003433023040866178,
+        "effectiveValue": 0.6866046081732355
       },
       {
         "name": "The Pact",
@@ -17585,8 +17618,8 @@
         "artFilename": "ThePact",
         "dropWeight": 271,
         "dropRestricted": true,
-        "baseDropChance": 9.182674225148329E-4,
-        "effectiveValue": 0.27548022675444983
+        "baseDropChance": 7.778839833400788E-4,
+        "effectiveValue": 0.23336519500202366
       },
       {
         "name": "The Poet",
@@ -17605,8 +17638,28 @@
         "artFilename": "ThePoet",
         "dropWeight": 2091,
         "dropRestricted": true,
-        "baseDropChance": 0.007085229448260205,
-        "effectiveValue": 0.7085229448260205
+        "baseDropChance": 0.00600204948031035,
+        "effectiveValue": 0.6002049480310351
+      },
+      {
+        "name": "The Return of the Rat",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.04,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "And he shall be heralded by the screams of the damned.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Tavukai}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheReturnOfTheRat",
+        "dropWeight": 867,
+        "dropRestricted": true,
+        "baseDropChance": 0.002488654662567706,
+        "effectiveValue": 0.24886546625677058
       },
       {
         "name": "The Saint's Treasure",
@@ -17625,8 +17678,8 @@
         "artFilename": "TheSaintsTreasure",
         "dropWeight": 973,
         "dropRestricted": true,
-        "baseDropChance": 0.0032969527753023337,
-        "effectiveValue": 0.9890858325907002
+        "baseDropChance": 0.0027929192464571833,
+        "effectiveValue": 0.8378757739371551
       },
       {
         "name": "The Tinkerer's Table",
@@ -17645,8 +17698,28 @@
         "artFilename": "TheTinkerersTable",
         "dropWeight": 193,
         "dropRestricted": true,
-        "baseDropChance": 6.539690499828884E-4,
-        "effectiveValue": 0.06539690499828885
+        "baseDropChance": 5.539911763270672E-4,
+        "effectiveValue": 0.05539911763270672
+      },
+      {
+        "name": "The Tireless Extractor",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.04,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "<size:30>{\"I am not alone in this. I have God by my side! And... you help sometimes, I suppose.\"\n- Sister Cassia}",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Oil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTirelessExtractor",
+        "dropWeight": 9238,
+        "dropRestricted": true,
+        "baseDropChance": 0.026516945528028222,
+        "effectiveValue": 2.651694552802822
       },
       {
         "name": "The Trial",
@@ -17665,8 +17738,8 @@
         "artFilename": "TheTrial",
         "dropWeight": 5963,
         "dropRestricted": true,
-        "baseDropChance": 0.02020527173599981,
-        "effectiveValue": 2.020527173599981
+        "baseDropChance": 0.017116318054084464,
+        "effectiveValue": 1.7116318054084465
       },
       {
         "name": "The Tyrant",
@@ -17685,8 +17758,28 @@
         "artFilename": "TheTyrant",
         "dropWeight": 296,
         "dropRestricted": true,
-        "baseDropChance": 0.0010029784393519945,
-        "effectiveValue": 0.20059568787039891
+        "baseDropChance": 8.496444984083518E-4,
+        "effectiveValue": 0.16992889968167035
+      },
+      {
+        "name": "Three Faces in the Dark",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.04,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "For every threat you spy in the shadows, there are two others you don't.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{3x Chaos Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "ThreeFacesInTheDark",
+        "dropWeight": 25407,
+        "dropRestricted": true,
+        "baseDropChance": 0.07292877625358443,
+        "effectiveValue": 7.292877625358443
       }
     ],
     "filterTags": [],
@@ -17709,11 +17802,11 @@
       "artFilename": "TheDragonsHeart",
       "dropWeight": 36,
       "dropRestricted": true,
-      "baseDropChance": 1.2198386424551286E-4,
-      "effectiveValue": 0.3659515927365386
+      "baseDropChance": 1.0333514169831305E-4,
+      "effectiveValue": 0.31000542509493917
     },
     "boss": {
-      "numberOfBosses": 5,
+      "numberOfBosses": 1,
       "phased": true,
       "skippablePhases": false,
       "spawned": true,
@@ -17752,8 +17845,8 @@
       "artFilename": "TheDragonsHeart",
       "dropWeight": 36,
       "dropRestricted": true,
-      "baseDropChance": 1.2198386424551286E-4,
-      "effectiveValue": 0.3659515927365386
+      "baseDropChance": 1.0333514169831305E-4,
+      "effectiveValue": 0.31000542509493917
     }
   },
   {
@@ -18666,10 +18759,9 @@
     "filterTags": [],
     "additionalTags": [
       "Expedition",
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "Wealth and Power",
       "chaosValue": 150.00,
@@ -19027,7 +19119,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -19502,7 +19594,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -20457,7 +20549,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -20777,7 +20869,7 @@
       "Metamorph",
       "Harbinger (Sextant)"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Fiend",
       "chaosValue": 1702.58,
@@ -21135,7 +21227,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -21929,7 +22021,7 @@
     "additionalTags": [
       "Delirium (Mirror)"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -22266,7 +22358,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -23375,7 +23467,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -25343,7 +25435,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -25660,7 +25752,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -26713,7 +26805,7 @@
     "additionalTags": [
       "Essence"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -27491,7 +27583,7 @@
     "additionalTags": [
       "Expedition"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Nurse",
       "chaosValue": 300.46,
@@ -27888,7 +27980,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "Tranquillity",
       "chaosValue": 35.50,
@@ -28624,7 +28716,7 @@
       "Breach",
       "Ritual"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -30032,7 +30124,7 @@
     "additionalTags": [
       "Delirium (Mirror)"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Destination",
       "chaosValue": 45.50,
@@ -30824,7 +30916,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Last One Standing",
       "chaosValue": 55.00,
@@ -31144,7 +31236,7 @@
       "Metamorph",
       "Harbinger (Sextant)"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -33886,7 +33978,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -34263,7 +34355,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -35318,7 +35410,7 @@
       "Breach",
       "Ritual"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -35657,7 +35749,7 @@
     "additionalTags": [
       "Expedition"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -35974,7 +36066,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Demon",
       "chaosValue": 2929.45,
@@ -36309,7 +36401,6 @@
     ],
     "filterTags": [],
     "additionalTags": [
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -36335,8 +36426,8 @@
     },
     "boss": {
       "numberOfBosses": 2,
-      "phased": false,
-      "skippablePhases": true,
+      "phased": true,
+      "skippablePhases": false,
       "spawned": true,
       "bossArena": true,
       "names": [
@@ -37093,7 +37184,7 @@
       "Ritual",
       "Expedition"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -37512,7 +37603,7 @@
     "additionalTags": [
       "Blight"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Doctor",
       "chaosValue": 2615.22,
@@ -37809,7 +37900,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -38226,7 +38317,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Nurse",
       "chaosValue": 300.46,
@@ -38603,7 +38694,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Doctor",
       "chaosValue": 2615.22,
@@ -39315,7 +39406,6 @@
     ],
     "filterTags": [],
     "additionalTags": [
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -41621,7 +41711,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -42153,7 +42243,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -42788,7 +42878,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -43562,7 +43652,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Apothecary",
       "chaosValue": 12519.00,
@@ -43999,10 +44089,9 @@
     ],
     "filterTags": [],
     "additionalTags": [
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -44797,7 +44886,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Nurse",
       "chaosValue": 300.46,
@@ -45809,7 +45898,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -46525,7 +46614,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -46882,7 +46971,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -47219,7 +47308,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -47310,8 +47399,8 @@
         "artFilename": "HerMask",
         "dropWeight": 8083,
         "dropRestricted": true,
-        "baseDropChance": 0.032775518313822645,
-        "effectiveValue": 3.2775518313822647
+        "baseDropChance": 0.03179817228370122,
+        "effectiveValue": 3.1798172283701223
       },
       {
         "name": "Hope",
@@ -47330,8 +47419,8 @@
         "artFilename": "Hope",
         "dropWeight": 1681,
         "dropRestricted": true,
-        "baseDropChance": 0.006816237323461075,
-        "effectiveValue": 0.6816237323461075
+        "baseDropChance": 0.006612981270431988,
+        "effectiveValue": 0.6612981270431988
       },
       {
         "name": "Lingering Remnants",
@@ -47350,8 +47439,28 @@
         "artFilename": "LingeringRemnants",
         "dropWeight": 1921,
         "dropRestricted": true,
-        "baseDropChance": 0.007789406245311556,
-        "effectiveValue": 0.7789406245311556
+        "baseDropChance": 0.0075571308866745086,
+        "effectiveValue": 0.7557130886674509
+      },
+      {
+        "name": "The Demon",
+        "chaosValue": 2929.45,
+        "exaltedValue": 128.77,
+        "divineValue": 11.70,
+        "bossOnly": true,
+        "stackSize": 10,
+        "flavourText": "A man who hears voices may not necessarily be crazy.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Headhunter}\n<corrupted>{Two-Implicit}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheDemon",
+        "dropWeight": 2,
+        "dropRestricted": true,
+        "baseDropChance": 7.867913468687672E-6,
+        "effectiveValue": 2.30486591108471
       },
       {
         "name": "The Dragon's Heart",
@@ -47370,8 +47479,8 @@
         "artFilename": "TheDragonsHeart",
         "dropWeight": 36,
         "dropRestricted": true,
-        "baseDropChance": 1.4597533827757212E-4,
-        "effectiveValue": 0.4379260148327163
+        "baseDropChance": 1.4162244243637808E-4,
+        "effectiveValue": 0.42486732730913424
       },
       {
         "name": "The Encroaching Darkness",
@@ -47390,8 +47499,8 @@
         "artFilename": "TheEncroachingDarkness",
         "dropWeight": 776,
         "dropRestricted": true,
-        "baseDropChance": 0.003146579513983221,
-        "effectiveValue": 0.3146579513983221
+        "baseDropChance": 0.0030527504258508163,
+        "effectiveValue": 0.30527504258508165
       },
       {
         "name": "The Gambler",
@@ -47410,8 +47519,8 @@
         "artFilename": "TheGambler",
         "dropWeight": 4722,
         "dropRestricted": true,
-        "baseDropChance": 0.01914709853740821,
-        "effectiveValue": 1.742385966904147
+        "baseDropChance": 0.01857614369957159,
+        "effectiveValue": 1.6904290766610148
       },
       {
         "name": "The Standoff",
@@ -47430,8 +47539,8 @@
         "artFilename": "TheStandOff",
         "dropWeight": 5892,
         "dropRestricted": true,
-        "baseDropChance": 0.023891297031429302,
-        "effectiveValue": 2.38912970314293
+        "baseDropChance": 0.02317887307875388,
+        "effectiveValue": 2.317887307875388
       },
       {
         "name": "The Tinkerer's Table",
@@ -47450,8 +47559,8 @@
         "artFilename": "TheTinkerersTable",
         "dropWeight": 193,
         "dropRestricted": true,
-        "baseDropChance": 7.825900079880949E-4,
-        "effectiveValue": 0.07825900079880949
+        "baseDropChance": 7.592536497283603E-4,
+        "effectiveValue": 0.07592536497283603
       },
       {
         "name": "The Trial",
@@ -47470,32 +47579,52 @@
         "artFilename": "TheTrial",
         "dropWeight": 5963,
         "dropRestricted": true,
-        "baseDropChance": 0.024179192837476736,
-        "effectiveValue": 2.4179192837476737
+        "baseDropChance": 0.023458184006892292,
+        "effectiveValue": 2.3458184006892293
+      },
+      {
+        "name": "The Wrath",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.04,
+        "divineValue": 0.00,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "<size:31>{\"Daughter of catastrophe, mother of pain. Amongst the filth of Wraeclast, she wanders, and her wrath follows.\" - Quintoon the Returned}",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{10x Chaos Orb}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheWrath",
+        "dropWeight": 7578,
+        "dropRestricted": true,
+        "baseDropChance": 0.02981152413285759,
+        "effectiveValue": 2.9811524132857588
       }
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 30.00,
-      "exaltedValue": 1.32,
-      "divineValue": 0.12,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "name": "The Demon",
+      "chaosValue": 2929.45,
+      "exaltedValue": 128.77,
+      "divineValue": 11.70,
+      "bossOnly": true,
+      "stackSize": 10,
+      "flavourText": "A man who hears voices may not necessarily be crazy.",
       "explicitModifiers": [
         {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "text": "<uniqueitem>{Headhunter}\n<corrupted>{Two-Implicit}\n<corrupted>{Corrupted}",
           "optional": false
         }
       ],
-      "artFilename": "TheDragonsHeart",
-      "dropWeight": 36,
+      "artFilename": "TheDemon",
+      "dropWeight": 2,
       "dropRestricted": true,
-      "baseDropChance": 1.4597533827757212E-4,
-      "effectiveValue": 0.4379260148327163
+      "baseDropChance": 7.867913468687672E-6,
+      "effectiveValue": 2.30486591108471
     },
     "boss": {
       "numberOfBosses": 1,
@@ -47521,24 +47650,24 @@
     },
     "notes": null,
     "highestEffectiveValueDivinationCard": {
-      "name": "The Dragon's Heart",
-      "chaosValue": 30.00,
-      "exaltedValue": 1.32,
-      "divineValue": 0.12,
-      "bossOnly": false,
-      "stackSize": 11,
-      "flavourText": "They say when a dragon dies, the flesh smoulders and burns until all that remains is the still, white-hot, heart.",
+      "name": "The Demon",
+      "chaosValue": 2929.45,
+      "exaltedValue": 128.77,
+      "divineValue": 11.70,
+      "bossOnly": true,
+      "stackSize": 10,
+      "flavourText": "A man who hears voices may not necessarily be crazy.",
       "explicitModifiers": [
         {
-          "text": "<gemitem>{Level 4 Empower}\n<corrupted>{Corrupted}",
+          "text": "<uniqueitem>{Headhunter}\n<corrupted>{Two-Implicit}\n<corrupted>{Corrupted}",
           "optional": false
         }
       ],
-      "artFilename": "TheDragonsHeart",
-      "dropWeight": 36,
+      "artFilename": "TheDemon",
+      "dropWeight": 2,
       "dropRestricted": true,
-      "baseDropChance": 1.4597533827757212E-4,
-      "effectiveValue": 0.4379260148327163
+      "baseDropChance": 7.867913468687672E-6,
+      "effectiveValue": 2.30486591108471
     }
   },
   {
@@ -47853,7 +47982,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -48148,7 +48277,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -49359,7 +49488,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "Brother's Stash",
       "chaosValue": 85.30,
@@ -49634,7 +49763,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -50683,7 +50812,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -51078,7 +51207,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -51598,7 +51727,7 @@
       "Metamorph",
       "Harbinger (Sextant)"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -52354,7 +52483,7 @@
     "additionalTags": [
       "Blight"
     ],
-    "active": true,
+    "active": false,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -53027,7 +53156,6 @@
     "filterTags": [],
     "additionalTags": [
       "Expedition",
-      "Metamorph",
       "Harbinger (Sextant)"
     ],
     "active": true,
@@ -54833,7 +54961,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "Seven Years Bad Luck",
       "chaosValue": 676.03,
@@ -54922,8 +55050,8 @@
         "artFilename": "AmbitiousObsession",
         "dropWeight": 119,
         "dropRestricted": true,
-        "baseDropChance": 2.9740483045425465E-4,
-        "effectiveValue": 0.0892214491362764
+        "baseDropChance": 2.9644613399365256E-4,
+        "effectiveValue": 0.08893384019809576
       },
       {
         "name": "Her Mask",
@@ -54942,8 +55070,8 @@
         "artFilename": "HerMask",
         "dropWeight": 8083,
         "dropRestricted": true,
-        "baseDropChance": 0.020201035668586054,
-        "effectiveValue": 2.020103566858605
+        "baseDropChance": 0.020135916815720117,
+        "effectiveValue": 2.0135916815720116
       },
       {
         "name": "Hope",
@@ -54962,8 +55090,8 @@
         "artFilename": "Hope",
         "dropWeight": 1681,
         "dropRestricted": true,
-        "baseDropChance": 0.004201155630198337,
-        "effectiveValue": 0.4201155630198337
+        "baseDropChance": 0.004187613035658235,
+        "effectiveValue": 0.4187613035658235
       },
       {
         "name": "Lingering Remnants",
@@ -54982,8 +55110,8 @@
         "artFilename": "LingeringRemnants",
         "dropWeight": 1921,
         "dropRestricted": true,
-        "baseDropChance": 0.004800963691618682,
-        "effectiveValue": 0.48009636916186815
+        "baseDropChance": 0.00478548759161182,
+        "effectiveValue": 0.478548759161182
       },
       {
         "name": "More is Never Enough",
@@ -55002,8 +55130,8 @@
         "artFilename": "MoreIsNeverEnough",
         "dropWeight": 755,
         "dropRestricted": true,
-        "baseDropChance": 0.00188689619321817,
-        "effectiveValue": 0.18868961932181702
+        "baseDropChance": 0.001880813707270653,
+        "effectiveValue": 0.1880813707270653
       },
       {
         "name": "Rain of Chaos",
@@ -55022,8 +55150,8 @@
         "artFilename": "RainOfChaos",
         "dropWeight": 121466,
         "dropRestricted": true,
-        "baseDropChance": 0.3035678582853487,
-        "effectiveValue": 30.35678582853487
+        "baseDropChance": 0.3025892950560756,
+        "effectiveValue": 30.25892950560756
       },
       {
         "name": "The Dragon's Heart",
@@ -55042,8 +55170,8 @@
         "artFilename": "TheDragonsHeart",
         "dropWeight": 36,
         "dropRestricted": true,
-        "baseDropChance": 8.997120921305183E-5,
-        "effectiveValue": 0.2699136276391555
+        "baseDropChance": 8.968118339303775E-5,
+        "effectiveValue": 0.26904355017911324
       },
       {
         "name": "The Encroaching Darkness",
@@ -55062,8 +55190,8 @@
         "artFilename": "TheEncroachingDarkness",
         "dropWeight": 776,
         "dropRestricted": true,
-        "baseDropChance": 0.0019393793985924505,
-        "effectiveValue": 0.19393793985924504
+        "baseDropChance": 0.0019331277309165916,
+        "effectiveValue": 0.19331277309165915
       },
       {
         "name": "The Fox",
@@ -55082,8 +55210,8 @@
         "artFilename": "TheFox",
         "dropWeight": 2364,
         "dropRestricted": true,
-        "baseDropChance": 0.005908109404990403,
-        "effectiveValue": 0.5908109404990403
+        "baseDropChance": 0.0058890643761428125,
+        "effectiveValue": 0.5889064376142813
       },
       {
         "name": "The Gambler",
@@ -55102,8 +55230,8 @@
         "artFilename": "TheGambler",
         "dropWeight": 4722,
         "dropRestricted": true,
-        "baseDropChance": 0.011801223608445297,
-        "effectiveValue": 1.073911348368522
+        "baseDropChance": 0.011763181888386785,
+        "effectiveValue": 1.0704495518431976
       },
       {
         "name": "The Harvester",
@@ -55122,8 +55250,28 @@
         "artFilename": "TheHarvester",
         "dropWeight": 17234,
         "dropRestricted": true,
-        "baseDropChance": 0.04307121721049264,
-        "effectiveValue": 14.644213851567498
+        "baseDropChance": 0.04293237540543368,
+        "effectiveValue": 14.597007637847451
+      },
+      {
+        "name": "The Master",
+        "chaosValue": 2.00,
+        "exaltedValue": 0.09,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "In a world filled with chaos, he could always seek comfort in the hands of his master.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Bisco's Collar}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheMaster",
+        "dropWeight": 1294,
+        "dropRestricted": true,
+        "baseDropChance": 0.0032235403141830793,
+        "effectiveValue": 0.6447080628366159
       },
       {
         "name": "The Scarred Meadow",
@@ -55142,8 +55290,8 @@
         "artFilename": "TheScarredMeadow",
         "dropWeight": 17454,
         "dropRestricted": true,
-        "baseDropChance": 0.04362104126679463,
-        "effectiveValue": 4.362104126679463
+        "baseDropChance": 0.04348042708172447,
+        "effectiveValue": 4.348042708172447
       },
       {
         "name": "The Tinkerer's Table",
@@ -55162,8 +55310,8 @@
         "artFilename": "TheTinkerersTable",
         "dropWeight": 193,
         "dropRestricted": true,
-        "baseDropChance": 4.823456493921945E-4,
-        "effectiveValue": 0.04823456493921945
+        "baseDropChance": 4.8079078874600794E-4,
+        "effectiveValue": 0.04807907887460079
       },
       {
         "name": "The Trial",
@@ -55182,8 +55330,8 @@
         "artFilename": "TheTrial",
         "dropWeight": 5963,
         "dropRestricted": true,
-        "baseDropChance": 0.014902731126039667,
-        "effectiveValue": 1.4902731126039668
+        "baseDropChance": 0.014854691571463447,
+        "effectiveValue": 1.4854691571463448
       },
       {
         "name": "Tranquillity",
@@ -55202,8 +55350,8 @@
         "artFilename": "Tranquillity",
         "dropWeight": 11,
         "dropRestricted": true,
-        "baseDropChance": 2.749120281509917E-5,
-        "effectiveValue": 0.09759376999360204
+        "baseDropChance": 2.7402583814539314E-5,
+        "effectiveValue": 0.09727917254161457
       }
     ],
     "filterTags": [],
@@ -55212,7 +55360,7 @@
       "Breach",
       "Ritual"
     ],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "Tranquillity",
       "chaosValue": 35.50,
@@ -55230,8 +55378,8 @@
       "artFilename": "Tranquillity",
       "dropWeight": 11,
       "dropRestricted": true,
-      "baseDropChance": 2.749120281509917E-5,
-      "effectiveValue": 0.09759376999360204
+      "baseDropChance": 2.7402583814539314E-5,
+      "effectiveValue": 0.09727917254161457
     },
     "boss": {
       "numberOfBosses": 1,
@@ -55273,8 +55421,8 @@
       "artFilename": "TheDragonsHeart",
       "dropWeight": 36,
       "dropRestricted": true,
-      "baseDropChance": 8.997120921305183E-5,
-      "effectiveValue": 0.2699136276391555
+      "baseDropChance": 8.968118339303775E-5,
+      "effectiveValue": 0.26904355017911324
     }
   },
   {
@@ -56503,7 +56651,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
@@ -56780,7 +56928,7 @@
     ],
     "filterTags": [],
     "additionalTags": [],
-    "active": false,
+    "active": true,
     "highestValueDivinationCard": {
       "name": "The Dragon's Heart",
       "chaosValue": 30.00,
