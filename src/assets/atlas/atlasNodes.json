@@ -4750,7 +4750,9 @@
       }
     ],
     "filterTags": [],
-    "additionalTags": [],
+    "additionalTags": [
+      "Essence"
+    ],
     "active": true,
     "highestValueDivinationCard": {
       "name": "The Soul",
