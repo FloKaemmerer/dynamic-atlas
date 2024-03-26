@@ -57,10 +57,10 @@ function getDivinationCards(): DivinationCard[] | undefined {
                 Boss Drop Only: <span class="text-white">{{ divinationCard.bossOnly ? 'Yes' : 'No' }}</span>
               </p>
               <p class="d-flex justify-center">
-                Sell Price: <span class="text-white ml-1">{{ divinationCard.chaosValue.toFixed(2) }}</span> <img class="ml-1" :width="24" src="/chaos.webp">
+                Sell Price: <span class="text-white ml-1">{{ divinationCard.chaosValue.toFixed(1) }}</span> <img class="ml-1" :width="24" src="/chaos.webp">
               </p>
               <p class="d-flex justify-center">
-                Effective Value: <span class="text-white ml-1">{{ divinationCard.effectiveValue.toFixed(2) }}</span> <img class="ml-1" :width="24" src="/chaos.webp">
+                Effective Value: <span class="text-white ml-1">{{ divinationCard.effectiveValue.toFixed(1) }}</span> <img class="ml-1" :width="24" src="/chaos.webp">
               </p>
               <p>
                 Base Drop Chance: <span class="text-white">{{ (divinationCard.baseDropChance * 100).toFixed(3) }}%</span>

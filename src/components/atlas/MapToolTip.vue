@@ -38,7 +38,7 @@ const tooltipY = computed(() => props.toolTipData.y - 5)
         </div>
         <div>
           Highest Effective Value Div Card: <p class="d-inline-flex align-center text-white">
-            {{ toolTipData.node.highestEffectiveValueDivinationCard.name }} <span class="ml-2 text-accent-light">{{ toolTipData.node.highestEffectiveValueDivinationCard.effectiveValue.toFixed(3) }}</span><img class="chaos" src="/chaos.webp">
+            {{ toolTipData.node.highestEffectiveValueDivinationCard.name }} <span class="ml-2 text-accent-light">{{ toolTipData.node.highestEffectiveValueDivinationCard.effectiveValue.toFixed(1) }}</span><img class="chaos" src="/chaos.webp">
           </p>
         </div>
         <v-divider v-if="toolTipData.node.notes" :thickness="2" class="border-opacity-50 my-1" color="blue" />
