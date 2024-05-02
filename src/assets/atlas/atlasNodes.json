@@ -59709,7 +59709,13 @@
       "terrainSlots": 0,
       "openness": 3
     },
-    "tierSeventeenMaps": [],
+    "tierSeventeenMaps": [
+      "Ziggurat",
+      "Citadel",
+      "Fortress",
+      "Abomination",
+      "Sanctuary"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": "The Last One Standing",
@@ -59967,7 +59973,13 @@
       "terrainSlots": 0,
       "openness": 3
     },
-    "tierSeventeenMaps": [],
+    "tierSeventeenMaps": [
+      "Ziggurat",
+      "Citadel",
+      "Fortress",
+      "Abomination",
+      "Sanctuary"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": null,
@@ -60220,7 +60232,13 @@
       "terrainSlots": 0,
       "openness": 3
     },
-    "tierSeventeenMaps": [],
+    "tierSeventeenMaps": [
+      "Ziggurat",
+      "Citadel",
+      "Fortress",
+      "Abomination",
+      "Sanctuary"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": null,
@@ -60533,7 +60551,13 @@
       "terrainSlots": 0,
       "openness": 3
     },
-    "tierSeventeenMaps": [],
+    "tierSeventeenMaps": [
+      "Ziggurat",
+      "Citadel",
+      "Fortress",
+      "Abomination",
+      "Sanctuary"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": "Who Asked",
@@ -60749,7 +60773,9 @@
       "terrainSlots": 0,
       "openness": 4
     },
-    "tierSeventeenMaps": [],
+    "tierSeventeenMaps": [
+      "Ziggurat"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": "The Endless Darkness",
@@ -60849,7 +60875,9 @@
       "terrainSlots": 0,
       "openness": 3
     },
-    "tierSeventeenMaps": [],
+    "tierSeventeenMaps": [
+      "Ziggurat"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": "Beauty Through Death",
@@ -61477,7 +61505,9 @@
       "terrainSlots": 0,
       "openness": 1
     },
-    "tierSeventeenMaps": [],
+    "tierSeventeenMaps": [
+      "Ziggurat"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": null,
