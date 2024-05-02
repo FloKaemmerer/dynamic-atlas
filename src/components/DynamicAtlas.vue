@@ -3,12 +3,15 @@ import Konva from 'konva'
 import { onMounted, reactive, ref } from 'vue'
 import { useMouseInElement } from '@vueuse/core'
 import atlasBackgroundSource from '@/assets/atlas/maps/Atlas.webp'
+import noneAtlasMapsDrawer from '@/assets/atlas/maps/NoneAtlasMapsDrawer.png'
 import atlasMemorySource from '@/assets/atlas/memories/KiracMemoryItem.png'
 import mapBase from '@/assets/atlas/maps/Base.png'
+import t17MapBase from '@/assets/atlas/maps/T17Base.png'
 import uniqueMapList from '@/assets/atlas/maps/uniques/index.js'
 import whiteTierMapList from '@/assets/atlas/maps/tier1-5/index.js'
 import yellowTierMapList from '@/assets/atlas/maps/tier6-10/index.js'
 import redTierMapList from '@/assets/atlas/maps/tier11-16/index.js'
+import tier17MapList from '@/assets/atlas/maps/tier17/index.js'
 import voidstoneList from '@/assets/atlas/voidstones/sources/index.js'
 import { useAtlasNodeStore } from '@/store/AtlasNodeStore'
 import { useDetailsDrawerStore } from '@/store/DetailsDrawerStore'
@@ -60,6 +63,7 @@ import { getAtlasMemoriesSourceHighlightArea } from '@/composable/atlasMemories/
 import { getAtlasMemoryLine } from '@/composable/atlasMemories/atlas-memory-line'
 import MapToolTip from '@/components/atlas/MapToolTip.vue'
 import { getFilterHighlightWedge } from '@/composable/shapes/atlas-node-filter-highlight-Wedge'
+import { getNoneAtlasMapsDrawerKonvaImage } from '@/composable/noneAtlasMapsDrawer/none-atlas-maps-drawer-image'
 
 const atlasNodeStore = useAtlasNodeStore()
 const detailsDrawerStore = useDetailsDrawerStore()
@@ -108,6 +112,7 @@ function initAtlasCanvas() {
   initVoidstoneSockets()
   initVoidstones()
   initAtlasMemories()
+  initNoneAtlasMapsDrawer()
 
   const tooltipText = getTooltipBaseText()
   const tooltipContainer = getTooltipContainer(tooltipText.height())
@@ -231,6 +236,10 @@ function initNodeImages(atlasNode: AtlasNode) {
   if (atlasNode.uniqueMap) {
     drawUniqueNode(cleanNodeName, atlasNodePoint)
   }
+  else if (atlasNode.mapTier === 17) {
+    drawAtlasNodeImage(mapBaseGroup, t17MapBase, atlasNodePoint)
+    drawNormalNode(atlasNodePoint, atlasNode.mapTier, cleanNodeName)
+  }
   else {
     drawAtlasNodeImage(mapBaseGroup, mapBase, atlasNodePoint)
     drawNormalNode(atlasNodePoint, effectiveMapTier, cleanNodeName)
@@ -290,6 +299,21 @@ function initAtlasMemories() {
   drawAtlasMemoriesNumberOfStepsText(atlasMemoriesCanvasPoint)
 }
 
+function initNoneAtlasMapsDrawer() {
+  const noneAtlasMapsDrawerImage = new Image()
+  noneAtlasMapsDrawerImage.src = noneAtlasMapsDrawer
+  const noneAtlasMapsDrawerKonvaImage = getNoneAtlasMapsDrawerKonvaImage(noneAtlasMapsDrawerImage)
+  noneAtlasMapsDrawerImage.onload = function () {
+    const image = backgroundGroup.findOne('#none-atlas-maps-drawer')
+    if (image) {
+      image.destroy()
+    }
+    noneAtlasMapsDrawerKonvaImage.offsetX(noneAtlasMapsDrawerImage.width / 2)
+    noneAtlasMapsDrawerKonvaImage.offsetY(noneAtlasMapsDrawerImage.height / 2)
+    backgroundGroup.add(noneAtlasMapsDrawerKonvaImage)
+  }
+}
+
 function drawAtlasMemoriesNumberOfStepsText(atlasMemoriesPoint: Point) {
   const atlasMemoryTitleKonvaText = getAtlasMemoryTitleText(atlasMemoriesPoint)
   const oldTitleText = mapNameGroup.findOne(`#${atlasMemoryTitleKonvaText.getAttr('id')}`)
@@ -317,6 +341,9 @@ function drawNormalNode(point: Point, effectiveMapTier: number, cleanNodeName: s
   }
   else if (isRedTier(effectiveMapTier)) {
     mapNodeSource = redTierMapList.get(cleanNodeName) || ''
+  }
+  else if (effectiveMapTier === 17) {
+    mapNodeSource = tier17MapList.get(cleanNodeName) || ''
   }
   drawAtlasNodeImage(mapSymbolGroup, mapNodeSource, point)
 }
@@ -604,7 +631,7 @@ function isYellowTier(mapTier: number) {
 }
 
 function isRedTier(mapTier: number) {
-  return mapTier > 10
+  return mapTier > 10 && mapTier < 17
 }
 </script>
 

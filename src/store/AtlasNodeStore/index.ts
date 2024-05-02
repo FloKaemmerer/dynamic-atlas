@@ -54,6 +54,7 @@ export const useAtlasNodeStore = defineStore('atlas-node', {
           }
           atlasNode.filterTags = atlasNode.filterTags.concat(getMapTierFilterTags(atlasNode.mapTier))
           atlasNode.additionalTags.forEach(tag => atlasNode.filterTags.push(tag.toLowerCase()))
+          atlasNode.tierSeventeenMaps.forEach(tierSeventeen => atlasNode.filterTags.push(tierSeventeen.toLowerCase()))
           this.atlasNodesMap.set(atlasNode.id, atlasNode)
           this.atlasNodes.push(atlasNode)
           if (atlasNode.divinationCards) {
