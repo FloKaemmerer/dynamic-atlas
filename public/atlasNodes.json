@@ -57467,7 +57467,7 @@
     "linked": "",
     "mapTier": 17,
     "locX": "120",
-    "locY": "76",
+    "locY": "62",
     "name": "Abomination",
     "uniqueMap": false,
     "divinationCards": [
@@ -57907,7 +57907,7 @@
     "linked": "",
     "mapTier": 17,
     "locX": "120",
-    "locY": "99.5",
+    "locY": "85",
     "name": "Citadel",
     "uniqueMap": false,
     "divinationCards": [
@@ -58245,7 +58245,7 @@
     "linked": "",
     "mapTier": 17,
     "locX": "120",
-    "locY": "123",
+    "locY": "109",
     "name": "Fortress",
     "uniqueMap": false,
     "divinationCards": [
@@ -58603,7 +58603,7 @@
     "linked": "",
     "mapTier": 17,
     "locX": "120",
-    "locY": "146.5",
+    "locY": "132",
     "name": "Sanctuary",
     "uniqueMap": false,
     "divinationCards": [
@@ -58961,7 +58961,7 @@
     "linked": "",
     "mapTier": 17,
     "locX": "120",
-    "locY": "169.5",
+    "locY": "155",
     "name": "Ziggurat",
     "uniqueMap": false,
     "divinationCards": [
@@ -59359,7 +59359,7 @@
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "193",
+    "locY": "179",
     "name": "Pit of the Chimera",
     "uniqueMap": false,
     "divinationCards": [
@@ -59743,7 +59743,7 @@
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "216.5",
+    "locY": "202",
     "name": "Lair of the Hydra",
     "uniqueMap": false,
     "divinationCards": [
@@ -60002,266 +60002,7 @@
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "264",
-    "name": "Maze of the Minotaur",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "Her Mask",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 4,
-        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
-        "explicitModifiers": [
-          {
-            "text": "<whiteitem>{Sacrifice Fragment}",
-            "optional": false
-          }
-        ],
-        "artFilename": "HerMask",
-        "dropWeight": 9748,
-        "dropRestricted": true,
-        "baseDropChance": 0.03988070155341633,
-        "effectiveValue": 3.9880701553416333
-      },
-      {
-        "name": "Lingering Remnants",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 16,
-        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "LingeringRemnants",
-        "dropWeight": 1047,
-        "dropRestricted": true,
-        "baseDropChance": 0.004283452454495989,
-        "effectiveValue": 0.42834524544959884
-      },
-      {
-        "name": "Perfection",
-        "chaosValue": 3.00,
-        "exaltedValue": 0.47,
-        "divineValue": 0.02,
-        "bossOnly": true,
-        "stackSize": 5,
-        "flavourText": "There are countless worlds, but only those with limitless potential will be able to achieve perfection.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Jewellery}\n<default>{Item Level:} <normal>{100}\n<default>{Shaper Item}",
-            "optional": false
-          }
-        ],
-        "artFilename": "Perfection",
-        "dropWeight": 34,
-        "dropRestricted": false,
-        "baseDropChance": 1.3909969766271596E-4,
-        "effectiveValue": 0.04172990929881479
-      },
-      {
-        "name": "The Encroaching Darkness",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 8,
-        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEncroachingDarkness",
-        "dropWeight": 759,
-        "dropRestricted": true,
-        "baseDropChance": 0.0031051961919412183,
-        "effectiveValue": 0.31051961919412185
-      },
-      {
-        "name": "The Gambler",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
-        "explicitModifiers": [
-          {
-            "text": "<divination>{Divination Card}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheGambler",
-        "dropWeight": 5532,
-        "dropRestricted": true,
-        "baseDropChance": 0.02263233904323955,
-        "effectiveValue": 2.263233904323955
-      },
-      {
-        "name": "The Ruthless Ceinture",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "In combat, a warrior must first be resourceful,\nand second, decisive.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Meginord's Girdle}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheRuthlessCeinture",
-        "dropWeight": 2412,
-        "dropRestricted": true,
-        "baseDropChance": 0.009867896198896203,
-        "effectiveValue": 0.9867896198896202
-      },
-      {
-        "name": "The Tinkerer's Table",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 5,
-        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
-        "explicitModifiers": [
-          {
-            "text": "<currencyitem>{5x Fossil}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTinkerersTable",
-        "dropWeight": 251,
-        "dropRestricted": true,
-        "baseDropChance": 0.001026883062157109,
-        "effectiveValue": 0.1026883062157109
-      },
-      {
-        "name": "The Trial",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
-        "explicitModifiers": [
-          {
-            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheTrial",
-        "dropWeight": 6376,
-        "dropRestricted": true,
-        "baseDropChance": 0.02608528447933756,
-        "effectiveValue": 2.608528447933756
-      },
-      {
-        "name": "Treasure Hunter",
-        "chaosValue": 1.00,
-        "exaltedValue": 0.16,
-        "divineValue": 0.01,
-        "bossOnly": false,
-        "stackSize": 7,
-        "flavourText": "\"Don't worry, I know what I'm doing.\"\n- Toggo's Last Words",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Vaults of Atziri}\n<corrupted>{Corrupted}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TreasureHunter",
-        "dropWeight": 799,
-        "dropRestricted": true,
-        "baseDropChance": 0.003268842895073825,
-        "effectiveValue": 0.3268842895073825
-      }
-    ],
-    "filterTags": [],
-    "additionalTags": [],
-    "active": true,
-    "highestValueDivinationCard": {
-      "name": "Perfection",
-      "chaosValue": 3.00,
-      "exaltedValue": 0.47,
-      "divineValue": 0.02,
-      "bossOnly": true,
-      "stackSize": 5,
-      "flavourText": "There are countless worlds, but only those with limitless potential will be able to achieve perfection.",
-      "explicitModifiers": [
-        {
-          "text": "<rareitem>{Jewellery}\n<default>{Item Level:} <normal>{100}\n<default>{Shaper Item}",
-          "optional": false
-        }
-      ],
-      "artFilename": "Perfection",
-      "dropWeight": 34,
-      "dropRestricted": false,
-      "baseDropChance": 1.3909969766271596E-4,
-      "effectiveValue": 0.04172990929881479
-    },
-    "boss": {
-      "numberOfBosses": 1,
-      "phased": false,
-      "skippablePhases": false,
-      "spawned": true,
-      "bossArena": true,
-      "names": [
-        "Guardian of the Minotaur"
-      ],
-      "notes": null,
-      "introPhase": false
-    },
-    "nodeLayout": {
-      "linearity": 9,
-      "traversability": 8,
-      "backtrackFactor": 1,
-      "rushableBoss": false,
-      "notes": null,
-      "baseMobCount": 4,
-      "terrainSlots": 0,
-      "openness": 3
-    },
-    "tierSeventeenMaps": [
-      "Ziggurat",
-      "Citadel",
-      "Fortress",
-      "Abomination",
-      "Sanctuary"
-    ],
-    "notes": null,
-    "highestEffectiveValueDivinationCard": {
-      "name": null,
-      "chaosValue": null,
-      "exaltedValue": null,
-      "divineValue": null,
-      "bossOnly": false,
-      "stackSize": 0,
-      "flavourText": null,
-      "explicitModifiers": null,
-      "artFilename": null,
-      "dropWeight": 0,
-      "dropRestricted": false,
-      "baseDropChance": 0.0,
-      "effectiveValue": 0.0
-    }
-  },
-  {
-    "id": "207",
-    "linked": "",
-    "mapTier": 16,
-    "locX": "120",
-    "locY": "240.5",
+    "locY": "226",
     "name": "Forge of the Phoenix",
     "uniqueMap": false,
     "divinationCards": [
@@ -60585,7 +60326,468 @@
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "334",
+    "locY": "250",
+    "name": "Maze of the Minotaur",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "Her Mask",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 4,
+        "flavourText": "To her beauty you submit,\nlest your neck the great Queen slit.",
+        "explicitModifiers": [
+          {
+            "text": "<whiteitem>{Sacrifice Fragment}",
+            "optional": false
+          }
+        ],
+        "artFilename": "HerMask",
+        "dropWeight": 9748,
+        "dropRestricted": true,
+        "baseDropChance": 0.03988070155341633,
+        "effectiveValue": 3.9880701553416333
+      },
+      {
+        "name": "Lingering Remnants",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 16,
+        "flavourText": "Never dying, yet not living,\nEndlessly they wander\nbeneath the harvest moon.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Vaal Temple Map}\n<default>{Item Level:} <normal>{83}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "LingeringRemnants",
+        "dropWeight": 1047,
+        "dropRestricted": true,
+        "baseDropChance": 0.004283452454495989,
+        "effectiveValue": 0.42834524544959884
+      },
+      {
+        "name": "Perfection",
+        "chaosValue": 3.00,
+        "exaltedValue": 0.47,
+        "divineValue": 0.02,
+        "bossOnly": true,
+        "stackSize": 5,
+        "flavourText": "There are countless worlds, but only those with limitless potential will be able to achieve perfection.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Jewellery}\n<default>{Item Level:} <normal>{100}\n<default>{Shaper Item}",
+            "optional": false
+          }
+        ],
+        "artFilename": "Perfection",
+        "dropWeight": 34,
+        "dropRestricted": false,
+        "baseDropChance": 1.3909969766271596E-4,
+        "effectiveValue": 0.04172990929881479
+      },
+      {
+        "name": "The Encroaching Darkness",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 8,
+        "flavourText": "No matter where your dreams take you, Nightmare follows close behind.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Map}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEncroachingDarkness",
+        "dropWeight": 759,
+        "dropRestricted": true,
+        "baseDropChance": 0.0031051961919412183,
+        "effectiveValue": 0.31051961919412185
+      },
+      {
+        "name": "The Gambler",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "\"I don't believe in karma. If it were real, I would never win.\"",
+        "explicitModifiers": [
+          {
+            "text": "<divination>{Divination Card}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheGambler",
+        "dropWeight": 5532,
+        "dropRestricted": true,
+        "baseDropChance": 0.02263233904323955,
+        "effectiveValue": 2.263233904323955
+      },
+      {
+        "name": "The Ruthless Ceinture",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "In combat, a warrior must first be resourceful,\nand second, decisive.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Meginord's Girdle}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheRuthlessCeinture",
+        "dropWeight": 2412,
+        "dropRestricted": true,
+        "baseDropChance": 0.009867896198896203,
+        "effectiveValue": 0.9867896198896202
+      },
+      {
+        "name": "The Tinkerer's Table",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 5,
+        "flavourText": "Trying to bring your vision to life is enough to drive you mad.",
+        "explicitModifiers": [
+          {
+            "text": "<currencyitem>{5x Fossil}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTinkerersTable",
+        "dropWeight": 251,
+        "dropRestricted": true,
+        "baseDropChance": 0.001026883062157109,
+        "effectiveValue": 0.1026883062157109
+      },
+      {
+        "name": "The Trial",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "You cannot journey to new lands until you have the courage to leave the safety of home.",
+        "explicitModifiers": [
+          {
+            "text": "<rareitem>{Map}\n<default>{Map Tier:} <normal>{15}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheTrial",
+        "dropWeight": 6376,
+        "dropRestricted": true,
+        "baseDropChance": 0.02608528447933756,
+        "effectiveValue": 2.608528447933756
+      },
+      {
+        "name": "Treasure Hunter",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 7,
+        "flavourText": "\"Don't worry, I know what I'm doing.\"\n- Toggo's Last Words",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Vaults of Atziri}\n<corrupted>{Corrupted}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TreasureHunter",
+        "dropWeight": 799,
+        "dropRestricted": true,
+        "baseDropChance": 0.003268842895073825,
+        "effectiveValue": 0.3268842895073825
+      }
+    ],
+    "filterTags": [],
+    "additionalTags": [],
+    "active": true,
+    "highestValueDivinationCard": {
+      "name": "Perfection",
+      "chaosValue": 3.00,
+      "exaltedValue": 0.47,
+      "divineValue": 0.02,
+      "bossOnly": true,
+      "stackSize": 5,
+      "flavourText": "There are countless worlds, but only those with limitless potential will be able to achieve perfection.",
+      "explicitModifiers": [
+        {
+          "text": "<rareitem>{Jewellery}\n<default>{Item Level:} <normal>{100}\n<default>{Shaper Item}",
+          "optional": false
+        }
+      ],
+      "artFilename": "Perfection",
+      "dropWeight": 34,
+      "dropRestricted": false,
+      "baseDropChance": 1.3909969766271596E-4,
+      "effectiveValue": 0.04172990929881479
+    },
+    "boss": {
+      "numberOfBosses": 1,
+      "phased": false,
+      "skippablePhases": false,
+      "spawned": true,
+      "bossArena": true,
+      "names": [
+        "Guardian of the Minotaur"
+      ],
+      "notes": null,
+      "introPhase": false
+    },
+    "nodeLayout": {
+      "linearity": 9,
+      "traversability": 8,
+      "backtrackFactor": 1,
+      "rushableBoss": false,
+      "notes": null,
+      "baseMobCount": 4,
+      "terrainSlots": 0,
+      "openness": 3
+    },
+    "tierSeventeenMaps": [
+      "Ziggurat",
+      "Citadel",
+      "Fortress",
+      "Abomination",
+      "Sanctuary"
+    ],
+    "notes": null,
+    "highestEffectiveValueDivinationCard": {
+      "name": null,
+      "chaosValue": null,
+      "exaltedValue": null,
+      "divineValue": null,
+      "bossOnly": false,
+      "stackSize": 0,
+      "flavourText": null,
+      "explicitModifiers": null,
+      "artFilename": null,
+      "dropWeight": 0,
+      "dropRestricted": false,
+      "baseDropChance": 0.0,
+      "effectiveValue": 0.0
+    }
+  },
+  {
+    "id": "209",
+    "linked": "",
+    "mapTier": 16,
+    "locX": "120",
+    "locY": "273",
+    "name": "Vaal Temple",
+    "uniqueMap": false,
+    "divinationCards": [
+      {
+        "name": "Beauty Through Death",
+        "chaosValue": 1047.68,
+        "exaltedValue": 165.25,
+        "divineValue": 8.00,
+        "bossOnly": true,
+        "stackSize": 5,
+        "flavourText": "Her beauty did not fade \nher humanity did not survive.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Atziri's Reflection}",
+            "optional": false
+          }
+        ],
+        "artFilename": "BeautyThroughDeath",
+        "dropWeight": 26,
+        "dropRestricted": false,
+        "baseDropChance": 1.1953748189696789E-4,
+        "effectiveValue": 12.523702903381533
+      }
+    ],
+    "filterTags": [],
+    "additionalTags": [],
+    "active": true,
+    "highestValueDivinationCard": {
+      "name": "Beauty Through Death",
+      "chaosValue": 1047.68,
+      "exaltedValue": 165.25,
+      "divineValue": 8.00,
+      "bossOnly": true,
+      "stackSize": 5,
+      "flavourText": "Her beauty did not fade \nher humanity did not survive.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Atziri's Reflection}",
+          "optional": false
+        }
+      ],
+      "artFilename": "BeautyThroughDeath",
+      "dropWeight": 26,
+      "dropRestricted": false,
+      "baseDropChance": 1.1953748189696789E-4,
+      "effectiveValue": 12.523702903381533
+    },
+    "boss": {
+      "numberOfBosses": 3,
+      "phased": false,
+      "skippablePhases": false,
+      "spawned": true,
+      "bossArena": true,
+      "names": [
+        "K'aj Y'ara'az",
+        "K'aj Q'ura",
+        "K'aj A'alai"
+      ],
+      "notes": null,
+      "introPhase": false
+    },
+    "nodeLayout": {
+      "linearity": 4,
+      "traversability": 4,
+      "backtrackFactor": 4,
+      "rushableBoss": true,
+      "notes": null,
+      "baseMobCount": 5,
+      "terrainSlots": 0,
+      "openness": 3
+    },
+    "tierSeventeenMaps": [
+      "Ziggurat"
+    ],
+    "notes": null,
+    "highestEffectiveValueDivinationCard": {
+      "name": "Beauty Through Death",
+      "chaosValue": 1047.68,
+      "exaltedValue": 165.25,
+      "divineValue": 8.00,
+      "bossOnly": true,
+      "stackSize": 5,
+      "flavourText": "Her beauty did not fade \nher humanity did not survive.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Atziri's Reflection}",
+          "optional": false
+        }
+      ],
+      "artFilename": "BeautyThroughDeath",
+      "dropWeight": 26,
+      "dropRestricted": false,
+      "baseDropChance": 1.1953748189696789E-4,
+      "effectiveValue": 12.523702903381533
+    }
+  },
+  {
+    "id": "210",
+    "linked": "",
+    "mapTier": 16,
+    "locX": "120",
+    "locY": "297",
+    "name": "The Beachhead",
+    "uniqueMap": true,
+    "divinationCards": [
+      {
+        "name": "The Endless Darkness",
+        "chaosValue": 279.01,
+        "exaltedValue": 44.01,
+        "divineValue": 2.13,
+        "bossOnly": false,
+        "stackSize": 9,
+        "flavourText": "Gaze towards the stars, but beware what gazes back.",
+        "explicitModifiers": [
+          {
+            "text": "<uniqueitem>{Voidforge}",
+            "optional": false
+          }
+        ],
+        "artFilename": "TheEndlessDarkness",
+        "dropWeight": 12,
+        "dropRestricted": false,
+        "baseDropChance": 5.517114549090825E-5,
+        "effectiveValue": 1.5393301303418312
+      }
+    ],
+    "filterTags": [],
+    "additionalTags": [],
+    "active": true,
+    "highestValueDivinationCard": {
+      "name": "The Endless Darkness",
+      "chaosValue": 279.01,
+      "exaltedValue": 44.01,
+      "divineValue": 2.13,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "Gaze towards the stars, but beware what gazes back.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Voidforge}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheEndlessDarkness",
+      "dropWeight": 12,
+      "dropRestricted": false,
+      "baseDropChance": 5.517114549090825E-5,
+      "effectiveValue": 1.5393301303418312
+    },
+    "boss": {
+      "numberOfBosses": 1,
+      "phased": true,
+      "skippablePhases": false,
+      "spawned": true,
+      "bossArena": true,
+      "names": [
+        "Harbinger Portal"
+      ],
+      "notes": null,
+      "introPhase": true
+    },
+    "nodeLayout": {
+      "linearity": 7,
+      "traversability": 8,
+      "backtrackFactor": 2,
+      "rushableBoss": true,
+      "notes": null,
+      "baseMobCount": 6,
+      "terrainSlots": 0,
+      "openness": 4
+    },
+    "tierSeventeenMaps": [
+      "Ziggurat"
+    ],
+    "notes": null,
+    "highestEffectiveValueDivinationCard": {
+      "name": "The Endless Darkness",
+      "chaosValue": 279.01,
+      "exaltedValue": 44.01,
+      "divineValue": 2.13,
+      "bossOnly": false,
+      "stackSize": 9,
+      "flavourText": "Gaze towards the stars, but beware what gazes back.",
+      "explicitModifiers": [
+        {
+          "text": "<uniqueitem>{Voidforge}",
+          "optional": false
+        }
+      ],
+      "artFilename": "TheEndlessDarkness",
+      "dropWeight": 12,
+      "dropRestricted": false,
+      "baseDropChance": 5.517114549090825E-5,
+      "effectiveValue": 1.5393301303418312
+    }
+  },
+  {
+    "id": "211",
+    "linked": "",
+    "mapTier": 16,
+    "locX": "120",
+    "locY": "320",
     "name": "Altered Distant Memory",
     "uniqueMap": true,
     "divinationCards": [
@@ -60699,213 +60901,11 @@
     }
   },
   {
-    "id": "208",
+    "id": "212",
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "310",
-    "name": "The Beachhead",
-    "uniqueMap": true,
-    "divinationCards": [
-      {
-        "name": "The Endless Darkness",
-        "chaosValue": 279.01,
-        "exaltedValue": 44.01,
-        "divineValue": 2.13,
-        "bossOnly": false,
-        "stackSize": 9,
-        "flavourText": "Gaze towards the stars, but beware what gazes back.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Voidforge}",
-            "optional": false
-          }
-        ],
-        "artFilename": "TheEndlessDarkness",
-        "dropWeight": 12,
-        "dropRestricted": false,
-        "baseDropChance": 5.517114549090825E-5,
-        "effectiveValue": 1.5393301303418312
-      }
-    ],
-    "filterTags": [],
-    "additionalTags": [],
-    "active": true,
-    "highestValueDivinationCard": {
-      "name": "The Endless Darkness",
-      "chaosValue": 279.01,
-      "exaltedValue": 44.01,
-      "divineValue": 2.13,
-      "bossOnly": false,
-      "stackSize": 9,
-      "flavourText": "Gaze towards the stars, but beware what gazes back.",
-      "explicitModifiers": [
-        {
-          "text": "<uniqueitem>{Voidforge}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheEndlessDarkness",
-      "dropWeight": 12,
-      "dropRestricted": false,
-      "baseDropChance": 5.517114549090825E-5,
-      "effectiveValue": 1.5393301303418312
-    },
-    "boss": {
-      "numberOfBosses": 1,
-      "phased": true,
-      "skippablePhases": false,
-      "spawned": true,
-      "bossArena": true,
-      "names": [
-        "Harbinger Portal"
-      ],
-      "notes": null,
-      "introPhase": true
-    },
-    "nodeLayout": {
-      "linearity": 7,
-      "traversability": 8,
-      "backtrackFactor": 2,
-      "rushableBoss": true,
-      "notes": null,
-      "baseMobCount": 6,
-      "terrainSlots": 0,
-      "openness": 4
-    },
-    "tierSeventeenMaps": [
-      "Ziggurat"
-    ],
-    "notes": null,
-    "highestEffectiveValueDivinationCard": {
-      "name": "The Endless Darkness",
-      "chaosValue": 279.01,
-      "exaltedValue": 44.01,
-      "divineValue": 2.13,
-      "bossOnly": false,
-      "stackSize": 9,
-      "flavourText": "Gaze towards the stars, but beware what gazes back.",
-      "explicitModifiers": [
-        {
-          "text": "<uniqueitem>{Voidforge}",
-          "optional": false
-        }
-      ],
-      "artFilename": "TheEndlessDarkness",
-      "dropWeight": 12,
-      "dropRestricted": false,
-      "baseDropChance": 5.517114549090825E-5,
-      "effectiveValue": 1.5393301303418312
-    }
-  },
-  {
-    "id": "208",
-    "linked": "",
-    "mapTier": 16,
-    "locX": "120",
-    "locY": "287",
-    "name": "Vaal Temple",
-    "uniqueMap": false,
-    "divinationCards": [
-      {
-        "name": "Beauty Through Death",
-        "chaosValue": 1047.68,
-        "exaltedValue": 165.25,
-        "divineValue": 8.00,
-        "bossOnly": true,
-        "stackSize": 5,
-        "flavourText": "Her beauty did not fade \nher humanity did not survive.",
-        "explicitModifiers": [
-          {
-            "text": "<uniqueitem>{Atziri's Reflection}",
-            "optional": false
-          }
-        ],
-        "artFilename": "BeautyThroughDeath",
-        "dropWeight": 26,
-        "dropRestricted": false,
-        "baseDropChance": 1.1953748189696789E-4,
-        "effectiveValue": 12.523702903381533
-      }
-    ],
-    "filterTags": [],
-    "additionalTags": [],
-    "active": true,
-    "highestValueDivinationCard": {
-      "name": "Beauty Through Death",
-      "chaosValue": 1047.68,
-      "exaltedValue": 165.25,
-      "divineValue": 8.00,
-      "bossOnly": true,
-      "stackSize": 5,
-      "flavourText": "Her beauty did not fade \nher humanity did not survive.",
-      "explicitModifiers": [
-        {
-          "text": "<uniqueitem>{Atziri's Reflection}",
-          "optional": false
-        }
-      ],
-      "artFilename": "BeautyThroughDeath",
-      "dropWeight": 26,
-      "dropRestricted": false,
-      "baseDropChance": 1.1953748189696789E-4,
-      "effectiveValue": 12.523702903381533
-    },
-    "boss": {
-      "numberOfBosses": 3,
-      "phased": false,
-      "skippablePhases": false,
-      "spawned": true,
-      "bossArena": true,
-      "names": [
-        "K'aj Y'ara'az",
-        "K'aj Q'ura",
-        "K'aj A'alai"
-      ],
-      "notes": null,
-      "introPhase": false
-    },
-    "nodeLayout": {
-      "linearity": 4,
-      "traversability": 4,
-      "backtrackFactor": 4,
-      "rushableBoss": true,
-      "notes": null,
-      "baseMobCount": 5,
-      "terrainSlots": 0,
-      "openness": 3
-    },
-    "tierSeventeenMaps": [
-      "Ziggurat"
-    ],
-    "notes": null,
-    "highestEffectiveValueDivinationCard": {
-      "name": "Beauty Through Death",
-      "chaosValue": 1047.68,
-      "exaltedValue": 165.25,
-      "divineValue": 8.00,
-      "bossOnly": true,
-      "stackSize": 5,
-      "flavourText": "Her beauty did not fade \nher humanity did not survive.",
-      "explicitModifiers": [
-        {
-          "text": "<uniqueitem>{Atziri's Reflection}",
-          "optional": false
-        }
-      ],
-      "artFilename": "BeautyThroughDeath",
-      "dropWeight": 26,
-      "dropRestricted": false,
-      "baseDropChance": 1.1953748189696789E-4,
-      "effectiveValue": 12.523702903381533
-    }
-  },
-  {
-    "id": "209",
-    "linked": "",
-    "mapTier": 16,
-    "locX": "120",
-    "locY": "358",
+    "locY": "345",
     "name": "Augmented Distant Memory",
     "uniqueMap": true,
     "divinationCards": [
@@ -61019,11 +61019,11 @@
     }
   },
   {
-    "id": "210",
+    "id": "213",
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "381.5",
+    "locY": "366",
     "name": "Rewritten Distant Memory",
     "uniqueMap": true,
     "divinationCards": [
@@ -61137,11 +61137,11 @@
     }
   },
   {
-    "id": "211",
+    "id": "214",
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "405",
+    "locY": "392",
     "name": "Twisted Distant Memory",
     "uniqueMap": true,
     "divinationCards": [
@@ -61255,11 +61255,11 @@
     }
   },
   {
-    "id": "212",
+    "id": "215",
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "429",
+    "locY": "415",
     "name": "Cortex",
     "uniqueMap": true,
     "divinationCards": [
@@ -61351,11 +61351,11 @@
     }
   },
   {
-    "id": "213",
+    "id": "216",
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "453",
+    "locY": "440",
     "name": "Doryani's Machinarium",
     "uniqueMap": true,
     "divinationCards": [
@@ -61526,11 +61526,11 @@
     }
   },
   {
-    "id": "214",
+    "id": "217",
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "476",
+    "locY": "462",
     "name": "Hall of Grandmasters",
     "uniqueMap": true,
     "divinationCards": [
@@ -61622,11 +61622,11 @@
     }
   },
   {
-    "id": "215",
+    "id": "218",
     "linked": "",
     "mapTier": 16,
     "locX": "120",
-    "locY": "498",
+    "locY": "485",
     "name": "Untainted Paradise",
     "uniqueMap": true,
     "divinationCards": [
@@ -61702,6 +61702,102 @@
       "openness": 7
     },
     "tierSeventeenMaps": [],
+    "notes": null,
+    "highestEffectiveValueDivinationCard": {
+      "name": null,
+      "chaosValue": null,
+      "exaltedValue": null,
+      "divineValue": null,
+      "bossOnly": false,
+      "stackSize": 0,
+      "flavourText": null,
+      "explicitModifiers": null,
+      "artFilename": null,
+      "dropWeight": 0,
+      "dropRestricted": false,
+      "baseDropChance": 0.0,
+      "effectiveValue": 0.0
+    }
+  },
+  {
+    "id": "219",
+    "linked": "",
+    "mapTier": 16,
+    "locX": "120",
+    "locY": "510",
+    "name": "The Vinktar Square",
+    "uniqueMap": true,
+    "divinationCards": [
+      {
+        "name": "Struck by Lightning",
+        "chaosValue": 1.00,
+        "exaltedValue": 0.16,
+        "divineValue": 0.01,
+        "bossOnly": false,
+        "stackSize": 3,
+        "flavourText": "'Lightning never strikes the same place twice'\nis really just wishful thinking.",
+        "explicitModifiers": [
+          {
+            "text": "<magicitem>{Electrocuting Jewellery}\n<default>{Item Level:} <normal>{76}",
+            "optional": false
+          }
+        ],
+        "artFilename": "StruckbyLightning",
+        "dropWeight": 8038,
+        "dropRestricted": true,
+        "baseDropChance": 0.03563843701644476,
+        "effectiveValue": 3.5638437016444757
+      }
+    ],
+    "filterTags": [],
+    "additionalTags": [],
+    "active": true,
+    "highestValueDivinationCard": {
+      "name": "Struck by Lightning",
+      "chaosValue": 1.00,
+      "exaltedValue": 0.16,
+      "divineValue": 0.01,
+      "bossOnly": false,
+      "stackSize": 3,
+      "flavourText": "'Lightning never strikes the same place twice'\nis really just wishful thinking.",
+      "explicitModifiers": [
+        {
+          "text": "<magicitem>{Electrocuting Jewellery}\n<default>{Item Level:} <normal>{76}",
+          "optional": false
+        }
+      ],
+      "artFilename": "StruckbyLightning",
+      "dropWeight": 8038,
+      "dropRestricted": true,
+      "baseDropChance": 0.03563843701644476,
+      "effectiveValue": 3.5638437016444757
+    },
+    "boss": {
+      "numberOfBosses": 1,
+      "phased": false,
+      "skippablePhases": false,
+      "spawned": true,
+      "bossArena": true,
+      "names": [
+        "Avatar of Thunder"
+      ],
+      "notes": null,
+      "introPhase": true
+    },
+    "nodeLayout": {
+      "linearity": 5,
+      "traversability": 6,
+      "backtrackFactor": 3,
+      "rushableBoss": true,
+      "notes": null,
+      "baseMobCount": 5,
+      "terrainSlots": 0,
+      "openness": 7
+    },
+    "tierSeventeenMaps": [
+      "Citadel",
+      "Fortress"
+    ],
     "notes": null,
     "highestEffectiveValueDivinationCard": {
       "name": null,

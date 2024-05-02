@@ -23,6 +23,7 @@ import hallOfGrandmasters from './Hall_of_Grandmasters.png'
 import perandusManor from './Perandus_Manor.png'
 import theBeachhead from './The_Beachhead.png'
 import untaintedParadise from './Untainted_Paradise.png'
+import theVinktarSquare from './The_Vinktar_Square.png'
 
 const uniqueMapList = new Map<string, string>([
   ['MaelströmofChaos', maelstroemofChaos],
@@ -50,6 +51,7 @@ const uniqueMapList = new Map<string, string>([
   ['PerandusManor', perandusManor],
   ['TheBeachhead', theBeachhead],
   ['UntaintedParadise', untaintedParadise],
+  ['TheVinktarSquare', theVinktarSquare],
 ])
 
 export default uniqueMapList
