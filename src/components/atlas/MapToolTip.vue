@@ -32,6 +32,13 @@ const tooltipY = computed(() => props.toolTipData.y - 5)
         <p>Traversability: <span class="text-white">{{ toolTipData.node.nodeLayout.traversability }}</span></p>
         <v-divider :thickness="2" class="border-opacity-50 my-1" color="blue" />
         <div>
+          Dropable Tier 17 Maps:
+          <p class="d-inline-flex align-center text-white">
+            {{ toolTipData.node.tierSeventeenMaps.join(', ') }}
+          </p>
+        </div>
+        <v-divider :thickness="2" class="border-opacity-50 my-1" color="blue" />
+        <div>
           Highest Price Div Card: <p class="d-inline-flex align-center text-white">
             {{ toolTipData.node.highestValueDivinationCard.name }} <span class="ml-2 text-accent-light">{{ toolTipData.node.highestValueDivinationCard.chaosValue }}</span><img class="chaos" src="/chaos.webp">
           </p>
