@@ -100,7 +100,7 @@ async function sendSelectedAtlasNode(selectedAtlasNode: AtlasNode | undefined) {
       }).finally(() =>
         loading.value = false,
       )
-    // await putSelectedAtlasNode(selectedAtlasNode)
+    await putSelectedAtlasNode(selectedAtlasNode)
   }
 }
 

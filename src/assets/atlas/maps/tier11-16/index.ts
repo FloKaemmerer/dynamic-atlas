@@ -143,6 +143,11 @@ import lavaChamber from './LavaChamber.png'
 import arena from './Arena.png'
 import brambleValley from './BrambleValley.png'
 import park from './Park.png'
+import pitOfTheChimera from './PitoftheChimera.png'
+import lairOfTheHydra from './LairoftheHydra.png'
+import forgeOfThePhoenix from './ForgeofthePhoenix.png'
+import mazeOfTheMinotaur from './MazeoftheMinotaur.png'
+import vaalTemple from './VaalTemple.png'
 
 const normalMapList = new Map<string, string>([
   ['Arena', arena],
@@ -291,7 +296,11 @@ const normalMapList = new Map<string, string>([
   ['FrozenCabins', frozenCabins],
   ['BrambleValley', brambleValley],
   ['Park', park],
-
+  ['PitoftheChimera', pitOfTheChimera],
+  ['LairoftheHydra', lairOfTheHydra],
+  ['ForgeofthePhoenix', forgeOfThePhoenix],
+  ['MazeoftheMinotaur', mazeOfTheMinotaur],
+  ['VaalTemple', vaalTemple],
 ])
 
 export default normalMapList

@@ -19,4 +19,5 @@ export interface AtlasNode {
   boss: Boss
   nodeLayout: Layout
   notes: any
+  tierSeventeenMaps: string[]
 }

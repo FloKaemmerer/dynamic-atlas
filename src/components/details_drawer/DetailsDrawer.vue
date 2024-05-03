@@ -42,6 +42,13 @@ const mapsSpecifications = computed(() => ({
           :specifications-order="mapSpecificationsOrder"
         />
         <v-divider :thickness="2" class="border-opacity-50" color="blue" />
+        <v-sheet color="transparent" class="py-2 text-center text-overline text-gray-light">
+          Dropable Tier 17 Maps:
+          <p class="d-inline-flex align-center text-white">
+            {{ atlasNode.tierSeventeenMaps.join(', ') }}
+          </p>
+        </v-sheet>
+        <v-divider :thickness="2" class="border-opacity-50" color="blue" />
         <LayoutDetails :atlas-node="atlasNode" />
         <v-divider :thickness="2" class="border-opacity-50" color="blue" />
         <BossDetails :atlas-node="atlasNode" />
