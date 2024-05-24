@@ -48,7 +48,12 @@ import {
 import { atlasMemoriesCanvasPoint } from '@/composable/atlasMemories/atlas-memories-canvas-point'
 import { voidstoneCanvasPoint } from '@/composable/voidstones/voidstone-canvas-point'
 import { getNumberOfActiveVoidstonesText } from '@/composable/voidstones/voidstone-shapes'
-import { getOverlayCircle, getOverlayRect, getOverlayText } from '@/composable/shapes/atlas-node-overlay'
+import {
+  getDivinationCardOverlayCircle, getDivinationCardOverlayRect,
+  getOverlayCircle,
+  getOverlayRect,
+  getOverlayText,
+} from '@/composable/shapes/atlas-node-overlay'
 import { getAtlasNodeName } from '@/composable/shapes/atlas-node-name'
 import { getFilterHighlight } from '@/composable/shapes/atlas-node-filter-highlight'
 import { getLinkLine } from '@/composable/shapes/atlas-node-link-line'
@@ -415,11 +420,11 @@ divinationCardOverlayStore.$subscribe((mutation, state) => {
   // show all overlay on all AtlasNodes
   state.overlayDivinationCardsMap.forEach((value: string, key: AtlasNode) => {
     const atlasNodePoint = atlasNodeToPoint(key, true)
-    const divinationCardOverlayColorValue = 11
+    const divinationCardOverlayColorValue = Number(value.replace('C', ''))
     const id = key.id
 
-    const overlayCircle = getOverlayCircle(id, atlasNodePoint, divinationCardOverlayColorValue)
-    const overlayRect = getOverlayRect(id, atlasNodePoint, divinationCardOverlayColorValue)
+    const overlayCircle = getDivinationCardOverlayCircle(id, atlasNodePoint, divinationCardOverlayColorValue)
+    const overlayRect = getDivinationCardOverlayRect(id, atlasNodePoint, divinationCardOverlayColorValue)
     const overlayText = getOverlayText(value, atlasNodePoint)
 
     overlayGroup.add(overlayCircle)
