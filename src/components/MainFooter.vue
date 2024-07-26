@@ -37,7 +37,7 @@ const toggleChangelogOverlay = ref(false)
         <v-btn variant="text" @click="toggleChangelogOverlay = !toggleChangelogOverlay">
           Changelog
         </v-btn>
-        | <strong>Atlas Version 3.24</strong>
+        | <strong>Atlas Version 3.25</strong>
       </v-col>
       <v-col cols="6">
         <small>© {{ new Date().getFullYear() }} PoeAtlas.app. All Rights Reserved.</small>
